@@ -1,0 +1,1116 @@
+diff --git a/README.textile b/README.textile
+index 6f907f370e7..a35ae43ab53 100644
+--- a/README.textile
++++ b/README.textile
+@@ -158,3 +158,3 @@ curl -XPUT http://localhost:9200/another_user?pretty -H 'Content-Type: applicati
+-    "index" : {
+-        "number_of_shards" : 2,
+-        "number_of_replicas" : 1
++    "settings" : {
++        "index.number_of_shards" : 2,
++        "index.number_of_replicas" : 1
+diff --git a/README.textile b/README.textile
+index 5912c0371fa..6f907f370e7 100644
+--- a/README.textile
++++ b/README.textile
+@@ -153 +153 @@ The above will index information into the @kimchy@ index. Each user will get the
+-Complete control on the index level is allowed. As an example, in the above case, we would want to change from the default 5 shards with 1 replica per index, to only 1 shard with 1 replica per index (== per twitter user). Here is how this can be done (the configuration can be in yaml as well):
++Complete control on the index level is allowed. As an example, in the above case, we might want to change from the default 1 shard with 1 replica per index, to 2 shards with 1 replica per index (because this user tweets a lot). Here is how this can be done (the configuration can be in yaml as well):
+@@ -159 +159 @@ curl -XPUT http://localhost:9200/another_user?pretty -H 'Content-Type: applicati
+-        "number_of_shards" : 1,
++        "number_of_shards" : 2,
+@@ -194 +194 @@ Let's face it, things will fail....
+-Elasticsearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replicas. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
++Elasticsearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replicas. By default, an index is created with 1 shards and 1 replica per shard (1/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
+diff --git a/README.textile b/README.textile
+index aa61c035742..5912c0371fa 100644
+--- a/README.textile
++++ b/README.textile
+@@ -51 +51 @@ Let's try and index some twitter like information. First, let's index some tweet
+-curl -XPUT 'http://localhost:9200/twitter/doc/1?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/twitter/_doc/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -58 +58 @@ curl -XPUT 'http://localhost:9200/twitter/doc/1?pretty' -H 'Content-Type: applic
+-curl -XPUT 'http://localhost:9200/twitter/doc/2?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/twitter/_doc/2?pretty' -H 'Content-Type: application/json' -d '
+@@ -65 +65 @@ curl -XPUT 'http://localhost:9200/twitter/doc/2?pretty' -H 'Content-Type: applic
+-curl -XPUT 'http://localhost:9200/twitter/doc/3?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/twitter/_doc/3?pretty' -H 'Content-Type: application/json' -d '
+@@ -76,3 +76,3 @@ Now, let's see if the information was added by GETting it:
+-curl -XGET 'http://localhost:9200/twitter/doc/1?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/doc/2?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/doc/3?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/_doc/1?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/_doc/2?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/_doc/3?pretty=true'
+@@ -136 +136 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/doc/1?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/kimchy/_doc/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -143 +143 @@ curl -XPUT 'http://localhost:9200/kimchy/doc/1?pretty' -H 'Content-Type: applica
+-curl -XPUT 'http://localhost:9200/kimchy/doc/2?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/kimchy/_doc/2?pretty' -H 'Content-Type: application/json' -d '
+diff --git a/README.textile b/README.textile
+index ce7b3b7d344..aa61c035742 100644
+--- a/README.textile
++++ b/README.textile
+@@ -212 +212 @@ See the "TESTING":TESTING.asciidoc file for more information about running the E
+-h3. Upgrading from Elasticsearch 1.x?
++h3. Upgrading from older Elasticsearch versions
+@@ -214,5 +214 @@ h3. Upgrading from Elasticsearch 1.x?
+-In order to ensure a smooth upgrade process from earlier versions of
+-Elasticsearch (1.x), it is required to perform a full cluster restart. Please
+-see the "setup reference":
+-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
+-for more details on the upgrade process.
++In order to ensure a smooth upgrade process from earlier versions of Elasticsearch, please see our "upgrade documentation":https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
+diff --git a/README.textile b/README.textile
+index c964e31655d..ce7b3b7d344 100644
+--- a/README.textile
++++ b/README.textile
+@@ -30 +29,0 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-* Open Source under the Apache License, version 2 ("ALv2")
+@@ -220,20 +218,0 @@ for more details on the upgrade process.
+-
+-h1. License
+-
+-<pre>
+-This software is licensed under the Apache License, version 2 ("ALv2"), quoted below.
+-
+-Copyright 2009-2016 Elasticsearch <https://www.elastic.co>
+-
+-Licensed under the Apache License, Version 2.0 (the "License"); you may not
+-use this file except in compliance with the License. You may obtain a copy of
+-the License at
+-
+-    http://www.apache.org/licenses/LICENSE-2.0
+-
+-Unless required by applicable law or agreed to in writing, software
+-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+-License for the specific language governing permissions and limitations under
+-the License.
+-</pre>
+diff --git a/README.textile b/README.textile
+index f17958262d8..c964e31655d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -195 +195 @@ Let's face it, things will fail....
+-Elasticsearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replica. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
++Elasticsearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replicas. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
+diff --git a/README.textile b/README.textile
+index 63c45abfe0e..f17958262d8 100644
+--- a/README.textile
++++ b/README.textile
+@@ -205 +205 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have at least version 3.3 of Gradle installed.
++Elasticsearch uses "Gradle":https://gradle.org for its build system.
+@@ -207 +207 @@ Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need
+-In order to create a distribution, simply run the @gradle assemble@ command in the cloned directory.
++In order to create a distribution, simply run the @./gradlew assemble@ command in the cloned directory.
+diff --git a/README.textile b/README.textile
+index ac40517f978..63c45abfe0e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -211,2 +211 @@ The distribution for each project will be created under the @build/distributions
+-See the "TESTING":TESTING.asciidoc file for more information about
+-running the Elasticsearch test suite.
++See the "TESTING":TESTING.asciidoc file for more information about running the Elasticsearch test suite.
+diff --git a/README.textile b/README.textile
+index 93172a0f30c..ac40517f978 100644
+--- a/README.textile
++++ b/README.textile
+@@ -113 +113 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -H 'Content-Type:
+-We can also do range search (the @postDate@ was automatically identified as date)
++We can also do range search (the @post_date@ was automatically identified as date)
+diff --git a/README.textile b/README.textile
+index 9c2b2c5d91e..93172a0f30c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -13 +13 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-* Multi Tenant with Multi Types.
++* Multi Tenant.
+@@ -15 +14,0 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-** Support for more than one type per index.
+@@ -23 +22 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-** Schema can be defined per type for customization of the indexing process.
++** Schema can be defined for customization of the indexing process.
+@@ -50 +49 @@ h3. Indexing
+-Let's try and index some twitter like information. First, let's create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
++Let's try and index some twitter like information. First, let's index some tweets (the @twitter@ index will be created automatically):
+@@ -53,3 +52 @@ Let's try and index some twitter like information. First, let's create a twitter
+-curl -XPUT 'http://localhost:9200/twitter/user/kimchy?pretty' -H 'Content-Type: application/json' -d '{ "name" : "Shay Banon" }'
+-
+-curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/twitter/doc/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -62 +59 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -H 'Content-Type: appl
+-curl -XPUT 'http://localhost:9200/twitter/tweet/2?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/twitter/doc/2?pretty' -H 'Content-Type: application/json' -d '
+@@ -67,0 +65,7 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/2?pretty' -H 'Content-Type: appl
++
++curl -XPUT 'http://localhost:9200/twitter/doc/3?pretty' -H 'Content-Type: application/json' -d '
++{
++    "user": "elastic",
++    "post_date": "2010-01-15T01:46:38",
++    "message": "Building the site, should be kewl"
++}'
+@@ -73,3 +77,3 @@ Now, let's see if the information was added by GETting it:
+-curl -XGET 'http://localhost:9200/twitter/user/kimchy?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/tweet/1?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/tweet/2?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/doc/1?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/doc/2?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/doc/3?pretty=true'
+@@ -84 +88 @@ Let's find all the tweets that @kimchy@ posted:
+-curl -XGET 'http://localhost:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
++curl -XGET 'http://localhost:9200/twitter/_search?q=user:kimchy&pretty=true'
+@@ -90 +94 @@ We can also use the JSON query language Elasticsearch provides instead of a quer
+-curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -H 'Content-Type: application/json' -d '
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -H 'Content-Type: application/json' -d '
+@@ -98 +102 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -H 'Content
+-Just for kicks, let's get all the documents stored (we should see the user as well):
++Just for kicks, let's get all the documents stored (we should see the tweet from @elastic@ as well):
+@@ -128 +132 @@ Man, that twitter index might get big (in this case, index size == valuation). L
+-Elasticsearch supports multiple indices, as well as multiple types per index. In the previous example we used an index called @twitter@, with two types, @user@ and @tweet@.
++Elasticsearch supports multiple indices. In the previous example we used an index called @twitter@ that stored tweets for every user.
+@@ -133,3 +137 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -H 'Content-Type: application/json' -d '{ "name" : "Shay Banon" }'
+-
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/kimchy/doc/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -142 +144 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -H 'Content-Type: appli
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/2?pretty' -H 'Content-Type: application/json' -d '
++curl -XPUT 'http://localhost:9200/kimchy/doc/2?pretty' -H 'Content-Type: application/json' -d '
+@@ -150 +152 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/2?pretty' -H 'Content-Type: appli
+-The above will index information into the @kimchy@ index, with two types, @info@ and @tweet@. Each user will get their own special index.
++The above will index information into the @kimchy@ index. Each user will get their own special index.
+diff --git a/README.textile b/README.textile
+index 5bc5b7f2505..9c2b2c5d91e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have version 2.13 of Gradle installed.
++Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have at least version 3.3 of Gradle installed.
+diff --git a/README.textile b/README.textile
+index 9c2b2c5d91e..5bc5b7f2505 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have at least version 3.3 of Gradle installed.
++Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have version 2.13 of Gradle installed.
+diff --git a/README.textile b/README.textile
+index 5bc5b7f2505..9c2b2c5d91e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have version 2.13 of Gradle installed.
++Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have at least version 3.3 of Gradle installed.
+diff --git a/README.textile b/README.textile
+index dc3a263cd7c..5bc5b7f2505 100644
+--- a/README.textile
++++ b/README.textile
+@@ -53 +53 @@ Let's try and index some twitter like information. First, let's create a twitter
+-curl -XPUT 'http://localhost:9200/twitter/user/kimchy?pretty' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/twitter/user/kimchy?pretty' -H 'Content-Type: application/json' -d '{ "name" : "Shay Banon" }'
+@@ -55 +55 @@ curl -XPUT 'http://localhost:9200/twitter/user/kimchy?pretty' -d '{ "name" : "Sh
+-curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -62 +62 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -d '
+-curl -XPUT 'http://localhost:9200/twitter/tweet/2?pretty' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/2?pretty' -H 'Content-Type: application/json' -d '
+@@ -90 +90 @@ We can also use the JSON query language Elasticsearch provides instead of a quer
+-curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -H 'Content-Type: application/json' -d '
+@@ -101 +101 @@ Just for kicks, let's get all the documents stored (we should see the user as we
+-curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -H 'Content-Type: application/json' -d '
+@@ -112 +112 @@ We can also do range search (the @postDate@ was automatically identified as date
+-curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -H 'Content-Type: application/json' -d '
+@@ -133 +133 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -H 'Content-Type: application/json' -d '{ "name" : "Shay Banon" }'
+@@ -135 +135 @@ curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -d '{ "name" : "Shay Ban
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -H 'Content-Type: application/json' -d '
+@@ -142 +142 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -d '
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/2?pretty' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/2?pretty' -H 'Content-Type: application/json' -d '
+@@ -155 +155 @@ Complete control on the index level is allowed. As an example, in the above case
+-curl -XPUT http://localhost:9200/another_user?pretty -d '
++curl -XPUT http://localhost:9200/another_user?pretty -H 'Content-Type: application/json' -d '
+@@ -168 +168 @@ index (twitter user), for example:
+-curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -H 'Content-Type: application/json' -d '
+@@ -179 +179 @@ Or on all the indices:
+-curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/_search?pretty=true' -H 'Content-Type: application/json' -d '
+diff --git a/README.textile b/README.textile
+index 52c7607509c..dc3a263cd7c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -126 +126 @@ h3. Multi Tenant - Indices and Types
+-Maan, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amounts of data.
++Man, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amounts of data.
+diff --git a/README.textile b/README.textile
+index 69d3fd54767..52c7607509c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.13 should do.
++Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have version 2.13 of Gradle installed.
+diff --git a/README.textile b/README.textile
+index d9549e5eb3c..69d3fd54767 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":http://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.8 should do.
++Elasticsearch uses "Gradle":https://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.13 should do.
+@@ -205 +205 @@ Elasticsearch uses "Gradle":http://gradle.org for its build system. You'll need
+-In order to create a distribution, simply run the @gradle build@ command in the cloned directory.
++In order to create a distribution, simply run the @gradle assemble@ command in the cloned directory.
+@@ -207 +207 @@ In order to create a distribution, simply run the @gradle build@ command in the
+-The distribution for each project will be created under the @target/releases@ directory in that project.
++The distribution for each project will be created under the @build/distributions@ directory in that project.
+diff --git a/README.textile b/README.textile
+index 7a136a91d1c..d9549e5eb3c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -199,8 +199 @@ h3. Where to go from here?
+-We have just covered a very small portion of what Elasticsearch is all
+-about. For more information, please refer to the
+-"elastic.co":http://www.elastic.co/products/elasticsearch
+-website. General questions can be asked on the "Elastic Discourse
+-forum":https://discuss.elastic.co or on IRC on Freenode at
+-"#elasticsearch":https://webchat.freenode.net/#elasticsearch. The
+-Elasticsearch GitHub repository is reserved for bug reports and feature
+-requests only.
++We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elastic.co":http://www.elastic.co/products/elasticsearch website. General questions can be asked on the "Elastic Discourse forum":https://discuss.elastic.co or on IRC on Freenode at "#elasticsearch":https://webchat.freenode.net/#elasticsearch. The Elasticsearch GitHub repository is reserved for bug reports and feature requests only.
+diff --git a/README.textile b/README.textile
+index e48495a5524..7a136a91d1c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -199 +199,8 @@ h3. Where to go from here?
+-We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elastic.co":http://www.elastic.co/products/elasticsearch website.
++We have just covered a very small portion of what Elasticsearch is all
++about. For more information, please refer to the
++"elastic.co":http://www.elastic.co/products/elasticsearch
++website. General questions can be asked on the "Elastic Discourse
++forum":https://discuss.elastic.co or on IRC on Freenode at
++"#elasticsearch":https://webchat.freenode.net/#elasticsearch. The
++Elasticsearch GitHub repository is reserved for bug reports and feature
++requests only.
+diff --git a/README.textile b/README.textile
+index 5c75844b108..e48495a5524 100644
+--- a/README.textile
++++ b/README.textile
+@@ -53 +53 @@ Let's try and index some twitter like information. First, let's create a twitter
+-curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/twitter/user/kimchy?pretty' -d '{ "name" : "Shay Banon" }'
+@@ -55 +55 @@ curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Bano
+-curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/1?pretty' -d '
+@@ -58 +58 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+-    "postDate": "2009-11-15T13:12:00",
++    "post_date": "2009-11-15T13:12:00",
+@@ -62 +62 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+-curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/2?pretty' -d '
+@@ -65 +65 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
+-    "postDate": "2009-11-15T14:12:12",
++    "post_date": "2009-11-15T14:12:12",
+@@ -104 +104 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+-        "matchAll" : {}
++        "match_all" : {}
+@@ -116 +116 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+-            "postDate" : { "from" : "2009-11-15T13:00:00", "to" : "2009-11-15T14:00:00" }
++            "post_date" : { "from" : "2009-11-15T13:00:00", "to" : "2009-11-15T14:00:00" }
+@@ -133 +133 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/kimchy/info/1?pretty' -d '{ "name" : "Shay Banon" }'
+@@ -135 +135 @@ curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/1?pretty' -d '
+@@ -138 +138 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+-    "postDate": "2009-11-15T13:12:00",
++    "post_date": "2009-11-15T13:12:00",
+@@ -142 +142 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/2?pretty' -d '
+@@ -145 +145 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
+-    "postDate": "2009-11-15T14:12:12",
++    "post_date": "2009-11-15T14:12:12",
+@@ -155 +155 @@ Complete control on the index level is allowed. As an example, in the above case
+-curl -XPUT http://localhost:9200/another_user/ -d '
++curl -XPUT http://localhost:9200/another_user?pretty -d '
+@@ -158,2 +158,2 @@ curl -XPUT http://localhost:9200/another_user/ -d '
+-        "numberOfShards" : 1,
+-        "numberOfReplicas" : 1
++        "number_of_shards" : 1,
++        "number_of_replicas" : 1
+@@ -171 +171 @@ curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
+-        "matchAll" : {}
++        "match_all" : {}
+@@ -182 +182 @@ curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
+-        "matchAll" : {}
++        "match_all" : {}
+diff --git a/README.textile b/README.textile
+index 1f532f7359d..5c75844b108 100644
+--- a/README.textile
++++ b/README.textile
+@@ -225 +225 @@ This software is licensed under the Apache License, version 2 ("ALv2"), quoted b
+-Copyright 2009-2015 Elasticsearch <https://www.elastic.co>
++Copyright 2009-2016 Elasticsearch <https://www.elastic.co>
+diff --git a/README.textile b/README.textile
+index be51570e271..1f532f7359d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -12 +12 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-** Read / Search operations performed on either one of the replica shard.
++** Read / Search operations performed on any of the replica shards.
+diff --git a/README.textile b/README.textile
+index 804f46a1811..be51570e271 100644
+--- a/README.textile
++++ b/README.textile
+@@ -150 +150 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
+-The above will index information into the @kimchy@ index, with two types, @info@ and @tweet@. Each user will get his own special index.
++The above will index information into the @kimchy@ index, with two types, @info@ and @tweet@. Each user will get their own special index.
+diff --git a/README.textile b/README.textile
+index 01e33f76fc4..804f46a1811 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Gradle":http://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.6 should do.
++Elasticsearch uses "Gradle":http://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.8 should do.
+diff --git a/README.textile b/README.textile
+index 0e0a6e97b42..01e33f76fc4 100644
+--- a/README.textile
++++ b/README.textile
+@@ -214 +214,5 @@ h3. Upgrading from Elasticsearch 1.x?
+-In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "setup reference":https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
++In order to ensure a smooth upgrade process from earlier versions of
++Elasticsearch (1.x), it is required to perform a full cluster restart. Please
++see the "setup reference":
++https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
++for more details on the upgrade process.
+diff --git a/README.textile b/README.textile
+index c58b59bca3d..0e0a6e97b42 100644
+--- a/README.textile
++++ b/README.textile
+@@ -212 +212 @@ running the Elasticsearch test suite.
+-h3. Upgrading to Elasticsearch 1.x?
++h3. Upgrading from Elasticsearch 1.x?
+diff --git a/README.textile b/README.textile
+index 63f1841822c..c58b59bca3d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -203 +203 @@ h3. Building from Source
+-Elasticsearch uses "Maven":http://maven.apache.org for its build system.
++Elasticsearch uses "Gradle":http://gradle.org for its build system. You'll need to have a modern version of Gradle installed - 2.6 should do.
+@@ -205,2 +205 @@ Elasticsearch uses "Maven":http://maven.apache.org for its build system.
+-In order to create a distribution, simply run the @mvn clean package
+--DskipTests@ command in the cloned directory.
++In order to create a distribution, simply run the @gradle build@ command in the cloned directory.
+diff --git a/README.textile b/README.textile
+index f48e40c2eaf..63f1841822c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -45 +45 @@ h3. Installation
+-* Run @curl -X GET http://127.0.0.1:9200/@.
++* Run @curl -X GET http://localhost:9200/@.
+@@ -53 +53 @@ Let's try and index some twitter like information. First, let's create a twitter
+-curl -XPUT 'http://127.0.0.1:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
+@@ -55 +55 @@ curl -XPUT 'http://127.0.0.1:9200/twitter/user/kimchy' -d '{ "name" : "Shay Bano
+-curl -XPUT 'http://127.0.0.1:9200/twitter/tweet/1' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+@@ -62 +62 @@ curl -XPUT 'http://127.0.0.1:9200/twitter/tweet/1' -d '
+-curl -XPUT 'http://127.0.0.1:9200/twitter/tweet/2' -d '
++curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
+@@ -73,3 +73,3 @@ Now, let's see if the information was added by GETting it:
+-curl -XGET 'http://127.0.0.1:9200/twitter/user/kimchy?pretty=true'
+-curl -XGET 'http://127.0.0.1:9200/twitter/tweet/1?pretty=true'
+-curl -XGET 'http://127.0.0.1:9200/twitter/tweet/2?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/user/kimchy?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/tweet/1?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/tweet/2?pretty=true'
+@@ -84 +84 @@ Let's find all the tweets that @kimchy@ posted:
+-curl -XGET 'http://127.0.0.1:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
++curl -XGET 'http://localhost:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
+@@ -90 +90 @@ We can also use the JSON query language Elasticsearch provides instead of a quer
+-curl -XGET 'http://127.0.0.1:9200/twitter/tweet/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+@@ -101 +101 @@ Just for kicks, let's get all the documents stored (we should see the user as we
+-curl -XGET 'http://127.0.0.1:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+@@ -112 +112 @@ We can also do range search (the @postDate@ was automatically identified as date
+-curl -XGET 'http://127.0.0.1:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+@@ -133 +133 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://127.0.0.1:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+@@ -135 +135 @@ curl -XPUT 'http://127.0.0.1:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+-curl -XPUT 'http://127.0.0.1:9200/kimchy/tweet/1' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+@@ -142 +142 @@ curl -XPUT 'http://127.0.0.1:9200/kimchy/tweet/1' -d '
+-curl -XPUT 'http://127.0.0.1:9200/kimchy/tweet/2' -d '
++curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
+@@ -155 +155 @@ Complete control on the index level is allowed. As an example, in the above case
+-curl -XPUT http://127.0.0.1:9200/another_user/ -d '
++curl -XPUT http://localhost:9200/another_user/ -d '
+@@ -168 +168 @@ index (twitter user), for example:
+-curl -XGET 'http://127.0.0.1:9200/kimchy,another_user/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
+@@ -179 +179 @@ Or on all the indices:
+-curl -XGET 'http://127.0.0.1:9200/_search?pretty=true' -d '
++curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
+diff --git a/README.textile b/README.textile
+index 63f1841822c..f48e40c2eaf 100644
+--- a/README.textile
++++ b/README.textile
+@@ -45 +45 @@ h3. Installation
+-* Run @curl -X GET http://localhost:9200/@.
++* Run @curl -X GET http://127.0.0.1:9200/@.
+@@ -53 +53 @@ Let's try and index some twitter like information. First, let's create a twitter
+-curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://127.0.0.1:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
+@@ -55 +55 @@ curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Bano
+-curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
++curl -XPUT 'http://127.0.0.1:9200/twitter/tweet/1' -d '
+@@ -62 +62 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+-curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
++curl -XPUT 'http://127.0.0.1:9200/twitter/tweet/2' -d '
+@@ -73,3 +73,3 @@ Now, let's see if the information was added by GETting it:
+-curl -XGET 'http://localhost:9200/twitter/user/kimchy?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/tweet/1?pretty=true'
+-curl -XGET 'http://localhost:9200/twitter/tweet/2?pretty=true'
++curl -XGET 'http://127.0.0.1:9200/twitter/user/kimchy?pretty=true'
++curl -XGET 'http://127.0.0.1:9200/twitter/tweet/1?pretty=true'
++curl -XGET 'http://127.0.0.1:9200/twitter/tweet/2?pretty=true'
+@@ -84 +84 @@ Let's find all the tweets that @kimchy@ posted:
+-curl -XGET 'http://localhost:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
++curl -XGET 'http://127.0.0.1:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
+@@ -90 +90 @@ We can also use the JSON query language Elasticsearch provides instead of a quer
+-curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
++curl -XGET 'http://127.0.0.1:9200/twitter/tweet/_search?pretty=true' -d '
+@@ -101 +101 @@ Just for kicks, let's get all the documents stored (we should see the user as we
+-curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://127.0.0.1:9200/twitter/_search?pretty=true' -d '
+@@ -112 +112 @@ We can also do range search (the @postDate@ was automatically identified as date
+-curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++curl -XGET 'http://127.0.0.1:9200/twitter/_search?pretty=true' -d '
+@@ -133 +133 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
++curl -XPUT 'http://127.0.0.1:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+@@ -135 +135 @@ curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
++curl -XPUT 'http://127.0.0.1:9200/kimchy/tweet/1' -d '
+@@ -142 +142 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+-curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
++curl -XPUT 'http://127.0.0.1:9200/kimchy/tweet/2' -d '
+@@ -155 +155 @@ Complete control on the index level is allowed. As an example, in the above case
+-curl -XPUT http://localhost:9200/another_user/ -d '
++curl -XPUT http://127.0.0.1:9200/another_user/ -d '
+@@ -168 +168 @@ index (twitter user), for example:
+-curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
++curl -XGET 'http://127.0.0.1:9200/kimchy,another_user/_search?pretty=true' -d '
+@@ -179 +179 @@ Or on all the indices:
+-curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
++curl -XGET 'http://127.0.0.1:9200/_search?pretty=true' -d '
+diff --git a/README.textile b/README.textile
+index 720f357406b..63f1841822c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -208 +208 @@ In order to create a distribution, simply run the @mvn clean package
+-The distribution will be created under @target/releases@.
++The distribution for each project will be created under the @target/releases@ directory in that project.
+diff --git a/README.textile b/README.textile
+index e6057f022da..720f357406b 100644
+--- a/README.textile
++++ b/README.textile
+@@ -36,0 +37,4 @@ First of all, DON'T PANIC. It will take 5 minutes to get the gist of what Elasti
++h3. Requirements
++
++You need to have a recent version of Java installed. See the "Setup":http://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html#jvm-version page for more information.
++
+diff --git a/README.textile b/README.textile
+index 603cc43efbe..e6057f022da 100644
+--- a/README.textile
++++ b/README.textile
+@@ -39 +39 @@ h3. Installation
+-* "Download":https://www.elastic.co/products/elasticsearch/download and unzip the Elasticsearch official distribution.
++* "Download":https://www.elastic.co/downloads/elasticsearch and unzip the Elasticsearch official distribution.
+diff --git a/README.textile b/README.textile
+index d10c15c1776..603cc43efbe 100644
+--- a/README.textile
++++ b/README.textile
+@@ -5 +5 @@ h2. A Distributed RESTful Search Engine
+-h3. "http://www.elasticsearch.org":http://www.elasticsearch.org
++h3. "https://www.elastic.co/products/elasticsearch":https://www.elastic.co/products/elasticsearch
+@@ -39 +39 @@ h3. Installation
+-* "Download":http://www.elasticsearch.org/download and unzip the Elasticsearch official distribution.
++* "Download":https://www.elastic.co/products/elasticsearch/download and unzip the Elasticsearch official distribution.
+@@ -195 +195 @@ h3. Where to go from here?
+-We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elasticsearch.org":http://www.elasticsearch.org website.
++We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elastic.co":http://www.elastic.co/products/elasticsearch website.
+@@ -211 +211 @@ h3. Upgrading to Elasticsearch 1.x?
+-In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "setup reference":http://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
++In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "setup reference":https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
+@@ -218 +218 @@ This software is licensed under the Apache License, version 2 ("ALv2"), quoted b
+-Copyright 2009-2015 Elasticsearch <http://www.elasticsearch.org>
++Copyright 2009-2015 Elasticsearch <https://www.elastic.co>
+diff --git a/README.textile b/README.textile
+index d84f7700e09..d10c15c1776 100644
+--- a/README.textile
++++ b/README.textile
+@@ -211 +211 @@ h3. Upgrading to Elasticsearch 1.x?
+-In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "Upgrading" section of the "setup reference":http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup.html.
++In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "setup reference":http://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html for more details on the upgrade process.
+diff --git a/README.textile b/README.textile
+index 0849c8a4f8d..d84f7700e09 100644
+--- a/README.textile
++++ b/README.textile
+@@ -218 +218 @@ This software is licensed under the Apache License, version 2 ("ALv2"), quoted b
+-Copyright 2009-2014 Elasticsearch <http://www.elasticsearch.org>
++Copyright 2009-2015 Elasticsearch <http://www.elasticsearch.org>
+diff --git a/README.textile b/README.textile
+index 0e83eaae762..0849c8a4f8d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -122 +122 @@ h3. Multi Tenant - Indices and Types
+-Maan, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amount of data.
++Maan, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amounts of data.
+@@ -124 +124 @@ Maan, that twitter index might get big (in this case, index size == valuation).
+-Elasticsearch support multiple indices, as well as multiple types per index. In the previous example we used an index called @twitter@, with two types, @user@ and @tweet@.
++Elasticsearch supports multiple indices, as well as multiple types per index. In the previous example we used an index called @twitter@, with two types, @user@ and @tweet@.
+@@ -126 +126 @@ Elasticsearch support multiple indices, as well as multiple types per index. In
+-Another way to define our simple twitter system is to have a different index per user (though note that an index has an overhead). Here is the indexing curl's in this case:
++Another way to define our simple twitter system is to have a different index per user (note, though that each index has an overhead). Here is the indexing curl's in this case:
+@@ -146 +146 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
+-The above index information into the @kimchy@ index, with two types, @info@ and @tweet@. Each user will get his own special index.
++The above will index information into the @kimchy@ index, with two types, @info@ and @tweet@. Each user will get his own special index.
+@@ -183 +183 @@ curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
+-{One liner teaser}: And the cool part about that? You can easily search on multiple twitter users (indices), with different boost levels per user (index), making social search so much simpler (results from my friends rank higher than results from my friends friends).
++{One liner teaser}: And the cool part about that? You can easily search on multiple twitter users (indices), with different boost levels per user (index), making social search so much simpler (results from my friends rank higher than results from friends of my friends).
+@@ -191 +191 @@ Elasticsearch is a highly available and distributed search engine. Each index is
+-In order to play with Elasticsearch distributed nature, simply bring more nodes up and shut down nodes. The system will continue to serve requests (make sure you use the correct http port) with the latest data indexed.
++In order to play with the distributed nature of Elasticsearch, simply bring more nodes up and shut down nodes. The system will continue to serve requests (make sure you use the correct http port) with the latest data indexed.
+diff --git a/README.textile b/README.textile
+index 82f385a28eb..0e83eaae762 100644
+--- a/README.textile
++++ b/README.textile
+@@ -31 +31 @@ Elasticsearch is a distributed RESTful search engine built for the cloud. Featur
+-* Open Source under Apache 2 License.
++* Open Source under the Apache License, version 2 ("ALv2")
+@@ -52,4 +52,4 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+-{ 
+-    "user": "kimchy", 
+-    "postDate": "2009-11-15T13:12:00", 
+-    "message": "Trying out Elasticsearch, so far so good?" 
++{
++    "user": "kimchy",
++    "postDate": "2009-11-15T13:12:00",
++    "message": "Trying out Elasticsearch, so far so good?"
+@@ -59,4 +59,4 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
+-{ 
+-    "user": "kimchy", 
+-    "postDate": "2009-11-15T14:12:12", 
+-    "message": "Another tweet, will it be indexed?" 
++{
++    "user": "kimchy",
++    "postDate": "2009-11-15T14:12:12",
++    "message": "Another tweet, will it be indexed?"
+@@ -76 +76 @@ h3. Searching
+-Mmm search..., shouldn't it be elastic? 
++Mmm search..., shouldn't it be elastic?
+@@ -87,2 +87,2 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+-{ 
+-    "query" : { 
++{
++    "query" : {
+@@ -90 +90 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+-    } 
++    }
+@@ -98,4 +98,4 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+-{ 
+-    "query" : { 
+-        "matchAll" : {} 
+-    } 
++{
++    "query" : {
++        "matchAll" : {}
++    }
+@@ -109,6 +109,6 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+-{ 
+-    "query" : { 
+-        "range" : { 
+-            "postDate" : { "from" : "2009-11-15T13:00:00", "to" : "2009-11-15T14:00:00" } 
+-        } 
+-    } 
++{
++    "query" : {
++        "range" : {
++            "postDate" : { "from" : "2009-11-15T13:00:00", "to" : "2009-11-15T14:00:00" }
++        }
++    }
+@@ -132,4 +132,4 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+-{ 
+-    "user": "kimchy", 
+-    "postDate": "2009-11-15T13:12:00", 
+-    "message": "Trying out Elasticsearch, so far so good?" 
++{
++    "user": "kimchy",
++    "postDate": "2009-11-15T13:12:00",
++    "message": "Trying out Elasticsearch, so far so good?"
+@@ -139,4 +139,4 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
+-{ 
+-    "user": "kimchy", 
+-    "postDate": "2009-11-15T14:12:12", 
+-    "message": "Another tweet, will it be indexed?" 
++{
++    "user": "kimchy",
++    "postDate": "2009-11-15T14:12:12",
++    "message": "Another tweet, will it be indexed?"
+@@ -152,5 +152,5 @@ curl -XPUT http://localhost:9200/another_user/ -d '
+-{ 
+-    "index" : { 
+-        "numberOfShards" : 1, 
+-        "numberOfReplicas" : 1 
+-    } 
++{
++    "index" : {
++        "numberOfShards" : 1,
++        "numberOfReplicas" : 1
++    }
+@@ -165,4 +165,4 @@ curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
+-{ 
+-    "query" : { 
+-        "matchAll" : {} 
+-    } 
++{
++    "query" : {
++        "matchAll" : {}
++    }
+@@ -176,4 +176,4 @@ curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
+-{ 
+-    "query" : { 
+-        "matchAll" : {} 
+-    } 
++{
++    "query" : {
++        "matchAll" : {}
++    }
+@@ -216 +216 @@ h1. License
+-This software is licensed under the Apache 2 license, quoted below.
++This software is licensed under the Apache License, version 2 ("ALv2"), quoted below.
+diff --git a/README.textile b/README.textile
+index 0fae46662a7..82f385a28eb 100644
+--- a/README.textile
++++ b/README.textile
+@@ -118 +118 @@ curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
+-There are many more options to perform search, after all, its a search product no? All the familiar Lucene queries are available through the JSON query language, or through the query parser.
++There are many more options to perform search, after all, it's a search product no? All the familiar Lucene queries are available through the JSON query language, or through the query parser.
+diff --git a/README.textile b/README.textile
+index a657b59a392..0fae46662a7 100644
+--- a/README.textile
++++ b/README.textile
+@@ -40 +40 @@ h3. Installation
+-* Run @bin/elasticsearch@ on unix, or @bin/elasticsearch.bat@ on windows.
++* Run @bin/elasticsearch@ on unix, or @bin\elasticsearch.bat@ on windows.
+diff --git a/README.textile b/README.textile
+index 8330e3b7b4e..a657b59a392 100644
+--- a/README.textile
++++ b/README.textile
+@@ -211 +211 @@ h3. Upgrading to Elasticsearch 1.x?
+-In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 0.90.x), it is recommended to perform a full cluster restart. Please see the "Upgrading" section of the "setup reference":http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup.html.
++In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 1.0.0), it is recommended to perform a full cluster restart. Please see the "Upgrading" section of the "setup reference":http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup.html.
+diff --git a/README.textile b/README.textile
+index fcf53bdba8c..8330e3b7b4e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -89 +89 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+-        "text" : { "user": "kimchy" }
++        "match" : { "user": "kimchy" }
+diff --git a/README.textile b/README.textile
+index 9d8fba6b45d..fcf53bdba8c 100644
+--- a/README.textile
++++ b/README.textile
+@@ -208,0 +209,4 @@ running the Elasticsearch test suite.
++h3. Upgrading to Elasticsearch 1.x?
++
++In order to ensure a smooth upgrade process from earlier versions of Elasticsearch (< 0.90.x), it is recommended to perform a full cluster restart. Please see the "Upgrading" section of the "setup reference":http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup.html.
++
+diff --git a/README.textile b/README.textile
+index 822c5bbffc1..9d8fba6b45d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -40 +40 @@ h3. Installation
+-* Run @bin/elasticsearch -f@ on unix, or @bin/elasticsearch.bat@ on windows.
++* Run @bin/elasticsearch@ on unix, or @bin/elasticsearch.bat@ on windows.
+@@ -46 +46 @@ h3. Indexing
+-Lets try and index some twitter like information. First, lets create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
++Let's try and index some twitter like information. First, let's create a twitter user, and add some tweets (the @twitter@ index will be created automatically):
+@@ -66 +66 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
+-Now, lets see if the information was added by GETting it:
++Now, let's see if the information was added by GETting it:
+@@ -77 +77 @@ Mmm search..., shouldn't it be elastic?
+-Lets find all the tweets that @kimchy@ posted:
++Let's find all the tweets that @kimchy@ posted:
+@@ -94 +94 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+-Just for kicks, lets get all the documents stored (we should see the user as well):
++Just for kicks, let's get all the documents stored (we should see the user as well):
+@@ -122 +122 @@ h3. Multi Tenant - Indices and Types
+-Maan, that twitter index might get big (in this case, index size == valuation). Lets see if we can structure our twitter system a bit differently in order to support such large amount of data.
++Maan, that twitter index might get big (in this case, index size == valuation). Let's see if we can structure our twitter system a bit differently in order to support such large amount of data.
+@@ -187 +187 @@ h3. Distributed, Highly Available
+-Lets face it, things will fail....
++Let's face it, things will fail....
+diff --git a/README.textile b/README.textile
+index e7381b0ce4b..822c5bbffc1 100644
+--- a/README.textile
++++ b/README.textile
+@@ -214 +214 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2013 Shay Banon and Elasticsearch <http://www.elasticsearch.org>
++Copyright 2009-2014 Elasticsearch <http://www.elasticsearch.org>
+diff --git a/README.textile b/README.textile
+index a01d9ece646..e7381b0ce4b 100644
+--- a/README.textile
++++ b/README.textile
+@@ -1 +1 @@
+-h1. ElasticSearch
++h1. Elasticsearch
+@@ -7 +7 @@ h3. "http://www.elasticsearch.org":http://www.elasticsearch.org
+-ElasticSearch is a distributed RESTful search engine built for the cloud. Features include:
++Elasticsearch is a distributed RESTful search engine built for the cloud. Features include:
+@@ -35 +35 @@ h2. Getting Started
+-First of all, DON'T PANIC. It will take 5 minutes to get the gist of what ElasticSearch is all about.
++First of all, DON'T PANIC. It will take 5 minutes to get the gist of what Elasticsearch is all about.
+@@ -39 +39 @@ h3. Installation
+-* "Download":http://www.elasticsearch.org/download and unzip the ElasticSearch official distribution.
++* "Download":http://www.elasticsearch.org/download and unzip the Elasticsearch official distribution.
+@@ -55 +55 @@ curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
+-    "message": "Trying out Elastic Search, so far so good?" 
++    "message": "Trying out Elasticsearch, so far so good?" 
+@@ -83 +83 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?q=user:kimchy&pretty=tru
+-We can also use the JSON query language ElasticSearch provides instead of a query string:
++We can also use the JSON query language Elasticsearch provides instead of a query string:
+@@ -124 +124 @@ Maan, that twitter index might get big (in this case, index size == valuation).
+-ElasticSearch support multiple indices, as well as multiple types per index. In the previous example we used an index called @twitter@, with two types, @user@ and @tweet@.
++Elasticsearch support multiple indices, as well as multiple types per index. In the previous example we used an index called @twitter@, with two types, @user@ and @tweet@.
+@@ -135 +135 @@ curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
+-    "message": "Trying out Elastic Search, so far so good?" 
++    "message": "Trying out Elasticsearch, so far so good?" 
+@@ -189 +189 @@ Lets face it, things will fail....
+-ElasticSearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replica. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
++Elasticsearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replica. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
+@@ -191 +191 @@ ElasticSearch is a highly available and distributed search engine. Each index is
+-In order to play with Elastic Search distributed nature, simply bring more nodes up and shut down nodes. The system will continue to serve requests (make sure you use the correct http port) with the latest data indexed.
++In order to play with Elasticsearch distributed nature, simply bring more nodes up and shut down nodes. The system will continue to serve requests (make sure you use the correct http port) with the latest data indexed.
+@@ -195 +195 @@ h3. Where to go from here?
+-We have just covered a very small portion of what ElasticSearch is all about. For more information, please refer to the "elasticsearch.org":http://www.elasticsearch.org website.
++We have just covered a very small portion of what Elasticsearch is all about. For more information, please refer to the "elasticsearch.org":http://www.elasticsearch.org website.
+@@ -199 +199 @@ h3. Building from Source
+-ElasticSearch uses "Maven":http://maven.apache.org for its build system.
++Elasticsearch uses "Maven":http://maven.apache.org for its build system.
+@@ -214 +214 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2013 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
++Copyright 2009-2013 Shay Banon and Elasticsearch <http://www.elasticsearch.org>
+diff --git a/README.textile b/README.textile
+index 68f0f0bca73..a01d9ece646 100644
+--- a/README.textile
++++ b/README.textile
+@@ -201 +201,2 @@ ElasticSearch uses "Maven":http://maven.apache.org for its build system.
+-In order to create a distribution, simply run the @mvn clean package -DskipTests@ command in the cloned directory.
++In order to create a distribution, simply run the @mvn clean package
++-DskipTests@ command in the cloned directory.
+@@ -204,0 +206,3 @@ The distribution will be created under @target/releases@.
++See the "TESTING":TESTING.asciidoc file for more information about
++running the Elasticsearch test suite.
++
+diff --git a/README.textile b/README.textile
+index 2952e00d1a6..68f0f0bca73 100644
+--- a/README.textile
++++ b/README.textile
+@@ -195 +195 @@ h3. Where to go from here?
+-We have just covered a very small portion of what ElasticSearch is all about. For more information, please refer to: .
++We have just covered a very small portion of what ElasticSearch is all about. For more information, please refer to the "elasticsearch.org":http://www.elasticsearch.org website.
+diff --git a/README.textile b/README.textile
+index 95204a8e412..2952e00d1a6 100644
+--- a/README.textile
++++ b/README.textile
+@@ -201 +201 @@ ElasticSearch uses "Maven":http://maven.apache.org for its build system.
+-In order to create a distribution, simply run the @mvn package -DskipTests@ command in the cloned directory.
++In order to create a distribution, simply run the @mvn clean package -DskipTests@ command in the cloned directory.
+diff --git a/README.textile b/README.textile
+index 219de856b35..95204a8e412 100644
+--- a/README.textile
++++ b/README.textile
+@@ -210 +210 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2012 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
++Copyright 2009-2013 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
+@@ -223 +223 @@ the License.
+-</pre>
+\ No newline at end of file
++</pre>
+diff --git a/README.textile b/README.textile
+index 808320fc70e..219de856b35 100644
+--- a/README.textile
++++ b/README.textile
+@@ -210 +210 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2011 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
++Copyright 2009-2012 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
+diff --git a/README.textile b/README.textile
+index 54d030c1201..808320fc70e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -39 +39 @@ h3. Installation
+-* Download and unzip the ElasticSearch installation.
++* "Download":http://www.elasticsearch.org/download and unzip the ElasticSearch official distribution.
+diff --git a/README.textile b/README.textile
+index 18d94055300..54d030c1201 100644
+--- a/README.textile
++++ b/README.textile
+@@ -201 +201 @@ ElasticSearch uses "Maven":http://maven.apache.org for its build system.
+-In order to create a distribution, simply run the @mvn assembly:assembly -DskipTests@ command in the cloned directory.
++In order to create a distribution, simply run the @mvn package -DskipTests@ command in the cloned directory.
+diff --git a/README.textile b/README.textile
+index d14df368b8f..18d94055300 100644
+--- a/README.textile
++++ b/README.textile
+@@ -199 +199 @@ h3. Building from Source
+-ElasticSearch uses "Gradle":http://www.gradle.org for its build system.
++ElasticSearch uses "Maven":http://maven.apache.org for its build system.
+@@ -201 +201 @@ ElasticSearch uses "Gradle":http://www.gradle.org for its build system.
+-In order to create a distribution, simply run the @./gradlew@ command in the cloned directory.
++In order to create a distribution, simply run the @mvn assembly:assembly -DskipTests@ command in the cloned directory.
+@@ -203 +203 @@ In order to create a distribution, simply run the @./gradlew@ command in the clo
+-The distribution will be created under @build/distributions@.
++The distribution will be created under @target/releases@.
+@@ -210 +210 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2011 Shay Banon and ElasticSearch <http://www.elasticsearch.com>
++Copyright 2009-2011 Shay Banon and ElasticSearch <http://www.elasticsearch.org>
+diff --git a/README.textile b/README.textile
+index da321d3a05e..d14df368b8f 100644
+--- a/README.textile
++++ b/README.textile
+@@ -5 +5 @@ h2. A Distributed RESTful Search Engine
+-h3. "http://www.elasticsearch.com":http://www.elasticsearch.com
++h3. "http://www.elasticsearch.org":http://www.elasticsearch.org
+diff --git a/README.textile b/README.textile
+index 073936e8c2b..da321d3a05e 100644
+--- a/README.textile
++++ b/README.textile
+@@ -89 +89 @@ curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
+-        "term" : { "user": "kimchy" } 
++        "text" : { "user": "kimchy" }
+diff --git a/README.textile b/README.textile
+index f4c12ea9019..073936e8c2b 100644
+--- a/README.textile
++++ b/README.textile
+@@ -35 +35 @@ h2. Getting Started
+-Fist of all, DON'T PANIC. It will take 5 minutes to get the gist of what ElasticSearch is all about.
++First of all, DON'T PANIC. It will take 5 minutes to get the gist of what ElasticSearch is all about.
+diff --git a/README.textile b/README.textile
+index a76da1efce3..f4c12ea9019 100644
+--- a/README.textile
++++ b/README.textile
+@@ -199 +199,5 @@ h3. Building from Source
+-ElasticSearch uses Gradle:http://www.gradle.org for its build system. In order to create a distribution, simply run @gradlew@, the distribution will be created under @build/distributions@.
++ElasticSearch uses "Gradle":http://www.gradle.org for its build system.
++
++In order to create a distribution, simply run the @./gradlew@ command in the cloned directory.
++
++The distribution will be created under @build/distributions@.
+diff --git a/README.textile b/README.textile
+index 31332c451dc..a76da1efce3 100644
+--- a/README.textile
++++ b/README.textile
+@@ -206 +206 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2010 Shay Banon and ElasticSearch <http://www.elasticsearch.com>
++Copyright 2009-2011 Shay Banon and ElasticSearch <http://www.elasticsearch.com>
+diff --git a/README.textile b/README.textile
+index b1055dc7ecb..31332c451dc 100644
+--- a/README.textile
++++ b/README.textile
+@@ -126 +126 @@ ElasticSearch support multiple indices, as well as multiple types per index. In
+-Another way to define our simple twitter system is to have a different index per user. Here is the indexing curl's in this case:
++Another way to define our simple twitter system is to have a different index per user (though note that an index has an overhead). Here is the indexing curl's in this case:
+@@ -185 +185 @@ curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
+-h3. Distributed, Highly Available, and Write Behind
++h3. Distributed, Highly Available
+@@ -193,12 +192,0 @@ In order to play with Elastic Search distributed nature, simply bring more nodes
+-If the whole cluster is brought down, all the indexed data will be lost (each shard local storage is temporal). For long term persistency, write behind should be enabled. This is as simple as configuring the @elasticsearch.yml@ configuration file (which effectively enables write behind to file system for all indices created unless configured otherwise when creating the index):
+-
+-<pre>
+-gateway:
+-  type: fs
+-</pre>
+-
+-Alternatively, elastic search can be started with the following command line: 
+-@elasticsearch -f -Des.gateway.type=fs@.
+-
+-The above configuration will persist the indices create on ElasticSearch to a file system (path can be configured) in an asynchronous, reliable fashion. Other gateways implementations can be easily implemented and more will be provided out of the box in later versions (did someone say AmazonS3/Hadoop/Cassandra?).
+-
+diff --git a/README.textile b/README.textile
+index c7e479968e7..b1055dc7ecb 100644
+--- a/README.textile
++++ b/README.textile
+@@ -1 +1 @@
+-h1. ElasticSearch 0.6
++h1. ElasticSearch
+diff --git a/README.textile b/README.textile
+index b1055dc7ecb..c7e479968e7 100644
+--- a/README.textile
++++ b/README.textile
+@@ -1 +1 @@
+-h1. ElasticSearch
++h1. ElasticSearch 0.6
+diff --git a/README.textile b/README.textile
+index 68f7b01aad3..b1055dc7ecb 100644
+--- a/README.textile
++++ b/README.textile
+@@ -49 +49 @@ Lets try and index some twitter like information. First, lets create a twitter u
+-curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ name: "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ "name" : "Shay Banon" }'
+@@ -129 +129 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ name: "Shay Banon" }'
++curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ "name" : "Shay Banon" }'
+diff --git a/README.textile b/README.textile
+index 16ab9bc3276..68f7b01aad3 100644
+--- a/README.textile
++++ b/README.textile
+@@ -49,7 +49,15 @@ Lets try and index some twitter like information. First, lets create a twitter u
+-curl -XPUT http://localhost:9200/twitter/user/kimchy -d '{ name: "Shay Banon" }'
+-
+-curl -XPUT http://localhost:9200/twitter/tweet/1 -d \
+-'{ user: "kimchy", postDate: "2009-11-15T13:12:00", message: "Trying out Elastic Search, so far so good?" }'
+-
+-curl -XPUT http://localhost:9200/twitter/tweet/2 -d \
+-'{ user: "kimchy", postDate: "2009-11-15T14:12:12", message: "Another tweet, will it be indexed?" }'
++curl -XPUT 'http://localhost:9200/twitter/user/kimchy' -d '{ name: "Shay Banon" }'
++
++curl -XPUT 'http://localhost:9200/twitter/tweet/1' -d '
++{ 
++    "user": "kimchy", 
++    "postDate": "2009-11-15T13:12:00", 
++    "message": "Trying out Elastic Search, so far so good?" 
++}'
++
++curl -XPUT 'http://localhost:9200/twitter/tweet/2' -d '
++{ 
++    "user": "kimchy", 
++    "postDate": "2009-11-15T14:12:12", 
++    "message": "Another tweet, will it be indexed?" 
++}'
+@@ -61,3 +69,3 @@ Now, lets see if the information was added by GETting it:
+-curl -X GET http://localhost:9200/twitter/user/kimchy?pretty=true
+-curl -X GET http://localhost:9200/twitter/tweet/1?pretty=true
+-curl -X GET http://localhost:9200/twitter/tweet/2?pretty=true
++curl -XGET 'http://localhost:9200/twitter/user/kimchy?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/tweet/1?pretty=true'
++curl -XGET 'http://localhost:9200/twitter/tweet/2?pretty=true'
+@@ -72 +80 @@ Lets find all the tweets that @kimchy@ posted:
+-curl -XGET http://localhost:9200/twitter/tweet/_search?q=user:kimchy\&pretty=true
++curl -XGET 'http://localhost:9200/twitter/tweet/_search?q=user:kimchy&pretty=true'
+@@ -78,2 +86,6 @@ We can also use the JSON query language ElasticSearch provides instead of a quer
+-curl -XPOST http://localhost:9200/twitter/tweet/_search?pretty=true -d \
+-'{ query : { term : { user: "kimchy" } } }'
++curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
++{ 
++    "query" : { 
++        "term" : { "user": "kimchy" } 
++    } 
++}'
+@@ -85,2 +97,6 @@ Just for kicks, lets get all the documents stored (we should see the user as wel
+-curl -XGET http://localhost:9200/twitter/_search?pretty=true -d \
+-'{ query : { matchAll : {} } }'
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++{ 
++    "query" : { 
++        "matchAll" : {} 
++    } 
++}'
+@@ -92,2 +108,8 @@ We can also do range search (the @postDate@ was automatically identified as date
+-curl -XGET http://localhost:9200/twitter/_search?pretty=true -d \
+-'{ query : { range : { postDate : { from : "2009-11-15T13:00:00", to : "2009-11-15T14:00:00" } } } }'
++curl -XGET 'http://localhost:9200/twitter/_search?pretty=true' -d '
++{ 
++    "query" : { 
++        "range" : { 
++            "postDate" : { "from" : "2009-11-15T13:00:00", "to" : "2009-11-15T14:00:00" } 
++        } 
++    } 
++}'
+@@ -107,7 +129,15 @@ Another way to define our simple twitter system is to have a different index per
+-curl -XPUT http://localhost:9200/kimchy/info/1 -d '{ name: "Shay Banon" }'
+-
+-curl -XPUT http://localhost:9200/kimchy/tweet/1 -d \
+-'{ user: "kimchy", postDate: "2009-11-15T13:12:00", message: "Trying out Elastic Search, so far so good?" }'
+-
+-curl -XPUT http://localhost:9200/kimchy/tweet/2 -d \
+-'{ user: "kimchy", postDate: "2009-11-15T14:12:12", message: "Another tweet, will it be indexed?" }'
++curl -XPUT 'http://localhost:9200/kimchy/info/1' -d '{ name: "Shay Banon" }'
++
++curl -XPUT 'http://localhost:9200/kimchy/tweet/1' -d '
++{ 
++    "user": "kimchy", 
++    "postDate": "2009-11-15T13:12:00", 
++    "message": "Trying out Elastic Search, so far so good?" 
++}'
++
++curl -XPUT 'http://localhost:9200/kimchy/tweet/2' -d '
++{ 
++    "user": "kimchy", 
++    "postDate": "2009-11-15T14:12:12", 
++    "message": "Another tweet, will it be indexed?" 
++}'
+@@ -121,2 +151,7 @@ Complete control on the index level is allowed. As an example, in the above case
+-curl -XPUT http://localhost:9200/another_user/ -d \
+-'{ index : { numberOfShards : 1, numberOfReplicas : 1 } }'
++curl -XPUT http://localhost:9200/another_user/ -d '
++{ 
++    "index" : { 
++        "numberOfShards" : 1, 
++        "numberOfReplicas" : 1 
++    } 
++}'
+@@ -129,2 +164,6 @@ index (twitter user), for example:
+-curl -XGET http://localhost:9200/kimchy,another_user/_search?pretty=true -d \
+-'{ query : { matchAll : {} } }'
++curl -XGET 'http://localhost:9200/kimchy,another_user/_search?pretty=true' -d '
++{ 
++    "query" : { 
++        "matchAll" : {} 
++    } 
++}'
+@@ -136,2 +175,6 @@ Or on all the indices:
+-curl -XGET http://localhost:9200/_search?pretty=true -d \
+-'{ query : { matchAll : {} } }'
++curl -XGET 'http://localhost:9200/_search?pretty=true' -d '
++{ 
++    "query" : { 
++        "matchAll" : {} 
++    } 
++}'
+@@ -168 +211 @@ h3. Building from Source
+-ElasticSearch uses Gradle:http://www.gradle.org for its build system. In order to create a distribution, simply run @gradlew devRelease@, the distribution will be created under @build/distributions@.
++ElasticSearch uses Gradle:http://www.gradle.org for its build system. In order to create a distribution, simply run @gradlew@, the distribution will be created under @build/distributions@.
+@@ -175 +218 @@ This software is licensed under the Apache 2 license, quoted below.
+-Copyright 2009-2010 Elastic Search <http://www.elasticsearch.com>
++Copyright 2009-2010 Shay Banon and ElasticSearch <http://www.elasticsearch.com>
+diff --git a/README.textile b/README.textile
+index 9036416581a..16ab9bc3276 100644
+--- a/README.textile
++++ b/README.textile
+@@ -11,2 +11,2 @@ ElasticSearch is a distributed RESTful search engine built for the cloud. Featur
+-** Each shard can have one or more backups.
+-** Read / Search operations performed on either primary or backup shards.
++** Each shard can have one or more replicas.
++** Read / Search operations performed on either one of the replica shard.
+@@ -118 +118 @@ The above index information into the @kimchy@ index, with two types, @info@ and
+-Complete control on the index level is allowed. As an example, in the above case, we would want to change from the default 5 shards with 1 backup per index, to only 1 shard with 1 backup per index (== per twitter user). Here is how this can be done (the configuration can be in yaml as well):
++Complete control on the index level is allowed. As an example, in the above case, we would want to change from the default 5 shards with 1 replica per index, to only 1 shard with 1 replica per index (== per twitter user). Here is how this can be done (the configuration can be in yaml as well):
+@@ -146 +146 @@ Lets face it, things will fail....
+-ElasticSearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more backups. By default, an index is created with 5 shards and 1 backup per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
++ElasticSearch is a highly available and distributed search engine. Each index is broken down into shards, and each shard can have one or more replica. By default, an index is created with 5 shards and 1 replica per shard (5/1). There are many topologies that can be used, including 1/10 (improve search performance), or 20/1 (improve indexing performance, with search executed in a map reduce fashion across shards).
+@@ -158 +158 @@ Alternatively, elastic search can be started with the following command line:
+-@elasticsearch -f -Des.index.gateway.type=fs@.
++@elasticsearch -f -Des.gateway.type=fs@.
