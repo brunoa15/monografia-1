@@ -1,0 +1,151 @@
+diff --git a/README.rst b/README.rst
+index 2a33fa2e64..bb825cdc0e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -0,0 +1,4 @@
++======
++Django
++======
++
+diff --git a/README.rst b/README.rst
+index 795e1846fe..2a33fa2e64 100644
+--- a/README.rst
++++ b/README.rst
+@@ -28,3 +28,3 @@ To get more help:
+-* Join the ``#django`` channel on irc.freenode.net. Lots of helpful people hang out
+-  there. Read the archives at https://botbot.me/freenode/django/. See
+-  https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial if you're new to IRC.
++* Join the ``#django`` channel on irc.freenode.net. Lots of helpful people hang
++  out there. See https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial if you're
++  new to IRC.
+diff --git a/README.rst b/README.rst
+index 20913f4e13..795e1846fe 100644
+--- a/README.rst
++++ b/README.rst
+@@ -29 +29,2 @@ To get more help:
+-  there. Read the archives at https://botbot.me/freenode/django/.
++  there. Read the archives at https://botbot.me/freenode/django/. See
++  https://en.wikipedia.org/wiki/Wikipedia:IRC/Tutorial if you're new to IRC.
+diff --git a/README.rst b/README.rst
+index 3afba227fb..20913f4e13 100644
+--- a/README.rst
++++ b/README.rst
+@@ -29 +29 @@ To get more help:
+-  there. Read the archives at http://django-irc-logs.com/.
++  there. Read the archives at https://botbot.me/freenode/django/.
+diff --git a/README.rst b/README.rst
+index e58b904d3b..3afba227fb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -4 +4 @@ and clean, pragmatic design. Thanks for checking it out.
+-All documentation is in the "docs" directory and online at
++All documentation is in the "``docs``" directory and online at
+@@ -8 +8 @@ here's how we recommend you read the docs:
+-* First, read docs/intro/install.txt for instructions on installing Django.
++* First, read ``docs/intro/install.txt`` for instructions on installing Django.
+@@ -10,2 +10,2 @@ here's how we recommend you read the docs:
+-* Next, work through the tutorials in order (docs/intro/tutorial01.txt,
+-  docs/intro/tutorial02.txt, etc.).
++* Next, work through the tutorials in order (``docs/intro/tutorial01.txt``,
++  ``docs/intro/tutorial02.txt``, etc.).
+@@ -14 +14 @@ here's how we recommend you read the docs:
+-  docs/howto/deployment/index.txt for instructions.
++  ``docs/howto/deployment/index.txt`` for instructions.
+@@ -16,3 +16,3 @@ here's how we recommend you read the docs:
+-* You'll probably want to read through the topical guides (in docs/topics)
+-  next; from there you can jump to the HOWTOs (in docs/howto) for specific
+-  problems, and check out the reference (docs/ref) for gory details.
++* You'll probably want to read through the topical guides (in ``docs/topics``)
++  next; from there you can jump to the HOWTOs (in ``docs/howto``) for specific
++  problems, and check out the reference (``docs/ref``) for gory details.
+@@ -20 +20 @@ here's how we recommend you read the docs:
+-* See docs/README for instructions on building an HTML version of the docs.
++* See ``docs/README`` for instructions on building an HTML version of the docs.
+@@ -28 +28 @@ To get more help:
+-* Join the #django channel on irc.freenode.net. Lots of helpful people hang out
++* Join the ``#django`` channel on irc.freenode.net. Lots of helpful people hang out
+@@ -42 +42 @@ To run Django's test suite:
+-  docs/internals/contributing/writing-code/unit-tests.txt, published online at
++  ``docs/internals/contributing/writing-code/unit-tests.txt``, published online at
+diff --git a/README.rst b/README.rst
+index 95029a6fce..e58b904d3b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -36,2 +36,2 @@ To contribute to Django:
+-* Check out https://www.djangoproject.com/community/ for information about
+-  getting involved.
++* Check out https://docs.djangoproject.com/en/dev/internals/contributing/ for
++  information about getting involved.
+diff --git a/README.rst b/README.rst
+index ca2cd5e5a9..95029a6fce 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5,2 +5,2 @@ All documentation is in the "docs" directory and online at
+-http://docs.djangoproject.com/en/dev/. If you're just getting started, here's
+-how we recommend you read the docs:
++https://docs.djangoproject.com/en/stable/. If you're just getting started,
++here's how we recommend you read the docs:
+@@ -22,5 +22,3 @@ how we recommend you read the docs:
+-Docs are updated rigorously. If you find any problems in the docs, or think they
+-should be clarified in any way, please take 30 seconds to fill out a ticket
+-here:
+-
+-http://code.djangoproject.com/newticket
++Docs are updated rigorously. If you find any problems in the docs, or think
++they should be clarified in any way, please take 30 seconds to fill out a
++ticket here: https://code.djangoproject.com/newticket
+@@ -34 +32 @@ To get more help:
+-  http://groups.google.com/group/django-users.
++  https://groups.google.com/group/django-users.
+@@ -38 +36 @@ To contribute to Django:
+-* Check out http://www.djangoproject.com/community/ for information about
++* Check out https://www.djangoproject.com/community/ for information about
+diff --git a/README.rst b/README.rst
+index 5ca89f1d78..ca2cd5e5a9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -8 +8 @@ how we recommend you read the docs:
+-    * First, read docs/intro/install.txt for instructions on installing Django.
++* First, read docs/intro/install.txt for instructions on installing Django.
+@@ -10,2 +10,2 @@ how we recommend you read the docs:
+-    * Next, work through the tutorials in order (docs/intro/tutorial01.txt,
+-      docs/intro/tutorial02.txt, etc.).
++* Next, work through the tutorials in order (docs/intro/tutorial01.txt,
++  docs/intro/tutorial02.txt, etc.).
+@@ -13,2 +13,2 @@ how we recommend you read the docs:
+-    * If you want to set up an actual deployment server, read
+-      docs/howto/deployment/index.txt for instructions.
++* If you want to set up an actual deployment server, read
++  docs/howto/deployment/index.txt for instructions.
+@@ -16,3 +16,3 @@ how we recommend you read the docs:
+-    * You'll probably want to read through the topical guides (in docs/topics)
+-      next; from there you can jump to the HOWTOs (in docs/howto) for specific
+-      problems, and check out the reference (docs/ref) for gory details.
++* You'll probably want to read through the topical guides (in docs/topics)
++  next; from there you can jump to the HOWTOs (in docs/howto) for specific
++  problems, and check out the reference (docs/ref) for gory details.
+@@ -20 +20 @@ how we recommend you read the docs:
+-    * See docs/README for instructions on building an HTML version of the docs.
++* See docs/README for instructions on building an HTML version of the docs.
+@@ -30,2 +30,2 @@ To get more help:
+-    * Join the #django channel on irc.freenode.net. Lots of helpful people
+-      hang out there. Read the archives at http://django-irc-logs.com/.
++* Join the #django channel on irc.freenode.net. Lots of helpful people hang out
++  there. Read the archives at http://django-irc-logs.com/.
+@@ -33,2 +33,2 @@ To get more help:
+-    * Join the django-users mailing list, or read the archives, at
+-      http://groups.google.com/group/django-users.
++* Join the django-users mailing list, or read the archives, at
++  http://groups.google.com/group/django-users.
+@@ -38,2 +38,2 @@ To contribute to Django:
+-    * Check out http://www.djangoproject.com/community/ for information
+-      about getting involved.
++* Check out http://www.djangoproject.com/community/ for information about
++  getting involved.
+@@ -43,3 +43,3 @@ To run Django's test suite:
+-    * Follow the instructions in the "Unit tests" section of
+-      docs/internals/contributing/writing-code/unit-tests.txt, published online at
+-      https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/#running-the-unit-tests
++* Follow the instructions in the "Unit tests" section of
++  docs/internals/contributing/writing-code/unit-tests.txt, published online at
++  https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/#running-the-unit-tests

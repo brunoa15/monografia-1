@@ -1,0 +1,1452 @@
+diff --git a/README.md b/README.md
+index d2f55b962..ae7c00843 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5 @@
+-[![AppVeyor Build Status](https://windows-ci.electronjs.org/api/projects/status/nilyf07hcef14dvj/branch/master?svg=true)](https://windows-ci.electronjs.org/project/AppVeyor/electron/branch/master)
+-[![Azure Pipelines Build Status](https://github.visualstudio.com/electron/_apis/build/status/electron-builds/electron-osx-testing?branchName=master)](https://github.visualstudio.com/electron/_build/latest?definitionId=36)
++[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/4lggi9dpjc1qob7k/branch/master?svg=true)](https://ci.appveyor.com/project/electron-bot/electron-ljo26/branch/master)
+@@ -8 +6,0 @@
+-[![Join the Electron Community on Slack](https://atom-slack.herokuapp.com/badge.svg)](https://atom-slack.herokuapp.com/)
+diff --git a/README.md b/README.md
+index 8b39485df..d2f55b962 100644
+--- a/README.md
++++ b/README.md
+@@ -95,0 +96,4 @@ Find documentation translations in [electron/i18n](https://github.com/electron/i
++## Contributing
++
++If you are interested in reporting/fixing issues and contributing directly to the code base, please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
++
+diff --git a/README.md b/README.md
+index ff7fead22..8b39485df 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@
+-:memo: Available Translations: 🇨🇳 🇹🇼 🇧🇷 🇪🇸 🇰🇷 🇯🇵 🇷🇺 🇫🇷 🇹🇭 🇳🇱 🇹🇷 🇮🇩 🇺🇦 🇨🇿 🇮🇹.
++:memo: Available Translations: 🇨🇳 🇹🇼 🇧🇷 🇪🇸 🇰🇷 🇯🇵 🇷🇺 🇫🇷 🇹🇭 🇳🇱 🇹🇷 🇮🇩 🇺🇦 🇨🇿 🇮🇹 🇵🇱.
+diff --git a/README.md b/README.md
+index 5842ba542..ff7fead22 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++[![Azure Pipelines Build Status](https://github.visualstudio.com/electron/_apis/build/status/electron-builds/electron-osx-testing?branchName=master)](https://github.visualstudio.com/electron/_build/latest?definitionId=36)
+diff --git a/README.md b/README.md
+index ec0936441..5842ba542 100644
+--- a/README.md
++++ b/README.md
+@@ -42 +42 @@ For more installation options and troubleshooting tips, see
+-## Quick start
++## Quick start & Electron Fiddle
+@@ -44 +44,6 @@ For more installation options and troubleshooting tips, see
+-Clone and run the
++Use [`Electron Fiddle`](https://github.com/electron/fiddle)
++to build, run, and package small Electron experiments, to see code examples for all of Electron's APIs, and
++to try out different versions of Electron. It's designed to make the start of your journey with
++Electron easier.
++
++Alternatively, clone and run the
+@@ -57,0 +63 @@ npm start
++- [electron/fiddle](https://github.com/electron/fiddle) - A tool to build, run, and package small Electron experiments
+diff --git a/README.md b/README.md
+index 8da85159c..ec0936441 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ app:
+-npm install electron --save-dev --save-exact
++npm install electron --save-dev [--save-exact]
+@@ -35,2 +35,2 @@ npm install electron --save-dev --save-exact
+-The `--save-exact` flag is recommended as Electron does not follow semantic
+-versioning. For info on how to manage Electron versions in your apps, see
++The `--save-exact` flag is recommended for Electron prior to version 2, as it does not follow semantic
++versioning. As of version 2.0.0, Electron follows semver, so you don't need `--save-exact` flag. For info on how to manage Electron versions in your apps, see
+diff --git a/README.md b/README.md
+index d5174d50d..8da85159c 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +5,0 @@
+-[![Jenkins Build Status](https://mac-ci.electronjs.org/buildStatus/icon?job=Electron%20org/electron/master)](https://mac-ci.electronjs.org/blue/organizations/jenkins/Electron%20org%2Felectron/activity?branch=master)
+diff --git a/README.md b/README.md
+index 9d12cb1e2..d5174d50d 100644
+--- a/README.md
++++ b/README.md
+@@ -92,16 +92,2 @@ Find documentation translations in [electron/i18n](https://github.com/electron/i
+-You can ask questions and interact with the community in the following
+-locations:
+-- [`electron`](https://discuss.atom.io/c/electron) category on the Atom
+-forums
+-- `#atom-shell` channel on Freenode
+-- [`Atom`](https://atom-slack.herokuapp.com) channel on Slack
+-- [`electron-ru`](https://telegram.me/electron_ru) *(Russian)*
+-- [`electron-br`](https://electron-br.slack.com) *(Brazilian Portuguese)*
+-- [`electron-kr`](https://electron-kr.github.io/electron-kr) *(Korean)*
+-- [`electron-jp`](https://electron-jp.slack.com) *(Japanese)*
+-- [`electron-tr`](https://electron-tr.herokuapp.com) *(Turkish)*
+-- [`electron-id`](https://electron-id.slack.com) *(Indonesia)*
+-- [`electron-pl`](https://electronpl.github.io) *(Poland)*
+-
+-Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron)
+-for a community maintained list of useful example apps, tools and resources.
++Info on reporting bugs, getting help, finding third-party tools and sample apps,
++and more can be found in the [support document](docs/tutorial/support.md#finding-support).
+diff --git a/README.md b/README.md
+index e5c1601d0..9d12cb1e2 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ By participating, you are expected to uphold this code. Please report unacceptab
+-behavior to [electron@github.com](mailto:electron@github.com).
++behavior to [coc@electronjs.org](mailto:coc@electronjs.org).
+diff --git a/README.md b/README.md
+index 160dae790..e5c1601d0 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@
+-View these docs in other languages at [electron/electron-i18n](https://github.com/electron/electron-i18n/tree/master/content/).
++View these docs in other languages at [electron/i18n](https://github.com/electron/i18n/tree/master/content/).
+@@ -88 +88 @@ const child = proc.spawn(electron)
+-Find documentation translations in [electron/electron-i18n](https://github.com/electron/electron-i18n).
++Find documentation translations in [electron/i18n](https://github.com/electron/i18n).
+diff --git a/README.md b/README.md
+index b114f80da..160dae790 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](docs/tutorial/versioning.md).
++[Electron versioning](docs/tutorial/electron-versioning.md).
+diff --git a/README.md b/README.md
+index c947aa535..b114f80da 100644
+--- a/README.md
++++ b/README.md
+@@ -104 +104 @@ forums
+-- [`electron-pl`](electronpl.github.io) *(Poland)*
++- [`electron-pl`](https://electronpl.github.io) *(Poland)*
+diff --git a/README.md b/README.md
+index 2dd16b2ad..c947aa535 100644
+--- a/README.md
++++ b/README.md
+@@ -103,0 +104 @@ forums
++- [`electron-pl`](electronpl.github.io) *(Poland)*
+diff --git a/README.md b/README.md
+index 6a875edaa..2dd16b2ad 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electronjs.org/docs/tutorial/installation).
++[installation](docs/tutorial/installation.md).
+diff --git a/README.md b/README.md
+index b6b1721c6..6a875edaa 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electronjs.org/docs/tutorial/versioning).
++[Electron versioning](docs/tutorial/versioning.md).
+diff --git a/README.md b/README.md
+index 22394903b..b6b1721c6 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
++[Electron versioning](https://electronjs.org/docs/tutorial/versioning).
+diff --git a/README.md b/README.md
+index d9ad098a6..22394903b 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,4 @@
+-[![Travis Build Status](https://travis-ci.org/electron/electron.svg?branch=master)](https://travis-ci.org/electron/electron)
+-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/bc56v83355fi3369/branch/master?svg=true)](https://ci.appveyor.com/project/electron-bot/electron/branch/master)
++
++[![CircleCI Build Status](https://circleci.com/gh/electron/electron/tree/master.svg?style=shield)](https://circleci.com/gh/electron/electron/tree/master)
++[![AppVeyor Build Status](https://windows-ci.electronjs.org/api/projects/status/nilyf07hcef14dvj/branch/master?svg=true)](https://windows-ci.electronjs.org/project/AppVeyor/electron/branch/master)
++[![Jenkins Build Status](https://mac-ci.electronjs.org/buildStatus/icon?job=Electron%20org/electron/master)](https://mac-ci.electronjs.org/blue/organizations/jenkins/Electron%20org%2Felectron/activity?branch=master)
+diff --git a/README.md b/README.md
+index fe228a0cd..d9ad098a6 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-[![Join the Electron Community on Slack](http://atom-slack.herokuapp.com/badge.svg)](http://atom-slack.herokuapp.com/)
++[![Join the Electron Community on Slack](https://atom-slack.herokuapp.com/badge.svg)](https://atom-slack.herokuapp.com/)
+@@ -13 +13 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-[Chromium](http://www.chromium.org) and is used by the [Atom
++[Chromium](https://www.chromium.org) and is used by the [Atom
+@@ -92 +92 @@ locations:
+-- [`electron`](http://discuss.atom.io/c/electron) category on the Atom
++- [`electron`](https://discuss.atom.io/c/electron) category on the Atom
+@@ -95 +95 @@ forums
+-- [`Atom`](http://atom-slack.herokuapp.com/) channel on Slack
++- [`Atom`](https://atom-slack.herokuapp.com) channel on Slack
+@@ -100 +100 @@ forums
+-- [`electron-tr`](http://electron-tr.herokuapp.com) *(Turkish)*
++- [`electron-tr`](https://electron-tr.herokuapp.com) *(Turkish)*
+diff --git a/README.md b/README.md
+index 4fb36a5a0..fe228a0cd 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
++[![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)
+@@ -8 +8,2 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
++:memo: Available Translations: 🇨🇳 🇹🇼 🇧🇷 🇪🇸 🇰🇷 🇯🇵 🇷🇺 🇫🇷 🇹🇭 🇳🇱 🇹🇷 🇮🇩 🇺🇦 🇨🇿 🇮🇹.
++View these docs in other languages at [electron/electron-i18n](https://github.com/electron/electron-i18n/tree/master/content/).
+@@ -13 +14 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electronjs.org/apps).
+@@ -18 +19 @@ announcements.
+-This project adheres to the Contributor Covenant 
++This project adheres to the Contributor Covenant
+@@ -35 +36 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
++[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
+@@ -38 +39 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electron.atom.io/docs/tutorial/installation/).
++[installation](https://electronjs.org/docs/tutorial/installation).
+@@ -40 +41 @@ For more installation options and troubleshooting tips, see
+-## Quick Start
++## Quick start
+@@ -42 +43 @@ For more installation options and troubleshooting tips, see
+-Clone and run the 
++Clone and run the
+@@ -46 +47 @@ repository to see a minimal Electron app in action:
+-```
++```sh
+@@ -53 +54 @@ npm start
+-## Resources for Learning Electron
++## Resources for learning Electron
+@@ -55 +56 @@ npm start
+-- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
++- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
+@@ -57 +58 @@ npm start
+-- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
++- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
+diff --git a/README.md b/README.md
+index de8881471..4fb36a5a0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)
++[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
+@@ -8,2 +8 @@
+-:memo: Available Translations: 🇨🇳 🇹🇼 🇧🇷 🇪🇸 🇰🇷 🇯🇵 🇷🇺 🇫🇷 🇹🇭 🇳🇱 🇹🇷 🇮🇩 🇺🇦 🇨🇿 🇮🇹.
+-View these docs in other languages at [electron/electron-i18n](https://github.com/electron/electron-i18n/tree/master/content/).
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
+@@ -14 +13 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](https://electronjs.org/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
+@@ -19 +18 @@ announcements.
+-This project adheres to the Contributor Covenant
++This project adheres to the Contributor Covenant 
+@@ -36 +35 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
++[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
+@@ -39 +38 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electronjs.org/docs/tutorial/installation).
++[installation](https://electron.atom.io/docs/tutorial/installation/).
+@@ -41 +40 @@ For more installation options and troubleshooting tips, see
+-## Quick start
++## Quick Start
+@@ -43 +42 @@ For more installation options and troubleshooting tips, see
+-Clone and run the
++Clone and run the 
+@@ -47 +46 @@ repository to see a minimal Electron app in action:
+-```sh
++```
+@@ -54 +53 @@ npm start
+-## Resources for learning Electron
++## Resources for Learning Electron
+@@ -56 +55 @@ npm start
+-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
++- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
+@@ -58 +57 @@ npm start
+-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
++- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
+@@ -84 +83 @@ const child = proc.spawn(electron)
+-## Documentation translations
++## Documentation Translations
+@@ -86 +85 @@ const child = proc.spawn(electron)
+-Find documentation translations in [electron/electron-18n](https://github.com/electron/electron-i18n).
++Find documentation translations in [electron/electron-i18n](https://github.com/electron/electron-i18n).
+diff --git a/README.md b/README.md
+index 65ada21e8..de8881471 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
++[![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)
+@@ -14 +14 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electronjs.org/apps).
+@@ -36 +36 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
++[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
+@@ -39 +39 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electron.atom.io/docs/tutorial/installation/).
++[installation](https://electronjs.org/docs/tutorial/installation).
+@@ -56 +56 @@ npm start
+-- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
++- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
+@@ -58 +58 @@ npm start
+-- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
++- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
+diff --git a/README.md b/README.md
+index 34a8d5ed9..65ada21e8 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54 @@ npm start
+-## Resources for learning electron
++## Resources for learning Electron
+diff --git a/README.md b/README.md
+index 2e3a70f50..34a8d5ed9 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)
++[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
+@@ -14 +14 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](https://electronjs.org/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
+@@ -36 +36 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
++[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
+@@ -39 +39 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electronjs.org/docs/tutorial/installation).
++[installation](https://electron.atom.io/docs/tutorial/installation/).
+@@ -41 +41 @@ For more installation options and troubleshooting tips, see
+-## Quick Start
++## Quick start
+@@ -47 +47 @@ repository to see a minimal Electron app in action:
+-```
++```sh
+@@ -54 +54 @@ npm start
+-## Resources for Learning Electron
++## Resources for learning electron
+@@ -56 +56 @@ npm start
+-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
++- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
+@@ -58 +58 @@ npm start
+-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
++- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
+@@ -84 +84 @@ const child = proc.spawn(electron)
+-## Documentation Translations
++## Documentation translations
+diff --git a/README.md b/README.md
+index 5c62c72df..2e3a70f50 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
++[![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)
+@@ -14 +14 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electronjs.org/apps).
+@@ -36 +36 @@ versioning. For info on how to manage Electron versions in your apps, see
+-[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
++[Electron versioning](https://electronjs.org/docs/tutorial/electron-versioning).
+@@ -39 +39 @@ For more installation options and troubleshooting tips, see
+-[installation](https://electron.atom.io/docs/tutorial/installation/).
++[installation](https://electronjs.org/docs/tutorial/installation).
+@@ -47 +47 @@ repository to see a minimal Electron app in action:
+-```sh
++```
+@@ -56 +56 @@ npm start
+-- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
++- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
+@@ -58 +58 @@ npm start
+-- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
++- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
+@@ -63 +63 @@ npm start
+-## Programmatic Usage
++## Programmatic usage
+diff --git a/README.md b/README.md
+index 58910c8c3..5c62c72df 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ repository to see a minimal Electron app in action:
+-```
++```sh
+@@ -63 +63 @@ npm start
+-## Programmatic usage
++## Programmatic Usage
+diff --git a/README.md b/README.md
+index ac797e7a3..58910c8c3 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8,2 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
++:memo: Available Translations: 🇨🇳 🇹🇼 🇧🇷 🇪🇸 🇰🇷 🇯🇵 🇷🇺 🇫🇷 🇹🇭 🇳🇱 🇹🇷 🇮🇩 🇺🇦 🇨🇿 🇮🇹.
++View these docs in other languages at [electron/electron-i18n](https://github.com/electron/electron-i18n/tree/master/content/).
+@@ -18 +19 @@ announcements.
+-This project adheres to the Contributor Covenant 
++This project adheres to the Contributor Covenant
+@@ -42 +43 @@ For more installation options and troubleshooting tips, see
+-Clone and run the 
++Clone and run the
+diff --git a/README.md b/README.md
+index 3051f9eb0..ac797e7a3 100644
+--- a/README.md
++++ b/README.md
+@@ -85,12 +85 @@ const child = proc.spawn(electron)
+-- [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR)
+-- [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR)
+-- [Japanese](https://github.com/electron/electron/tree/master/docs-translations/jp)
+-- [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es)
+-- [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN)
+-- [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW)
+-- [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR)
+-- [Thai](https://github.com/electron/electron/tree/master/docs-translations/th-TH)
+-- [Ukrainian](https://github.com/electron/electron/tree/master/docs-translations/uk-UA)
+-- [Russian](https://github.com/electron/electron/tree/master/docs-translations/ru-RU)
+-- [French](https://github.com/electron/electron/tree/master/docs-translations/fr-FR)
+-- [Indonesian](https://github.com/electron/electron/tree/master/docs-translations/id)
++Find documentation translations in [electron/electron-18n](https://github.com/electron/electron-i18n).
+diff --git a/README.md b/README.md
+index a898fccbb..3051f9eb0 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +108 @@ forums
+-- [`electron-kr`](https://electron-kr.slack.com/) *(Korean)*
++- [`electron-kr`](https://electron-kr.github.io/electron-kr) *(Korean)*
+diff --git a/README.md b/README.md
+index 95e4c2ddf..a898fccbb 100644
+--- a/README.md
++++ b/README.md
+@@ -107,0 +108 @@ forums
++- [`electron-kr`](https://electron-kr.slack.com/) *(Korean)*
+diff --git a/README.md b/README.md
+index 4ac256847..95e4c2ddf 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +107,0 @@ forums
+-- [`electron-kr`](http://www.meetup.com/electron-kr/) *(Korean)*
+diff --git a/README.md b/README.md
+index c5a012449..4ac256847 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,2 @@
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
++
+diff --git a/README.md b/README.md
+index 21b933273..c5a012449 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,2 @@ announcements.
+-This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
++This project adheres to the Contributor Covenant 
++[code of conduct](https://github.com/electron/electron/tree/master/CODE_OF_CONDUCT.md).
+@@ -18 +19 @@ By participating, you are expected to uphold this code. Please report unacceptab
+-behavior to electron@github.com.
++behavior to [electron@github.com](mailto:electron@github.com).
+@@ -20 +21 @@ behavior to electron@github.com.
+-## Downloads
++## Installation
+@@ -22,2 +23,3 @@ behavior to electron@github.com.
+-To install prebuilt Electron binaries, use
+-[`npm`](https://docs.npmjs.com/):
++To install prebuilt Electron binaries, use [`npm`](https://docs.npmjs.com/).
++The preferred method is to install Electron as a development dependency in your
++app:
+@@ -26,2 +28,11 @@ To install prebuilt Electron binaries, use
+-# Install as a development dependency
+-npm install electron --save-dev
++npm install electron --save-dev --save-exact
++```
++
++The `--save-exact` flag is recommended as Electron does not follow semantic
++versioning. For info on how to manage Electron versions in your apps, see
++[Electron versioning](https://electron.atom.io/docs/tutorial/electron-versioning/).
++
++For more installation options and troubleshooting tips, see
++[installation](https://electron.atom.io/docs/tutorial/installation/).
++
++## Quick Start
+@@ -29,2 +40,9 @@ npm install electron --save-dev
+-# Install the `electron` command globally in your $PATH
+-npm install electron -g
++Clone and run the 
++[electron/electron-quick-start](https://github.com/electron/electron-quick-start)
++repository to see a minimal Electron app in action:
++
++```
++git clone https://github.com/electron/electron-quick-start
++cd electron-quick-start
++npm install
++npm start
+@@ -33,2 +51 @@ npm install electron -g
+-See the [releases page](https://github.com/electron/electron/releases) for
+-prebuilt binaries, debug symbols, and more.
++## Resources for Learning Electron
+@@ -36 +53,6 @@ prebuilt binaries, debug symbols, and more.
+-### Mirrors
++- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
++- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
++- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
++- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
++- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
++- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+@@ -38 +60,5 @@ prebuilt binaries, debug symbols, and more.
+-- [China](https://npm.taobao.org/mirrors/electron)
++## Programmatic usage
++
++Most people use Electron from the command line, but if you require `electron` inside
++your **Node app** (not your Electron app) it will return the file path to the
++binary. Use this to spawn Electron from Node scripts:
+@@ -40 +66,3 @@ prebuilt binaries, debug symbols, and more.
+-## Documentation
++```javascript
++const electron = require('electron')
++const proc = require('child_process')
+@@ -42,3 +70,10 @@ prebuilt binaries, debug symbols, and more.
+-Guides and the API reference are located in the
+-[docs](https://github.com/electron/electron/tree/master/docs) directory. It also
+-contains documents describing how to build and contribute to Electron.
++// will print something similar to /Users/maf/.../Electron
++console.log(electron)
++
++// spawn Electron
++const child = proc.spawn(electron)
++```
++
++### Mirrors
++
++- [China](https://npm.taobao.org/mirrors/electron)
+@@ -61,5 +95,0 @@ contains documents describing how to build and contribute to Electron.
+-## Quick Start
+-
+-Clone and run the [`electron/electron-quick-start`](https://github.com/electron/electron-quick-start)
+-repository to see a minimal Electron app in action.
+-
+diff --git a/README.md b/README.md
+index 2ae6b29cc..21b933273 100644
+--- a/README.md
++++ b/README.md
+@@ -8,2 +7,0 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
+-
+diff --git a/README.md b/README.md
+index abf7fd887..2ae6b29cc 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md)
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md) | [German](https://github.com/electron/electron/tree/master/docs-translations/de-DE/project/README.md)
+diff --git a/README.md b/README.md
+index 70107cb23..abf7fd887 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ contains documents describing how to build and contribute to Electron.
+-- [Thai](https://github.com/electron/electron/tree/master/docs-Translations/th-TH)
++- [Thai](https://github.com/electron/electron/tree/master/docs-translations/th-TH)
+diff --git a/README.md b/README.md
+index f32fbfab9..70107cb23 100644
+--- a/README.md
++++ b/README.md
+@@ -60,0 +61 @@ contains documents describing how to build and contribute to Electron.
++- [Indonesian](https://github.com/electron/electron/tree/master/docs-translations/id)
+diff --git a/README.md b/README.md
+index 438c74c88..f32fbfab9 100644
+--- a/README.md
++++ b/README.md
+@@ -74,0 +75 @@ forums
++- [`electron-ru`](https://telegram.me/electron_ru) *(Russian)*
+diff --git a/README.md b/README.md
+index 213580a5e..438c74c88 100644
+--- a/README.md
++++ b/README.md
+@@ -78 +78 @@ forums
+-- [`electron-tr`](https://electron-tr.slack.com) *(Turkish)*
++- [`electron-tr`](http://electron-tr.herokuapp.com) *(Turkish)*
+diff --git a/README.md b/README.md
+index 8a682bb72..213580a5e 100644
+--- a/README.md
++++ b/README.md
+@@ -78 +78 @@ forums
+-- [`electron-tr`](http://www.meetup.com/Electron-JS-Istanbul/) *(Turkish)*
++- [`electron-tr`](https://electron-tr.slack.com) *(Turkish)*
+diff --git a/README.md b/README.md
+index b8f55c19b..8a682bb72 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md)
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md) | [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR/project/README.md)
+diff --git a/README.md b/README.md
+index 3a3168929..b8f55c19b 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/kvxe4byi7jcxbe26/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron)
++[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/bc56v83355fi3369/branch/master?svg=true)](https://ci.appveyor.com/project/electron-bot/electron/branch/master)
+diff --git a/README.md b/README.md
+index 655d613ba..3a3168929 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md)
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md) | [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es/project/README.md)
+diff --git a/README.md b/README.md
+index cb3583afd..655d613ba 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](http://electron.atom.io/images/electron-logo.svg)](http://electron.atom.io/)
++[![Electron Logo](https://electron.atom.io/images/electron-logo.svg)](https://electron.atom.io/)
+@@ -13 +13 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-editor](https://github.com/atom/atom) and many other [apps](http://electron.atom.io/apps).
++editor](https://github.com/atom/atom) and many other [apps](https://electron.atom.io/apps).
+diff --git a/README.md b/README.md
+index 7d6bfe743..cb3583afd 100644
+--- a/README.md
++++ b/README.md
+@@ -56,0 +57 @@ contains documents describing how to build and contribute to Electron.
++- [Thai](https://github.com/electron/electron/tree/master/docs-Translations/th-TH)
+diff --git a/README.md b/README.md
+index c5411919b..7d6bfe743 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ forums
+-- [`electron-jp`](https://electron-jp-slackin.herokuapp.com/) *(Japanese)*
++- [`electron-jp`](https://electron-jp.slack.com) *(Japanese)*
+diff --git a/README.md b/README.md
+index 74b568b18..c5411919b 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ To install prebuilt Electron binaries, use
+-[`npm`](https://docs.npmjs.com/) (or [`yarn`](https://yarnpkg.com/en/docs/managing-dependencies)):
++[`npm`](https://docs.npmjs.com/):
+diff --git a/README.md b/README.md
+index 33cd961f6..74b568b18 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ To install prebuilt Electron binaries, use
+-[`npm`](https://docs.npmjs.com/) (or [`yarn`](https://yarnpkg.com/)):
++[`npm`](https://docs.npmjs.com/) (or [`yarn`](https://yarnpkg.com/en/docs/managing-dependencies)):
+diff --git a/README.md b/README.md
+index 36897c4bc..33cd961f6 100644
+--- a/README.md
++++ b/README.md
+@@ -24,5 +24,2 @@ behavior to electron@github.com.
+-Prebuilt binaries and debug symbols of Electron for Linux, Windows and macOS can
+-be found on the [releases](https://github.com/electron/electron/releases) page.
+-
+-You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt electron
+-binaries:
++To install prebuilt Electron binaries, use
++[`npm`](https://docs.npmjs.com/) (or [`yarn`](https://yarnpkg.com/)):
+@@ -31,3 +27,0 @@ binaries:
+-# Install the `electron` command globally in your $PATH
+-npm install electron -g
+-
+@@ -35,0 +30,3 @@ npm install electron --save-dev
++
++# Install the `electron` command globally in your $PATH
++npm install electron -g
+@@ -37,0 +35,3 @@ npm install electron --save-dev
++See the [releases page](https://github.com/electron/electron/releases) for
++prebuilt binaries, debug symbols, and more.
++
+diff --git a/README.md b/README.md
+index 2fdf32950..36897c4bc 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ for a community maintained list of useful example apps, tools and resources.
+-© 2016 Github, Inc.
++[MIT](https://github.com/electron/electron/blob/master/LICENSE)
+@@ -87,3 +87 @@ © 2016 Github, Inc.
+-When using the Electron or GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos).
+-
+-*Code license:* [MIT](https://github.com/electron/electron/blob/master/LICENSE)
++When using the Electron or other GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos).
+diff --git a/README.md b/README.md
+index 67a47854e..2fdf32950 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85,5 @@ for a community maintained list of useful example apps, tools and resources.
+-MIT © 2016 Github
++© 2016 Github, Inc.
++
++When using the Electron or GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos).
++
++*Code license:* [MIT](https://github.com/electron/electron/blob/master/LICENSE)
+diff --git a/README.md b/README.md
+index dd0b209eb..67a47854e 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md)
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md) | [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW/project/README.md)
+diff --git a/README.md b/README.md
+index 08b49e8c5..dd0b209eb 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md)
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md) | [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR/project/README.md)
+diff --git a/README.md b/README.md
+index c6588acb4..08b49e8c5 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-[![devDependency Status](https://david-dm.org/electron/electron/dev-status.svg)](https://david-dm.org/electron/electron#info=devDependencies)
++[![devDependency Status](https://david-dm.org/electron/electron/dev-status.svg)](https://david-dm.org/electron/electron?type=dev)
+diff --git a/README.md b/README.md
+index 3fee15b5c..c6588acb4 100644
+--- a/README.md
++++ b/README.md
+@@ -81,0 +82,4 @@ for a community maintained list of useful example apps, tools and resources.
++
++## License
++
++MIT © 2016 Github
+diff --git a/README.md b/README.md
+index c8f7dc8c5..3fee15b5c 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,2 @@
++:memo: Available Translations: [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR/project/README.md) | [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN/project/README.md)
++
+diff --git a/README.md b/README.md
+index 2726e0778..c8f7dc8c5 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ binaries:
+-npm install electron-prebuilt -g
++npm install electron -g
+@@ -33 +33 @@ npm install electron-prebuilt -g
+-npm install electron-prebuilt --save-dev
++npm install electron --save-dev
+diff --git a/README.md b/README.md
+index cf8d97a56..2726e0778 100644
+--- a/README.md
++++ b/README.md
+@@ -75,0 +76 @@ forums
++- [`electron-id`](https://electron-id.slack.com) *(Indonesia)*
+diff --git a/README.md b/README.md
+index 61e17e0c8..cf8d97a56 100644
+--- a/README.md
++++ b/README.md
+@@ -75,0 +76 @@ forums
++
+diff --git a/README.md b/README.md
+index 83ba1f5a6..61e17e0c8 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75 @@ forums
+-
++- [`electron-tr`](http://www.meetup.com/Electron-JS-Istanbul/) *(Turkish)*
+diff --git a/README.md b/README.md
+index b1e0d6b1b..83ba1f5a6 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ behavior to electron@github.com.
+-Prebuilt binaries and debug symbols of Electron for Linux, Windows and OS X can
++Prebuilt binaries and debug symbols of Electron for Linux, Windows and macOS can
+diff --git a/README.md b/README.md
+index e221889de..b1e0d6b1b 100644
+--- a/README.md
++++ b/README.md
+@@ -10,2 +10,2 @@ using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) an
+-[Chromium](http://www.chromium.org) and is used in the [Atom
+-editor](https://github.com/atom/atom).
++[Chromium](http://www.chromium.org) and is used by the [Atom
++editor](https://github.com/atom/atom) and many other [apps](http://electron.atom.io/apps).
+@@ -18 +18 @@ By participating, you are expected to uphold this code. Please report unacceptab
+-behavior to atom@github.com.
++behavior to electron@github.com.
+diff --git a/README.md b/README.md
+index 5e891e5dd..e221889de 100644
+--- a/README.md
++++ b/README.md
+@@ -8,2 +7,0 @@
+-:zap: *Formerly known as Atom Shell* :zap:
+-
+diff --git a/README.md b/README.md
+index f8278f185..5e891e5dd 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/qtmod45u0cc1ouov/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron)
++[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/kvxe4byi7jcxbe26/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron)
+diff --git a/README.md b/README.md
+index 52e290f53..f8278f185 100644
+--- a/README.md
++++ b/README.md
+@@ -55,0 +56 @@ contains documents describing how to build and contribute to Electron.
++- [Turkish](https://github.com/electron/electron/tree/master/docs-translations/tr-TR)
+diff --git a/README.md b/README.md
+index 6894ef988..52e290f53 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Travis Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
++[![Travis Build Status](https://travis-ci.org/electron/electron.svg?branch=master)](https://travis-ci.org/electron/electron)
+@@ -5 +5 @@
+-[![devDependency Status](https://david-dm.org/atom/electron/dev-status.svg)](https://david-dm.org/atom/electron#info=devDependencies)
++[![devDependency Status](https://david-dm.org/electron/electron/dev-status.svg)](https://david-dm.org/electron/electron#info=devDependencies)
+@@ -62 +62 @@ contains documents describing how to build and contribute to Electron.
+-Clone and run the [`atom/electron-quick-start`](https://github.com/electron/electron-quick-start)
++Clone and run the [`electron/electron-quick-start`](https://github.com/electron/electron-quick-start)
+diff --git a/README.md b/README.md
+index f7b5cb790..6894ef988 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ Prebuilt binaries and debug symbols of Electron for Linux, Windows and OS X can
+-be found on the [releases](https://github.com/atom/electron/releases) page.
++be found on the [releases](https://github.com/electron/electron/releases) page.
+@@ -45 +45 @@ Guides and the API reference are located in the
+-[docs](https://github.com/atom/electron/tree/master/docs) directory. It also
++[docs](https://github.com/electron/electron/tree/master/docs) directory. It also
+@@ -50,9 +50,9 @@ contains documents describing how to build and contribute to Electron.
+-- [Brazilian Portuguese](https://github.com/atom/electron/tree/master/docs-translations/pt-BR)
+-- [Korean](https://github.com/atom/electron/tree/master/docs-translations/ko-KR)
+-- [Japanese](https://github.com/atom/electron/tree/master/docs-translations/jp)
+-- [Spanish](https://github.com/atom/electron/tree/master/docs-translations/es)
+-- [Simplified Chinese](https://github.com/atom/electron/tree/master/docs-translations/zh-CN)
+-- [Traditional Chinese](https://github.com/atom/electron/tree/master/docs-translations/zh-TW)
+-- [Ukrainian](https://github.com/atom/electron/tree/master/docs-translations/uk-UA)
+-- [Russian](https://github.com/atom/electron/tree/master/docs-translations/ru-RU)
+-- [French](https://github.com/atom/electron/tree/master/docs-translations/fr-FR)
++- [Brazilian Portuguese](https://github.com/electron/electron/tree/master/docs-translations/pt-BR)
++- [Korean](https://github.com/electron/electron/tree/master/docs-translations/ko-KR)
++- [Japanese](https://github.com/electron/electron/tree/master/docs-translations/jp)
++- [Spanish](https://github.com/electron/electron/tree/master/docs-translations/es)
++- [Simplified Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-CN)
++- [Traditional Chinese](https://github.com/electron/electron/tree/master/docs-translations/zh-TW)
++- [Ukrainian](https://github.com/electron/electron/tree/master/docs-translations/uk-UA)
++- [Russian](https://github.com/electron/electron/tree/master/docs-translations/ru-RU)
++- [French](https://github.com/electron/electron/tree/master/docs-translations/fr-FR)
+@@ -62 +62 @@ contains documents describing how to build and contribute to Electron.
+-Clone and run the [`atom/electron-quick-start`](https://github.com/atom/electron-quick-start)
++Clone and run the [`atom/electron-quick-start`](https://github.com/electron/electron-quick-start)
+diff --git a/README.md b/README.md
+index 9c7d4ce81..f7b5cb790 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/qtmod45u0cc1ouov/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron/branch/master)
++[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/qtmod45u0cc1ouov/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron)
+diff --git a/README.md b/README.md
+index 0080585b5..9c7d4ce81 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,2 @@
+-[![Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
++[![Travis Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
++[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/qtmod45u0cc1ouov/branch/master?svg=true)](https://ci.appveyor.com/project/Atom/electron/branch/master)
+diff --git a/README.md b/README.md
+index ce6d483f0..0080585b5 100644
+--- a/README.md
++++ b/README.md
+@@ -73,0 +74 @@ forums
++- [`electron-jp`](https://electron-jp-slackin.herokuapp.com/) *(Japanese)*
+diff --git a/README.md b/README.md
+index a7306ddab..ce6d483f0 100644
+--- a/README.md
++++ b/README.md
+@@ -56,0 +57 @@ contains documents describing how to build and contribute to Electron.
++- [French](https://github.com/atom/electron/tree/master/docs-translations/fr-FR)
+diff --git a/README.md b/README.md
+index edc8ebb6b..a7306ddab 100644
+--- a/README.md
++++ b/README.md
+@@ -71,0 +72 @@ forums
++- [`electron-kr`](http://www.meetup.com/electron-kr/) *(Korean)*
+diff --git a/README.md b/README.md
+index bb814b245..edc8ebb6b 100644
+--- a/README.md
++++ b/README.md
+@@ -54,0 +55 @@ contains documents describing how to build and contribute to Electron.
++- [Ukrainian](https://github.com/atom/electron/tree/master/docs-translations/uk-UA)
+diff --git a/README.md b/README.md
+index 8052e705b..bb814b245 100644
+--- a/README.md
++++ b/README.md
+@@ -69,0 +70 @@ forums
++- [`electron-br`](https://electron-br.slack.com) *(Brazilian Portuguese)*
+diff --git a/README.md b/README.md
+index 63c8aae69..8052e705b 100644
+--- a/README.md
++++ b/README.md
+@@ -17,3 +17,3 @@ announcements.
+-This project adheres to the [Contributor Covenant 1.2](http://contributor-covenant.org/version/1/2/0/).
+-By participating, you are expected to uphold this code. Please report
+-unacceptable behavior to atom@github.com.
++This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
++By participating, you are expected to uphold this code. Please report unacceptable
++behavior to atom@github.com.
+@@ -54,0 +55 @@ contains documents describing how to build and contribute to Electron.
++- [Russian](https://github.com/atom/electron/tree/master/docs-translations/ru-RU)
+@@ -69 +69,0 @@ forums
+-- [`electron-br`](https://electron-br.slack.com) *(Brazilian Portuguese)*
+diff --git a/README.md b/README.md
+index db82fac88..63c8aae69 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +54,0 @@ contains documents describing how to build and contribute to Electron.
+-- [Russian](https://github.com/atom/electron/tree/master/docs-translations/ru-RU)
+@@ -69,0 +69 @@ forums
++- [`electron-br`](https://electron-br.slack.com) *(Brazilian Portuguese)*
+diff --git a/README.md b/README.md
+index beb96b4e5..db82fac88 100644
+--- a/README.md
++++ b/README.md
+@@ -54,0 +55 @@ contains documents describing how to build and contribute to Electron.
++- [Russian](https://github.com/atom/electron/tree/master/docs-translations/ru-RU)
+diff --git a/README.md b/README.md
+index f8e1f2909..beb96b4e5 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ The Electron framework lets you write cross-platform desktop applications
+-using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/en/) and
++using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/) and
+diff --git a/README.md b/README.md
+index 8fb9128d9..f8e1f2909 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ The Electron framework lets you write cross-platform desktop applications
+-using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org) and
++using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org/en/) and
+@@ -17 +17 @@ announcements.
+-This project adheres to the [Contributor Covenant 1.2](http://contributor-covenant.org/version/1/2/0).
++This project adheres to the [Contributor Covenant 1.2](http://contributor-covenant.org/version/1/2/0/).
+@@ -65 +65 @@ locations:
+-- [`electron`](http://discuss.atom.io/category/electron) category on the Atom
++- [`electron`](http://discuss.atom.io/c/electron) category on the Atom
+diff --git a/README.md b/README.md
+index dd03f7099..8fb9128d9 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ unacceptable behavior to atom@github.com.
+-Prebuilt binaries and debug symbols of Electron for Linux, Windows and Mac can
++Prebuilt binaries and debug symbols of Electron for Linux, Windows and OS X can
+diff --git a/README.md b/README.md
+index 94d4c0998..dd03f7099 100644
+--- a/README.md
++++ b/README.md
+@@ -55,0 +56,5 @@ contains documents describing how to build and contribute to Electron.
++## Quick Start
++
++Clone and run the [`atom/electron-quick-start`](https://github.com/atom/electron-quick-start)
++repository to see a minimal Electron app in action.
++
+diff --git a/README.md b/README.md
+index fa122c9b6..94d4c0998 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ The Electron framework lets you write cross-platform desktop applications
+-using JavaScript, HTML and CSS. It is based on [io.js](http://iojs.org) and
++using JavaScript, HTML and CSS. It is based on [Node.js](https://nodejs.org) and
+diff --git a/README.md b/README.md
+index ccfc9cf20..fa122c9b6 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ This project adheres to the [Contributor Covenant 1.2](http://contributor-covena
+-By participating, you are expected to uphold this code. Please report 
++By participating, you are expected to uphold this code. Please report
+@@ -41,6 +40,0 @@ npm install electron-prebuilt --save-dev
+-## Supported Operating Systems
+-
+-- Ubuntu: 14.04 and higher
+-- Mac: OS X 10.8.0 and higher
+-- Windows: Win7 or higher
+-
+@@ -62 +55,0 @@ contains documents describing how to build and contribute to Electron.
+-
+@@ -65 +58 @@ contains documents describing how to build and contribute to Electron.
+-You can ask questions and interact with the community in the following 
++You can ask questions and interact with the community in the following
+@@ -67 +60 @@ locations:
+-- [`electron`](http://discuss.atom.io/category/electron) category on the Atom 
++- [`electron`](http://discuss.atom.io/category/electron) category on the Atom
+@@ -72 +65 @@ forums
+-Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron) 
++Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron)
+diff --git a/README.md b/README.md
+index 0bf29fbc3..ccfc9cf20 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,6 @@ npm install electron-prebuilt --save-dev
++## Supported Operating Systems
++
++- Ubuntu: 14.04 and higher
++- Mac: OS X 10.8.0 and higher
++- Windows: Win7 or higher
++
+@@ -55,0 +62 @@ contains documents describing how to build and contribute to Electron.
++
+diff --git a/README.md b/README.md
+index 54b6af5fa..0bf29fbc3 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ contains documents describing how to build and contribute to Electron.
+-- [Korean](https://github.com/atom/electron/tree/master/docs-translations/ko)
++- [Korean](https://github.com/atom/electron/tree/master/docs-translations/ko-KR)
+diff --git a/README.md b/README.md
+index 68518052c..54b6af5fa 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-:zap: *formerly known as Atom Shell* :zap:
++:zap: *Formerly known as Atom Shell* :zap:
+@@ -18 +18,2 @@ This project adheres to the [Contributor Covenant 1.2](http://contributor-covena
+-By participating, you are expected to uphold this code. Please report unacceptable behavior to atom@github.com.
++By participating, you are expected to uphold this code. Please report 
++unacceptable behavior to atom@github.com.
+@@ -57,2 +58,6 @@ contains documents describing how to build and contribute to Electron.
+-There is an [`electron` category on the Atom forums](http://discuss.atom.io/category/electron)
+-as well as an `#atom-shell` channel on Freenode.
++You can ask questions and interact with the community in the following 
++locations:
++- [`electron`](http://discuss.atom.io/category/electron) category on the Atom 
++forums
++- `#atom-shell` channel on Freenode
++- [`Atom`](http://atom-slack.herokuapp.com/) channel on Slack
+@@ -60 +65,2 @@ as well as an `#atom-shell` channel on Freenode.
+-Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron) for a community maintained list of useful example apps, tools and resources.
++Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron) 
++for a community maintained list of useful example apps, tools and resources.
+diff --git a/README.md b/README.md
+index 811965544..68518052c 100644
+--- a/README.md
++++ b/README.md
+@@ -47,0 +48 @@ contains documents describing how to build and contribute to Electron.
++- [Brazilian Portuguese](https://github.com/atom/electron/tree/master/docs-translations/pt-BR)
+diff --git a/README.md b/README.md
+index 7f398cbd9..811965544 100644
+--- a/README.md
++++ b/README.md
+@@ -51,0 +52 @@ contains documents describing how to build and contribute to Electron.
++- [Traditional Chinese](https://github.com/atom/electron/tree/master/docs-translations/zh-TW)
+diff --git a/README.md b/README.md
+index 32e5da2fa..7f398cbd9 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ contains documents describing how to build and contribute to Electron.
+-- [Chinese](https://github.com/atom/electron/tree/master/docs-translations/cn)
++- [Simplified Chinese](https://github.com/atom/electron/tree/master/docs-translations/zh-CN)
+diff --git a/README.md b/README.md
+index ace7116c4..32e5da2fa 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51 @@ contains documents describing how to build and contribute to Electron.
++- [Chinese](https://github.com/atom/electron/tree/master/docs-translations/cn)
+diff --git a/README.md b/README.md
+index 8b7d36046..ace7116c4 100644
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,6 @@ contains documents describing how to build and contribute to Electron.
++## Documentation Translations
++
++- [Korean](https://github.com/atom/electron/tree/master/docs-translations/ko)
++- [Japanese](https://github.com/atom/electron/tree/master/docs-translations/jp)
++- [Spanish](https://github.com/atom/electron/tree/master/docs-translations/es)
++
+diff --git a/README.md b/README.md
+index 764a6abfe..8b7d36046 100644
+--- a/README.md
++++ b/README.md
+@@ -17,2 +17,2 @@ announcements.
+-This project adheres to the [Open Code of Conduct][code-of-conduct]. By participating, you are expected to uphold this code.
+-[code-of-conduct]: http://todogroup.org/opencodeofconduct/#Electron/opensource@github.com
++This project adheres to the [Contributor Covenant 1.2](http://contributor-covenant.org/version/1/2/0).
++By participating, you are expected to uphold this code. Please report unacceptable behavior to atom@github.com.
+diff --git a/README.md b/README.md
+index 3011d5461..764a6abfe 100644
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,3 @@ announcements.
++This project adheres to the [Open Code of Conduct][code-of-conduct]. By participating, you are expected to uphold this code.
++[code-of-conduct]: http://todogroup.org/opencodeofconduct/#Electron/opensource@github.com
++
+diff --git a/README.md b/README.md
+index abf2d3135..3011d5461 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +6,0 @@
+-
+diff --git a/README.md b/README.md
+index ee00b098b..abf2d3135 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,2 @@
++[![Join the Electron Community on Slack](http://atom-slack.herokuapp.com/badge.svg)](http://atom-slack.herokuapp.com/)
++
+diff --git a/README.md b/README.md
+index c3f7461c5..ee00b098b 100644
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,2 @@ as well as an `#atom-shell` channel on Freenode.
++
++Check out [awesome-electron](https://github.com/sindresorhus/awesome-electron) for a community maintained list of useful example apps, tools and resources.
+diff --git a/README.md b/README.md
+index 44f37efdb..c3f7461c5 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ npm install electron-prebuilt --save-dev
+-- [China](https://npm.taobao.org/mirrors/atom-shell)
++- [China](https://npm.taobao.org/mirrors/electron)
+diff --git a/README.md b/README.md
+index 6afa9b804..44f37efdb 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ binaries:
+-```
++```sh
+diff --git a/README.md b/README.md
+index b143e742d..6afa9b804 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Electron Logo](http://electron.atom.io/images/electron-logo-word-lg.png)](http://electron.atom.io/)
++[![Electron Logo](http://electron.atom.io/images/electron-logo.svg)](http://electron.atom.io/)
+diff --git a/README.md b/README.md
+index 256c21845..b143e742d 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,3 @@ editor](https://github.com/atom/atom).
++Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
++announcements.
++
+diff --git a/README.md b/README.md
+index de803ba5f..256c21845 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4 @@
++[![devDependency Status](https://david-dm.org/atom/electron/dev-status.svg)](https://david-dm.org/atom/electron#info=devDependencies)
+diff --git a/README.md b/README.md
+index fae5dda03..de803ba5f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +0,0 @@
+-# Electron [![Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
+-
+@@ -4,0 +3,2 @@
++[![Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
++
+diff --git a/README.md b/README.md
+index 643de8cb0..fae5dda03 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++[![Electron Logo](http://electron.atom.io/images/electron-logo-word-lg.png)](http://electron.atom.io/)
++
+diff --git a/README.md b/README.md
+index a1d4b7382..643de8cb0 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++:zap: *formerly known as Atom Shell* :zap:
++
+diff --git a/README.md b/README.md
+index bbb4aa61e..a1d4b7382 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ contains documents describing how to build and contribute to Electron.
+-There is an [`atom-shell` category on the Atom forums](http://discuss.atom.io/category/atom-shell)
++There is an [`electron` category on the Atom forums](http://discuss.atom.io/category/electron)
+diff --git a/README.md b/README.md
+index 7b582e620..bbb4aa61e 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,11 @@ be found on the [releases](https://github.com/atom/electron/releases) page.
++You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt electron
++binaries:
++
++```
++# Install the `electron` command globally in your $PATH
++npm install electron-prebuilt -g
++
++# Install as a development dependency
++npm install electron-prebuilt --save-dev
++```
++
+diff --git a/README.md b/README.md
+index a379c71c5..7b582e620 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Electron [![Build Status](https://travis-ci.org/atom/atom-shell.svg?branch=master)](https://travis-ci.org/atom/atom-shell)
++# Electron [![Build Status](https://travis-ci.org/atom/electron.svg?branch=master)](https://travis-ci.org/atom/electron)
+@@ -10,13 +10,2 @@ editor](https://github.com/atom/atom).
+-Prebuilt binaries and debug symbols of atom-shell for Linux, Windows and Mac can
+-be found on the [releases](https://github.com/atom/atom-shell/releases) page.
+-
+-You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt atom-shell
+-binaries:
+-
+-```
+-# Install globally in your $PATH
+-npm install atom-shell -g
+-
+-# Install as a development dependency
+-npm install atom-shell --save-dev
+-```
++Prebuilt binaries and debug symbols of Electron for Linux, Windows and Mac can
++be found on the [releases](https://github.com/atom/electron/releases) page.
+@@ -31,2 +20,2 @@ Guides and the API reference are located in the
+-[docs](https://github.com/atom/atom-shell/tree/master/docs) directory. It also
+-contains documents describing how to build and contribute to atom-shell.
++[docs](https://github.com/atom/electron/tree/master/docs) directory. It also
++contains documents describing how to build and contribute to Electron.
+diff --git a/README.md b/README.md
+index d9584358f..a379c71c5 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-The Atom Shell framework lets you write cross-platform desktop applications
++The Electron framework lets you write cross-platform desktop applications
+diff --git a/README.md b/README.md
+index 9b66a0ac3..d9584358f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Atom Shell [![Build Status](https://travis-ci.org/atom/atom-shell.svg?branch=master)](https://travis-ci.org/atom/atom-shell)
++# Electron [![Build Status](https://travis-ci.org/atom/atom-shell.svg?branch=master)](https://travis-ci.org/atom/atom-shell)
+diff --git a/README.md b/README.md
+index 87b3cb68e..9b66a0ac3 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ npm install atom-shell --save-dev
+-- [China Mirror](https://npm.taobao.org/mirrors/atom-shell): Improve download speeds for Chinese user.
++- [China](https://npm.taobao.org/mirrors/atom-shell)
+diff --git a/README.md b/README.md
+index ef359533e..87b3cb68e 100644
+--- a/README.md
++++ b/README.md
+@@ -10,2 +10,2 @@ editor](https://github.com/atom/atom).
+-Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
+-[releases](https://github.com/atom/atom-shell/releases) page.
++Prebuilt binaries and debug symbols of atom-shell for Linux, Windows and Mac can
++be found on the [releases](https://github.com/atom/atom-shell/releases) page.
+@@ -13 +13,2 @@ Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
+-You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt atom-shell binaries:
++You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt atom-shell
++binaries:
+diff --git a/README.md b/README.md
+index 16ea22151..ef359533e 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ The Atom Shell framework lets you write cross-platform desktop applications
+-using JavaScript, HTML and CSS. It is based on [node.js](http://nodejs.org) and
++using JavaScript, HTML and CSS. It is based on [io.js](http://iojs.org) and
+diff --git a/README.md b/README.md
+index cbc7b40ec..16ea22151 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt atom-shell
+-# install globally in your PATH
++# Install globally in your $PATH
+@@ -19 +19 @@ npm install atom-shell -g
+-# install as a development dependency
++# Install as a development dependency
+diff --git a/README.md b/README.md
+index f413aea56..cbc7b40ec 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,10 @@ Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
++You can also use [`npm`](https://docs.npmjs.com/) to install prebuilt atom-shell binaries:
++
++```
++# install globally in your PATH
++npm install atom-shell -g
++
++# install as a development dependency
++npm install atom-shell --save-dev
++```
++
+diff --git a/README.md b/README.md
+index db67cd79a..f413aea56 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,4 @@ Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
++### Mirrors
++
++- [China Mirror](https://npm.taobao.org/mirrors/atom-shell): Improve download speeds for Chinese user.
++
+diff --git a/README.md b/README.md
+index 77efd85ef..db67cd79a 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,5 @@ contains documents describing how to build and contribute to atom-shell.
++
++## Community
++
++There is an [`atom-shell` category on the Atom forums](http://discuss.atom.io/category/atom-shell)
++as well as an `#atom-shell` channel on Freenode.
+diff --git a/README.md b/README.md
+index 43df88258..77efd85ef 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
+-Guides and the API reference is located in the
++Guides and the API reference are located in the
+diff --git a/README.md b/README.md
+index f69316082..43df88258 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ editor](https://github.com/atom/atom).
+-Prebuilt binaries of atom-shell for Linux, Window and Mac can be found on the
++Prebuilt binaries of atom-shell for Linux, Windows and Mac can be found on the
+diff --git a/README.md b/README.md
+index 6e304a5dc..f69316082 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +2,0 @@
+-## Overview
+-
+diff --git a/README.md b/README.md
+index bdd4de5d5..6e304a5dc 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Guides and the API reference is located in the
+-contains documents describing how to build and contributeto atom-shell.
++contains documents describing how to build and contribute to atom-shell.
+diff --git a/README.md b/README.md
+index 79009e19f..bdd4de5d5 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++# Atom Shell [![Build Status](https://travis-ci.org/atom/atom-shell.svg?branch=master)](https://travis-ci.org/atom/atom-shell)
++
+diff --git a/README.md b/README.md
+index cd4081df8..79009e19f 100644
+--- a/README.md
++++ b/README.md
+@@ -3,5 +3,4 @@
+-Atom Shell is a cross-platform desktop application shell. It provides a way to
+-build native like applications with [node.js](http://nodejs.org) and web page
+-engine of [Chromium](http://www.chromium.org).
+-
+-It is powering the [Atom editor](https://github.com/atom/atom).
++The Atom Shell framework lets you write cross-platform desktop applications
++using JavaScript, HTML and CSS. It is based on [node.js](http://nodejs.org) and
++[Chromium](http://www.chromium.org) and is used in the [Atom
++editor](https://github.com/atom/atom).
+@@ -11,3 +10,2 @@ It is powering the [Atom editor](https://github.com/atom/atom).
+-Prebuilt binaries of atom-shell for Linux, Window and Mac could be found in the
+-[releases](https://github.com/atom/atom-shell/releases) page, new releases would
+-also be published there.
++Prebuilt binaries of atom-shell for Linux, Window and Mac can be found on the
++[releases](https://github.com/atom/atom-shell/releases) page.
+@@ -15 +13 @@ also be published there.
+-## Documents
++## Documentation
+@@ -17,3 +15,3 @@ also be published there.
+-Visist the [docs](https://github.com/atom/atom-shell/tree/master/docs) in the
+-repository for usage guides and API references, it also includes how to build
+-and contribute to atom-shell.
++Guides and the API reference is located in the
++[docs](https://github.com/atom/atom-shell/tree/master/docs) directory. It also
++contains documents describing how to build and contributeto atom-shell.
+diff --git a/README.md b/README.md
+index 1b6e311a3..cd4081df8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Atom Shell
++## Overview
+@@ -3 +3,3 @@
+-Native layer for the [Atom editor](https://github.com/atom/atom).
++Atom Shell is a cross-platform desktop application shell. It provides a way to
++build native like applications with [node.js](http://nodejs.org) and web page
++engine of [Chromium](http://www.chromium.org).
+@@ -5 +7 @@ Native layer for the [Atom editor](https://github.com/atom/atom).
+-## Features
++It is powering the [Atom editor](https://github.com/atom/atom).
+@@ -7,6 +9 @@ Native layer for the [Atom editor](https://github.com/atom/atom).
+-* Write desktop applications with web techniques
+-* Support built-in and third-party modules of node.js
+-* Support native node.js modules
+-* Extended built-in modules for desktop programming
+-* JavaScript on browser side
+-* Easy API for cross-process communication
++## Downloads
+@@ -14 +11,3 @@ Native layer for the [Atom editor](https://github.com/atom/atom).
+-## Usage & Development
++Prebuilt binaries of atom-shell for Linux, Window and Mac could be found in the
++[releases](https://github.com/atom/atom-shell/releases) page, new releases would
++also be published there.
+@@ -16 +15 @@ Native layer for the [Atom editor](https://github.com/atom/atom).
+-See the docs [here](https://github.com/atom/atom-shell/tree/master/docs).
++## Documents
+@@ -18,3 +17,3 @@ See the docs [here](https://github.com/atom/atom-shell/tree/master/docs).
+-## License
+-
+-See the [`LICENSE`](LICENSE) file.
++Visist the [docs](https://github.com/atom/atom-shell/tree/master/docs) in the
++repository for usage guides and API references, it also includes how to build
++and contribute to atom-shell.
+diff --git a/README.md b/README.md
+index 6e627ab57..1b6e311a3 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-Native layer for the [Atom](https://github.com/github/atom).
++Native layer for the [Atom editor](https://github.com/atom/atom).
+diff --git a/README.md b/README.md
+index 2c09303bb..6e627ab57 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Native layer for the [Atom](https://github.com/github/atom).
+-* Support built-in and third-party modules of node.js 
++* Support built-in and third-party modules of node.js
+@@ -16 +16 @@ Native layer for the [Atom](https://github.com/github/atom).
+-See the [Wiki](https://github.com/atom/atom-shell/wiki).
++See the docs [here](https://github.com/atom/atom-shell/tree/master/docs).
+diff --git a/README.md b/README.md
+index cde9cddfb..2c09303bb 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ See the [Wiki](https://github.com/atom/atom-shell/wiki).
+-We use MIT license, see the [`LICENSE`](LICENSE) file.
++See the [`LICENSE`](LICENSE) file.
+diff --git a/README.md b/README.md
+index 097c7eb75..cde9cddfb 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-Experimental native layer for the [Atom](https://github.com/github/atom).
++Native layer for the [Atom](https://github.com/github/atom).
+@@ -5 +5 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-## Development
++## Features
+@@ -7 +7,6 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-### One-time setup
++* Write desktop applications with web techniques
++* Support built-in and third-party modules of node.js 
++* Support native node.js modules
++* Extended built-in modules for desktop programming
++* JavaScript on browser side
++* Easy API for cross-process communication
+@@ -9 +14 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-    $ script/bootstrap
++## Usage & Development
+@@ -11,5 +16 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-### Building
+-
+-    $ script/build
+-
+-This will build the app into the `build` directory.
++See the [Wiki](https://github.com/atom/atom-shell/wiki).
+@@ -19 +20 @@ This will build the app into the `build` directory.
+-See the [`LICENSE`](LICENSE) file.
++We use MIT license, see the [`LICENSE`](LICENSE) file.
+diff --git a/README.md b/README.md
+index b7e05c38d..097c7eb75 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-    $ script/bootstrap https://gh-contractor-zcbenz.s3.amazonaws.com/libchromiumcontent
++    $ script/bootstrap
+diff --git a/README.md b/README.md
+index 9f6bd64ab..b7e05c38d 100644
+--- a/README.md
++++ b/README.md
+@@ -9,3 +8,0 @@ Experimental native layer for the [Atom](https://github.com/github/atom).
+-You must previously have built and uploaded libchromiumcontent using its
+-`script/upload` script.
+-
+diff --git a/README.md b/README.md
+index 22b533564..9f6bd64ab 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ You must previously have built and uploaded libchromiumcontent using its
+-    $ script/bootstrap http://base.url.com/used/by/script/upload
++    $ script/bootstrap https://gh-contractor-zcbenz.s3.amazonaws.com/libchromiumcontent

@@ -1,0 +1,173 @@
+diff --git a/README.md b/README.md
+index 8cf23cae1e..49231bf25d 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ After downloading a binary release, visit https://golang.org/doc/install
+-or load doc/install.html in your web browser for installation
++or load [doc/install.html](./doc/install.html) in your web browser for installation
+@@ -29 +29 @@ operating system and architecture, visit
+-https://golang.org/doc/install/source or load doc/install-source.html
++https://golang.org/doc/install/source or load [doc/install-source.html](./doc/install-source.html)
+diff --git a/README.md b/README.md
+index bb3d895d45..8cf23cae1e 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ in your web browser for source installation instructions.
+-Go is the work of hundreds of contributors. We appreciate your help!
++Go is the work of thousands of contributors. We appreciate your help!
+diff --git a/README.md b/README.md
+index 57492b3fb0..bb3d895d45 100644
+--- a/README.md
++++ b/README.md
+@@ -39,4 +39,3 @@ To contribute, please read the contribution guidelines:
+-Note that the Go project does not use GitHub pull requests, and that
+-we use the issue tracker for bug reports and proposals only. See
+-https://golang.org/wiki/Questions for a list of places to ask
+-questions about the Go language.
++Note that the Go project uses the issue tracker for bug reports and
++proposals only. See https://golang.org/wiki/Questions for a list of
++places to ask questions about the Go language.
+diff --git a/README.md b/README.md
+index bb3d895d45..57492b3fb0 100644
+--- a/README.md
++++ b/README.md
+@@ -39,3 +39,4 @@ To contribute, please read the contribution guidelines:
+-Note that the Go project uses the issue tracker for bug reports and
+-proposals only. See https://golang.org/wiki/Questions for a list of
+-places to ask questions about the Go language.
++Note that the Go project does not use GitHub pull requests, and that
++we use the issue tracker for bug reports and proposals only. See
++https://golang.org/wiki/Questions for a list of places to ask
++questions about the Go language.
+diff --git a/README.md b/README.md
+index 57492b3fb0..bb3d895d45 100644
+--- a/README.md
++++ b/README.md
+@@ -39,4 +39,3 @@ To contribute, please read the contribution guidelines:
+-Note that the Go project does not use GitHub pull requests, and that
+-we use the issue tracker for bug reports and proposals only. See
+-https://golang.org/wiki/Questions for a list of places to ask
+-questions about the Go language.
++Note that the Go project uses the issue tracker for bug reports and
++proposals only. See https://golang.org/wiki/Questions for a list of
++places to ask questions about the Go language.
+diff --git a/README.md b/README.md
+index 672cdf5568..57492b3fb0 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@ reliable, and efficient software.
++*Gopher image by [Renee French][rf], licensed under [Creative Commons 3.0 Attributions license][cc3-by].*
+@@ -41,0 +43,3 @@ questions about the Go language.
++
++[rf]: https://reneefrench.blogspot.com/
++[cc3-by]: https://creativecommons.org/licenses/by/3.0/
+diff --git a/README.md b/README.md
+index 281deecdfb..672cdf5568 100644
+--- a/README.md
++++ b/README.md
+@@ -8,4 +7,0 @@ reliable, and efficient software.
+-For documentation about how to install and use Go,
+-visit https://golang.org/ or load doc/install-source.html
+-in your web browser.
+-
+@@ -15 +11,2 @@ There is a mirror of the repository at https://github.com/golang/go.
+-Go is the work of hundreds of contributors. We appreciate your help!
++Unless otherwise noted, the Go source files are distributed under the
++BSD-style license found in the LICENSE file.
+@@ -17,2 +14 @@ Go is the work of hundreds of contributors. We appreciate your help!
+-To contribute, please read the contribution guidelines:
+-	https://golang.org/doc/contribute.html
++### Download and Install
+@@ -20 +16 @@ To contribute, please read the contribution guidelines:
+-##### Note that we do not accept pull requests and that we use the issue tracker for bug reports and proposals only. Please ask questions on https://forum.golangbridge.org or https://groups.google.com/forum/#!forum/golang-nuts.
++#### Binary Distributions
+@@ -22,2 +18 @@ To contribute, please read the contribution guidelines:
+-Unless otherwise noted, the Go source files are distributed
+-under the BSD-style license found in the LICENSE file.
++Official binary distributions are available at https://golang.org/dl/.
+@@ -25 +20,3 @@ under the BSD-style license found in the LICENSE file.
+---
++After downloading a binary release, visit https://golang.org/doc/install
++or load doc/install.html in your web browser for installation
++instructions.
+@@ -27 +24 @@ under the BSD-style license found in the LICENSE file.
+-## Binary Distribution Notes
++#### Install From Source
+@@ -29,7 +26,4 @@ under the BSD-style license found in the LICENSE file.
+-If you have just untarred a binary Go distribution, you need to set
+-the environment variable $GOROOT to the full path of the go
+-directory (the one containing this file).  You can omit the
+-variable if you unpack it into /usr/local/go, or if you rebuild
+-from sources by running all.bash (see doc/install-source.html).
+-You should also add the Go binary directory $GOROOT/bin
+-to your shell's path.
++If a binary distribution is not available for your combination of
++operating system and architecture, visit
++https://golang.org/doc/install/source or load doc/install-source.html
++in your web browser for source installation instructions.
+@@ -37,2 +31 @@ to your shell's path.
+-For example, if you extracted the tar file into $HOME/go, you might
+-put the following in your .profile:
++### Contributing
+@@ -40,2 +33,4 @@ put the following in your .profile:
+-	export GOROOT=$HOME/go
+-	export PATH=$PATH:$GOROOT/bin
++Go is the work of hundreds of contributors. We appreciate your help!
++
++To contribute, please read the contribution guidelines:
++	https://golang.org/doc/contribute.html
+@@ -43 +38,4 @@ put the following in your .profile:
+-See https://golang.org/doc/install or doc/install.html for more details.
++Note that the Go project does not use GitHub pull requests, and that
++we use the issue tracker for bug reports and proposals only. See
++https://golang.org/wiki/Questions for a list of places to ask
++questions about the Go language.
+diff --git a/README.md b/README.md
+index 4e6d7bde1f..281deecdfb 100644
+--- a/README.md
++++ b/README.md
+@@ -15,2 +14,0 @@ There is a mirror of the repository at https://github.com/golang/go.
+-Please report issues here: https://golang.org/issue/new
+-
+@@ -22 +20 @@ To contribute, please read the contribution guidelines:
+-##### Please note that we do not use pull requests.
++##### Note that we do not accept pull requests and that we use the issue tracker for bug reports and proposals only. Please ask questions on https://forum.golangbridge.org or https://groups.google.com/forum/#!forum/golang-nuts.
+diff --git a/README.md b/README.md
+index 4b79b5b902..4e6d7bde1f 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ Our canonical Git repository is located at https://go.googlesource.com/go.
+-(There is a mirror of the repository at https://github.com/golang/go.)
++There is a mirror of the repository at https://github.com/golang/go.
+@@ -46 +45,0 @@ See https://golang.org/doc/install or doc/install.html for more details.
+-
+diff --git a/README.md b/README.md
+index 53d42c5b52..4b79b5b902 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22,2 @@ To contribute, please read the contribution guidelines:
++##### Please note that we do not use pull requests.
++
+diff --git a/README.md b/README.md
+index 478021e151..53d42c5b52 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,3 @@
++Go is an open source programming language that makes it easy to build simple,
++reliable, and efficient software.
++
+@@ -6 +9 @@ For documentation about how to install and use Go,
+-visit http://golang.org/ or load doc/install-source.html
++visit https://golang.org/ or load doc/install-source.html
+@@ -12 +15 @@ Our canonical Git repository is located at https://go.googlesource.com/go.
+-Please report issues here: https://github.com/golang/go/issues
++Please report issues here: https://golang.org/issue/new
+@@ -17 +20 @@ To contribute, please read the contribution guidelines:
+-	http://golang.org/doc/contribute.html
++	https://golang.org/doc/contribute.html
+@@ -28 +31 @@ the environment variable $GOROOT to the full path of the go
+-directory (the one containing this README).  You can omit the
++directory (the one containing this file).  You can omit the
+@@ -30 +33 @@ variable if you unpack it into /usr/local/go, or if you rebuild
+-from sources by running all.bash (see doc/install.html).
++from sources by running all.bash (see doc/install-source.html).

@@ -1,0 +1,511 @@
+diff --git a/README.md b/README.md
+index 7ec7c6b46..18d1280cd 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ piece of cake. Best of all? It makes development fun!
+-##### AngularJS will be moving to Long Term Support (LTS) mode on July 1st 2018: [Find out more](https://docs.angularjs.org/misc/version-support-status)
++**On July 1, 2018 AngularJS entered a 3 year Long Term Support period:** [Find out more](https://docs.angularjs.org/misc/version-support-status)
+@@ -19 +19 @@ piece of cake. Best of all? It makes development fun!
+-##### Looking for the new Angular? Go here: https://github.com/angular/angular
++**Looking for the new Angular? Go here:** https://github.com/angular/angular
+diff --git a/README.md b/README.md
+index c2d1a9db2..7ec7c6b46 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ piece of cake. Best of all? It makes development fun!
+-##### AngularJS will be moving to Long Term Support (LTS) mode on July 1st 2018: [Find out more](misc/version-support-status)
++##### AngularJS will be moving to Long Term Support (LTS) mode on July 1st 2018: [Find out more](https://docs.angularjs.org/misc/version-support-status)
+diff --git a/README.md b/README.md
+index ae444e3cc..c2d1a9db2 100644
+--- a/README.md
++++ b/README.md
+@@ -14,0 +15,8 @@ piece of cake. Best of all? It makes development fun!
++--------------------
++
++##### AngularJS will be moving to Long Term Support (LTS) mode on July 1st 2018: [Find out more](misc/version-support-status)
++
++##### Looking for the new Angular? Go here: https://github.com/angular/angular
++
++--------------------
++
+@@ -23 +30,0 @@ piece of cake. Best of all? It makes development fun!
+-##### Looking for the new Angular? Go here: https://github.com/angular/angular
+diff --git a/README.md b/README.md
+index ea372ec0a..ae444e3cc 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19,2 @@ piece of cake. Best of all? It makes development fun!
+-* Contribution guidelines: [CONTRIBUTING.md](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md)
++* Contribution guidelines: [CONTRIBUTING.md](CONTRIBUTING.md)
++* Core Development: [DEVELOPERS.md](DEVELOPERS.md)
+@@ -24,14 +25,3 @@ piece of cake. Best of all? It makes development fun!
+-Building AngularJS
+----------
+-[Once you have set up your environment](https://docs.angularjs.org/misc/contribute), just run:
+-
+-    grunt package
+-
+-
+-Running tests
+--------------
+-To execute all unit tests, use:
+-
+-    grunt test:unit
+-
+-To execute end-to-end (e2e) tests, use:
++Documentation
++--------------------
++Go to https://docs.angularjs.org
+@@ -39,2 +29,2 @@ To execute end-to-end (e2e) tests, use:
+-    grunt package
+-    grunt test:e2e
++Contribute
++--------------------
+@@ -42 +32,2 @@ To execute end-to-end (e2e) tests, use:
+-To learn more about the grunt tasks, run `grunt --help`
++We've set up a separate document for our
++[contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
+@@ -44 +35 @@ To learn more about the grunt tasks, run `grunt --help`
+-Contribute & Develop
++Develop
+@@ -47 +38,2 @@ Contribute & Develop
+-We've set up a separate document for our [contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
++We've set up a separate document for
++[developers](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md).
+diff --git a/README.md b/README.md
+index c6a8dd5c3..ea372ec0a 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11,2 @@ the browser how to do dependency injection and inversion of control.
+-It also helps with server-side communication, taming async callbacks with promises and deferreds,
+-and it makes client-side navigation and deeplinking with hashbang urls or HTML5 pushState a
++It also helps with server-side communication, taming async callbacks with promises and deferred objects,
++and it makes client-side navigation and deep linking with hashbang urls or HTML5 pushState a
+diff --git a/README.md b/README.md
+index bc3b9554a..c6a8dd5c3 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ piece of cake. Best of all? It makes development fun!
+-##### Looking for Angular 2? Go here: https://github.com/angular/angular
++##### Looking for the new Angular? Go here: https://github.com/angular/angular
+@@ -83 +83 @@ of WYSIWYG way. Rather than spending time on how the program flows and orchestra
+-moving parts, we simply define what we want and Angular will take care of the dependencies.
++moving parts, we simply define what we want and AngularJS will take care of the dependencies.
+diff --git a/README.md b/README.md
+index 8d2bea0f9..bc3b9554a 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ AngularJS lets you write client-side web applications as if you had a smarter br
+-use good old HTML (or HAML, Jade and friends!) as your template language and lets you extend HTML’s
++use good old HTML (or HAML, Jade/Pug and friends!) as your template language and lets you extend HTML’s
+diff --git a/README.md b/README.md
+index e5bf75ab8..8d2bea0f9 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54,3 @@ What to use AngularJS for and when to use it
+-AngularJS is the next generation framework where each component is designed to work with every other component in an interconnected way like a well-oiled machine. AngularJS is JavaScript MVC made easy and done right. (Well it is not really MVC, read on, to understand what this means.)
++AngularJS is the next generation framework where each component is designed to work with every other
++component in an interconnected way like a well-oiled machine. AngularJS is JavaScript MVC made easy
++and done right. (Well it is not really MVC, read on, to understand what this means.)
+@@ -57,3 +59,11 @@ AngularJS is the next generation framework where each component is designed to w
+-MVC, short for Model-View-Controller, is a design pattern, i.e. how the code should be organized and how the different parts of an application separated for proper readability and debugging. Model is the data and the database. View is the user interface and what the user sees. Controller is the main link between Model and View. These are the three pillars of major programming frameworks present on the market today. On the other hand AngularJS works on MV*, short for Model-View-_Whatever_. The _Whatever_ is AngularJS's way of telling that you may create any kind of linking between the Model and the View here.
+-
+-Unlike other frameworks in any programming language, where MVC, the three separate components, each one has to be written and then connected by the programmer, AngularJS helps the programmer by asking him/her to just create these and everything else will be taken care of by AngularJS.
++MVC, short for Model-View-Controller, is a design pattern, i.e. how the code should be organized and
++how the different parts of an application separated for proper readability and debugging. Model is
++the data and the database. View is the user interface and what the user sees. Controller is the main
++link between Model and View. These are the three pillars of major programming frameworks present on
++the market today. On the other hand AngularJS works on MV*, short for Model-View-_Whatever_. The
++_Whatever_ is AngularJS's way of telling that you may create any kind of linking between the Model
++and the View here.
++
++Unlike other frameworks in any programming language, where MVC, the three separate components, each
++one has to be written and then connected by the programmer, AngularJS helps the programmer by asking
++him/her to just create these and everything else will be taken care of by AngularJS.
+@@ -62 +72,12 @@ Unlike other frameworks in any programming language, where MVC, the three separa
+-AngularJS uses HTML to define the user's interface. AngularJS also enables the programmer to write new HTML tags (AngularJS Directives) and increase the readability and understandability of the HTML code. Directives are AngularJS’s way of bringing additional functionality to HTML. Directives achieve this by enabling us to invent our own HTML elements. This also helps in making the code DRY (Don't Repeat Yourself), which means once created, a new directive can be used anywhere within the application.
++AngularJS uses HTML to define the user's interface. AngularJS also enables the programmer to write
++new HTML tags (AngularJS Directives) and increase the readability and understandability of the HTML
++code. Directives are AngularJS’s way of bringing additional functionality to HTML. Directives
++achieve this by enabling us to invent our own HTML elements. This also helps in making the code DRY
++(Don't Repeat Yourself), which means once created, a new directive can be used anywhere within the
++application.
++
++HTML is also used to determine the wiring of the app. Special attributes in the HTML determine where
++to load the app, which components or controllers to use for each element, etc. We specify "what"
++gets loaded, but not "how". This declarative approach greatly simplifies app development in a sort
++of WYSIWYG way. Rather than spending time on how the program flows and orchestrating the various
++moving parts, we simply define what we want and Angular will take care of the dependencies.
+@@ -65 +86,2 @@ AngularJS uses HTML to define the user's interface. AngularJS also enables the p
+-Data and Data Models in AngularJS are plain JavaScript objects and one can add and change properties directly on it and loop over objects and arrays at will.
++Data and Data Models in AngularJS are plain JavaScript objects and one can add and change properties
++directly on it and loop over objects and arrays at will.
+@@ -68 +90,6 @@ Data and Data Models in AngularJS are plain JavaScript objects and one can add a
+-One of AngularJS's strongest features. Two-way Data Binding means that if something changes in the Model, the change gets reflected in the View instantaneously, and the same happens the other way around. This is also referred to as Reactive Programming, i.e. suppose `a = b + c` is being programmed and after this, if the value of `b` and/or `c` is changed then the value of `a` will be automatically updated to reflect the change. AngularJS uses its "scopes" as a glue between the Model and View and makes these updates in one available for the other.
++One of AngularJS's strongest features. Two-way Data Binding means that if something changes in the
++Model, the change gets reflected in the View instantaneously, and the same happens the other way
++around. This is also referred to as Reactive Programming, i.e. suppose `a = b + c` is being
++programmed and after this, if the value of `b` and/or `c` is changed then the value of `a` will be
++automatically updated to reflect the change. AngularJS uses its "scopes" as a glue between the Model
++and View and makes these updates in one available for the other.
+@@ -71 +98,4 @@ One of AngularJS's strongest features. Two-way Data Binding means that if someth
+-Everything in AngularJS is created to enable the programmer to end up writing less code that is easily maintainable and readable by any other new person on the team. Believe it or not, one can write a complete working two-way data binded application in less than 10 lines of code. Try and see for yourself!
++Everything in AngularJS is created to enable the programmer to end up writing less code that is
++easily maintainable and readable by any other new person on the team. Believe it or not, one can
++write a complete working two-way data binded application in less than 10 lines of code. Try and see
++for yourself!
+@@ -74 +104,4 @@ Everything in AngularJS is created to enable the programmer to end up writing le
+-AngularJS has Dependency Injection, i.e. it takes care of providing all the necessary dependencies to its controllers whenever required. This helps in making the AngularJS code ready for unit testing by making use of mock dependencies created and injected. This makes AngularJS more modular and easily testable thus in turn helping a team create more robust applications.
++AngularJS has Dependency Injection, i.e. it takes care of providing all the necessary dependencies
++to its controllers and services whenever required. This helps in making the AngularJS code ready for
++unit testing by making use of mock dependencies created and injected. This makes AngularJS more
++modular and easily testable thus in turn helping a team create more robust applications.
+diff --git a/README.md b/README.md
+index 94c909882..e5bf75ab8 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ piece of cake. Best of all? It makes development fun!
+-##### Looking for Angular 2 (beta)? Go here: https://github.com/angular/angular
++##### Looking for Angular 2? Go here: https://github.com/angular/angular
+diff --git a/README.md b/README.md
+index 8b50a47d4..94c909882 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ piece of cake. Best of all? It makes development fun!
++##### Looking for Angular 2 (beta)? Go here: https://github.com/angular/angular
+diff --git a/README.md b/README.md
+index a70039ab6..8b50a47d4 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ Building AngularJS
+-[Once you have set up your environment](httpd://docs.angularjs.org/misc/contribute), just run:
++[Once you have set up your environment](https://docs.angularjs.org/misc/contribute), just run:
+diff --git a/README.md b/README.md
+index e27af0f6b..a70039ab6 100644
+--- a/README.md
++++ b/README.md
+@@ -11,8 +11,8 @@ the browser how to do dependency injection and inversion of control.
+-Oh yeah and it helps with server-side communication, taming async callbacks with promises and 
+-deferreds. It also makes client-side navigation and deeplinking with hashbang urls or HTML5 pushState a
+-piece of cake. Best of all?? It makes development fun!
+-
+-* Web site: http://angularjs.org
+-* Tutorial: http://docs.angularjs.org/tutorial
+-* API Docs: http://docs.angularjs.org/api
+-* Developer Guide: http://docs.angularjs.org/guide
++It also helps with server-side communication, taming async callbacks with promises and deferreds,
++and it makes client-side navigation and deeplinking with hashbang urls or HTML5 pushState a
++piece of cake. Best of all? It makes development fun!
++
++* Web site: https://angularjs.org
++* Tutorial: https://docs.angularjs.org/tutorial
++* API Docs: https://docs.angularjs.org/api
++* Developer Guide: https://docs.angularjs.org/guide
+@@ -20,2 +20,3 @@ piece of cake. Best of all?? It makes development fun!
+-* Dashboard: http://dashboard.angularjs.org
+- 
++* Dashboard: https://dashboard.angularjs.org
++
++
+@@ -24 +25 @@ Building AngularJS
+-[Once you have your environment set up](http://docs.angularjs.org/misc/contribute) just run:
++[Once you have set up your environment](httpd://docs.angularjs.org/misc/contribute), just run:
+@@ -40,2 +41,6 @@ To execute end-to-end (e2e) tests, use:
+-To learn more about the grunt tasks, run `grunt --help` and also read our
+-[contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
++To learn more about the grunt tasks, run `grunt --help`
++
++Contribute & Develop
++--------------------
++
++We've set up a separate document for our [contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
+@@ -51 +56 @@ AngularJS is the next generation framework where each component is designed to w
+-MVC, short for Model-View-Controller, is a design pattern, i.e. how the code should be organized and how the different parts of an application separated for proper readability and debugging. Model is the data and the database. View is the user interface and what the user sees. Controller is the main link between Model and View. These are the three pillars of major programming frameworks present on the market today. On the other hand AngularJS works on MV*, short for Model-View-_Whatever_. The _Whatever_ is AngularJS's way of telling that you may create any kind of linking between the Model and the View here. 
++MVC, short for Model-View-Controller, is a design pattern, i.e. how the code should be organized and how the different parts of an application separated for proper readability and debugging. Model is the data and the database. View is the user interface and what the user sees. Controller is the main link between Model and View. These are the three pillars of major programming frameworks present on the market today. On the other hand AngularJS works on MV*, short for Model-View-_Whatever_. The _Whatever_ is AngularJS's way of telling that you may create any kind of linking between the Model and the View here.
+diff --git a/README.md b/README.md
+index fdff012ba..e27af0f6b 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ One of AngularJS's strongest features. Two-way Data Binding means that if someth
+-Everything in AngularJS is created to enable the programmer ends up writing less code that is easily maintainable and readable by any other new person on the team. Believe it or not, one can write a complete working two-way data binded application in less than 10 lines of code. Try and see for yourself!
++Everything in AngularJS is created to enable the programmer to end up writing less code that is easily maintainable and readable by any other new person on the team. Believe it or not, one can write a complete working two-way data binded application in less than 10 lines of code. Try and see for yourself!
+diff --git a/README.md b/README.md
+index d1f69370c..fdff012ba 100644
+--- a/README.md
++++ b/README.md
+@@ -64 +64 @@ One of AngularJS's strongest features. Two-way Data Binding means that if someth
+-#### Less Written Code and Easily Maintable Code
++#### Less Written Code and Easily Maintainable Code
+diff --git a/README.md b/README.md
+index e13ed1145..d1f69370c 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Building AngularJS
+-Running Tests
++Running tests
+@@ -46 +46 @@ To learn more about the grunt tasks, run `grunt --help` and also read our
+-What to Use AngularJS for and When to Use it
++What to use AngularJS for and when to use it
+diff --git a/README.md b/README.md
+index b3e6c71c4..e13ed1145 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ piece of cake. Best of all?? It makes development fun!
+-
++ 
+@@ -45,0 +46,23 @@ To learn more about the grunt tasks, run `grunt --help` and also read our
++What to Use AngularJS for and When to Use it
++---------
++AngularJS is the next generation framework where each component is designed to work with every other component in an interconnected way like a well-oiled machine. AngularJS is JavaScript MVC made easy and done right. (Well it is not really MVC, read on, to understand what this means.)
++
++#### MVC, no, MV* done the right way!
++MVC, short for Model-View-Controller, is a design pattern, i.e. how the code should be organized and how the different parts of an application separated for proper readability and debugging. Model is the data and the database. View is the user interface and what the user sees. Controller is the main link between Model and View. These are the three pillars of major programming frameworks present on the market today. On the other hand AngularJS works on MV*, short for Model-View-_Whatever_. The _Whatever_ is AngularJS's way of telling that you may create any kind of linking between the Model and the View here. 
++
++Unlike other frameworks in any programming language, where MVC, the three separate components, each one has to be written and then connected by the programmer, AngularJS helps the programmer by asking him/her to just create these and everything else will be taken care of by AngularJS.
++
++#### Interconnection with HTML at the root level
++AngularJS uses HTML to define the user's interface. AngularJS also enables the programmer to write new HTML tags (AngularJS Directives) and increase the readability and understandability of the HTML code. Directives are AngularJS’s way of bringing additional functionality to HTML. Directives achieve this by enabling us to invent our own HTML elements. This also helps in making the code DRY (Don't Repeat Yourself), which means once created, a new directive can be used anywhere within the application.
++
++#### Data Handling made simple
++Data and Data Models in AngularJS are plain JavaScript objects and one can add and change properties directly on it and loop over objects and arrays at will.
++
++#### Two-way Data Binding
++One of AngularJS's strongest features. Two-way Data Binding means that if something changes in the Model, the change gets reflected in the View instantaneously, and the same happens the other way around. This is also referred to as Reactive Programming, i.e. suppose `a = b + c` is being programmed and after this, if the value of `b` and/or `c` is changed then the value of `a` will be automatically updated to reflect the change. AngularJS uses its "scopes" as a glue between the Model and View and makes these updates in one available for the other.
++
++#### Less Written Code and Easily Maintable Code
++Everything in AngularJS is created to enable the programmer ends up writing less code that is easily maintainable and readable by any other new person on the team. Believe it or not, one can write a complete working two-way data binded application in less than 10 lines of code. Try and see for yourself!
++
++#### Testing Ready
++AngularJS has Dependency Injection, i.e. it takes care of providing all the necessary dependencies to its controllers whenever required. This helps in making the AngularJS code ready for unit testing by making use of mock dependencies created and injected. This makes AngularJS more modular and easily testable thus in turn helping a team create more robust applications.
+diff --git a/README.md b/README.md
+index aac26f18c..b3e6c71c4 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Building AngularJS
+-[Once you have your environment setup](http://docs.angularjs.org/misc/contribute) just run:
++[Once you have your environment set up](http://docs.angularjs.org/misc/contribute) just run:
+diff --git a/README.md b/README.md
+index 7deb1604b..aac26f18c 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ deferreds. It also makes client-side navigation and deeplinking with hashbang ur
+-piece of cake. The best of all: it makes development fun!
++piece of cake. Best of all?? It makes development fun!
+diff --git a/README.md b/README.md
+index 8f7788dee..7deb1604b 100644
+--- a/README.md
++++ b/README.md
+@@ -9,4 +9,5 @@ binding. To help you structure your application better and make it easy to test,
+-the browser how to do dependency injection and inversion of control. Oh yeah and it also helps with
+-server-side communication, taming async callbacks with promises and deferreds; and makes client-side
+-navigation and deeplinking with hashbang urls or HTML5 pushState a piece of cake. The best of all:
+-it makes development fun!
++the browser how to do dependency injection and inversion of control.
++
++Oh yeah and it helps with server-side communication, taming async callbacks with promises and 
++deferreds. It also makes client-side navigation and deeplinking with hashbang urls or HTML5 pushState a
++piece of cake. The best of all: it makes development fun!
+diff --git a/README.md b/README.md
+index 535fdccb8..8f7788dee 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ it makes development fun!
+-* Contribution guidelines: http://docs.angularjs.org/misc/contribute
++* Contribution guidelines: [CONTRIBUTING.md](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md)
+@@ -40 +40 @@ To learn more about the grunt tasks, run `grunt --help` and also read our
+-[contribution guidelines](http://docs.angularjs.org/misc/contribute).
++[contribution guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md).
+diff --git a/README.md b/README.md
+index 5206614bf..535fdccb8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-AngularJS [![Build Status](https://travis-ci.org/angular/angular.js.png?branch=master)](https://travis-ci.org/angular/angular.js)
++AngularJS [![Build Status](https://travis-ci.org/angular/angular.js.svg?branch=master)](https://travis-ci.org/angular/angular.js)
+diff --git a/README.md b/README.md
+index 3f5e7f823..5206614bf 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ the browser how to do dependency injection and inversion of control. Oh yeah and
+-server-side communication, taming async callbacks with promises and deferreds; and make client-side
++server-side communication, taming async callbacks with promises and deferreds; and makes client-side
+diff --git a/README.md b/README.md
+index 1761c07fe..3f5e7f823 100644
+--- a/README.md
++++ b/README.md
+@@ -41,0 +42 @@ To learn more about the grunt tasks, run `grunt --help` and also read our
++
+diff --git a/README.md b/README.md
+index 6214ed9b8..1761c07fe 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,3 @@ To learn more about the grunt tasks, run `grunt --help` and also read our
++
++[![Analytics](https://ga-beacon.appspot.com/UA-8594346-11/angular.js/README.md?pixel)](https://github.com/igrigorik/ga-beacon)
++
+diff --git a/README.md b/README.md
+index f3f39a7ce..6214ed9b8 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ it makes development fun!
++* Dashboard: http://dashboard.angularjs.org
+diff --git a/README.md b/README.md
+index 8e38afff9..f3f39a7ce 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-AngularJS
++AngularJS [![Build Status](https://travis-ci.org/angular/angular.js.png?branch=master)](https://travis-ci.org/angular/angular.js)
+diff --git a/README.md b/README.md
+index a46f73552..8e38afff9 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Building AngularJS
+-    rake package
++    grunt package
+@@ -31 +31 @@ To execute all unit tests, use:
+-    rake test:unit
++    grunt test:unit
+@@ -35,3 +35,2 @@ To execute end-to-end (e2e) tests, use:
+-    rake package
+-    rake webserver &
+-    rake test:e2e
++    grunt package
++    grunt test:e2e
+@@ -39,3 +38,2 @@ To execute end-to-end (e2e) tests, use:
+-To learn more about the rake tasks, run `rake -T` and also read our
+-[contribution guidelines](http://docs.angularjs.org/misc/contribute) and instructions in this
+-[commit message](https://github.com/angular/angular.js/commit/9d168f058f9c6d7eeae0daa7cb72ea4e02a0003a).
++To learn more about the grunt tasks, run `grunt --help` and also read our
++[contribution guidelines](http://docs.angularjs.org/misc/contribute).
+diff --git a/README.md b/README.md
+index 92ba8d2f6..a46f73552 100644
+--- a/README.md
++++ b/README.md
+@@ -29,4 +28,0 @@ Running Tests
+-Running tests requires installation of [Testacular](http://vojtajina.github.com/testacular):
+-
+-    sudo npm install -g testacular
+-
+diff --git a/README.md b/README.md
+index 32bd4c431..92ba8d2f6 100644
+--- a/README.md
++++ b/README.md
+@@ -4,2 +4,2 @@ AngularJS
+-AngularJS lets you write client-side web applications as if you had a smarter browser.  It lets use
+-good old HTML (or HAML, Jade and friends!) as your template language and lets you extend HTML’s
++AngularJS lets you write client-side web applications as if you had a smarter browser.  It lets you
++use good old HTML (or HAML, Jade and friends!) as your template language and lets you extend HTML’s
+@@ -8 +8 @@ synchronizes data from your UI (view) with your JavaScript objects (model) throu
+-binding. To help you structure your application better and make it easy to test AngularJS teaches
++binding. To help you structure your application better and make it easy to test, AngularJS teaches
+diff --git a/README.md b/README.md
+index f29dd2dd0..32bd4c431 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ it makes development fun!
+-* API Docs: http://docs.angularjs.org
++* API Docs: http://docs.angularjs.org/api
+diff --git a/README.md b/README.md
+index b6a98cad3..f29dd2dd0 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ it makes development fun!
++* Contribution guidelines: http://docs.angularjs.org/misc/contribute
+@@ -19 +20 @@ it makes development fun!
+-Compiling
++Building AngularJS
+@@ -21 +22,4 @@ Compiling
+-    rake compile
++[Once you have your environment setup](http://docs.angularjs.org/misc/contribute) just run:
++
++    rake package
++
+@@ -25,3 +29,9 @@ Running Tests
+-    ./server.sh                          # start the server
+-    open http://localhost:9876/capture   # capture browser
+-    ./test.sh                            # run all unit tests
++Running tests requires installation of [Testacular](http://vojtajina.github.com/testacular):
++
++    sudo npm install -g testacular
++
++To execute all unit tests, use:
++
++    rake test:unit
++
++To execute end-to-end (e2e) tests, use:
+@@ -28,0 +39,3 @@ Running Tests
++    rake package
++    rake webserver &
++    rake test:e2e
+@@ -29,0 +43,3 @@ Running Tests
++To learn more about the rake tasks, run `rake -T` and also read our
++[contribution guidelines](http://docs.angularjs.org/misc/contribute) and instructions in this
++[commit message](https://github.com/angular/angular.js/commit/9d168f058f9c6d7eeae0daa7cb72ea4e02a0003a).
+diff --git a/README.md b/README.md
+index be24f3f8d..b6a98cad3 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11,2 @@ server-side communication, taming async callbacks with promises and deferreds; a
+-navigation and deeplinking with hashbang urls or HTML5 pushState a piece of cake. The most important
+-of all: it makes development fun!
++navigation and deeplinking with hashbang urls or HTML5 pushState a piece of cake. The best of all:
++it makes development fun!
+diff --git a/README.md b/README.md
+index 14941134c..be24f3f8d 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4,10 @@ AngularJS
++AngularJS lets you write client-side web applications as if you had a smarter browser.  It lets use
++good old HTML (or HAML, Jade and friends!) as your template language and lets you extend HTML’s
++syntax to express your application’s components clearly and succinctly.  It automatically
++synchronizes data from your UI (view) with your JavaScript objects (model) through 2-way data
++binding. To help you structure your application better and make it easy to test AngularJS teaches
++the browser how to do dependency injection and inversion of control. Oh yeah and it also helps with
++server-side communication, taming async callbacks with promises and deferreds; and make client-side
++navigation and deeplinking with hashbang urls or HTML5 pushState a piece of cake. The most important
++of all: it makes development fun!
++
+@@ -5 +15 @@ AngularJS
+-* Tutorial: http://docs.angularjs.org/#!/tutorial
++* Tutorial: http://docs.angularjs.org/tutorial
+@@ -7 +17 @@ AngularJS
+-* Developer Guide: http://docs.angularjs.org/#!/guide
++* Developer Guide: http://docs.angularjs.org/guide
+diff --git a/README.md b/README.md
+index 28aadac13..14941134c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,7 @@
+-Angular
+-======
++AngularJS
++=========
++
++* Web site: http://angularjs.org
++* Tutorial: http://docs.angularjs.org/#!/tutorial
++* API Docs: http://docs.angularjs.org
++* Developer Guide: http://docs.angularjs.org/#!/guide
+@@ -10,2 +15,4 @@ Running Tests
+-    rake server:start
+-    rake test
++    ./server.sh                          # start the server
++    open http://localhost:9876/capture   # capture browser
++    ./test.sh                            # run all unit tests
++
+diff --git a/README.md b/README.md
+index 41fa9038a..28aadac13 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,10 @@ Angular
+-TODO
++
++Compiling
++---------
++    rake compile
++
++Running Tests
++-------------
++    rake server:start
++    rake test
++

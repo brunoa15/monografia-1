@@ -1,0 +1,251 @@
+diff --git a/README.rst b/README.rst
+index 6e574323..ecfccedb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -69,2 +69,2 @@ Links
+-* Website: https://www.palletsprojects.com/p/flask/
+-* Documentation: http://flask.pocoo.org/docs/
++* Website: https://palletsprojects.com/p/flask/
++* Documentation: https://flask.palletsprojects.com/
+diff --git a/README.rst b/README.rst
+index 6187b3ef..6e574323 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ FLASK_APP=hello.py flask run
++    $ env FLASK_APP=hello.py flask run
+@@ -45,0 +46,9 @@ A Simple Example
++Contributing
++------------
++
++For guidance on setting up a development environment and how to make a
++contribution to Flask, see the `contributing guidelines`_.
++
++.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
++
++
+diff --git a/README.rst b/README.rst
+index 29aa8a90..6187b3ef 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ env FLASK_APP=hello.py flask run
++    $ FLASK_APP=hello.py flask run
+@@ -46,9 +45,0 @@ A Simple Example
+-Contributing
+-------------
+-
+-For guidance on setting up a development environment and how to make a
+-contribution to Flask, see the `contributing guidelines`_.
+-
+-.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
+-
+-
+@@ -74 +65 @@ Links
+-* Test status: https://dev.azure.com/pallets/pallets/_build?definitionId=2
++* Test status: https://dev.azure.com/pallets/flask/_build
+diff --git a/README.rst b/README.rst
+index 994c799f..29aa8a90 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ FLASK_APP=hello.py flask run
++    $ env FLASK_APP=hello.py flask run
+@@ -45,0 +46,9 @@ A Simple Example
++Contributing
++------------
++
++For guidance on setting up a development environment and how to make a
++contribution to Flask, see the `contributing guidelines`_.
++
++.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
++
++
+diff --git a/README.rst b/README.rst
+index b834952b..994c799f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -35 +35 @@ A Simple Example
+-    @app.route('/')
++    @app.route("/")
+@@ -37 +37 @@ A Simple Example
+-        return 'Hello, World!'
++        return "Hello, World!"
+@@ -41 +41 @@ A Simple Example
+-    $ env FLASK_APP=hello.py flask run
++    $ FLASK_APP=hello.py flask run
+@@ -46,9 +45,0 @@ A Simple Example
+-Contributing
+-------------
+-
+-For guidance on setting up a development environment and how to make a
+-contribution to Flask, see the `contributing guidelines`_.
+-
+-.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
+-
+-
+@@ -71 +61,0 @@ Links
+-* License: `BSD <https://github.com/pallets/flask/blob/master/LICENSE>`_
+@@ -76 +65,0 @@ Links
+-* Test coverage: https://codecov.io/gh/pallets/flask
+diff --git a/README.rst b/README.rst
+index 5aaf7767..b834952b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ FLASK_APP=hello.py flask run
++    $ env FLASK_APP=hello.py flask run
+@@ -45,0 +46,9 @@ A Simple Example
++Contributing
++------------
++
++For guidance on setting up a development environment and how to make a
++contribution to Flask, see the `contributing guidelines`_.
++
++.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
++
++
+diff --git a/README.rst b/README.rst
+index 2991a836..5aaf7767 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ env FLASK_APP=hello.py flask run
++    $ FLASK_APP=hello.py flask run
+@@ -46,9 +45,0 @@ A Simple Example
+-Contributing
+-------------
+-
+-For guidance on setting up a development environment and how to make a
+-contribution to Flask, see the `contributing guidelines`_.
+-
+-.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
+-
+-
+@@ -76 +66,0 @@ Links
+-
+diff --git a/README.rst b/README.rst
+index 25af0d7e..2991a836 100644
+--- a/README.rst
++++ b/README.rst
+@@ -77,0 +78 @@ Links
++* Official chat: https://discord.gg/t6rrQZH
+diff --git a/README.rst b/README.rst
+index 0b4e628f..25af0d7e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ FLASK_APP=hello.py flask run
++    $ env FLASK_APP=hello.py flask run
+@@ -45,0 +46,9 @@ A Simple Example
++Contributing
++------------
++
++For guidance on setting up a development environment and how to make a
++contribution to Flask, see the `contributing guidelines`_.
++
++.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
++
++
+@@ -66,4 +75 @@ Links
+-* Test status:
+-
+-  * Linux, Mac: https://travis-ci.org/pallets/flask
+-  * Windows: https://ci.appveyor.com/project/pallets/flask
++* Test status: https://dev.azure.com/pallets/pallets/_build?definitionId=2
+@@ -72 +77,0 @@ Links
+-* Official chat: https://discord.gg/t6rrQZH
+diff --git a/README.rst b/README.rst
+index 4243793c..0b4e628f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ env FLASK_APP=hello.py flask run
++    $ FLASK_APP=hello.py flask run
+@@ -46,9 +45,0 @@ A Simple Example
+-Contributing
+-------------
+-
+-For guidance on setting up a development environment and how to make a
+-contribution to Flask, see the `contributing guidelines`_.
+-
+-.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
+-
+-
+@@ -80,0 +72 @@ Links
++* Official chat: https://discord.gg/t6rrQZH
+diff --git a/README.rst b/README.rst
+index f2906aae..4243793c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -45,0 +46,9 @@ A Simple Example
++Contributing
++------------
++
++For guidance on setting up a development environment and how to make a
++contribution to Flask, see the `contributing guidelines`_.
++
++.. _contributing guidelines: https://github.com/pallets/flask/blob/master/CONTRIBUTING.rst
++
++
+diff --git a/README.rst b/README.rst
+index 6277690e..f2906aae 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ A Simple Example
+-    $ FLASK_APP=hello.py flask run
++    $ env FLASK_APP=hello.py flask run
+diff --git a/README.rst b/README.rst
+index 9b3978ee..6277690e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -45,0 +46,11 @@ A Simple Example
++Donate
++------
++
++The Pallets organization develops and supports Flask and the libraries
++it uses. In order to grow the community of contributors and users, and
++allow the maintainers to devote more time to the projects, `please
++donate today`_.
++
++.. _please donate today: https://psfmember.org/civicrm/contribute/transact?reset=1&id=20
++
++
+diff --git a/README.rst b/README.rst
+index 0544f003..9b3978ee 100644
+--- a/README.rst
++++ b/README.rst
+@@ -51 +51 @@ Links
+-* License: https://github.com/pallets/flask/blob/master/LICENSE
++* License: `BSD <https://github.com/pallets/flask/blob/master/LICENSE>`_
+diff --git a/README.rst b/README.rst
+index b7d4664f..0544f003 100644
+--- a/README.rst
++++ b/README.rst
+@@ -50,0 +51 @@ Links
++* License: https://github.com/pallets/flask/blob/master/LICENSE
+diff --git a/README.rst b/README.rst
+index 6f6dc581..b7d4664f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -39 +39 @@ A Simple Example
+-.. code-block:: none
++.. code-block:: text
+@@ -42 +42,2 @@ A Simple Example
+-     * Running on http://localhost:5000/
++     * Serving Flask app "hello"
++     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+diff --git a/README.rst b/README.rst
+index 9c4aa416..6f6dc581 100644
+--- a/README.rst
++++ b/README.rst
+@@ -48,0 +49 @@ Links
++* Documentation: http://flask.pocoo.org/docs/
+@@ -51 +51,0 @@ Links
+-* Documentation: http://flask.pocoo.org/docs/
+diff --git a/README.rst b/README.rst
+index ef01ca5b..9c4aa416 100644
+--- a/README.rst
++++ b/README.rst
+@@ -50,0 +51 @@ Links
++* Documentation: http://flask.pocoo.org/docs/

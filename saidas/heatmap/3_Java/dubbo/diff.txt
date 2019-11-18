@@ -1,0 +1,1601 @@
+diff --git a/README.md b/README.md
+index 2a923bb90..8a855eb63 100644
+--- a/README.md
++++ b/README.md
+@@ -79,4 +79,4 @@ package org.apache.dubbo.samples.provider;
+- 
+-import org.apache.dubbo.samples.api.GreetingService;
+- 
+-public class GreetingServiceImpl implements GreetingService {
++
++import org.apache.dubbo.samples.api.GreetingsService;
++
++public class GreetingsServiceImpl implements GreetingsService {
+@@ -84,2 +84,2 @@ public class GreetingServiceImpl implements GreetingService {
+-    public String sayHello(String name) {
+-        return "Hello " + name;
++    public String sayHi(String name) {
++        return "hi, " + name;
+@@ -90 +90 @@ public class GreetingServiceImpl implements GreetingService {
+-*See [provider/GreetingServiceImpl.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
++*See [provider/GreetingServiceImpl.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
+@@ -95 +95,2 @@ public class GreetingServiceImpl implements GreetingService {
+-package org.apache.dubbo.demo.provider;
++package org.apache.dubbo.samples.provider;
++
+@@ -100 +101 @@ import org.apache.dubbo.config.ServiceConfig;
+-import org.apache.dubbo.samples.api.GreetingService;
++import org.apache.dubbo.samples.api.GreetingsService;
+@@ -102,3 +103 @@ import org.apache.dubbo.samples.api.GreetingService;
+-import java.io.IOException;
+- 
+-public class Application {
++import java.util.concurrent.CountDownLatch;
+@@ -106,8 +105,13 @@ public class Application {
+-    public static void main(String[] args) throws IOException {
+-        ServiceConfig<GreetingService> serviceConfig = new ServiceConfig<GreetingService>();
+-        serviceConfig.setApplication(new ApplicationConfig("first-dubbo-provider"));
+-        serviceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
+-        serviceConfig.setInterface(GreetingService.class);
+-        serviceConfig.setRef(new GreetingServiceImpl());
+-        serviceConfig.export();
+-        System.in.read();
++public class Application {
++    private static String zookeeperHost = System.getProperty("zookeeper.address", "127.0.0.1");
++
++    public static void main(String[] args) throws Exception {
++        ServiceConfig<GreetingsService> service = new ServiceConfig<>();
++        service.setApplication(new ApplicationConfig("first-dubbo-provider"));
++        service.setRegistry(new RegistryConfig("zookeeper://" + zookeeperHost + ":2181"));
++        service.setInterface(GreetingsService.class);
++        service.setRef(new GreetingsServiceImpl());
++        service.export();
++
++        System.out.println("dubbo service started");
++        new CountDownLatch(1).await();
+@@ -118 +122 @@ public class Application {
+-*See [provider/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/Application.java) on GitHub.*
++*See [provider/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/Application.java) on GitHub.*
+@@ -124 +128 @@ public class Application {
+-# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.demo.provider.Application exec:java
++# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.samples.provider.Application exec:java
+@@ -130 +134,2 @@ public class Application {
+-package org.apache.dubbo.demo.consumer;
++package org.apache.dubbo.samples.client;
++
+@@ -135 +140 @@ import org.apache.dubbo.config.RegistryConfig;
+-import org.apache.dubbo.samples.api.GreetingService;
++import org.apache.dubbo.samples.api.GreetingsService;
+@@ -137,0 +143,2 @@ public class Application {
++    private static String zookeeperHost = System.getProperty("zookeeper.address", "127.0.0.1");
++
+@@ -139,6 +146,7 @@ public class Application {
+-        ReferenceConfig<GreetingService> referenceConfig = new ReferenceConfig<GreetingService>();
+-        referenceConfig.setApplication(new ApplicationConfig("first-dubbo-consumer"));
+-        referenceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
+-        referenceConfig.setInterface(GreetingService.class);
+-        GreetingService greetingService = referenceConfig.get();
+-        System.out.println(greetingService.sayHello("world"));
++        ReferenceConfig<GreetingsService> reference = new ReferenceConfig<>();
++        reference.setApplication(new ApplicationConfig("first-dubbo-consumer"));
++        reference.setRegistry(new RegistryConfig("zookeeper://" + zookeeperHost + ":2181"));
++        reference.setInterface(GreetingsService.class);
++        GreetingsService service = reference.get();
++        String message = service.sayHi("dubbo");
++        System.out.println(message);
+@@ -147,0 +156 @@ public class Application {
++*See [consumer/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/client/Application.java) on GitHub.*
+@@ -153 +162 @@ public class Application {
+-# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.demo.consumer.Application exec:java
++# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.samples.client.Application exec:java
+@@ -156 +165 @@ public class Application {
+-The consumer will print out `Hello world` on the screen.
++The consumer will print out `hi, dubbo` on the screen.
+@@ -158 +166,0 @@ The consumer will print out `Hello world` on the screen.
+-*See [consumer/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/client/Application.java) on GitHub.*
+diff --git a/README.md b/README.md
+index cf85b39a7..2a923bb90 100644
+--- a/README.md
++++ b/README.md
+@@ -169 +169 @@ The consumer will print out `Hello world` on the screen.
+-If you want to try out the cutting-edge features, you can built with the following commands. (Java 1.8 is required to build the master branch)
++If you want to try out the cutting-edge features, you can build with the following commands. (Java 1.8 is required to build the master branch)
+diff --git a/README.md b/README.md
+index d3c76302d..cf85b39a7 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ There's a [README](https://github.com/apache/dubbo-samples/tree/master/dubbo-sam
+-    <dubbo.version>2.7.2</dubbo.version>
++    <dubbo.version>2.7.3</dubbo.version>
+diff --git a/README.md b/README.md
+index 6c8ae12fd..d3c76302d 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ There's a [README](https://github.com/apache/dubbo-samples/tree/master/dubbo-sam
+-    <dubbo.version>2.7.1</dubbo.version>
++    <dubbo.version>2.7.2</dubbo.version>
+diff --git a/README.md b/README.md
+index 751ad1e17..6c8ae12fd 100644
+--- a/README.md
++++ b/README.md
+@@ -223 +223 @@ Please report security vulnerability to [us](mailto:security@dubbo.apache.org) p
+-* [Python](https://github.com/apache/dubbo-client-py)
++* [Python](https://github.com/dubbo/py-client-for-apache-dubbo)
+diff --git a/README.md b/README.md
+index 3010a7845..751ad1e17 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,2 @@
+-[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo)
+-[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
++[![Build Status](https://travis-ci.org/apache/dubbo.svg?branch=master)](https://travis-ci.org/apache/dubbo)
++[![codecov](https://codecov.io/gh/apache/dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/dubbo)
+@@ -7,3 +7,3 @@
+-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/apache/incubator-dubbo.svg)](http://isitmaintained.com/project/apache/incubator-dubbo "Average time to resolve an issue")
+-[![Percentage of issues still open](http://isitmaintained.com/badge/open/apache/incubator-dubbo.svg)](http://isitmaintained.com/project/apache/incubator-dubbo "Percentage of issues still open")
+-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Apache%20Dubbo%20(incubating)%20is%20a%20high-performance%2C%20java%20based%2C%20open%20source%20RPC%20framework.&url=http://dubbo.incubator.apache.org/&via=ApacheDubbo&hashtags=rpc,java,dubbo,micro-service)
++[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/apache/dubbo.svg)](http://isitmaintained.com/project/apache/dubbo "Average time to resolve an issue")
++[![Percentage of issues still open](http://isitmaintained.com/badge/open/apache/dubbo.svg)](http://isitmaintained.com/project/apache/dubbo "Percentage of issues still open")
++[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Apache%20Dubbo%20is%20a%20high-performance%2C%20java%20based%2C%20open%20source%20RPC%20framework.&url=http://dubbo.apache.org/&via=ApacheDubbo&hashtags=rpc,java,dubbo,micro-service)
+@@ -13 +13 @@
+-Apache Dubbo is a high-performance, Java based open source RPC framework. Please visit [official site](http://dubbo.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
++Apache Dubbo is a high-performance, Java based open source RPC framework. Please visit [official site](http://dubbo.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/dubbo/wiki) for news, FAQ, and release notes.
+@@ -15 +15 @@ Apache Dubbo is a high-performance, Java based open source RPC framework. Please
+-We are now collecting dubbo user info in order to help us to improve Dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/apache/incubator-dubbo/issues/1012), thanks :)
++We are now collecting dubbo user info in order to help us to improve Dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/apache/dubbo/issues/1012), thanks :)
+@@ -32 +32 @@ We are now collecting dubbo user info in order to help us to improve Dubbo bette
+-The following code snippet comes from [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples/tree/master/dubbo-samples-api). You may clone the sample project and step into `dubbo-samples-api` sub directory before read on.
++The following code snippet comes from [Dubbo Samples](https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api). You may clone the sample project and step into `dubbo-samples-api` sub directory before read on.
+@@ -35,2 +35,2 @@ The following code snippet comes from [Dubbo Samples](https://github.com/apache/
+-# git clone https://github.com/apache/incubator-dubbo-samples.git
+-# cd incubator-dubbo-samples/dubbo-samples-api
++# git clone https://github.com/apache/dubbo-samples.git
++# cd dubbo-samples/dubbo-samples-api
+@@ -39 +39 @@ The following code snippet comes from [Dubbo Samples](https://github.com/apache/
+-There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
++There's a [README](https://github.com/apache/dubbo-samples/tree/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
+@@ -73 +73 @@ public interface GreetingService {
+-*See [api/GreetingService.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
++*See [api/GreetingService.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
+@@ -90 +90 @@ public class GreetingServiceImpl implements GreetingService {
+-*See [provider/GreetingServiceImpl.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
++*See [provider/GreetingServiceImpl.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
+@@ -118 +118 @@ public class Application {
+-*See [provider/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/Application.java) on GitHub.*
++*See [provider/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/Application.java) on GitHub.*
+@@ -158 +158 @@ The consumer will print out `Hello world` on the screen.
+-*See [consumer/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/client/Application.java) on GitHub.*
++*See [consumer/Application.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/client/Application.java) on GitHub.*
+@@ -178 +178 @@ If you want to try out the cutting-edge features, you can built with the followi
+-  * dev list: for dev/user discussion. [subscribe](mailto:dev-subscribe@dubbo.apache.org), [unsubscribe](mailto:dev-unsubscribe@dubbo.apache.org), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
++  * dev list: for dev/user discussion. [subscribe](mailto:dev-subscribe@dubbo.apache.org), [unsubscribe](mailto:dev-unsubscribe@dubbo.apache.org), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/dubbo/wiki/Mailing-list-subscription-guide)
+@@ -180 +180 @@ If you want to try out the cutting-edge features, you can built with the followi
+-* Bugs: [Issues](https://github.com/apache/incubator-dubbo/issues/new?template=dubbo-issue-report-template.md)
++* Bugs: [Issues](https://github.com/apache/dubbo/issues/new?template=dubbo-issue-report-template.md)
+@@ -186 +186 @@ If you want to try out the cutting-edge features, you can built with the followi
+-See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
++See [CONTRIBUTING](https://github.com/apache/dubbo/blob/master/CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
+@@ -190,6 +190,6 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-* Take a look at issues with tag called [`Good first issue`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) or [`Help wanted`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
+-* Join the discussion on mailing list, subscription [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide).
+-* Answer questions on [issues](https://github.com/apache/incubator-dubbo/issues).
+-* Fix bugs reported on [issues](https://github.com/apache/incubator-dubbo/issues), and send us pull request.
+-* Review the existing [pull request](https://github.com/apache/incubator-dubbo/pulls).
+-* Improve the [website](https://github.com/apache/incubator-dubbo-website), typically we need
++* Take a look at issues with tag called [`Good first issue`](https://github.com/apache/dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) or [`Help wanted`](https://github.com/apache/dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
++* Join the discussion on mailing list, subscription [guide](https://github.com/apache/dubbo/wiki/Mailing-list-subscription-guide).
++* Answer questions on [issues](https://github.com/apache/dubbo/issues).
++* Fix bugs reported on [issues](https://github.com/apache/dubbo/issues), and send us pull request.
++* Review the existing [pull request](https://github.com/apache/dubbo/pulls).
++* Improve the [website](https://github.com/apache/dubbo-website), typically we need
+@@ -199 +199 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-* Improve the [dubbo-admin/dubbo-monitor](https://github.com/apache/incubator-dubbo-admin).
++* Improve the [dubbo-admin/dubbo-monitor](https://github.com/apache/dubbo-admin).
+@@ -206 +206 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-Please follow the [template](https://github.com/apache/incubator-dubbo/issues/new?template=dubbo-issue-report-template.md) for reporting any issues.
++Please follow the [template](https://github.com/apache/dubbo/issues/new?template=dubbo-issue-report-template.md) for reporting any issues.
+@@ -215,4 +215,4 @@ Please report security vulnerability to [us](mailto:security@dubbo.apache.org) p
+-* [Dubbo Website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo official website
+-* [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples) - samples for Apache Dubbo
+-* [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo
+-* [Dubbo Admin](https://github.com/apache/incubator-dubbo-admin) - The reference implementation for Dubbo admin
++* [Dubbo Website](https://github.com/apache/dubbo-website) - Apache Dubbo official website
++* [Dubbo Samples](https://github.com/apache/dubbo-samples) - samples for Apache Dubbo
++* [Dubbo Spring Boot](https://github.com/apache/dubbo-spring-boot-project) - Spring Boot Project for Dubbo
++* [Dubbo Admin](https://github.com/apache/dubbo-admin) - The reference implementation for Dubbo admin
+@@ -222,3 +222,3 @@ Please report security vulnerability to [us](mailto:security@dubbo.apache.org) p
+-* [Node.js](https://github.com/dubbo/dubbo2.js)
+-* [Python](https://github.com/dubbo/dubbo-client-py)
+-* [PHP](https://github.com/dubbo/dubbo-php-framework)
++* [Node.js](https://github.com/apache/dubbo-js)
++* [Python](https://github.com/apache/dubbo-client-py)
++* [PHP](https://github.com/apache/dubbo-php-framework)
+@@ -226 +226 @@ Please report security vulnerability to [us](mailto:security@dubbo.apache.org) p
+-* [Erlang](https://github.com/apache/incubator-dubbo-erlang)
++* [Erlang](https://github.com/apache/dubbo-erlang)
+@@ -230 +230 @@ Please report security vulnerability to [us](mailto:security@dubbo.apache.org) p
+-Apache Dubbo is under the Apache 2.0 license. See the [LICENSE](https://github.com/apache/incubator-dubbo/blob/master/LICENSE) file for details.
++Apache Dubbo is under the Apache 2.0 license. See the [LICENSE](https://github.com/apache/dubbo/blob/master/LICENSE) file for details.
+diff --git a/README.md b/README.md
+index b7b9c8e9f..3010a7845 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Apache Dubbo (incubating) Project
++# Apache Dubbo Project
+@@ -13 +13 @@
+-Apache Dubbo (incubating) is a high-performance, Java based open source RPC framework. Please visit [official site](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
++Apache Dubbo is a high-performance, Java based open source RPC framework. Please visit [official site](http://dubbo.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
+@@ -178 +178 @@ If you want to try out the cutting-edge features, you can built with the followi
+-  * dev list: for dev/user discussion. [subscribe](mailto:dev-subscribe@dubbo.incubator.apache.org), [unsubscribe](mailto:dev-unsubscribe@dubbo.incubator.apache.org), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
++  * dev list: for dev/user discussion. [subscribe](mailto:dev-subscribe@dubbo.apache.org), [unsubscribe](mailto:dev-unsubscribe@dubbo.apache.org), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
+@@ -202 +202 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-* If you would like to contribute, please send an email to dev@dubbo.incubator.apache.org to let us know!
++* If you would like to contribute, please send an email to dev@dubbo.apache.org to let us know!
+@@ -210 +210 @@ Please follow the [template](https://github.com/apache/incubator-dubbo/issues/ne
+-Please report security vulnerability to [us](mailto:security@dubbo.incubator.apache.org) privately.
++Please report security vulnerability to [us](mailto:security@dubbo.apache.org) privately.
+@@ -215,2 +215,2 @@ Please report security vulnerability to [us](mailto:security@dubbo.incubator.apa
+-* [Dubbo Website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) official website
+-* [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples) - samples for Apache Dubbo (incubating)
++* [Dubbo Website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo official website
++* [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples) - samples for Apache Dubbo
+diff --git a/README.md b/README.md
+index 440da3118..b7b9c8e9f 100644
+--- a/README.md
++++ b/README.md
+@@ -226 +226 @@ Please report security vulnerability to [us](mailto:security@dubbo.incubator.apa
+-* [Erlang](https://github.com/dubboerl/dubboerl)
++* [Erlang](https://github.com/apache/incubator-dubbo-erlang)
+diff --git a/README.md b/README.md
+index 513da15bd..440da3118 100644
+--- a/README.md
++++ b/README.md
+@@ -225,0 +226 @@ Please report security vulnerability to [us](mailto:security@dubbo.incubator.apa
++* [Erlang](https://github.com/dubboerl/dubboerl)
+diff --git a/README.md b/README.md
+index 2323272b3..513da15bd 100644
+--- a/README.md
++++ b/README.md
+@@ -90 +90 @@ public class GreetingServiceImpl implements GreetingService {
+-*See [provider/GreetingServiceImpl.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
++*See [provider/GreetingServiceImpl.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
+@@ -118 +118 @@ public class Application {
+-*See [provider/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/Application.java) on GitHub.*
++*See [provider/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/server/Application.java) on GitHub.*
+@@ -158 +158 @@ The consumer will print out `Hello world` on the screen.
+-*See [consumer/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/consumer/Application.java) on GitHub.*
++*See [consumer/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/client/Application.java) on GitHub.*
+diff --git a/README.md b/README.md
+index 04c767012..2323272b3 100644
+--- a/README.md
++++ b/README.md
+@@ -57,0 +58 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
++        <type>pom</type>
+diff --git a/README.md b/README.md
+index 171483f3a..04c767012 100644
+--- a/README.md
++++ b/README.md
+@@ -81,0 +82 @@ public class GreetingServiceImpl implements GreetingService {
++    @Override
+diff --git a/README.md b/README.md
+index 3f19e548a..171483f3a 100644
+--- a/README.md
++++ b/README.md
+@@ -164,0 +165,8 @@ The consumer will print out `Hello world` on the screen.
++## Building
++
++If you want to try out the cutting-edge features, you can built with the following commands. (Java 1.8 is required to build the master branch)
++
++```
++  mvn clean install
++```
++
+diff --git a/README.md b/README.md
+index 504e29d09..3f19e548a 100644
+--- a/README.md
++++ b/README.md
+@@ -48,12 +47,0 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
+-<dependencyManagement>
+-    <dependencies>
+-        <dependency>
+-            <groupId>org.apache.dubbo</groupId>
+-            <artifactId>dubbo-dependencies-bom</artifactId>
+-            <version>${dubbo.version}</version>
+-            <type>pom</type>
+-            <scope>import</scope>
+-        </dependency>
+-    </dependencies>
+-</dependencyManagement>
+-
+@@ -67,6 +55,3 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
+-        <groupId>org.apache.curator</groupId>
+-        <artifactId>curator-recipes</artifactId>
+-    </dependency>
+-    <dependency>
+-        <groupId>org.apache.zookeeper</groupId>
+-        <artifactId>zookeeper</artifactId>
++        <groupId>org.apache.dubbo</groupId>
++        <artifactId>dubbo-dependencies-zookeeper</artifactId>
++        <version>${dubbo.version}</version>
+diff --git a/README.md b/README.md
+index 09c12ffa9..504e29d09 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
+-    <dubbo.version>2.7.0</dubbo.version>
++    <dubbo.version>2.7.1</dubbo.version>
+@@ -66,8 +65,0 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
+-    <dependency>
+-        <groupId>io.netty</groupId>
+-        <artifactId>netty-all</artifactId>
+-    </dependency>
+-    <dependency>
+-        <groupId>org.apache.curator</groupId>
+-        <artifactId>curator-framework</artifactId>
+-    </dependency>
+diff --git a/README.md b/README.md
+index ce15f18ad..09c12ffa9 100644
+--- a/README.md
++++ b/README.md
+@@ -212 +212 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-* Improve the [dubbo-ops/dubbo-monitor](https://github.com/apache/incubator-dubbo-ops).
++* Improve the [dubbo-admin/dubbo-monitor](https://github.com/apache/incubator-dubbo-admin).
+@@ -231 +231 @@ Please report security vulnerability to [us](mailto:security@dubbo.incubator.apa
+-* [Dubbo OPS](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for Dubbo admin
++* [Dubbo Admin](https://github.com/apache/incubator-dubbo-admin) - The reference implementation for Dubbo admin
+diff --git a/README.md b/README.md
+index 55547683d..ce15f18ad 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
++![maven](https://img.shields.io/maven-central/v/org.apache.dubbo/dubbo.svg)
+diff --git a/README.md b/README.md
+index 7f71c1c56..55547683d 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
+-        <artifactId>dubbo-parent</artifactId>
++        <artifactId>dubbo</artifactId>
+@@ -69,0 +70,12 @@ There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master
++    <dependency>
++        <groupId>org.apache.curator</groupId>
++        <artifactId>curator-framework</artifactId>
++    </dependency>
++    <dependency>
++        <groupId>org.apache.curator</groupId>
++        <artifactId>curator-recipes</artifactId>
++    </dependency>
++    <dependency>
++        <groupId>org.apache.zookeeper</groupId>
++        <artifactId>zookeeper</artifactId>
++    </dependency>
+diff --git a/README.md b/README.md
+index 8ea23953b..7f71c1c56 100644
+--- a/README.md
++++ b/README.md
+@@ -225,0 +226 @@ Please report security vulnerability to [us](mailto:security@dubbo.incubator.apa
++* [Go](https://github.com/dubbo/dubbo-go)
+diff --git a/README.md b/README.md
+index e89ffa42e..8ea23953b 100644
+--- a/README.md
++++ b/README.md
+@@ -211 +211 @@ Please follow the [template](https://github.com/apache/incubator-dubbo/issues/ne
+-Please report security vulnerability to [us](security@dubbo.incubator.apache.org) privately.
++Please report security vulnerability to [us](mailto:security@dubbo.incubator.apache.org) privately.
+diff --git a/README.md b/README.md
+index efbe080bd..e89ffa42e 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ We are now collecting dubbo user info in order to help us to improve Dubbo bette
+-The following code snippet comes from [Dubbo Samples](https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-api). You may clone the sample project and step into `dubbo-samples-api` sub directory before read on.
++The following code snippet comes from [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples/tree/master/dubbo-samples-api). You may clone the sample project and step into `dubbo-samples-api` sub directory before read on.
+@@ -35,2 +35,2 @@ The following code snippet comes from [Dubbo Samples](https://github.com/dubbo/d
+-# git clone https://github.com/dubbo/dubbo-samples.git
+-# cd dubbo-samples/dubbo-samples-api
++# git clone https://github.com/apache/incubator-dubbo-samples.git
++# cd incubator-dubbo-samples/dubbo-samples-api
+@@ -39 +39 @@ The following code snippet comes from [Dubbo Samples](https://github.com/dubbo/d
+-There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
++There's a [README](https://github.com/apache/incubator-dubbo-samples/tree/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
+@@ -83 +83 @@ public interface GreetingService {
+-*See [api/GreetingService.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
++*See [api/GreetingService.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
+@@ -99 +99 @@ public class GreetingServiceImpl implements GreetingService {
+-*See [provider/GreetingServiceImpl.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
++*See [provider/GreetingServiceImpl.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
+@@ -127 +127 @@ public class Application {
+-*See [provider/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/Application.java) on GitHub.*
++*See [provider/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/Application.java) on GitHub.*
+@@ -167 +167 @@ The consumer will print out `Hello world` on the screen.
+-*See [consumer/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/consumer/Application.java) on GitHub.*
++*See [consumer/Application.java](https://github.com/apache/incubator-dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/consumer/Application.java) on GitHub.*
+@@ -213 +213 @@ Please report security vulnerability to [us](security@dubbo.incubator.apache.org
+-## Dubbo eco system
++## Dubbo ecosystem
+@@ -217 +217 @@ Please report security vulnerability to [us](security@dubbo.incubator.apache.org
+-* [Dubbo Samples](https://github.com/dubbo/dubbo-samples) - samples for Apache Dubbo (incubating)
++* [Dubbo Samples](https://github.com/apache/incubator-dubbo-samples) - samples for Apache Dubbo (incubating)
+diff --git a/README.md b/README.md
+index c14d8e98e..efbe080bd 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-    <dubbo.version>2.6.5</dubbo.version>
++    <dubbo.version>2.7.0</dubbo.version>
+@@ -51 +51 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-            <groupId>com.alibaba</groupId>
++            <groupId>org.apache.dubbo</groupId>
+@@ -62,2 +62,2 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-        <groupId>com.alibaba</groupId>
+-        <artifactId>dubbo</artifactId>
++        <groupId>org.apache.dubbo</groupId>
++        <artifactId>dubbo-parent</artifactId>
+@@ -106,3 +106,3 @@ package org.apache.dubbo.demo.provider;
+-import com.alibaba.dubbo.config.ApplicationConfig;
+-import com.alibaba.dubbo.config.RegistryConfig;
+-import com.alibaba.dubbo.config.ServiceConfig;
++import org.apache.dubbo.config.ApplicationConfig;
++import org.apache.dubbo.config.RegistryConfig;
++import org.apache.dubbo.config.ServiceConfig;
+@@ -141,3 +141,3 @@ package org.apache.dubbo.demo.consumer;
+-import com.alibaba.dubbo.config.ApplicationConfig;
+-import com.alibaba.dubbo.config.ReferenceConfig;
+-import com.alibaba.dubbo.config.RegistryConfig;
++import org.apache.dubbo.config.ApplicationConfig;
++import org.apache.dubbo.config.ReferenceConfig;
++import org.apache.dubbo.config.RegistryConfig;
+diff --git a/README.md b/README.md
+index 5b00da211..c14d8e98e 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-package org.apache.dubbo.demo.api;
++package org.apache.dubbo.samples.api;
+@@ -88 +88 @@ public interface GreetingService {
+-package org.apache.dubbo.demo.provider;
++package org.apache.dubbo.samples.provider;
+@@ -90 +90 @@ package org.apache.dubbo.demo.provider;
+-import org.apache.dubbo.demo.GreetingService;
++import org.apache.dubbo.samples.api.GreetingService;
+@@ -109 +109 @@ import com.alibaba.dubbo.config.ServiceConfig;
+-import org.apache.dubbo.demo.GreetingService;
++import org.apache.dubbo.samples.api.GreetingService;
+@@ -144 +144 @@ import com.alibaba.dubbo.config.RegistryConfig;
+-import org.apache.dubbo.demo.GreetingService;
++import org.apache.dubbo.samples.api.GreetingService;
+diff --git a/README.md b/README.md
+index b63ab5ec6..5b00da211 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@
++[![](https://img.shields.io/twitter/follow/ApacheDubbo.svg?label=Follow&style=social&logoWidth=0)](https://twitter.com/intent/follow?screen_name=ApacheDubbo)
+diff --git a/README.md b/README.md
+index 444ec8220..b63ab5ec6 100644
+--- a/README.md
++++ b/README.md
+@@ -43,5 +43,27 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-<dependency>
+-    <groupId>com.alibaba</groupId>
+-    <artifactId>dubbo</artifactId>
+-    <version>2.6.5</version>
+-</dependency>
++<properties>
++    <dubbo.version>2.6.5</dubbo.version>
++</properties>
++    
++<dependencyManagement>
++    <dependencies>
++        <dependency>
++            <groupId>com.alibaba</groupId>
++            <artifactId>dubbo-dependencies-bom</artifactId>
++            <version>${dubbo.version}</version>
++            <type>pom</type>
++            <scope>import</scope>
++        </dependency>
++    </dependencies>
++</dependencyManagement>
++
++<dependencies>
++    <dependency>
++        <groupId>com.alibaba</groupId>
++        <artifactId>dubbo</artifactId>
++        <version>${dubbo.version}</version>
++    </dependency>
++    <dependency>
++        <groupId>io.netty</groupId>
++        <artifactId>netty-all</artifactId>
++    </dependency>
++</dependencies>
+diff --git a/README.md b/README.md
+index b5906c7f4..444ec8220 100644
+--- a/README.md
++++ b/README.md
+@@ -150 +150 @@ The consumer will print out `Hello world` on the screen.
+-* [Dubbo developer guide](http://dubbo.apache.org/en-us/docs/dev/build.html) - How to invovle in Dubbo development.
++* [Dubbo developer guide](http://dubbo.apache.org/en-us/docs/dev/build.html) - How to involve in Dubbo development.
+diff --git a/README.md b/README.md
+index 6f41ccfda..b5906c7f4 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ public interface GreetingService {
+-*See [api/GreetingService.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/api/GreetingsService.java) on GitHub.*
++*See [api/GreetingService.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
+@@ -76 +76 @@ public class GreetingServiceImpl implements GreetingService {
+-*See [provider/GreetingServiceImpl.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
++*See [provider/GreetingServiceImpl.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
+@@ -104 +104 @@ public class Application {
+-*See [provider/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/provider/Application.java) on GitHub.*
++*See [provider/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/Application.java) on GitHub.*
+@@ -144 +144 @@ The consumer will print out `Hello world` on the screen.
+-*See [consumer/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/consumer/Application.java) on GitHub.*
++*See [consumer/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/consumer/Application.java) on GitHub.*
+diff --git a/README.md b/README.md
+index af064b00c..6f41ccfda 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +15,0 @@ We are now collecting dubbo user info in order to help us to improve Dubbo bette
+-各位 Dubboer，开源中国正在举办 [2018 年度最受欢迎中国开源软件评比活动](https://www.oschina.net/project/top_cn_2018)，请投 Dubbo 一票。
+-
+diff --git a/README.md b/README.md
+index a5d5e1a76..af064b00c 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-    <version>2.6.4</version>
++    <version>2.6.5</version>
+diff --git a/README.md b/README.md
+index 75ec9704b..a5d5e1a76 100644
+--- a/README.md
++++ b/README.md
+@@ -15,0 +16,2 @@ We are now collecting dubbo user info in order to help us to improve Dubbo bette
++各位 Dubboer，开源中国正在举办 [2018 年度最受欢迎中国开源软件评比活动](https://www.oschina.net/project/top_cn_2018)，请投 Dubbo 一票。
++
+diff --git a/README.md b/README.md
+index 4161d6b1e..75ec9704b 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +46 @@ There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samp
+-    <version>2.6.3</version>
++    <version>2.6.4</version>
+diff --git a/README.md b/README.md
+index c7079276a..4161d6b1e 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +4,0 @@
+-[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+-![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
+@@ -7,0 +6,3 @@
++![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
++[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/apache/incubator-dubbo.svg)](http://isitmaintained.com/project/apache/incubator-dubbo "Average time to resolve an issue")
++[![Percentage of issues still open](http://isitmaintained.com/badge/open/apache/incubator-dubbo.svg)](http://isitmaintained.com/project/apache/incubator-dubbo "Percentage of issues still open")
+@@ -8,0 +10 @@
++[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+diff --git a/README.md b/README.md
+index 7fb8cde99..c7079276a 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@
+-Apache Dubbo (incubating) is a high-performance, java based open source RPC framework. Please visit [official site ](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
++Apache Dubbo (incubating) is a high-performance, Java based open source RPC framework. Please visit [official site](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
+@@ -12 +12 @@ Apache Dubbo (incubating) is a high-performance, java based open source RPC fram
+-We are now collecting dubbo user info in order to help us to improve dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/apache/incubator-dubbo/issues/1012), thanks :)
++We are now collecting dubbo user info in order to help us to improve Dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/apache/incubator-dubbo/issues/1012), thanks :)
+@@ -36 +36 @@ The following code snippet comes from [Dubbo Samples](https://github.com/dubbo/d
+-There's one [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
++There's a [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
+@@ -154 +154 @@ The consumer will print out `Hello world` on the screen.
+-  * dev list: for dev/user discussion. [subscribe](mailto:[dev-subscribe@dubbo.incubator.apache.org]), [unsubscribe](mailto:[dev-unsubscribe@dubbo.incubator.apache.org]), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
++  * dev list: for dev/user discussion. [subscribe](mailto:dev-subscribe@dubbo.incubator.apache.org), [unsubscribe](mailto:dev-unsubscribe@dubbo.incubator.apache.org), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
+@@ -186 +186 @@ Please follow the [template](https://github.com/apache/incubator-dubbo/issues/ne
+-Please report security vulnerability to security@dubbo.incubator.apache.org (private mailing list).
++Please report security vulnerability to [us](security@dubbo.incubator.apache.org) privately.
+diff --git a/README.md b/README.md
+index d2e01d377..7fb8cde99 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ There's one [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-sa
+-    <version>2.6.2</version>
++    <version>2.6.3</version>
+diff --git a/README.md b/README.md
+index ed4c93c3f..d2e01d377 100644
+--- a/README.md
++++ b/README.md
+@@ -153 +153,3 @@ The consumer will print out `Hello world` on the screen.
+-* Mailing list: [dev@dubbo.incubator.apache.org](mailto:[dev-subscribe@dubbo.incubator.apache.org]) (subscription [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide))
++* Mailing list: 
++  * dev list: for dev/user discussion. [subscribe](mailto:[dev-subscribe@dubbo.incubator.apache.org]), [unsubscribe](mailto:[dev-unsubscribe@dubbo.incubator.apache.org]), [archive](https://lists.apache.org/list.html?dev@dubbo.apache.org),  [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)
++  
+diff --git a/README.md b/README.md
+index 4700ea5c6..ed4c93c3f 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Apache%20Dubbo%20(incubating)%20is%20a%20high-performance%2C%20java%20based%2C%20open%20source%20RPC%20framework.&url=http://dubbo.incubator.apache.org/&via=ApacheDubbo&hashtags=rpc,java,dubbo,micro-service)
+diff --git a/README.md b/README.md
+index 463a11109..4700ea5c6 100644
+--- a/README.md
++++ b/README.md
+@@ -197 +197 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-* [Php](https://github.com/dubbo/dubbo-php-framework)
++* [PHP](https://github.com/dubbo/dubbo-php-framework)
+diff --git a/README.md b/README.md
+index 3ed5d8d85..463a11109 100644
+--- a/README.md
++++ b/README.md
+@@ -185 +185 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-## [Ecosystem](https://github.com/dubbo)
++## Dubbo eco system
+@@ -186,0 +187 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
++* [Dubbo Ecosystem Entry](https://github.com/dubbo) - A GitHub group `dubbo` to gather all Dubbo relevant projects not appropriate in [apache](https://github.com/apache) group yet
+@@ -190 +191 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-* [Dubbo OPS](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops (dubbo-admin, dubbo-monitor, dubbo-registry-simple, etc.)
++* [Dubbo OPS](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for Dubbo admin
+diff --git a/README.md b/README.md
+index e5d2f68e6..3ed5d8d85 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28,9 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
++The following code snippet comes from [Dubbo Samples](https://github.com/dubbo/dubbo-samples/tree/master/dubbo-samples-api). You may clone the sample project and step into `dubbo-samples-api` sub directory before read on.
++
++```bash
++# git clone https://github.com/dubbo/dubbo-samples.git
++# cd dubbo-samples/dubbo-samples-api
++```
++
++There's one [README](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/README.md) file under `dubbo-samples-api` directory. Read it and try this sample out by following the instructions.
++
+@@ -38 +47 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-### Defining service interfaces
++### Define service interfaces
+@@ -41 +50 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-package org.apache.dubbo.demo;
++package org.apache.dubbo.demo.api;
+@@ -48 +57,3 @@ public interface GreetingService {
+-### Implement interface in service provider
++*See [api/GreetingService.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/api/GreetingsService.java) on GitHub.*
++
++### Implement service interface for the provider
+@@ -62 +73,3 @@ public class GreetingServiceImpl implements GreetingService {
+-### Starting service provider
++*See [provider/GreetingServiceImpl.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/server/GreetingsServiceImpl.java) on GitHub.*
++
++### Start service provider
+@@ -74 +87 @@ import java.io.IOException;
+-public class Provider {
++public class Application {
+@@ -87,0 +101,9 @@ public class Provider {
++*See [provider/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/provider/Application.java) on GitHub.*
++
++### Build and run the provider
++
++```bash
++# mvn clean package
++# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.demo.provider.Application exec:java
++```
++
+@@ -98 +120 @@ import org.apache.dubbo.demo.GreetingService;
+-public class Consumer {
++public class Application {
+@@ -109,0 +132,11 @@ public class Consumer {
++### Build and run the consumer
++
++```bash
++# mvn clean package
++# mvn -Djava.net.preferIPv4Stack=true -Dexec.mainClass=org.apache.dubbo.demo.consumer.Application exec:java
++```
++
++The consumer will print out `Hello world` on the screen.
++
++*See [consumer/Application.java](https://github.com/dubbo/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/com/alibaba/dubbo/samples/consumer/Application.java) on GitHub.*
++
+@@ -111,0 +145 @@ public class Consumer {
++* [Your first Dubbo application](http://dubbo.apache.org/en-us/blog/dubbo-101.html) - A 101 tutorial to reveal more details, with the same code above.
+diff --git a/README.md b/README.md
+index ffb16af55..e5d2f68e6 100644
+--- a/README.md
++++ b/README.md
+@@ -112,3 +112,3 @@ public class Consumer {
+-* [Dubbo user manual](http://dubbo.apache.org/#/docs/user/preface/background.md) - How to use Dubbo and all its features.
+-* [Dubbo developer guide](http://dubbo.apache.org/#/docs/dev/build.md) - How to invovle in Dubbo development.
+-* [Dubbo admin manual](http://dubbo.apache.org/#/docs/admin/install/provider-demo.md) - How to admin and manage Dubbo services.
++* [Dubbo user manual](http://dubbo.apache.org/en-us/docs/user/preface/background.html) - How to use Dubbo and all its features.
++* [Dubbo developer guide](http://dubbo.apache.org/en-us/docs/dev/build.html) - How to invovle in Dubbo development.
++* [Dubbo admin manual](http://dubbo.apache.org/en-us/docs/admin/install/provider-demo.html) - How to admin and manage Dubbo services.
+diff --git a/README.md b/README.md
+index ea2a6a6b7..ffb16af55 100644
+--- a/README.md
++++ b/README.md
+@@ -151 +151 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-## Ecosystem
++## [Ecosystem](https://github.com/dubbo)
+@@ -153,2 +153,2 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-* [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) official website
+-* [Dubbo samples](https://github.com/dubbo/dubbo-samples) - samples for Apache Dubbo (incubating)
++* [Dubbo Website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) official website
++* [Dubbo Samples](https://github.com/dubbo/dubbo-samples) - samples for Apache Dubbo (incubating)
+@@ -156 +156 @@ Please report security vulnerability to security@dubbo.incubator.apache.org (pri
+-* [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops (dubbo-admin, dubbo-monitor, dubbo-registry-simple, etc.)
++* [Dubbo OPS](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops (dubbo-admin, dubbo-monitor, dubbo-registry-simple, etc.)
+diff --git a/README.md b/README.md
+index 8a41ea5da..ea2a6a6b7 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ package org.apache.dubbo.demo;
+-public interface DemoService {
++public interface GreetingService {
+@@ -53 +53 @@ package org.apache.dubbo.demo.provider;
+-import org.apache.dubbo.demo.DemoService;
++import org.apache.dubbo.demo.GreetingService;
+@@ -55 +55 @@ import org.apache.dubbo.demo.DemoService;
+-public class DemoServiceImpl implements DemoService {
++public class GreetingServiceImpl implements GreetingService {
+diff --git a/README.md b/README.md
+index 6c8518bd4..8a41ea5da 100644
+--- a/README.md
++++ b/README.md
+@@ -129 +129 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-* Take a look at issues with tag called [`Good first issue`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
++* Take a look at issues with tag called [`Good first issue`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) or [`Help wanted`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
+diff --git a/README.md b/README.md
+index f1db983fc..6c8518bd4 100644
+--- a/README.md
++++ b/README.md
+@@ -126,0 +127,16 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
++### How can I contribute?
++
++* Take a look at issues with tag called [`Good first issue`](https://github.com/apache/incubator-dubbo/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
++* Join the discussion on mailing list, subscription [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide).
++* Answer questions on [issues](https://github.com/apache/incubator-dubbo/issues).
++* Fix bugs reported on [issues](https://github.com/apache/incubator-dubbo/issues), and send us pull request.
++* Review the existing [pull request](https://github.com/apache/incubator-dubbo/pulls).
++* Improve the [website](https://github.com/apache/incubator-dubbo-website), typically we need
++  * blog post
++  * translation on documentation
++  * use cases about how Dubbo is being used in enterprise system.
++* Improve the [dubbo-ops/dubbo-monitor](https://github.com/apache/incubator-dubbo-ops).
++* Contribute to the projects listed in [ecosystem](https://github.com/dubbo).
++* Any form of contribution that is not mentioned above.
++* If you would like to contribute, please send an email to dev@dubbo.incubator.apache.org to let us know!
++
+diff --git a/README.md b/README.md
+index f21a7cf94..f1db983fc 100644
+--- a/README.md
++++ b/README.md
+@@ -3,5 +3,5 @@
+--[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo)
+--[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
+--[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+--![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
+--![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
++[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo)
++[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
++[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
++![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
++![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
+diff --git a/README.md b/README.md
+index 696f76ed4..f21a7cf94 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,6 @@
++-[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo)
++-[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
++-[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
++-![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
++-![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
++
+diff --git a/README.md b/README.md
+index 34156f6f9..696f76ed4 100644
+--- a/README.md
++++ b/README.md
+@@ -123 +123 @@ See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRI
+-See [reporting bugs](https://github.com/coreos/etcd/blob/master/Documentation/reporting_bugs.md) for details about reporting any issues.
++Please follow the [template](https://github.com/apache/incubator-dubbo/issues/new?template=dubbo-issue-report-template.md) for reporting any issues.
+diff --git a/README.md b/README.md
+index 22bb44629..34156f6f9 100644
+--- a/README.md
++++ b/README.md
+@@ -3,7 +3 @@
+-[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo) 
+-[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
+-[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+-![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
+-![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
+-
+-Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
++Apache Dubbo (incubating) is a high-performance, java based open source RPC framework. Please visit [official site ](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
+@@ -13 +7,74 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-## Side projects
++## Architecture
++
++![Architecture](http://dubbo.apache.org/img/architecture.png)
++
++## Features
++
++* Transparent interface based RPC
++* Intelligent load balancing
++* Automatic service registration and discovery
++* High extensibility
++* Runtime traffic routing
++* Visualized service governance
++
++## Getting started
++
++### Maven dependency
++
++```xml
++<dependency>
++    <groupId>com.alibaba</groupId>
++    <artifactId>dubbo</artifactId>
++    <version>2.6.2</version>
++</dependency>
++```
++
++### Defining service interfaces
++
++```java
++package org.apache.dubbo.demo;
++
++public interface DemoService {
++    String sayHello(String name);
++}
++```
++
++### Implement interface in service provider
++
++```java
++package org.apache.dubbo.demo.provider;
++ 
++import org.apache.dubbo.demo.DemoService;
++ 
++public class DemoServiceImpl implements DemoService {
++    public String sayHello(String name) {
++        return "Hello " + name;
++    }
++}
++```
++
++### Starting service provider
++
++```java
++package org.apache.dubbo.demo.provider;
++
++import com.alibaba.dubbo.config.ApplicationConfig;
++import com.alibaba.dubbo.config.RegistryConfig;
++import com.alibaba.dubbo.config.ServiceConfig;
++import org.apache.dubbo.demo.GreetingService;
++
++import java.io.IOException;
++ 
++public class Provider {
++
++    public static void main(String[] args) throws IOException {
++        ServiceConfig<GreetingService> serviceConfig = new ServiceConfig<GreetingService>();
++        serviceConfig.setApplication(new ApplicationConfig("first-dubbo-provider"));
++        serviceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
++        serviceConfig.setInterface(GreetingService.class);
++        serviceConfig.setRef(new GreetingServiceImpl());
++        serviceConfig.export();
++        System.in.read();
++    }
++}
++```
+@@ -15,6 +82,23 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
+-* [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
+-* [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) documents
+-* [Dubbo rpc-jsonrpc](https://github.com/apache/incubator-dubbo-rpc-jsonrpc) - The Json rpc module of Apache Dubbo (incubating) project
+-* [Dubbo feature-test](https://github.com/apache/incubator-dubbo-feature-test) - Apache Dubbo (incubating) feature test
+-* [Dubbo docs](https://github.com/apache/incubator-dubbo-docs) - Apache Dubbo (incubating) documentation  
++### Call remote service in consumer
++
++```java
++package org.apache.dubbo.demo.consumer;
++
++import com.alibaba.dubbo.config.ApplicationConfig;
++import com.alibaba.dubbo.config.ReferenceConfig;
++import com.alibaba.dubbo.config.RegistryConfig;
++import org.apache.dubbo.demo.GreetingService;
++
++public class Consumer {
++    public static void main(String[] args) {
++        ReferenceConfig<GreetingService> referenceConfig = new ReferenceConfig<GreetingService>();
++        referenceConfig.setApplication(new ApplicationConfig("first-dubbo-consumer"));
++        referenceConfig.setRegistry(new RegistryConfig("multicast://224.5.6.7:1234"));
++        referenceConfig.setInterface(GreetingService.class);
++        GreetingService greetingService = referenceConfig.get();
++        System.out.println(greetingService.sayHello("world"));
++    }
++}
++```
++
++### Next steps
+@@ -22,3 +105,0 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-## Links
+-* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? Please follow this [mailing list subscription guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide) to subscribe to (dev@dubbo.incubator.apache.org) and discuss with us.
+-* [Gitter channel](https://gitter.im/alibaba/dubbo) - Online chat room with Dubbo developers.
+@@ -28,0 +110,35 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
++## Contact
++
++* Mailing list: [dev@dubbo.incubator.apache.org](mailto:[dev-subscribe@dubbo.incubator.apache.org]) (subscription [guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide))
++* Bugs: [Issues](https://github.com/apache/incubator-dubbo/issues/new?template=dubbo-issue-report-template.md)
++* Gitter: [Gitter channel](https://gitter.im/alibaba/dubbo) 
++* Twitter: [@ApacheDubbo](https://twitter.com/ApacheDubbo)
++
++## Contributing
++
++See [CONTRIBUTING](https://github.com/apache/incubator-dubbo/blob/master/CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
++
++## Reporting bugs
++
++See [reporting bugs](https://github.com/coreos/etcd/blob/master/Documentation/reporting_bugs.md) for details about reporting any issues.
++
++## Reporting a security vulnerability
++
++Please report security vulnerability to security@dubbo.incubator.apache.org (private mailing list).
++
++## Ecosystem
++
++* [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) official website
++* [Dubbo samples](https://github.com/dubbo/dubbo-samples) - samples for Apache Dubbo (incubating)
++* [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo
++* [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops (dubbo-admin, dubbo-monitor, dubbo-registry-simple, etc.)
++
++#### Language
++
++* [Node.js](https://github.com/dubbo/dubbo2.js)
++* [Python](https://github.com/dubbo/dubbo-client-py)
++* [Php](https://github.com/dubbo/dubbo-php-framework)
++
++## License
++
++Apache Dubbo is under the Apache 2.0 license. See the [LICENSE](https://github.com/apache/incubator-dubbo/blob/master/LICENSE) file for details.
+diff --git a/README.md b/README.md
+index 2170193ad..22bb44629 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? Please follow this [guide](https://github.com/apache/incubator-dubbo/issues/1393) to subscribe to (dev@dubbo.incubator.apache.org) and discuss with us.
++* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? Please follow this [mailing list subscription guide](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide) to subscribe to (dev@dubbo.incubator.apache.org) and discuss with us.
+diff --git a/README.md b/README.md
+index d601b7007..2170193ad 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13,8 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-## Links
++## Side projects
++
++* [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
++* [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
++* [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) documents
++* [Dubbo rpc-jsonrpc](https://github.com/apache/incubator-dubbo-rpc-jsonrpc) - The Json rpc module of Apache Dubbo (incubating) project
++* [Dubbo feature-test](https://github.com/apache/incubator-dubbo-feature-test) - Apache Dubbo (incubating) feature test
++* [Dubbo docs](https://github.com/apache/incubator-dubbo-docs) - Apache Dubbo (incubating) documentation  
+@@ -15,7 +22 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Side projects](https://github.com/apache/incubator-dubbo)
+-    * [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
+-    * [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
+-    * [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) documents
+-    * [Dubbo rpc-jsonrpc](https://github.com/apache/incubator-dubbo-rpc-jsonrpc) - The Json rpc module of Apache Dubbo (incubating) project
+-    * [Dubbo feature-test](https://github.com/apache/incubator-dubbo-feature-test) - Apache Dubbo (incubating) feature test
+-    * [Dubbo docs](https://github.com/apache/incubator-dubbo-docs) - Apache Dubbo (incubating) documentation  
++## Links
+@@ -24,3 +25,3 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Dubbo user manual(English)](http://dubbo.apache.org/books/dubbo-user-book-en/) or [Dubbo用户手册(中文)](http://dubbo.apache.org/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
+-* [Dubbo developer guide(English)](http://dubbo.apache.org/books/dubbo-dev-book-en/) or [Dubbo开发手册(中文)](http://dubbo.apache.org/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
+-* [Dubbo admin manual(English)](http://dubbo.apache.org/books/dubbo-admin-book-en/) or [Dubbo管理手册(中文)](http://dubbo.apache.org/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
++* [Dubbo user manual](http://dubbo.apache.org/#/docs/user/preface/background.md) - How to use Dubbo and all its features.
++* [Dubbo developer guide](http://dubbo.apache.org/#/docs/dev/build.md) - How to invovle in Dubbo development.
++* [Dubbo admin manual](http://dubbo.apache.org/#/docs/admin/install/provider-demo.md) - How to admin and manage Dubbo services.
+diff --git a/README.md b/README.md
+index b97d69e84..d601b7007 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? [Subscribe](https://github.com/apache/incubator-dubbo/issues/1393) to (dev@dubbo.incubator.apache.org) to discuss with us.
++* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? Please follow this [guide](https://github.com/apache/incubator-dubbo/issues/1393) to subscribe to (dev@dubbo.incubator.apache.org) and discuss with us.
+diff --git a/README.md b/README.md
+index 8a41cf4b0..b97d69e84 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9 @@
+-Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](http://dubbo.incubator.apache.org) for quick start and other information.
+-
++Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](http://dubbo.incubator.apache.org) for quick start and documentations, as well as [Wiki](https://github.com/apache/incubator-dubbo/wiki) for news, FAQ, and release notes.
+diff --git a/README.md b/README.md
+index e4b20d944..8a41cf4b0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Dubbo Project
++# Apache Dubbo (incubating) Project
+@@ -9 +9,2 @@
+-Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](dubbo.incubator.apache.org) for quick start and other information.
++Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](http://dubbo.incubator.apache.org) for quick start and other information.
++
+@@ -17,0 +19,4 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
++    * [Dubbo website](https://github.com/apache/incubator-dubbo-website) - Apache Dubbo (incubating) documents
++    * [Dubbo rpc-jsonrpc](https://github.com/apache/incubator-dubbo-rpc-jsonrpc) - The Json rpc module of Apache Dubbo (incubating) project
++    * [Dubbo feature-test](https://github.com/apache/incubator-dubbo-feature-test) - Apache Dubbo (incubating) feature test
++    * [Dubbo docs](https://github.com/apache/incubator-dubbo-docs) - Apache Dubbo (incubating) documentation  
+diff --git a/README.md b/README.md
+index de45d6489..e4b20d944 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-Dubbo is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo.io](http://dubbo.io) for quick start and other information.
++Apache Dubbo (incubating) is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo official site ](dubbo.incubator.apache.org) for quick start and other information.
+@@ -11 +11 @@ Dubbo is a high-performance, java based RPC framework open-sourced by Alibaba. P
+-We are now collecting dubbo user info in order to help us to improve dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/alibaba/dubbo/issues/1012), thanks :)
++We are now collecting dubbo user info in order to help us to improve dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/apache/incubator-dubbo/issues/1012), thanks :)
+@@ -15,4 +15,4 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Side projects](http://github.com/dubbo)
+-    * [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
+-    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
+-* [Developer Mailing list](https://github.com/alibaba/dubbo/issues/1393) - Any questions or suggestions? [Subscribe](https://github.com/alibaba/dubbo/issues/1393) to (dev@dubbo.incubator.apache.org) to discuss with us.
++* [Side projects](https://github.com/apache/incubator-dubbo)
++    * [Dubbo Spring Boot](https://github.com/apache/incubator-dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
++    * [Dubbo ops](https://github.com/apache/incubator-dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
++* [Developer Mailing list](https://github.com/apache/incubator-dubbo/issues/1393) - Any questions or suggestions? [Subscribe](https://github.com/apache/incubator-dubbo/issues/1393) to (dev@dubbo.incubator.apache.org) to discuss with us.
+@@ -20,3 +20,3 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Dubbo user manual(English)](http://dubbo.io/books/dubbo-user-book-en/) or [Dubbo用户手册(中文)](http://dubbo.io/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
+-* [Dubbo developer guide(English)](http://dubbo.io/books/dubbo-dev-book-en/) or [Dubbo开发手册(中文)](http://dubbo.io/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
+-* [Dubbo admin manual(English)](http://dubbo.io/books/dubbo-admin-book-en/) or [Dubbo管理手册(中文)](http://dubbo.io/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
++* [Dubbo user manual(English)](http://dubbo.apache.org/books/dubbo-user-book-en/) or [Dubbo用户手册(中文)](http://dubbo.apache.org/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
++* [Dubbo developer guide(English)](http://dubbo.apache.org/books/dubbo-dev-book-en/) or [Dubbo开发手册(中文)](http://dubbo.apache.org/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
++* [Dubbo admin manual(English)](http://dubbo.apache.org/books/dubbo-admin-book-en/) or [Dubbo管理手册(中文)](http://dubbo.apache.org/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
+diff --git a/README.md b/README.md
+index 8238f8ba0..de45d6489 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,2 @@
+-[![Build Status](https://travis-ci.org/alibaba/dubbo.svg?branch=master)](https://travis-ci.org/alibaba/dubbo) 
+-[![codecov](https://codecov.io/gh/alibaba/dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/alibaba/dubbo)
++[![Build Status](https://travis-ci.org/apache/incubator-dubbo.svg?branch=master)](https://travis-ci.org/apache/incubator-dubbo) 
++[![codecov](https://codecov.io/gh/apache/incubator-dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/apache/incubator-dubbo)
+diff --git a/README.md b/README.md
+index ed6dd40e0..8238f8ba0 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Developer Mailing list](https://github.com/alibaba/dubbo/issues/1393) - Any questions or suggestions? Subscribe to (dev@dubbo.incubator.apache.org) to discuss with us.
++* [Developer Mailing list](https://github.com/alibaba/dubbo/issues/1393) - Any questions or suggestions? [Subscribe](https://github.com/alibaba/dubbo/issues/1393) to (dev@dubbo.incubator.apache.org) to discuss with us.
+diff --git a/README.md b/README.md
+index e7e76406e..ed6dd40e0 100644
+--- a/README.md
++++ b/README.md
+@@ -20,3 +20,4 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Dubbo user manual](http://dubbo.io/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
+-* [Dubbo developer guide](http://dubbo.io/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
+-* [Dubbo admin manual](http://dubbo.io/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
++* [Dubbo user manual(English)](http://dubbo.io/books/dubbo-user-book-en/) or [Dubbo用户手册(中文)](http://dubbo.io/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
++* [Dubbo developer guide(English)](http://dubbo.io/books/dubbo-dev-book-en/) or [Dubbo开发手册(中文)](http://dubbo.io/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
++* [Dubbo admin manual(English)](http://dubbo.io/books/dubbo-admin-book-en/) or [Dubbo管理手册(中文)](http://dubbo.io/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
++
+diff --git a/README.md b/README.md
+index 026fdb40d..e7e76406e 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
++    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
+diff --git a/README.md b/README.md
+index 5ec191cb4..026fdb40d 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops.
++    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops(dubbo-admin,dubbo-monitor-simple,dubbo-registry-simple,etc.).
+@@ -19,4 +19,4 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Gitter channel](https://gitter.im/alibaba/dubbo)
+-* [Dubbo user manual](http://dubbo.io/books/dubbo-user-book/)
+-* [Dubbo developer guide](http://dubbo.io/books/dubbo-dev-book/)
+-* [Dubbo admin manual](http://dubbo.io/books/dubbo-admin-book/)
++* [Gitter channel](https://gitter.im/alibaba/dubbo) - Online chat room with Dubbo developers.
++* [Dubbo user manual](http://dubbo.io/books/dubbo-user-book/) - Describe how to use Dubbo and all features of Dubbo concretely.
++* [Dubbo developer guide](http://dubbo.io/books/dubbo-dev-book/) - Detailly introduce the design principal, extension mechanisms, code conventions, version control and building project, etc.
++* [Dubbo admin manual](http://dubbo.io/books/dubbo-admin-book/) - Describe how to use Dubbo registry and admin-console.
+diff --git a/README.md b/README.md
+index 0e5616bf8..5ec191cb4 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
++* [Developer Mailing list](https://github.com/alibaba/dubbo/issues/1393) - Any questions or suggestions? Subscribe to (dev@dubbo.incubator.apache.org) to discuss with us.
+@@ -19 +19,0 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Mailing list](https://groups.google.com/forum/#!forum/dubbo)
+diff --git a/README.md b/README.md
+index a8d3796b4..0e5616bf8 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The ops and reference implementation for dubbo. contains dubbo-admin,dubbo-monitor module.
++    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The reference implementation for dubbo ops.
+diff --git a/README.md b/README.md
+index f0c15e160..a8d3796b4 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +16,2 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-    * [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project) - Spring Boot Project for Dubbo.🔥
+-    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The ops and reference implementation for dubbo. contains dubbo-admin,dubbo-monitor module.🔥
++    * [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project) - Spring Boot Project for Dubbo.
++    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The ops and reference implementation for dubbo. contains dubbo-admin,dubbo-monitor module.
+diff --git a/README.md b/README.md
+index 4b213b793..f0c15e160 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,2 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
+-* [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project)
++    * [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project) - Spring Boot Project for Dubbo.🔥
++    * [Dubbo ops](https://github.com/dubbo/dubbo-ops) - The ops and reference implementation for dubbo. contains dubbo-admin,dubbo-monitor module.🔥
+diff --git a/README.md b/README.md
+index f818df97a..4b213b793 100644
+--- a/README.md
++++ b/README.md
+@@ -15,0 +16 @@ We are now collecting dubbo user info in order to help us to improve dubbo bette
++* [Dubbo Spring Boot](https://github.com/dubbo/dubbo-spring-boot-project)
+diff --git a/README.md b/README.md
+index 68fbe060f..f818df97a 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4 @@
++[![codecov](https://codecov.io/gh/alibaba/dubbo/branch/master/graph/badge.svg)](https://codecov.io/gh/alibaba/dubbo)
+diff --git a/README.md b/README.md
+index eea499f46..68fbe060f 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++# Dubbo Project
++
+@@ -3,9 +5,15 @@
+-![](https://img.shields.io/github/license/alibaba/dubbo.svg)
+-![](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
+-
+-Please visit [dubbo.io](http://dubbo.io) for detailed documentation. Want to find more or contact us, see the following links.  
+-* [Affiliated projects](http://github.com/dubbo). More awesome projects facilitating dubbo.
+-* [Usage mailing list](https://groups.google.com/forum/#!forum/dubbo). For open-ended questions and discussion, see [Google Groups](https://sites.google.com/site/tomihasa/google-groups-faq#subscribetogroup) for how to subscribe.
+-* [Issue report](https://github.com/alibaba/dubbo/issues). Report a defect or feature request
+-* [Gitter channel](https://gitter.im/alibaba/dubbo). 
+-* [Contributing](https://github.com/alibaba/dubbo/blob/master/CONTRIBUTING.md). How to contribute.
++![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
++![maven](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
++
++Dubbo is a high-performance, java based RPC framework open-sourced by Alibaba. Please visit [dubbo.io](http://dubbo.io) for quick start and other information.
++
++We are now collecting dubbo user info in order to help us to improve dubbo better, pls. kindly help us by providing yours on [issue#1012: Wanted: who's using dubbo](https://github.com/alibaba/dubbo/issues/1012), thanks :)
++
++## Links
++
++* [Side projects](http://github.com/dubbo)
++* [Gitter channel](https://gitter.im/alibaba/dubbo)
++* [Mailing list](https://groups.google.com/forum/#!forum/dubbo)
++* [Dubbo user manual](http://dubbo.io/books/dubbo-user-book/)
++* [Dubbo developer guide](http://dubbo.io/books/dubbo-dev-book/)
++* [Dubbo admin manual](http://dubbo.io/books/dubbo-admin-book/)
+diff --git a/README.md b/README.md
+index 4e37638eb..eea499f46 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Please visit [dubbo.io](http://dubbo.io) for detailed documentation. Want to fin
+-* [Affiliated projects](http://github.com/alibaba/dubbo). More awesome projects facilitating dubbo.
++* [Affiliated projects](http://github.com/dubbo). More awesome projects facilitating dubbo.
+diff --git a/README.md b/README.md
+index 551bd038c..4e37638eb 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Please visit [dubbo.io](http://dubbo.io) for detailed documentation. Want to fin
+-* [Affiliated projects](hub.com/alibaba/dubbo). More awesome projects facilitating dubbo.
++* [Affiliated projects](http://github.com/alibaba/dubbo). More awesome projects facilitating dubbo.
+diff --git a/README.md b/README.md
+index 19486cbdf..551bd038c 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6,6 @@
+-Pls. visit [dubbo.io](http://dubbo.io) for more information.
++Please visit [dubbo.io](http://dubbo.io) for detailed documentation. Want to find more or contact us, see the following links.  
++* [Affiliated projects](hub.com/alibaba/dubbo). More awesome projects facilitating dubbo.
++* [Usage mailing list](https://groups.google.com/forum/#!forum/dubbo). For open-ended questions and discussion, see [Google Groups](https://sites.google.com/site/tomihasa/google-groups-faq#subscribetogroup) for how to subscribe.
++* [Issue report](https://github.com/alibaba/dubbo/issues). Report a defect or feature request
++* [Gitter channel](https://gitter.im/alibaba/dubbo). 
++* [Contributing](https://github.com/alibaba/dubbo/blob/master/CONTRIBUTING.md). How to contribute.
+diff --git a/README.md b/README.md
+index 671cd1e95..19486cbdf 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,4 @@
+-[![Build Status](https://travis-ci.org/alibaba/dubbo.svg?branch=master)](https://travis-ci.org/alibaba/dubbo) [![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
++[![Build Status](https://travis-ci.org/alibaba/dubbo.svg?branch=master)](https://travis-ci.org/alibaba/dubbo) 
++[![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
++![](https://img.shields.io/github/license/alibaba/dubbo.svg)
++![](https://img.shields.io/maven-central/v/com.alibaba/dubbo.svg)
+@@ -3 +6 @@
+-Pls. visit [dubbo.io](http://dubbo.io) for more information.
+\ No newline at end of file
++Pls. visit [dubbo.io](http://dubbo.io) for more information.
+diff --git a/README.md b/README.md
+index 0039e12ca..671cd1e95 100644
+--- a/README.md
++++ b/README.md
+@@ -3,75 +3 @@
+-Dubbo is a distributed, high performance RPC framework which empowers applications with service import/export capabilities.
+-
+-It contains three key parts, which include:
+-
+-* **Remoting**: a network communication framework providing sync-over-async and request-response messaging.
+-* **Clustering**: a remote procedure call abstraction with load-balancing/failover/clustering capabilities.
+-* **Registration**: a service directory framework for service registration and service event publish/subscription
+-
+-For more details, please refer to [dubbo.io](http://dubbo.io).
+-
+-## Documentation
+-
+-* [User's Guide](http://dubbo.io/user-guide/)
+-* [Developer's Guide](http://dubbo.io/developer-guide/)
+-* [Admin's Guide](http://dubbo.io/admin-guide/)
+-
+-## Quick Start
+-This guide gets you started with dubbo with a simple working example.
+-#### Download the sources(examples)
+-You’ll need a local copy of the example code to work through this quickstart. Download the demo code from our [Github repository](https://github.com/alibaba/dubbo) (the following command clones the entire repository, but you just need the `dubbo-demo` for this quickstart and other tutorials):
+-
+-```sh
+-$ cd ~
+-$ # Clone the repository to get the source code.
+-$ git clone https://github.com/alibaba/dubbo.git dubbo
+-$ git checkout master
+-$ # or: git checkout -b dubbo-2.4.x
+-```
+-#### Build & Run
+-1. Build the whole sources use the following maven command
+-
+-```sh
+-$ cd ~/dubbo
+-$ mvn clean install -Dmaven.test.skip
+-$ # The demo code for this quickstart all stay in the `dubbo-demo` folder
+-$ cd ./dubbo-demo
+-$ ls
+-```
+-2. Run demo-provider. Start the provider and export service  
+-```sh
+-$ # Navigate to the provider part
+-$ cd ~/dubbo/dubbo-demo/dubbo-demo-provider/target
+-$ # unpack
+-$ tar zxvf dubbo-demo-provider-2.5.4-SNAPSHOT-assembly.tar.gz
+-$ cd dubbo-demo-provider-2.5.4-SNAPSHOT/bin
+-$ ls
+-```
+-
+-```sh
+-$ # Start the provider
+-$ ./start.sh
+-```
+-3. Run demo-consumer. Start the consumer and consume service provided by _the provider_ above
+-
+-```sh
+-$ # Navigate to the consumer part
+-$ cd ~/dubbo/dubbo-demo/dubbo-demo-consumer/target
+-$ # unpack
+-$ tar zxvf dubbo-demo-consumer-2.5.4-SNAPSHOT-assembly.tar.gz
+-$ cd dubbo-demo-consumer-2.5.4-SNAPSHOT/bin
+-$ ls
+-```
+-
+-```sh
+-$ ./start.sh
+-```
+-For a more detailed tutorial of this demo, click [here](http://dubbo.io/#quickstart)
+-
+-## Getting Help
+-* Community
+-* Releases
+-* Contributors
+-* Q&A
+-
+-
++Pls. visit [dubbo.io](http://dubbo.io) for more information.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index fbe860f61..0039e12ca 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ $ # Navigate to the provider part
+-$ cd ~/dubbo/demo-demo/dubbo-demo-provider/target
++$ cd ~/dubbo/dubbo-demo/dubbo-demo-provider/target
+@@ -59 +59 @@ $ # Navigate to the consumer part
+-$ cd ~/dubbo/demo-demo/dubbo-demo-consumer/target
++$ cd ~/dubbo/dubbo-demo/dubbo-demo-consumer/target
+diff --git a/README.md b/README.md
+index ff8eac309..fbe860f61 100644
+--- a/README.md
++++ b/README.md
+@@ -46,2 +46,2 @@ $ # unpack
+-$ tar zxvf dubbo-demo-provider-xxx-assembly.tar.gz
+-$ cd dubbo-demo-provider-xxx/bin
++$ tar zxvf dubbo-demo-provider-2.5.4-SNAPSHOT-assembly.tar.gz
++$ cd dubbo-demo-provider-2.5.4-SNAPSHOT/bin
+@@ -61,2 +61,2 @@ $ # unpack
+-$ tar zxvf dubbo-demo-consumer-xxx-assembly.tar.gz
+-$ cd dubbo-demo-consumer-xxx/bin
++$ tar zxvf dubbo-demo-consumer-2.5.4-SNAPSHOT-assembly.tar.gz
++$ cd dubbo-demo-consumer-2.5.4-SNAPSHOT/bin
+diff --git a/README.md b/README.md
+index 394910543..ff8eac309 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ It contains three key parts, which include:
+-For more details, please refer to [wiki](https://github.com/alibaba/dubbo/wiki) or [dubbo.io](http://dubbo.io).
++For more details, please refer to [dubbo.io](http://dubbo.io).
+@@ -13,21 +13 @@ For more details, please refer to [wiki](https://github.com/alibaba/dubbo/wiki)
+-## Quick Start
+-
+-
+-Export service:
+-
+-```xml
+-<bean id="barService" class="com.foo.BarServiceImpl" />
+-<dubbo:service interface="com.foo.BarService" ref="barService" />
+-```
+-
+-Refer to service:
+-
+-```xml
+-<dubbo:reference id="barService" interface="com.foo.BarService" />
+-	
+-<bean id="barAction" class="com.foo.BarAction">
+-    <property name="barService" ref="barService" />
+-</bean>
+-```
+-
+-## Source Building
++## Documentation
+@@ -34,0 +15,3 @@ Refer to service:
++* [User's Guide](http://dubbo.io/user-guide/)
++* [Developer's Guide](http://dubbo.io/developer-guide/)
++* [Admin's Guide](http://dubbo.io/admin-guide/)
+@@ -36,58 +19,11 @@ Refer to service:
+-0. Install the git and maven command line:
+-
+-    ```sh
+-yum install git
+-or: apt-get install git
+-cd ~
+-wget http://www.apache.org/dist//maven/binaries/apache-maven-2.2.1-bin.tar.gz
+-tar zxvf apache-maven-2.2.1-bin.tar.gz
+-vi .bash_profile
+-append: export PATH=$PATH:~/apache-maven-2.2.1/bin
+-source .bash_profile
+-```
+-
+-0. Checkout the dubbo source code:
+-
+-    ```sh
+-cd ~
+-git clone https://github.com/alibaba/dubbo.git dubbo
+-git checkout master
+-or: git checkout -b dubbo-2.4.0
+-```
+-
+-0. Import the dubbo source code to eclipse project:
+-
+-    ```sh
+-cd ~/dubbo
+-mvn eclipse:eclipse
+-```
+-
+-    Then configure the project in eclipse by following the steps below:
+-    * Eclipse -> Menu -> File -> Import -> Exsiting Projects to Workspace -> Browse -> Finish
+-    * Context Menu -> Run As -> Java Application:
+-        * dubbo-demo-provider/src/test/java/com.alibaba.dubbo.demo.provider.DemoProvider
+-        * dubbo-demo-consumer/src/test/java/com.alibaba.dubbo.demo.consumer.DemoConsumer
+-        * dubbo-monitor-simple/src/test/java/com.alibaba.dubbo.monitor.simple.SimpleMonitor
+-        * dubbo-registry-simple/src/test/java/com.alibaba.dubbo.registry.simple.SimpleRegistry
+-    * Edit Config:
+-        * dubbo-demo-provider/src/test/resources/dubbo.properties
+-        * dubbo-demo-consumer/src/test/resources/dubbo.properties
+-        * dubbo-monitor-simple/src/test/resources/dubbo.properties
+-        * dubbo-registry-simple/src/test/resources/dubbo.properties
+-
+-0. Build the dubbo binary package:
+-
+-    ```sh
+-cd ~/dubbo
+-mvn clean install -Dmaven.test.skip
+-cd dubbo/target
+-ls
+-```
+-
+-0. Install the demo provider:
+-
+-    ```sh
+-cd ~/dubbo/dubbo-demo-provider/target
+-tar zxvf dubbo-demo-provider-2.4.0-assembly.tar.gz
+-cd dubbo-demo-provider-2.4.0/bin
+-./start.sh
++## Quick Start
++This guide gets you started with dubbo with a simple working example.
++#### Download the sources(examples)
++You’ll need a local copy of the example code to work through this quickstart. Download the demo code from our [Github repository](https://github.com/alibaba/dubbo) (the following command clones the entire repository, but you just need the `dubbo-demo` for this quickstart and other tutorials):
++
++```sh
++$ cd ~
++$ # Clone the repository to get the source code.
++$ git clone https://github.com/alibaba/dubbo.git dubbo
++$ git checkout master
++$ # or: git checkout -b dubbo-2.4.x
+@@ -95,10 +31,9 @@ cd dubbo-demo-provider-2.4.0/bin
+-
+-0. Install the demo consumer:
+-
+-    ```sh
+-cd ~/dubbo/dubbo-demo-consumer/target
+-tar zxvf dubbo-demo-consumer-2.4.0-assembly.tar.gz
+-cd dubbo-demo-consumer-2.4.0/bin
+-./start.sh
+-cd ../logs
+-tail -f stdout.log
++#### Build & Run
++1. Build the whole sources use the following maven command
++
++```sh
++$ cd ~/dubbo
++$ mvn clean install -Dmaven.test.skip
++$ # The demo code for this quickstart all stay in the `dubbo-demo` folder
++$ cd ./dubbo-demo
++$ ls
+@@ -106,9 +41,8 @@ tail -f stdout.log
+-
+-0. Install the simple monitor:
+-
+-    ```sh
+-cd ~/dubbo/dubbo-simple-monitor/target
+-tar zxvf dubbo-simple-monitor-2.4.0-assembly.tar.gz
+-cd dubbo-simple-monitor-2.4.0/bin
+-./start.sh
+-http://127.0.0.1:8080
++2. Run demo-provider. Start the provider and export service  
++```sh
++$ # Navigate to the provider part
++$ cd ~/dubbo/demo-demo/dubbo-demo-provider/target
++$ # unpack
++$ tar zxvf dubbo-demo-provider-xxx-assembly.tar.gz
++$ cd dubbo-demo-provider-xxx/bin
++$ ls
+@@ -117,22 +51,3 @@ http://127.0.0.1:8080
+-0. Install the simple registry:
+-
+-    ```sh
+-cd ~/dubbo/dubbo-simple-registry/target
+-tar zxvf dubbo-simple-registry-2.4.0-assembly.tar.gz
+-cd dubbo-simple-registry-2.4.0/bin
+-./start.sh
+-cd ~/dubbo/dubbo-demo-provider/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=dubbo://127.0.0.1:9090
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-demo-consumer/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=dubbo://127.0.0.1:9090
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-simple-monitor/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=dubbo://127.0.0.1:9090
+-cd ../bin
+-./restart.sh
++```sh
++$ # Start the provider
++$ ./start.sh
+@@ -140,28 +55,9 @@ cd ../bin
+-
+-0. Install the zookeeper registry:
+-
+-    ```sh
+-cd ~
+-wget http://www.apache.org/dist//zookeeper/zookeeper-3.3.3/zookeeper-3.3.3.tar.gz
+-tar zxvf zookeeper-3.3.3.tar.gz
+-cd zookeeper-3.3.3/conf
+-cp zoo_sample.cfg zoo.cfg
+-vi zoo.cfg
+-- edit: dataDir=/home/xxx/data
+-cd ../bin
+-./zkServer.sh start
+-cd ~/dubbo/dubbo-demo-provider/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=zookeeper://127.0.0.1:2181
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-demo-consumer/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=zookeeper://127.0.0.1:2181
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-simple-monitor/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=zookeeper://127.0.0.1:2181
+-cd ../bin
+-./restart.sh
++3. Run demo-consumer. Start the consumer and consume service provided by _the provider_ above
++
++```sh
++$ # Navigate to the consumer part
++$ cd ~/dubbo/demo-demo/dubbo-demo-consumer/target
++$ # unpack
++$ tar zxvf dubbo-demo-consumer-xxx-assembly.tar.gz
++$ cd dubbo-demo-consumer-xxx/bin
++$ ls
+@@ -170,24 +66,2 @@ cd ../bin
+-0. Install the redis registry:
+-
+-    ```sh
+-cd ~
+-wget http://redis.googlecode.com/files/redis-2.4.8.tar.gz
+-tar xzf redis-2.4.8.tar.gz
+-cd redis-2.4.8
+-make
+-nohup ./src/redis-server redis.conf &
+-cd ~/dubbo/dubbo-demo-provider/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=redis://127.0.0.1:6379
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-demo-consumer/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=redis://127.0.0.1:6379
+-cd ../bin
+-./restart.sh
+-cd ~/dubbo/dubbo-simple-monitor/conf
+-vi dubbo.properties
+-- edit: dubbo.registry.adddress=redis://127.0.0.1:6379
+-cd ../bin
+-./restart.sh
++```sh
++$ ./start.sh
+@@ -194,0 +69 @@ cd ../bin
++For a more detailed tutorial of this demo, click [here](http://dubbo.io/#quickstart)
+@@ -196 +71,5 @@ cd ../bin
+-0. Install the admin console:
++## Getting Help
++* Community
++* Releases
++* Contributors
++* Q&A
+@@ -198,5 +76,0 @@ cd ../bin
+-    ```sh
+-    cd ~/dubbo/dubbo-admin
+-    mvn jetty:run -Ddubbo.registry.address=zookeeper://127.0.0.1:2181
+-    http://root:root@127.0.0.1:8080
+-```
+diff --git a/README.md b/README.md
+index 6bac7a84c..394910543 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Dubbo is a distributed, high performance RPC framework which empowers applicatio
+-It's composed of three key parts:
++It contains three key parts, which include:
+@@ -7,3 +7,3 @@ It's composed of three key parts:
+-* Remoting: a network communication framework providing sync-over-async and request-response messaging.
+-* Clustering: a remote procedure call abstraction with load-balancing/failover/clustering capabilities.
+-* Registry: a service directory framework for service registration and service event publish/subscription
++* **Remoting**: a network communication framework providing sync-over-async and request-response messaging.
++* **Clustering**: a remote procedure call abstraction with load-balancing/failover/clustering capabilities.
++* **Registration**: a service directory framework for service registration and service event publish/subscription
+@@ -11 +11 @@ It's composed of three key parts:
+-For more details, please refer to wiki or [dubbo.io](http://dubbo.io).
++For more details, please refer to [wiki](https://github.com/alibaba/dubbo/wiki) or [dubbo.io](http://dubbo.io).
+@@ -16 +16 @@ For more details, please refer to wiki or [dubbo.io](http://dubbo.io).
+-Export remote service:
++Export service:
+@@ -23 +23 @@ Export remote service:
+-Refer remote service:
++Refer to service:
+diff --git a/README.md b/README.md
+index 3b3e73094..6bac7a84c 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-Dubbo is a distributed, high performance RPC framework enpowering applications with service import/export capabilities.
++Dubbo is a distributed, high performance RPC framework which empowers applications with service import/export capabilities.
+@@ -7 +7 @@ It's composed of three key parts:
+-* Remoting: a network communication framework provides sync-over-async and request-response messaging.
++* Remoting: a network communication framework providing sync-over-async and request-response messaging.

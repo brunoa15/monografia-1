@@ -1,0 +1,2125 @@
+diff --git a/README.md b/README.md
+index d616099..2e3dacd 100644
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ frp is under development and you can try it with latest release version. Master
+-**We may change any protocol and can't promise backward compatible. Please check the release log when upgrading.**
++**We may change any protocol and can't promise backward compatibility. Please check the release log when upgrading.**
+diff --git a/README.md b/README.md
+index c8008d8..d616099 100644
+--- a/README.md
++++ b/README.md
+@@ -267,0 +268 @@ Configure frps same as above.
++  plugin_header_X-From-Where = frp
+diff --git a/README.md b/README.md
+index 5fff2b7..c8008d8 100644
+--- a/README.md
++++ b/README.md
+@@ -563 +563,2 @@ Load balancing is supported by `group`.
+-This feature is available only for type `tcp` now.
++
++This feature is available only for type `tcp` and `http` now.
+@@ -585,0 +587,4 @@ Proxies in same group will accept connections from port 80 randomly.
++For `tcp` type, `remote_port` in one group shoud be same.
++
++For `http` type, `custom_domains, subdomain, locations` shoud be same.
++
+diff --git a/README.md b/README.md
+index 29d63cb..5fff2b7 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25 @@ Now it also try to support p2p connect.
++    * [Enable HTTPS for local HTTP service](#enable-https-for-local-http-service)
+@@ -46,0 +48,2 @@ Now it also try to support p2p connect.
++        * [HTTP X-Forwarded-For](#http-x-forwarded-for)
++        * [Proxy Protocol](#proxy-protocol)
+@@ -245,0 +249,23 @@ Configure frps same as above.
++### Enable HTTPS for local HTTP service
++
++1. Start frpc with configurations:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [test_htts2http]
++  type = https
++  custom_domains = test.yourdomain.com
++
++  plugin = https2http
++  plugin_local_addr = 127.0.0.1:80
++  plugin_crt_path = ./server.crt
++  plugin_key_path = ./server.key
++  plugin_host_header_rewrite = 127.0.0.1
++  ```
++
++2. Visit `https://test.yourdomain.com`.
++
+@@ -250 +276 @@ For some services, if expose them to the public network directly will be a secur
+-**stcp(secret tcp)** help you create a proxy avoiding any one can access it.
++**stcp(secret tcp)** helps you create a proxy avoiding any one can access it.
+@@ -487,2 +512,0 @@ tcp_mux = false
+-frp support kcp protocol since v0.12.0.
+-
+@@ -641,0 +666,2 @@ In this example, it will set header `X-From-Where: frp` to http request.
++#### HTTP X-Forwarded-For
++
+@@ -644 +670,22 @@ Features for http proxy only.
+-You can get user's real IP from http request header `X-Forwarded-For` and `X-Real-IP`.
++You can get user's real IP from HTTP request header `X-Forwarded-For` and `X-Real-IP`.
++
++#### Proxy Protocol
++
++frp support Proxy Protocol to send user's real IP to local service. It support all types without UDP.
++
++Here is an example for https service:
++
++```ini
++# frpc.ini
++[web]
++type = https
++local_port = 443
++custom_domains = test.yourdomain.com
++
++# now v1 and v2 is supported
++proxy_protocol_version = v2
++```
++
++You can enable Proxy Protocol support in nginx to parse user's real IP to http header `X-Real-IP`.
++
++Then you can get it from HTTP request header in your local service.
+diff --git a/README.md b/README.md
+index f732be4..29d63cb 100644
+--- a/README.md
++++ b/README.md
+@@ -30,0 +31 @@ Now it also try to support p2p connect.
++    * [Admin UI](#admin-ui)
+@@ -32,0 +34 @@ Now it also try to support p2p connect.
++        * [TLS](#tls)
+@@ -391,0 +394,16 @@ Then visit `http://[server_addr]:7500` to see dashboard, default username and pa
++### Admin UI
++
++Admin UI help you check and manage frpc's configure.
++
++Configure a address for admin UI to enable this feature:
++
++```ini
++[common]
++admin_addr = 127.0.0.1
++admin_port = 7400
++admin_user = admin
++admin_pwd = admin
++```
++
++Then visit `http://127.0.0.1:7400` to see admin UI, default username and password are both `admin`.
++
+@@ -409,0 +428,8 @@ use_compression = true
++#### TLS
++
++frp support TLS protocol between frpc and frps since v0.25.0.
++
++Config `tls_enable = true` in `common` section to frpc.ini to enable this feature.
++
++For port multiplexing, frp send a first byte 0x17 to dial a TLS connection.
++
+@@ -739,2 +764,0 @@ plugin_http_passwd = abc
+-* Direct reverse proxy, like haproxy.
+-* kubernetes ingress support.
+diff --git a/README.md b/README.md
+index d119713..f732be4 100644
+--- a/README.md
++++ b/README.md
+@@ -595 +595 @@ host_header_rewrite = dev.yourdomain.com
+-If `host_header_rewrite` is specified, the host header will be rewritten to match the hostname portion of the forwarding address.
++The `Host` request header will be rewritten to `Host: dev.yourdomain.com` before it reach your local http server.
+diff --git a/README.md b/README.md
+index d78e648..d119713 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,2 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++Now it also try to support p2p connect.
++
+@@ -15 +16,0 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* [What can I do with frp?](#what-can-i-do-with-frp)
+@@ -39,0 +41 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Health Check](#health-check)
+@@ -58,5 +59,0 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-## What can I do with frp?
+-
+-* Expose any http and https service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
+-* Expose any tcp or udp service behind a NAT or firewall to the internet by a server with public IP address.
+-
+@@ -397 +394 @@ Then visit `http://[server_addr]:7500` to see dashboard, default username and pa
+-Since v0.10.0, you only need to set `token` in frps.ini and frpc.ini.
++`token` in frps.ini and frpc.ini should be same.
+@@ -538,0 +536,46 @@ Proxies in same group will accept connections from port 80 randomly.
++### Health Check
++
++Health check feature can help you achieve high availability with load balancing.
++
++Add `health_check_type = {type}` to enable health check.
++
++**type** can be tcp or http.
++
++Type tcp will dial the service port and type http will send a http rquest to service and require a 200 response.
++
++Type tcp configuration:
++
++```ini
++# frpc.ini
++[test1]
++type = tcp
++local_port = 22
++remote_port = 6000
++# enable tcp health check
++health_check_type = tcp
++# dial timeout seconds
++health_check_timeout_s = 3
++# if continuous failed in 3 times, the proxy will be removed from frps
++health_check_max_failed = 3
++# every 10 seconds will do a health check
++health_check_interval_s = 10
++```
++
++Type http configuration:
++```ini
++# frpc.ini
++[web]
++type = http
++local_ip = 127.0.0.1
++local_port = 80
++custom_domains = test.yourdomain.com
++# enable http health check
++health_check_type = http
++# frpc will send a GET http request '/status' to local http service
++# http service is alive when it return 2xx http response code
++health_check_url = /status
++health_check_interval_s = 10
++health_check_max_failed = 3
++health_check_timeout_s = 3
++```
++
+@@ -577,2 +619,0 @@ You can get user's real IP from http request header `X-Forwarded-For` and `X-Rea
+-**Note that now you can only get these two headers in first request of each user connection.**
+-
+diff --git a/README.md b/README.md
+index fdef5c7..d78e648 100644
+--- a/README.md
++++ b/README.md
+@@ -399,4 +398,0 @@ Since v0.10.0, you only need to set `token` in frps.ini and frpc.ini.
+-Note that time duration between server of frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
+-
+-Howerver, this timeout duration can be modified by setting `authentication_timeout` in frps's configure file. It's defalut value is 900, means 15 minutes. If it is equals 0, then frps will not check authentication timeout.
+-
+diff --git a/README.md b/README.md
+index 6cbca0a..fdef5c7 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Configuration file template](#configuration-file-template)
+@@ -347,0 +349,28 @@ You can find features which this document not metioned from full example configu
++### Configuration file template
++
++Configuration file tempalte can be rendered using os environments. Template uses Go's standard format.
++
++```ini
++# frpc.ini
++[common]
++server_addr = {{ .Envs.FRP_SERVER_ADDR }}
++server_port = 7000
++
++[ssh]
++type = tcp
++local_ip = 127.0.0.1
++local_port = 22
++remote_port = {{ .Envs.FRP_SSH_REMOTE_PORT }}
++```
++
++Start frpc program:
++
++```
++export FRP_SERVER_ADDR="x.x.x.x"
++export FRP_SSH_REMOTE_PORT="6000"
++./frpc -c ./frpc.ini
++```
++
++frpc will auto render configuration file template using os environments.
++All environments has prefix `.Envs`.
++
+diff --git a/README.md b/README.md
+index e7740f4..6cbca0a 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, udp, http and https protocol when requests can be forwarded by domains to backward web services.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. As of now, it supports tcp & udp, as well as http and https protocols, where requests can be forwarded to internal services by domain name.
+diff --git a/README.md b/README.md
+index 6879f48..e7740f4 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. As of now, it supports tcp & udp, as well as http and https protocols, where requests can be forwarded to internal services by domain name.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, udp, http and https protocol when requests can be forwarded by domains to backward web services.
+@@ -569 +569 @@ http_user = abc
+-http_passwd = abc
++http_pwd = abc
+diff --git a/README.md b/README.md
+index b97b15a..6879f48 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, udp, http and https protocol when requests can be forwarded by domains to backward web services.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. As of now, it supports tcp & udp, as well as http and https protocols, where requests can be forwarded to internal services by domain name.
+diff --git a/README.md b/README.md
+index c525e44..b97b15a 100644
+--- a/README.md
++++ b/README.md
+@@ -37,0 +38 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Load balancing](#load-balancing)
+@@ -486,0 +488,26 @@ This feature is fit for a large number of short connections.
++### Load balancing
++
++Load balancing is supported by `group`.
++This feature is available only for type `tcp` now.
++
++```ini
++# frpc.ini
++[test1]
++type = tcp
++local_port = 8080
++remote_port = 80
++group = web
++group_key = 123
++
++[test2]
++type = tcp
++local_port = 8081
++remote_port = 80
++group = web
++group_key = 123
++```
++
++`group_key` is used for authentication.
++
++Proxies in same group will accept connections from port 80 randomly.
++
+@@ -647 +673,0 @@ plugin_http_passwd = abc
+-* Load balance to different service in frpc.
+diff --git a/README.md b/README.md
+index 0372139..c525e44 100644
+--- a/README.md
++++ b/README.md
+@@ -619 +619 @@ remote_port = 6000-6006,6007
+-frpc will generate 6 proxies like `test_tcp_0, test_tcp_1 ... test_tcp_5`.
++frpc will generate 8 proxies like `test_tcp_0, test_tcp_1 ... test_tcp_7`.
+diff --git a/README.md b/README.md
+index faac9d1..0372139 100644
+--- a/README.md
++++ b/README.md
+@@ -38,0 +39 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Set Headers In HTTP Request](#set-headers-in-http-request)
+@@ -488 +489 @@ This feature is fit for a large number of short connections.
+-When forwarding to a local port, frp does not modify the tunneled HTTP requests at all, they are copied to your server byte-for-byte as they are received. Some application servers use the Host header for determining which development site to display. For this reason, frp can rewrite your requests with a modified Host header. Use the `host_header_rewrite` switch to rewrite incoming HTTP requests.
++When forwarding to a local port, frp does not modify the tunneled HTTP requests at all, they are copied to your server byte-for-byte as they are received. Some application servers use the Host header for determining which development site to display. For this reason, frp can rewrite your requests with a modified host header. Use the `host_header_rewrite` switch to rewrite incoming HTTP requests.
+@@ -499 +500,18 @@ host_header_rewrite = dev.yourdomain.com
+-If `host_header_rewrite` is specified, the Host header will be rewritten to match the hostname portion of the forwarding address.
++If `host_header_rewrite` is specified, the host header will be rewritten to match the hostname portion of the forwarding address.
++
++### Set Headers In HTTP Request
++
++You can set headers for proxy which type is `http`.
++
++```ini
++# frpc.ini
++[web]
++type = http
++local_port = 80
++custom_domains = test.yourdomain.com
++host_header_rewrite = dev.yourdomain.com
++header_X-From-Where = frp
++```
++
++Note that params which have prefix `header_` will be added to http request headers.
++In this example, it will set header `X-From-Where: frp` to http request.
+diff --git a/README.md b/README.md
+index ccc6f35..faac9d1 100644
+--- a/README.md
++++ b/README.md
+@@ -419 +419 @@ allow_ports = 2000-3000,3001,3003,4000-50000
+-Now `vhost_http_port` and `vhost_https_port` in frps can be same with `bind_port`. frps will detect connection's protocol and handle it accordingly.
++Now `vhost_http_port` and `vhost_https_port` in frps can use same port with `bind_port`. frps will detect connection's protocol and handle it correspondingly.
+diff --git a/README.md b/README.md
+index 488cde7..ccc6f35 100644
+--- a/README.md
++++ b/README.md
+@@ -33,0 +34 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Port Reuse](#port-reuse)
+@@ -415,0 +417,6 @@ allow_ports = 2000-3000,3001,3003,4000-50000
++### Port Reuse
++
++Now `vhost_http_port` and `vhost_https_port` in frps can be same with `bind_port`. frps will detect connection's protocol and handle it accordingly.
++
++We would like to try to allow multiple proxies bind a same remote port with different protocols in the future.
++
+diff --git a/README.md b/README.md
+index ca1ed5c..488cde7 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +25,0 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-    * [Connect website through frpc's network](#connect-website-through-frpcs-network)
+@@ -336,20 +334,0 @@ Now it can't penetrate all types of NAT devices. You can try **stcp** if **xtcp*
+-### Connect website through frpc's network
+-
+-Configure frps same as above.
+-
+-1. Start frpc with configurations:
+-
+-  ```ini
+-  # frpc.ini
+-  [common]
+-  server_addr = x.x.x.x
+-  server_port = 7000
+-
+-  [http_proxy]
+-  type = tcp
+-  remote_port = 6000
+-  plugin = http_proxy # or socks5
+-  ```
+-
+-2. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
+-
+diff --git a/README.md b/README.md
+index 2ecdd25..ca1ed5c 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-    * [Privilege Mode](#privilege-mode)
+-        * [Port White List](#port-white-list)
++    * [Port White List](#port-white-list)
+@@ -44,0 +44 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Range ports mapping](#range-ports-mapping)
+@@ -425 +425 @@ Use `frpc status -c ./frpc.ini` to get status of all proxies. You need to set ad
+-### Privilege Mode
++### Port White List
+@@ -427,5 +427 @@ Use `frpc status -c ./frpc.ini` to get status of all proxies. You need to set ad
+-Privilege mode is the default and only mode support in frp since v0.10.0. All proxy configurations are set in client.
+-
+-#### Port White List
+-
+-`privilege_allow_ports` in frps.ini is used for preventing abuse of ports:
++`allow_ports` in frps.ini is used for preventing abuse of ports:
+@@ -436 +432 @@ Privilege mode is the default and only mode support in frp since v0.10.0. All pr
+-privilege_allow_ports = 2000-3000,3001,3003,4000-50000
++allow_ports = 2000-3000,3001,3003,4000-50000
+@@ -439 +435 @@ privilege_allow_ports = 2000-3000,3001,3003,4000-50000
+-`privilege_allow_ports` consists of a specific port or a range of ports divided by `,`.
++`allow_ports` consists of a specific port or a range of ports divided by `,`.
+diff --git a/README.md b/README.md
+index 458e0e6..2ecdd25 100644
+--- a/README.md
++++ b/README.md
+@@ -386 +386 @@ Then visit `http://[server_addr]:7500` to see dashboard, default username and pa
+-Since v0.10.0, you only need to set `privilege_token` in frps.ini and frpc.ini.
++Since v0.10.0, you only need to set `token` in frps.ini and frpc.ini.
+@@ -542 +542 @@ http_user = abc
+-http_pwd = abc
++http_passwd = abc
+diff --git a/README.md b/README.md
+index 070224d..458e0e6 100644
+--- a/README.md
++++ b/README.md
+@@ -605,0 +606,15 @@ http_proxy = http://user:pwd@192.168.1.128:8080
++### Range ports mapping
++
++Proxy name has prefix `range:` will support mapping range ports.
++
++```ini
++# frpc.ini
++[range:test_tcp]
++type = tcp
++local_ip = 127.0.0.1
++local_port = 6000-6006,6007
++remote_port = 6000-6006,6007
++```
++
++frpc will generate 6 proxies like `test_tcp_0, test_tcp_1 ... test_tcp_5`.
++
+@@ -610 +625 @@ frpc only forward request to local tcp or udp port by default.
+-Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy**, **socks5** and you can see [example usage](#example-usage).
++Plugin is used for providing rich features. There are built-in plugins such as `unix_domain_socket`, `http_proxy`, `socks5`, `static_file` and you can see [example usage](#example-usage).
+@@ -628 +642,0 @@ plugin_http_passwd = abc
+-
+@@ -634,2 +647,0 @@ plugin_http_passwd = abc
+-* Frpc can directly be a webserver for static files.
+-* P2p communicate by making udp hole to penetrate NAT.
+@@ -638 +649,0 @@ plugin_http_passwd = abc
+-
+diff --git a/README.md b/README.md
+index 93ee895..070224d 100644
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Expose a simple http file server](#expose-a-simple-http-file-server)
+@@ -216,0 +218,26 @@ Configure frps same as above.
++### Expose a simple http file server
++
++A simple way to visit files in the LAN.
++
++Configure frps same as above.
++
++1. Start frpc with configurations:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [test_static_file]
++  type = tcp
++  remote_port = 6000
++  plugin = static_file
++  plugin_local_path = /tmp/file
++  plugin_strip_prefix = static
++  plugin_http_user = abc
++  plugin_http_passwd = abc
++  ```
++
++2. Visit `http://x.x.x.x:6000/static/` by your browser, set correct user and password, so you can see files in `/tmp/file`.
++
+diff --git a/README.md b/README.md
+index a61c980..93ee895 100644
+--- a/README.md
++++ b/README.md
+@@ -31,0 +32 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Get proxy status from client](#get-proxy-status-from-client)
+@@ -389 +390 @@ admin_port = 7400
+-Then run command `frpc -c ./frpc.ini --reload` and wait for about 10 seconds to let frpc create or update or delete proxies.
++Then run command `frpc reload -c ./frpc.ini` and wait for about 10 seconds to let frpc create or update or delete proxies.
+@@ -392,0 +394,4 @@ Then run command `frpc -c ./frpc.ini --reload` and wait for about 10 seconds to
++### Get proxy status from client
++
++Use `frpc status -c ./frpc.ini` to get status of all proxies. You need to set admin port in frpc's configure file.
++
+diff --git a/README.md b/README.md
+index e065971..a61c980 100644
+--- a/README.md
++++ b/README.md
+@@ -13,0 +14 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++
+@@ -22,0 +24 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [P2P Mode](#p2p-mode)
+@@ -245 +247 @@ Configure frps same as above.
+-  [secret_ssh_vistor]
++  [secret_ssh_visitor]
+@@ -247 +249 @@ Configure frps same as above.
+-  role = vistor
++  role = visitor
+@@ -257,0 +260,48 @@ Configure frps same as above.
++### P2P Mode
++
++**xtcp** is designed for transmitting a large amount of data directly between two client.
++
++Now it can't penetrate all types of NAT devices. You can try **stcp** if **xtcp** doesn't work.
++
++1. Configure a udp port for xtcp:
++
++  ```ini
++  bind_udp_port = 7001
++  ```
++
++2. Start frpc, forward ssh port and `remote_port` is useless:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [p2p_ssh]
++  type = xtcp
++  sk = abcdefg
++  local_ip = 127.0.0.1
++  local_port = 22
++  ```
++
++3. Start another frpc in which you want to connect this ssh server:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [p2p_ssh_visitor]
++  type = xtcp
++  role = visitor
++  server_name = p2p_ssh
++  sk = abcdefg
++  bind_addr = 127.0.0.1
++  bind_port = 6000
++  ```
++
++4. Connect to server in LAN by ssh assuming that username is test:
++
++  `ssh -oPort=6000 test@127.0.0.1`
++
+@@ -553 +603 @@ plugin_http_passwd = abc
+-* P2p communicate by make udp hole to penetrate NAT.
++* P2p communicate by making udp hole to penetrate NAT.
+diff --git a/README.md b/README.md
+index 795b841..e065971 100644
+--- a/README.md
++++ b/README.md
+@@ -187 +187 @@ However, we can expose a http or https service using frp.
+-  `dig @x.x.x.x -p 6000 www.goolge.com`
++  `dig @x.x.x.x -p 6000 www.google.com`
+diff --git a/README.md b/README.md
+index 27a327e..795b841 100644
+--- a/README.md
++++ b/README.md
+@@ -564 +564 @@ Interested in getting involved? We would like to help you!
+-* If you have some wanderful ideas, send email to fatedier@gmail.com.
++* If you have some wonderful ideas, send email to fatedier@gmail.com.
+diff --git a/README.md b/README.md
+index 1a0dd08..27a327e 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Expose your service in security](#expose-your-service-in-security)
+@@ -23,0 +25 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Configuration File](#configuration-file)
+@@ -27 +29 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-    * [Reload configures without frps stopped](#reload-configures-without-frps-stopped)
++    * [Hot-Reload frpc configuration](#hot-reload-frpc-configuration)
+@@ -33,0 +36 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Get Real IP](#get-real-ip)
+@@ -190 +193,3 @@ Using tcp port to connect unix domain socket like docker daemon.
+-1. Modify frps.ini:
++Configure frps same as above.
++
++1. Start frpc with configurations:
+@@ -193 +198 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  # frps.ini
++  # frpc.ini
+@@ -195 +200,8 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  bind_port = 7000
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [unix_domain_socket]
++  type = tcp
++  remote_port = 6000
++  plugin = unix_domain_socket
++  plugin_unix_path = /var/run/docker.sock
+@@ -198 +210 @@ Using tcp port to connect unix domain socket like docker daemon.
+-2. Start frps:
++2. Get docker version by curl command:
+@@ -200 +212,9 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  `./frps -c ./frps.ini`
++  `curl http://x.x.x.x:6000/version`
++
++### Expose your service in security
++
++For some services, if expose them to the public network directly will be a security risk.
++
++**stcp(secret tcp)** help you create a proxy avoiding any one can access it.
++
++Configure frps same as above.
+@@ -202 +222 @@ Using tcp port to connect unix domain socket like docker daemon.
+-3. Modify frpc.ini:
++1. Start frpc, forward ssh port and `remote_port` is useless:
+@@ -210,5 +230,5 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  [unix_domain_socket]
+-  type = tcp
+-  remote_port = 6000
+-  plugin = unix_domain_socket
+-  plugin_unix_path = /var/run/docker.sock
++  [secret_ssh]
++  type = stcp
++  sk = abcdefg
++  local_ip = 127.0.0.1
++  local_port = 22
+@@ -217 +237 @@ Using tcp port to connect unix domain socket like docker daemon.
+-4. Start frpc:
++2. Start another frpc in which you want to connect this ssh server:
+@@ -219 +239,14 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  `./frpc -c ./frpc.ini`
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [secret_ssh_vistor]
++  type = stcp
++  role = vistor
++  server_name = secret_ssh
++  sk = abcdefg
++  bind_addr = 127.0.0.1
++  bind_port = 6000
++  ```
+@@ -221 +254 @@ Using tcp port to connect unix domain socket like docker daemon.
+-5. Get docker version by curl command:
++3. Connect to server in LAN by ssh assuming that username is test:
+@@ -223 +256 @@ Using tcp port to connect unix domain socket like docker daemon.
+-  `curl http://x.x.x.x:6000/version`
++  `ssh -oPort=6000 test@127.0.0.1`
+@@ -229 +262 @@ Configure frps same as above.
+-1. Modify frpc.ini:
++1. Start frpc with configurations:
+@@ -243 +276 @@ Configure frps same as above.
+-4. Start frpc:
++2. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
+@@ -245 +278 @@ Configure frps same as above.
+-  `./frpc -c ./frpc.ini`
++## Features
+@@ -247 +280 @@ Configure frps same as above.
+-5. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
++### Configuration File
+@@ -249 +282,5 @@ Configure frps same as above.
+-## Features
++You can find features which this document not metioned from full example configuration files.
++
++[frps full configuration file](./conf/frps_full.ini)
++
++[frpc full configuration file](./conf/frpc_full.ini)
+@@ -291 +328,12 @@ use_compression = true
+-### Reload configures without frps stopped
++### Hot-Reload frpc configuration
++
++First you need to set admin port in frpc's configure file to let it provide HTTP API for more features.
++
++```ini
++# frpc.ini
++[common]
++admin_addr = 127.0.0.1
++admin_port = 7400
++```
++
++Then run command `frpc -c ./frpc.ini --reload` and wait for about 10 seconds to let frpc create or update or delete proxies.
+@@ -293 +341 @@ use_compression = true
+-This feature is removed since v0.10.0.
++**Note that parameters in [common] section won't be modified except 'start' now.**
+@@ -388,0 +437,8 @@ If `host_header_rewrite` is specified, the Host header will be rewritten to matc
++### Get Real IP
++
++Features for http proxy only.
++
++You can get user's real IP from http request header `X-Forwarded-For` and `X-Real-IP`.
++
++**Note that now you can only get these two headers in first request of each user connection.**
++
+@@ -508 +564 @@ Interested in getting involved? We would like to help you!
+-* If you have some wonderful ideas, send email to fatedier@gmail.com.
++* If you have some wanderful ideas, send email to fatedier@gmail.com.
+diff --git a/README.md b/README.md
+index 005f749..1a0dd08 100644
+--- a/README.md
++++ b/README.md
+@@ -240 +240 @@ Configure frps same as above.
+-  plugin = http_proxy
++  plugin = http_proxy # or socks5
+@@ -247 +247 @@ Configure frps same as above.
+-5. Set http proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
++5. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
+@@ -472 +472 @@ frpc only forward request to local tcp or udp port by default.
+-Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy** and you can see [example usage](#example-usage).
++Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy**, **socks5** and you can see [example usage](#example-usage).
+diff --git a/README.md b/README.md
+index f7087e7..005f749 100644
+--- a/README.md
++++ b/README.md
+@@ -240 +240 @@ Configure frps same as above.
+-  plugin = http_proxy # or socks5
++  plugin = http_proxy
+@@ -247 +247 @@ Configure frps same as above.
+-5. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
++5. Set http proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
+@@ -472 +472 @@ frpc only forward request to local tcp or udp port by default.
+-Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy**, **socks5** and you can see [example usage](#example-usage).
++Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy** and you can see [example usage](#example-usage).
+@@ -508 +508 @@ Interested in getting involved? We would like to help you!
+-* If you have some wanderful ideas, send email to fatedier@gmail.com.
++* If you have some wonderful ideas, send email to fatedier@gmail.com.
+diff --git a/README.md b/README.md
+index 20254e6..f7087e7 100644
+--- a/README.md
++++ b/README.md
+@@ -240 +240 @@ Configure frps same as above.
+-  plugin = http_proxy
++  plugin = http_proxy # or socks5
+@@ -247 +247 @@ Configure frps same as above.
+-5. Set http proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
++5. Set http proxy or socks5 proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
+@@ -472 +472 @@ frpc only forward request to local tcp or udp port by default.
+-Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy** and you can see [example usage](#example-usage).
++Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy**, **socks5** and you can see [example usage](#example-usage).
+diff --git a/README.md b/README.md
+index aff08cd..20254e6 100644
+--- a/README.md
++++ b/README.md
+@@ -457,0 +458,2 @@ frpc can connect frps using HTTP PROXY if you set os environment `HTTP_PROXY` or
++It only works when protocol is tcp.
++
+diff --git a/README.md b/README.md
+index 334df82..aff08cd 100644
+--- a/README.md
++++ b/README.md
+@@ -30,0 +31 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Support KCP Protocol](#support-kcp-protocol)
+@@ -321,0 +323,29 @@ tcp_mux = false
++### Support KCP Protocol
++
++frp support kcp protocol since v0.12.0.
++
++KCP is a fast and reliable protocol that can achieve the transmission effect of a reduction of the average latency by 30% to 40% and reduction of the maximum delay by a factor of three, at the cost of 10% to 20% more bandwidth wasted than TCP.
++
++Using kcp in frp:
++
++1. Enable kcp protocol in frps:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  # kcp needs to bind a udp port, it can be same with 'bind_port'
++  kcp_bind_port = 7000
++  ```
++
++2. Configure the protocol used in frpc to connect frps:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  # specify the 'kcp_bind_port' in frps
++  server_port = 7000
++  protocol = kcp
++  ```
++
+diff --git a/README.md b/README.md
+index 349ddfd..334df82 100644
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21,2 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Forward unix domain socket](#forward-unix-domain-socket)
++    * [Connect website through frpc's network](#connect-website-through-frpcs-network)
+@@ -34,0 +37 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Plugin](#plugin)
+@@ -38,0 +42 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Wechat Pay](#wechat-pay)
+@@ -146 +150 @@ However, we can expose a http or https service using frp.
+-1. Modify frps.ini, configure a reverse proxy named [dns]:
++1. Modify frps.ini:
+@@ -180,0 +185,63 @@ However, we can expose a http or https service using frp.
++### Forward unix domain socket
++
++Using tcp port to connect unix domain socket like docker daemon.
++
++1. Modify frps.ini:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Modify frpc.ini:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [unix_domain_socket]
++  type = tcp
++  remote_port = 6000
++  plugin = unix_domain_socket
++  plugin_unix_path = /var/run/docker.sock
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Get docker version by curl command:
++
++  `curl http://x.x.x.x:6000/version`
++
++### Connect website through frpc's network
++
++Configure frps same as above.
++
++1. Modify frpc.ini:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++
++  [http_proxy]
++  type = tcp
++  remote_port = 6000
++  plugin = http_proxy
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Set http proxy `x.x.x.x:6000` in your browser and visit website through frpc's network.
++
+@@ -362,0 +430 @@ frpc can connect frps using HTTP PROXY if you set os environment `HTTP_PROXY` or
++[common]
+@@ -367,0 +436,23 @@ http_proxy = http://user:pwd@192.168.1.128:8080
++### Plugin
++
++frpc only forward request to local tcp or udp port by default.
++
++Plugin is used for providing rich features. There are built-in plugins such as **unix_domain_socket**, **http_proxy** and you can see [example usage](#example-usage).
++
++Specify which plugin to use by `plugin` parameter. Configuration parameters of plugin should be started with `plugin_`. `local_ip` and `local_port` is useless for plugin.
++
++Using plugin **http_proxy**:
++
++```ini
++# frpc.ini
++[http_proxy]
++type = tcp
++remote_port = 6000
++plugin = http_proxy
++plugin_http_user = abc
++plugin_http_passwd = abc
++```
++
++`plugin_http_user` and `plugin_http_passwd` are configuration parameters used in `http_proxy` plugin.
++
++
+@@ -374 +464,0 @@ http_proxy = http://user:pwd@192.168.1.128:8080
+-* Full control mode, dynamically modify frpc's configure with dashboard in frps.
+@@ -376 +465,0 @@ http_proxy = http://user:pwd@192.168.1.128:8080
+-* Client Plugin (http proxy).
+@@ -400,0 +490,4 @@ frp QQ group: 606194980
++### Wechat Pay
++
++![donation-wechatpay](/doc/pic/donate-wechatpay.png)
++
+diff --git a/README.md b/README.md
+index 8b4fe71..349ddfd 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/fatedier/frp.svg)](https://travis-ci.org/fatedier/frp)
++[![Build Status](https://travis-ci.org/fatedier/frp.svg?branch=master)](https://travis-ci.org/fatedier/frp)
+diff --git a/README.md b/README.md
+index 1963fa8..8b4fe71 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-    * [Communicate with your computer in LAN by SSH](#communicate-with-your-computer-in-lan-by-ssh)
++    * [Access your computer in LAN by SSH](#access-your-computer-in-lan-by-ssh)
+@@ -27,0 +28 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [TCP Stream Multiplexing](#tcp-stream-multiplexing)
+@@ -45,2 +46 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* Expose any tcp service behind a NAT or firewall to the internet by a server with public IP address.
+-* Inspect all http requests/responses that are transmitted over the tunnel(future).
++* Expose any tcp or udp service behind a NAT or firewall to the internet by a server with public IP address.
+@@ -66 +66 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-### Communicate with your computer in LAN by SSH
++### Access your computer in LAN by SSH
+@@ -68 +68 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-1. Modify frps.ini, configure a reverse proxy named [ssh]:
++1. Modify frps.ini:
+@@ -74,4 +73,0 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-
+-  [ssh]
+-  listen_port = 6000
+-  auth_token = 123
+@@ -84 +80 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-3. Modify frpc.ini, set remote frps's server IP as x.x.x.x:
++3. Modify frpc.ini, `server_addr` is your frps's server IP:
+@@ -91 +86,0 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-  auth_token = 123
+@@ -96,0 +92 @@ Put **frpc** and **frpc.ini** to your server in LAN.
++  remote_port = 6000
+@@ -113 +109 @@ However, we can expose a http or https service using frp.
+-1. Modify frps.ini, configure a http reverse proxy named [web] and set http port as 8080, custom domain as `www.yourdomain.com`:
++1. Modify frps.ini, configure http port 8080:
+@@ -120,5 +115,0 @@ However, we can expose a http or https service using frp.
+-
+-  [web]
+-  type = http
+-  custom_domains = www.yourdomain.com
+-  auth_token = 123
+@@ -138 +128,0 @@ However, we can expose a http or https service using frp.
+-  auth_token = 123
+@@ -142,0 +133 @@ However, we can expose a http or https service using frp.
++  custom_domains = www.yourdomain.com
+@@ -161,5 +151,0 @@ However, we can expose a http or https service using frp.
+-
+-  [dns]
+-  type = udp
+-  listen_port = 6000
+-  auth_token = 123
+@@ -179 +164,0 @@ However, we can expose a http or https service using frp.
+-  auth_token = 123
+@@ -184,0 +170 @@ However, we can expose a http or https service using frp.
++  remote_port = 6000
+@@ -217,3 +203 @@ Then visit `http://[server_addr]:7500` to see dashboard, default username and pa
+-`auth_token` in frps.ini is configured for each proxy and check for authentication when frpc login in.
+-
+-Client that want's to register must set a global `auth_token` equals to frps.ini.
++Since v0.10.0, you only need to set `privilege_token` in frps.ini and frpc.ini.
+@@ -221 +205 @@ Client that want's to register must set a global `auth_token` equals to frps.ini
+-Note that time duration between frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
++Note that time duration between server of frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
+@@ -227 +211 @@ Howerver, this timeout duration can be modified by setting `authentication_timeo
+-Defalut value is false, you could decide if the proxy will use encryption or compression whether the type is:
++Defalut value is false, you could decide if the proxy will use encryption or compression:
+@@ -233,2 +217,2 @@ type = tcp
+-listen_port = 6000
+-auth_token = 123
++local_port = 22
++remote_port = 6000
+@@ -236 +220 @@ use_encryption = true
+-use_gzip = true
++use_compression = true
+@@ -241,33 +225 @@ use_gzip = true
+-If you want to add a new reverse proxy and avoid restarting frps, you can use this function:
+-
+-1. `dashboard_port` should be set in frps.ini:
+-
+-  ```ini
+-  # frps.ini
+-  [common]
+-  bind_port = 7000
+-  dashboard_port = 7500
+-  ```
+-
+-2. Start frps:
+-
+-  `./frps -c ./frps.ini`
+-
+-3. Modify frps.ini to add a new proxy [new_ssh]:
+-
+-  ```ini
+-  # frps.ini
+-  [common]
+-  bind_port = 7000
+-  dashboard_port = 7500
+-
+-  [new_ssh]
+-  listen_port = 6001
+-  auth_token = 123
+-  ```
+-
+-4. Execute `reload` command:
+-
+-  `./frps -c ./frps.ini --reload`
+-
+-5. Start frpc and [new_ssh] is available now.
++This feature is removed since v0.10.0.
+@@ -277,40 +229 @@ If you want to add a new reverse proxy and avoid restarting frps, you can use th
+-Privilege mode is used for who don't want to do operations in frps everytime adding a new proxy.
+-
+-All proxies's configurations are set in frpc.ini when privilege mode is enabled.
+-
+-1. Enable privilege mode and set `privilege_token`.Client with the same `privilege_token` can create proxy automaticly:
+-
+-  ```ini
+-  # frps.ini
+-  [common]
+-  bind_port = 7000
+-  privilege_mode = true
+-  privilege_token = 1234
+-  ```
+-
+-2. Start frps:
+-
+-  `./frps -c ./frps.ini`
+-
+-3. Enable privilege mode for proxy [ssh]:
+-
+-  ```ini
+-  # frpc.ini
+-  [common]
+-  server_addr = x.x.x.x
+-  server_port = 7000
+-  privilege_token = 1234
+-
+-  [ssh]
+-  privilege_mode = true
+-  local_port = 22
+-  remote_port = 6000
+-  ```
+-
+-4. Start frpc:
+-
+-  `./frpc -c ./frpc.ini`
+-
+-5. Connect to server in LAN by ssh assuming username is test:
+-
+-  `ssh -oPort=6000 test@x.x.x.x`
++Privilege mode is the default and only mode support in frp since v0.10.0. All proxy configurations are set in client.
+@@ -320 +233 @@ All proxies's configurations are set in frpc.ini when privilege mode is enabled.
+-`privilege_allow_ports` in frps.ini is used for preventing abuse of ports in privilege mode:
++`privilege_allow_ports` in frps.ini is used for preventing abuse of ports:
+@@ -325,2 +237,0 @@ All proxies's configurations are set in frpc.ini when privilege mode is enabled.
+-privilege_mode = true
+-privilege_token = 1234
+@@ -331,0 +243,12 @@ privilege_allow_ports = 2000-3000,3001,3003,4000-50000
++### TCP Stream Multiplexing
++
++frp support tcp stream multiplexing since v0.10.0 like HTTP2 Multiplexing. All user requests to same frpc can use only one tcp connection.
++
++You can disable this feature by modify frps.ini and frpc.ini:
++
++```ini
++# frps.ini and frpc.ini, must be same
++[common]
++tcp_mux = false
++```
++
+@@ -340 +263 @@ This feature is fit for a large number of short connections.
+-  ```ini         
++  ```ini
+@@ -343 +266 @@ This feature is fit for a large number of short connections.
+-  max_pool_count = 50
++  max_pool_count = 5
+@@ -350,4 +273,2 @@ This feature is fit for a large number of short connections.
+-  [ssh]
+-  type = tcp
+-  local_port = 22
+-  pool_count = 10
++  [common]
++  pool_count = 1
+@@ -360,2 +281,2 @@ When forwarding to a local port, frp does not modify the tunneled HTTP requests
+-```ini                                                             
+-# frpc.ini                                                         
++```ini
++# frpc.ini
+@@ -363 +283,0 @@ When forwarding to a local port, frp does not modify the tunneled HTTP requests
+-privilege_mode = true
+@@ -378 +298 @@ This enforces HTTP Basic Auth on all requests with the username and password you
+-It can be only enabled when proxy type is http.
++It can only be enabled when proxy type is http.
+@@ -383 +302,0 @@ It can be only enabled when proxy type is http.
+-privilege_mode = true
+@@ -391 +310 @@ http_pwd = abc
+-Visit `test.yourdomain.com` and now you need to input username and password.
++Visit `http://test.yourdomain.com` and now you need to input username and password.
+@@ -407 +325,0 @@ Resolve `*.frps.com` to the frps server's IP.
+-privilege_mode = true
+@@ -426 +343,0 @@ frp support forward http requests to different backward web services by url rout
+-privilege_mode = true
+@@ -433 +349,0 @@ locations = /
+-privilege_mode = true
+@@ -457,2 +372,0 @@ http_proxy = http://user:pwd@192.168.1.128:8080
+-* Debug mode for frpc, prestent proxy status in terminal.
+-* Inspect all http requests/responses that are transmitted over the tunnel.
+@@ -461,0 +376,3 @@ http_proxy = http://user:pwd@192.168.1.128:8080
++* Client Plugin (http proxy).
++* kubernetes ingress support.
++
+diff --git a/README.md b/README.md
+index f6062cd..1963fa8 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +38,0 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* [Contributors](#contributors)
+@@ -488,13 +486,0 @@ Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedie
+-
+-## Contributors
+-
+-* [fatedier](https://github.com/fatedier)
+-* [Hurricanezwf](https://github.com/Hurricanezwf)
+-* [Pan Hao](https://github.com/vashstorm)
+-* [Danping Mao](https://github.com/maodanp)
+-* [Eric Larssen](https://github.com/ericlarssen)
+-* [Damon Zhao](https://github.com/se77en)
+-* [Manfred Touron](https://github.com/moul)
+-* [xuebing1110](https://github.com/xuebing1110)
+-* [Anbitioner](https://github.com/bingtianbaihua)
+-* [LitleCarl](https://github.com/LitleCarl)
+diff --git a/README.md b/README.md
+index d32aa32..f6062cd 100644
+--- a/README.md
++++ b/README.md
+@@ -499,0 +500 @@ Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedie
++* [LitleCarl](https://github.com/LitleCarl)
+diff --git a/README.md b/README.md
+index f11b0e2..d32aa32 100644
+--- a/README.md
++++ b/README.md
+@@ -498,0 +499 @@ Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedie
++* [Anbitioner](https://github.com/bingtianbaihua)
+diff --git a/README.md b/README.md
+index aba3a69..f11b0e2 100644
+--- a/README.md
++++ b/README.md
+@@ -222 +222 @@ Client that want's to register must set a global `auth_token` equals to frps.ini
+-Note that time duration bewtween frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
++Note that time duration between frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
+diff --git a/README.md b/README.md
+index 252776e..aba3a69 100644
+--- a/README.md
++++ b/README.md
+@@ -455 +454,0 @@ http_proxy = http://user:pwd@192.168.1.128:8080
+-* Url router.
+diff --git a/README.md b/README.md
+index 99975f0..252776e 100644
+--- a/README.md
++++ b/README.md
+@@ -31,0 +32 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [URL routing](#url-routing)
+@@ -416,0 +418,24 @@ Note that if `subdomain_host` is not empty, `custom_domains` should not be the s
++### URL routing
++
++frp support forward http requests to different backward web services by url routing.
++
++`locations` specify the prefix of URL used for routing. frps first searches for the most specific prefix location given by literal strings regardless of the listed order.
++
++```ini
++# frpc.ini
++[web01]
++privilege_mode = true
++type = http
++local_port = 80
++custom_domains = web.yourdomain.com
++locations = /
++
++[web02]
++privilege_mode = true
++type = http
++local_port = 81
++custom_domains = web.yourdomain.com
++locations = /news,/about
++```
++Http requests with url prefix `/news` and `/about` will be forwarded to **web02** and others to **web01**.
++
+diff --git a/README.md b/README.md
+index 4ef33b8..99975f0 100644
+--- a/README.md
++++ b/README.md
+@@ -454,0 +455,2 @@ If frp help you a lot, you can support us by:
++frp QQ group: 606194980
++
+diff --git a/README.md b/README.md
+index efef7da..4ef33b8 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-## Catalog
++## Table of Contents
+@@ -471,0 +472 @@ Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedie
++* [xuebing1110](https://github.com/xuebing1110)
+diff --git a/README.md b/README.md
+index b95cfe2..efef7da 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, http and https protocol when requests can be forwarded by domains to backward web services.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, udp, http and https protocol when requests can be forwarded by domains to backward web services.
+@@ -111 +111 @@ Sometimes we want to expose a local web service behind a NAT network to others f
+-Howerver, we can expose a http or https service using frp.
++However, we can expose a http or https service using frp.
+@@ -241 +241 @@ use_gzip = true
+-If your want to add a new reverse proxy and avoid restarting frps, you can use this function:
++If you want to add a new reverse proxy and avoid restarting frps, you can use this function:
+diff --git a/README.md b/README.md
+index 205e153..b95cfe2 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++<!-- vim-markdown-toc GFM -->
+@@ -17,2 +18,3 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-  * [Communicate with your computer in LAN by SSH](#communicate-with-your-computer-in-lan-by-ssh)
+-  * [Visit your web service in LAN by custom domains](#visit-your-web-service-in-lan-by-custom-domains)
++    * [Communicate with your computer in LAN by SSH](#communicate-with-your-computer-in-lan-by-ssh)
++    * [Visit your web service in LAN by custom domains](#visit-your-web-service-in-lan-by-custom-domains)
++    * [Forward DNS query request](#forward-dns-query-request)
+@@ -20,8 +22,11 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-  * [Dashboard](#dashboard)
+-  * [Authentication](#authentication)
+-  * [Encryption and Compression](#encryption-and-compression)
+-  * [Reload configures without frps stopped](#reload-configures-without-frps-stopped)
+-  * [Privilege Mode](#privilege-mode)
+-    * [Port White List](#port-white-list)
+-  * [Connection Pool](#connection-pool)
+-  * [Rewriting the Host Header](#rewriting-the-host-header)
++    * [Dashboard](#dashboard)
++    * [Authentication](#authentication)
++    * [Encryption and Compression](#encryption-and-compression)
++    * [Reload configures without frps stopped](#reload-configures-without-frps-stopped)
++    * [Privilege Mode](#privilege-mode)
++        * [Port White List](#port-white-list)
++    * [Connection Pool](#connection-pool)
++    * [Rewriting the Host Header](#rewriting-the-host-header)
++    * [Password protecting your web service](#password-protecting-your-web-service)
++    * [Custom subdomain names](#custom-subdomain-names)
++    * [Connect frps by HTTP PROXY](#connect-frps-by-http-proxy)
+@@ -30,0 +36,2 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [AliPay](#alipay)
++    * [Paypal](#paypal)
+@@ -32,0 +40,2 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++<!-- vim-markdown-toc -->
++
+@@ -84,0 +94,2 @@ Put **frpc** and **frpc.ini** to your server in LAN.
++  type = tcp
++  local_ip = 127.0.0.1
+@@ -141,0 +153,42 @@ Howerver, we can expose a http or https service using frp.
++### Forward DNS query request
++
++1. Modify frps.ini, configure a reverse proxy named [dns]:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++
++  [dns]
++  type = udp
++  listen_port = 6000
++  auth_token = 123
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Modify frpc.ini, set remote frps's server IP as x.x.x.x, forward dns query request to google dns server `8.8.8.8:53`:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++  auth_token = 123
++
++  [dns]
++  type = udp
++  local_ip = 8.8.8.8
++  local_port = 53
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Send dns query request by dig:
++
++  `dig @x.x.x.x -p 6000 www.goolge.com`
++
+@@ -154,2 +207,2 @@ dashboard_port = 7500
+-dashboard_username = abc
+-dashboard_password = abc
++dashboard_user = admin
++dashboard_pwd = admin
+@@ -169,0 +223,2 @@ Note that time duration bewtween frpc and frps mustn't exceed 15 minutes because
++Howerver, this timeout duration can be modified by setting `authentication_timeout` in frps's configure file. It's defalut value is 900, means 15 minutes. If it is equals 0, then frps will not check authentication timeout.
++
+@@ -316,0 +372,56 @@ If `host_header_rewrite` is specified, the Host header will be rewritten to matc
++### Password protecting your web service
++
++Anyone who can guess your tunnel URL can access your local web server unless you protect it with a password.
++
++This enforces HTTP Basic Auth on all requests with the username and password you specify in frpc's configure file.
++
++It can be only enabled when proxy type is http.
++
++```ini
++# frpc.ini
++[web]
++privilege_mode = true
++type = http
++local_port = 80
++custom_domains = test.yourdomain.com
++http_user = abc
++http_pwd = abc
++```
++
++Visit `test.yourdomain.com` and now you need to input username and password.
++
++### Custom subdomain names
++
++It is convenient to use `subdomain` configure for http、https type when many people use one frps server together.
++
++```ini
++# frps.ini
++subdomain_host = frps.com
++```
++
++Resolve `*.frps.com` to the frps server's IP.
++
++```ini
++# frpc.ini
++[web]
++privilege_mode = true
++type = http
++local_port = 80
++subdomain = test
++```
++
++Now you can visit your web service by host `test.frps.com`.
++
++Note that if `subdomain_host` is not empty, `custom_domains` should not be the subdomain of `subdomain_host`.
++
++### Connect frps by HTTP PROXY
++
++frpc can connect frps using HTTP PROXY if you set os environment `HTTP_PROXY` or configure `http_proxy` param in frpc.ini file.
++
++```ini
++# frpc.ini
++server_addr = x.x.x.x
++server_port = 7000
++http_proxy = http://user:pwd@192.168.1.128:8080
++```
++
+@@ -319,2 +429,0 @@ If `host_header_rewrite` is specified, the Host header will be rewritten to matc
+-* Support udp protocol.
+-* Support wildcard domain name.
+@@ -321,0 +431,2 @@ If `host_header_rewrite` is specified, the Host header will be rewritten to matc
++* Log http request information in frps.
++* Direct reverse proxy, like haproxy.
+diff --git a/README.md b/README.md
+index 941dd1d..205e153 100644
+--- a/README.md
++++ b/README.md
+@@ -152,0 +153,3 @@ dashboard_port = 7500
++# dashboard's username and password are both optional，if not set, default is admin.
++dashboard_username = abc
++dashboard_password = abc
+@@ -155 +158 @@ dashboard_port = 7500
+-Then visit `http://[server_addr]:7500` to see dashboard.
++Then visit `http://[server_addr]:7500` to see dashboard, default username and password are both `admin`.
+@@ -330 +333,3 @@ Interested in getting involved? We would like to help you!
+-* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch
++* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider sending a Pull Request to **dev branch**.
++* If you want to add a new feature, please create an issue first to describe the new feature, as well as the implementation approach. Once a proposal is accepted, create an implementation of the new features and submit it as a pull request.
++* Sorry for my poor english and improvement for this document is welcome even some typo fix.
+@@ -351,2 +356,5 @@ Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedie
+-* [vashstorm](https://github.com/vashstorm)
+-* [maodanp](https://github.com/maodanp)
++* [Pan Hao](https://github.com/vashstorm)
++* [Danping Mao](https://github.com/maodanp)
++* [Eric Larssen](https://github.com/ericlarssen)
++* [Damon Zhao](https://github.com/se77en)
++* [Manfred Touron](https://github.com/moul)
+diff --git a/README.md b/README.md
+index 8eda572..941dd1d 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++* [Donation](#donation)
+@@ -152,3 +152,0 @@ dashboard_port = 7500
+-# dashboard's username and password are both optional，if not set, default is admin.
+-dashboard_username = abc
+-dashboard_password = abc
+@@ -157 +155 @@ dashboard_password = abc
+-Then visit `http://[server_addr]:7500` to see dashboard, default username and password are both `admin`.
++Then visit `http://[server_addr]:7500` to see dashboard.
+@@ -332,3 +330 @@ Interested in getting involved? We would like to help you!
+-* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider sending a Pull Request to **dev branch**.
+-* If you want to add a new feature, please create an issue first to describe the new feature, as well as the implementation approach. Once a proposal is accepted, create an implementation of the new features and submit it as a pull request.
+-* Sorry for my poor english and improvement for this document is welcome even some typo fix.
++* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch
+@@ -338,0 +335,12 @@ Interested in getting involved? We would like to help you!
++## Donation
++
++If frp help you a lot, you can support us by:
++
++### AliPay
++
++![donation-alipay](/doc/pic/donate-alipay.png)
++
++### Paypal
++
++Donate money by [paypal](https://www.paypal.me/fatedier) to my account **fatedier@gmail.com**.
++
+@@ -343,5 +351,2 @@ Interested in getting involved? We would like to help you!
+-* [Pan Hao](https://github.com/vashstorm)
+-* [Danping Mao](https://github.com/maodanp)
+-* [Eric Larssen](https://github.com/ericlarssen)
+-* [Damon Zhao](https://github.com/se77en)
+-* [Manfred Touron](https://github.com/moul)
++* [vashstorm](https://github.com/vashstorm)
++* [maodanp](https://github.com/maodanp)
+diff --git a/README.md b/README.md
+index d202ca7..8eda572 100644
+--- a/README.md
++++ b/README.md
+@@ -332 +332,3 @@ Interested in getting involved? We would like to help you!
+-* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch to **dev branch**.
++* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider sending a Pull Request to **dev branch**.
++* If you want to add a new feature, please create an issue first to describe the new feature, as well as the implementation approach. Once a proposal is accepted, create an implementation of the new features and submit it as a pull request.
++* Sorry for my poor english and improvement for this document is welcome even some typo fix.
+@@ -341,2 +343,5 @@ Interested in getting involved? We would like to help you!
+-* [vashstorm](https://github.com/vashstorm)
+-* [maodanp](https://github.com/maodanp)
++* [Pan Hao](https://github.com/vashstorm)
++* [Danping Mao](https://github.com/maodanp)
++* [Eric Larssen](https://github.com/ericlarssen)
++* [Damon Zhao](https://github.com/se77en)
++* [Manfred Touron](https://github.com/moul)
+diff --git a/README.md b/README.md
+index 43c0286..d202ca7 100644
+--- a/README.md
++++ b/README.md
+@@ -332 +332 @@ Interested in getting involved? We would like to help you!
+-* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch
++* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch to **dev branch**.
+diff --git a/README.md b/README.md
+index 638f157..43c0286 100644
+--- a/README.md
++++ b/README.md
+@@ -151,0 +152,3 @@ dashboard_port = 7500
++# dashboard's username and password are both optional，if not set, default is admin.
++dashboard_username = abc
++dashboard_password = abc
+@@ -154 +157 @@ dashboard_port = 7500
+-Then visit `http://[server_addr]:7500` to see dashboard.
++Then visit `http://[server_addr]:7500` to see dashboard, default username and password are both `admin`.
+diff --git a/README.md b/README.md
+index a46fdc8..638f157 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.Now, it supports tcp, http and https protocol when requests can be forwarded by domains to backward web services.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. Now, it supports tcp, http and https protocol when requests can be forwarded by domains to backward web services.
+@@ -16 +16 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* [Example Usage](#example-usage) 
++* [Example Usage](#example-usage)
+@@ -40 +40 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-frp is under development and you can try it with latest release version.Master branch for releasing stable version when dev branch for developing.
++frp is under development and you can try it with latest release version. Master branch for releasing stable version when dev branch for developing.
+@@ -42 +42 @@ frp is under development and you can try it with latest release version.Master b
+-**We may change any protocol and can't promise backward compatible.Please check the release log when upgrading.**
++**We may change any protocol and can't promise backward compatible. Please check the release log when upgrading.**
+@@ -289 +289 @@ This feature is fit for a large number of short connections.
+-  ```ini 
++  ```ini
+@@ -291 +291 @@ This feature is fit for a large number of short connections.
+-  [ssh] 
++  [ssh]
+@@ -303 +303 @@ When forwarding to a local port, frp does not modify the tunneled HTTP requests
+-[web] 
++[web]
+diff --git a/README.md b/README.md
+index e88bba0..a46fdc8 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-  * [Visit your web service in LAN by specific domain](#visit-your-web-service-in-lan-by-specific-domain)
++  * [Visit your web service in LAN by custom domains](#visit-your-web-service-in-lan-by-custom-domains)
+@@ -42 +42 @@ frp is under development and you can try it with latest release version.Master b
+-**We may change any protocol and can't promise backward compatible.Please note the release log when upgrading.**
++**We may change any protocol and can't promise backward compatible.Please check the release log when upgrading.**
+@@ -50 +50 @@ frp is under development and you can try it with latest release version.Master b
+-First, download the latest version programs from [Release](https://github.com/fatedier/frp/releases) page according to your os and arch.
++Firstly, download the latest programs from [Release](https://github.com/fatedier/frp/releases) page according to your os and arch.
+@@ -95 +95 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-### Visit your web service in LAN by specific domain
++### Visit your web service in LAN by custom domains
+@@ -97 +97 @@ Put **frpc** and **frpc.ini** to your server in LAN.
+-Sometimes we need to expose a local web service behind a NAT network to others for testing with your own domain and unfortunately we can't resolve a domain to a local ip.
++Sometimes we want to expose a local web service behind a NAT network to others for testing with your own domain name and unfortunately we can't resolve a domain name to a local ip.
+@@ -101 +101 @@ Howerver, we can expose a http or https service using frp.
+-1. Modify frps.ini, configure a http reverse proxy named [web] and set http port as 8080, custom domain as www.yourdomain.com:
++1. Modify frps.ini, configure a http reverse proxy named [web] and set http port as 8080, custom domain as `www.yourdomain.com`:
+@@ -119 +119 @@ Howerver, we can expose a http or https service using frp.
+-3. Modify frpc.ini and set remote frps server's IP as x.x.x.x. The local_port is the port of your web service:
++3. Modify frpc.ini and set remote frps server's IP as x.x.x.x. The `local_port` is the port of your web service:
+@@ -137 +137 @@ Howerver, we can expose a http or https service using frp.
+-5. Resolve A record of www.yourdomain.com to x.x.x.x or CNAME record to your origin domain.
++5. Resolve A record of `www.yourdomain.com` to IP `x.x.x.x` or CNAME record to your origin domain.
+@@ -139 +139 @@ Howerver, we can expose a http or https service using frp.
+-6. Now your can visit your local web service from url `http://www.yourdomain.com:8080`.
++6. Now visit your local web service using url `http://www.yourdomain.com:8080`.
+@@ -160 +160 @@ Then visit `http://[server_addr]:7500` to see dashboard.
+-`auth_token` is used in frps.ini for authentication when frpc login in and you should configure it for each proxy.
++`auth_token` in frps.ini is configured for each proxy and check for authentication when frpc login in.
+@@ -162 +162 @@ Then visit `http://[server_addr]:7500` to see dashboard.
+-Client should set a global `auth_token` equals to frps.ini.
++Client that want's to register must set a global `auth_token` equals to frps.ini.
+@@ -164 +164 @@ Client should set a global `auth_token` equals to frps.ini.
+-Note that time duration bewtween frpc and frps shouldn't exceed 15 minutes because timestamp is used for authentication.
++Note that time duration bewtween frpc and frps mustn't exceed 15 minutes because timestamp is used for authentication.
+@@ -168 +168 @@ Note that time duration bewtween frpc and frps shouldn't exceed 15 minutes becau
+-Defalut value is false, you could decide if the proxy should use encryption or compression whether the type is:
++Defalut value is false, you could decide if the proxy will use encryption or compression whether the type is:
+@@ -182 +182 @@ use_gzip = true
+-If your want to add a new reverse proxy and avoid restarting frps, you can use this feature.
++If your want to add a new reverse proxy and avoid restarting frps, you can use this function:
+@@ -220 +220 @@ Privilege mode is used for who don't want to do operations in frps everytime add
+-All proxies's configures are set in frpc.ini when privilege mode is enabled.
++All proxies's configurations are set in frpc.ini when privilege mode is enabled.
+@@ -255 +255 @@ All proxies's configures are set in frpc.ini when privilege mode is enabled.
+-5. Connect to server in LAN by ssh assuming that username is test:
++5. Connect to server in LAN by ssh assuming username is test:
+@@ -271 +271 @@ privilege_allow_ports = 2000-3000,3001,3003,4000-50000
+-`privilege_allow_ports` consists of a specific port or a range of ports divided by ','.
++`privilege_allow_ports` consists of a specific port or a range of ports divided by `,`.
+diff --git a/README.md b/README.md
+index 8be4b45..e88bba0 100644
+--- a/README.md
++++ b/README.md
+@@ -19,0 +20 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++  * [Dashboard](#dashboard)
+@@ -23,0 +25,3 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++    * [Port White List](#port-white-list)
++  * [Connection Pool](#connection-pool)
++  * [Rewriting the Host Header](#rewriting-the-host-header)
+@@ -138,0 +143,15 @@ Howerver, we can expose a http or https service using frp.
++### Dashboard
++
++Check frp's status and proxies's statistics information by Dashboard.
++
++Configure a port for dashboard to enable this feature:
++
++```ini
++[common]
++dashboard_port = 7500
++```
++
++Then visit `http://[server_addr]:7500` to see dashboard.
++
++![dashboard](/doc/pic/dashboard.png)
++
+@@ -239,0 +259,54 @@ All proxies's configures are set in frpc.ini when privilege mode is enabled.
++#### Port White List
++
++`privilege_allow_ports` in frps.ini is used for preventing abuse of ports in privilege mode:
++
++```ini
++# frps.ini
++[common]
++privilege_mode = true
++privilege_token = 1234
++privilege_allow_ports = 2000-3000,3001,3003,4000-50000
++```
++
++`privilege_allow_ports` consists of a specific port or a range of ports divided by ','.
++
++### Connection Pool
++
++By default, frps send message to frpc for create a new connection to backward service when getting an user request.If a proxy's connection pool is enabled, there will be a specified number of connections pre-established.
++
++This feature is fit for a large number of short connections.
++
++1. Configure the limit of pool count each proxy can use in frps.ini:
++
++  ```ini         
++  # frps.ini
++  [common]
++  max_pool_count = 50
++  ```
++
++2. Enable and specify the number of connection pool:
++
++  ```ini 
++  # frpc.ini
++  [ssh] 
++  type = tcp
++  local_port = 22
++  pool_count = 10
++  ```
++
++### Rewriting the Host Header
++
++When forwarding to a local port, frp does not modify the tunneled HTTP requests at all, they are copied to your server byte-for-byte as they are received. Some application servers use the Host header for determining which development site to display. For this reason, frp can rewrite your requests with a modified Host header. Use the `host_header_rewrite` switch to rewrite incoming HTTP requests.
++
++```ini                                                             
++# frpc.ini                                                         
++[web] 
++privilege_mode = true
++type = http
++local_port = 80
++custom_domains = test.yourdomain.com
++host_header_rewrite = dev.yourdomain.com
++```
++
++If `host_header_rewrite` is specified, the Host header will be rewritten to match the hostname portion of the forwarding address.
++
+@@ -242,2 +314,0 @@ All proxies's configures are set in frpc.ini when privilege mode is enabled.
+-* Dashboard page.
+-* Statistics and prestentation of traffic and connection info, etc.
+@@ -245,2 +315,0 @@ All proxies's configures are set in frpc.ini when privilege mode is enabled.
+-* Connection pool.
+-* White list for opening specific ports in privilege mode.
+@@ -251,0 +321,2 @@ All proxies's configures are set in frpc.ini when privilege mode is enabled.
++* Frpc can directly be a webserver for static files.
++* Full control mode, dynamically modify frpc's configure with dashboard in frps.
+diff --git a/README.md b/README.md
+index 198251f..8be4b45 100644
+--- a/README.md
++++ b/README.md
+@@ -13,14 +13,14 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* [What can I do with frp?](#What-can-I-do-with-frp?)
+-* [Status](#Status)
+-* [Architecture](#Architecture)
+-* [Example Usage](#Example-Usage) 
+-  * [Communicate with your computer in LAN by SSH](#Communicate-with-your-computer-in-LAN-by-SSH)
+-  * [Visit your web service in LAN by specific domain](#Visit-your-web-service-in-LAN-by-specific-domain)
+-* [Features](#Features)
+-  * [Authentication](#Authentication)
+-  * [Encryption and Compression](#Encryption-and-Compression)
+-  * [Reload configures without frps stopped](#Reload-configures-without-frps-stopped)
+-  * [Privilege Mode](#Privilege Mode)
+-* [Development Plan](#Development-Plan)
+-* [Contributing](#Contributing)
+-* [Contributors](#Contributors)
++* [What can I do with frp?](#what-can-i-do-with-frp)
++* [Status](#status)
++* [Architecture](#architecture)
++* [Example Usage](#example-usage) 
++  * [Communicate with your computer in LAN by SSH](#communicate-with-your-computer-in-lan-by-ssh)
++  * [Visit your web service in LAN by specific domain](#visit-your-web-service-in-lan-by-specific-domain)
++* [Features](#features)
++  * [Authentication](#authentication)
++  * [Encryption and Compression](#encryption-and-compression)
++  * [Reload configures without frps stopped](#reload-configures-without-frps-stopped)
++  * [Privilege Mode](#privilege-mode)
++* [Development Plan](#development-plan)
++* [Contributing](#contributing)
++* [Contributors](#contributors)
+diff --git a/README.md b/README.md
+index 57ae6cc..198251f 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9,18 @@
+-frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.Now, it supports tcp, http and https protocol when requests can be forwarded by domains to backward web services.
++
++## Catalog
++
++* [What can I do with frp?](#What-can-I-do-with-frp?)
++* [Status](#Status)
++* [Architecture](#Architecture)
++* [Example Usage](#Example-Usage) 
++  * [Communicate with your computer in LAN by SSH](#Communicate-with-your-computer-in-LAN-by-SSH)
++  * [Visit your web service in LAN by specific domain](#Visit-your-web-service-in-LAN-by-specific-domain)
++* [Features](#Features)
++  * [Authentication](#Authentication)
++  * [Encryption and Compression](#Encryption-and-Compression)
++  * [Reload configures without frps stopped](#Reload-configures-without-frps-stopped)
++  * [Privilege Mode](#Privilege Mode)
++* [Development Plan](#Development-Plan)
++* [Contributing](#Contributing)
++* [Contributors](#Contributors)
+@@ -13 +30 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-* Expose any http service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
++* Expose any http and https service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
+@@ -21 +38 @@ frp is under development and you can try it with latest release version.Master b
+-**We may change any protocol and can't promise backward compatible before version 1.x.**
++**We may change any protocol and can't promise backward compatible.Please note the release log when upgrading.**
+@@ -23 +40 @@ frp is under development and you can try it with latest release version.Master b
+-## Quick Start
++## Architecture
+@@ -25 +42 @@ frp is under development and you can try it with latest release version.Master b
+-Read the [QuickStart](/doc/quick_start_en.md)
++![architecture](/doc/pic/architecture.png)
+@@ -27 +44 @@ Read the [QuickStart](/doc/quick_start_en.md)
+-[Tcp port forwarding](/doc/quick_start_en.md#tcp-port-forwarding)
++## Example Usage
+@@ -29 +46 @@ Read the [QuickStart](/doc/quick_start_en.md)
+-[Http port forwarding and Custom domain binding](/doc/quick_start_en.md#http-port-forwarding-and-custom-domains-binding)
++First, download the latest version programs from [Release](https://github.com/fatedier/frp/releases) page according to your os and arch.
+@@ -31 +48 @@ Read the [QuickStart](/doc/quick_start_en.md)
+-## Architecture
++Put **frps** and **frps.ini** to your server with public IP.
+@@ -33 +50,203 @@ Read the [QuickStart](/doc/quick_start_en.md)
+-![architecture](/doc/pic/architecture.png)
++Put **frpc** and **frpc.ini** to your server in LAN.
++
++### Communicate with your computer in LAN by SSH
++
++1. Modify frps.ini, configure a reverse proxy named [ssh]:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++
++  [ssh]
++  listen_port = 6000
++  auth_token = 123
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Modify frpc.ini, set remote frps's server IP as x.x.x.x:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++  auth_token = 123
++
++  [ssh]
++  local_port = 22
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Connect to server in LAN by ssh assuming that username is test:
++
++  `ssh -oPort=6000 test@x.x.x.x`
++
++### Visit your web service in LAN by specific domain
++
++Sometimes we need to expose a local web service behind a NAT network to others for testing with your own domain and unfortunately we can't resolve a domain to a local ip.
++
++Howerver, we can expose a http or https service using frp.
++
++1. Modify frps.ini, configure a http reverse proxy named [web] and set http port as 8080, custom domain as www.yourdomain.com:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  vhost_http_port = 8080
++
++  [web]
++  type = http
++  custom_domains = www.yourdomain.com
++  auth_token = 123
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Modify frpc.ini and set remote frps server's IP as x.x.x.x. The local_port is the port of your web service:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++  auth_token = 123
++
++  [web]
++  type = http
++  local_port = 80
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Resolve A record of www.yourdomain.com to x.x.x.x or CNAME record to your origin domain.
++
++6. Now your can visit your local web service from url `http://www.yourdomain.com:8080`.
++
++## Features
++
++### Authentication
++
++`auth_token` is used in frps.ini for authentication when frpc login in and you should configure it for each proxy.
++
++Client should set a global `auth_token` equals to frps.ini.
++
++Note that time duration bewtween frpc and frps shouldn't exceed 15 minutes because timestamp is used for authentication.
++
++### Encryption and Compression
++
++Defalut value is false, you could decide if the proxy should use encryption or compression whether the type is:
++
++```ini
++# frpc.ini
++[ssh]
++type = tcp
++listen_port = 6000
++auth_token = 123
++use_encryption = true
++use_gzip = true
++```
++
++### Reload configures without frps stopped
++
++If your want to add a new reverse proxy and avoid restarting frps, you can use this feature.
++
++1. `dashboard_port` should be set in frps.ini:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  dashboard_port = 7500
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Modify frps.ini to add a new proxy [new_ssh]:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  dashboard_port = 7500
++
++  [new_ssh]
++  listen_port = 6001
++  auth_token = 123
++  ```
++
++4. Execute `reload` command:
++
++  `./frps -c ./frps.ini --reload`
++
++5. Start frpc and [new_ssh] is available now.
++
++### Privilege Mode
++
++Privilege mode is used for who don't want to do operations in frps everytime adding a new proxy.
++
++All proxies's configures are set in frpc.ini when privilege mode is enabled.
++
++1. Enable privilege mode and set `privilege_token`.Client with the same `privilege_token` can create proxy automaticly:
++
++  ```ini
++  # frps.ini
++  [common]
++  bind_port = 7000
++  privilege_mode = true
++  privilege_token = 1234
++  ```
++
++2. Start frps:
++
++  `./frps -c ./frps.ini`
++
++3. Enable privilege mode for proxy [ssh]:
++
++  ```ini
++  # frpc.ini
++  [common]
++  server_addr = x.x.x.x
++  server_port = 7000
++  privilege_token = 1234
++
++  [ssh]
++  privilege_mode = true
++  local_port = 22
++  remote_port = 6000
++  ```
++
++4. Start frpc:
++
++  `./frpc -c ./frpc.ini`
++
++5. Connect to server in LAN by ssh assuming that username is test:
++
++  `ssh -oPort=6000 test@x.x.x.x`
++
++## Development Plan
++
++* Dashboard page.
++* Statistics and prestentation of traffic and connection info, etc.
++* Support udp protocol.
++* Connection pool.
++* White list for opening specific ports in privilege mode.
++* Support wildcard domain name.
++* Url router.
++* Load balance to different service in frpc.
++* Debug mode for frpc, prestent proxy status in terminal.
++* Inspect all http requests/responses that are transmitted over the tunnel.
++* P2p communicate by make udp hole to penetrate NAT.
+diff --git a/README.md b/README.md
+index d0900e6..57ae6cc 100644
+--- a/README.md
++++ b/README.md
+@@ -48,0 +49 @@ Interested in getting involved? We would like to help you!
++* [maodanp](https://github.com/maodanp)
+diff --git a/README.md b/README.md
+index 8ebc7b3..d0900e6 100644
+--- a/README.md
++++ b/README.md
+@@ -37 +37 @@ Read the [QuickStart](/doc/quick_start_en.md)
+-Interested in getting involved? We would love to help you!
++Interested in getting involved? We would like to help you!
+@@ -41,0 +42,2 @@ Interested in getting involved? We would love to help you!
++**Note: We prefer you to give your advise in [issues](https://github.com/fatedier/frp/issues), so others with a same question can search it quickly and we don't need to answer them repeatly.**
++
+diff --git a/README.md b/README.md
+index 6a4c5e0..8ebc7b3 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ frp is under development and you can try it with latest release version.Master b
+-Read the [QuickStart](doc/quick_start_en.md)
++Read the [QuickStart](/doc/quick_start_en.md)
+@@ -27 +27 @@ Read the [QuickStart](doc/quick_start_en.md)
+-[Tcp port forwarding](doc/quick_start_en.md#tcp-port-forwarding)
++[Tcp port forwarding](/doc/quick_start_en.md#tcp-port-forwarding)
+@@ -29 +29 @@ Read the [QuickStart](doc/quick_start_en.md)
+-[Http port forwarding and Custom domain binding](doc/quick_start_en.md#http-port-forwarding-and-custom-domains-binding)
++[Http port forwarding and Custom domain binding](/doc/quick_start_en.md#http-port-forwarding-and-custom-domains-binding)
+@@ -33 +33 @@ Read the [QuickStart](doc/quick_start_en.md)
+-![architecture](doc/pic/architecture.png)
++![architecture](/doc/pic/architecture.png)
+diff --git a/README.md b/README.md
+index 070ea4d..6a4c5e0 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ frp is under development and you can try it with latest release version.Master b
+-Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh.md)
++Read the [QuickStart](doc/quick_start_en.md)
+@@ -27 +27 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-[Tcp port forwarding](doc/quick_start_en.md#Tcp-port-forwarding)
++[Tcp port forwarding](doc/quick_start_en.md#tcp-port-forwarding)
+@@ -29 +29 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-[Http port forwarding and Custom domain binding](doc/quick_start_en.md#Http-port-forwarding-and-Custom-domains-binding)
++[Http port forwarding and Custom domain binding](doc/quick_start_en.md#http-port-forwarding-and-custom-domains-binding)
+diff --git a/README.md b/README.md
+index acd285b..070ea4d 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,6 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
++## What can I do with frp?
++
++* Expose any http service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
++* Expose any tcp service behind a NAT or firewall to the internet by a server with public IP address.
++* Inspect all http requests/responses that are transmitted over the tunnel(future).
++
+@@ -21 +27 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-## Architecture
++[Tcp port forwarding](doc/quick_start_en.md#Tcp-port-forwarding)
+@@ -23 +29 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-![architecture](doc/pic/architecture.png)
++[Http port forwarding and Custom domain binding](doc/quick_start_en.md#Http-port-forwarding-and-Custom-domains-binding)
+@@ -25 +31 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-## What can I do with frp?
++## Architecture
+@@ -27,3 +33 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-* Expose any http service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
+-* Expose any tcp service behind a NAT or firewall to the internet by a server with public IP address.
+-* Inspect all http requests/responses that are transmitted over the tunnel(future).
++![architecture](doc/pic/architecture.png)
+diff --git a/README.md b/README.md
+index 2ed7ffc..acd285b 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
+-* Expose any http service behind a NAT or firewall to the internet by a server with public IP address.
++* Expose any http service behind a NAT or firewall to the internet by a server with public IP address(Name-based Virtual Host Support).
+diff --git a/README.md b/README.md
+index 3a39456..2ed7ffc 100644
+--- a/README.md
++++ b/README.md
+@@ -35,3 +35,2 @@ Interested in getting involved? We would love to help you!
+-For simple bug fixes, just submit a PR with the fix and we can discuss the fix directly in the PR. If the fix is more complex, start with an issue.
+-
+-If you have some wanderful ideas, send email to fatedier@gmail.com.
++* Take a look at our [issues list](https://github.com/fatedier/frp/issues) and consider submitting a patch
++* If you have some wanderful ideas, send email to fatedier@gmail.com.
+diff --git a/README.md b/README.md
+index 14e81ec..3a39456 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,2 @@
++[README](README.md) | [中文文档](README_zh.md)
++
+@@ -11 +13,3 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-frp is under development and you can try it with available version 0.3.0.
++frp is under development and you can try it with latest release version.Master branch for releasing stable version when dev branch for developing.
++
++**We may change any protocol and can't promise backward compatible before version 1.x.**
+@@ -33,0 +38,6 @@ If you have some wanderful ideas, send email to fatedier@gmail.com.
++
++## Contributors
++
++* [fatedier](https://github.com/fatedier)
++* [Hurricanezwf](https://github.com/Hurricanezwf)
++* [vashstorm](https://github.com/vashstorm)
+diff --git a/README.md b/README.md
+index 1c204d1..14e81ec 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ frp is a fast reverse proxy to help you expose a local server behind a NAT or fi
+-frp is under development and you can try it with available version 0.2.0.
++frp is under development and you can try it with available version 0.3.0.
+diff --git a/README.md b/README.md
+index 26d83a8..1c204d1 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-frp is a fast reverse proxy which can help you expose a local server behind a NAT or firewall to the internet.
++frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
+diff --git a/README.md b/README.md
+index 28a1361..26d83a8 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ frp is a fast reverse proxy which can help you expose a local server behind a NA
+-frp is under development and you can try it with available version 0.1.
++frp is under development and you can try it with available version 0.2.0.
+diff --git a/README.md b/README.md
+index 59da553..28a1361 100644
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26,8 @@ Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh
++
++## Contributing
++
++Interested in getting involved? We would love to help you!
++
++For simple bug fixes, just submit a PR with the fix and we can discuss the fix directly in the PR. If the fix is more complex, start with an issue.
++
++If you have some wanderful ideas, send email to fatedier@gmail.com.
+diff --git a/README.md b/README.md
+index 14d609d..59da553 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ frp is under development and you can try it with available version 0.1.
+-Read the [QuickStart](doc/quick_start_en.md) [使用文档](doc/quick_start_zh.md)
++Read the [QuickStart](doc/quick_start_en.md) | [使用文档](doc/quick_start_zh.md)
+diff --git a/README.md b/README.md
+index 766797f..14d609d 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5,21 @@
+-A fast reverse proxy.
++## What is frp?
++
++frp is a fast reverse proxy which can help you expose a local server behind a NAT or firewall to the internet.
++
++## Status
++
++frp is under development and you can try it with available version 0.1.
++
++## Quick Start
++
++Read the [QuickStart](doc/quick_start_en.md) [使用文档](doc/quick_start_zh.md)
++
++## Architecture
++
++![architecture](doc/pic/architecture.png)
++
++## What can I do with frp?
++
++* Expose any http service behind a NAT or firewall to the internet by a server with public IP address.
++* Expose any tcp service behind a NAT or firewall to the internet by a server with public IP address.
++* Inspect all http requests/responses that are transmitted over the tunnel(future).
+diff --git a/README.md b/README.md
+index f6f1b7f..766797f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,0 +2,3 @@
++
++[![Build Status](https://travis-ci.org/fatedier/frp.svg)](https://travis-ci.org/fatedier/frp)
++

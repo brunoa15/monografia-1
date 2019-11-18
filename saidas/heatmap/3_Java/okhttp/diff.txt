@@ -1,0 +1,1744 @@
+diff --git a/README.md b/README.md
+index 3b9e7a708..b70a70c3a 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:4.2.0")
++implementation("com.squareup.okhttp3:okhttp:4.2.1")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:4.2.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.2.1")
+diff --git a/README.md b/README.md
+index b8d8c802c..3b9e7a708 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ String post(String url, String json) throws IOException {
+-  RequestBody body = RequestBody.create(json, JSON);
++  RequestBody body = RequestBody.create(JSON, json);
+diff --git a/README.md b/README.md
+index 4077be843..b8d8c802c 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:4.1.1")
++implementation("com.squareup.okhttp3:okhttp:4.2.0")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:4.1.1")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.2.0")
+diff --git a/README.md b/README.md
+index 2fcd60133..4077be843 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:4.1.0")
++implementation("com.squareup.okhttp3:okhttp:4.1.1")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:4.1.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.1.1")
+diff --git a/README.md b/README.md
+index bb34cd2a3..2fcd60133 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ String post(String url, String json) throws IOException {
+-  RequestBody body = RequestBody.create(JSON, json);
++  RequestBody body = RequestBody.create(json, JSON);
+diff --git a/README.md b/README.md
+index ceb4ac666..bb34cd2a3 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:4.0.1")
++implementation("com.squareup.okhttp3:okhttp:4.1.0")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:4.0.1")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.1.0")
+diff --git a/README.md b/README.md
+index 1d8e8f2ea..ceb4ac666 100644
+--- a/README.md
++++ b/README.md
+@@ -77 +77 @@ OkHttp works on Android 5.0+ (API level 21+) and on Java 8+.
+-OkHttp has one library dependency on [Okio][okio], a small library for high-performance I/O.
++OkHttp depends on [Okio][okio] for high-performance I/O and the [Kotlin standard library][kotlin]. Both are small libraries with strong backwards-compatibility.
+@@ -148,0 +149 @@ limitations under the License.
++ [kotlin]: https://kotlinlang.org/
+diff --git a/README.md b/README.md
+index 2b49800b6..1d8e8f2ea 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:4.0.0")
++implementation("com.squareup.okhttp3:okhttp:4.0.1")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:4.0.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.0.1")
+diff --git a/README.md b/README.md
+index 999455282..2b49800b6 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Our [change log][changelog] has release history.
+-implementation("com.squareup.okhttp3:okhttp:3.14.2")
++implementation("com.squareup.okhttp3:okhttp:4.0.0")
+@@ -123 +123 @@ OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.14.2")
++testImplementation("com.squareup.okhttp3:mockwebserver:4.0.0")
+diff --git a/README.md b/README.md
+index f48c8dfac..999455282 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ OkHttp
+-An HTTP & HTTP/2 client for Android and Java applications.
++See the [project website][okhttp] for documentation and APIs.
+@@ -6 +6,64 @@ An HTTP & HTTP/2 client for Android and Java applications.
+-See the [**project website**][website] for documentation and APIs.
++HTTP is the way modern applications network. It’s how we exchange data & media. Doing HTTP
++efficiently makes your stuff load faster and saves bandwidth.
++
++OkHttp is an HTTP client that’s efficient by default:
++
++ * HTTP/2 support allows all requests to the same host to share a socket.
++ * Connection pooling reduces request latency (if HTTP/2 isn’t available).
++ * Transparent GZIP shrinks download sizes.
++ * Response caching avoids the network completely for repeat requests.
++
++OkHttp perseveres when the network is troublesome: it will silently recover from common connection
++problems. If your service has multiple IP addresses OkHttp will attempt alternate addresses if the
++first connect fails. This is necessary for IPv4+IPv6 and for services hosted in redundant data
++centers. OkHttp supports modern TLS features (TLS 1.3, ALPN, certificate pinning). It can be
++configured to fall back for broad connectivity.
++
++Using OkHttp is easy. Its request/response API is designed with fluent builders and immutability. It
++supports both synchronous blocking calls and async calls with callbacks.
++
++
++Get a URL
++---------
++
++This program downloads a URL and prints its contents as a string. [Full source][get_example].
++
++```java
++OkHttpClient client = new OkHttpClient();
++
++String run(String url) throws IOException {
++  Request request = new Request.Builder()
++      .url(url)
++      .build();
++
++  try (Response response = client.newCall(request).execute()) {
++    return response.body().string();
++  }
++}
++```
++
++
++Post to a Server
++----------------
++
++This program posts data to a service. [Full source][post_example].
++
++```java
++public static final MediaType JSON
++    = MediaType.get("application/json; charset=utf-8");
++
++OkHttpClient client = new OkHttpClient();
++
++String post(String url, String json) throws IOException {
++  RequestBody body = RequestBody.create(JSON, json);
++  Request request = new Request.Builder()
++      .url(url)
++      .post(body)
++      .build();
++  try (Response response = client.newCall(request).execute()) {
++    return response.body().string();
++  }
++}
++```
++
++Further examples are on the [OkHttp Recipes page][recipes].
+@@ -32,0 +96 @@ critical fixes to the [3.12.x branch][okhttp_312x] through December 31, 2020.
++
+@@ -36 +100 @@ Releases
+-Our [change log](CHANGELOG.md) has release history.
++Our [change log][changelog] has release history.
+@@ -44,0 +109,8 @@ Snapshot builds are [available][snap].
++R8 / ProGuard
++-------------
++
++If you are using R8 or ProGuard add the options from [`okhttp3.pro`][okhttp3_pro].
++
++You might also need rules for Okio which is a dependency of this library.
++
++
+@@ -54,7 +125,0 @@ testImplementation("com.squareup.okhttp3:mockwebserver:3.14.2")
+-R8 / ProGuard
+--------------
+-
+-If you are using R8 or ProGuard add the options from [`okhttp3.pro`][okhttp3_pro].
+-
+-You might also need rules for Okio which is a dependency of this library.
+-
+@@ -65,3 +130,2 @@ License
+-    Licensed under the Apache License, Version 2.0 (the "License");
+-    you may not use this file except in compliance with the License.
+-    You may obtain a copy of the License at
++```
++Copyright 2019 Square, Inc.
+@@ -69 +133,3 @@ License
+-       http://www.apache.org/licenses/LICENSE-2.0
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
+@@ -71,5 +137 @@ License
+-    Unless required by applicable law or agreed to in writing, software
+-    distributed under the License is distributed on an "AS IS" BASIS,
+-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-    See the License for the specific language governing permissions and
+-    limitations under the License.
++   http://www.apache.org/licenses/LICENSE-2.0
+@@ -76,0 +139,6 @@ License
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
++```
+@@ -77,0 +146 @@ License
++ [changelog]: http://square.github.io/okhttp/changelog/
+@@ -78,0 +148,2 @@ License
++ [get_example]: https://raw.github.com/square/okhttp/master/samples/guide/src/main/java/okhttp3/guide/GetExample.java
++ [okhttp3_pro]: https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro
+@@ -80 +151,4 @@ License
+- [okio]: https://github.com/square/okio/
++ [okhttp]: https://square.github.io/okhttp/
++ [okio]: https://github.com/square/okio
++ [post_example]: https://raw.github.com/square/okhttp/master/samples/guide/src/main/java/okhttp3/guide/PostExample.java
++ [recipes]: http://square.github.io/okhttp/recipes/
+@@ -83,2 +156,0 @@ License
+- [website]: https://square.github.io/okhttp
+- [okhttp3_pro]: https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro
+diff --git a/README.md b/README.md
+index 6372ad426..f48c8dfac 100644
+--- a/README.md
++++ b/README.md
+@@ -6,13 +6 @@ An HTTP & HTTP/2 client for Android and Java applications.
+-Docs
+-----
+-
+- * [**User's Guide**](docs/calls.md) (includes [Calls](docs/calls.md), [Connections](docs/connections.md),
+-   [Recipes](docs/recipes.md), [Interceptors](docs/interceptors.md), [HTTPS](docs/https.md), [Events](docs/events.md))
+- * [**4.x API**][4x_okhttp] (also [dnsoverhttps][4x_dnsoverhttps],
+-   [logging-interceptor][4x_logging], [sse][4x_sse], [tls][4x_tls],
+-   [urlconnection][4x_urlconnection], [mockwebserver][4x_mockwebserver])
+- * [**3.x API**][3x_okhttp] (also [dnsoverhttps][3x_dnsoverhttps],
+-   [logging-interceptor][3x_logging], [sse][3x_sse], [tls][3x_tls],
+-   [urlconnection][3x_urlconnection], [mockwebserver][3x_mockwebserver])
+- * [**StackOverflow**](http://stackoverflow.com/questions/tagged/okhttp?sort=active)
+- * [**Works with OkHttp**](docs/works_with_okhttp.md)
++See the [**project website**][website] for documentation and APIs.
+@@ -94 +82 @@ License
+- [tls_history]: docs/tls_configuration_history.md
++ [tls_history]: https://square.github.io/okhttp/tls_configuration_history/
+@@ -97,15 +84,0 @@ License
+-
+- [4x_okhttp]: http://square.github.io/okhttp/4.x/okhttp/okhttp/okhttp3/
+- [4x_dnsoverhttps]: http://square.github.io/okhttp/4.x/okhttp-dnsoverhttps/okhttp-dnsoverhttps/okhttp3.dnsoverhttps/
+- [4x_logging]: http://square.github.io/okhttp/4.x/logging-interceptor/okhttp-logging-interceptor/okhttp3.logging/
+- [4x_sse]: http://square.github.io/okhttp/4.x/okhttp-sse/okhttp-sse/okhttp3.sse/
+- [4x_tls]: http://square.github.io/okhttp/4.x/okhttp-tls/okhttp-tls/okhttp3.tls/
+- [4x_urlconnection]: http://square.github.io/okhttp/4.x/okhttp-urlconnection/okhttp-urlconnection/okhttp3/
+- [4x_mockwebserver]: http://square.github.io/okhttp/4.x/mockwebserver/mockwebserver/okhttp3.mockwebserver/
+- [3x_okhttp]: http://square.github.io/okhttp/3.x/okhttp/
+- [3x_dnsoverhttps]: http://square.github.io/okhttp/3.x/okhttp-dnsoverhttps/
+- [3x_logging]: http://square.github.io/okhttp/3.x/logging-interceptor/
+- [3x_sse]: http://square.github.io/okhttp/3.x/okhttp-sse/
+- [3x_tls]: http://square.github.io/okhttp/3.x/okhttp-tls/
+- [3x_urlconnection]: http://square.github.io/okhttp/3.x/okhttp-urlconnection/
+- [3x_mockwebserver]: http://square.github.io/okhttp/3.x/mockwebserver/
+diff --git a/README.md b/README.md
+index f599db89d..6372ad426 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9,2 @@ Docs
+- * [**User's Guide**](CALLS.md) (includes [Calls](CALLS.md), [Connections](CONNECTIONS.md),
+-   [Recipes](RECIPES.md), [Interceptors](INTERCEPTORS.md), [HTTPS](HTTPS.md), [Events](EVENTS.md))
++ * [**User's Guide**](docs/calls.md) (includes [Calls](docs/calls.md), [Connections](docs/connections.md),
++   [Recipes](docs/recipes.md), [Interceptors](docs/interceptors.md), [HTTPS](docs/https.md), [Events](docs/events.md))
+@@ -18 +18 @@ Docs
+- * [**Works with OkHttp**](WORKS_WITH_OKHTTP.md)
++ * [**Works with OkHttp**](docs/works_with_okhttp.md)
+@@ -94 +94 @@ License
+- [tls_history]: TLS_CONFIGURATION_HISTORY.md
++ [tls_history]: docs/tls_configuration_history.md
+diff --git a/README.md b/README.md
+index db443e501..f599db89d 100644
+--- a/README.md
++++ b/README.md
+@@ -26,2 +26 @@ OkHttp works on Android 5.0+ (API level 21+) and on Java 8+.
+-OkHttp has one library dependency on [Okio][okio], a small library for high-performance I/O. It
+-works with either Okio 1.x (implemented in Java) or Okio 2.x (upgraded to Kotlin).
++OkHttp has one library dependency on [Okio][okio], a small library for high-performance I/O.
+@@ -112 +111 @@ License
+- [3x_mockwebserver]: http://square.github.io/okhttp/3.x/mockwebserver/
+\ No newline at end of file
++ [3x_mockwebserver]: http://square.github.io/okhttp/3.x/mockwebserver/
+diff --git a/README.md b/README.md
+index 1f23ee4a7..db443e501 100644
+--- a/README.md
++++ b/README.md
+@@ -4,2 +4,15 @@ OkHttp
+-An HTTP & HTTP/2 client for Android and Java applications. For more information see [the
+-website][website] and [the wiki][wiki].
++An HTTP & HTTP/2 client for Android and Java applications.
++
++Docs
++----
++
++ * [**User's Guide**](CALLS.md) (includes [Calls](CALLS.md), [Connections](CONNECTIONS.md),
++   [Recipes](RECIPES.md), [Interceptors](INTERCEPTORS.md), [HTTPS](HTTPS.md), [Events](EVENTS.md))
++ * [**4.x API**][4x_okhttp] (also [dnsoverhttps][4x_dnsoverhttps],
++   [logging-interceptor][4x_logging], [sse][4x_sse], [tls][4x_tls],
++   [urlconnection][4x_urlconnection], [mockwebserver][4x_mockwebserver])
++ * [**3.x API**][3x_okhttp] (also [dnsoverhttps][3x_dnsoverhttps],
++   [logging-interceptor][3x_logging], [sse][3x_sse], [tls][3x_tls],
++   [urlconnection][3x_urlconnection], [mockwebserver][3x_mockwebserver])
++ * [**StackOverflow**](http://stackoverflow.com/questions/tagged/okhttp?sort=active)
++ * [**Works with OkHttp**](WORKS_WITH_OKHTTP.md)
+@@ -33 +46 @@ critical fixes to the [3.12.x branch][okhttp_312x] through December 31, 2020.
+-Download
++Releases
+@@ -35,0 +49,2 @@ Download
++Our [change log](CHANGELOG.md) has release history.
++
+@@ -46,5 +61 @@ MockWebServer
+-A library for testing HTTP, HTTPS, and HTTP/2 clients.
+-
+-MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2 so that code can be shared.
+-
+-### Download
++OkHttp includes a library for testing HTTP, HTTPS, and HTTP/2 clients.
+@@ -84 +95 @@ License
+- [tls_history]: https://github.com/square/okhttp/wiki/TLS-Configuration-History
++ [tls_history]: TLS_CONFIGURATION_HISTORY.md
+@@ -86 +96,0 @@ License
+- [wiki]: https://github.com/square/okhttp/wiki
+@@ -87,0 +98,15 @@ License
++
++ [4x_okhttp]: http://square.github.io/okhttp/4.x/okhttp/okhttp/okhttp3/
++ [4x_dnsoverhttps]: http://square.github.io/okhttp/4.x/okhttp-dnsoverhttps/okhttp-dnsoverhttps/okhttp3.dnsoverhttps/
++ [4x_logging]: http://square.github.io/okhttp/4.x/logging-interceptor/okhttp-logging-interceptor/okhttp3.logging/
++ [4x_sse]: http://square.github.io/okhttp/4.x/okhttp-sse/okhttp-sse/okhttp3.sse/
++ [4x_tls]: http://square.github.io/okhttp/4.x/okhttp-tls/okhttp-tls/okhttp3.tls/
++ [4x_urlconnection]: http://square.github.io/okhttp/4.x/okhttp-urlconnection/okhttp-urlconnection/okhttp3/
++ [4x_mockwebserver]: http://square.github.io/okhttp/4.x/mockwebserver/mockwebserver/okhttp3.mockwebserver/
++ [3x_okhttp]: http://square.github.io/okhttp/3.x/okhttp/
++ [3x_dnsoverhttps]: http://square.github.io/okhttp/3.x/okhttp-dnsoverhttps/
++ [3x_logging]: http://square.github.io/okhttp/3.x/logging-interceptor/
++ [3x_sse]: http://square.github.io/okhttp/3.x/okhttp-sse/
++ [3x_tls]: http://square.github.io/okhttp/3.x/okhttp-tls/
++ [3x_urlconnection]: http://square.github.io/okhttp/3.x/okhttp-urlconnection/
++ [3x_mockwebserver]: http://square.github.io/okhttp/3.x/mockwebserver/
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 8e8d8992e..1f23ee4a7 100644
+--- a/README.md
++++ b/README.md
+@@ -36,2 +35,0 @@ Download
+-Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-
+@@ -42 +40 @@ implementation("com.squareup.okhttp3:okhttp:3.14.2")
+-Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
++Snapshot builds are [available][snap].
+@@ -54,2 +52 @@ MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2 so
+-Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency:
+-```xml
++```kotlin
+@@ -84 +80,0 @@ License
+- [mockwebserver_latest_jar]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=mockwebserver&v=LATEST
+@@ -86 +81,0 @@ License
+- [okhttp_latest_jar]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=okhttp&v=LATEST
+diff --git a/README.md b/README.md
+index b2a7a59ed..8e8d8992e 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.14.1")
++implementation("com.squareup.okhttp3:okhttp:3.14.2")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.14.1")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.14.2")
+diff --git a/README.md b/README.md
+index 6d378a9d5..b2a7a59ed 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.14.0")
++implementation("com.squareup.okhttp3:okhttp:3.14.1")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.14.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.14.1")
+diff --git a/README.md b/README.md
+index b1540dd18..6d378a9d5 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.13.1")
++implementation("com.squareup.okhttp3:okhttp:3.14.0")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.13.1")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.14.0")
+diff --git a/README.md b/README.md
+index 5a90766d8..b1540dd18 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.13.0")
++implementation("com.squareup.okhttp3:okhttp:3.13.1")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.13.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.13.1")
+diff --git a/README.md b/README.md
+index 4f3a71b4b..5a90766d8 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.12.1")
++implementation("com.squareup.okhttp3:okhttp:3.13.0")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.12.1")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.13.0")
+diff --git a/README.md b/README.md
+index d7010d0e8..4f3a71b4b 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+-implementation("com.squareup.okhttp3:okhttp:3.12.0")
++implementation("com.squareup.okhttp3:okhttp:3.12.1")
+@@ -56 +56 @@ Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency
+-testImplementation("com.squareup.okhttp3:mockwebserver:3.12.0")
++testImplementation("com.squareup.okhttp3:mockwebserver:3.12.1")
+diff --git a/README.md b/README.md
+index fcecace95..d7010d0e8 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,28 @@ OkHttp
+-An HTTP & HTTP/2 client for Android and Java applications. For more information see [the website][1] and [the wiki][2].
++An HTTP & HTTP/2 client for Android and Java applications. For more information see [the
++website][website] and [the wiki][wiki].
++
++
++Requirements
++------------
++
++OkHttp works on Android 5.0+ (API level 21+) and on Java 8+.
++
++OkHttp has one library dependency on [Okio][okio], a small library for high-performance I/O. It
++works with either Okio 1.x (implemented in Java) or Okio 2.x (upgraded to Kotlin).
++
++We highly recommend you keep OkHttp up-to-date. As with auto-updating web browsers, staying current
++with HTTPS clients is an important defense against potential security problems. [We
++track][tls_history] the dynamic TLS ecosystem and adjust OkHttp to improve connectivity and
++security.
++
++OkHttp uses your platform's built-in TLS implementation. On Java platforms OkHttp also supports
++[Conscrypt][conscrypt], which integrates BoringSSL with Java. OkHttp will use Conscrypt if it is
++the first security provider:
++
++```java
++Security.insertProviderAt(Conscrypt.newProvider(), 1);
++```
++
++The OkHttp 3.12.x branch supports Android 2.3+ (API level 9+) and Java 7+. These platforms lack
++support for TLS 1.2 and should not be used. But because upgrading is difficult we will backport
++critical fixes to the [3.12.x branch][okhttp_312x] through December 31, 2020.
+@@ -9 +36 @@ Download
+-Download [the latest JAR][3] or configure this dependency:
++Download [the latest JAR][okhttp_latest_jar] or configure this dependency:
+@@ -27 +54 @@ MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2 so
+-Download [the latest JAR][4] or configure this dependency:
++Download [the latest JAR][mockwebserver_latest_jar] or configure this dependency:
+@@ -35,2 +62 @@ R8 / ProGuard
+-If you are using R8 or ProGuard add the options from
+-[this file](https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro).
++If you are using R8 or ProGuard add the options from [`okhttp3.pro`][okhttp3_pro].
+@@ -57,4 +83,5 @@ License
+- [1]: https://square.github.io/okhttp
+- [2]: https://github.com/square/okhttp/wiki
+- [3]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=okhttp&v=LATEST
+- [4]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=mockwebserver&v=LATEST
++ [conscrypt]: https://github.com/google/conscrypt/
++ [mockwebserver_latest_jar]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=mockwebserver&v=LATEST
++ [okhttp_312x]: https://github.com/square/okhttp/tree/okhttp_3.12.x
++ [okhttp_latest_jar]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=okhttp&v=LATEST
++ [okio]: https://github.com/square/okio/
+@@ -61,0 +89,4 @@ License
++ [tls_history]: https://github.com/square/okhttp/wiki/TLS-Configuration-History
++ [website]: https://square.github.io/okhttp
++ [wiki]: https://github.com/square/okhttp/wiki
++ [okhttp3_pro]: https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro
+diff --git a/README.md b/README.md
+index 638bf27c8..fcecace95 100644
+--- a/README.md
++++ b/README.md
+@@ -9,11 +9,4 @@ Download
+-Download [the latest JAR][3] or grab via Maven:
+-```xml
+-<dependency>
+-  <groupId>com.squareup.okhttp3</groupId>
+-  <artifactId>okhttp</artifactId>
+-  <version>3.11.0</version>
+-</dependency>
+-```
+-or Gradle:
+-```groovy
+-implementation 'com.squareup.okhttp3:okhttp:3.11.0'
++Download [the latest JAR][3] or configure this dependency:
++
++```kotlin
++implementation("com.squareup.okhttp3:okhttp:3.12.0")
+@@ -34 +27 @@ MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2 so
+-Download [the latest JAR][4] or grab via Maven:
++Download [the latest JAR][4] or configure this dependency:
+@@ -36,10 +29 @@ Download [the latest JAR][4] or grab via Maven:
+-<dependency>
+-  <groupId>com.squareup.okhttp3</groupId>
+-  <artifactId>mockwebserver</artifactId>
+-  <version>3.11.0</version>
+-  <scope>test</scope>
+-</dependency>
+-```
+-or Gradle:
+-```groovy
+-testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
++testImplementation("com.squareup.okhttp3:mockwebserver:3.12.0")
+diff --git a/README.md b/README.md
+index 40f31ce8c..638bf27c8 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.10.0</version>
++  <version>3.11.0</version>
+@@ -19 +19 @@ or Gradle:
+-implementation 'com.squareup.okhttp3:okhttp:3.10.0'
++implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.10.0</version>
++  <version>3.11.0</version>
+@@ -45 +45 @@ or Gradle:
+-testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
++testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
+diff --git a/README.md b/README.md
+index 4576c79e7..40f31ce8c 100644
+--- a/README.md
++++ b/README.md
+@@ -48,2 +48,2 @@ testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
+-ProGuard
+---------
++R8 / ProGuard
++-------------
+@@ -51 +51,4 @@ ProGuard
+-If you are using ProGuard you might need to add the following options:
++If you are using R8 or ProGuard add the options from
++[this file](https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro).
++
++You might also need rules for Okio which is a dependency of this library.
+@@ -53,8 +55,0 @@ If you are using ProGuard you might need to add the following options:
+-```
+--dontwarn okhttp3.**
+--dontwarn okio.**
+--dontwarn javax.annotation.**
+--dontwarn org.conscrypt.**
+-# A resource is loaded with a relative path so the package of this class must be preserved.
+--keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+-```
+diff --git a/README.md b/README.md
+index 8dc50e79a..4576c79e7 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.9.1</version>
++  <version>3.10.0</version>
+@@ -19 +19 @@ or Gradle:
+-implementation 'com.squareup.okhttp3:okhttp:3.9.1'
++implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.9.1</version>
++  <version>3.10.0</version>
+@@ -45 +45 @@ or Gradle:
+-testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
++testImplementation 'com.squareup.okhttp3:mockwebserver:3.10.0'
+@@ -56,0 +57 @@ If you are using ProGuard you might need to add the following options:
++-dontwarn org.conscrypt.**
+diff --git a/README.md b/README.md
+index 7ae6ce68e..8dc50e79a 100644
+--- a/README.md
++++ b/README.md
+@@ -77 +77 @@ License
+- [1]: http://square.github.io/okhttp
++ [1]: https://square.github.io/okhttp
+diff --git a/README.md b/README.md
+index e07bf831e..7ae6ce68e 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.9.1'
++implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.9.1'
++testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
+diff --git a/README.md b/README.md
+index b3514263b..e07bf831e 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.9.0</version>
++  <version>3.9.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.9.0'
++compile 'com.squareup.okhttp3:okhttp:3.9.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.9.0</version>
++  <version>3.9.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.9.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.9.1'
+diff --git a/README.md b/README.md
+index 344b7537e..b3514263b 100644
+--- a/README.md
++++ b/README.md
+@@ -56,0 +57,2 @@ If you are using ProGuard you might need to add the following options:
++# A resource is loaded with a relative path so the package of this class must be preserved.
++-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+diff --git a/README.md b/README.md
+index 5e978d386..344b7537e 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.8.1</version>
++  <version>3.9.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.8.1'
++compile 'com.squareup.okhttp3:okhttp:3.9.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.8.1</version>
++  <version>3.9.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.8.1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.9.0'
+diff --git a/README.md b/README.md
+index 1754c6d0c..5e978d386 100644
+--- a/README.md
++++ b/README.md
+@@ -51,0 +52 @@ If you are using ProGuard you might need to add the following options:
++
+@@ -52,0 +54 @@ If you are using ProGuard you might need to add the following options:
++-dontwarn okhttp3.**
+@@ -54,2 +56 @@ If you are using ProGuard you might need to add the following options:
+--dontwarn javax.annotation.Nullable
+--dontwarn javax.annotation.ParametersAreNonnullByDefault
++-dontwarn javax.annotation.**
+diff --git a/README.md b/README.md
+index 4bd5e136f..1754c6d0c 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.8.0</version>
++  <version>3.8.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.8.0'
++compile 'com.squareup.okhttp3:okhttp:3.8.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.8.0</version>
++  <version>3.8.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.8.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.8.1'
+diff --git a/README.md b/README.md
+index 8a901b979..4bd5e136f 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ ProGuard
+-If you are using ProGuard you might need to add the following option:
++If you are using ProGuard you might need to add the following options:
+@@ -53,0 +54,2 @@ If you are using ProGuard you might need to add the following option:
++-dontwarn javax.annotation.Nullable
++-dontwarn javax.annotation.ParametersAreNonnullByDefault
+diff --git a/README.md b/README.md
+index 2e6d246d5..8a901b979 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.7.0</version>
++  <version>3.8.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.7.0'
++compile 'com.squareup.okhttp3:okhttp:3.8.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.7.0</version>
++  <version>3.8.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.7.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.8.0'
+diff --git a/README.md b/README.md
+index ee219a5b9..2e6d246d5 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.6.0</version>
++  <version>3.7.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.6.0'
++compile 'com.squareup.okhttp3:okhttp:3.7.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.6.0</version>
++  <version>3.7.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.7.0'
+diff --git a/README.md b/README.md
+index ec355cad3..ee219a5b9 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ If you are using ProGuard you might need to add the following option:
+--dontwarn okhttp3.**
++-dontwarn okio.**
+diff --git a/README.md b/README.md
+index 1f1f83f7d..ec355cad3 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.5.0</version>
++  <version>3.6.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.5.0'
++compile 'com.squareup.okhttp3:okhttp:3.6.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.5.0</version>
++  <version>3.6.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.5.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
+diff --git a/README.md b/README.md
+index 298b139f4..1f1f83f7d 100644
+--- a/README.md
++++ b/README.md
+@@ -47,0 +48,2 @@ testCompile 'com.squareup.okhttp3:mockwebserver:3.5.0'
++ProGuard
++--------
+@@ -48,0 +51,4 @@ testCompile 'com.squareup.okhttp3:mockwebserver:3.5.0'
++If you are using ProGuard you might need to add the following option:
++```
++-dontwarn okhttp3.**
++```
+diff --git a/README.md b/README.md
+index 5b70072b8..298b139f4 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.4.2</version>
++  <version>3.5.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.4.2'
++compile 'com.squareup.okhttp3:okhttp:3.5.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.4.2</version>
++  <version>3.5.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.4.2'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.5.0'
+diff --git a/README.md b/README.md
+index ffb46f8f7..5b70072b8 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.4.1</version>
++  <version>3.4.2</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.4.1'
++compile 'com.squareup.okhttp3:okhttp:3.4.2'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.4.1</version>
++  <version>3.4.2</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.4.1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.4.2'
+diff --git a/README.md b/README.md
+index 9191328af..ffb46f8f7 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.4.0</version>
++  <version>3.4.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.4.0'
++compile 'com.squareup.okhttp3:okhttp:3.4.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.4.0</version>
++  <version>3.4.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.4.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.4.1'
+diff --git a/README.md b/README.md
+index 188ca8356..9191328af 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ MockWebServer
+-A library for testing HTTP, HTTPS, HTTP/2.0, and SPDY clients.
++A library for testing HTTP, HTTPS, and HTTP/2 clients.
+@@ -30 +30 @@ A library for testing HTTP, HTTPS, HTTP/2.0, and SPDY clients.
+-MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2.0 so that code can be shared.
++MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2 so that code can be shared.
+diff --git a/README.md b/README.md
+index 2e40ffd9e..188ca8356 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.3.1</version>
++  <version>3.4.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.3.1'
++compile 'com.squareup.okhttp3:okhttp:3.4.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.3.1</version>
++  <version>3.4.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.3.1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.4.0'
+diff --git a/README.md b/README.md
+index 95987459c..2e40ffd9e 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.3.0</version>
++  <version>3.3.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.3.0'
++compile 'com.squareup.okhttp3:okhttp:3.3.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.3.0</version>
++  <version>3.3.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.3.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.3.1'
+diff --git a/README.md b/README.md
+index b6b059deb..95987459c 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.2.0</version>
++  <version>3.3.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.2.0'
++compile 'com.squareup.okhttp3:okhttp:3.3.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.2.0</version>
++  <version>3.3.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.2.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.3.0'
+diff --git a/README.md b/README.md
+index 09a3831f8..b6b059deb 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.1.2</version>
++  <version>3.2.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.1.2'
++compile 'com.squareup.okhttp3:okhttp:3.2.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.1.2</version>
++  <version>3.2.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.1.2'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.2.0'
+diff --git a/README.md b/README.md
+index e54b4c633..09a3831f8 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.1.1</version>
++  <version>3.1.2</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.1.1'
++compile 'com.squareup.okhttp3:okhttp:3.1.2'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.1.1</version>
++  <version>3.1.2</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.1.1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.1.2'
+diff --git a/README.md b/README.md
+index 9c72e6ce0..e54b4c633 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.1.0</version>
++  <version>3.1.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.1.0'
++compile 'com.squareup.okhttp3:okhttp:3.1.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.1.0</version>
++  <version>3.1.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.1.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.1.1'
+diff --git a/README.md b/README.md
+index c84574ca8..9c72e6ce0 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.0.1</version>
++  <version>3.1.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.0.1'
++compile 'com.squareup.okhttp3:okhttp:3.1.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.0.1</version>
++  <version>3.1.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.0.1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.1.0'
+diff --git a/README.md b/README.md
+index 56571935a..c84574ca8 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.0.0</version>
++  <version>3.0.1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.0.0'
++compile 'com.squareup.okhttp3:okhttp:3.0.1'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.0.0</version>
++  <version>3.0.1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.0.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.0.1'
+diff --git a/README.md b/README.md
+index b7fc9eea8..56571935a 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>3.0.0-RC1</version>
++  <version>3.0.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
++compile 'com.squareup.okhttp3:okhttp:3.0.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>3.0.0-RC1</version>
++  <version>3.0.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp3:mockwebserver:3.0.0-RC1'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.0.0'
+diff --git a/README.md b/README.md
+index 53d8d033a..b7fc9eea8 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ OkHttp
+-An HTTP & SPDY client for Android and Java applications. For more information see [the website][1] and [the wiki][2].
++An HTTP & HTTP/2 client for Android and Java applications. For more information see [the website][1] and [the wiki][2].
+@@ -30 +30 @@ A library for testing HTTP, HTTPS, HTTP/2.0, and SPDY clients.
+-MockWebServer coupling with OkHttp is essential for proper testing of SPDY and HTTP/2.0 so that code can be shared.
++MockWebServer coupling with OkHttp is essential for proper testing of HTTP/2.0 so that code can be shared.
+diff --git a/README.md b/README.md
+index 52dcc5b86..53d8d033a 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Download [the latest JAR][3] or grab via Maven:
+-  <groupId>com.squareup.okhttp</groupId>
++  <groupId>com.squareup.okhttp3</groupId>
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.7.0</version>
++  <version>3.0.0-RC1</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.7.0'
++compile 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
+@@ -37 +37 @@ Download [the latest JAR][4] or grab via Maven:
+-  <groupId>com.squareup.okhttp</groupId>
++  <groupId>com.squareup.okhttp3</groupId>
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.7.0</version>
++  <version>3.0.0-RC1</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.7.0'
++testCompile 'com.squareup.okhttp3:mockwebserver:3.0.0-RC1'
+@@ -68,2 +68,2 @@ License
+- [3]: https://search.maven.org/remote_content?g=com.squareup.okhttp&a=okhttp&v=LATEST
+- [4]: https://search.maven.org/remote_content?g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [3]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=okhttp&v=LATEST
++ [4]: https://search.maven.org/remote_content?g=com.squareup.okhttp3&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index f10aaeba7..52dcc5b86 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.6.0</version>
++  <version>2.7.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.6.0'
++compile 'com.squareup.okhttp:okhttp:2.7.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.6.0</version>
++  <version>2.7.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.6.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.7.0'
+diff --git a/README.md b/README.md
+index 4fde155df..f10aaeba7 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.5.0</version>
++  <version>2.6.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.5.0'
++compile 'com.squareup.okhttp:okhttp:2.6.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.5.0</version>
++  <version>2.6.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.5.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.6.0'
+diff --git a/README.md b/README.md
+index 6e010257b..4fde155df 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.4.0</version>
++  <version>2.5.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.4.0'
++compile 'com.squareup.okhttp:okhttp:2.5.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.4.0</version>
++  <version>2.5.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.4.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.5.0'
+diff --git a/README.md b/README.md
+index 9f996347d..6e010257b 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.3.0</version>
++  <version>2.4.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.3.0'
++compile 'com.squareup.okhttp:okhttp:2.4.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.3.0</version>
++  <version>2.4.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.3.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.4.0'
+diff --git a/README.md b/README.md
+index 0e239589a..9f996347d 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.2.0</version>
++  <version>2.3.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.2.0'
++compile 'com.squareup.okhttp:okhttp:2.3.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.2.0</version>
++  <version>2.3.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.2.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.3.0'
+diff --git a/README.md b/README.md
+index 4cb0f5613..0e239589a 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.1.0</version>
++  <version>2.2.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.1.0'
++compile 'com.squareup.okhttp:okhttp:2.2.0'
+@@ -39 +39 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.1.0</version>
++  <version>2.2.0</version>
+@@ -45 +45 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.1.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.2.0'
+diff --git a/README.md b/README.md
+index 42c13a16d..4cb0f5613 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22,2 @@ compile 'com.squareup.okhttp:okhttp:2.1.0'
++Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
++
+@@ -67,0 +70 @@ License
++ [snap]: https://oss.sonatype.org/content/repositories/snapshots/
+diff --git a/README.md b/README.md
+index 402a49175..42c13a16d 100644
+--- a/README.md
++++ b/README.md
+@@ -66,2 +66,2 @@ License
+- [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+- [4]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [3]: https://search.maven.org/remote_content?g=com.squareup.okhttp&a=okhttp&v=LATEST
++ [4]: https://search.maven.org/remote_content?g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index 272e65d63..402a49175 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Download [the latest JAR][3] or grab via Maven:
+-  <version>2.0.0</version>
++  <version>2.1.0</version>
+@@ -19 +19 @@ or Gradle:
+-compile 'com.squareup.okhttp:okhttp:2.0.0'
++compile 'com.squareup.okhttp:okhttp:2.1.0'
+@@ -37 +37 @@ Download [the latest JAR][4] or grab via Maven:
+-  <version>2.0.0</version>
++  <version>2.1.0</version>
+@@ -43 +43 @@ or Gradle:
+-testCompile 'com.squareup.okhttp:mockwebserver:2.0.0'
++testCompile 'com.squareup.okhttp:mockwebserver:2.1.0'
+diff --git a/README.md b/README.md
+index 1f80f44af..272e65d63 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +9,0 @@ Download [the latest JAR][3] or grab via Maven:
+-
+@@ -13,3 +12,3 @@ Download [the latest JAR][3] or grab via Maven:
+-    <groupId>com.squareup.okhttp</groupId>
+-    <artifactId>okhttp</artifactId>
+-    <version>(insert latest version)</version>
++  <groupId>com.squareup.okhttp</groupId>
++  <artifactId>okhttp</artifactId>
++  <version>2.0.0</version>
+@@ -17,0 +17,4 @@ Download [the latest JAR][3] or grab via Maven:
++or Gradle:
++```groovy
++compile 'com.squareup.okhttp:okhttp:2.0.0'
++```
+@@ -30 +32,0 @@ Download [the latest JAR][4] or grab via Maven:
+-
+@@ -33,4 +35,4 @@ Download [the latest JAR][4] or grab via Maven:
+-    <groupId>com.squareup.okhttp</groupId>
+-    <artifactId>mockwebserver</artifactId>
+-    <version>(insert latest version)</version>
+-    <scope>test</scope>
++  <groupId>com.squareup.okhttp</groupId>
++  <artifactId>mockwebserver</artifactId>
++  <version>2.0.0</version>
++  <scope>test</scope>
+@@ -38,0 +41,5 @@ Download [the latest JAR][4] or grab via Maven:
++or Gradle:
++```groovy
++testCompile 'com.squareup.okhttp:mockwebserver:2.0.0'
++```
++
+diff --git a/README.md b/README.md
+index 86558bfa1..1f80f44af 100644
+--- a/README.md
++++ b/README.md
+@@ -4,3 +4 @@ OkHttp
+-An HTTP & SPDY client for Android and Java applications.
+-
+-For more information please see [the website][1].
++An HTTP & SPDY client for Android and Java applications. For more information see [the website][1] and [the wiki][2].
+@@ -11 +9 @@ Download
+-Download [the latest JAR][2] or grab via Maven:
++Download [the latest JAR][3] or grab via Maven:
+@@ -31 +29 @@ MockWebServer coupling with OkHttp is essential for proper testing of SPDY and H
+-Download [the latest JAR][3] or grab via Maven:
++Download [the latest JAR][4] or grab via Maven:
+@@ -60,2 +58,3 @@ License
+- [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+- [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [2]: https://github.com/square/okhttp/wiki
++ [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
++ [4]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index 8a8eb4c18..86558bfa1 100644
+--- a/README.md
++++ b/README.md
+@@ -8,75 +7,0 @@ For more information please see [the website][1].
+-Making Connections
+-------------------
+-
+-Although you provide only the URL, OkHttp plans its connection to your webserver
+-using three types: URL, Address, and Route.
+-
+-#### [URLs](http://developer.android.com/reference/java/net/URL.html)
+-
+-URLs (like `https://github.com/square/okhttp`) are fundamental to HTTP and the
+-Internet. In addition to being a universal, decentralized naming scheme for
+-everything on the web, they also specify how to access web resources.
+-
+-URLs are abstract:
+-
+- * They specify that the call may be plaintext (`http`) or encrypted (`https`),
+-   but not which cryptographic algorithms should be used. Nor do they specify
+-   how to verify the peer's certificates (the [HostnameVerifier](http://developer.android.com/reference/javax/net/ssl/HostnameVerifier.html))
+-   or which certificates can be trusted (the [SSLSocketFactory](http://developer.android.com/reference/org/apache/http/conn/ssl/SSLSocketFactory.html)).
+- * They don't specify whether a specific proxy server should be used or how to
+-   authenticate with that proxy server.
+-
+-They're also concrete: each URL identifies a specific path (like `/square/okhttp`)
+-and query (like `?q=sharks&lang=en`). Each webserver hosts many URLs.
+-
+-#### [Addresses](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Address.html)
+-
+-Addresses specify a webserver (like `github.com`) and all of the **static**
+-configuration necessary to connect to that server: the port number, HTTPS
+-settings, and preferred network protocols (like HTTP/2 or SPDY).
+-
+-URLs that share the same address may also share the same underlying TCP socket
+-connection. Sharing a connection has substantial performance benefits: lower
+-latency, higher throughput (due to [TCP slow start](http://www.igvita.com/2011/10/20/faster-web-vs-tcp-slow-start/))
+-and conserved battery. OkHttp uses a [ConnectionPool](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/ConnectionPool.html)
+-that automatically reuses HTTP/1.x connections and multiplexes HTTP/2 and SPDY
+-connections.
+-
+-In OkHttp some fields of the address come from the URL (scheme, hostname, port)
+-and the rest come from the [OkHttpClient](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/OkHttpClient.html).
+-
+-#### [Routes](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Route.html)
+-
+-Routes supply the **dynamic** information necessary to actually connect to a webserver.
+-This is the specific IP address to attempt (as discovered by a DNS query), the
+-exact proxy server to use (if a [ProxySelector](http://developer.android.com/reference/java/net/ProxySelector.html)
+-is in use), and which version of TLS to negotiate (for HTTPS connections).
+-
+-There may be many routes for a single address. For example, a webserver that
+-is hosted in multiple datacenters may yield multiple IP addresses in its DNS
+-response.
+-
+-#### [Connections](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Connection.html)
+-
+-When you request a URL with OkHttp, here's what it does:
+-
+- 1. Use the URL and configured OkHttpClient to create an **address**. This address
+-    specifies how we'll connect to the webserver.
+- 2. Attempt to retrieve a connection with that address in the **connection pool**.
+- 3. If it didn't find a connection in the pool, select a **route** to attempt.
+-    This usually means making a DNS request to get the server's IP addresses.
+-    Select a TLS version and proxy server if necessary.
+- 4. If it's a new route, connect. Build either a direct socket connection, a TLS
+-    tunnel (for HTTPS over an HTTP proxy), or a direct TLS connection. Do TLS
+-    handshakes as necessary.
+- 5. Send the HTTP request and read its HTTP response.
+-
+-If there's a problem with the connection, OkHttp will select another route and
+-try again. This can be used to automatically fail over on webservers that offer
+-multiple IP addresses. It's also useful when a pooled connection is stale or if
+-the attempted TLS version is unsupported.
+-
+-Once the response has been received, the connection will be returned to the pool
+-so it can be reused for a future request. Connections are evicted from the pool
+-after a period of inactivity.
+-
+@@ -97,39 +21,0 @@ Download [the latest JAR][2] or grab via Maven:
+-Building
+---------
+-
+-OkHttp requires Java 7 to build and run tests. Runtime compatibility with Java 6 is enforced as
+-part of the build to ensure compliance with Android and older versions of the JVM.
+-
+-
+-
+-Testing
+--------
+-
+-### On the Desktop
+-
+-Run OkHttp tests on the desktop with Maven. Running HTTP/2 and SPDY tests on the desktop uses
+-[Jetty-NPN][3] when running OpenJDK 7 or [Jetty-ALPN][4] when OpenJDK 8.
+-
+-```
+-mvn clean test
+-```
+-
+-### On a Device
+-
+-OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets
+-were broken, and so HTTPS tests will time out when run on such devices.
+-
+-Test on a USB-attached Android using [Vogar][5]. Unfortunately `dx` requires that you build with
+-Java 6, otherwise the test class will be silently omitted from the `.dex` file.
+-
+-```
+-mvn clean
+-mvn package -DskipTests
+-vogar \
+-    --classpath ~/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar \
+-    --classpath mockwebserver/target/mockwebserver-2.0.0-SNAPSHOT.jar \
+-    --classpath okhttp-protocols/target/okhttp-protocols-2.0.0-SNAPSHOT.jar \
+-    --classpath okhttp/target/okhttp-2.0.0-SNAPSHOT.jar \
+-    okhttp/src/test
+-```
+-
+@@ -145 +31 @@ MockWebServer coupling with OkHttp is essential for proper testing of SPDY and H
+-Download [the latest JAR][6] or grab via Maven:
++Download [the latest JAR][3] or grab via Maven:
+@@ -173,2 +58,0 @@ License
+-
+-
+@@ -177,4 +61 @@ License
+- [3]: https://github.com/jetty-project/jetty-npn
+- [4]: https://github.com/jetty-project/jetty-alpn
+- [5]: https://code.google.com/p/vogar/
+- [6]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [3]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index 67eecc945..8a8eb4c18 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,2 @@ For more information please see [the website][1].
++Making Connections
++------------------
+@@ -8,0 +11,71 @@ For more information please see [the website][1].
++Although you provide only the URL, OkHttp plans its connection to your webserver
++using three types: URL, Address, and Route.
++
++#### [URLs](http://developer.android.com/reference/java/net/URL.html)
++
++URLs (like `https://github.com/square/okhttp`) are fundamental to HTTP and the
++Internet. In addition to being a universal, decentralized naming scheme for
++everything on the web, they also specify how to access web resources.
++
++URLs are abstract:
++
++ * They specify that the call may be plaintext (`http`) or encrypted (`https`),
++   but not which cryptographic algorithms should be used. Nor do they specify
++   how to verify the peer's certificates (the [HostnameVerifier](http://developer.android.com/reference/javax/net/ssl/HostnameVerifier.html))
++   or which certificates can be trusted (the [SSLSocketFactory](http://developer.android.com/reference/org/apache/http/conn/ssl/SSLSocketFactory.html)).
++ * They don't specify whether a specific proxy server should be used or how to
++   authenticate with that proxy server.
++
++They're also concrete: each URL identifies a specific path (like `/square/okhttp`)
++and query (like `?q=sharks&lang=en`). Each webserver hosts many URLs.
++
++#### [Addresses](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Address.html)
++
++Addresses specify a webserver (like `github.com`) and all of the **static**
++configuration necessary to connect to that server: the port number, HTTPS
++settings, and preferred network protocols (like HTTP/2 or SPDY).
++
++URLs that share the same address may also share the same underlying TCP socket
++connection. Sharing a connection has substantial performance benefits: lower
++latency, higher throughput (due to [TCP slow start](http://www.igvita.com/2011/10/20/faster-web-vs-tcp-slow-start/))
++and conserved battery. OkHttp uses a [ConnectionPool](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/ConnectionPool.html)
++that automatically reuses HTTP/1.x connections and multiplexes HTTP/2 and SPDY
++connections.
++
++In OkHttp some fields of the address come from the URL (scheme, hostname, port)
++and the rest come from the [OkHttpClient](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/OkHttpClient.html).
++
++#### [Routes](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Route.html)
++
++Routes supply the **dynamic** information necessary to actually connect to a webserver.
++This is the specific IP address to attempt (as discovered by a DNS query), the
++exact proxy server to use (if a [ProxySelector](http://developer.android.com/reference/java/net/ProxySelector.html)
++is in use), and which version of TLS to negotiate (for HTTPS connections).
++
++There may be many routes for a single address. For example, a webserver that
++is hosted in multiple datacenters may yield multiple IP addresses in its DNS
++response.
++
++#### [Connections](http://square.github.io/okhttp/javadoc/com/squareup/okhttp/Connection.html)
++
++When you request a URL with OkHttp, here's what it does:
++
++ 1. Use the URL and configured OkHttpClient to create an **address**. This address
++    specifies how we'll connect to the webserver.
++ 2. Attempt to retrieve a connection with that address in the **connection pool**.
++ 3. If it didn't find a connection in the pool, select a **route** to attempt.
++    This usually means making a DNS request to get the server's IP addresses.
++    Select a TLS version and proxy server if necessary.
++ 4. If it's a new route, connect. Build either a direct socket connection, a TLS
++    tunnel (for HTTPS over an HTTP proxy), or a direct TLS connection. Do TLS
++    handshakes as necessary.
++ 5. Send the HTTP request and read its HTTP response.
++
++If there's a problem with the connection, OkHttp will select another route and
++try again. This can be used to automatically fail over on webservers that offer
++multiple IP addresses. It's also useful when a pooled connection is stale or if
++the attempted TLS version is unsupported.
++
++Once the response has been received, the connection will be returned to the pool
++so it can be reused for a future request. Connections are evicted from the pool
++after a period of inactivity.
+diff --git a/README.md b/README.md
+index 186f99b15..67eecc945 100644
+--- a/README.md
++++ b/README.md
+@@ -37,2 +37,2 @@ Testing
+-Run OkHttp tests on the desktop with Maven. Running SPDY tests on the desktop uses
+-[Jetty-NPN][3] which requires OpenJDK 7.
++Run OkHttp tests on the desktop with Maven. Running HTTP/2 and SPDY tests on the desktop uses
++[Jetty-NPN][3] when running OpenJDK 7 or [Jetty-ALPN][4] when OpenJDK 8.
+@@ -49 +49 @@ were broken, and so HTTPS tests will time out when run on such devices.
+-Test on a USB-attached Android using [Vogar][4]. Unfortunately `dx` requires that you build with
++Test on a USB-attached Android using [Vogar][5]. Unfortunately `dx` requires that you build with
+@@ -72 +72 @@ MockWebServer coupling with OkHttp is essential for proper testing of SPDY and H
+-Download [the latest JAR][5] or grab via Maven:
++Download [the latest JAR][6] or grab via Maven:
+@@ -105,2 +105,3 @@ License
+- [4]: https://code.google.com/p/vogar/
+- [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [4]: https://github.com/jetty-project/jetty-alpn
++ [5]: https://code.google.com/p/vogar/
++ [6]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index cd3bd0241..186f99b15 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ Run OkHttp tests on the desktop with Maven. Running SPDY tests on the desktop us
+-[Jetty-NPN][3] which requires OpenJDK 7+.
++[Jetty-NPN][3] which requires OpenJDK 7.
+@@ -104 +104 @@ License
+- [3]: http://wiki.eclipse.org/Jetty/Feature/NPN
++ [3]: https://github.com/jetty-project/jetty-npn
+diff --git a/README.md b/README.md
+index 2e298ea26..cd3bd0241 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ License
+- [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST&c=jar-with-dependencies
++ [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+diff --git a/README.md b/README.md
+index 0e7c94a05..2e298ea26 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27,8 @@ Building
++OkHttp requires Java 7 to build and run tests. Runtime compatibility with Java 6 is enforced as
++part of the build to ensure compliance with Android and older versions of the JVM.
++
++
++
++Testing
++-------
++
+diff --git a/README.md b/README.md
+index 90a0f0e90..0e7c94a05 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ License
+- [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST&c=jar-with-dependencies
++ [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index 7b6259618..90a0f0e90 100644
+--- a/README.md
++++ b/README.md
+@@ -48,4 +48,5 @@ vogar \
+-    --classpath ~/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar \
+-    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20130122/mockwebserver-20130122.jar \
+-    --classpath target/okhttp-0.9-SNAPSHOT.jar \
+-    ./src/test/java
++    --classpath ~/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar \
++    --classpath mockwebserver/target/mockwebserver-2.0.0-SNAPSHOT.jar \
++    --classpath okhttp-protocols/target/okhttp-protocols-2.0.0-SNAPSHOT.jar \
++    --classpath okhttp/target/okhttp-2.0.0-SNAPSHOT.jar \
++    okhttp/src/test
+diff --git a/README.md b/README.md
+index f87699bdf..7b6259618 100644
+--- a/README.md
++++ b/README.md
+@@ -94 +94 @@ License
+- [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
++ [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST&c=jar-with-dependencies
+@@ -97 +97 @@ License
+- [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
++ [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST&c=jar-with-dependencies
+diff --git a/README.md b/README.md
+index e206f237e..f87699bdf 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,20 @@ vogar \
++MockWebServer
++-------------
++
++A library for testing HTTP, HTTPS, HTTP/2.0, and SPDY clients.
++
++MockWebServer coupling with OkHttp is essential for proper testing of SPDY and HTTP/2.0 so that code can be shared.
++
++### Download
++
++Download [the latest JAR][5] or grab via Maven:
++
++```xml
++<dependency>
++    <groupId>com.squareup.okhttp</groupId>
++    <artifactId>mockwebserver</artifactId>
++    <version>(insert latest version)</version>
++    <scope>test</scope>
++</dependency>
++```
++
+@@ -76,0 +97 @@ License
++ [5]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=mockwebserver&v=LATEST
+diff --git a/README.md b/README.md
+index e7210539a..e206f237e 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,4 @@ OkHttp
+-An HTTP+SPDY client for Android and Java applications.
++An HTTP & SPDY client for Android and Java applications.
++
++For more information please see [the website][1].
++
+@@ -10 +13 @@ Download
+-Download [the latest JAR][1] or grab via Maven:
++Download [the latest JAR][2] or grab via Maven:
+@@ -21,12 +23,0 @@ Download [the latest JAR][1] or grab via Maven:
+-Known Issues
+-------------
+-
+-OkHttp uses the platform's [ProxySelector][2]. Prior to Android 4.0, `ProxySelector` didn't honor
+-the `proxyHost` and `proxyPort` system properties for HTTPS connections. Work around this by
+-specifying the `https.proxyHost` and `https.proxyPort` system properties when using a proxy with
+-HTTPS.
+-
+-OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets
+-were broken, and so HTTPS tests will time out when run on such devices.
+-
+-
+@@ -46,0 +38,3 @@ mvn clean test
++OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets
++were broken, and so HTTPS tests will time out when run on such devices.
++
+@@ -79,2 +73,2 @@ License
+- [1]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+- [2]: http://developer.android.com/reference/java/net/ProxySelector.html
++ [1]: http://square.github.io/okhttp
++ [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+diff --git a/README.md b/README.md
+index c3a44ee2e..e7210539a 100644
+--- a/README.md
++++ b/README.md
+@@ -10,3 +10 @@ Download
+-Downloadable .jars can be found on the [GitHub download page][1].
+-
+-You can also depend on the .jar through Maven:
++Download [the latest JAR][1] or grab via Maven:
+@@ -16 +14 @@ You can also depend on the .jar through Maven:
+-    <groupId>com.squareup</groupId>
++    <groupId>com.squareup.okhttp</groupId>
+@@ -26 +24,4 @@ Known Issues
+-OkHttp uses the platform's [ProxySelector][2]. Prior to Android 4.0, `ProxySelector` didn't honor the `proxyHost` and `proxyPort` system properties for HTTPS connections. Work around this by specifying the `https.proxyHost` and `https.proxyPort` system properties when using a proxy with HTTPS.
++OkHttp uses the platform's [ProxySelector][2]. Prior to Android 4.0, `ProxySelector` didn't honor
++the `proxyHost` and `proxyPort` system properties for HTTPS connections. Work around this by
++specifying the `https.proxyHost` and `https.proxyPort` system properties when using a proxy with
++HTTPS.
+@@ -28 +29,2 @@ OkHttp uses the platform's [ProxySelector][2]. Prior to Android 4.0, `ProxySelec
+-OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets were broken, and so HTTPS tests will time out when run on such devices.
++OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets
++were broken, and so HTTPS tests will time out when run on such devices.
+@@ -35 +37,4 @@ Building
+-Run OkHttp tests on the desktop with Maven. Running SPDY tests on the desktop uses [Jetty-NPN](http://wiki.eclipse.org/Jetty/Feature/NPN) which requires OpenJDK 7+.
++
++Run OkHttp tests on the desktop with Maven. Running SPDY tests on the desktop uses
++[Jetty-NPN][3] which requires OpenJDK 7+.
++
+@@ -41 +46,4 @@ mvn clean test
+-Test on a USB-attached Android using [Vogar](https://code.google.com/p/vogar/). Unfortunately `dx` requires that you build with Java 6, otherwise the test class will be silently omitted from the `.dex` file.
++
++Test on a USB-attached Android using [Vogar][4]. Unfortunately `dx` requires that you build with
++Java 6, otherwise the test class will be silently omitted from the `.dex` file.
++
+@@ -70 +78,2 @@ License
+- [1]: http://github.com/square/okhttp/downloads
++
++ [1]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.okhttp&a=okhttp&v=LATEST
+@@ -71,0 +81,2 @@ License
++ [3]: http://wiki.eclipse.org/Jetty/Feature/NPN
++ [4]: https://code.google.com/p/vogar/
+diff --git a/README.md b/README.md
+index b74570ebc..c3a44ee2e 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ vogar \
+-    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20120905/mockwebserver-20120905.jar \
++    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20130122/mockwebserver-20130122.jar \
+diff --git a/README.md b/README.md
+index a05b3d5cd..b74570ebc 100644
+--- a/README.md
++++ b/README.md
+@@ -26,5 +25,0 @@ Known Issues
+-The SPDY implementation is incomplete:
+-
+-* Settings frames are not honored. Flow control is not implemented.
+-* It assumes a well-behaved peer. If the peer sends an invalid frame, OkHttp's SPDY client will not respond with the required `RST` frame.
+-
+@@ -40 +35 @@ Building
+-Run OkHttp tests on the desktop with Maven.
++Run OkHttp tests on the desktop with Maven. Running SPDY tests on the desktop uses [Jetty-NPN](http://wiki.eclipse.org/Jetty/Feature/NPN) which requires OpenJDK 7+.
+@@ -44,7 +38,0 @@ mvn clean test
+-SPDY support uses a Deflater API that wasn't available in Java 6. For this reason SPDY tests will fail with this error: `Cannot SPDY; no SYNC_FLUSH available`. All other tests should run fine.
+-
+-### On the Desktop with NPN
+-Using NPN on the desktop uses [Jetty-NPN](http://wiki.eclipse.org/Jetty/Feature/NPN) which requires OpenJDK 7+.
+-```
+-mvn clean test -Pspdy-tls
+-```
+diff --git a/README.md b/README.md
+index ed8d161cb..a05b3d5cd 100644
+--- a/README.md
++++ b/README.md
+@@ -59,3 +59,3 @@ vogar \
+-    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20121111/mockwebserver-20121111.jar \
+-    --classpath target/okhttp-0.8-SNAPSHOT.jar \
+-    ./src/test/java/libcore/net/http/URLConnectionTest.java
++    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20120905/mockwebserver-20120905.jar \
++    --classpath target/okhttp-0.9-SNAPSHOT.jar \
++    ./src/test/java
+@@ -63 +62,0 @@ vogar \
+-Because the OkHttp uses `jarjar` to repackage classes in `libcore`, OkHttp tests that use those classes directly cannot be run on a device.
+diff --git a/README.md b/README.md
+index 9793fcf90..ed8d161cb 100644
+--- a/README.md
++++ b/README.md
+@@ -35,0 +36,30 @@ OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SS
++Building
++--------
++
++### On the Desktop
++Run OkHttp tests on the desktop with Maven.
++```
++mvn clean test
++```
++SPDY support uses a Deflater API that wasn't available in Java 6. For this reason SPDY tests will fail with this error: `Cannot SPDY; no SYNC_FLUSH available`. All other tests should run fine.
++
++### On the Desktop with NPN
++Using NPN on the desktop uses [Jetty-NPN](http://wiki.eclipse.org/Jetty/Feature/NPN) which requires OpenJDK 7+.
++```
++mvn clean test -Pspdy-tls
++```
++
++### On a Device
++Test on a USB-attached Android using [Vogar](https://code.google.com/p/vogar/). Unfortunately `dx` requires that you build with Java 6, otherwise the test class will be silently omitted from the `.dex` file.
++```
++mvn clean
++mvn package -DskipTests
++vogar \
++    --classpath ~/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar \
++    --classpath ~/.m2/repository/com/google/mockwebserver/mockwebserver/20121111/mockwebserver-20121111.jar \
++    --classpath target/okhttp-0.8-SNAPSHOT.jar \
++    ./src/test/java/libcore/net/http/URLConnectionTest.java
++```
++Because the OkHttp uses `jarjar` to repackage classes in `libcore`, OkHttp tests that use those classes directly cannot be run on a device.
++
++
+diff --git a/README.md b/README.md
+index 410f18ba6..9793fcf90 100644
+--- a/README.md
++++ b/README.md
+@@ -36,16 +35,0 @@ OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SS
+-Contributing
+-------------
+-
+-If you would like to contribute code to OkHttp you can do so through GitHub by
+-forking the repository and sending a pull request.
+-
+-When submitting code, please make every effort to follow existing conventions
+-and style in order to keep the code as readable as possible. Please also make
+-sure your code compiles by running `mvn clean verify`. Checkstyle failures
+-during compilation indicate errors in your style and can be viewed in the
+-`checkstyle-result.xml` file.
+-
+-Before your code can be accepted into the project you must also sign the
+-[Individual Contributor License Agreement (CLA)][3].
+-
+-
+@@ -71 +54,0 @@ License
+- [3]: https://spreadsheets.google.com/spreadsheet/viewform?formkey=dDViT2xzUHAwRkI3X3k5Z0lQM091OGc6MQ&ndplr=1
+diff --git a/README.md b/README.md
+index 4d7f6f01c..410f18ba6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-okhttp
++OkHttp
+@@ -22,0 +23,13 @@ You can also depend on the .jar through Maven:
++Known Issues
++------------
++
++The SPDY implementation is incomplete:
++
++* Settings frames are not honored. Flow control is not implemented.
++* It assumes a well-behaved peer. If the peer sends an invalid frame, OkHttp's SPDY client will not respond with the required `RST` frame.
++
++OkHttp uses the platform's [ProxySelector][2]. Prior to Android 4.0, `ProxySelector` didn't honor the `proxyHost` and `proxyPort` system properties for HTTPS connections. Work around this by specifying the `https.proxyHost` and `https.proxyPort` system properties when using a proxy with HTTPS.
++
++OkHttp's test suite creates an in-process HTTPS server. Prior to Android 2.3, SSL server sockets were broken, and so HTTPS tests will time out when run on such devices.
++
++
+@@ -26 +39 @@ Contributing
+-If you would like to contribute code to OKHTTP you can do so through GitHub by
++If you would like to contribute code to OkHttp you can do so through GitHub by
+@@ -36 +49 @@ Before your code can be accepted into the project you must also sign the
+-[Individual Contributor License Agreement (CLA)][2].
++[Individual Contributor License Agreement (CLA)][3].
+@@ -57 +70,2 @@ License
+- [2]: https://spreadsheets.google.com/spreadsheet/viewform?formkey=dDViT2xzUHAwRkI3X3k5Z0lQM091OGc6MQ&ndplr=1
+\ No newline at end of file
++ [2]: http://developer.android.com/reference/java/net/ProxySelector.html
++ [3]: https://spreadsheets.google.com/spreadsheet/viewform?formkey=dDViT2xzUHAwRkI3X3k5Z0lQM091OGc6MQ&ndplr=1
+diff --git a/README.md b/README.md
+index 6f33b50dc..4d7f6f01c 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,54 @@ okhttp
+-An HTTP+SPDY client for Android and Java applications
+\ No newline at end of file
++An HTTP+SPDY client for Android and Java applications.
++
++
++Download
++--------
++
++Downloadable .jars can be found on the [GitHub download page][1].
++
++You can also depend on the .jar through Maven:
++
++```xml
++<dependency>
++    <groupId>com.squareup</groupId>
++    <artifactId>okhttp</artifactId>
++    <version>(insert latest version)</version>
++</dependency>
++```
++
++
++Contributing
++------------
++
++If you would like to contribute code to OKHTTP you can do so through GitHub by
++forking the repository and sending a pull request.
++
++When submitting code, please make every effort to follow existing conventions
++and style in order to keep the code as readable as possible. Please also make
++sure your code compiles by running `mvn clean verify`. Checkstyle failures
++during compilation indicate errors in your style and can be viewed in the
++`checkstyle-result.xml` file.
++
++Before your code can be accepted into the project you must also sign the
++[Individual Contributor License Agreement (CLA)][2].
++
++
++License
++-------
++
++    Licensed under the Apache License, Version 2.0 (the "License");
++    you may not use this file except in compliance with the License.
++    You may obtain a copy of the License at
++
++       http://www.apache.org/licenses/LICENSE-2.0
++
++    Unless required by applicable law or agreed to in writing, software
++    distributed under the License is distributed on an "AS IS" BASIS,
++    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++    See the License for the specific language governing permissions and
++    limitations under the License.
++
++
++
++ [1]: http://github.com/square/okhttp/downloads
++ [2]: https://spreadsheets.google.com/spreadsheet/viewform?formkey=dDViT2xzUHAwRkI3X3k5Z0lQM091OGc6MQ&ndplr=1
+\ No newline at end of file

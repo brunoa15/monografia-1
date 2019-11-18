@@ -1,0 +1,833 @@
+diff --git a/README.md b/README.md
+index fc820645..acb417f4 100644
+--- a/README.md
++++ b/README.md
+@@ -37,2 +36,0 @@ This is a community effort and we accept pull requests! See the [CONTRIBUTING](h
+-- Advanced pattern matching powered by [yara](http://virustotal.github.io/yara)
+-- Decompilation powered by [snowman](https://derevenets.com)
+diff --git a/README.md b/README.md
+index 295a4d2d..fc820645 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![Open Source Helpers](https://www.codetriage.com/x64dbg/x64dbg/badges/users.svg)](https://www.codetriage.com/x64dbg/x64dbg) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![Open Source Helpers](https://www.codetriage.com/x64dbg/x64dbg/badges/users.svg)](https://www.codetriage.com/x64dbg/x64dbg) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
+@@ -7 +7 @@
+-[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
++[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](https://telegram.me/x64dbg) [![Discord](https://img.shields.io/badge/chat-on%20Discord-green.svg)](https://invite.gg/x64dbg) [![Slack](https://img.shields.io/badge/chat-on%20Slack-red.svg)](https://x64dbg-slack.herokuapp.com) [![Gitter](https://img.shields.io/badge/chat-on%20Gitter-lightseagreen.svg)](https://gitter.im/x64dbg/x64dbg) [![Freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](https://webchat.freenode.net/?channels=x64dbg) [![Matrix](https://img.shields.io/badge/chat-on%20Matrix-yellowgreen.svg)](https://riot.im/app/#/room/#x64dbg:matrix.org) [![XMPP](https://img.shields.io/badge/chat-%20on%20XMPP-orange.svg)](https://inverse.chat/#converse/room?jid=x64dbg@conference.jwchat.org)
+@@ -45 +45 @@ This is a community effort and we accept pull requests! See the [CONTRIBUTING](h
+-- [mrexodia](http://mrexodia.cf)
++- [mrexodia](http://mrexodia.github.io)
+diff --git a/README.md b/README.md
+index 9bea7c79..295a4d2d 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +8,0 @@
+-[![Open Source Helpers](https://www.codetriage.com/x64dbg/x64dbg/badges/users.svg)](https://www.codetriage.com/x64dbg/x64dbg)
+-
+diff --git a/README.md b/README.md
+index ca2a45aa..9bea7c79 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++<img width="100" src="https://github.com/x64dbg/x64dbg/raw/development/src/bug_black.png"/>
+@@ -5,7 +5 @@
+-[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
+-
+-## Note
+-
+-Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://github.com/x64dbg/x64dbg/wiki/Coding-Guidelines).
+-
+-## Compiling
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![Open Source Helpers](https://www.codetriage.com/x64dbg/x64dbg/badges/users.svg)](https://www.codetriage.com/x64dbg/x64dbg) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+@@ -13 +7 @@ Please run `install.bat` before you start committing code, this ensures your cod
+-For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling-the-whole-project).
++[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
+@@ -15 +9 @@ For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg
+-## Downloads
++[![Open Source Helpers](https://www.codetriage.com/x64dbg/x64dbg/badges/users.svg)](https://www.codetriage.com/x64dbg/x64dbg)
+@@ -17 +11 @@ For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg
+-Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++An open-source binary debugger for Windows, aimed at malware analysis and reverse engineering of executables you do not have the source code for. There are many features available and a comprehensive [plugin system](http://plugins.x64dbg.com) to add your own. You can find more information on the [blog](https://x64dbg.com/blog)!
+@@ -19 +13 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-## Overview
++## Screenshots
+@@ -21 +15 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-*x64dbg* is an open-source x32/x64 debugger for Windows.
++![main interface](https://i.imgur.com/V2f5AP9.png)
+@@ -23 +17 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-## Activity Graph
++![graph](https://i.imgur.com/gVjzntJ.png) ![memory map](https://i.imgur.com/cLJwTjY.png)
+@@ -25 +19 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-[![Throughput Graph](https://graphs.waffle.io/x64dbg/x64dbg/throughput.svg)](https://waffle.io/x64dbg/x64dbg/metrics/throughput)
++## Installation & Usage
+@@ -27 +21,3 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-## Features
++1. Download a snapshot from [GitHub](https://github.com/x64dbg/x64dbg/releases), [SourceForge](https://sourceforge.net/projects/x64dbg/files/snapshots) or [OSDN](https://osdn.net/projects/x64dbg) and extract it in a location your user has write access to.
++2. _Optionally_ use `x96dbg.exe` to register a shell extension and add shortcuts to your desktop.
++3. You can now run `x32\x32dbg.exe` if you want to debug a 32-bit executable or `x64\x64dbg.exe` to debug a 64-bit executable! If you are unsure you can always run `x96dbg.exe` and chose your architecture there.
+@@ -29,26 +25 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- Open-source
+-- Intuitive and familiar, yet new user interface
+-- C-like expression parser
+-- Full-featured debugging of DLL and EXE files (TitanEngine)
+-- IDA-like sidebar with jump arrows
+-- IDA-like instruction token highlighter (highlight registers, etc.)
+-- Memory map
+-- Symbol view
+-- Thread view
+-- Source code view
+-- Content-sensitive register view
+-- Fully customizable color scheme
+-- Dynamically recognize modules and strings
+-- Import reconstructor integrated (Scylla)
+-- Fast disassembler (Capstone)
+-- User database (JSON) for comments, labels, bookmarks, etc.
+-- Plugin support with growing API
+-- Extendable, debuggable scripting language for automation
+-- Multi-datatype memory dump
+-- Basic debug symbol (PDB) support
+-- Dynamic stack view
+-- Built-in assembler (XEDParse/Keystone/asmjit)
+-- Executable patching
+-- Yara Pattern Matching
+-- Decompiler (Snowman)
+-- Analysis
++You can also [compile](https://github.com/x64dbg/x64dbg/wiki/Compiling-the-whole-project) x64dbg yourself with a few easy steps!
+@@ -56 +27 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-## License
++## Contributing
+@@ -58 +29 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-*x64dbg* is licensed under GPLv3, which means you can freely distribute and/or modify the source of *x64dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GPLv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64dbg*. In that case you would still have to share the changes to *x64dbg* with us.
++This is a community effort and we accept pull requests! See the [CONTRIBUTING](https://github.com/x64dbg/x64dbg/blob/development/CONTRIBUTING.md) document for more information. If you have any questions you can always [contact us](https://x64dbg.com/#contact) or open an [issue](https://github.com/x64dbg/x64dbg/issues). You can take a look at the [easy issues](https://github.com/x64dbg/x64dbg/issues?q=is%3Aissue+is%3Aopen+label%3Aeasy) to get started.
+@@ -63,2 +34,2 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- Disassembly powered by [Capstone](http://capstone-engine.org)
+-- Assembly powered by [XEDParse](https://github.com/x64dbg/XEDParse), [Keystone](http://keystone-engine.org) and [asmjit](https://github.com/asmjit)
++- Disassembly powered by [Zydis](https://zydis.re)
++- Assembly powered by [XEDParse](https://github.com/x64dbg/XEDParse) and [asmjit](https://github.com/asmjit)
+@@ -73,0 +45,14 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++## Developers
++
++- [mrexodia](http://mrexodia.cf)
++- Sigma
++- [tr4ceflow](http://blog.tr4ceflow.com)
++- [Dreg](http://www.fr33project.org)
++- [Nukem](https://github.com/Nukem9)
++- [Herz3h](https://github.com/Herz3h)
++- [torusrxxx](https://github.com/torusrxxx)
++
++## Code contributions
++
++You can find an exhaustive list of GitHub contributers [here](https://github.com/x64dbg/x64dbg/graphs/contributors).
++
+@@ -76 +61,2 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- All the donators!
++- Sigma for developing the initial GUI
++- All the [donators](https://www.bountysource.com/teams/x64dbg/backers)!
+@@ -78,0 +65 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++- [Writers of the blog](https://x64dbg.com/blog/2016/07/09/Looking-for-writers.html)!
+@@ -95,0 +83,2 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++- [athre0z](https://github.com/athre0z)
++- [ZehMatt](https://github.com/ZehMatt)
+@@ -97,38 +86 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-## Developers
+-
+-- [mrexodia](http://mrexodia.cf)
+-- Sigma
+-- [tr4ceflow](http://blog.tr4ceflow.com)
+-- [Dreg](http://www.fr33project.org)
+-- [Nukem](https://github.com/Nukem9)
+-- [Herz3h](https://github.com/Herz3h)
+-- [torusrxxx](https://github.com/torusrxxx)
+-
+-## Contributors
+-
+-- [blaquee](https://github.com/blaquee)
+-- [wk-952](https://github.com/wk-952)
+-- [RaMMicHaeL](http://rammichael.com)
+-- [lovrolu](https://github.com/lovrolu)
+-- [fileoffset](https://github.com/fileoffset)
+-- [SmilingWolf](https://github.com/SmilingWolf)
+-- [ApertureSecurity](https://github.com/ApertureSecurity)
+-- [mrgreywater](https://github.com/mrgreywater)
+-- [Dither](https://github.com/Dither)
+-- [zerosum0x0](https://github.com/zerosum0x0)
+-- [RadicalRaccoon](https://github.com/RadicalRaccoon)
+-- [fetzerms](https://github.com/fetzerms)
+-- [muratsu](https://github.com/muratsu)
+-- [ForNeVeR](https://github.com/ForNeVeR)
+-- [wynick27](https://github.com/wynick27)
+-- [Atvaark](https://github.com/Atvaark)
+-- [Avin](https://github.com/Avinm)
+-- [mrfearless](https://github.com/mrfearless)
+-- [Storm Shadow](https://github.com/techbliss)
+-- [shamanas](https://github.com/shamanas)
+-- [joesavage](https://github.com/joesavage)
+-- [justanotheranonymoususer](https://github.com/justanotheranonymoususer)
+-- [gushromp](https://github.com/gushromp)
+-- [Forsari0](https://github.com/Forsari0)
+-
+-See [here](https://github.com/x64dbg/x64dbg/graphs/contributors) for a more up-to-date list of contributers.
+\ No newline at end of file
++Without the help of many people and other open source projects it would not have been possible to make x64dbg what is it today, thank you!
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index c5fa4a9f..ca2a45aa 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) 
++[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![Download x64dbg](https://img.shields.io/sourceforge/dm/x64dbg.svg)](https://sourceforge.net/projects/x64dbg/files/latest/download)
+diff --git a/README.md b/README.md
+index 28a6409e..c5fa4a9f 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Build status](https://ci.appveyor.com/api/projects/status/h1j489qa1mx67e0h?svg=true)](https://ci.appveyor.com/project/mrexodia/x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++
++[![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) 
+@@ -17,2 +18,0 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-~~Jenkins build server can be found [here](http://jenkins.x64dbg.com).~~
+-
+@@ -132,0 +133,2 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++
++See [here](https://github.com/x64dbg/x64dbg/graphs/contributors) for a more up-to-date list of contributers.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index ce52e909..28a6409e 100644
+--- a/README.md
++++ b/README.md
+@@ -120,3 +120,3 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- [fetzerms](https://github.com/RadicalRaccoon)
+-- [muratsu](https://github.com/RadicalRaccoon)
+-- [ForNeVeR](https://github.com/RadicalRaccoon)
++- [fetzerms](https://github.com/fetzerms)
++- [muratsu](https://github.com/muratsu)
++- [ForNeVeR](https://github.com/ForNeVeR)
+diff --git a/README.md b/README.md
+index e5895c8b..ce52e909 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Please run `install.bat` before you start committing code, this ensures your cod
+-For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling).
++For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling-the-whole-project).
+diff --git a/README.md b/README.md
+index 3c699934..e5895c8b 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Please run `install.bat` before you start committing code, this ensures your cod
+-For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling the whole project).
++For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling).
+diff --git a/README.md b/README.md
+index aa4c1689..3c699934 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://img.shields.io/badge/chat-%20on%20freenode-brightgreen.svg)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+@@ -132 +132 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- [Forsari0](https://github.com/Forsari0)
+\ No newline at end of file
++- [Forsari0](https://github.com/Forsari0)
+diff --git a/README.md b/README.md
+index c7f377cd..aa4c1689 100644
+--- a/README.md
++++ b/README.md
+@@ -127,0 +128,5 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++- [shamanas](https://github.com/shamanas)
++- [joesavage](https://github.com/joesavage)
++- [justanotheranonymoususer](https://github.com/justanotheranonymoususer)
++- [gushromp](https://github.com/gushromp)
++- [Forsari0](https://github.com/Forsari0)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 304e1107..c7f377cd 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+@@ -127 +127 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- [Storm Shadow](https://github.com/techbliss)
+\ No newline at end of file
++- [Storm Shadow](https://github.com/techbliss)
+diff --git a/README.md b/README.md
+index e233f8c4..304e1107 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- Built-in assembler (XEDParse/Keystone)
++- Built-in assembler (XEDParse/Keystone/asmjit)
+@@ -64 +64 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- Assembly powered by [XEDParse](https://bitbucket.org/mrexodia/xedparse)
++- Assembly powered by [XEDParse](https://github.com/x64dbg/XEDParse), [Keystone](http://keystone-engine.org) and [asmjit](https://github.com/asmjit)
+@@ -67,0 +68,2 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++- Advanced pattern matching powered by [yara](http://virustotal.github.io/yara)
++- Decompilation powered by [snowman](https://derevenets.com)
+@@ -91 +93 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-- kao
++- [kao](http://lifeinhex.com)
+@@ -92,0 +95 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++- [kobalicek](https://github.com/kobalicek)
+diff --git a/README.md b/README.md
+index 19b03ca6..e233f8c4 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
+-Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++~~Jenkins build server can be found [here](http://jenkins.x64dbg.com).~~
+diff --git a/README.md b/README.md
+index 98491041..19b03ca6 100644
+--- a/README.md
++++ b/README.md
+@@ -101,0 +102 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [torusrxxx](https://github.com/torusrxxx)
+@@ -105 +105,0 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- [torusrxxx](https://github.com/torusrxxx)
+@@ -123,0 +124 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [Storm Shadow](https://github.com/techbliss)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index c327465a..98491041 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-## Contributers
++## Contributors
+diff --git a/README.md b/README.md
+index f0b1ede3..c327465a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](http://telegram.x64dbg.com) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](http://gitter.x64dbg.com) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+diff --git a/README.md b/README.md
+index c9be61ff..f0b1ede3 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](https://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](https://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+@@ -123 +123 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- [mrfearless](https://github.com/mrfearless)
+\ No newline at end of file
++- [mrfearless](https://github.com/mrfearless)
+diff --git a/README.md b/README.md
+index 19bf89ff..c9be61ff 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1) [![Crowdin](https://d322cqt584bo4o.cloudfront.net/x64dbg/localized.svg)](http://translate.x64dbg.com)
+diff --git a/README.md b/README.md
+index 35cb72b3..19bf89ff 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1)
+diff --git a/README.md b/README.md
+index 5889d326..35cb72b3 100644
+--- a/README.md
++++ b/README.md
+@@ -90,0 +91,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- kao
++- sstrato
+@@ -120,0 +123 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [mrfearless](https://github.com/mrfearless)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index aa760e40..5889d326 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Built-in assembler (XEDParse)
++- Built-in assembler (XEDParse/Keystone)
+diff --git a/README.md b/README.md
+index d47afa48..aa760e40 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [Avin](https://github.com/Avinm)
+diff --git a/README.md b/README.md
+index fb5b14a1..d47afa48 100644
+--- a/README.md
++++ b/README.md
+@@ -117,0 +118,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [wynick27](https://github.com/wynick27)
++- [Atvaark](https://github.com/Atvaark)
+diff --git a/README.md b/README.md
+index d0959c21..fb5b14a1 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +4,0 @@
+-
+-
+@@ -24,0 +23,4 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++## Activity Graph
++
++[![Throughput Graph](https://graphs.waffle.io/x64dbg/x64dbg/throughput.svg)](https://waffle.io/x64dbg/x64dbg/metrics/throughput)
++
+@@ -87 +89 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- _pusher_
++- \_pusher\_
+diff --git a/README.md b/README.md
+index a2e0dea8..d0959c21 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![freenode](http://i.imgur.com/JEG5fJr.png)](http://webchat.freenode.net/?channels=x64dbg) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![coverity](https://scan.coverity.com/projects/7478/badge.svg?flat=1)](https://scan.coverity.com/projects/7478/badge.svg?flat=1)
+diff --git a/README.md b/README.md
+index 5aebcda1..a2e0dea8 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](data:image/png;base64,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)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](http://i.imgur.com/merFyCf.png)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
+diff --git a/README.md b/README.md
+index 14c59ac6..5aebcda1 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Telegram](data:image/png;base64,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)](https://telegram.me/joinchat/BzwLaQcORqjkM1k9YbTNmg) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
+diff --git a/README.md b/README.md
+index d9ff3ade..14c59ac6 100644
+--- a/README.md
++++ b/README.md
+@@ -70 +70 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-## Special Thanks (in no particular order)
++## Special Thanks
+@@ -71,0 +72,3 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- All the donators!
++- Everybody adding issues!
++- People I forgot to add to this list
+@@ -73,0 +77,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- [ReSharper](https://www.jetbrains.com/resharper)
++- [Coverity](http://www.coverity.com)
+@@ -75,0 +81 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- cypher
+@@ -80,0 +87,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- _pusher_
++- firelegend
+@@ -82 +90 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-## Developers (in order of joining)
++## Developers
+@@ -84 +92 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- [Mr. eXoDia](http://mrexodia.cf)
++- [mrexodia](http://mrexodia.cf)
+@@ -89,0 +98,18 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
++## Contributers
++
++- [torusrxxx](https://github.com/torusrxxx)
++- [blaquee](https://github.com/blaquee)
++- [wk-952](https://github.com/wk-952)
++- [RaMMicHaeL](http://rammichael.com)
++- [lovrolu](https://github.com/lovrolu)
++- [fileoffset](https://github.com/fileoffset)
++- [SmilingWolf](https://github.com/SmilingWolf)
++- [ApertureSecurity](https://github.com/ApertureSecurity)
++- [mrgreywater](https://github.com/mrgreywater)
++- [Dither](https://github.com/Dither)
++- [zerosum0x0](https://github.com/zerosum0x0)
++- [RadicalRaccoon](https://github.com/RadicalRaccoon)
++- [fetzerms](https://github.com/RadicalRaccoon)
++- [muratsu](https://github.com/RadicalRaccoon)
++- [ForNeVeR](https://github.com/RadicalRaccoon)
+diff --git a/README.md b/README.md
+index d50567eb..d9ff3ade 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Debugger core by [TitanEngine Community Edition](https://bitbucket.org/mrexodia/titanengine-update)
++- Debugger core by [TitanEngine Community Edition](https://bitbucket.org/titanengineupdate/titanengine-update)
+diff --git a/README.md b/README.md
+index ae3a56cb..d50567eb 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com) [![Stories in Ready](https://badge.waffle.io/x64dbg/x64dbg.png?label=ready&title=Ready)](http://waffle.io/x64dbg/x64dbg)
+diff --git a/README.md b/README.md
+index ba2e6d38..ae3a56cb 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com)
++[![BountySource](https://www.bountysource.com/badge/team?team_id=18188&style=raised)](https://www.bountysource.com/teams/x64dbg?utm_source=x64dbg&utm_medium=shield&utm_campaign=raised) [![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com)
+diff --git a/README.md b/README.md
+index 43ca975b..ba2e6d38 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,3 @@
+-[![Join the chat at https://gitter.im/x64dbg/x64dbg](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
++[![Join the chat at Gitter](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Jenkins](http://jenkins.x64dbg.com/job/vs13/badge/icon)](http://jenkins.x64dbg.com)
++
++
+diff --git a/README.md b/README.md
+index aea98e49..43ca975b 100644
+--- a/README.md
++++ b/README.md
+@@ -2,2 +2,2 @@
+-
+-[![Join the chat at https://gitter.im/x64dbg/x64dbg](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
++
++[![Join the chat at https://gitter.im/x64dbg/x64dbg](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+@@ -5,0 +6 @@
++
+@@ -8,0 +10 @@ Please run `install.bat` before you start committing code, this ensures your cod
++
+@@ -12,2 +14,3 @@ For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg
+-Releases of *x64dbg* can be found [here](http://download.x64dbg.com).
+-Snapshots of *x64dbg* can be found [here](http://snapshots.x64dbg.com).
++
++Releases of *x64dbg* can be found [here](http://releases.x64dbg.com).
++
+@@ -16,0 +20 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -19,0 +24 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -47,0 +53 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -50,0 +57 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -61,0 +69 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -72,0 +81 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++
+@@ -77 +86,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Nukem
++- [Nukem](https://github.com/Nukem9)
++- [Herz3h](https://github.com/Herz3h)
+diff --git a/README.md b/README.md
+index 383a4951..aea98e49 100644
+--- a/README.md
++++ b/README.md
+@@ -1,0 +2,2 @@
++
++[![Join the chat at https://gitter.im/x64dbg/x64dbg](https://badges.gitter.im/x64dbg/x64dbg.svg)](https://gitter.im/x64dbg/x64dbg?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+diff --git a/README.md b/README.md
+index 8db7f08e..383a4951 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Fast disassembler (BeaEngine)
++- Fast disassembler (Capstone)
+@@ -41,0 +42,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- Decompiler (Snowman)
++- Analysis
+@@ -48 +50 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Disassembly powered by [BeaEngine](http://www.beaengine.org) ([Updated](https://bitbucket.org/mrexodia/beaengine)) & [Capstone](http://capstone-engine.org)
++- Disassembly powered by [Capstone](http://capstone-engine.org)
+diff --git a/README.md b/README.md
+index 37d8dcb3..8db7f08e 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://github.com/x64dbg/x64dbg/wiki/x64_dbg_coding_guidelines).
++Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://github.com/x64dbg/x64dbg/wiki/Coding-Guidelines).
+diff --git a/README.md b/README.md
+index 85259b47..37d8dcb3 100644
+--- a/README.md
++++ b/README.md
+@@ -41,3 +41 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-
+-## Known bugs
+-- Memory breakpoints sometimes fail (TitanEngine bug)
++- Yara Pattern Matching
+@@ -50 +48 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Disassembly powered by [BeaEngine](http://www.beaengine.org) ([Updated](https://bitbucket.org/mrexodia/beaengine))
++- Disassembly powered by [BeaEngine](http://www.beaengine.org) ([Updated](https://bitbucket.org/mrexodia/beaengine)) & [Capstone](http://capstone-engine.org)
+@@ -57 +55 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Website by tr4ceflow
++- Website by [tr4ceflow](http://tr4ceflow.com)
+diff --git a/README.md b/README.md
+index b168b837..85259b47 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +46 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-*x64dbg* is licensed under GLPv3, which means you can freely distribute and/or modify the source of *x64dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GLPv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64dbg*. In that case you would still have to share the changes to *x64dbg* with us.
++*x64dbg* is licensed under GPLv3, which means you can freely distribute and/or modify the source of *x64dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GPLv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64dbg*. In that case you would still have to share the changes to *x64dbg* with us.
+diff --git a/README.md b/README.md
+index c0a63b2e..b168b837 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- Source code view
+@@ -38,0 +40 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
++- Executable patching
+@@ -66 +67,0 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Nukem
+diff --git a/README.md b/README.md
+index 38b06556..c0a63b2e 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://bitbucket.org/mrexodia/x64dbg/wiki/x64dbg_coding_guidelines).
++Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://github.com/x64dbg/x64dbg/wiki/x64_dbg_coding_guidelines).
+@@ -7 +7 @@ Please run `install.bat` before you start committing code, this ensures your cod
+-For a complete guide on compiling *x64dbg* read [this](https://bitbucket.org/mrexodia/x64dbg/wiki/Compiling%20the%20whole%20project).
++For a complete guide on compiling *x64dbg* read [this](https://github.com/x64dbg/x64dbg/wiki/Compiling the whole project).
+@@ -74 +74 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- Nukem
+\ No newline at end of file
++- Nukem
+diff --git a/README.md b/README.md
+index 5f70bce7..38b06556 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# x64_dbg
++# x64dbg
+@@ -4 +4 @@
+-Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* [standards](https://bitbucket.org/mrexodia/x64_dbg/wiki/x64_dbg_coding_guidelines).
++Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64dbg* [standards](https://bitbucket.org/mrexodia/x64dbg/wiki/x64dbg_coding_guidelines).
+@@ -7 +7 @@ Please run `install.bat` before you start committing code, this ensures your cod
+-For a complete guide on compiling *x64_dbg* read [this](https://bitbucket.org/mrexodia/x64_dbg/wiki/Compiling%20the%20whole%20project).
++For a complete guide on compiling *x64dbg* read [this](https://bitbucket.org/mrexodia/x64dbg/wiki/Compiling%20the%20whole%20project).
+@@ -10,2 +10,2 @@ For a complete guide on compiling *x64_dbg* read [this](https://bitbucket.org/mr
+-Releases of *x64_dbg* can be found [here](http://download.x64dbg.com).
+-Snapshots of *x64_dbg* can be found [here](http://snapshots.x64dbg.com).
++Releases of *x64dbg* can be found [here](http://download.x64dbg.com).
++Snapshots of *x64dbg* can be found [here](http://snapshots.x64dbg.com).
+@@ -15 +15 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-*x64_dbg* is an open-source x32/x64 debugger for Windows.
++*x64dbg* is an open-source x32/x64 debugger for Windows.
+@@ -44 +44 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-*x64_dbg* is licensed under GLPv3, which means you can freely distribute and/or modify the source of *x64_dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GLPv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64_dbg*. In that case you would still have to share the changes to *x64_dbg* with us.
++*x64dbg* is licensed under GLPv3, which means you can freely distribute and/or modify the source of *x64dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GLPv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64dbg*. In that case you would still have to share the changes to *x64dbg* with us.
+@@ -73 +73,2 @@ Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+-- [Dreg](http://www.fr33project.org)
+\ No newline at end of file
++- [Dreg](http://www.fr33project.org)
++- Nukem
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index d85646ad..5f70bce7 100644
+--- a/README.md
++++ b/README.md
+@@ -4,3 +4 @@
+-**This is a new version of this repository. The old version can be found [here](https://bitbucket.org/mrexodia/x64_dbg_old).**
+-
+-Also please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* [standards](https://bitbucket.org/mrexodia/x64_dbg/wiki/x64_dbg_coding_guidelines).
++Please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* [standards](https://bitbucket.org/mrexodia/x64_dbg/wiki/x64_dbg_coding_guidelines).
+diff --git a/README.md b/README.md
+index b88f57d1..d85646ad 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6,4 @@
+-Also please run install.bat before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* standards.
++Also please run `install.bat` before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* [standards](https://bitbucket.org/mrexodia/x64_dbg/wiki/x64_dbg_coding_guidelines).
++
++## Compiling
++For a complete guide on compiling *x64_dbg* read [this](https://bitbucket.org/mrexodia/x64_dbg/wiki/Compiling%20the%20whole%20project).
+@@ -9 +12,3 @@ Also please run install.bat before you start committing code, this ensures your
+-Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
++Releases of *x64_dbg* can be found [here](http://download.x64dbg.com).
++Snapshots of *x64_dbg* can be found [here](http://snapshots.x64dbg.com).
++Jenkins build server can be found [here](http://jenkins.x64dbg.com).
+@@ -44,8 +49,8 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-- Debugger core by TitanEngine Community Edition
+-- Disassembly powered by BeaEngine (Updated)
+-- Assembly powered by XEDParse
+-- Import reconstruction powered by Scylla
+-- JSON powered by Jansson
+-- Database compression powered by lz4
+-- Bug icon by VisualPharm
+-- Interface icons by Fugue
++- Debugger core by [TitanEngine Community Edition](https://bitbucket.org/mrexodia/titanengine-update)
++- Disassembly powered by [BeaEngine](http://www.beaengine.org) ([Updated](https://bitbucket.org/mrexodia/beaengine))
++- Assembly powered by [XEDParse](https://bitbucket.org/mrexodia/xedparse)
++- Import reconstruction powered by [Scylla](https://github.com/NtQuery/Scylla)
++- JSON powered by [Jansson](http://www.digip.org/jansson)
++- Database compression powered by [lz4](https://bitbucket.org/mrexodia/lz4)
++- Bug icon by [VisualPharm](http://www.visualpharm.com)
++- Interface icons by [Fugue](http://p.yusukekamiyamane.com)
+@@ -54,3 +59,3 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-## Special Thanks
+-- EXETools community
+-- Tuts4You community
++## Special Thanks (in no particular order)
++- [EXETools community](http://forum.exetools.com)
++- [Tuts4You community](http://forum.tuts4you.com)
+diff --git a/README.md b/README.md
+index a1fcd370..b88f57d1 100644
+--- a/README.md
++++ b/README.md
+@@ -66,2 +66,2 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-## Developers
+-- Mr. eXoDia
++## Developers (in order of joining)
++- [Mr. eXoDia](http://mrexodia.cf)
+@@ -69 +69,2 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-- tr4ceflow
+\ No newline at end of file
++- [tr4ceflow](http://blog.tr4ceflow.com)
++- [Dreg](http://www.fr33project.org)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 3a15d9b5..a1fcd370 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,2 @@
++Also please run install.bat before you start committing code, this ensures your code is auto-formatted to the *x64_dbg* standards.
++
+diff --git a/README.md b/README.md
+index 2d1628c9..3a15d9b5 100644
+--- a/README.md
++++ b/README.md
+@@ -57,0 +58 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
++- TEAM DVT
+diff --git a/README.md b/README.md
+index 73441cb9..2d1628c9 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-*x64_dbg* is licensed under GLPv3, which means you can freely distribute and modify the source of *x64_dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the original GLPv3 license (they do not have to be open-source and they can be commercial and/or private), except if you directly use code from inside *x64_dbg*. In that case you would still have to share the changes to *x64_dbg* with us.
++*x64_dbg* is licensed under GLPv3, which means you can freely distribute and/or modify the source of *x64_dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the GLPv3 license. They do not have to be open-source and they can be commercial and/or private. The only exception to this is when your plugin uses code copied from *x64_dbg*. In that case you would still have to share the changes to *x64_dbg* with us.
+diff --git a/README.md b/README.md
+index cf43a4bf..73441cb9 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
+-*x64_dbg* is licensed under GLPv3, which means you can freely distribute and modify the source of *x64_dbg*, as long as you share your changes with us. The only exception of is that plugins you write do not have to comply with the original GLPv3 license (they do not have to be open-source), except if you directly use code from inside *x64_dbg*. In that case you would still have to share the changes with us.
++*x64_dbg* is licensed under GLPv3, which means you can freely distribute and modify the source of *x64_dbg*, as long as you share your changes with us. The only exception is that plugins you write do not have to comply with the original GLPv3 license (they do not have to be open-source and they can be commercial and/or private), except if you directly use code from inside *x64_dbg*. In that case you would still have to share the changes to *x64_dbg* with us.
+diff --git a/README.md b/README.md
+index 89003290..cf43a4bf 100644
+--- a/README.md
++++ b/README.md
+@@ -1,65 +1,65 @@
+-# x64_dbg
+-
+-## Note
+-**This is a new version of this repository. The old version can be found [here](https://bitbucket.org/mrexodia/x64_dbg_old).**
+-
+-## Downloads
+-Releases of *x64_dbg* can be found on [*x64_dbg*'s SourceForge page](http://download.x64dbg.com).
+-
+-## Overview
+-*x64_dbg* is an open-source x32/x64 debugger for Windows.
+-
+-## Features
+-- Open-source
+-- Intuitive and familiar, yet new user interface
+-- C-like expression parser
+-- Full-featured debugging of DLL and EXE files (TitanEngine)
+-- IDA-like sidebar with jump arrows
+-- IDA-like instruction token highlighter (highlight registers, etc.)
+-- Memory map
+-- Symbol view
+-- Thread view
+-- Content-sensitive register view
+-- Fully customizable color scheme
+-- Dynamically recognize modules and strings
+-- Import reconstructor integrated (Scylla)
+-- Fast disassembler (BeaEngine)
+-- User database (JSON) for comments, labels, bookmarks, etc.
+-- Plugin support with growing API
+-- Extendable, debuggable scripting language for automation
+-- Multi-datatype memory dump
+-- Basic debug symbol (PDB) support
+-- Dynamic stack view
+-- Built-in assembler (XEDParse)
+-
+-## Known bugs
+-- Memory breakpoints sometimes fail (TitanEngine bug)
+-
+-## License
+-*x64_dbg* is licensed under GLPv3, which means you can freely distribute and modify the source of *x64_dbg*, as long as you share your changes with us. The only exception of is that plugins you write do not have to comply with the original GLPv3 license (they do not have to be open-source), except if you directly use code from inside *x64_dbg*. In that case you would still have to share the changes with us.
+-
+-## Credits
+-- Debugger core by TitanEngine Community Edition
+-- Disassembly powered by BeaEngine (Updated)
+-- Assembly powered by XEDParse
+-- Import reconstruction powered by Scylla
+-- JSON powered by Jansson
+-- Database compression powered by lz4
+-- Bug icon by VisualPharm
+-- Interface icons by Fugue
+-- Website by tr4ceflow
+-
+-## Special Thanks
+-- EXETools community
+-- Tuts4You community
+-- acidflash
+-- cyberbob
+-- Teddy Rogers
+-- DMichael
+-- Artic
+-- Nukem
+-- ahmadmansoor
+-
+-## Developers
+-- Mr. eXoDia
+-- Sigma
++# x64_dbg
++
++## Note
++**This is a new version of this repository. The old version can be found [here](https://bitbucket.org/mrexodia/x64_dbg_old).**
++
++## Downloads
++Releases of *x64_dbg* can be found on [here](http://download.x64dbg.com).
++
++## Overview
++*x64_dbg* is an open-source x32/x64 debugger for Windows.
++
++## Features
++- Open-source
++- Intuitive and familiar, yet new user interface
++- C-like expression parser
++- Full-featured debugging of DLL and EXE files (TitanEngine)
++- IDA-like sidebar with jump arrows
++- IDA-like instruction token highlighter (highlight registers, etc.)
++- Memory map
++- Symbol view
++- Thread view
++- Content-sensitive register view
++- Fully customizable color scheme
++- Dynamically recognize modules and strings
++- Import reconstructor integrated (Scylla)
++- Fast disassembler (BeaEngine)
++- User database (JSON) for comments, labels, bookmarks, etc.
++- Plugin support with growing API
++- Extendable, debuggable scripting language for automation
++- Multi-datatype memory dump
++- Basic debug symbol (PDB) support
++- Dynamic stack view
++- Built-in assembler (XEDParse)
++
++## Known bugs
++- Memory breakpoints sometimes fail (TitanEngine bug)
++
++## License
++*x64_dbg* is licensed under GLPv3, which means you can freely distribute and modify the source of *x64_dbg*, as long as you share your changes with us. The only exception of is that plugins you write do not have to comply with the original GLPv3 license (they do not have to be open-source), except if you directly use code from inside *x64_dbg*. In that case you would still have to share the changes with us.
++
++## Credits
++- Debugger core by TitanEngine Community Edition
++- Disassembly powered by BeaEngine (Updated)
++- Assembly powered by XEDParse
++- Import reconstruction powered by Scylla
++- JSON powered by Jansson
++- Database compression powered by lz4
++- Bug icon by VisualPharm
++- Interface icons by Fugue
++- Website by tr4ceflow
++
++## Special Thanks
++- EXETools community
++- Tuts4You community
++- acidflash
++- cyberbob
++- Teddy Rogers
++- DMichael
++- Artic
++- Nukem
++- ahmadmansoor
++
++## Developers
++- Mr. eXoDia
++- Sigma

@@ -14,20 +14,17 @@ for lang in *; do
                 [ $repo = "httpie" ] ||
                 [ $repo = "scikit-learn" ] ||
                 [ $repo = "scrapy" ]; then
-                    continue
-                    # git diff -U0 $commitID $prevID README.rst >> ../../../saidas/heatmap/$lang/$repo/diff.txt
-                    # git show $prevID:README.rst | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
+                    git diff -U0 $commitID $prevID README.rst >> ../../../saidas/heatmap/$lang/$repo/diff.txt
+                    git show $prevID:README.rst | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
                 elif [ $repo = "elasticsearch" ]; then
                     git diff -U0 $commitID $prevID README.textile >> ../../../saidas/heatmap/$lang/$repo/diff.txt
                     git show $prevID:README.textile | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
                 elif [ $repo = "spring-boot" ]; then
-                    continue
-                    # git diff -U0 $commitID $prevID README.adoc >> ../../../saidas/heatmap/$lang/$repo/diff.txt
-                    # git show $prevID:README.adoc | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
+                    git diff -U0 $commitID $prevID README.adoc >> ../../../saidas/heatmap/$lang/$repo/diff.txt
+                    git show $prevID:README.adoc | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
                 else
-                    continue
-                    # git diff -U0 $commitID $prevID README.md >> ../../../saidas/heatmap/$lang/$repo/diff.txt
-                    # git show $prevID:README.md | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
+                    git diff -U0 $commitID $prevID README.md >> ../../../saidas/heatmap/$lang/$repo/diff.txt
+                    git show $prevID:README.md | wc -l >> ../../../saidas/heatmap/$lang/$repo/nRows.csv
                 fi
             fi
             prevID=$commitID

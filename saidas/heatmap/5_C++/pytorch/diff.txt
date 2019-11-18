@@ -1,0 +1,2921 @@
+diff --git a/README.md b/README.md
+index cb8f8305d8..0d99d8c737 100644
+--- a/README.md
++++ b/README.md
+@@ -277 +277 @@ Dockerfile is supplied to build images with cuda support and cudnn v7. You can p
+-docker build -t pytorch -f docker/pytorch/Dockerfile .
++docker build -t pytorch -f docker/pytorch/Dockerfile .  # [optional] --build-arg WITH_TORCHVISION=0
+diff --git a/README.md b/README.md
+index 418a7603f4..cb8f8305d8 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ Common
+-conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing requests
++conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index cb8f8305d8..418a7603f4 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ Common
+-conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing
++conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing requests
+diff --git a/README.md b/README.md
+index 7d5e6fe074..cb8f8305d8 100644
+--- a/README.md
++++ b/README.md
+@@ -162 +162 @@ If you want to compile with CUDA support, install
+-If you want to disable CUDA support, export environment variable `NO_CUDA=1`.
++If you want to disable CUDA support, export environment variable `USE_CUDA=0`.
+diff --git a/README.md b/README.md
+index 861b1d5068..7d5e6fe074 100644
+--- a/README.md
++++ b/README.md
+@@ -214,0 +215,12 @@ Be sure that CUDA with Nsight Compute is installed after Visual Studio 2017.
++Currently VS 2017, VS 2019 and Ninja are supported as the generator of CMake. If `ninja.exe` is detected in `PATH`, then Ninja will be used as the default generator, otherwise it will use VS 2017.
++<br/> If Ninja is selected as the generator, the latest MSVC which is newer than VS 2015 (14.0) will get selected as the underlying toolchain if you have Python > 3.5, otherwise VS 2015 will be selected so you'll have to activate the environment. If you use CMake <= 3.14.2 and has VS 2019 installed, then even if you specify VS 2017 as the generator, VS 2019 will get selected as the generator.
++
++CUDA and MSVC has strong version dependencies, so even if you use VS 2017 / 2019, you will get build errors like `nvcc fatal : Host compiler targets unsupported OS`. For this kind of problem, please install the corresponding VS toolchain in the table below and then you can either specify the toolset during activation (recommended) or set `CUDAHOSTCXX` to override the cuda host compiler (not recommended if there are big version differences).
++
++| CUDA version | Newest supported VS version                             |
++| ------------ | ------------------------------------------------------- |
++| 9.0 / 9.1    | Visual Studio 2017 Update 4 (15.4) (`_MSC_VER` <= 1911) |
++| 9.2          | Visual Studio 2017 Update 5 (15.5) (`_MSC_VER` <= 1912) |
++| 10.0         | Visual Studio 2017 (15.X) (`_MSC_VER` < 1920)           |
++| 10.1         | Visual Studio 2019 (16.X) (`_MSC_VER` < 1930)           |
++
+@@ -217 +229 @@ cmd
+-REM [Optional] The following two lines are needed for Python 2.7, but the support for it is very experimental.
++:: [Optional] Only add the next two lines if you need Python 2.7. If you use Python 3, ignore these two lines.
+@@ -221 +233,10 @@ set FORCE_PY27_BUILD=1
+-set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
++:: [Optional] If you want to build with VS 2019 generator, please change the value in the next line to `Visual Studio 16 2019`.
++:: Note: This value is useless if Ninja is detected. However, you can force that by using `set USE_NINJA=OFF`.
++set CMAKE_GENERATOR=Visual Studio 15 2017
++
++:: Read the content in the previous section carefully before you preceed.
++:: [Optional] If you want to override the underlying toolset used by Ninja and Visual Studio with CUDA, please run the following script block.
++:: "Visual Studio 2017 Developer Command Prompt" will be run automatically.
++:: Make sure you have CMake >= 3.12 before you do this when you use the Visual Studio generator.
++:: It's an essential step if you use Python 3.5.
++set CMAKE_GENERATOR_TOOLSET_VERSION=14.11
+@@ -222,0 +244 @@ set DISTUTILS_USE_SDK=1
++for /f "usebackq tokens=*" %i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -version [15^,16^) -products * -latest -property installationPath`) do call "%i\VC\Auxiliary\Build\vcvarsall.bat" x64 -vcvars_ver=%CMAKE_GENERATOR_TOOLSET_VERSION%
+@@ -224,2 +246,2 @@ set DISTUTILS_USE_SDK=1
+-REM Run "Visual Studio 2017 Developer Command Prompt"
+-for /f "usebackq tokens=*" %i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -version [15^,16^) -products * -latest -property installationPath`) do call "%i\VC\Auxiliary\Build\vcvarsall.bat" x64 -vcvars_ver=14.11
++:: [Optional] If you want to override the cuda host compiler
++set CUDAHOSTCXX=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.11.25503\bin\HostX64\x64\cl.exe
+diff --git a/README.md b/README.md
+index f647621ba9..861b1d5068 100644
+--- a/README.md
++++ b/README.md
+@@ -230,0 +231,20 @@ python setup.py install
++##### Adjust Build Options (Optional)
++
++You can adjust the configuration of cmake variables optionally (without building first), by doing
++the following. For example, adjusting the pre-detected directories for CuDNN or BLAS can be done
++with such a step.
++
++On Linux
++```bash
++export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
++python setup.py build --cmake-only
++ccmake build  # or cmake-gui build
++```
++
++On macOS
++```bash
++export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
++MACOSX_DEPLOYMENT_TARGET=10.9 CC=clang CXX=clang++ python setup.py build --cmake-only
++ccmake build  # or cmake-gui build
++```
++
+diff --git a/README.md b/README.md
+index be886cda25..f647621ba9 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ If you use NumPy, then you have used Tensors (a.k.a ndarray).
+-![Tensor illustration](https://github.com/pytorch/pytorch/blob/master/docs/source/_static/img/tensor_illustration.png)
++![Tensor illustration](./docs/source/_static/img/tensor_illustration.png)
+diff --git a/README.md b/README.md
+index ea94c82ec0..be886cda25 100644
+--- a/README.md
++++ b/README.md
+@@ -159,2 +159,2 @@ If you want to compile with CUDA support, install
+-- [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) 7.5 or above
+-- [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) v6.x or above
++- [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) 9 or above
++- [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) v7 or above
+@@ -178 +178 @@ On Linux
+-conda install -c pytorch magma-cuda90 # or [magma-cuda80 | magma-cuda92 | magma-cuda100 ] depending on your cuda version
++conda install -c pytorch magma-cuda90 # or [magma-cuda92 | magma-cuda100 ] depending on your cuda version
+@@ -212,3 +211,0 @@ If the version of Visual Studio 2017 is higher than 15.4.5, installing of "VC++
+-For building against CUDA 8.0 Visual Studio 2015 Update 3 (version 14.0), and the [patch](https://download.microsoft.com/download/8/1/d/81dbe6bb-ed92-411a-bef5-3a75ff972c6a/vc14-kb4020481.exe) are needed to be installed too.
+-The details of the patch can be found [here](https://support.microsoft.com/en-gb/help/4020481/fix-link-exe-crashes-with-a-fatal-lnk1000-error-when-you-use-wholearch).
+-
+@@ -224,3 +220,0 @@ set FORCE_PY27_BUILD=1
+-REM [Optional] As for CUDA 8, VS2015 Update 3 is required; use the following line.
+-set "CUDAHOSTCXX=%VS140COMNTOOLS%..\..\VC\bin\amd64\cl.exe"
+-
+diff --git a/README.md b/README.md
+index 3b4ee37e42..ea94c82ec0 100644
+--- a/README.md
++++ b/README.md
+@@ -154 +154 @@ If you are installing from source, we highly recommend installing an [Anaconda](
+-You will get a high-quality BLAS library (MKL) and you get a controlled compiler version regardless of your Linux distro.
++You will get a high-quality BLAS library (MKL) and you get controlled dependency versions regardless of your Linux distro.
+@@ -186 +186 @@ cd pytorch
+-git submodule sync 
++git submodule sync
+diff --git a/README.md b/README.md
+index fdd4846f4f..3b4ee37e42 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ Common
+-conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
++conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index 96204655ca..fdd4846f4f 100644
+--- a/README.md
++++ b/README.md
+@@ -184,0 +185,3 @@ cd pytorch
++# if you are updating an existing checkout
++git submodule sync 
++git submodule update --init --recursive
+diff --git a/README.md b/README.md
+index 9580ed56aa..96204655ca 100644
+--- a/README.md
++++ b/README.md
+@@ -40,5 +40,6 @@ At a granular level, PyTorch is a library that consists of the following compone
+-| **torch** | a Tensor library like NumPy, with strong GPU support |
+-| **torch.autograd** | a tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
+-| **torch.nn** | a neural networks library deeply integrated with autograd designed for maximum flexibility |
+-| **torch.multiprocessing** | Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training |
+-| **torch.utils** | DataLoader and other utility functions for convenience |
++| [**torch**](https://pytorch.org/docs/stable/torch.html) | a Tensor library like NumPy, with strong GPU support |
++| [**torch.autograd**](https://pytorch.org/docs/stable/autograd.html) | a tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
++| [**torch.jit**](https://pytorch.org/docs/stable/jit.html) | a compilation stack (TorchScript) to create serializable and optimizable models from PyTorch code  |
++| [**torch.nn**](https://pytorch.org/docs/stable/nn.html) | a neural networks library deeply integrated with autograd designed for maximum flexibility |
++| [**torch.multiprocessing**](https://pytorch.org/docs/stable/multiprocessing.html) | Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training |
++| [**torch.utils**](https://pytorch.org/docs/stable/data.html) | DataLoader and other utility functions for convenience |
+diff --git a/README.md b/README.md
+index b2b508111e..9580ed56aa 100644
+--- a/README.md
++++ b/README.md
+@@ -152 +152 @@ They requires JetPack 4.2 and above and are maintained by @dusty-nv
+-If you are installing from source, we highly recommend installing an [Anaconda](https://www.continuum.io/downloads) environment.
++If you are installing from source, we highly recommend installing an [Anaconda](https://www.anaconda.com/distribution/#download-section) environment.
+@@ -155 +155 @@ You will get a high-quality BLAS library (MKL) and you get a controlled compiler
+-Once you have [Anaconda](https://www.continuum.io/downloads) installed, here are the instructions.
++Once you have [Anaconda](https://www.anaconda.com/distribution/#download-section) installed, here are the instructions.
+diff --git a/README.md b/README.md
+index 9cb31562cd..b2b508111e 100644
+--- a/README.md
++++ b/README.md
+@@ -134,0 +135,15 @@ Commands to install from binaries via Conda or pip wheels are on our website:
++
++#### NVIDIA Jetson platforms
++
++Python wheels for NVIDIA's Jetson Nano, Jetson TX2, and Jetson AGX Xavier are available via the following URLs:
++
++- Stable binaries:
++  - Python 2.7: https://nvidia.box.com/v/torch-stable-cp27-jetson-jp42
++  - Python 3.6: https://nvidia.box.com/v/torch-stable-cp36-jetson-jp42
++- Rolling weekly binaries:
++  - Python 2.7: https://nvidia.box.com/v/torch-weekly-cp27-jetson-jp42
++  - Python 3.6: https://nvidia.box.com/v/torch-weekly-cp36-jetson-jp42
++
++They requires JetPack 4.2 and above and are maintained by @dusty-nv
++
++
+@@ -148,0 +164,3 @@ Other potentially useful environment variables may be found in `setup.py`.
++If you are building for NVIDIA's Jetson platforms (Jetson Nano, TX1, TX2, AGX Xavier), Instructions to [are available here](https://devtalk.nvidia.com/default/topic/1049071/jetson-nano/pytorch-for-jetson-nano/)
++
++
+diff --git a/README.md b/README.md
+index ad47813273..9cb31562cd 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ At a granular level, PyTorch is a library that consists of the following compone
+-| **torch.utils** | DataLoader, Trainer and other utility functions for convenience |
++| **torch.utils** | DataLoader and other utility functions for convenience |
+diff --git a/README.md b/README.md
+index 7f30987e84..ad47813273 100644
+--- a/README.md
++++ b/README.md
+@@ -159 +159 @@ On Linux
+-conda install -c pytorch magma-cuda92 # or [magma-cuda80 | magma-cuda91] depending on your cuda version
++conda install -c pytorch magma-cuda90 # or [magma-cuda80 | magma-cuda92 | magma-cuda100 ] depending on your cuda version
+diff --git a/README.md b/README.md
+index 3d6c08d309..7f30987e84 100644
+--- a/README.md
++++ b/README.md
+@@ -275 +275 @@ PyTorch is a community driven project with several skillful engineers and resear
+-PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury), [Soumith Chintala](http://soumith.ch) and [Gregory Chanan](https://github.com/gchanan) with major contributions coming from 10s of talented individuals in various forms and means.
++PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury), [Soumith Chintala](http://soumith.ch) and [Gregory Chanan](https://github.com/gchanan) with major contributions coming from hundreds of talented individuals in various forms and means.
+diff --git a/README.md b/README.md
+index 2359f8a0f4..3d6c08d309 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ You can reuse your favorite Python packages such as NumPy, SciPy and Cython to e
+-| Windows GPU | <center>—</center> | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/) |  <center>—</center> |
++| Windows CPU / GPU | <center>—</center> | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/) |  <center>—</center> |
+diff --git a/README.md b/README.md
+index 9b8655e6f1..2359f8a0f4 100644
+--- a/README.md
++++ b/README.md
+@@ -259 +259 @@ Three pointers to get you started:
+-* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . Our slack channel is invite-only to promote a healthy balance between power-users and beginners. If you need a slack invite, ping us at slack@pytorch.org
++* Slack: The [PyTorch Slack](https://pytorch.slack.com/) hosts a primary audience of moderate to experienced PyTorch users and developers for general chat, online discussions, collaboration etc. If you are a beginner looking for help, the primary medium is [PyTorch Forums](https://discuss.pytorch.org). If you need a slack invite, please fill this form: https://goo.gl/forms/PP1AGvNHpSaJP8to1
+diff --git a/README.md b/README.md
+index 8ce292e8a6..9b8655e6f1 100644
+--- a/README.md
++++ b/README.md
+@@ -149,4 +148,0 @@ Other potentially useful environment variables may be found in `setup.py`.
+-If you want to build on Windows, Visual Studio 2017 14.11 toolset and NVTX are also needed.
+-Especially, for CUDA 8 build on Windows, there will be an additional requirement for VS 2015 Update 3 and a patch for it.
+-The details of the patch can be found out [here](https://support.microsoft.com/en-gb/help/4020481/fix-link-exe-crashes-with-a-fatal-lnk1000-error-when-you-use-wholearch).
+-
+@@ -185,0 +182,14 @@ On Windows
++
++At least Visual Studio 2017 Update 3 (version 15.3.3 with the toolset 14.11) and [NVTX](https://docs.nvidia.com/gameworks/content/gameworkslibrary/nvtx/nvidia_tools_extension_library_nvtx.htm) are needed.
++
++If the version of Visual Studio 2017 is higher than 15.4.5, installing of "VC++ 2017 version 15.4 v14.11 toolset" is strongly recommended.
++<br/> If the version of Visual Studio 2017 is lesser than 15.3.3, please update Visual Studio 2017 to the latest version along with installing "VC++ 2017 version 15.4 v14.11 toolset".
++<br/> There is no guarantee of the correct building with VC++ 2017 toolsets, others than version 15.4 v14.11.
++<br/> "VC++ 2017 version 15.4 v14.11 toolset" might be installed onto already installed Visual Studio 2017 by running its installation once again and checking the corresponding checkbox under "Individual components"/"Compilers, build tools, and runtimes".
++
++For building against CUDA 8.0 Visual Studio 2015 Update 3 (version 14.0), and the [patch](https://download.microsoft.com/download/8/1/d/81dbe6bb-ed92-411a-bef5-3a75ff972c6a/vc14-kb4020481.exe) are needed to be installed too.
++The details of the patch can be found [here](https://support.microsoft.com/en-gb/help/4020481/fix-link-exe-crashes-with-a-fatal-lnk1000-error-when-you-use-wholearch).
++
++NVTX is a part of CUDA distributive, where it is called "Nsight Compute". For installing it onto already installed CUDA run CUDA installation once again and check the corresponding checkbox.
++Be sure that CUDA with Nsight Compute is installed after Visual Studio 2017.
++
+@@ -187,4 +197,2 @@ On Windows
+-set "VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build"
+-set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
+-set DISTUTILS_USE_SDK=1
+-REM The following two lines are needed for Python 2.7, but the support for it is very experimental.
++cmd
++REM [Optional] The following two lines are needed for Python 2.7, but the support for it is very experimental.
+@@ -193,2 +200,0 @@ set FORCE_PY27_BUILD=1
+-REM As for CUDA 8, VS2015 Update 3 is also required to build PyTorch. Use the following line.
+-set "CUDAHOSTCXX=%VS140COMNTOOLS%\..\..\VC\bin\amd64\cl.exe"
+@@ -196 +202,9 @@ set "CUDAHOSTCXX=%VS140COMNTOOLS%\..\..\VC\bin\amd64\cl.exe"
+-call "%VS150COMNTOOLS%\vcvarsall.bat" x64 -vcvars_ver=14.11
++REM [Optional] As for CUDA 8, VS2015 Update 3 is required; use the following line.
++set "CUDAHOSTCXX=%VS140COMNTOOLS%..\..\VC\bin\amd64\cl.exe"
++
++set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
++set DISTUTILS_USE_SDK=1
++
++REM Run "Visual Studio 2017 Developer Command Prompt"
++for /f "usebackq tokens=*" %i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -version [15^,16^) -products * -latest -property installationPath`) do call "%i\VC\Auxiliary\Build\vcvarsall.bat" x64 -vcvars_ver=14.11
++
+@@ -197,0 +212 @@ python setup.py install
++
+diff --git a/README.md b/README.md
+index ae59d7e635..8ce292e8a6 100644
+--- a/README.md
++++ b/README.md
+@@ -202 +202 @@ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specify which Python version is to be used by Miniconda, or leave it unset to use the default. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specify which Python version is to be used by Miniconda, or leave it unset to use the default. Build from pytorch repo directory as docker needs to copy git repo into docker filesystem while building the image.
+diff --git a/README.md b/README.md
+index cc076d754f..ae59d7e635 100644
+--- a/README.md
++++ b/README.md
+@@ -153 +153 @@ The details of the patch can be found out [here](https://support.microsoft.com/e
+-#### Install Optional Dependencies
++#### Install Dependencies
+@@ -155,5 +155,2 @@ The details of the patch can be found out [here](https://support.microsoft.com/e
+-On Linux
+-```bash
+-export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" # [anaconda root directory]
+-
+-# Install basic dependencies
++Common
++```
+@@ -161,3 +157,0 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-
+-# Add LAPACK support for the GPU
+-conda install -c pytorch magma-cuda92 # or [magma-cuda80 | magma-cuda91] depending on your cuda version
+@@ -166 +160 @@ conda install -c pytorch magma-cuda92 # or [magma-cuda80 | magma-cuda91] dependi
+-On macOS
++On Linux
+@@ -168,2 +162,2 @@ On macOS
+-export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
++# Add LAPACK support for the GPU if needed
++conda install -c pytorch magma-cuda92 # or [magma-cuda80 | magma-cuda91] depending on your cuda version
+@@ -172,4 +165,0 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-On Windows
+-```cmd
+-conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-```
+@@ -184,0 +175 @@ On Linux
++export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
+@@ -189,0 +181 @@ On macOS
++export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
+diff --git a/README.md b/README.md
+index cc43703eee..cc076d754f 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +44,0 @@ At a granular level, PyTorch is a library that consists of the following compone
+-| **torch.legacy(.nn/.optim)** | legacy code that has been ported over from torch for backward compatibility reasons |
+diff --git a/README.md b/README.md
+index d235fc7474..cc43703eee 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ See also the [ci.pytorch.org HUD](https://ezyang.github.io/pytorch-ci-hud/build/
+-## More about PyTorch
++## More About PyTorch
+@@ -50 +50 @@ Usually one uses PyTorch either as:
+-- a deep learning research platform that provides maximum flexibility and speed
++- a deep learning research platform that provides maximum flexibility and speed.
+@@ -118 +118 @@ This enables you to train bigger deep learning models than before.
+-### Extensions without Pain
++### Extensions Without Pain
+@@ -134 +133,0 @@ Commands to install from binaries via Conda or pip wheels are on our website:
+-
+@@ -155 +154 @@ The details of the patch can be found out [here](https://support.microsoft.com/e
+-#### Install optional dependencies
++#### Install Optional Dependencies
+@@ -178 +177 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-#### Get the PyTorch source
++#### Get the PyTorch Source
+@@ -210 +209 @@ python setup.py install
+-### Docker image
++### Docker Image
+@@ -212 +211 @@ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specify which python version is to be used by Miniconda, or leave it unset to use the default. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specify which Python version is to be used by Miniconda, or leave it unset to use the default. Build as usual
+@@ -259,2 +258 @@ Three pointers to get you started:
+-PyTorch has a 90 day release cycle (major releases).
+-Its current state is Beta, we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
++PyTorch has a 90 day release cycle (major releases). Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
+diff --git a/README.md b/README.md
+index 91ec557c5f..d235fc7474 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +10,0 @@ You can reuse your favorite Python packages such as NumPy, SciPy and Cython to e
+-We are in an early-release beta. Expect some adventures and rough edges.
+-
+diff --git a/README.md b/README.md
+index 60a077851c..91ec557c5f 100644
+--- a/README.md
++++ b/README.md
+@@ -165 +164,0 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-conda install -c mingfeima mkldnn
+diff --git a/README.md b/README.md
+index 95d20e828d..60a077851c 100644
+--- a/README.md
++++ b/README.md
+@@ -215 +215 @@ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specificy which python to be used by Miniconda, or leave it unset to use the default. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specify which python version is to be used by Miniconda, or leave it unset to use the default. Build as usual
+diff --git a/README.md b/README.md
+index 25b38b2821..95d20e828d 100644
+--- a/README.md
++++ b/README.md
+@@ -25,5 +25,7 @@ We are in an early-release beta. Expect some adventures and rough edges.
+-| System | 2.7 | 3.5 |
+-| --- | --- | --- |
+-| Linux CPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) |
+-| Linux GPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) |
+-| Windows GPU | <center>—</center> | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/)
++| System | 2.7 | 3.5 | 3.6 |
++| :---: | :---: | :---: | :--: |
++| Linux CPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | <center>—</center> |
++| Linux GPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | <center>—</center> |
++| Windows GPU | <center>—</center> | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/) |  <center>—</center> |
++| Linux (ppc64le) CPU | [![Build Status](https://powerci.osuosl.org/job/pytorch-master-nightly-py2-linux-ppc64le/badge/icon)](https://powerci.osuosl.org/job/pytorch-master-nightly-py2-linux-ppc64le/) | — | [![Build Status](https://powerci.osuosl.org/job/pytorch-master-nightly-py3-linux-ppc64le/badge/icon)](https://powerci.osuosl.org/job/pytorch-master-nightly-py3-linux-ppc64le/) |
++| Linux (ppc64le) GPU | [![Build Status](https://powerci.osuosl.org/job/pytorch-linux-cuda9-cudnn7-py2-mpi-build-test-gpu/badge/icon)](https://powerci.osuosl.org/job/pytorch-linux-cuda9-cudnn7-py2-mpi-build-test-gpu/) | — | [![Build Status](https://powerci.osuosl.org/job/pytorch-linux-cuda92-cudnn7-py3-mpi-build-test-gpu/badge/icon)](https://powerci.osuosl.org/job/pytorch-linux-cuda92-cudnn7-py3-mpi-build-test-gpu/) |
+diff --git a/README.md b/README.md
+index 7d4fa43f70..25b38b2821 100644
+--- a/README.md
++++ b/README.md
+@@ -275,0 +276,4 @@ Note: this project is unrelated to [hughperkins/pytorch](https://github.com/hugh
++
++## License
++
++PyTorch is BSD-style licensed, as found in the LICENSE file.
+diff --git a/README.md b/README.md
+index 37d0afdfd5..7d4fa43f70 100644
+--- a/README.md
++++ b/README.md
+@@ -91 +91 @@ It is built to be deeply integrated into Python.
+-You can use it naturally like you would use NumPy / SciPy / scikit-learn etc.
++You can use it naturally like you would use [NumPy](http://www.numpy.org/) / [SciPy](https://www.scipy.org/) / [scikit-learn](http://scikit-learn.org) etc.
+@@ -107 +107 @@ PyTorch has minimal framework overhead. We integrate acceleration libraries
+-such as Intel MKL and NVIDIA (cuDNN, NCCL) to maximize speed.
++such as [Intel MKL](https://software.intel.com/mkl) and NVIDIA (cuDNN, NCCL) to maximize speed.
+@@ -229 +229 @@ should increase shared memory size either with `--ipc=host` or `--shm-size` comm
+-To build documentation in various formats, you will need Sphinx and the
++To build documentation in various formats, you will need [Sphinx](http://www.sphinx-doc.org) and the
+diff --git a/README.md b/README.md
+index a14a160554..37d0afdfd5 100644
+--- a/README.md
++++ b/README.md
+@@ -213 +213 @@ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass -e PYTHON_VERSION=x.y flag to specificy which python to be used by Miniconda, or leave it unset to use the default. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass `-e PYTHON_VERSION=x.y` flag to specificy which python to be used by Miniconda, or leave it unset to use the default. Build as usual
+diff --git a/README.md b/README.md
+index 918aac0627..a14a160554 100644
+--- a/README.md
++++ b/README.md
+@@ -80 +80 @@ from several research papers on this topic, as well as current and past work suc
+-[Chainer](http://chainer.org), etc.
++[Chainer](https://chainer.org), etc.
+@@ -124 +124 @@ You can write new neural network layers in Python using the torch API
+-[or your favorite NumPy-based libraries such as SciPy](http://pytorch.org/tutorials/advanced/numpy_extensions_tutorial.html).
++[or your favorite NumPy-based libraries such as SciPy](https://pytorch.org/tutorials/advanced/numpy_extensions_tutorial.html).
+@@ -127 +127 @@ If you want to write your layers in C/C++, we provide a convenient extension API
+-There is no wrapper code that needs to be written. You can see [a tutorial here](http://pytorch.org/tutorials/advanced/cpp_extension.html) and [an example here](https://github.com/pytorch/extension-cpp).
++There is no wrapper code that needs to be written. You can see [a tutorial here](https://pytorch.org/tutorials/advanced/cpp_extension.html) and [an example here](https://github.com/pytorch/extension-cpp).
+@@ -135 +135 @@ Commands to install from binaries via Conda or pip wheels are on our website:
+-[http://pytorch.org](http://pytorch.org)
++[https://pytorch.org](https://pytorch.org)
+@@ -242 +242 @@ Installation instructions and binaries for previous PyTorch versions may be foun
+-on [our website](http://pytorch.org/previous-versions).
++on [our website](https://pytorch.org/previous-versions).
+@@ -250 +250 @@ Three pointers to get you started:
+-- [The API Reference](http://pytorch.org/docs/)
++- [The API Reference](https://pytorch.org/docs/)
+@@ -253 +253 @@ Three pointers to get you started:
+-* forums: discuss implementations, research, etc. http://discuss.pytorch.org
++* forums: discuss implementations, research, etc. https://discuss.pytorch.org
+@@ -256 +256 @@ Three pointers to get you started:
+-* newsletter: no-noise, one-way email newsletter with important announcements about pytorch. You can sign-up here: http://eepurl.com/cbG0rv
++* newsletter: no-noise, one-way email newsletter with important announcements about pytorch. You can sign-up here: https://eepurl.com/cbG0rv
+diff --git a/README.md b/README.md
+index e0aa68bf8b..918aac0627 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ conda install -c mingfeima mkldnn
+-conda install -c pytorch magma-cuda80 # or magma-cuda90 if CUDA 9
++conda install -c pytorch magma-cuda92 # or [magma-cuda80 | magma-cuda91] depending on your cuda version
+diff --git a/README.md b/README.md
+index 39d02a3f7b..e0aa68bf8b 100644
+--- a/README.md
++++ b/README.md
+@@ -205 +205 @@ REM As for CUDA 8, VS2015 Update 3 is also required to build PyTorch. Use the fo
+-set "CUDA_HOST_COMPILER=%VS140COMNTOOLS%\..\..\VC\bin\amd64\cl.exe"
++set "CUDAHOSTCXX=%VS140COMNTOOLS%\..\..\VC\bin\amd64\cl.exe"
+diff --git a/README.md b/README.md
+index b23bc60aa1..39d02a3f7b 100644
+--- a/README.md
++++ b/README.md
+@@ -242 +242 @@ Installation instructions and binaries for previous PyTorch versions may be foun
+-on [our website](http://pytorch.org/previous-versions/).
++on [our website](http://pytorch.org/previous-versions).
+diff --git a/README.md b/README.md
+index 4b996cc1b4..b23bc60aa1 100644
+--- a/README.md
++++ b/README.md
+@@ -204,3 +204,2 @@ set FORCE_PY27_BUILD=1
+-REM As for CUDA 8, VS2015 Update 3 is also required to build PyTorch. Use the following two lines.
+-set "PREBUILD_COMMAND=%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
+-set PREBUILD_COMMAND_ARGS=x64
++REM As for CUDA 8, VS2015 Update 3 is also required to build PyTorch. Use the following line.
++set "CUDA_HOST_COMPILER=%VS140COMNTOOLS%\..\..\VC\bin\amd64\cl.exe"
+diff --git a/README.md b/README.md
+index b909001edc..4b996cc1b4 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ We are in an early-release beta. Expect some adventures and rough edges.
++  - [Building the Documentation](#building-the-documentation)
+@@ -226,0 +228,12 @@ should increase shared memory size either with `--ipc=host` or `--shm-size` comm
++### Building the Documentation
++
++To build documentation in various formats, you will need Sphinx and the
++readthedocs theme.
++
++```
++cd docs/
++pip install -r requirements.txt
++```
++You can then build the documentation by running ``make <format>`` from the
++``docs/`` folder. Run ``make`` to get a list of all available output formats.
++
+diff --git a/README.md b/README.md
+index 77f94142e0..b909001edc 100644
+--- a/README.md
++++ b/README.md
+@@ -108,2 +108 @@ At the core, its CPU and GPU Tensor and neural network backends
+-(TH, THC, THNN, THCUNN) are written as independent libraries with a C99 API.
+-They are mature and have been tested for years.
++(TH, THC, THNN, THCUNN) are mature and have been tested for years.
+diff --git a/README.md b/README.md
+index b8895b7b16..77f94142e0 100644
+--- a/README.md
++++ b/README.md
+@@ -59,2 +59,2 @@ If you use NumPy, then you have used Tensors (a.k.a ndarray).
+-PyTorch provides Tensors that can live either on the CPU or the GPU, and accelerate
+-compute by a huge amount.
++PyTorch provides Tensors that can live either on the CPU or the GPU, and accelerates the
++computation by a huge amount.
+diff --git a/README.md b/README.md
+index c781f4a7eb..b8895b7b16 100644
+--- a/README.md
++++ b/README.md
+@@ -214 +214 @@ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v7. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. You can pass -e PYTHON_VERSION=x.y flag to specificy which python to be used by Miniconda, or leave it unset to use the default. Build as usual
+diff --git a/README.md b/README.md
+index 4728c6b11e..c781f4a7eb 100644
+--- a/README.md
++++ b/README.md
+@@ -151 +151,3 @@ Other potentially useful environment variables may be found in `setup.py`.
+-If you want to build on Windows, Visual Studio 2017 and NVTX are also needed.
++If you want to build on Windows, Visual Studio 2017 14.11 toolset and NVTX are also needed.
++Especially, for CUDA 8 build on Windows, there will be an additional requirement for VS 2015 Update 3 and a patch for it.
++The details of the patch can be found out [here](https://support.microsoft.com/en-gb/help/4020481/fix-link-exe-crashes-with-a-fatal-lnk1000-error-when-you-use-wholearch).
+@@ -199 +201 @@ set DISTUTILS_USE_SDK=1
+-REM The following line is needed for Python 2.7, but the support for it is very experimental.
++REM The following two lines are needed for Python 2.7, but the support for it is very experimental.
+@@ -201 +203,2 @@ set MSSdk=1
+-REM As for CUDA 8, VS2015 Update 2 or up is required to build PyTorch. Use the following two lines.
++set FORCE_PY27_BUILD=1
++REM As for CUDA 8, VS2015 Update 3 is also required to build PyTorch. Use the following two lines.
+diff --git a/README.md b/README.md
+index 35e14867cb..4728c6b11e 100644
+--- a/README.md
++++ b/README.md
+@@ -234 +234 @@ Three pointers to get you started:
+-- [Tutorials: get you started with understanding and using PyTorch](http://pytorch.org/tutorials/)
++- [Tutorials: get you started with understanding and using PyTorch](https://pytorch.org/tutorials/)
+diff --git a/README.md b/README.md
+index 27872820cc..35e14867cb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-<p align="center"><img width="40%" src="docs/source/_static/img/pytorch-logo-dark.png" /></p>
++![PyTorch Logo](https://github.com/pytorch/pytorch/blob/master/docs/source/_static/img/pytorch-logo-dark.png)
+@@ -37,26 +37,8 @@ At a granular level, PyTorch is a library that consists of the following compone
+-<table>
+-<tr>
+-    <td><b> torch </b></td>
+-    <td> a Tensor library like NumPy, with strong GPU support </td>
+-</tr>
+-<tr>
+-    <td><b> torch.autograd </b></td>
+-    <td> a tape-based automatic differentiation library that supports all differentiable Tensor operations in torch </td>
+-</tr>
+-<tr>
+-    <td><b> torch.nn </b></td>
+-    <td> a neural networks library deeply integrated with autograd designed for maximum flexibility </td>
+-</tr>
+-<tr>
+-    <td><b> torch.multiprocessing  </b></td>
+-    <td> Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training. </td>
+-</tr>
+-<tr>
+-    <td><b> torch.utils </b></td>
+-    <td> DataLoader, Trainer and other utility functions for convenience </td>
+-</tr>
+-<tr>
+-    <td><b> torch.legacy(.nn/.optim) </b></td>
+-    <td> legacy code that has been ported over from torch for backward compatibility reasons </td>
+-</tr>
+-</table>
++| Component | Description |
++| ---- | --- |
++| **torch** | a Tensor library like NumPy, with strong GPU support |
++| **torch.autograd** | a tape-based automatic differentiation library that supports all differentiable Tensor operations in torch |
++| **torch.nn** | a neural networks library deeply integrated with autograd designed for maximum flexibility |
++| **torch.multiprocessing** | Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training |
++| **torch.utils** | DataLoader, Trainer and other utility functions for convenience |
++| **torch.legacy(.nn/.optim)** | legacy code that has been ported over from torch for backward compatibility reasons |
+@@ -75 +57 @@ If you use NumPy, then you have used Tensors (a.k.a ndarray).
+-<p align=center><img width="30%" src="docs/source/_static/img/tensor_illustration.png" /></p>
++![Tensor illustration](https://github.com/pytorch/pytorch/blob/master/docs/source/_static/img/tensor_illustration.png)
+@@ -102 +84 @@ You get the best of speed and flexibility for your crazy research.
+-<p align=center><img width="80%" src="docs/source/_static/img/dynamic_graph.gif" /></p>
++![Dynamic graph](https://github.com/pytorch/pytorch/blob/master/docs/source/_static/img/dynamic_graph.gif)
+diff --git a/README.md b/README.md
+index a254371236..27872820cc 100644
+--- a/README.md
++++ b/README.md
+@@ -218,0 +219,3 @@ set MSSdk=1
++REM As for CUDA 8, VS2015 Update 2 or up is required to build PyTorch. Use the following two lines.
++set "PREBUILD_COMMAND=%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
++set PREBUILD_COMMAND_ARGS=x64
+diff --git a/README.md b/README.md
+index 2a568dfc1e..a254371236 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ We are in an early-release beta. Expect some adventures and rough edges.
+-See also the [ci.pytorch.org HUD](https://ezyang.github.io/pytorch-ci-hud/build/pytorch-master)
++See also the [ci.pytorch.org HUD](https://ezyang.github.io/pytorch-ci-hud/build/pytorch-master).
+diff --git a/README.md b/README.md
+index fb916cc622..2a568dfc1e 100644
+--- a/README.md
++++ b/README.md
+@@ -144,3 +144,2 @@ You can write new neural network layers in Python using the torch API
+-If you want to write your layers in C/C++, we provide an extension API based on
+-[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and with minimal boilerplate.
+-There is no wrapper code that needs to be written. You can see [a tutorial here](http://pytorch.org/tutorials/advanced/c_extension.html) and [an example here](https://github.com/pytorch/extension-ffi).
++If you want to write your layers in C/C++, we provide a convenient extension API that is efficient and with minimal boilerplate.
++There is no wrapper code that needs to be written. You can see [a tutorial here](http://pytorch.org/tutorials/advanced/cpp_extension.html) and [an example here](https://github.com/pytorch/extension-cpp).
+diff --git a/README.md b/README.md
+index 07bafa51b6..fb916cc622 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30,2 @@ We are in an early-release beta. Expect some adventures and rough edges.
++See also the [ci.pytorch.org HUD](https://ezyang.github.io/pytorch-ci-hud/build/pytorch-master)
++
+diff --git a/README.md b/README.md
+index 0f9286e702..07bafa51b6 100644
+--- a/README.md
++++ b/README.md
+@@ -178 +178 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+-conda install -c intel mkl-dnn
++conda install -c mingfeima mkldnn
+diff --git a/README.md b/README.md
+index defd0ec5be..0f9286e702 100644
+--- a/README.md
++++ b/README.md
+@@ -255 +255 @@ Three pointers to get you started:
+-* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . Our slack channel is invite-only to promote a healthy balance between power-users and beginners. If you need a slack invite, ping us at soumith@pytorch.org
++* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . Our slack channel is invite-only to promote a healthy balance between power-users and beginners. If you need a slack invite, ping us at slack@pytorch.org
+diff --git a/README.md b/README.md
+index 1cf64acb3e..defd0ec5be 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
++conda install -c intel mkl-dnn
+diff --git a/README.md b/README.md
+index d2e748e0ff..1cf64acb3e 100644
+--- a/README.md
++++ b/README.md
+@@ -229 +229,2 @@ docker build -t pytorch -f docker/pytorch/Dockerfile .
+-Alternatively, if you want to use a runtime image, you can use the pre-built one from Docker Hub and run with nvidia-docker:
++You can also pull a pre-built docker image from Docker Hub and run with nvidia-docker,
++but this is not currently maintained and will pull PyTorch 0.2.
+diff --git a/README.md b/README.md
+index c622daa7e2..d2e748e0ff 100644
+--- a/README.md
++++ b/README.md
+@@ -214,0 +215,2 @@ set DISTUTILS_USE_SDK=1
++REM The following line is needed for Python 2.7, but the support for it is very experimental.
++set MSSdk=1
+diff --git a/README.md b/README.md
+index 40fc7b9419..c622daa7e2 100644
+--- a/README.md
++++ b/README.md
+@@ -212,2 +211,0 @@ On Windows
+-xcopy /Y aten\src\ATen\common_with_cwrap.py tools\shared\cwrap_common.py
+-
+diff --git a/README.md b/README.md
+index 17fff2a47c..40fc7b9419 100644
+--- a/README.md
++++ b/README.md
+@@ -165,0 +166 @@ If you want to disable CUDA support, export environment variable `NO_CUDA=1`.
++Other potentially useful environment variables may be found in `setup.py`.
+diff --git a/README.md b/README.md
+index 36db2dc3c9..17fff2a47c 100644
+--- a/README.md
++++ b/README.md
+@@ -258 +258 @@ PyTorch has a 90 day release cycle (major releases).
+-It's current state is Beta, we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
++Its current state is Beta, we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
+diff --git a/README.md b/README.md
+index 067b183a6e..36db2dc3c9 100644
+--- a/README.md
++++ b/README.md
+@@ -225 +225 @@ Dockerfile is supplied to build images with cuda support and cudnn v7. Build as
+-docker build -t pytorch .
++docker build -t pytorch -f docker/pytorch/Dockerfile .
+diff --git a/README.md b/README.md
+index 2d070d3ff1..067b183a6e 100644
+--- a/README.md
++++ b/README.md
+@@ -185 +185 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy pyyaml setuptools cmake cffi typing
++conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+@@ -190 +190 @@ On Windows
+-conda install numpy pyyaml setuptools cmake cffi typing
++conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index 2d6c007e40..2d070d3ff1 100644
+--- a/README.md
++++ b/README.md
+@@ -214,0 +215 @@ set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
++set DISTUTILS_USE_SDK=1
+@@ -216 +217 @@ set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
+-call "%VS150COMNTOOLS%\vcvarsx86_amd64.bat"
++call "%VS150COMNTOOLS%\vcvarsall.bat" x64 -vcvars_ver=14.11
+diff --git a/README.md b/README.md
+index 70839aed61..2d6c007e40 100644
+--- a/README.md
++++ b/README.md
+@@ -166,0 +167,2 @@ If you want to disable CUDA support, export environment variable `NO_CUDA=1`.
++If you want to build on Windows, Visual Studio 2017 and NVTX are also needed.
++
+@@ -184,0 +187,5 @@ conda install numpy pyyaml setuptools cmake cffi typing
++
++On Windows
++```cmd
++conda install numpy pyyaml setuptools cmake cffi typing
++```
+@@ -201,0 +209,11 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=clang CXX=clang++ python setup.py install
++On Windows
++```cmd
++xcopy /Y aten\src\ATen\common_with_cwrap.py tools\shared\cwrap_common.py
++
++set "VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build"
++set CMAKE_GENERATOR=Visual Studio 15 2017 Win64
++
++call "%VS150COMNTOOLS%\vcvarsx86_amd64.bat"
++python setup.py install
++```
++
+diff --git a/README.md b/README.md
+index 554b1f4350..70839aed61 100644
+--- a/README.md
++++ b/README.md
+@@ -174 +174 @@ export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" # [anaconda root direct
+-conda install numpy pyyaml mkl setuptools cmake cffi typing
++conda install numpy pyyaml mkl mkl-include setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index ff854ffd3e..554b1f4350 100644
+--- a/README.md
++++ b/README.md
+@@ -187,0 +188 @@ git clone --recursive https://github.com/pytorch/pytorch
++cd pytorch
+diff --git a/README.md b/README.md
+index 5ae0a091c8..ff854ffd3e 100644
+--- a/README.md
++++ b/README.md
+@@ -183 +183 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy pyyaml setuptools cmake cffi
++conda install numpy pyyaml setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index 54537bb0ae..5ae0a091c8 100644
+--- a/README.md
++++ b/README.md
+@@ -174 +174 @@ export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" # [anaconda root direct
+-conda install numpy pyyaml mkl setuptools cmake cffi
++conda install numpy pyyaml mkl setuptools cmake cffi typing
+diff --git a/README.md b/README.md
+index e67765572b..54537bb0ae 100644
+--- a/README.md
++++ b/README.md
+@@ -203 +203 @@ MACOSX_DEPLOYMENT_TARGET=10.9 CC=clang CXX=clang++ python setup.py install
+-Dockerfile is supplied to build images with cuda support and cudnn v6. Build as usual
++Dockerfile is supplied to build images with cuda support and cudnn v7. Build as usual
+@@ -208,5 +207,0 @@ docker build -t pytorch .
+-Dockerfile to build with cuda 9 and cudnn v7 (with Volta support) is in tools/docker, the build command is
+-
+-```
+-docker build -t pytorch_cuda9 -f tools/docker/Dockerfile9 .
+-```
+diff --git a/README.md b/README.md
+index e3683af072..e67765572b 100644
+--- a/README.md
++++ b/README.md
+@@ -177 +177 @@ conda install numpy pyyaml mkl setuptools cmake cffi
+-conda install -c soumith magma-cuda80 # or magma-cuda75 if CUDA 7.5
++conda install -c pytorch magma-cuda80 # or magma-cuda90 if CUDA 9
+diff --git a/README.md b/README.md
+index d3b522c7ce..e3683af072 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ We are in an early-release beta. Expect some adventures and rough edges.
+-| Windows GPU | --- | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/)
++| Windows GPU | <center>—</center> | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/)
+diff --git a/README.md b/README.md
+index aeea9c0942..d3b522c7ce 100644
+--- a/README.md
++++ b/README.md
+@@ -26,3 +26,3 @@ We are in an early-release beta. Expect some adventures and rough edges.
+-| Linux CPU | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) |
+-| Linux GPU | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2-linux)](https://build.pytorch.org/job/pytorch-master-py2-linux) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3-linux)](https://build.pytorch.org/job/pytorch-master-py3-linux) |
+-| macOS CPU | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2-osx-cpu)](https://build.pytorch.org/job/pytorch-master-py2-osx-cpu) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3-osx-cpu)](https://build.pytorch.org/job/pytorch-master-py3-osx-cpu) |
++| Linux CPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) |
++| Linux GPU | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-master/) |
++| Windows GPU | --- | [![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/badge/icon)](https://ci.pytorch.org/jenkins/job/pytorch-builds/job/pytorch-win-ws2016-cuda9-cudnn7-py3-trigger/)
+diff --git a/README.md b/README.md
+index f038d5ec11..aeea9c0942 100644
+--- a/README.md
++++ b/README.md
+@@ -180 +180 @@ conda install -c soumith magma-cuda80 # or magma-cuda75 if CUDA 7.5
+-On OSX
++On macOS
+@@ -196 +196 @@ python setup.py install
+-On OSX
++On macOS
+diff --git a/README.md b/README.md
+index 905cb5cf20..f038d5ec11 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ We are in an early-release beta. Expect some adventures and rough edges.
++  - [Previous Versions](#previous-versions)
+@@ -219,0 +221,5 @@ should increase shared memory size either with `--ipc=host` or `--shm-size` comm
++### Previous Versions
++
++Installation instructions and binaries for previous PyTorch versions may be found
++on [our website](http://pytorch.org/previous-versions/).
++
+diff --git a/README.md b/README.md
+index fe344e21c3..905cb5cf20 100644
+--- a/README.md
++++ b/README.md
+@@ -204,0 +205 @@ docker build -t pytorch .
++```
+@@ -207,0 +209 @@ Dockerfile to build with cuda 9 and cudnn v7 (with Volta support) is in tools/do
++```
+diff --git a/README.md b/README.md
+index e4e37452cc..fe344e21c3 100644
+--- a/README.md
++++ b/README.md
+@@ -204,0 +205,4 @@ docker build -t pytorch .
++
++Dockerfile to build with cuda 9 and cudnn v7 (with Volta support) is in tools/docker, the build command is
++
++docker build -t pytorch_cuda9 -f tools/docker/Dockerfile9 .
+diff --git a/README.md b/README.md
+index b10bdae8d7..e4e37452cc 100644
+--- a/README.md
++++ b/README.md
+@@ -220 +220 @@ Three pointers to get you started:
+-- The API Reference: [http://pytorch.org/docs/](http://pytorch.org/docs/)
++- [The API Reference](http://pytorch.org/docs/)
+diff --git a/README.md b/README.md
+index c82646bbf2..b10bdae8d7 100644
+--- a/README.md
++++ b/README.md
+@@ -92 +92 @@ from several research papers on this topic, as well as current and past work suc
+-[autograd](https://github.com/twitter/torch-autograd),
++[torch-autograd](https://github.com/twitter/torch-autograd),
+diff --git a/README.md b/README.md
+index 3b0b71da1a..c82646bbf2 100644
+--- a/README.md
++++ b/README.md
+@@ -162 +162 @@ If you want to compile with CUDA support, install
+-- [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) v5.x or above
++- [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) v6.x or above
+diff --git a/README.md b/README.md
+index b85c8d5186..3b0b71da1a 100644
+--- a/README.md
++++ b/README.md
+@@ -123 +123 @@ At the core, its CPU and GPU Tensor and neural network backends
+-(TH, THC, THNN, THCUNN) are written as independent libraries with a C99 API.  
++(TH, THC, THNN, THCUNN) are written as independent libraries with a C99 API.
+@@ -173 +173 @@ export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" # [anaconda root direct
+-conda install numpy pyyaml mkl setuptools cmake gcc cffi
++conda install numpy pyyaml mkl setuptools cmake cffi
+diff --git a/README.md b/README.md
+index be94b1ec04..b85c8d5186 100644
+--- a/README.md
++++ b/README.md
+@@ -183,0 +184,4 @@ conda install numpy pyyaml setuptools cmake cffi
++#### Get the PyTorch source
++```bash
++git clone --recursive https://github.com/pytorch/pytorch
++```
+diff --git a/README.md b/README.md
+index 47647f7178..be94b1ec04 100644
+--- a/README.md
++++ b/README.md
+@@ -234,8 +233,0 @@ Sending a PR without discussion might end up resulting in a rejected PR, because
+-**For the next release cycle, these are the 3 big features we are planning to add:**
+-
+-1. [Distributed PyTorch](https://github.com/pytorch/pytorch/issues/241) (a draft implementation is present in this [branch](https://github.com/apaszke/pytorch-dist) )
+-2. Backward of Backward - Backpropagating through the optimization process itself. Some past and recent papers such as
+-   [Double Backprop](http://yann.lecun.com/exdb/publis/pdf/drucker-lecun-91.pdf) and [Unrolled GANs](https://arxiv.org/abs/1611.02163) need this.
+-3. Lazy Execution Engine for autograd - This will enable us to optionally introduce caching and JIT compilers to optimize autograd code.
+-
+-
+@@ -246 +238,2 @@ PyTorch is a community driven project with several skillful engineers and resear
+-PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury) and [Soumith Chintala](http://soumith.ch) with major contributions coming from 10s of talented individuals in various forms and means. A non-exhaustive but growing list needs to mention: Sergey Zagoruyko, Adam Lerer, Francisco Massa, Andreas Kopf, James Bradbury, Zeming Lin, Yuandong Tian, Guillaume Lample, Marat Dukhan, Natalia Gimelshein.
++PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury), [Soumith Chintala](http://soumith.ch) and [Gregory Chanan](https://github.com/gchanan) with major contributions coming from 10s of talented individuals in various forms and means.
++A non-exhaustive but growing list needs to mention: Trevor Killeen, Sasank Chilamkurthy, Sergey Zagoruyko, Adam Lerer, Francisco Massa, Alykhan Tejani, Luca Antiga, Alban Desmaison, Andreas Kopf, James Bradbury, Zeming Lin, Yuandong Tian, Guillaume Lample, Marat Dukhan, Natalia Gimelshein, Christian Sarofeen, Martin Raison, Edward Yang, Zachary Devito.
+diff --git a/README.md b/README.md
+index 0f88660274..47647f7178 100644
+--- a/README.md
++++ b/README.md
+@@ -202,7 +202 @@ docker build -t pytorch .
+-Alternatively, if you want a runtime image, build with
+-
+-```
+-docker build -t pytorch . -f tools/docker/Dockerfile_runtime
+-
+-```
+-and run with nvidia-docker:
++Alternatively, if you want to use a runtime image, you can use the pre-built one from Docker Hub and run with nvidia-docker:
+@@ -210 +204 @@ and run with nvidia-docker:
+-nvidia-docker run --rm -ti --ipc=host pytorch
++nvidia-docker run --rm -ti --ipc=host pytorch/pytorch:latest
+diff --git a/README.md b/README.md
+index 5e281f1161..0f88660274 100644
+--- a/README.md
++++ b/README.md
+@@ -227 +227 @@ Three pointers to get you started:
+-* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping us at soumith@pytorch.org
++* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . Our slack channel is invite-only to promote a healthy balance between power-users and beginners. If you need a slack invite, ping us at soumith@pytorch.org
+diff --git a/README.md b/README.md
+index c51e1fc2bc..5e281f1161 100644
+--- a/README.md
++++ b/README.md
+@@ -170 +170 @@ On Linux
+-export CMAKE_PREFIX_PATH=[anaconda root directory]
++export CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" # [anaconda root directory]
+diff --git a/README.md b/README.md
+index 52aee02c99..c51e1fc2bc 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ PyTorch is a Python package that provides two high-level features:
+-You can reuse your favorite python packages such as NumPy, SciPy and Cython to extend PyTorch when needed.
++You can reuse your favorite Python packages such as NumPy, SciPy and Cython to extend PyTorch when needed.
+diff --git a/README.md b/README.md
+index 82418025b6..52aee02c99 100644
+--- a/README.md
++++ b/README.md
+@@ -210 +210 @@ and run with nvidia-docker:
+-nvidia-docker run --rm -ti --ipc=host pytorch-cudnnv6
++nvidia-docker run --rm -ti --ipc=host pytorch
+diff --git a/README.md b/README.md
+index 09f31acef5..82418025b6 100644
+--- a/README.md
++++ b/README.md
+@@ -200 +200,7 @@ Dockerfile is supplied to build images with cuda support and cudnn v6. Build as
+-docker build -t pytorch-cudnnv6 .
++docker build -t pytorch .
++```
++Alternatively, if you want a runtime image, build with
++
++```
++docker build -t pytorch . -f tools/docker/Dockerfile_runtime
++
+diff --git a/README.md b/README.md
+index 9de45a30f2..09f31acef5 100644
+--- a/README.md
++++ b/README.md
+@@ -5,3 +5,3 @@
+-PyTorch is a python package that provides two high-level features:
+-- Tensor computation (like numpy) with strong GPU acceleration
+-- Deep Neural Networks built on a tape-based autograd system
++PyTorch is a Python package that provides two high-level features:
++- Tensor computation (like NumPy) with strong GPU acceleration
++- Deep neural networks built on a tape-based autograd system
+@@ -9 +9 @@ PyTorch is a python package that provides two high-level features:
+-You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch when needed.
++You can reuse your favorite python packages such as NumPy, SciPy and Cython to extend PyTorch when needed.
+@@ -11 +11 @@ You can reuse your favorite python packages such as numpy, scipy and Cython to e
+-We are in an early-release Beta. Expect some adventures and rough edges.
++We are in an early-release beta. Expect some adventures and rough edges.
+@@ -13 +13 @@ We are in an early-release Beta. Expect some adventures and rough edges.
+-- [More About PyTorch](#more-about-pytorch)
++- [More about PyTorch](#more-about-pytorch)
+@@ -16,2 +16,2 @@ We are in an early-release Beta. Expect some adventures and rough edges.
+-  - [From source](#from-source)
+-  - [Docker image](#docker-image)
++  - [From Source](#from-source)
++  - [Docker Image](#docker-image)
+@@ -41 +41 @@ At a granular level, PyTorch is a library that consists of the following compone
+-    <td> a tape based automatic differentiation library that supports all differentiable Tensor operations in torch </td>
++    <td> a tape-based automatic differentiation library that supports all differentiable Tensor operations in torch </td>
+@@ -49 +49 @@ At a granular level, PyTorch is a library that consists of the following compone
+-    <td> python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and hogwild training. </td>
++    <td> Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training. </td>
+@@ -63 +63 @@ Usually one uses PyTorch either as:
+-- A replacement for numpy to use the power of GPUs.
++- a replacement for NumPy to use the power of GPUs.
+@@ -68 +68 @@ Elaborating further:
+-### A GPU-ready Tensor library
++### A GPU-Ready Tensor Library
+@@ -70 +70 @@ Elaborating further:
+-If you use numpy, then you have used Tensors (a.k.a ndarray).
++If you use NumPy, then you have used Tensors (a.k.a ndarray).
+@@ -81 +81 @@ And they are fast!
+-### Dynamic Neural Networks: Tape based Autograd
++### Dynamic Neural Networks: Tape-Based Autograd
+@@ -85 +85 @@ PyTorch has a unique way of building neural networks: using and replaying a tape
+-Most frameworks such as `TensorFlow`, `Theano`, `Caffe` and `CNTK` have a static view of the world.
++Most frameworks such as TensorFlow, Theano, Caffe and CNTK have a static view of the world.
+@@ -89 +89 @@ Changing the way the network behaves means that one has to start from scratch.
+-With PyTorch, we use a technique called Reverse-mode auto-differentiation, which allows you to
++With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows you to
+@@ -101 +101 @@ You get the best of speed and flexibility for your crazy research.
+-### Python first
++### Python First
+@@ -103 +103 @@ You get the best of speed and flexibility for your crazy research.
+-PyTorch is not a Python binding into a monolothic C++ framework.
++PyTorch is not a Python binding into a monolithic C++ framework.
+@@ -105 +105 @@ It is built to be deeply integrated into Python.
+-You can use it naturally like you would use numpy / scipy / scikit-learn etc.
++You can use it naturally like you would use NumPy / SciPy / scikit-learn etc.
+@@ -110 +110 @@ Our goal is to not reinvent the wheel where appropriate.
+-### Imperative experiences
++### Imperative Experiences
+@@ -114,2 +114,2 @@ When you execute a line of code, it gets executed. There isn't an asynchronous v
+-When you drop into a debugger, or receive error messages and stack traces, understanding them is straight-forward.
+-The stack-trace points to exactly where your code was defined.
++When you drop into a debugger, or receive error messages and stack traces, understanding them is straightforward.
++The stack trace points to exactly where your code was defined.
+@@ -121,2 +121,2 @@ PyTorch has minimal framework overhead. We integrate acceleration libraries
+-such as Intel MKL and NVIDIA (CuDNN, NCCL) to maximize speed.
+-At the core, its CPU and GPU Tensor and Neural Network backends
++such as Intel MKL and NVIDIA (cuDNN, NCCL) to maximize speed.
++At the core, its CPU and GPU Tensor and neural network backends
+@@ -126 +126 @@ They are mature and have been tested for years.
+-Hence, PyTorch is quite fast -- whether you run small or large neural networks.
++Hence, PyTorch is quite fast – whether you run small or large neural networks.
+@@ -133 +133 @@ This enables you to train bigger deep learning models than before.
+-### Extensions without pain
++### Extensions without Pain
+@@ -135 +135 @@ This enables you to train bigger deep learning models than before.
+-Writing new neural network modules, or interfacing with PyTorch's Tensor API was designed to be straight-forward
++Writing new neural network modules, or interfacing with PyTorch's Tensor API was designed to be straightforward
+@@ -139 +139 @@ You can write new neural network layers in Python using the torch API
+-[or your favorite numpy based libraries such as SciPy](http://pytorch.org/tutorials/advanced/numpy_extensions_tutorial.html).
++[or your favorite NumPy-based libraries such as SciPy](http://pytorch.org/tutorials/advanced/numpy_extensions_tutorial.html).
+@@ -153 +153 @@ Commands to install from binaries via Conda or pip wheels are on our website:
+-### From source
++### From Source
+@@ -158 +158 @@ You will get a high-quality BLAS library (MKL) and you get a controlled compiler
+-Once you have [anaconda](https://www.continuum.io/downloads) installed, here are the instructions.
++Once you have [Anaconda](https://www.continuum.io/downloads) installed, here are the instructions.
+@@ -162 +162 @@ If you want to compile with CUDA support, install
+-- [NVIDIA CuDNN](https://developer.nvidia.com/cudnn) v5.x or above
++- [NVIDIA cuDNN](https://developer.nvidia.com/cudnn) v5.x or above
+@@ -202 +202 @@ docker build -t pytorch-cudnnv6 .
+-and run  with nvidia-docker:
++and run with nvidia-docker:
+@@ -206 +206 @@ nvidia-docker run --rm -ti --ipc=host pytorch-cudnnv6
+-Please note that pytorch uses shared memory to share data between processes, so if torch multiprocessing is used (e.g.
++Please note that PyTorch uses shared memory to share data between processes, so if torch multiprocessing is used (e.g.
+@@ -208 +208 @@ for multithreaded data loaders) the default shared memory segment size that cont
+-should increase shared memory size either with --ipc=host or --shm-size command line options to nvidia-docker run.
++should increase shared memory size either with `--ipc=host` or `--shm-size` command line options to `nvidia-docker run`.
+@@ -220,2 +220,2 @@ Three pointers to get you started:
+-* github issues: bug reports, feature requests, install issues, RFCs, thoughts, etc.
+-* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping us at soumith@pytorch.org
++* GitHub issues: bug reports, feature requests, install issues, RFCs, thoughts, etc.
++* Slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping us at soumith@pytorch.org
+diff --git a/README.md b/README.md
+index fc0f5406b7..9de45a30f2 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ We are in an early-release Beta. Expect some adventures and rough edges.
+-| System | Python | Status |
++| System | 2.7 | 3.5 |
+@@ -25,3 +25,4 @@ We are in an early-release Beta. Expect some adventures and rough edges.
+-| Linux CPU | 2.7.8, 2.7, 3.5, nightly | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) |
+-| Linux GPU | 2.7 | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2)](https://build.pytorch.org/job/pytorch-master-py2) |
+-| Linux GPU | 3.5 | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3)](https://build.pytorch.org/job/pytorch-master-py3) |
++| Linux CPU | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) |
++| Linux GPU | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2-linux)](https://build.pytorch.org/job/pytorch-master-py2-linux) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3-linux)](https://build.pytorch.org/job/pytorch-master-py3-linux) |
++| macOS CPU | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2-osx-cpu)](https://build.pytorch.org/job/pytorch-master-py2-osx-cpu) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3-osx-cpu)](https://build.pytorch.org/job/pytorch-master-py3-osx-cpu) |
++
+@@ -119,3 +120,3 @@ We hope you never spend hours debugging your code because of bad stack traces or
+-PyTorch has minimal framework overhead. We integrate acceleration libraries 
+-such as Intel MKL and NVIDIA (CuDNN, NCCL) to maximize speed. 
+-At the core, its CPU and GPU Tensor and Neural Network backends 
++PyTorch has minimal framework overhead. We integrate acceleration libraries
++such as Intel MKL and NVIDIA (CuDNN, NCCL) to maximize speed.
++At the core, its CPU and GPU Tensor and Neural Network backends
+@@ -207 +208 @@ for multithreaded data loaders) the default shared memory segment size that cont
+-should increase shared memory size either with --ipc=host or --shm-size command line options to nvidia-docker run. 
++should increase shared memory size either with --ipc=host or --shm-size command line options to nvidia-docker run.
+@@ -225 +226 @@ Three pointers to get you started:
+-PyTorch has a 90 day release cycle (major releases). 
++PyTorch has a 90 day release cycle (major releases).
+diff --git a/README.md b/README.md
+index cfe0a80508..fc0f5406b7 100644
+--- a/README.md
++++ b/README.md
+@@ -161 +161 @@ If you want to compile with CUDA support, install
+-- [NVIDIA CuDNN](https://developer.nvidia.com/cudnn) v5.x
++- [NVIDIA CuDNN](https://developer.nvidia.com/cudnn) v5.x or above
+@@ -175 +175 @@ conda install numpy pyyaml mkl setuptools cmake gcc cffi
+-conda install -c soumith magma-cuda75 # or magma-cuda80 if CUDA 8.0
++conda install -c soumith magma-cuda80 # or magma-cuda75 if CUDA 7.5
+diff --git a/README.md b/README.md
+index e5a9569940..cfe0a80508 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy mkl setuptools cmake gcc cffi
++conda install numpy pyyaml mkl setuptools cmake gcc cffi
+diff --git a/README.md b/README.md
+index f74acbd36b..e5a9569940 100644
+--- a/README.md
++++ b/README.md
+@@ -184,0 +185 @@ conda install numpy pyyaml setuptools cmake cffi
++On Linux
+@@ -186 +186,0 @@ conda install numpy pyyaml setuptools cmake cffi
+-export MACOSX_DEPLOYMENT_TARGET=10.9 # if OSX
+@@ -189,0 +190,5 @@ python setup.py install
++On OSX
++```bash
++MACOSX_DEPLOYMENT_TARGET=10.9 CC=clang CXX=clang++ python setup.py install
++```
++
+diff --git a/README.md b/README.md
+index ccd185aa56..f74acbd36b 100644
+--- a/README.md
++++ b/README.md
+@@ -181 +181 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy setuptools cmake cffi
++conda install numpy pyyaml setuptools cmake cffi
+@@ -187 +186,0 @@ export MACOSX_DEPLOYMENT_TARGET=10.9 # if OSX
+-pip install -r requirements.txt
+diff --git a/README.md b/README.md
+index 21ab63a090..ccd185aa56 100644
+--- a/README.md
++++ b/README.md
+@@ -222 +222 @@ PyTorch has a 90 day release cycle (major releases).
+-It's current state is Beta (v0.1.6), we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
++It's current state is Beta, we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
+diff --git a/README.md b/README.md
+index a4c8d7550d..21ab63a090 100644
+--- a/README.md
++++ b/README.md
+@@ -199 +199 @@ and run  with nvidia-docker:
+-nvidia-docker run --rm -ti --ipc=host pytorch-cudnnv5
++nvidia-docker run --rm -ti --ipc=host pytorch-cudnnv6
+diff --git a/README.md b/README.md
+index 17c8ee03bb..a4c8d7550d 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +193 @@ python setup.py install
+-Dockerfiles are supplied to build images with cuda support and cudnn v5 and cudnn v6 RC. Build them as usual
++Dockerfile is supplied to build images with cuda support and cudnn v6. Build as usual
+@@ -195 +195 @@ Dockerfiles are supplied to build images with cuda support and cudnn v5 and cudn
+-docker build -t pytorch-cudnnv5 .
++docker build -t pytorch-cudnnv6 .
+@@ -197,5 +197 @@ docker build -t pytorch-cudnnv5 .
+-or 
+-```
+-docker build -t pytorch-cudnnv6 -f tools/docker/Dockerfile-v6 .
+-```
+-and run them with nvidia-docker:
++and run  with nvidia-docker:
+diff --git a/README.md b/README.md
+index 05c2ed2256..17c8ee03bb 100644
+--- a/README.md
++++ b/README.md
+@@ -138 +138 @@ You can write new neural network layers in Python using the torch API
+-[or your favorite numpy based libraries such as SciPy](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb).
++[or your favorite numpy based libraries such as SciPy](http://pytorch.org/tutorials/advanced/numpy_extensions_tutorial.html).
+@@ -141,2 +141,2 @@ If you want to write your layers in C/C++, we provide an extension API based on
+-[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and with minimal boilerplate.  
+-There is no wrapper code that needs to be written. [You can see an example here](https://github.com/pytorch/extension-ffi).
++[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and with minimal boilerplate.
++There is no wrapper code that needs to be written. You can see [a tutorial here](http://pytorch.org/tutorials/advanced/c_extension.html) and [an example here](https://github.com/pytorch/extension-ffi).
+@@ -213 +213 @@ Three pointers to get you started:
+-- [Tutorials: notebooks to get you started with understanding and using PyTorch](https://github.com/pytorch/tutorials)
++- [Tutorials: get you started with understanding and using PyTorch](http://pytorch.org/tutorials/)
+diff --git a/README.md b/README.md
+index fcecc31130..05c2ed2256 100644
+--- a/README.md
++++ b/README.md
+@@ -195 +195 @@ Dockerfiles are supplied to build images with cuda support and cudnn v5 and cudn
+-docker build . -t pytorch-cudnnv5 
++docker build -t pytorch-cudnnv5 .
+@@ -199 +199 @@ or
+-docker build . -t pytorch-cudnnv6 -f tools/docker/Dockerfile-v6
++docker build -t pytorch-cudnnv6 -f tools/docker/Dockerfile-v6 .
+diff --git a/README.md b/README.md
+index ae2d86feaa..fcecc31130 100644
+--- a/README.md
++++ b/README.md
+@@ -148,4 +148,3 @@ There is no wrapper code that needs to be written. [You can see an example here]
+-- Anaconda
+-```bash
+-conda install pytorch torchvision -c soumith
+-```
++Commands to install from binaries via Conda or pip wheels are on our website:
++
++[http://pytorch.org](http://pytorch.org)
+diff --git a/README.md b/README.md
+index 52de9cd7b1..ae2d86feaa 100644
+--- a/README.md
++++ b/README.md
+@@ -33,9 +33,26 @@ At a granular level, PyTorch is a library that consists of the following compone
+-| \_                       | \_ |
+-| ------------------------ | --- |
+-| torch                    | a Tensor library like NumPy, with strong GPU support |
+-| torch.autograd           | a tape based automatic differentiation library that supports all differentiable Tensor operations in torch |
+-| torch.nn                 | a neural networks library deeply integrated with autograd designed for maximum flexibility |
+-| torch.optim              | an optimization package to be used with torch.nn with standard optimization methods such as SGD, RMSProp, LBFGS, Adam etc. |
+-| torch.multiprocessing    | python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and hogwild training. |
+-| torch.utils              | DataLoader, Trainer and other utility functions for convenience |
+-| torch.legacy(.nn/.optim) | legacy code that has been ported over from torch for backward compatibility reasons |
++<table>
++<tr>
++    <td><b> torch </b></td>
++    <td> a Tensor library like NumPy, with strong GPU support </td>
++</tr>
++<tr>
++    <td><b> torch.autograd </b></td>
++    <td> a tape based automatic differentiation library that supports all differentiable Tensor operations in torch </td>
++</tr>
++<tr>
++    <td><b> torch.nn </b></td>
++    <td> a neural networks library deeply integrated with autograd designed for maximum flexibility </td>
++</tr>
++<tr>
++    <td><b> torch.multiprocessing  </b></td>
++    <td> python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and hogwild training. </td>
++</tr>
++<tr>
++    <td><b> torch.utils </b></td>
++    <td> DataLoader, Trainer and other utility functions for convenience </td>
++</tr>
++<tr>
++    <td><b> torch.legacy(.nn/.optim) </b></td>
++    <td> legacy code that has been ported over from torch for backward compatibility reasons </td>
++</tr>
++</table>
+diff --git a/README.md b/README.md
+index ae211d42d8..52de9cd7b1 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147,2 @@ If you want to compile with CUDA support, install
++If you want to disable CUDA support, export environment variable `NO_CUDA=1`.
++
+diff --git a/README.md b/README.md
+index 4838aa815b..ae211d42d8 100644
+--- a/README.md
++++ b/README.md
+@@ -104 +104 @@ such as Intel MKL and NVIDIA (CuDNN, NCCL) to maximize speed.
+-At the core, it's CPU and GPU Tensor and Neural Network backends 
++At the core, its CPU and GPU Tensor and Neural Network backends 
+diff --git a/README.md b/README.md
+index 2249f2e255..4838aa815b 100644
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17 @@ We are in an early-release Beta. Expect some adventures and rough edges.
++  - [Docker image](#docker-image)
+@@ -171,0 +173,19 @@ python setup.py install
++### Docker image
++
++Dockerfiles are supplied to build images with cuda support and cudnn v5 and cudnn v6 RC. Build them as usual
++```
++docker build . -t pytorch-cudnnv5 
++```
++or 
++```
++docker build . -t pytorch-cudnnv6 -f tools/docker/Dockerfile-v6
++```
++and run them with nvidia-docker:
++```
++nvidia-docker run --rm -ti --ipc=host pytorch-cudnnv5
++```
++Please note that pytorch uses shared memory to share data between processes, so if torch multiprocessing is used (e.g.
++for multithreaded data loaders) the default shared memory segment size that container runs with is not enough, and you
++should increase shared memory size either with --ipc=host or --shm-size command line options to nvidia-docker run. 
++
++
+diff --git a/README.md b/README.md
+index 18ef2f66dc..2249f2e255 100644
+--- a/README.md
++++ b/README.md
+@@ -22,6 +22,5 @@ We are in an early-release Beta. Expect some adventures and rough edges.
+-| Python |  **`Linux CPU`**   |  **`Linux GPU`** |
+-|--------|--------------------|------------------|
+-| 2.7.8  | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
+-| 2.7    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2)](https://build.pytorch.org/job/pytorch-master-py2)  |
+-| 3.5    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3)](https://build.pytorch.org/job/pytorch-master-py3)  |
+-| Nightly| [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| System | Python | Status |
++| --- | --- | --- |
++| Linux CPU | 2.7.8, 2.7, 3.5, nightly | [![Build Status](https://travis-ci.org/pytorch/pytorch.svg?branch=master)](https://travis-ci.org/pytorch/pytorch) |
++| Linux GPU | 2.7 | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2)](https://build.pytorch.org/job/pytorch-master-py2) |
++| Linux GPU | 3.5 | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3)](https://build.pytorch.org/job/pytorch-master-py3) |
+diff --git a/README.md b/README.md
+index a812ef54c1..18ef2f66dc 100644
+--- a/README.md
++++ b/README.md
+@@ -138 +138,4 @@ conda install pytorch torchvision -c soumith
+-Instructions for an Anaconda environment.
++If you are installing from source, we highly recommend installing an [Anaconda](https://www.continuum.io/downloads) environment.
++You will get a high-quality BLAS library (MKL) and you get a controlled compiler version regardless of your Linux distro.
++
++Once you have [anaconda](https://www.continuum.io/downloads) installed, here are the instructions.
+@@ -145,0 +149 @@ If you want to compile with CUDA support, install
++On Linux
+@@ -152 +156 @@ conda install numpy mkl setuptools cmake gcc cffi
+-# On Linux, add LAPACK support for the GPU
++# Add LAPACK support for the GPU
+@@ -155,0 +160,6 @@ conda install -c soumith magma-cuda75 # or magma-cuda80 if CUDA 8.0
++On OSX
++```bash
++export CMAKE_PREFIX_PATH=[anaconda root directory]
++conda install numpy setuptools cmake cffi
++```
++
+diff --git a/README.md b/README.md
+index 0222f16860..a812ef54c1 100644
+--- a/README.md
++++ b/README.md
+@@ -147,0 +148,2 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
++
++# Install basic dependencies
+@@ -148,0 +151,2 @@ conda install numpy mkl setuptools cmake gcc cffi
++
++# On Linux, add LAPACK support for the GPU
+diff --git a/README.md b/README.md
+index e7ffb82d29..0222f16860 100644
+--- a/README.md
++++ b/README.md
+@@ -182 +182 @@ Sending a PR without discussion might end up resulting in a rejected PR, because
+-**For the next release cycle, these are the 3 big features were are planning to add:**
++**For the next release cycle, these are the 3 big features we are planning to add:**
+diff --git a/README.md b/README.md
+index fcf6e08fc0..e7ffb82d29 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ You can write new neural network layers in Python using the torch API
+-[or your favorite numpy based libraries such as SciPy](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb)
++[or your favorite numpy based libraries such as SciPy](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb).
+@@ -175 +175 @@ PyTorch has a 90 day release cycle (major releases).
+-It's current state is Beta (v0.1.6), we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues)
++It's current state is Beta (v0.1.6), we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues).
+@@ -194 +194 @@ PyTorch is a community driven project with several skillful engineers and resear
+-PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury) and [Soumith Chintala](http://soumith.ch) with major contributions coming from 10s of talented individuals in various forms and means. A non-exhaustive but growing list needs to mention: Sergey Zagoruyko, Adam Lerer, Francisco Massa, Andreas Kopf, James Bradbury, Zeming Lin, Yuandong Tian, Guillaume Lample, Marat Dukhan, Natalia Gimelshein
++PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury) and [Soumith Chintala](http://soumith.ch) with major contributions coming from 10s of talented individuals in various forms and means. A non-exhaustive but growing list needs to mention: Sergey Zagoruyko, Adam Lerer, Francisco Massa, Andreas Kopf, James Bradbury, Zeming Lin, Yuandong Tian, Guillaume Lample, Marat Dukhan, Natalia Gimelshein.
+diff --git a/README.md b/README.md
+index 0c8259155f..fcf6e08fc0 100644
+--- a/README.md
++++ b/README.md
+@@ -19,0 +20 @@ We are in an early-release Beta. Expect some adventures and rough edges.
++- [The Team](#the-team)
+@@ -183 +184 @@ Sending a PR without discussion might end up resulting in a rejected PR, because
+-1. [Distributed PyTorch](https://github.com/pytorch/pytorch/issues/241) (a draft implementation is present in this [branch](https://github.com/apaszke/pytorch-dist)
++1. [Distributed PyTorch](https://github.com/pytorch/pytorch/issues/241) (a draft implementation is present in this [branch](https://github.com/apaszke/pytorch-dist) )
+@@ -187,0 +189,8 @@ Sending a PR without discussion might end up resulting in a rejected PR, because
++
++## The Team
++
++PyTorch is a community driven project with several skillful engineers and researchers contributing to it.
++
++PyTorch is currently maintained by [Adam Paszke](https://apaszke.github.io/), [Sam Gross](https://github.com/colesbury) and [Soumith Chintala](http://soumith.ch) with major contributions coming from 10s of talented individuals in various forms and means. A non-exhaustive but growing list needs to mention: Sergey Zagoruyko, Adam Lerer, Francisco Massa, Andreas Kopf, James Bradbury, Zeming Lin, Yuandong Tian, Guillaume Lample, Marat Dukhan, Natalia Gimelshein
++
++Note: this project is unrelated to [hughperkins/pytorch](https://github.com/hughperkins/pytorch) with the same name. Hugh is a valuable contributor in the Torch community and has helped with many things Torch and PyTorch.
+diff --git a/README.md b/README.md
+index 4b9935be64..0c8259155f 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,2 @@ You can reuse your favorite python packages such as numpy, scipy and Cython to e
++We are in an early-release Beta. Expect some adventures and rough edges.
++
+diff --git a/README.md b/README.md
+index 01fe74ba34..4b9935be64 100644
+--- a/README.md
++++ b/README.md
+@@ -130 +130 @@ There is no wrapper code that needs to be written. [You can see an example here]
+-conda install pytorch -c https://conda.anaconda.org/t/6N-MsQ4WZ7jo/soumith
++conda install pytorch torchvision -c soumith
+diff --git a/README.md b/README.md
+index 66ca5ffa1d..01fe74ba34 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9 @@ PyTorch is a python package that provides two high-level features:
+-You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch to your own needs,
+-or use a simple extension API that we provide.
++You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch when needed.
+@@ -18,2 +17 @@ or use a simple extension API that we provide.
+-- [Timeline](#timeline)
+-- [pytorch vs torch: important changes](#pytorch-vs-torch-important-changes)
++- [Releases and Contributing](#releases-and-contributing)
+@@ -89 +87 @@ and use packages such as Cython and Numba.
+-Our goal is to not reinvent the wheel, but to reuse wheels.
++Our goal is to not reinvent the wheel where appropriate.
+@@ -101,2 +99,7 @@ We hope you never spend hours debugging your code because of bad stack traces or
+-PyTorch is as fast as the fastest deep learning framework out there, with minimal overhead.
+-We integrate acceleration libraries such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed.
++PyTorch has minimal framework overhead. We integrate acceleration libraries 
++such as Intel MKL and NVIDIA (CuDNN, NCCL) to maximize speed. 
++At the core, it's CPU and GPU Tensor and Neural Network backends 
++(TH, THC, THNN, THCUNN) are written as independent libraries with a C99 API.  
++They are mature and have been tested for years.
++
++Hence, PyTorch is quite fast -- whether you run small or large neural networks.
+@@ -114,2 +117,2 @@ and with minimal abstractions.
+-You can write new neural network layers in Python itself, that use the torch API,
+-[or your favorite numpy derivatives](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb)
++You can write new neural network layers in Python using the torch API
++[or your favorite numpy based libraries such as SciPy](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb)
+@@ -118 +121 @@ If you want to write your layers in C/C++, we provide an extension API based on
+-[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and easy to use.
++[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and with minimal boilerplate.  
+@@ -121,3 +123,0 @@ There is no wrapper code that needs to be written. [You can see an example here]
+-At the core, all the value of PyTorch -- it's CPU and GPU Tensor and Neural Network backends
+--- are written in simple libraries with a C99 API.
+-They are mature and have been tested for years.
+@@ -164 +163,0 @@ Three pointers to get you started:
+-* github issues: bug reports, feature requests, install issues, RFCs, thoughts, etc.
+@@ -165,0 +165 @@ Three pointers to get you started:
++* github issues: bug reports, feature requests, install issues, RFCs, thoughts, etc.
+@@ -169 +169 @@ Three pointers to get you started:
+-## Release Model and Contributions
++## Releases and Contributing
+@@ -171 +171,2 @@ Three pointers to get you started:
+-PyTorch has a 90 day release cycle. It's current state is Beta, we expect no obvious bugs but subtle bugs might be encountered.
++PyTorch has a 90 day release cycle (major releases). 
++It's current state is Beta (v0.1.6), we expect no obvious bugs. Please let us know if you encounter a bug by [filing an issue](https://github.com/pytorch/pytorch/issues)
+@@ -173 +174 @@ PyTorch has a 90 day release cycle. It's current state is Beta, we expect no obv
+-If you are planning to contribute back bug-fixes, please do so without any further discussion.
++We appreciate all contributions. If you are planning to contribute back bug-fixes, please do so without any further discussion.
+diff --git a/README.md b/README.md
+index 0fa7628197..66ca5ffa1d 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,2 @@ If you use numpy, then you have used Tensors (a.k.a ndarray).
++<p align=center><img width="30%" src="docs/source/_static/img/tensor_illustration.png" /></p>
++
+@@ -77,0 +80,2 @@ You get the best of speed and flexibility for your crazy research.
++<p align=center><img width="80%" src="docs/source/_static/img/dynamic_graph.gif" /></p>
++
+diff --git a/README.md b/README.md
+index 7aaeb45f47..0fa7628197 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,3 @@
+-<center style="padding: 40px"><img width="30%" src="docs/source/_static/img/pytorch-logo-dark.png" /></center>
++<p align="center"><img width="40%" src="docs/source/_static/img/pytorch-logo-dark.png" /></p>
++
++--------------------------------------------------------------------------------
+@@ -51,2 +52,0 @@ If you use numpy, then you have used Tensors (a.k.a ndarray).
+-![tensor_illustration](docs/source/_static/img/tensor_illustration.png)
+-
+@@ -57 +57 @@ We provide a wide variety of tensor routines to accelerate and fit your scientif
+-such as slicing, indexing, math operations, linear algebra, reductions.  
++such as slicing, indexing, math operations, linear algebra, reductions.
+@@ -75 +75 @@ from several research papers on this topic, as well as current and past work suc
+-While this technique is not unique to PyTorch, it's one of the fastest implementations of it to date.  
++While this technique is not unique to PyTorch, it's one of the fastest implementations of it to date.
+@@ -80,3 +80,3 @@ You get the best of speed and flexibility for your crazy research.
+-PyTorch is not a Python binding into a monolothic C++ framework.  
+-It is built to be deeply integrated into Python.  
+-You can use it naturally like you would use numpy / scipy / scikit-learn etc.  
++PyTorch is not a Python binding into a monolothic C++ framework.
++It is built to be deeply integrated into Python.
++You can use it naturally like you would use numpy / scipy / scikit-learn etc.
+@@ -84 +84 @@ You can write your new neural network layers in Python itself, using your favori
+-and use packages such as Cython and Numba.  
++and use packages such as Cython and Numba.
+@@ -97,2 +97,2 @@ We hope you never spend hours debugging your code because of bad stack traces or
+-PyTorch is as fast as the fastest deep learning framework out there, with minimal overhead.  
+-We integrate acceleration libraries such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed.  
++PyTorch is as fast as the fastest deep learning framework out there, with minimal overhead.
++We integrate acceleration libraries such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed.
+@@ -114,2 +114,2 @@ If you want to write your layers in C/C++, we provide an extension API based on
+-[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and easy to use.  
+-There is no wrapper code that needs to be written. [You can see an example here](https://github.com/pytorch/extension-ffi).  
++[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and easy to use.
++There is no wrapper code that needs to be written. [You can see an example here](https://github.com/pytorch/extension-ffi).
+diff --git a/README.md b/README.md
+index d579b34e44..7aaeb45f47 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-6]
++<center style="padding: 40px"><img width="30%" src="docs/source/_static/img/pytorch-logo-dark.png" /></center>
+@@ -3 +3,8 @@
+-- [About PyTorch?](#about-pytorch)
++PyTorch is a python package that provides two high-level features:
++- Tensor computation (like numpy) with strong GPU acceleration
++- Deep Neural Networks built on a tape-based autograd system
++
++You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch to your own needs,
++or use a simple extension API that we provide.
++
++- [More About PyTorch](#more-about-pytorch)
+@@ -19,10 +26 @@
+-The project is still under active development and is likely to drastically change in short periods of time.
+-We will be announcing API changes and important developments via a newsletter, github issues and post a link to the issues on slack.
+-Please remember that at this stage, this is an invite-only closed alpha, and please don't distribute code further.
+-This is done so that we can control development tightly and rapidly during the initial phases with feedback from you.
+-
+-## About PyTorch?
+-
+-PyTorch is a python package with the goal of providing GPU-optimized Tensor computation and deep learning.
+-You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch to your own needs,
+-or use the simple extension API that we provide.
++## More about PyTorch
+@@ -58 +56,2 @@ compute by a huge amount.
+-We provide 300+ tensor routines to accelerate and fit your scientific computation needs.  
++We provide a wide variety of tensor routines to accelerate and fit your scientific computation needs
++such as slicing, indexing, math operations, linear algebra, reductions.  
+@@ -71 +70,4 @@ change the way your network behaves arbitrarily with zero lag or overhead. Our i
+-from several research papers on this topic, as well as current and past work such as [autograd](https://github.com/twitter/torch-autograd), [autograd](https://github.com/HIPS/autograd), [Chainer](http://chainer.org), etc.
++from several research papers on this topic, as well as current and past work such as
++[autograd](https://github.com/twitter/torch-autograd),
++[autograd](https://github.com/HIPS/autograd),
++[Chainer](http://chainer.org), etc.
+@@ -73 +75 @@ from several research papers on this topic, as well as current and past work suc
+-While this technique is not unique to PyTorch, it's definitely the fastest implementation of it.  
++While this technique is not unique to PyTorch, it's one of the fastest implementations of it to date.  
+@@ -83 +85 @@ and use packages such as Cython and Numba.
+-We dont want to reinvent the wheel, we want to reuse all the wheels that have been built.
++Our goal is to not reinvent the wheel, but to reuse wheels.
+@@ -89 +91 @@ When you execute a line of code, it gets executed. There isn't an asynchronous v
+-When you drop into a debugger, or receive error messages and stack traces, understanding them is straight-forward, as and easy to understand.
++When you drop into a debugger, or receive error messages and stack traces, understanding them is straight-forward.
+@@ -95 +97,2 @@ We hope you never spend hours debugging your code because of bad stack traces or
+-PyTorch is as fast as the fastest deep learning framework out there. We integrate acceleration frameworks such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed. You can use multiple GPUs and machines with maximum efficiency.
++PyTorch is as fast as the fastest deep learning framework out there, with minimal overhead.  
++We integrate acceleration libraries such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed.  
+@@ -97 +100,4 @@ PyTorch is as fast as the fastest deep learning framework out there. We integrat
+-The memory usage in PyTorch is extremely efficient. We've written custom memory allocators for the GPU to make sure that your deep learning models are maximally memory efficient. This enables you to train bigger deep learning models than before.
++The memory usage in PyTorch is extremely efficient compared to Torch or some of the alternatives.
++We've written custom memory allocators for the GPU to make sure that
++your deep learning models are maximally memory efficient.
++This enables you to train bigger deep learning models than before.
+@@ -101,3 +107,13 @@ The memory usage in PyTorch is extremely efficient. We've written custom memory
+-Writing new neural network modules, or interfacing with PyTorch's Tensor API is a breeze, thanks to an easy to use
+-extension API that is efficient and easy to use. Writing C or Cython functions to add new neural network modules
+-is straight-forward and painless. At the core, all the value of PyTorch -- it's CPU and GPU Tensor and NeuralNet backends -- are written in simple libraries with a C99 API. They are mature and have been tested for years.
++Writing new neural network modules, or interfacing with PyTorch's Tensor API was designed to be straight-forward
++and with minimal abstractions.
++
++You can write new neural network layers in Python itself, that use the torch API,
++[or your favorite numpy derivatives](https://github.com/pytorch/tutorials/blob/master/Creating%20extensions%20using%20numpy%20and%20scipy.ipynb)
++
++If you want to write your layers in C/C++, we provide an extension API based on
++[cffi](http://cffi.readthedocs.io/en/latest/) that is efficient and easy to use.  
++There is no wrapper code that needs to be written. [You can see an example here](https://github.com/pytorch/extension-ffi).  
++
++At the core, all the value of PyTorch -- it's CPU and GPU Tensor and Neural Network backends
++-- are written in simple libraries with a C99 API.
++They are mature and have been tested for years.
+@@ -114,0 +131,6 @@ conda install pytorch -c https://conda.anaconda.org/t/6N-MsQ4WZ7jo/soumith
++Instructions for an Anaconda environment.
++
++If you want to compile with CUDA support, install
++- [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) 7.5 or above
++- [NVIDIA CuDNN](https://developer.nvidia.com/cudnn) v5.x
++
+@@ -119,2 +141,2 @@ export CMAKE_PREFIX_PATH=[anaconda root directory]
+-conda install numpy mkl
+-conda install -c soumith magma-cuda75# or magma-cuda80
++conda install numpy mkl setuptools cmake gcc cffi
++conda install -c soumith magma-cuda75 # or magma-cuda80 if CUDA 8.0
+@@ -125 +147 @@ conda install -c soumith magma-cuda75# or magma-cuda80
+-export MACOSX_DEPLOYMENT_TARGET=10.9 # for OSX
++export MACOSX_DEPLOYMENT_TARGET=10.9 # if OSX
+@@ -130,0 +153 @@ python setup.py install
++
+@@ -138 +161,2 @@ Three pointers to get you started:
+-* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping me at soumith@pytorch.org
++* forums: discuss implementations, research, etc. http://discuss.pytorch.org
++* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping us at soumith@pytorch.org
+@@ -141,23 +165 @@ Three pointers to get you started:
+-## Timeline
+-
+-We will run the alpha releases weekly for 6 weeks.
+-After that, we will reevaluate progress, and if we are ready, we will hit beta-0. If not, we will do another two weeks of alpha.
+-
+-* ~~alpha-0: Working versions of torch, cutorch, nn, cunn, optim fully unit tested with seamless numpy conversions~~
+-* ~~alpha-1: Serialization to/from disk with sharing intact. initial release of the new neuralnets package based on a Chainer-like design~~
+-* ~~alpha-2: sharing tensors across processes for hogwild training or data-loading processes. a rewritten optim package for this new nn.~~
+-* ~~alpha-3: binary installs, contbuilds, etc.~~
+-* ~~alpha-4: multi-GPU support, cudnn integration, imagenet / resnet example~~
+-* ~~alpha-5: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta~~
+-* alpha-6: Building the website, release scripts, more documentation, etc.
+-* beta-0: First public release
+-* beta-1: Putting a simple and efficient story around multi-machine training. See: https://github.com/pytorch/pytorch/issues/241 and https://github.com/apaszke/pytorch-dist for current progress.
+-
+-The beta phases will be leaning more towards working with all of you, convering your use-cases, active development on non-core aspects.
+-
+-## pytorch vs torch: important changes
+-
+-We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility.
+-
+-**[This tutorial](https://github.com/pytorch/tutorials/blob/master/Introduction%20to%20PyTorch%20for%20former%20Torchies.ipynb) takes you through the biggest changes**
+-and walks you through PyTorch
++## Release Model and Contributions
+@@ -165 +167 @@ and walks you through PyTorch
+-For brevity,
++PyTorch has a 90 day release cycle. It's current state is Beta, we expect no obvious bugs but subtle bugs might be encountered.
+@@ -167,6 +169 @@ For brevity,
+-#### Tensors:
+-- clear separation of in-place and out-of-place operations
+-- zero-indexing
+-- no camel casing for Tensor functions
+-- an efficient Numpy bridge (with zero memory copy)
+-- CUDA tensors have clear and intuitive semantics
++If you are planning to contribute back bug-fixes, please do so without any further discussion.
+@@ -174 +171,2 @@ For brevity,
+-#### New neural network module (Combines nn, nngraph, autograd): 
++If you plan to contribute new features, utility functions or extensions to the core, please first open an issue and discuss the feature with us.
++Sending a PR without discussion might end up resulting in a rejected PR, because we might be taking the core in a different direction than you might be aware of.
+@@ -176,9 +174 @@ For brevity,
+-1. Design inspired from Chainer
+-2. Modules no longer hold state. State is held in the graph
+-    1. Access state via hooks
+-	2. Execution engine
+-	    1. imperative execution engine (default)
+-		2. lazy execution engine
+-		   1. allows graph optimizations and automatic in-place / fusing operations
+-	4. Model structure is defined by its code
+-	    1. You can use loops and arbitrarily complicated conditional statements
++**For the next release cycle, these are the 3 big features were are planning to add:**
+@@ -186 +176,4 @@ For brevity,
+-**To reiterate, we recommend that you go through [This tutorial](https://github.com/pytorch/tutorials/blob/master/Introduction%20to%20PyTorch%20for%20former%20Torchies.ipynb)**
++1. [Distributed PyTorch](https://github.com/pytorch/pytorch/issues/241) (a draft implementation is present in this [branch](https://github.com/apaszke/pytorch-dist)
++2. Backward of Backward - Backpropagating through the optimization process itself. Some past and recent papers such as
++   [Double Backprop](http://yann.lecun.com/exdb/publis/pdf/drucker-lecun-91.pdf) and [Unrolled GANs](https://arxiv.org/abs/1611.02163) need this.
++3. Lazy Execution Engine for autograd - This will enable us to optionally introduce caching and JIT compilers to optimize autograd code.
+@@ -188,70 +180,0 @@ For brevity,
+-### Serialization
+-
+-Pickling tensors is supported, but requires making a temporary copy of all data in memory and breaks sharing.
+-
+-For this reason we're providing `torch.load` and `torch.save`, that are free of these problems.
+-
+-They have the same interfaces as `pickle.load` (file object) and `pickle.dump` (serialized object, file object) respectively.
+-
+-For now the only requirement is that the file should have a `fileno` method, which returns a file descriptor number (this is already implemented by objects returned by `open`).
+-
+-Objects are serialized in a tar archive consisting of four files:
+-- `sys_info` - protocol version, byte order, long size, etc.
+-- `pickle` - pickled object
+-- `tensors` - tensor metadata
+-- `storages` - serialized data
+-
+-### Multiprocessing with Tensor sharing
+-
+-We made PyTorch to seamlessly integrate with python multiprocessing.
+-What we've added specially in torch.multiprocessing is the seamless ability to efficiently share and send
+-tensors over from one process to another. ([technical details of implementation](http://github.com/pytorch/pytorch/wiki/Multiprocessing-Technical-Notes))
+-This is very useful for example in:
+-- Writing parallelized data loaders
+-- Training models "hogwild", where several models are trained in parallel, sharing the same set of parameters.
+-
+-Here are a couple of examples for torch.multiprocessing
+-
+-```python
+-# loaders.py
+-# Functions from this file run in the workers
+-
+-def fill(queue):
+-  while True:
+-      tensor = queue.get()
+-	  tensor.fill_(10)
+-	  queue.put(tensor)
+-
+-def fill_pool(tensor):
+-  tensor.fill_(10)
+-```
+-
+-```python
+-# Example 1: Using multiple persistent processes and a Queue
+-# process.py
+-
+-import torch
+-import torch.multiprocessing as multiprocessing
+-from loaders import fill
+-
+-# torch.multiprocessing.Queue automatically moves Tensor data to shared memory
+-# So the main process and worker share the data
+-queue = multiprocessing.Queue()
+-buffers = [torch.Tensor(2, 2) for i in range(4)]
+-for b in buffers:
+-  queue.put(b)
+-processes = [multiprocessing.Process(target=fill, args=(queue,)).start() for i in range(10)]
+-```
+-
+-```python
+-# Example 2: Using a process pool
+-# pool.py
+-
+-import torch
+-from torch.multiprocessing import Pool
+-from loaders import fill_pool
+-
+-tensors = [torch.Tensor(2, 2) for i in range(100)]
+-pool = Pool(10)
+-pool.map(fill_pool, tensors)
+-```
+diff --git a/README.md b/README.md
+index 17aef04f2f..d579b34e44 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ If you use numpy, then you have used Tensors (a.k.a ndarray).
+-![tensor_illustration](docs/image/tensor_illustration.png)
++![tensor_illustration](docs/source/_static/img/tensor_illustration.png)
+diff --git a/README.md b/README.md
+index b8a7711688..17aef04f2f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-5]
++# pytorch [alpha-6]
+@@ -151,2 +151,2 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
+-* alpha-5: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta
+-* alpha-6: Putting a simple and efficient story around multi-machine training. Probably simplistic like torch-distlearn. Building the website, release scripts, more documentation, etc.
++* ~~alpha-5: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta~~
++* alpha-6: Building the website, release scripts, more documentation, etc.
+@@ -153,0 +154 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
++* beta-1: Putting a simple and efficient story around multi-machine training. See: https://github.com/pytorch/pytorch/issues/241 and https://github.com/apaszke/pytorch-dist for current progress.
+@@ -242 +243 @@ for b in buffers:
+-  processes = [multiprocessing.Process(target=fill, args=(queue,)).start() for i in range(10)]
++processes = [multiprocessing.Process(target=fill, args=(queue,)).start() for i in range(10)]
+diff --git a/README.md b/README.md
+index 4f06a718cc..b8a7711688 100644
+--- a/README.md
++++ b/README.md
+@@ -134 +134 @@ Three pointers to get you started:
+-- The API Reference: [http://pytorch.org/api/](http://pytorch.org/api/)
++- The API Reference: [http://pytorch.org/docs/](http://pytorch.org/docs/)
+diff --git a/README.md b/README.md
+index adc84056b4..4f06a718cc 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +15,0 @@
+-| 3.3    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
+-| 3.4    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
+diff --git a/README.md b/README.md
+index c53d4aaa41..adc84056b4 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3 @@
+-- [What is PyTorch?](#what-is-pytorch)
+-- [Reasons to consider PyTorch](#reasons-to-consider-pytorch)
++- [About PyTorch?](#about-pytorch)
+@@ -27 +26 @@ This is done so that we can control development tightly and rapidly during the i
+-## What is PyTorch?
++## About PyTorch?
+@@ -29 +28,5 @@ This is done so that we can control development tightly and rapidly during the i
+-PyTorch is a library that consists of the following components:
++PyTorch is a python package with the goal of providing GPU-optimized Tensor computation and deep learning.
++You can reuse your favorite python packages such as numpy, scipy and Cython to extend PyTorch to your own needs,
++or use the simple extension API that we provide.
++
++At a granular level, PyTorch is a library that consists of the following components:
+@@ -46 +49,28 @@ Usually one uses PyTorch either as:
+-## Reasons to consider PyTorch
++Elaborating further:
++
++### A GPU-ready Tensor library
++
++If you use numpy, then you have used Tensors (a.k.a ndarray).
++
++![tensor_illustration](docs/image/tensor_illustration.png)
++
++PyTorch provides Tensors that can live either on the CPU or the GPU, and accelerate
++compute by a huge amount.
++
++We provide 300+ tensor routines to accelerate and fit your scientific computation needs.  
++And they are fast!
++
++### Dynamic Neural Networks: Tape based Autograd
++
++PyTorch has a unique way of building neural networks: using and replaying a tape recorder.
++
++Most frameworks such as `TensorFlow`, `Theano`, `Caffe` and `CNTK` have a static view of the world.
++One has to build a neural network, and reuse the same structure again and again.
++Changing the way the network behaves means that one has to start from scratch.
++
++With PyTorch, we use a technique called Reverse-mode auto-differentiation, which allows you to
++change the way your network behaves arbitrarily with zero lag or overhead. Our inspiration comes
++from several research papers on this topic, as well as current and past work such as [autograd](https://github.com/twitter/torch-autograd), [autograd](https://github.com/HIPS/autograd), [Chainer](http://chainer.org), etc.
++
++While this technique is not unique to PyTorch, it's definitely the fastest implementation of it.  
++You get the best of speed and flexibility for your crazy research.
+@@ -53 +83,3 @@ You can use it naturally like you would use numpy / scipy / scikit-learn etc.
+-You can write your new neural network layers in Python itself, using your favorite libraries.
++You can write your new neural network layers in Python itself, using your favorite libraries
++and use packages such as Cython and Numba.  
++We dont want to reinvent the wheel, we want to reuse all the wheels that have been built.
+@@ -55 +87 @@ You can write your new neural network layers in Python itself, using your favori
+-### Imperativeness first. What you see is what you get!
++### Imperative experiences
+@@ -57,4 +89,5 @@ You can write your new neural network layers in Python itself, using your favori
+-PyTorch is designed to be intuitive and easy to use.  
+-When you are debugging your program, or receive error messages / stack traces, you are always guaranteed to get
+-error messages that are easy to understand and a stack-trace that points to exactly where your code was defined.
+-Never spend hours debugging your code because of bad stack traces or asynchronous and opaque execution engines.
++PyTorch is designed to be intuitive, linear in thought and easy to use.
++When you execute a line of code, it gets executed. There isn't an asynchronous view of the world.
++When you drop into a debugger, or receive error messages and stack traces, understanding them is straight-forward, as and easy to understand.
++The stack-trace points to exactly where your code was defined.
++We hope you never spend hours debugging your code because of bad stack traces or asynchronous and opaque execution engines.
+@@ -62 +95 @@ Never spend hours debugging your code because of bad stack traces or asynchronou
+-### Performance and Memory usage
++### Fast and Lean
+@@ -64 +97 @@ Never spend hours debugging your code because of bad stack traces or asynchronou
+-PyTorch is as fast as the fastest deep learning framework out there. We integrate acceleration frameworks such as Intel MKL and NVIDIA CuDNN for maximum speed.
++PyTorch is as fast as the fastest deep learning framework out there. We integrate acceleration frameworks such as Intel MKL and NVIDIA (CuDNN, NCCL) for maximum speed. You can use multiple GPUs and machines with maximum efficiency.
+@@ -66,2 +99 @@ PyTorch is as fast as the fastest deep learning framework out there. We integrat
+-The memory usage in PyTorch is extremely efficient, and we've written custom memory allocators for the GPU to make sure that your
+-deep learning models are maximally memory efficient. This enables you to train bigger deep learning models than before.
++The memory usage in PyTorch is extremely efficient. We've written custom memory allocators for the GPU to make sure that your deep learning models are maximally memory efficient. This enables you to train bigger deep learning models than before.
+@@ -69,6 +101 @@ deep learning models are maximally memory efficient. This enables you to train b
+-### Multi-GPU ready
+-
+-PyTorch is fully powered to efficiently use Multiple GPUs for accelerated deep learning.  
+-We integrate efficient multi-gpu collectives such as NVIDIA NCCL to make sure that you get the maximal Multi-GPU performance.
+-
+-### Simple Extension API to interface with C
++### Extensions without pain
+@@ -77 +104,2 @@ Writing new neural network modules, or interfacing with PyTorch's Tensor API is
+-extension API that is efficient and easy to use.
++extension API that is efficient and easy to use. Writing C or Cython functions to add new neural network modules
++is straight-forward and painless. At the core, all the value of PyTorch -- it's CPU and GPU Tensor and NeuralNet backends -- are written in simple libraries with a C99 API. They are mature and have been tested for years.
+@@ -231,27 +258,0 @@ pool.map(fill_pool, tensors)
+-
+-#### Some notes on new nn implementation
+-
+-As shown above, structure of the networks is fully defined by control-flow embedded in the code. There are no rigid containers known from Lua. You can put an `if` in the middle of your model and freely branch depending on any condition you can come up with. All operations are registered in the computational graph history.
+-
+-There are two main objects that make this possible - variables and functions. They will be denoted as squares and circles respectively.
+-
+-![Variable and function symbols](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_function.png)
+-
+-Variables are the objects that hold a reference to a tensor (and optionally to gradient w.r.t. that tensor), and to the function in the computational graph that created it. Variables created explicitly by the user (`Variable(tensor)`) have a Leaf function node associated with them.
+-
+-![Variable and leaf function](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_leaf.png)
+-
+-Functions are simple classes that define a function from a tuple of inputs to a tuple of outputs, and a formula for computing gradient w.r.t. it's inputs. Function objects are instantiated to hold references to other functions, and these references allow to reconstruct the history of a computation. An example graph for a linear layer (`Wx + b`) is shown below.
+-
+-![Linear layer](http://students.mimuw.edu.pl/~ap360585/__torch_img/linear.png)
+-
+-Please note that function objects never hold references to Variable objects, except for when they're necessary in the backward pass. This allows to free all the unnecessary intermediate values. A good example for this is addition when computing e.g. (`y = Wx + My`):
+-
+-![Freeing intermediate values](http://students.mimuw.edu.pl/~ap360585/__torch_img/intermediate_free.png)
+-
+-Matrix multiplication operation keeps references to it's inputs because it will need them, but addition doesn't need `Wx` and `My` after it computes the result, so as soon as they go out of scope they are freed. To access intermediate values in the forward pass you can either copy them when you still have a reference, or you can use a system of hooks that can be attached to any function. Hooks also allow to access and inspect gradients inside the graph.
+-
+-Another nice thing about this is that a single layer doesn't hold any state other than it's parameters (all intermediate values are alive as long as the graph references them), so it can be used multiple times before calling backward. This is especially convenient when training RNNs. You can use the same network for all timesteps and the gradients will sum up automatically.
+-
+-To compute backward pass you can call `.backward()` on a variable if it's a scalar (a 1-element Variable), or you can provide a gradient tensor of matching shape if it's not. This creates an execution engine object that manages the whole backward pass. It's been introduced, so that the code for analyzing the graph and scheduling node processing order is decoupled from other parts, and can be easily replaced. Right now it's simply processing the nodes in topological order, without any prioritization, but in the future we can implement algorithms and heuristics for scheduling independent nodes on different GPU streams, deciding which branches to compute first, etc.
+-
+diff --git a/README.md b/README.md
+index 29095050eb..c53d4aaa41 100644
+--- a/README.md
++++ b/README.md
+@@ -101 +101 @@ pip install -r requirements.txt
+-pip install .
++python setup.py install
+diff --git a/README.md b/README.md
+index 2e16369cdb..29095050eb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-4]
++# pytorch [alpha-5]
+diff --git a/README.md b/README.md
+index def6d622b4..2e16369cdb 100644
+--- a/README.md
++++ b/README.md
+@@ -98,0 +99 @@ conda install -c soumith magma-cuda75# or magma-cuda80
++export MACOSX_DEPLOYMENT_TARGET=10.9 # for OSX
+diff --git a/README.md b/README.md
+index 3e2434264a..def6d622b4 100644
+--- a/README.md
++++ b/README.md
+@@ -87,0 +88,10 @@ conda install pytorch -c https://conda.anaconda.org/t/6N-MsQ4WZ7jo/soumith
++
++#### Install optional dependencies
++
++```bash
++export CMAKE_PREFIX_PATH=[anaconda root directory]
++conda install numpy mkl
++conda install -c soumith magma-cuda75# or magma-cuda80
++```
++
++#### Install PyTorch
+diff --git a/README.md b/README.md
+index 17844f9aa1..3e2434264a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,11 @@
+-# pytorch [alpha-3] 
++# pytorch [alpha-4]
++
++- [What is PyTorch?](#what-is-pytorch)
++- [Reasons to consider PyTorch](#reasons-to-consider-pytorch)
++- [Installation](#installation)
++  - [Binaries](#binaries)
++  - [From source](#from-source)
++- [Getting Started](#getting-started)
++- [Communication](#communication)
++- [Timeline](#timeline)
++- [pytorch vs torch: important changes](#pytorch-vs-torch-important-changes)
+@@ -16,0 +27,51 @@ This is done so that we can control development tightly and rapidly during the i
++## What is PyTorch?
++
++PyTorch is a library that consists of the following components:
++
++| \_                       | \_ |
++| ------------------------ | --- |
++| torch                    | a Tensor library like NumPy, with strong GPU support |
++| torch.autograd           | a tape based automatic differentiation library that supports all differentiable Tensor operations in torch |
++| torch.nn                 | a neural networks library deeply integrated with autograd designed for maximum flexibility |
++| torch.optim              | an optimization package to be used with torch.nn with standard optimization methods such as SGD, RMSProp, LBFGS, Adam etc. |
++| torch.multiprocessing    | python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and hogwild training. |
++| torch.utils              | DataLoader, Trainer and other utility functions for convenience |
++| torch.legacy(.nn/.optim) | legacy code that has been ported over from torch for backward compatibility reasons |
++
++Usually one uses PyTorch either as:
++
++- A replacement for numpy to use the power of GPUs.
++- a deep learning research platform that provides maximum flexibility and speed
++
++## Reasons to consider PyTorch
++
++### Python first
++
++PyTorch is not a Python binding into a monolothic C++ framework.  
++It is built to be deeply integrated into Python.  
++You can use it naturally like you would use numpy / scipy / scikit-learn etc.  
++You can write your new neural network layers in Python itself, using your favorite libraries.
++
++### Imperativeness first. What you see is what you get!
++
++PyTorch is designed to be intuitive and easy to use.  
++When you are debugging your program, or receive error messages / stack traces, you are always guaranteed to get
++error messages that are easy to understand and a stack-trace that points to exactly where your code was defined.
++Never spend hours debugging your code because of bad stack traces or asynchronous and opaque execution engines.
++
++### Performance and Memory usage
++
++PyTorch is as fast as the fastest deep learning framework out there. We integrate acceleration frameworks such as Intel MKL and NVIDIA CuDNN for maximum speed.
++
++The memory usage in PyTorch is extremely efficient, and we've written custom memory allocators for the GPU to make sure that your
++deep learning models are maximally memory efficient. This enables you to train bigger deep learning models than before.
++
++### Multi-GPU ready
++
++PyTorch is fully powered to efficiently use Multiple GPUs for accelerated deep learning.  
++We integrate efficient multi-gpu collectives such as NVIDIA NCCL to make sure that you get the maximal Multi-GPU performance.
++
++### Simple Extension API to interface with C
++
++Writing new neural network modules, or interfacing with PyTorch's Tensor API is a breeze, thanks to an easy to use
++extension API that is efficient and easy to use.
+@@ -33,3 +94,3 @@ pip install .
+-A more comprehensive Getting Started section will be filled in soon.
+-For now, there's two pointers:
+-- The MNIST example: [https://github.com/pytorch/examples](https://github.com/pytorch/examples)
++Three pointers to get you started:
++- [Tutorials: notebooks to get you started with understanding and using PyTorch](https://github.com/pytorch/tutorials)
++- [Examples: easy to understand pytorch code across all domains](https://github.com/pytorch/examples)
+@@ -51,4 +112,5 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
+-* ~~alpha-3: binary installs, contbuilds, etc.
+-* alpha-4: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta
+-* alpha-5: Putting a simple and efficient story around multi-machine training. Probably simplistic like torch-distlearn. Building the website, release scripts, more documentation, etc.
+-* alpha-6: [no plan yet]
++* ~~alpha-3: binary installs, contbuilds, etc.~~
++* ~~alpha-4: multi-GPU support, cudnn integration, imagenet / resnet example~~
++* alpha-5: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta
++* alpha-6: Putting a simple and efficient story around multi-machine training. Probably simplistic like torch-distlearn. Building the website, release scripts, more documentation, etc.
++* beta-0: First public release
+@@ -60,74 +122 @@ The beta phases will be leaning more towards working with all of you, convering
+-We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility (we can hack up a model converter that converts correctly).
+-This section lists the biggest changes, and suggests how to shift from torch to pytorch.
+-
+-For now there's no pytorch documentation.
+-Since all currently implemented modules are very similar to the old ones, it's best to use torch7 docs for now (having in mind several differences described below).
+-
+-### Library structure
+-
+-All core modules are merged into a single repository.
+-Most of them will be rewritten and will be completely new (more on this below), but we're providing a Python version of old packages under torch.legacy namespace.
+-* torch           (torch)
+-* cutorch         (torch.cuda)
+-* nn              (torch.legacy.nn)
+-* cunn            (torch.legacy.cunn)
+-* optim           (torch.legacy.optim)
+-* nngraph         (torch.legacy.nngraph - not implemented yet)
+-
+-### 0-based indexing
+-
+-pytorch uses 0-based indexing everywhere.
+-This includes arguments to `index*` functions and nn criterion weights.
+-
+-Under the hood, on the C side, we've changed logic on TH / THC / THNN / THCUNN to introduce a TH_INDEX_BASE compile-time definition to switch between 0 and 1 indexing logic.
+-
+-### New Tensor API
+-
+-**All methods operating on tensors are now out-of-place by default.**
+-
+-This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.
+-All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).
+-Most of math methods have their in-place counterparts, so  an equivalent to `a.add(b)` in Lua is now `a.add_(b)` (or `torch.add(a, a, b)`, which is not recommended in this case)
+-
+-### CUDA module
+-
+-All tensors have their CUDA counterparts in torch.cuda module.
+-
+-There is no `torch.cuda.setDevice` anymore. By default always the 0th device is selected, but code can be placed in a `with` statement to change it:
+-
+-```python
+-with torch.cuda.device(1):
+-    a = torch.cuda.FloatTensor(10) # a is allocated on GPU1
+-```
+-
+-Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device.
+-So, for example: `a = torch.LongTensor(10).cuda() # a is a CudaLongTensor`
+-
+-Calling `.cuda(3)` will send it to the third device.
+-`.cuda()` can be also used to transfer CUDA tensors between devices (calling it on a GPU tensor, with a different device selected will copy it into the current device).
+-
+-```python
+-a = torch.LongTensor(10)
+-b = a.cuda()  # b is a torch.cuda.LongTensor placed on GPU0
+-c = a.cuda(2) # c is a torch.cuda.LongTensor placed on GPU2
+-with torch.cuda.device(1):
+-    d = b.cuda() # d is a copy of b, but on GPU1
+-    e = d.cuda() # a no-op, d is already on current GPU, e is d == True
+-```
+-
+-Also, setting device is now only important to specify where to allocate new Tensors. You can perform operations on CUDA Tensors irrespective of currently selected device (but all arguments have to be on the same device) - result will be also allocated there. See below for an example:
+-
+-```python
+-a = torch.randn(2, 2).cuda()
+-b = torch.randn(2, 2).cuda()
+-with torch.cuda.device(1):
+-    c = a + b                    # c is on GPU0
+-    d = torch.randn(2, 2).cuda() # d is on GPU1
+-```
+-
+-In the near future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.
+-This will help us to not worry about using buffers for every intermediate computation in a module if one wants to do multi-GPU training, for example.
+-See: https://github.com/torch/cutorch/pull/443
+-
+-
+-### Numpy integration
++We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility.
+@@ -135 +124,2 @@ See: https://github.com/torch/cutorch/pull/443
+-Because numpy is a core numerical package in Python, and is used by many other libraries like matplotlib, we've implemented a two-way bridge between pytorch and numpy.
++**[This tutorial](https://github.com/pytorch/tutorials/blob/master/Introduction%20to%20PyTorch%20for%20former%20Torchies.ipynb) takes you through the biggest changes**
++and walks you through PyTorch
+@@ -137,8 +127 @@ Because numpy is a core numerical package in Python, and is used by many other l
+-```python
+-a = torch.randn(2, 2)
+-b = a.numpy() # b is a numpy array of type corresponding to a
+-              # no memory copy is performed, they share the same storage
+-c = numpy.zeros(5, 5)
+-d = torch.DoubleTensor(c) # it's possible to construct Tensors from numpy arrays
+-              # d shares memory with b - there's no copy
+-```
++For brevity,
+@@ -146 +129,6 @@ d = torch.DoubleTensor(c) # it's possible to construct Tensors from numpy arrays
+-### New neural network module
++#### Tensors:
++- clear separation of in-place and out-of-place operations
++- zero-indexing
++- no camel casing for Tensor functions
++- an efficient Numpy bridge (with zero memory copy)
++- CUDA tensors have clear and intuitive semantics
+@@ -148 +136 @@ d = torch.DoubleTensor(c) # it's possible to construct Tensors from numpy arrays
+-After looking at several framework designs, looking at the current design of `nn` and thinking through a few original design ideas, this is what we've converged to:
++#### New neural network module (Combines nn, nngraph, autograd): 
+@@ -150,4 +138,9 @@ After looking at several framework designs, looking at the current design of `nn
+-* Adopt a Chainer-like design
+-    * Makes it extremely natural to express Recurrent Nets and weight sharing
+-    * Each module can operate in-place, but marks used variables as dirty - errors will be raised if they're used again
+-* RNN example:
++1. Design inspired from Chainer
++2. Modules no longer hold state. State is held in the graph
++    1. Access state via hooks
++	2. Execution engine
++	    1. imperative execution engine (default)
++		2. lazy execution engine
++		   1. allows graph optimizations and automatic in-place / fusing operations
++	4. Model structure is defined by its code
++	    1. You can use loops and arbitrarily complicated conditional statements
+@@ -155,65 +148 @@ After looking at several framework designs, looking at the current design of `nn
+-```python
+-class Network(nn.Container):
+-    def __init__(self):
+-        super(Network, self).__init__(
+-            conv1=nn.SpatialConvolution(3, 16, 3, 3, 1, 1),
+-            relu1=nn.ReLU(True),
+-            lstm=nn.LSTM(),
+-        )
+-
+-    def __call__(self, input):
+-        y = self.conv(input)
+-        y = self.relu1(y)
+-        y = self.lstm(y)
+-        return y
+-
+-model = Network()
+-input = nn.Variable(torch.zeros(256, 3, 224, 224))
+-
+-output = model(input)
+-
+-loss = 0
+-for i in range(ITERS):
+-    input, target = ...
+-    # That's all you need for an RNN
+-    for t in range(TIMESTEPS):
+-        loss += loss_fn(model(input), target)
+-    loss.backward()
+-
+-```
+-
+-* Here, nn.Variable will have a complete tape-based automatic differentiation implemented
+-* To access states, have hooks for forward / backward (this also makes multi-GPU easier to implement)
+-    * This has the advantage of not having to worry about in-place / out-of-place operators for accessing .output or .gradInput
+-* When writing the module, make sure debuggability is straight forward. Dropping into pdb and inspecting things should be natural, especially when going over the backward graph.
+-* Pulling handles to a module after constructing a chain should be very natural (apart from having a handle at construction)
+-    * It's easy, since modules are assigned as Container properties
+-* Drop overly verbose names. Example:
+-    * SpatialConvolution → conv2d
+-    * VolumetricConvolution → conv3d
+-
+-#### Some notes on new nn implementation
+-
+-As shown above, structure of the networks is fully defined by control-flow embedded in the code. There are no rigid containers known from Lua. You can put an `if` in the middle of your model and freely branch depending on any condition you can come up with. All operations are registered in the computational graph history.
+-
+-There are two main objects that make this possible - variables and functions. They will be denoted as squares and circles respectively.
+-
+-![Variable and function symbols](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_function.png)
+-
+-Variables are the objects that hold a reference to a tensor (and optionally to gradient w.r.t. that tensor), and to the function in the computational graph that created it. Variables created explicitly by the user (`Variable(tensor)`) have a Leaf function node associated with them.
+-
+-![Variable and leaf function](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_leaf.png)
+-
+-Functions are simple classes that define a function from a tuple of inputs to a tuple of outputs, and a formula for computing gradient w.r.t. it's inputs. Function objects are instantiated to hold references to other functions, and these references allow to reconstruct the history of a computation. An example graph for a linear layer (`Wx + b`) is shown below.
+-
+-![Linear layer](http://students.mimuw.edu.pl/~ap360585/__torch_img/linear.png)
+-
+-Please note that function objects never hold references to Variable objects, except for when they're necessary in the backward pass. This allows to free all the unnecessary intermediate values. A good example for this is addition when computing e.g. (`y = Wx + My`):
+-
+-![Freeing intermediate values](http://students.mimuw.edu.pl/~ap360585/__torch_img/intermediate_free.png)
+-
+-Matrix multiplication operation keeps references to it's inputs because it will need them, but addition doesn't need `Wx` and `My` after it computes the result, so as soon as they go out of scope they are freed. To access intermediate values in the forward pass you can either copy them when you still have a reference, or you can use a system of hooks that can be attached to any function. Hooks also allow to access and inspect gradients inside the graph.
+-
+-Another nice thing about this is that a single layer doesn't hold any state other than it's parameters (all intermediate values are alive as long as the graph references them), so it can be used multiple times before calling backward. This is especially convenient when training RNNs. You can use the same network for all timesteps and the gradients will sum up automatically.
+-
+-To compute backward pass you can call `.backward()` on a variable if it's a scalar (a 1-element Variable), or you can provide a gradient tensor of matching shape if it's not. This creates an execution engine object that manages the whole backward pass. It's been introduced, so that the code for analyzing the graph and scheduling node processing order is decoupled from other parts, and can be easily replaced. Right now it's simply processing the nodes in topological order, without any prioritization, but in the future we can implement algorithms and heuristics for scheduling independent nodes on different GPU streams, deciding which branches to compute first, etc.
++**To reiterate, we recommend that you go through [This tutorial](https://github.com/pytorch/tutorials/blob/master/Introduction%20to%20PyTorch%20for%20former%20Torchies.ipynb)**
+@@ -223 +152,2 @@ To compute backward pass you can call `.backward()` on a variable if it's a scal
+-Pickling tensors is supported, but requires making a temporary copy of all data and breaks sharing.
++Pickling tensors is supported, but requires making a temporary copy of all data in memory and breaks sharing.
++
+@@ -224,0 +155 @@ For this reason we're providing `torch.load` and `torch.save`, that are free of
++
+@@ -225,0 +157 @@ They have the same interfaces as `pickle.load` (file object) and `pickle.dump` (
++
+@@ -229,58 +161,4 @@ Objects are serialized in a tar archive consisting of four files:
+-`sys_info` - protocol version, byte order, long size, etc.
+-`pickle` - pickled object
+-`tensors` - tensor metadata
+-`storages` - serialized data
+-
+-### Multi-GPU
+-
+-Proposed solutions need to address:
+-
+-* Kernel launch latency
+-    * without affecting the user's code
+-* Implementation should be as transparent as possible
+-    * Should we expose DPT as:
+-        * Split
+-        * ParallelApply (scheduling kernels in breadth first order, to address launch latency)
+-        * Join
+-* In backward phase, send parameters as soon as the module finishes computation
+-
+-**Rough solution:**
+-
+-```python
+-# This is an example of a network that has a data parallel part inside
+-#
+-#             B is data parallel
+-#     +->A+-->B+-+
+-#  +--+          +->D
+-#     +->C+------+
+-class Network(nn.Container):
+-    __init__(self):
+-        super(Network, self).__init__(
+-            A = ...,
+-            B = GPUReplicate(B, [0, 1, 2, 3]), # Copies the module onto a list of GPUs
+-            C = ...,
+-            D = ...
+-        )
+-
+-    __call__(self, x):
+-        a = self.A(x)
+-        c = self.C(x)
+-        a_split = Split(a) # a_split is a list of Tensors placed on different devices
+-        b = ParallelApply(self.B, a_split) # self.B is a list-like object containing copies of B
+-        d_input = Join(b + [c]) # gathers Tensors on a single GPU
+-        return self.D(d_input)
+-
+-```
+-
+-Each module is assigned to a single GPU.
+-
+-For Kernel Launch Latency:
+-* Python threading
+-* Generators
+-
+-For parameter reductions ASAP:
+-
+-* In the forward pass, register a hooks on a  every parameter which are evaluated as soon as the last backward is executed for that parameter. The hook will then “all-reduce” those parameters across GPUs
+-    * Problem with multiple forward calls - how do you know that the parameters won't be used anymore?
+-        * Well, last usage in backward graph = first usage in forward graph, so this should be straightforward
+-
++- `sys_info` - protocol version, byte order, long size, etc.
++- `pickle` - pickled object
++- `tensors` - tensor metadata
++- `storages` - serialized data
+@@ -290,14 +167,0 @@ For parameter reductions ASAP:
+-In Torch, or in general, one uses "threads" to build parallel data loaders, as well as to do Hogwild training.
+-Threads are powerful, as one can share Tensors between threads.
+-This allows you to:
+-* transfer data between threads with efficiently with zero memory copy and serialization overhead.
+-* share tensors among threads for parameter sharing models
+-
+-Sharing Tensors among threads is very useful when you do Hogwild training, i.e. if you want to train several models in parallel, but want to share their underlying parameters.
+-This is often used in non ConvNets, like training word embeddings, RL-for-games, etc.
+-
+-With Python, one cannot use threads because of a few technical issues.
+-Python has what is called [Global Interpreter Lock](https://wiki.python.org/moin/GlobalInterpreterLock), which does not allow threads to concurrently execute python code.
+-
+-Hence, the most pythonic way to use multiple CPU cores is [multiprocessing](http://docs.python.org/2/library/multiprocessing.html)
+-
+@@ -305 +169,5 @@ We made PyTorch to seamlessly integrate with python multiprocessing.
+-This involved solving some complex technical problems to make this an air-tight solution, and more can be read [in this in-depth technical discussion](http://github.com/pytorch/pytorch/wiki/Multiprocessing-Technical-Notes).
++What we've added specially in torch.multiprocessing is the seamless ability to efficiently share and send
++tensors over from one process to another. ([technical details of implementation](http://github.com/pytorch/pytorch/wiki/Multiprocessing-Technical-Notes))
++This is very useful for example in:
++- Writing parallelized data loaders
++- Training models "hogwild", where several models are trained in parallel, sharing the same set of parameters.
+@@ -307 +175 @@ This involved solving some complex technical problems to make this an air-tight
+-What this means for you as the end-user is that you can simply use multiprocessing in this way:
++Here are a couple of examples for torch.multiprocessing
+@@ -316,2 +184,2 @@ def fill(queue):
+-	      tensor.fill_(10)
+-		      queue.put(tensor)
++	  tensor.fill_(10)
++	  queue.put(tensor)
+@@ -321 +189 @@ def fill_pool(tensor):
+-  ```
++```
+@@ -338 +206 @@ for b in buffers:
+-  ```
++```
+@@ -352,0 +221,26 @@ pool.map(fill_pool, tensors)
++#### Some notes on new nn implementation
++
++As shown above, structure of the networks is fully defined by control-flow embedded in the code. There are no rigid containers known from Lua. You can put an `if` in the middle of your model and freely branch depending on any condition you can come up with. All operations are registered in the computational graph history.
++
++There are two main objects that make this possible - variables and functions. They will be denoted as squares and circles respectively.
++
++![Variable and function symbols](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_function.png)
++
++Variables are the objects that hold a reference to a tensor (and optionally to gradient w.r.t. that tensor), and to the function in the computational graph that created it. Variables created explicitly by the user (`Variable(tensor)`) have a Leaf function node associated with them.
++
++![Variable and leaf function](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_leaf.png)
++
++Functions are simple classes that define a function from a tuple of inputs to a tuple of outputs, and a formula for computing gradient w.r.t. it's inputs. Function objects are instantiated to hold references to other functions, and these references allow to reconstruct the history of a computation. An example graph for a linear layer (`Wx + b`) is shown below.
++
++![Linear layer](http://students.mimuw.edu.pl/~ap360585/__torch_img/linear.png)
++
++Please note that function objects never hold references to Variable objects, except for when they're necessary in the backward pass. This allows to free all the unnecessary intermediate values. A good example for this is addition when computing e.g. (`y = Wx + My`):
++
++![Freeing intermediate values](http://students.mimuw.edu.pl/~ap360585/__torch_img/intermediate_free.png)
++
++Matrix multiplication operation keeps references to it's inputs because it will need them, but addition doesn't need `Wx` and `My` after it computes the result, so as soon as they go out of scope they are freed. To access intermediate values in the forward pass you can either copy them when you still have a reference, or you can use a system of hooks that can be attached to any function. Hooks also allow to access and inspect gradients inside the graph.
++
++Another nice thing about this is that a single layer doesn't hold any state other than it's parameters (all intermediate values are alive as long as the graph references them), so it can be used multiple times before calling backward. This is especially convenient when training RNNs. You can use the same network for all timesteps and the gradients will sum up automatically.
++
++To compute backward pass you can call `.backward()` on a variable if it's a scalar (a 1-element Variable), or you can provide a gradient tensor of matching shape if it's not. This creates an execution engine object that manages the whole backward pass. It's been introduced, so that the code for analyzing the graph and scheduling node processing order is decoupled from other parts, and can be easily replaced. Right now it's simply processing the nodes in topological order, without any prioritization, but in the future we can implement algorithms and heuristics for scheduling independent nodes on different GPU streams, deciding which branches to compute first, etc.
++
+diff --git a/README.md b/README.md
+index bc1a8eb95b..17844f9aa1 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-2] 
++# pytorch [alpha-3] 
+@@ -31,0 +32,6 @@ pip install .
++## Getting Started
++A more comprehensive Getting Started section will be filled in soon.
++For now, there's two pointers:
++- The MNIST example: [https://github.com/pytorch/examples](https://github.com/pytorch/examples)
++- The API Reference: [http://pytorch.org/api/](http://pytorch.org/api/)
++
+@@ -45 +51 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
+-* alpha-3: binary installs (prob will take @alexbw 's help here), contbuilds, etc.
++* ~~alpha-3: binary installs, contbuilds, etc.
+diff --git a/README.md b/README.md
+index bec0ed23e2..bc1a8eb95b 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,8 @@ This is done so that we can control development tightly and rapidly during the i
++
++### Binaries
++- Anaconda
++```bash
++conda install pytorch -c https://conda.anaconda.org/t/6N-MsQ4WZ7jo/soumith
++```
++
++### From source
+diff --git a/README.md b/README.md
+index ce9fc563a4..bec0ed23e2 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-| 2.7    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| 2.7    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py2)](https://build.pytorch.org/job/pytorch-master-py2)  |
+@@ -9 +9 @@
+-| 3.5    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)  |
++| 3.5    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master-py3)](https://build.pytorch.org/job/pytorch-master-py3)  |
+diff --git a/README.md b/README.md
+index 3d7f3f9266..ce9fc563a4 100644
+--- a/README.md
++++ b/README.md
+@@ -24,2 +23,0 @@ pip install .
+-To install with CUDA support change `WITH_CUDA = False` to `WITH_CUDA = True` in `setup.py`.
+-
+@@ -36,3 +34,3 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
+-* alpha-0: Working versions of torch, cutorch, nn, cunn, optim fully unit tested with seamless numpy conversions
+-* alpha-1: Serialization to/from disk with sharing intact. initial release of the new neuralnets package based on a Chainer-like design
+-* alpha-2: sharing tensors across processes for hogwild training or data-loading processes. a rewritten optim package for this new nn.
++* ~~alpha-0: Working versions of torch, cutorch, nn, cunn, optim fully unit tested with seamless numpy conversions~~
++* ~~alpha-1: Serialization to/from disk with sharing intact. initial release of the new neuralnets package based on a Chainer-like design~~
++* ~~alpha-2: sharing tensors across processes for hogwild training or data-loading processes. a rewritten optim package for this new nn.~~
+diff --git a/README.md b/README.md
+index 6199b7365d..3d7f3f9266 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,8 @@
+-* CPU [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) on Linux with Python versions [2.7.8, 2.7, 3.3, 3.4, 3.5, Nightly]
+-* CUDA [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master) on Linux with Python versions [3.5]
++| Python |  **`Linux CPU`**   |  **`Linux GPU`** |
++|--------|--------------------|------------------|
++| 2.7.8  | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| 2.7    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| 3.3    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| 3.4    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
++| 3.5    | [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)  |
++| Nightly| [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) | |
+diff --git a/README.md b/README.md
+index bcc4f0307b..6199b7365d 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,2 @@
+-* CPU Linux & OSX: [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
+-* CUDA Linux: [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)
++* CPU [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch) on Linux with Python versions [2.7.8, 2.7, 3.3, 3.4, 3.5, Nightly]
++* CUDA [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master) on Linux with Python versions [3.5]
+diff --git a/README.md b/README.md
+index f562fe1d00..bcc4f0307b 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-* CUDA Linux: [![Build Status](https://build.pytorch.org/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)
++* CUDA Linux: [![Build Status](http://build.pytorch.org:8080/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)
+diff --git a/README.md b/README.md
+index 2f5b5c44ac..f562fe1d00 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,4 @@
+-# pytorch [alpha-2] [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
++# pytorch [alpha-2] 
++
++* CPU Linux & OSX: [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
++* CUDA Linux: [![Build Status](https://build.pytorch.org/buildStatus/icon?job=pytorch-master)](https://build.pytorch.org/job/pytorch-master)
+diff --git a/README.md b/README.md
+index 58ca07088c..2f5b5c44ac 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-1] [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
++# pytorch [alpha-2] [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
+diff --git a/README.md b/README.md
+index 228f5a986b..58ca07088c 100644
+--- a/README.md
++++ b/README.md
+@@ -267 +267,64 @@ For parameter reductions ASAP:
+-#### Multiprocessing
++### Multiprocessing with Tensor sharing
++
++In Torch, or in general, one uses "threads" to build parallel data loaders, as well as to do Hogwild training.
++Threads are powerful, as one can share Tensors between threads.
++This allows you to:
++* transfer data between threads with efficiently with zero memory copy and serialization overhead.
++* share tensors among threads for parameter sharing models
++
++Sharing Tensors among threads is very useful when you do Hogwild training, i.e. if you want to train several models in parallel, but want to share their underlying parameters.
++This is often used in non ConvNets, like training word embeddings, RL-for-games, etc.
++
++With Python, one cannot use threads because of a few technical issues.
++Python has what is called [Global Interpreter Lock](https://wiki.python.org/moin/GlobalInterpreterLock), which does not allow threads to concurrently execute python code.
++
++Hence, the most pythonic way to use multiple CPU cores is [multiprocessing](http://docs.python.org/2/library/multiprocessing.html)
++
++We made PyTorch to seamlessly integrate with python multiprocessing.
++This involved solving some complex technical problems to make this an air-tight solution, and more can be read [in this in-depth technical discussion](http://github.com/pytorch/pytorch/wiki/Multiprocessing-Technical-Notes).
++
++What this means for you as the end-user is that you can simply use multiprocessing in this way:
++
++```python
++# loaders.py
++# Functions from this file run in the workers
++
++def fill(queue):
++  while True:
++      tensor = queue.get()
++	      tensor.fill_(10)
++		      queue.put(tensor)
++
++def fill_pool(tensor):
++  tensor.fill_(10)
++  ```
++
++```python
++# Example 1: Using multiple persistent processes and a Queue
++# process.py
++
++import torch
++import torch.multiprocessing as multiprocessing
++from loaders import fill
++
++# torch.multiprocessing.Queue automatically moves Tensor data to shared memory
++# So the main process and worker share the data
++queue = multiprocessing.Queue()
++buffers = [torch.Tensor(2, 2) for i in range(4)]
++for b in buffers:
++  queue.put(b)
++  processes = [multiprocessing.Process(target=fill, args=(queue,)).start() for i in range(10)]
++  ```
++
++```python
++# Example 2: Using a process pool
++# pool.py
++
++import torch
++from torch.multiprocessing import Pool
++from loaders import fill_pool
++
++tensors = [torch.Tensor(2, 2) for i in range(100)]
++pool = Pool(10)
++pool.map(fill_pool, tensors)
++```
+@@ -269,3 +331,0 @@ For parameter reductions ASAP:
+-We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.
+-For this, we plan to implement a .share() method for tensors that will enable them to be shared across processes seamlessly.
+-One can use [python multiprocessing](https://docs.python.org/2/library/multiprocessing.html) seamlessly.
+diff --git a/README.md b/README.md
+index 03fe267fcc..228f5a986b 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-1] ![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=x5muYzmNgtGJxk6DvWMN&branch=master)
++# pytorch [alpha-1] [![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=shqHbUq29zKDxuqzGcjC&branch=master)](https://travis-ci.com/apaszke/pytorch)
+diff --git a/README.md b/README.md
+index 0cbe33c061..03fe267fcc 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-0] ![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=x5muYzmNgtGJxk6DvWMN&branch=master)
++# pytorch [alpha-1] ![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=x5muYzmNgtGJxk6DvWMN&branch=master)
+diff --git a/README.md b/README.md
+index 316a2d75e5..0cbe33c061 100644
+--- a/README.md
++++ b/README.md
+@@ -83 +83 @@ Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to
+-So, for example: ``` a = torch.LongTensor(10).cuda() # a is a CudaLongTensor ```
++So, for example: `a = torch.LongTensor(10).cuda() # a is a CudaLongTensor`
+@@ -199,0 +200,13 @@ To compute backward pass you can call `.backward()` on a variable if it's a scal
++### Serialization
++
++Pickling tensors is supported, but requires making a temporary copy of all data and breaks sharing.
++For this reason we're providing `torch.load` and `torch.save`, that are free of these problems.
++They have the same interfaces as `pickle.load` (file object) and `pickle.dump` (serialized object, file object) respectively.
++For now the only requirement is that the file should have a `fileno` method, which returns a file descriptor number (this is already implemented by objects returned by `open`).
++
++Objects are serialized in a tar archive consisting of four files:
++`sys_info` - protocol version, byte order, long size, etc.
++`pickle` - pickled object
++`tensors` - tensor metadata
++`storages` - serialized data
++
+diff --git a/README.md b/README.md
+index 20d68767aa..316a2d75e5 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# pytorch [alpha-0]
++# pytorch [alpha-0] ![Build Status](https://travis-ci.com/apaszke/pytorch.svg?token=x5muYzmNgtGJxk6DvWMN&branch=master)
+@@ -14,0 +15,2 @@ pip install .
++To install with CUDA support change `WITH_CUDA = False` to `WITH_CUDA = True` in `setup.py`.
++
+@@ -171,0 +174,26 @@ for i in range(ITERS):
++#### Some notes on new nn implementation
++
++As shown above, structure of the networks is fully defined by control-flow embedded in the code. There are no rigid containers known from Lua. You can put an `if` in the middle of your model and freely branch depending on any condition you can come up with. All operations are registered in the computational graph history.
++
++There are two main objects that make this possible - variables and functions. They will be denoted as squares and circles respectively.
++
++![Variable and function symbols](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_function.png)
++
++Variables are the objects that hold a reference to a tensor (and optionally to gradient w.r.t. that tensor), and to the function in the computational graph that created it. Variables created explicitly by the user (`Variable(tensor)`) have a Leaf function node associated with them.
++
++![Variable and leaf function](http://students.mimuw.edu.pl/~ap360585/__torch_img/variable_leaf.png)
++
++Functions are simple classes that define a function from a tuple of inputs to a tuple of outputs, and a formula for computing gradient w.r.t. it's inputs. Function objects are instantiated to hold references to other functions, and these references allow to reconstruct the history of a computation. An example graph for a linear layer (`Wx + b`) is shown below.
++
++![Linear layer](http://students.mimuw.edu.pl/~ap360585/__torch_img/linear.png)
++
++Please note that function objects never hold references to Variable objects, except for when they're necessary in the backward pass. This allows to free all the unnecessary intermediate values. A good example for this is addition when computing e.g. (`y = Wx + My`):
++
++![Freeing intermediate values](http://students.mimuw.edu.pl/~ap360585/__torch_img/intermediate_free.png)
++
++Matrix multiplication operation keeps references to it's inputs because it will need them, but addition doesn't need `Wx` and `My` after it computes the result, so as soon as they go out of scope they are freed. To access intermediate values in the forward pass you can either copy them when you still have a reference, or you can use a system of hooks that can be attached to any function. Hooks also allow to access and inspect gradients inside the graph.
++
++Another nice thing about this is that a single layer doesn't hold any state other than it's parameters (all intermediate values are alive as long as the graph references them), so it can be used multiple times before calling backward. This is especially convenient when training RNNs. You can use the same network for all timesteps and the gradients will sum up automatically.
++
++To compute backward pass you can call `.backward()` on a variable if it's a scalar (a 1-element Variable), or you can provide a gradient tensor of matching shape if it's not. This creates an execution engine object that manages the whole backward pass. It's been introduced, so that the code for analyzing the graph and scheduling node processing order is decoupled from other parts, and can be easily replaced. Right now it's simply processing the nodes in topological order, without any prioritization, but in the future we can implement algorithms and heuristics for scheduling independent nodes on different GPU streams, deciding which branches to compute first, etc.
++
+diff --git a/README.md b/README.md
+index 1f6945e4eb..20d68767aa 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3,3 @@
+-The project is still under active development and is likely to drastically change in short periods of time.  
+-We will be announcing API changes and important developments via a newsletter, github issues and post a link to the issues on slack.  
+-Please remember that at this stage, this is an invite-only closed alpha, and please don't distribute code further.  
++The project is still under active development and is likely to drastically change in short periods of time.
++We will be announcing API changes and important developments via a newsletter, github issues and post a link to the issues on slack.
++Please remember that at this stage, this is an invite-only closed alpha, and please don't distribute code further.
+@@ -11,3 +11,2 @@ This is done so that we can control development tightly and rapidly during the i
+-pip3 install .
+-python3 setup.py build
+-python3 setup.py install
++pip install -r requirements.txt
++pip install .
+@@ -18 +17 @@ python3 setup.py install
+-* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping me at soumith@pytorch.org 
++* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping me at soumith@pytorch.org
+@@ -29 +28 @@ After that, we will reevaluate progress, and if we are ready, we will hit beta-0
+-* alpha-3: binary installs (prob will take @alexbw 's help here), contbuilds, etc. 
++* alpha-3: binary installs (prob will take @alexbw 's help here), contbuilds, etc.
+@@ -38 +37 @@ The beta phases will be leaning more towards working with all of you, convering
+-We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility (we can hack up a model converter that converts correctly).  
++We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility (we can hack up a model converter that converts correctly).
+@@ -41 +40 @@ This section lists the biggest changes, and suggests how to shift from torch to
+-For now there's no pytorch documentation.  
++For now there's no pytorch documentation.
+@@ -46 +45 @@ Since all currently implemented modules are very similar to the old ones, it's b
+-All core modules are merged into a single repository.  
++All core modules are merged into a single repository.
+@@ -57 +56 @@ Most of them will be rewritten and will be completely new (more on this below),
+-pytorch uses 0-based indexing everywhere.  
++pytorch uses 0-based indexing everywhere.
+@@ -66,2 +65,2 @@ Under the hood, on the C side, we've changed logic on TH / THC / THNN / THCUNN t
+-This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.  
+-All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).  
++This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.
++All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).
+@@ -81 +80 @@ with torch.cuda.device(1):
+-Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device.  
++Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device.
+@@ -84 +83 @@ So, for example: ``` a = torch.LongTensor(10).cuda() # a is a CudaLongTensor ```
+-Calling `.cuda(3)` will send it to the third device.  
++Calling `.cuda(3)` will send it to the third device.
+@@ -106,2 +105,2 @@ with torch.cuda.device(1):
+-In the near future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.  
+-This will help us to not worry about using buffers for every intermediate computation in a module if one wants to do multi-GPU training, for example.  
++In the near future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.
++This will help us to not worry about using buffers for every intermediate computation in a module if one wants to do multi-GPU training, for example.
+@@ -163 +162 @@ for i in range(ITERS):
+-* Here, nn.Variable will have a complete tape-based automatic differentiation implemented 
++* Here, nn.Variable will have a complete tape-based automatic differentiation implemented
+@@ -229,2 +228,2 @@ For parameter reductions ASAP:
+-We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.  
+-For this, we plan to implement a .share() method for tensors that will enable them to be shared across processes seamlessly.  
++We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.
++For this, we plan to implement a .share() method for tensors that will enable them to be shared across processes seamlessly.
+diff --git a/README.md b/README.md
+index 9cbbc0ae7e..1f6945e4eb 100644
+--- a/README.md
++++ b/README.md
+@@ -18,6 +18,2 @@ python3 setup.py install
+-* slack: general chat, online discussions, collaboration etc.
+-
+-###Slack:
+-You should all be invited to the slack chat (check your email)  
+-- Team Name: PyTorch
+-- Team Domain: https://pytorch.slack.com/
++* slack: general chat, online discussions, collaboration etc. https://pytorch.slack.com/ . If you need a slack invite, ping me at soumith@pytorch.org 
++* newsletter: no-noise, one-way email newsletter with important announcements about pytorch. You can sign-up here: http://eepurl.com/cbG0rv
+@@ -166,0 +163 @@ for i in range(ITERS):
++* Here, nn.Variable will have a complete tape-based automatic differentiation implemented 
+diff --git a/README.md b/README.md
+index c9eea0f036..9cbbc0ae7e 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,6 @@
+-# pytorch [alpha]
++# pytorch [alpha-0]
++
++The project is still under active development and is likely to drastically change in short periods of time.  
++We will be announcing API changes and important developments via a newsletter, github issues and post a link to the issues on slack.  
++Please remember that at this stage, this is an invite-only closed alpha, and please don't distribute code further.  
++This is done so that we can control development tightly and rapidly during the initial phases with feedback from you.
+@@ -3,3 +7,0 @@
+-The project is still under active development and is likely to drastically change in short periods of time.
+-We will be announcing the biggest/breaking changes on Slack.
+-Please remember that it's a closed alpha, and don't disclose the code.
+@@ -14 +16,23 @@ python3 setup.py install
+-## Compared to Lua torch
++## Communication
++* github issues: bug reports, feature requests, install issues, RFCs, thoughts, etc.
++* slack: general chat, online discussions, collaboration etc.
++
++###Slack:
++You should all be invited to the slack chat (check your email)  
++- Team Name: PyTorch
++- Team Domain: https://pytorch.slack.com/
++
++## Timeline
++
++We will run the alpha releases weekly for 6 weeks.
++After that, we will reevaluate progress, and if we are ready, we will hit beta-0. If not, we will do another two weeks of alpha.
++
++* alpha-0: Working versions of torch, cutorch, nn, cunn, optim fully unit tested with seamless numpy conversions
++* alpha-1: Serialization to/from disk with sharing intact. initial release of the new neuralnets package based on a Chainer-like design
++* alpha-2: sharing tensors across processes for hogwild training or data-loading processes. a rewritten optim package for this new nn.
++* alpha-3: binary installs (prob will take @alexbw 's help here), contbuilds, etc. 
++* alpha-4: a ton of examples across vision, nlp, speech, RL -- this phase might make us rethink parts of the APIs, and hence want to do this in alpha than beta
++* alpha-5: Putting a simple and efficient story around multi-machine training. Probably simplistic like torch-distlearn. Building the website, release scripts, more documentation, etc.
++* alpha-6: [no plan yet]
++
++The beta phases will be leaning more towards working with all of you, convering your use-cases, active development on non-core aspects.
+@@ -16 +40 @@ python3 setup.py install
+-We've decided that it's time to rewrite/update parts of the old torch API, even if it means loosing some of backward compatibility. This paragraph lists the biggest changes, and suggests how to shift from torch to pytorch.
++## pytorch vs torch: important changes
+@@ -18 +42,5 @@ We've decided that it's time to rewrite/update parts of the old torch API, even
+-For now there's no pytorch documentation. Since all currently implemented modules are very similar to the old ones, it's best to use torch7 docs for now (having in mind several differences described below).
++We've decided that it's time to rewrite/update parts of the old torch API, even if it means losing some of backward compatibility (we can hack up a model converter that converts correctly).  
++This section lists the biggest changes, and suggests how to shift from torch to pytorch.
++
++For now there's no pytorch documentation.  
++Since all currently implemented modules are very similar to the old ones, it's best to use torch7 docs for now (having in mind several differences described below).
+@@ -22 +50 @@ For now there's no pytorch documentation. Since all currently implemented module
+-All core modules are merged into a single repository.
++All core modules are merged into a single repository.  
+@@ -24,6 +52,6 @@ Most of them will be rewritten and will be completely new (more on this below),
+-* torch (torch)
+-* cutorch (torch.cuda)
+-* nn (torch.legacy.nn)
+-* cunn (torch.legacy.cunn)
+-* optim (torch.legacy.optim)
+-* nngraph (torch.legacy.nngraph - not implemented yet)
++* torch           (torch)
++* cutorch         (torch.cuda)
++* nn              (torch.legacy.nn)
++* cunn            (torch.legacy.cunn)
++* optim           (torch.legacy.optim)
++* nngraph         (torch.legacy.nngraph - not implemented yet)
+@@ -33 +61,4 @@ Most of them will be rewritten and will be completely new (more on this below),
+-pytorch uses 0-based indexing everywhere. This includes arguments to `index*` functions and nn criterion weights.
++pytorch uses 0-based indexing everywhere.  
++This includes arguments to `index*` functions and nn criterion weights.
++
++Under the hood, on the C side, we've changed logic on TH / THC / THNN / THCUNN to introduce a TH_INDEX_BASE compile-time definition to switch between 0 and 1 indexing logic.
+@@ -37,3 +68,4 @@ pytorch uses 0-based indexing everywhere. This includes arguments to `index*` fu
+-All methods operating on tensors are now out-of-place by default.
+-This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.
+-All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).
++**All methods operating on tensors are now out-of-place by default.**
++
++This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.  
++All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).  
+@@ -46 +78 @@ All tensors have their CUDA counterparts in torch.cuda module.
+-There's no `torch.cuda.setDevice` anymore. By default always the 0th device is selected, but code can be placed in a `with` statement to change it:
++There is no `torch.cuda.setDevice` anymore. By default always the 0th device is selected, but code can be placed in a `with` statement to change it:
+@@ -53 +85,4 @@ with torch.cuda.device(1):
+-Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device. Calling `.cuda(3)` will send it to the third device.
++Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device.  
++So, for example: ``` a = torch.LongTensor(10).cuda() # a is a CudaLongTensor ```
++
++Calling `.cuda(3)` will send it to the third device.  
+@@ -75 +110,4 @@ with torch.cuda.device(1):
+-In the future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.
++In the near future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.  
++This will help us to not worry about using buffers for every intermediate computation in a module if one wants to do multi-GPU training, for example.  
++See: https://github.com/torch/cutorch/pull/443
++
+@@ -92 +130 @@ d = torch.DoubleTensor(c) # it's possible to construct Tensors from numpy arrays
+-After looking at several framework designs, looking at the current nn design and thinking through a few original design ideas, this is what we've converged to:
++After looking at several framework designs, looking at the current design of `nn` and thinking through a few original design ideas, this is what we've converged to:
+@@ -156,2 +194 @@ Proposed solutions need to address:
+-#             B is
+-#          data parallel
++#             B is data parallel
+@@ -195,2 +232,3 @@ For parameter reductions ASAP:
+-We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.
+-
++We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.  
++For this, we plan to implement a .share() method for tensors that will enable them to be shared across processes seamlessly.  
++One can use [python multiprocessing](https://docs.python.org/2/library/multiprocessing.html) seamlessly.
+diff --git a/README.md b/README.md
+index 72907db8b0..c9eea0f036 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# torch
++# pytorch [alpha]
+@@ -3 +3,3 @@
+-### Installation
++The project is still under active development and is likely to drastically change in short periods of time.
++We will be announcing the biggest/breaking changes on Slack.
++Please remember that it's a closed alpha, and don't disclose the code.
+@@ -4,0 +7 @@
++## Installation
+@@ -5,0 +9,2 @@
++pip3 install .
++python3 setup.py build
+@@ -9 +14,182 @@ python3 setup.py install
+-### TODO
++## Compared to Lua torch
++
++We've decided that it's time to rewrite/update parts of the old torch API, even if it means loosing some of backward compatibility. This paragraph lists the biggest changes, and suggests how to shift from torch to pytorch.
++
++For now there's no pytorch documentation. Since all currently implemented modules are very similar to the old ones, it's best to use torch7 docs for now (having in mind several differences described below).
++
++### Library structure
++
++All core modules are merged into a single repository.
++Most of them will be rewritten and will be completely new (more on this below), but we're providing a Python version of old packages under torch.legacy namespace.
++* torch (torch)
++* cutorch (torch.cuda)
++* nn (torch.legacy.nn)
++* cunn (torch.legacy.cunn)
++* optim (torch.legacy.optim)
++* nngraph (torch.legacy.nngraph - not implemented yet)
++
++### 0-based indexing
++
++pytorch uses 0-based indexing everywhere. This includes arguments to `index*` functions and nn criterion weights.
++
++### New Tensor API
++
++All methods operating on tensors are now out-of-place by default.
++This means that although `a.add(b)` used to have a side-effect of mutating the elements in a, it will now return a new Tensor, holding the result.
++All methods that mutate the Tensor/Storage are now marked with a trailing underscore (including `copy` -> `copy_`, `fill` -> `fill_`, `set` -> `set_`, etc.).
++Most of math methods have their in-place counterparts, so  an equivalent to `a.add(b)` in Lua is now `a.add_(b)` (or `torch.add(a, a, b)`, which is not recommended in this case)
++
++### CUDA module
++
++All tensors have their CUDA counterparts in torch.cuda module.
++
++There's no `torch.cuda.setDevice` anymore. By default always the 0th device is selected, but code can be placed in a `with` statement to change it:
++
++```python
++with torch.cuda.device(1):
++    a = torch.cuda.FloatTensor(10) # a is allocated on GPU1
++```
++
++Calling `.cuda()` on tensors no longer converts it to a GPU float tensor, but to a CUDA tensor of the same type located on a currently selected device. Calling `.cuda(3)` will send it to the third device.
++`.cuda()` can be also used to transfer CUDA tensors between devices (calling it on a GPU tensor, with a different device selected will copy it into the current device).
++
++```python
++a = torch.LongTensor(10)
++b = a.cuda()  # b is a torch.cuda.LongTensor placed on GPU0
++c = a.cuda(2) # c is a torch.cuda.LongTensor placed on GPU2
++with torch.cuda.device(1):
++    d = b.cuda() # d is a copy of b, but on GPU1
++    e = d.cuda() # a no-op, d is already on current GPU, e is d == True
++```
++
++Also, setting device is now only important to specify where to allocate new Tensors. You can perform operations on CUDA Tensors irrespective of currently selected device (but all arguments have to be on the same device) - result will be also allocated there. See below for an example:
++
++```python
++a = torch.randn(2, 2).cuda()
++b = torch.randn(2, 2).cuda()
++with torch.cuda.device(1):
++    c = a + b                    # c is on GPU0
++    d = torch.randn(2, 2).cuda() # d is on GPU1
++```
++
++In the future, we also plan to use a CUDA allocator, which allows to alleviate problems with cudaMalloc/cudaFree being a sync point.
++
++### Numpy integration
++
++Because numpy is a core numerical package in Python, and is used by many other libraries like matplotlib, we've implemented a two-way bridge between pytorch and numpy.
++
++```python
++a = torch.randn(2, 2)
++b = a.numpy() # b is a numpy array of type corresponding to a
++              # no memory copy is performed, they share the same storage
++c = numpy.zeros(5, 5)
++d = torch.DoubleTensor(c) # it's possible to construct Tensors from numpy arrays
++              # d shares memory with b - there's no copy
++```
++
++### New neural network module
++
++After looking at several framework designs, looking at the current nn design and thinking through a few original design ideas, this is what we've converged to:
++
++* Adopt a Chainer-like design
++    * Makes it extremely natural to express Recurrent Nets and weight sharing
++    * Each module can operate in-place, but marks used variables as dirty - errors will be raised if they're used again
++* RNN example:
++
++```python
++class Network(nn.Container):
++    def __init__(self):
++        super(Network, self).__init__(
++            conv1=nn.SpatialConvolution(3, 16, 3, 3, 1, 1),
++            relu1=nn.ReLU(True),
++            lstm=nn.LSTM(),
++        )
++
++    def __call__(self, input):
++        y = self.conv(input)
++        y = self.relu1(y)
++        y = self.lstm(y)
++        return y
++
++model = Network()
++input = nn.Variable(torch.zeros(256, 3, 224, 224))
++
++output = model(input)
++
++loss = 0
++for i in range(ITERS):
++    input, target = ...
++    # That's all you need for an RNN
++    for t in range(TIMESTEPS):
++        loss += loss_fn(model(input), target)
++    loss.backward()
++
++```
++
++* To access states, have hooks for forward / backward (this also makes multi-GPU easier to implement)
++    * This has the advantage of not having to worry about in-place / out-of-place operators for accessing .output or .gradInput
++* When writing the module, make sure debuggability is straight forward. Dropping into pdb and inspecting things should be natural, especially when going over the backward graph.
++* Pulling handles to a module after constructing a chain should be very natural (apart from having a handle at construction)
++    * It's easy, since modules are assigned as Container properties
++* Drop overly verbose names. Example:
++    * SpatialConvolution → conv2d
++    * VolumetricConvolution → conv3d
++
++### Multi-GPU
++
++Proposed solutions need to address:
++
++* Kernel launch latency
++    * without affecting the user's code
++* Implementation should be as transparent as possible
++    * Should we expose DPT as:
++        * Split
++        * ParallelApply (scheduling kernels in breadth first order, to address launch latency)
++        * Join
++* In backward phase, send parameters as soon as the module finishes computation
++
++**Rough solution:**
++
++```python
++# This is an example of a network that has a data parallel part inside
++#
++#             B is
++#          data parallel
++#     +->A+-->B+-+
++#  +--+          +->D
++#     +->C+------+
++class Network(nn.Container):
++    __init__(self):
++        super(Network, self).__init__(
++            A = ...,
++            B = GPUReplicate(B, [0, 1, 2, 3]), # Copies the module onto a list of GPUs
++            C = ...,
++            D = ...
++        )
++
++    __call__(self, x):
++        a = self.A(x)
++        c = self.C(x)
++        a_split = Split(a) # a_split is a list of Tensors placed on different devices
++        b = ParallelApply(self.B, a_split) # self.B is a list-like object containing copies of B
++        d_input = Join(b + [c]) # gathers Tensors on a single GPU
++        return self.D(d_input)
++
++```
++
++Each module is assigned to a single GPU.
++
++For Kernel Launch Latency:
++* Python threading
++* Generators
++
++For parameter reductions ASAP:
++
++* In the forward pass, register a hooks on a  every parameter which are evaluated as soon as the last backward is executed for that parameter. The hook will then “all-reduce” those parameters across GPUs
++    * Problem with multiple forward calls - how do you know that the parameters won't be used anymore?
++        * Well, last usage in backward graph = first usage in forward graph, so this should be straightforward
++
++
++#### Multiprocessing
++
++We plan to make it as straightforward as possible, to use pytorch in a multiprocessing environment.
+@@ -11 +196,0 @@ python3 setup.py install
+-See list in issue #1

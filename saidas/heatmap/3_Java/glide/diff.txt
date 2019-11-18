@@ -1,0 +1,2207 @@
+diff --git a/README.md b/README.md
+index f4bb5ed31..033f71469 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.9.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
++  implementation 'com.github.bumptech.glide:glide:4.10.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.9.0</version>
++  <version>4.10.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.9.0</version>
++  <version>4.10.0</version>
+diff --git a/README.md b/README.md
+index 033f71469..f4bb5ed31 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.10.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
++  implementation 'com.github.bumptech.glide:glide:4.9.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.10.0</version>
++  <version>4.9.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.10.0</version>
++  <version>4.9.0</version>
+diff --git a/README.md b/README.md
+index f4bb5ed31..033f71469 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.9.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
++  implementation 'com.github.bumptech.glide:glide:4.10.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.9.0</version>
++  <version>4.10.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.9.0</version>
++  <version>4.10.0</version>
+diff --git a/README.md b/README.md
+index 3ab88b264..f4bb5ed31 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.8.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
++  implementation 'com.github.bumptech.glide:glide:4.9.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.8.0</version>
++  <version>4.9.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.8.0</version>
++  <version>4.9.0</version>
+@@ -79 +79 @@ For Glide v3, see the [wiki][2].
+-Simple use cases with Glide's [generated API][21] will look something like this:
++Simple use cases will look something like this:
+@@ -87 +87 @@ Simple use cases with Glide's [generated API][21] will look something like this:
+-  GlideApp.with(this).load("http://goo.gl/gEgYUd").into(imageView);
++  Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+@@ -101 +101 @@ Simple use cases with Glide's [generated API][21] will look something like this:
+-  GlideApp
++  Glide
+@@ -114 +114 @@ Status
+-Version 4 is now released and stable. Updates are currently released at least monthly with new features and bug fixes.
++Version 4 is now released and stable. Updates are released periodically with new features and bug fixes.
+@@ -136 +136 @@ Building Glide with gradle is fairly straight forward:
+-git clone https://github.com/bumptech/glide.git 
++git clone https://github.com/bumptech/glide.git
+@@ -219 +218,0 @@ This is not an official Google product.
+-[21]: https://bumptech.github.io/glide/doc/generatedapi.html
+diff --git a/README.md b/README.md
+index e6cad510b..3ab88b264 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.7.1'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
++  implementation 'com.github.bumptech.glide:glide:4.8.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.7.1</version>
++  <version>4.8.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.7.1</version>
++  <version>4.8.0</version>
+diff --git a/README.md b/README.md
+index 321c5f8e3..e6cad510b 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.7.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.7.0'
++  implementation 'com.github.bumptech.glide:glide:4.7.1'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.7.0</version>
++  <version>4.7.1</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.7.0</version>
++  <version>4.7.1</version>
+diff --git a/README.md b/README.md
+index bdd2ac91b..321c5f8e3 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.6.1'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
++  implementation 'com.github.bumptech.glide:glide:4.7.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.7.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.6.1</version>
++  <version>4.7.0</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.6.1</version>
++  <version>4.7.0</version>
+diff --git a/README.md b/README.md
+index f1445f0d3..bdd2ac91b 100644
+--- a/README.md
++++ b/README.md
+@@ -64 +64 @@ Depending on your ProGuard (DexGuard) config and usage, you may need to include
+--keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
++-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+diff --git a/README.md b/README.md
+index ac3fa0aad..f1445f0d3 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.6.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.0'
++  implementation 'com.github.bumptech.glide:glide:4.6.1'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.6.0</version>
++  <version>4.6.1</version>
+@@ -50 +50 @@ Or Maven:
+-  <version>4.6.0</version>
++  <version>4.6.1</version>
+diff --git a/README.md b/README.md
+index 04b4cea3c..ac3fa0aad 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.5.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
++  implementation 'com.github.bumptech.glide:glide:4.6.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.6.0'
+@@ -45,6 +45 @@ Or Maven:
+-  <version>4.5.0</version>
+-</dependency>
+-<dependency>
+-  <groupId>com.google.android</groupId>
+-  <artifactId>support-v4</artifactId>
+-  <version>r7</version>
++  <version>4.6.0</version>
+@@ -55 +50 @@ Or Maven:
+-  <version>4.5.0</version>
++  <version>4.6.0</version>
+diff --git a/README.md b/README.md
+index 568a96fe9..04b4cea3c 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.4.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
++  implementation 'com.github.bumptech.glide:glide:4.5.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+@@ -45 +45 @@ Or Maven:
+-  <version>4.4.0</version>
++  <version>4.5.0</version>
+@@ -55 +55 @@ Or Maven:
+-  <version>4.4.0</version>
++  <version>4.5.0</version>
+diff --git a/README.md b/README.md
+index 55f04f4f6..568a96fe9 100644
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21,2 @@ Download
++For detailed instructions and requirements, see Glide's [download and setup docs page][28].
++
+@@ -228,0 +231 @@ This is not an official Google product.
++[28]: http://bumptech.github.io/glide/doc/download-setup.html
+diff --git a/README.md b/README.md
+index 7211c70a0..55f04f4f6 100644
+--- a/README.md
++++ b/README.md
+@@ -32,2 +32,2 @@ dependencies {
+-  implementation 'com.github.bumptech.glide:glide:4.3.1'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
++  implementation 'com.github.bumptech.glide:glide:4.4.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.3.1</version>
++  <version>4.4.0</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.3.1</version>
++  <version>4.4.0</version>
+diff --git a/README.md b/README.md
+index 24aca5afa..7211c70a0 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ Or Maven:
+-For info on using the bleeding edge, see the [Snapshots][17] wiki page.
++For info on using the bleeding edge, see the [Snapshots][17] docs page.
+@@ -62 +62 @@ ProGuard
+-Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your proguard.cfg (see [Configuration wiki](https://github.com/bumptech/glide/wiki/Configuration#keeping-a-glidemodule) for more details):
++Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your proguard.cfg (see the [Download and Setup docs page][25] for more details):
+@@ -139 +139 @@ Building Glide with gradle is fairly straight forward:
+-git clone git@github.com:bumptech/glide.git # use https://github.com/bumptech/glide.git if "Permission Denied"
++git clone https://github.com/bumptech/glide.git 
+@@ -141 +140,0 @@ cd glide
+-git submodule init && git submodule update
+@@ -163 +162 @@ Follow the steps in the [Build](#build) section to setup the project and then ed
+-[Intellij IDEA 14][4] cleanly imports both Glide's source and tests and is the recommended way to work with Glide.
++[Android Studio][26] cleanly imports both Glide's source and tests and is the recommended way to work with Glide.
+@@ -165 +164 @@ Follow the steps in the [Build](#build) section to setup the project and then ed
+-To open the project in IntelliJ IDEA:
++To open the project in Android Studio:
+@@ -170 +169,3 @@ To open the project in IntelliJ IDEA:
+-4. Select `build.gradle`
++4. Select `setting.gradle`
++
++For more details, see the [Contributing docs page][27].
+@@ -217 +218 @@ This is not an official Google product.
+-[17]: https://github.com/bumptech/glide/wiki/Snapshots
++[17]: http://bumptech.github.io/glide/dev/snapshots.html
+@@ -224,0 +226,3 @@ This is not an official Google product.
++[25]: http://bumptech.github.io/glide/doc/download-setup.html#proguard
++[26]: https://developer.android.com/studio/index.html
++[27]: http://bumptech.github.io/glide/dev/contributing.html
+diff --git a/README.md b/README.md
+index 0d6f7b47e..24aca5afa 100644
+--- a/README.md
++++ b/README.md
+@@ -124,2 +124,2 @@ Compatibility
+- * **Minimum Android SDK**: Glide requires a minimum API level of 14.
+- * **Compile Android SDK**: Glide requires you to compile against API 26.
++ * **Minimum Android SDK**: Glide v4 requires a minimum API level of 14.
++ * **Compile Android SDK**: Glide v4 requires you to compile against API 26 or later.
+@@ -127,4 +127,4 @@ Compatibility
+- If you need to support older versions, consider staying on [Glide v3][14], which works on API 10, but not actively maintained.
+- * **OkHttp 2.x**: there are optional dependencies available called `okhttp-integration`, see [Integration Libraries][12] wiki page.
+- * **OkHttp 3.x**: there are optional dependencies available called `okhttp3-integration`, see [Integration Libraries][12] wiki page.
+- * **Volley**: there are optional dependencies available called `volley-integration`, see [Integration Libraries][12] wiki page.
++ If you need to support older versions of Android, consider staying on [Glide v3][14], which works on API 10, but is not actively maintained.
++
++ * **OkHttp 3.x**: There is an optional dependency available called `okhttp3-integration`, see the [docs page][23].
++ * **Volley**: There is an optional dependency available called `volley-integration`, see the [docs page][24].
+@@ -222,0 +223,2 @@ This is not an official Google product.
++[23]: http://bumptech.github.io/glide/int/okhttp3.html
++[24]: http://bumptech.github.io/glide/int/volley.html
+diff --git a/README.md b/README.md
+index 889d794b9..0d6f7b47e 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ repositories {
+-  maven { url 'https://maven.google.com' }
++  google()
+@@ -32 +32 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.3.1'
++  implementation 'com.github.bumptech.glide:glide:4.3.1'
+diff --git a/README.md b/README.md
+index 88a009c76..889d794b9 100644
+--- a/README.md
++++ b/README.md
+@@ -203 +203 @@ This is not an official Google product.
+-[3]: http://bumptech.github.io/glide/ref/javadocs.html
++[3]: https://bumptech.github.io/glide/ref/javadocs.html
+@@ -220,2 +220,2 @@ This is not an official Google product.
+-[20]: http://bumptech.github.io/glide/
+-[21]: http://bumptech.github.io/glide/doc/generatedapi.html
++[20]: https://bumptech.github.io/glide/
++[21]: https://bumptech.github.io/glide/doc/generatedapi.html
+diff --git a/README.md b/README.md
+index c59b4ba18..88a009c76 100644
+--- a/README.md
++++ b/README.md
+@@ -32,2 +32,2 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.3.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
++  compile 'com.github.bumptech.glide:glide:4.3.1'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.3.0</version>
++  <version>4.3.1</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.3.0</version>
++  <version>4.3.1</version>
+diff --git a/README.md b/README.md
+index 4a3e2fa91..c59b4ba18 100644
+--- a/README.md
++++ b/README.md
+@@ -32,2 +32,2 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.2.0'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
++  compile 'com.github.bumptech.glide:glide:4.3.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.2.0</version>
++  <version>4.3.0</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.2.0</version>
++  <version>4.3.0</version>
+diff --git a/README.md b/README.md
+index 0b4752017..4a3e2fa91 100644
+--- a/README.md
++++ b/README.md
+@@ -32,2 +32,2 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.1.1'
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
++  compile 'com.github.bumptech.glide:glide:4.2.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.1.1</version>
++  <version>4.2.0</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.1.1</version>
++  <version>4.2.0</version>
+diff --git a/README.md b/README.md
+index b2e7f345b..0b4752017 100644
+--- a/README.md
++++ b/README.md
+@@ -66 +66 @@ Depending on your ProGuard (DexGuard) config and usage, you may need to include
+--keep public class * extends com.bumptech.glide.AppGlideModule
++-keep public class * extends com.bumptech.glide.module.AppGlideModule
+@@ -222 +222 @@ This is not an official Google product.
+-[22]: https://muyangmin.github.io/glide-docs-cn/
+\ No newline at end of file
++[22]: https://muyangmin.github.io/glide-docs-cn/
+diff --git a/README.md b/README.md
+index 7b3d643e5..b2e7f345b 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Glide
+-| [View Glide's documentation][20] | [Report an issue with Glide][5]
++| [View Glide's documentation][20] | [简体中文文档][22] | [Report an issue with Glide][5]
+@@ -221,0 +222 @@ This is not an official Google product.
++[22]: https://muyangmin.github.io/glide-docs-cn/
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 6e9981912..7b3d643e5 100644
+--- a/README.md
++++ b/README.md
+@@ -124 +124,3 @@ Compatibility
+- * **Android SDK**: Glide requires a minimum API level of 14.  
++ * **Minimum Android SDK**: Glide requires a minimum API level of 14.
++ * **Compile Android SDK**: Glide requires you to compile against API 26.
++
+diff --git a/README.md b/README.md
+index 07e7460f2..6e9981912 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ repositories {
+-  mavenCentral() // jcenter() works as well because it pulls from Maven Central
++  mavenCentral()
+@@ -33 +32,0 @@ dependencies {
+-  compile 'com.android.support:support-v4:25.3.1'
+diff --git a/README.md b/README.md
+index 9905895d8..07e7460f2 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@ repositories {
++  maven { url 'https://maven.google.com' }
+diff --git a/README.md b/README.md
+index 978a2fe6d..9905895d8 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.0.0'
++  compile 'com.github.bumptech.glide:glide:4.1.1'
+@@ -33 +33 @@ dependencies {
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.0.0</version>
++  <version>4.1.1</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.0.0</version>
++  <version>4.1.1</version>
+diff --git a/README.md b/README.md
+index 9a1eeb979..978a2fe6d 100644
+--- a/README.md
++++ b/README.md
+@@ -124 +124,2 @@ Compatibility
+- * **Android SDK**: Glide requires a minimum API level of 10.
++ * **Android SDK**: Glide requires a minimum API level of 14.  
++ If you need to support older versions, consider staying on [Glide v3][14], which works on API 10, but not actively maintained.
+diff --git a/README.md b/README.md
+index a81188af0..9a1eeb979 100644
+--- a/README.md
++++ b/README.md
+@@ -152,0 +153 @@ Follow the steps in the [Build](#build) section to set up the project and then:
++./gradlew :samples:contacturi:run
+diff --git a/README.md b/README.md
+index 5ec5d0896..a81188af0 100644
+--- a/README.md
++++ b/README.md
+@@ -117,2 +117 @@ Status
+-[*Version 3* on the `3.0` branch][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
+-app and in the 2014 Google IO app. *Version 4* is currently under development on the `master` branch.
++Version 4 is now released and stable. Updates are currently released at least monthly with new features and bug fixes.
+diff --git a/README.md b/README.md
+index f874efed3..5ec5d0896 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
++  compile 'com.github.bumptech.glide:glide:4.0.0'
+@@ -33 +33 @@ dependencies {
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.0.0-RC1</version>
++  <version>4.0.0</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.0.0-RC1</version>
++  <version>4.0.0</version>
+diff --git a/README.md b/README.md
+index ca0d7fecf..f874efed3 100644
+--- a/README.md
++++ b/README.md
+@@ -78 +78 @@ How do I use Glide?
+-Checkout the [documentation][20] for pages on a variety of topics, and see the [javadocs][3].
++Check out the [documentation][20] for pages on a variety of topics, and see the [javadocs][3].
+@@ -148 +148 @@ Samples
+-Follow the steps in the [Build](#build) section to setup the project and then:
++Follow the steps in the [Build](#build) section to set up the project and then:
+diff --git a/README.md b/README.md
+index d80f425bc..ca0d7fecf 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ Or Maven:
+-  <groupdId>com.github.bumptech.glide</groupId>
++  <groupId>com.github.bumptech.glide</groupId>
+diff --git a/README.md b/README.md
+index c6184e8f4..d80f425bc 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
++  compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+@@ -33 +33 @@ dependencies {
+-  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
+@@ -43 +43 @@ Or Maven:
+-  <version>4.0.0-RC0</version>
++  <version>4.0.0-RC1</version>
+@@ -53 +53 @@ Or Maven:
+-  <version>4.0.0-RC0</version>
++  <version>4.0.0-RC1</version>
+diff --git a/README.md b/README.md
+index b38bf46bd..c6184e8f4 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Glide
+-[View Glide's documentation][20] [Report an issue with Glide][5]
++| [View Glide's documentation][20] | [Report an issue with Glide][5]
+diff --git a/README.md b/README.md
+index 6faf3b26b..b38bf46bd 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Glide
+-[Report an issue with Glide][5]
++[View Glide's documentation][20] [Report an issue with Glide][5]
+diff --git a/README.md b/README.md
+index 495fd8877..6faf3b26b 100644
+--- a/README.md
++++ b/README.md
+@@ -65,0 +66 @@ Depending on your ProGuard (DexGuard) config and usage, you may need to include
++-keep public class * extends com.bumptech.glide.AppGlideModule
+diff --git a/README.md b/README.md
+index f25455aab..495fd8877 100644
+--- a/README.md
++++ b/README.md
+@@ -32,0 +33 @@ dependencies {
++  annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
+@@ -48,0 +50,6 @@ Or Maven:
++<dependency>
++  <groupdId>com.github.bumptech.glide</groupId>
++  <artifactId>compiler</artifactId>
++  <version>4.0.0-RC0</version>
++  <optional>true</optional>
++</dependency>
+@@ -70 +77,3 @@ How do I use Glide?
+-Checkout the [GitHub wiki][2] for pages on a variety of topics, and see the [javadocs][3].
++Checkout the [documentation][20] for pages on a variety of topics, and see the [javadocs][3].
++
++For Glide v3, see the [wiki][2].
+@@ -72 +81 @@ Checkout the [GitHub wiki][2] for pages on a variety of topics, and see the [jav
+-Simple use cases will look something like this:
++Simple use cases with Glide's [generated API][21] will look something like this:
+@@ -80 +89 @@ Simple use cases will look something like this:
+-  Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
++  GlideApp.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+@@ -94 +103 @@ Simple use cases will look something like this:
+-  Glide
++  GlideApp
+@@ -99 +107,0 @@ Simple use cases will look something like this:
+-    .crossFade()
+@@ -191 +199 @@ This is not an official Google product.
+-[3]: http://bumptech.github.io/glide/javadocs/latest/index.html
++[3]: http://bumptech.github.io/glide/ref/javadocs.html
+@@ -207,0 +216,2 @@ This is not an official Google product.
++[20]: http://bumptech.github.io/glide/
++[21]: http://bumptech.github.io/glide/doc/generatedapi.html
+diff --git a/README.md b/README.md
+index ce3e81e39..f25455aab 100644
+--- a/README.md
++++ b/README.md
+@@ -31,2 +31,2 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:3.7.0'
+-  compile 'com.android.support:support-v4:19.1.0'
++  compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
++  compile 'com.android.support:support-v4:25.3.1'
+@@ -42 +42 @@ Or Maven:
+-  <version>3.7.0</version>
++  <version>4.0.0-RC0</version>
+diff --git a/README.md b/README.md
+index 42b2d5802..ce3e81e39 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ Glide
+-[![Build Status](https://travis-ci.org/bumptech/glide.svg?branch=master)](https://travis-ci.org/bumptech/glide)
++[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.bumptech.glide/glide/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.bumptech.glide/glide) [![Build Status](https://travis-ci.org/bumptech/glide.svg?branch=master)](https://travis-ci.org/bumptech/glide)
+diff --git a/README.md b/README.md
+index b35334abc..42b2d5802 100644
+--- a/README.md
++++ b/README.md
+@@ -62,0 +63,2 @@ Depending on your ProGuard (DexGuard) config and usage, you may need to include
++
++# for DexGuard only
+diff --git a/README.md b/README.md
+index 488f9b3c1..b35334abc 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ For info on using the bleeding edge, see the [Snapshots][17] wiki page.
+-Proguard
++ProGuard
+@@ -55 +55 @@ Proguard
+-Depending on your proguard config and usage, you may need to include the following lines in your proguard.cfg:
++Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your proguard.cfg (see [Configuration wiki](https://github.com/bumptech/glide/wiki/Configuration#keeping-a-glidemodule) for more details):
+@@ -62,0 +63 @@ Depending on your proguard config and usage, you may need to include the followi
++-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+@@ -101 +101,0 @@ Simple use cases will look something like this:
+-
+@@ -170 +170 @@ Thanks
+-* **Dave Smith** for the [gif decoder gist][9] Glide's gif decoder is based on.
++* **Dave Smith** for the [GIF decoder gist][9] Glide's GIF decoder is based on.
+@@ -205 +205 @@ This is not an official Google product.
+-[19]: https://github.com/wasabeef/glide-transformations
+\ No newline at end of file
++[19]: https://github.com/wasabeef/glide-transformations
+diff --git a/README.md b/README.md
+index 2f937c15a..488f9b3c1 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@ Glide
++[Report an issue with Glide][5]
+@@ -26 +27 @@ repositories {
+-    mavenCentral()
++  mavenCentral() // jcenter() works as well because it pulls from Maven Central
+@@ -30,2 +31,2 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.6.1'
+-    compile 'com.android.support:support-v4:19.1.0'
++  compile 'com.github.bumptech.glide:glide:3.7.0'
++  compile 'com.android.support:support-v4:19.1.0'
+@@ -39,3 +40,3 @@ Or Maven:
+-    <groupId>com.github.bumptech.glide</groupId>
+-    <artifactId>glide</artifactId>
+-    <version>3.6.1</version>
++  <groupId>com.github.bumptech.glide</groupId>
++  <artifactId>glide</artifactId>
++  <version>3.7.0</version>
+@@ -44,3 +45,3 @@ Or Maven:
+-    <groupId>com.google.android</groupId>
+-    <artifactId>support-v4</artifactId>
+-    <version>r7</version>
++  <groupId>com.google.android</groupId>
++  <artifactId>support-v4</artifactId>
++  <version>r7</version>
+@@ -49,0 +51,2 @@ Or Maven:
++For info on using the bleeding edge, see the [Snapshots][17] wiki page.
++
+@@ -57,2 +60,2 @@ Depending on your proguard config and usage, you may need to include the followi
+-    **[] $VALUES;
+-    public *;
++  **[] $VALUES;
++  public *;
+@@ -70,4 +73,3 @@ Simple use cases will look something like this:
+-@Override
+-public void onCreate(Bundle savedInstanceState) {
+-    ...
+-    ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
++@Override public void onCreate(Bundle savedInstanceState) {
++  ...
++  ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
+@@ -75 +77 @@ public void onCreate(Bundle savedInstanceState) {
+-    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
++  Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+@@ -79,19 +81,19 @@ public void onCreate(Bundle savedInstanceState) {
+-@Override
+-public View getView(int position, View recycled, ViewGroup container) {
+-    final ImageView myImageView;
+-    if (recycled == null) {
+-        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
+-    } else {
+-        myImageView = (ImageView) recycled;
+-    }
+-
+-    String url = myUrls.get(position);
+-
+-    Glide.with(myFragment)
+-        .load(url)
+-        .centerCrop()
+-        .placeholder(R.drawable.loading_spinner)
+-        .crossFade()
+-        .into(myImageView);
+-
+-    return myImageView;
++@Override public View getView(int position, View recycled, ViewGroup container) {
++  final ImageView myImageView;
++  if (recycled == null) {
++    myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
++  } else {
++    myImageView = (ImageView) recycled;
++  }
++
++  String url = myUrls.get(position);
++
++  Glide
++    .with(myFragment)
++    .load(url)
++    .centerCrop()
++    .placeholder(R.drawable.loading_spinner)
++    .crossFade()
++    .into(myImageView);
++
++  return myImageView;
+@@ -102,15 +103,0 @@ public View getView(int position, View recycled, ViewGroup container) {
+-OkHttp and Volley
+------------------
+-Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies.
+-The integration libraries are available via Maven or the [releases page][1].
+-
+-For instructions on including either the OkHttp or the Volley integration libraries, see the [Integration Libraries][12] wiki page.
+-
+-Android SDK Version
+--------------------
+-Glide requires a minimum SDK version of 10.
+-
+-License
+--------
+-BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+-
+@@ -119 +106 @@ Status
+-[*Version 3*][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
++[*Version 3* on the `3.0` branch][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
+@@ -121 +108,12 @@ app and in the 2014 Google IO app. *Version 4* is currently under development on
+-Comments/bugs/questions/pull requests welcome!
++
++Comments/bugs/questions/pull requests are always welcome! Please read [CONTRIBUTING.md][5] on how to report issues.
++
++Compatibility
++-------------
++
++ * **Android SDK**: Glide requires a minimum API level of 10.
++ * **OkHttp 2.x**: there are optional dependencies available called `okhttp-integration`, see [Integration Libraries][12] wiki page.
++ * **OkHttp 3.x**: there are optional dependencies available called `okhttp3-integration`, see [Integration Libraries][12] wiki page.
++ * **Volley**: there are optional dependencies available called `volley-integration`, see [Integration Libraries][12] wiki page.
++ * **Round Pictures**: `CircleImageView`/`CircularImageView`/`RoundedImageView` are known to have [issues][18] with `TransitionDrawable` (`.crossFade()` with `.thumbnail()` or `.placeholder()`) and animated GIFs, use a [`BitmapTransformation`][19] (`.circleCrop()` will be available in v4) or `.dontAnimate()` to fix the issue.
++ * **Huge Images** (maps, comic strips): Glide can load huge images by downsampling them, but does not support zooming and panning `ImageView`s as they require special resource optimizations (such as tiling) to work without `OutOfMemoryError`s.
+@@ -153 +151 @@ Follow the steps in the [Build](#build) section to setup the project and then ed
+-To open the project in Intellij 14:
++To open the project in IntelliJ IDEA:
+@@ -179 +177,5 @@ Author
+-Sam Judd - @samajudd
++Sam Judd - @sjudd on GitHub, @samajudd on Twitter
++
++License
++-------
++BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+@@ -189 +191 @@ This is not an official Google product.
+-[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20%28if%20any%29**%3A%0A**Device/Android%20Version**%3A%0A**Issue%20details/Repro%20steps/Use%20case%20background**%3A%0A%0A**Glide%20load%20line**%3A%0A%60%60%60java%0AGlide.with%28...%29.....load%28...%29.....into%28...%29%3B%0A%60%60%60%0A%0A**Layout%20XML**%3A%0A%60%60%60xml%0A%3C...Layout%3E%0A%20%20%20%20%3CImageView%20android%3AscaleType%3D%22...%22%20...%20/%3E%0A%3C/..Layout%3E%0A%60%60%60%0A%0A**Stack%20trace%20/%20LogCat**%3A%0A%60%60%60ruby%0Apaste%20stack%20trace%20here%0A%60%60%60
++[5]: https://github.com/bumptech/glide/blob/master/CONTRIBUTING.md
+@@ -200,0 +203,3 @@ This is not an official Google product.
++[17]: https://github.com/bumptech/glide/wiki/Snapshots
++[18]: https://github.com/bumptech/glide/issues?q=is%3Aissue+CircleImageView+OR+CircularImageView+OR+RoundedImageView
++[19]: https://github.com/wasabeef/glide-transformations
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 44df36b80..2f937c15a 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ repositories {
+-  mavenCentral() // jcenter() works as well because it pulls from Maven Central
++    mavenCentral()
+@@ -30,2 +30,2 @@ dependencies {
+-  compile 'com.github.bumptech.glide:glide:3.7.0'
+-  compile 'com.android.support:support-v4:19.1.0'
++    compile 'com.github.bumptech.glide:glide:3.6.1'
++    compile 'com.android.support:support-v4:19.1.0'
+@@ -39,3 +39,3 @@ Or Maven:
+-  <groupId>com.github.bumptech.glide</groupId>
+-  <artifactId>glide</artifactId>
+-  <version>3.7.0</version>
++    <groupId>com.github.bumptech.glide</groupId>
++    <artifactId>glide</artifactId>
++    <version>3.6.1</version>
+@@ -44,3 +44,3 @@ Or Maven:
+-  <groupId>com.google.android</groupId>
+-  <artifactId>support-v4</artifactId>
+-  <version>r7</version>
++    <groupId>com.google.android</groupId>
++    <artifactId>support-v4</artifactId>
++    <version>r7</version>
+@@ -50,2 +49,0 @@ Or Maven:
+-For info on using the bleeding edge, see the [Snapshots][17] wiki page.
+-
+@@ -59,2 +57,2 @@ Depending on your proguard config and usage, you may need to include the followi
+-  **[] $VALUES;
+-  public *;
++    **[] $VALUES;
++    public *;
+@@ -72,3 +70,4 @@ Simple use cases will look something like this:
+-@Override public void onCreate(Bundle savedInstanceState) {
+-  ...
+-  ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
++@Override
++public void onCreate(Bundle savedInstanceState) {
++    ...
++    ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
+@@ -76 +75 @@ Simple use cases will look something like this:
+-  Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
++    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+@@ -80,19 +79,19 @@ Simple use cases will look something like this:
+-@Override public View getView(int position, View recycled, ViewGroup container) {
+-  final ImageView myImageView;
+-  if (recycled == null) {
+-    myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
+-  } else {
+-    myImageView = (ImageView) recycled;
+-  }
+-
+-  String url = myUrls.get(position);
+-
+-  Glide
+-    .with(myFragment)
+-    .load(url)
+-    .centerCrop()
+-    .placeholder(R.drawable.loading_spinner)
+-    .crossFade()
+-    .into(myImageView);
+-
+-  return myImageView;
++@Override
++public View getView(int position, View recycled, ViewGroup container) {
++    final ImageView myImageView;
++    if (recycled == null) {
++        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
++    } else {
++        myImageView = (ImageView) recycled;
++    }
++
++    String url = myUrls.get(position);
++
++    Glide.with(myFragment)
++        .load(url)
++        .centerCrop()
++        .placeholder(R.drawable.loading_spinner)
++        .crossFade()
++        .into(myImageView);
++
++    return myImageView;
+@@ -103,4 +102,4 @@ Simple use cases will look something like this:
+-Status
+-------
+-[*Version 3* on the `3.0` branch][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
+-app and in the 2014 Google IO app. *Version 4* is currently under development on the `master` branch.
++OkHttp and Volley
++-----------------
++Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies.
++The integration libraries are available via Maven or the [releases page][1].
+@@ -108 +107 @@ app and in the 2014 Google IO app. *Version 4* is currently under development on
+-Comments/bugs/questions/pull requests are always welcome! Please read [CONTRIBUTING.md][5] on how to report issues.
++For instructions on including either the OkHttp or the Volley integration libraries, see the [Integration Libraries][12] wiki page.
+@@ -110,2 +109,7 @@ Comments/bugs/questions/pull requests are always welcome! Please read [CONTRIBUT
+-Compatibility
+--------------
++Android SDK Version
++-------------------
++Glide requires a minimum SDK version of 10.
++
++License
++-------
++BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+@@ -113,6 +117,5 @@ Compatibility
+- * **Android SDK**: Glide requires a minimum API level of 10.
+- * **OkHttp 2.x**: there are optional dependencies available called `okhttp-integration`, see [Integration Libraries][12] wiki page.
+- * **OkHttp 3.x**: there are optional dependencies available called `okhttp3-integration`, see [Integration Libraries][12] wiki page.
+- * **Volley**: there are optional dependencies available called `volley-integration`, see [Integration Libraries][12] wiki page.
+- * **Round Pictures**: `CircleImageView`/`CircularImageView`/`RoundedImageView` are known to have [issues][18] with `TransitionDrawable` (`.crossFade()` with `.thumbnail()` or `.placeholder()`) and animated GIFs, use a [`BitmapTransformation`][19] (`.circleCrop()` will be available in v4) or `.dontAnimate()` to fix the issue.
+- * **Huge Images** (maps, comic strips): Glide can load huge images by downsampling them, but does not support zooming and panning `ImageView`s as they require special resource optimizations (such as tiling) to work without `OutOfMemoryError`s.
++Status
++------
++[*Version 3*][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
++app and in the 2014 Google IO app. *Version 4* is currently under development on the `master` branch.
++Comments/bugs/questions/pull requests welcome!
+@@ -150 +153 @@ Follow the steps in the [Build](#build) section to setup the project and then ed
+-To open the project in IntelliJ IDEA:
++To open the project in Intellij 14:
+@@ -176,5 +179 @@ Author
+-Sam Judd - @sjudd on GitHub, @samajudd on Twitter
+-
+-License
+--------
+-BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
++Sam Judd - @samajudd
+@@ -190 +189 @@ This is not an official Google product.
+-[5]: https://github.com/bumptech/glide/blob/master/CONTRIBUTING.md
++[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20%28if%20any%29**%3A%0A**Device/Android%20Version**%3A%0A**Issue%20details/Repro%20steps/Use%20case%20background**%3A%0A%0A**Glide%20load%20line**%3A%0A%60%60%60java%0AGlide.with%28...%29.....load%28...%29.....into%28...%29%3B%0A%60%60%60%0A%0A**Layout%20XML**%3A%0A%60%60%60xml%0A%3C...Layout%3E%0A%20%20%20%20%3CImageView%20android%3AscaleType%3D%22...%22%20...%20/%3E%0A%3C/..Layout%3E%0A%60%60%60%0A%0A**Stack%20trace%20/%20LogCat**%3A%0A%60%60%60ruby%0Apaste%20stack%20trace%20here%0A%60%60%60
+@@ -202,3 +200,0 @@ This is not an official Google product.
+-[17]: https://github.com/bumptech/glide/wiki/Snapshots
+-[18]: https://github.com/bumptech/glide/issues?q=is%3Aissue+CircleImageView+OR+CircularImageView+OR+RoundedImageView
+-[19]: https://github.com/wasabeef/glide-transformations
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 1831f82cb..44df36b80 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@ Glide
+-[Report an issue with Glide][5]
+@@ -161 +160 @@ To report a specific problem or feature request, [open a new issue on Github][5]
+-anything else, join or email [Glide's discussion group][6], or join our IRC channel: [irc.freenode.net#glide-library][13].
++anything else, email [Glide's discussion group][6], or join our IRC channel: [irc.freenode.net#glide-library][13].
+diff --git a/README.md b/README.md
+index 3cd7dbd8b..1831f82cb 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@ Glide
++[Report an issue with Glide][5]
+@@ -26 +27 @@ repositories {
+-    mavenCentral()
++  mavenCentral() // jcenter() works as well because it pulls from Maven Central
+@@ -30,2 +31,2 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.7.0'
+-    compile 'com.android.support:support-v4:19.1.0'
++  compile 'com.github.bumptech.glide:glide:3.7.0'
++  compile 'com.android.support:support-v4:19.1.0'
+@@ -39,3 +40,3 @@ Or Maven:
+-    <groupId>com.github.bumptech.glide</groupId>
+-    <artifactId>glide</artifactId>
+-    <version>3.7.0</version>
++  <groupId>com.github.bumptech.glide</groupId>
++  <artifactId>glide</artifactId>
++  <version>3.7.0</version>
+@@ -44,3 +45,3 @@ Or Maven:
+-    <groupId>com.google.android</groupId>
+-    <artifactId>support-v4</artifactId>
+-    <version>r7</version>
++  <groupId>com.google.android</groupId>
++  <artifactId>support-v4</artifactId>
++  <version>r7</version>
+@@ -49,0 +51,2 @@ Or Maven:
++For info on using the bleeding edge, see the [Snapshots][17] wiki page.
++
+@@ -57,2 +60,2 @@ Depending on your proguard config and usage, you may need to include the followi
+-    **[] $VALUES;
+-    public *;
++  **[] $VALUES;
++  public *;
+@@ -70,4 +73,3 @@ Simple use cases will look something like this:
+-@Override
+-public void onCreate(Bundle savedInstanceState) {
+-    ...
+-    ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
++@Override public void onCreate(Bundle savedInstanceState) {
++  ...
++  ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
+@@ -75 +77 @@ public void onCreate(Bundle savedInstanceState) {
+-    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
++  Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+@@ -79,19 +81,19 @@ public void onCreate(Bundle savedInstanceState) {
+-@Override
+-public View getView(int position, View recycled, ViewGroup container) {
+-    final ImageView myImageView;
+-    if (recycled == null) {
+-        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
+-    } else {
+-        myImageView = (ImageView) recycled;
+-    }
+-
+-    String url = myUrls.get(position);
+-
+-    Glide.with(myFragment)
+-        .load(url)
+-        .centerCrop()
+-        .placeholder(R.drawable.loading_spinner)
+-        .crossFade()
+-        .into(myImageView);
+-
+-    return myImageView;
++@Override public View getView(int position, View recycled, ViewGroup container) {
++  final ImageView myImageView;
++  if (recycled == null) {
++    myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
++  } else {
++    myImageView = (ImageView) recycled;
++  }
++
++  String url = myUrls.get(position);
++
++  Glide
++    .with(myFragment)
++    .load(url)
++    .centerCrop()
++    .placeholder(R.drawable.loading_spinner)
++    .crossFade()
++    .into(myImageView);
++
++  return myImageView;
+@@ -102,15 +103,0 @@ public View getView(int position, View recycled, ViewGroup container) {
+-OkHttp and Volley
+------------------
+-Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies.
+-The integration libraries are available via Maven or the [releases page][1].
+-
+-For instructions on including either the OkHttp or the Volley integration libraries, see the [Integration Libraries][12] wiki page.
+-
+-Android SDK Version
+--------------------
+-Glide requires a minimum SDK version of 10.
+-
+-License
+--------
+-BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+-
+@@ -119 +106 @@ Status
+-[*Version 3*][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
++[*Version 3* on the `3.0` branch][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
+@@ -121 +108,12 @@ app and in the 2014 Google IO app. *Version 4* is currently under development on
+-Comments/bugs/questions/pull requests welcome!
++
++Comments/bugs/questions/pull requests are always welcome! Please read [CONTRIBUTING.md][5] on how to report issues.
++
++Compatibility
++-------------
++
++ * **Android SDK**: Glide requires a minimum API level of 10.
++ * **OkHttp 2.x**: there are optional dependencies available called `okhttp-integration`, see [Integration Libraries][12] wiki page.
++ * **OkHttp 3.x**: there are optional dependencies available called `okhttp3-integration`, see [Integration Libraries][12] wiki page.
++ * **Volley**: there are optional dependencies available called `volley-integration`, see [Integration Libraries][12] wiki page.
++ * **Round Pictures**: `CircleImageView`/`CircularImageView`/`RoundedImageView` are known to have [issues][18] with `TransitionDrawable` (`.crossFade()` with `.thumbnail()` or `.placeholder()`) and animated GIFs, use a [`BitmapTransformation`][19] (`.circleCrop()` will be available in v4) or `.dontAnimate()` to fix the issue.
++ * **Huge Images** (maps, comic strips): Glide can load huge images by downsampling them, but does not support zooming and panning `ImageView`s as they require special resource optimizations (such as tiling) to work without `OutOfMemoryError`s.
+@@ -153 +151 @@ Follow the steps in the [Build](#build) section to setup the project and then ed
+-To open the project in Intellij 14:
++To open the project in IntelliJ IDEA:
+@@ -179 +177,5 @@ Author
+-Sam Judd - @samajudd
++Sam Judd - @sjudd on GitHub, @samajudd on Twitter
++
++License
++-------
++BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+@@ -189 +191 @@ This is not an official Google product.
+-[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20%28if%20any%29**%3A%0A**Device/Android%20Version**%3A%0A**Issue%20details/Repro%20steps/Use%20case%20background**%3A%0A%0A**Glide%20load%20line**%3A%0A%60%60%60java%0AGlide.with%28...%29.....load%28...%29.....into%28...%29%3B%0A%60%60%60%0A%0A**Layout%20XML**%3A%0A%60%60%60xml%0A%3C...Layout%3E%0A%20%20%20%20%3CImageView%20android%3AscaleType%3D%22...%22%20...%20/%3E%0A%3C/..Layout%3E%0A%60%60%60%0A%0A**Stack%20trace%20/%20LogCat**%3A%0A%60%60%60ruby%0Apaste%20stack%20trace%20here%0A%60%60%60
++[5]: https://github.com/bumptech/glide/blob/master/CONTRIBUTING.md
+@@ -200,0 +203,3 @@ This is not an official Google product.
++[17]: https://github.com/bumptech/glide/wiki/Snapshots
++[18]: https://github.com/bumptech/glide/issues?q=is%3Aissue+CircleImageView+OR+CircularImageView+OR+RoundedImageView
++[19]: https://github.com/wasabeef/glide-transformations
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 0871e7076..3cd7dbd8b 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.6.1'
++    compile 'com.github.bumptech.glide:glide:3.7.0'
+@@ -41 +41 @@ Or Maven:
+-    <version>3.6.1</version>
++    <version>3.7.0</version>
+diff --git a/README.md b/README.md
+index ee8b287f7..0871e7076 100644
+--- a/README.md
++++ b/README.md
+@@ -200 +200 @@ This is not an official Google product.
+-[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+\ No newline at end of file
++[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+diff --git a/README.md b/README.md
+index 0871e7076..ee8b287f7 100644
+--- a/README.md
++++ b/README.md
+@@ -200 +200 @@ This is not an official Google product.
+-[16]: https://github.com/bumptech/glide/blob/master/LICENSE
++[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index ee8b287f7..0871e7076 100644
+--- a/README.md
++++ b/README.md
+@@ -200 +200 @@ This is not an official Google product.
+-[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+\ No newline at end of file
++[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+diff --git a/README.md b/README.md
+index 8c95a4634..ee8b287f7 100644
+--- a/README.md
++++ b/README.md
+@@ -42 +41,0 @@ Or Maven:
+-    <type>aar</type>
+@@ -125 +124 @@ Build
+-------
++-----
+diff --git a/README.md b/README.md
+index 34bbbf0b3..8c95a4634 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11,2 @@ decoding, memory and disk caching, and resource pooling into a simple and easy t
+-Glide supports fetching, decoding, and displaying video stills, images, and animated GIFs. Glide includes a flexible api
+-that allows developers to plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based
++Glide supports fetching, decoding, and displaying video stills, images, and animated GIFs. Glide includes a flexible API
++that allows developers to plug in to almost any network stack. By default Glide uses a custom `HttpUrlConnection` based
+@@ -24 +24 @@ Or use Gradle:
+-```groovy
++```gradle
+@@ -26 +26 @@ repositories {
+-  mavenCentral()
++    mavenCentral()
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.6.0'
++    compile 'com.github.bumptech.glide:glide:3.6.1'
+@@ -39,4 +39,4 @@ Or Maven:
+-  <groupId>com.github.bumptech.glide</groupId>
+-  <artifactId>glide</artifactId>
+-  <version>3.6.0</version>
+-  <type>aar</type>
++    <groupId>com.github.bumptech.glide</groupId>
++    <artifactId>glide</artifactId>
++    <version>3.6.1</version>
++    <type>aar</type>
+@@ -45,3 +45,3 @@ Or Maven:
+-  <groupId>com.google.android</groupId>
+-  <artifactId>support-v4</artifactId>
+-  <version>r7</version>
++    <groupId>com.google.android</groupId>
++    <artifactId>support-v4</artifactId>
++    <version>r7</version>
+@@ -54 +54,2 @@ Depending on your proguard config and usage, you may need to include the followi
+-```
++
++```pro
+@@ -68,2 +69 @@ Simple use cases will look something like this:
+-```Java
+-
++```java
+@@ -74 +73,0 @@ public void onCreate(Bundle savedInstanceState) {
+-
+@@ -80 +79 @@ public void onCreate(Bundle savedInstanceState) {
+-// For a list:
++// For a simple image list:
+@@ -85,2 +84 @@ public View getView(int position, View recycled, ViewGroup container) {
+-        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view,
+-                container, false);
++        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
+@@ -107,2 +105,2 @@ OkHttp and Volley
+-Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies. The
+-integration libraries are available via Maven or the [releases page][1].
++Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies.
++The integration libraries are available via Maven or the [releases page][1].
+@@ -110,2 +108 @@ integration libraries are available via Maven or the [releases page][1].
+-For instructions on including either the OkHttp or the Volley integration libraries, see the
+-[Integration Libraries][12] wiki page.
++For instructions on including either the OkHttp or the Volley integration libraries, see the [Integration Libraries][12] wiki page.
+@@ -115 +112 @@ Android SDK Version
+-Glide requires a minimum sdk version of 10.
++Glide requires a minimum SDK version of 10.
+@@ -119 +116 @@ License
+-BSD, part MIT and Apache 2.0. See LICENSE file for details.
++BSD, part MIT and Apache 2.0. See the [LICENSE][16] file for details.
+@@ -123,2 +120,3 @@ Status
+-Version 3 is a stable public release used in multiple open source projects at Google including in the Android Camera
+-app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
++[*Version 3*][14] is a stable public release used in multiple open source projects at Google including in the Android Camera
++app and in the 2014 Google IO app. *Version 4* is currently under development on the `master` branch.
++Comments/bugs/questions/pull requests welcome!
+@@ -130,2 +128,2 @@ Building Glide with gradle is fairly straight forward:
+-```
+-git clone git@github.com:bumptech/glide.git
++```shell
++git clone git@github.com:bumptech/glide.git # use https://github.com/bumptech/glide.git if "Permission Denied"
+@@ -137 +135 @@ git submodule init && git submodule update
+-Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment
++**Note**: Make sure your *Android SDK* has the *Android Support Repository* installed, and that your `$ANDROID_HOME` environment
+@@ -142 +140 @@ Samples
+-Follow the steps in the 'Build' section to setup the project and then:
++Follow the steps in the [Build](#build) section to setup the project and then:
+@@ -144 +142 @@ Follow the steps in the 'Build' section to setup the project and then:
+-```
++```shell
+@@ -148,0 +147 @@ Follow the steps in the 'Build' section to setup the project and then:
++You may also find precompiled APKs on the [releases page][1].
+@@ -152 +151 @@ Development
+-Follow the steps in the 'Build' section to setup the project and then edit the files however you wish.
++Follow the steps in the [Build](#build) section to setup the project and then edit the files however you wish.
+@@ -157,2 +156,2 @@ To open the project in Intellij 14:
+-1. Go to File.
+-2. Click on 'Open...'
++1. Go to *File* menu or the *Welcome Screen*
++2. Click on *Open...*
+@@ -160 +159 @@ To open the project in Intellij 14:
+-4. Select glide-parent.iml
++4. Select `build.gradle`
+@@ -165 +164 @@ To report a specific problem or feature request, [open a new issue on Github][5]
+-anything else, join or email [Glide's discussion group][6], or join our irc channel: [irc.freenode.net#glide-library][13].
++anything else, join or email [Glide's discussion group][6], or join our IRC channel: [irc.freenode.net#glide-library][13].
+@@ -173,4 +172,4 @@ Thanks
+-* The Android team and Jake Wharton for the [disk cache implementation][8] Glide's disk cache is based on.
+-* Dave Smith for the [gif decoder gist][9] Glide's gif decoder is based on.
+-* Chris Banes for his [gradle-mvn-push][10] script.
+-* Corey Hall for Glide's [amazing logo][11].
++* The **Android team** and **Jake Wharton** for the [disk cache implementation][8] Glide's disk cache is based on.
++* **Dave Smith** for the [gif decoder gist][9] Glide's gif decoder is based on.
++* **Chris Banes** for his [gradle-mvn-push][10] script.
++* **Corey Hall** for Glide's [amazing logo][11].
+@@ -191 +190 @@ This is not an official Google product.
+-[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20(if%20any)**:%0A**Device/Android%20Version**:%0A**Issue%20details/Repro%20steps**:%0A%0A**Glide%20load%20line**:%0A```%0AGlide.with(context)...%3B%0A```%0A%0A**Stack%20trace**:%0A```%0Apaste%20stack%20trace%20here%0A```
++[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20%28if%20any%29**%3A%0A**Device/Android%20Version**%3A%0A**Issue%20details/Repro%20steps/Use%20case%20background**%3A%0A%0A**Glide%20load%20line**%3A%0A%60%60%60java%0AGlide.with%28...%29.....load%28...%29.....into%28...%29%3B%0A%60%60%60%0A%0A**Layout%20XML**%3A%0A%60%60%60xml%0A%3C...Layout%3E%0A%20%20%20%20%3CImageView%20android%3AscaleType%3D%22...%22%20...%20/%3E%0A%3C/..Layout%3E%0A%60%60%60%0A%0A**Stack%20trace%20/%20LogCat**%3A%0A%60%60%60ruby%0Apaste%20stack%20trace%20here%0A%60%60%60
+@@ -199,0 +199,3 @@ This is not an official Google product.
++[14]: https://github.com/bumptech/glide/tree/3.0
++[15]: https://github.com/bumptech/glide/tree/master
++[16]: https://github.com/bumptech/glide/blob/master/LICENSE
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 76657cdea..34bbbf0b3 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.5.2'
++    compile 'com.github.bumptech.glide:glide:3.6.0'
+@@ -41 +41 @@ Or Maven:
+-  <version>3.5.2</version>
++  <version>3.6.0</version>
+diff --git a/README.md b/README.md
+index 0247ae4f4..76657cdea 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51,11 @@ Or Maven:
++Proguard
++--------
++Depending on your proguard config and usage, you may need to include the following lines in your proguard.cfg:
++```
++-keep public class * implements com.bumptech.glide.module.GlideModule
++-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
++    **[] $VALUES;
++    public *;
++}
++```
++
+diff --git a/README.md b/README.md
+index a7931876c..0247ae4f4 100644
+--- a/README.md
++++ b/README.md
+@@ -66 +66 @@ public void onCreate(Bundle savedInstanceState) {
+-    Glide.with(this).load("http://goo.gl/h8qOq7").into(imageView);
++    Glide.with(this).load("http://goo.gl/gEgYUd").into(imageView);
+diff --git a/README.md b/README.md
+index e072e00be..a7931876c 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.5.1'
++    compile 'com.github.bumptech.glide:glide:3.5.2'
+@@ -41 +41 @@ Or Maven:
+-  <version>3.5.1</version>
++  <version>3.5.2</version>
+diff --git a/README.md b/README.md
+index 23913fc9a..e072e00be 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158 @@ Contributing
+-Before submitting pull requests, contributors must sign Google's [individual contribution license agreement][7].
++Before submitting pull requests, contributors must sign Google's [individual contributor license agreement][7].
+@@ -180 +180 @@ This is not an official Google product.
+-[5]: https://github.com/bumptech/glide/issues/new
++[5]: https://github.com/bumptech/glide/issues/new?body=**Glide%20Version/Integration%20library%20(if%20any)**:%0A**Device/Android%20Version**:%0A**Issue%20details/Repro%20steps**:%0A%0A**Glide%20load%20line**:%0A```%0AGlide.with(context)...%3B%0A```%0A%0A**Stack%20trace**:%0A```%0Apaste%20stack%20trace%20here%0A```
+diff --git a/README.md b/README.md
+index dfd80a62d..23913fc9a 100644
+--- a/README.md
++++ b/README.md
+@@ -6,2 +6,2 @@ Glide
+-Glide is a fast and efficient open source media management framework for Android that wraps media decoding, memory and
+-disk caching, and resource pooling into a simple and easy to use interface.
++Glide is a fast and efficient open source media management and image loading framework for Android that wraps media
++decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+diff --git a/README.md b/README.md
+index 26d51e709..dfd80a62d 100644
+--- a/README.md
++++ b/README.md
+@@ -154 +154 @@ To report a specific problem or feature request, [open a new issue on Github][5]
+-anything else, join or email [Glide's discussion group][6].
++anything else, join or email [Glide's discussion group][6], or join our irc channel: [irc.freenode.net#glide-library][13].
+@@ -187,0 +188 @@ This is not an official Google product.
++[13]: http://webchat.freenode.net/?channels=glide-library
+diff --git a/README.md b/README.md
+index 2a0d52128..26d51e709 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.5.0'
++    compile 'com.github.bumptech.glide:glide:3.5.1'
+@@ -41 +41 @@ Or Maven:
+-  <version>3.5.0</version>
++  <version>3.5.1</version>
+@@ -187 +187 @@ This is not an official Google product.
+-[12]: https://github.com/bumptech/glide/wiki/Integration-Libraries
+\ No newline at end of file
++[12]: https://github.com/bumptech/glide/wiki/Integration-Libraries
+diff --git a/README.md b/README.md
+index 959898fcc..2a0d52128 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.4.+'
++    compile 'com.github.bumptech.glide:glide:3.5.0'
+@@ -41 +41 @@ Or Maven:
+-  <version>3.4.0</version>
++  <version>3.5.0</version>
+diff --git a/README.md b/README.md
+index 28030094b..959898fcc 100644
+--- a/README.md
++++ b/README.md
+@@ -94,41 +94,4 @@ public View getView(int position, View recycled, ViewGroup container) {
+-Volley
+--------
+-Volley is now an optional dependency that can be included via a utility library. To use Volley to fetch media over
+-http/https:
+-
+-With Gradle:
+-
+-```groovy
+-dependencies {
+-    compile 'com.github.bumptech.glide:volley-integration:1.1.+'
+-    compile 'com.mcxiaoke.volley:library:1.0.+'
+-}
+-```
+-
+-Or with Maven:
+-
+-```xml
+-<dependency>
+-    <groupId>com.github.bumptech.glide</groupId>
+-    <artifactId>volley-integration</artifactId>
+-    <version>1.1.0</version>
+-    <type>jar</type>
+-</dependency>
+-<dependency>
+-    <groupId>com.mcxiaoke.volley</groupId>
+-    <artifactId>library</artifactId>
+-    <version>1.0.5</version>
+-    <type>aar</type>
+-</dependency>
+-```
+-
+-Then in your Activity or Application, register the Volley based model loader:
+-```java
+-public void onCreate() {
+-  Glide.get(this).register(GlideUrl.class, InputStream.class,
+-        new VolleyUrlLoader.Factory(yourRequestQueue));
+-  ...
+-}
+-```
+-
+-After the call to register any requests using http or https will go through Volley.
++OkHttp and Volley
++-----------------
++Support for OkHttp and Volley is provided by integration libraries you can optionally include as dependencies. The
++integration libraries are available via Maven or the [releases page][1].
+@@ -136,39 +99,2 @@ After the call to register any requests using http or https will go through Voll
+-OkHttp
+-------
+-In addition to Volley, Glide also includes support for fetching media using OkHttp. To use OkHttp to fetch media over
+-http/https:
+-
+-With Gradle:
+-
+-```groovy
+-dependencies {
+-    compile 'com.github.bumptech.glide:okhttp-integration:1.1.+'
+-    compile 'com.squareup.okhttp:okhttp:2.0.+'
+-}
+-```
+-
+-Or with Maven:
+-
+-```xml
+-<dependency>
+-    <groupId>com.github.bumptech.glide</groupId>
+-    <artifactId>okhttp-integration</artifactId>
+-    <version>1.1.0</version>
+-    <type>jar</type>
+-</dependency>
+-<dependency>
+-    <groupId>com.squareup.okhttp</groupId>
+-    <artifactId>okhttp</artifactId>
+-    <version>2.0.0</version>
+-    <type>jar</type>
+-</dependency>
+-```
+-
+-Then in your Activity or Application, register the OkHttp based model loader:
+-```java
+-public void onCreate() {
+-  Glide.get(this).register(GlideUrl.class, InputStream.class,
+-        new OkHttpUrlLoader.Factory(yourOkHttpClient));
+-  ...
+-}
+-```
++For instructions on including either the OkHttp or the Volley integration libraries, see the
++[Integration Libraries][12] wiki page.
+@@ -186 +112 @@ Status
+-Version 3.x is a stable public release used in multiple open source projects at Google including in the Android Camera
++Version 3 is a stable public release used in multiple open source projects at Google including in the Android Camera
+@@ -260 +186,2 @@ This is not an official Google product.
+-[11]: static/glide_logo.png
+\ No newline at end of file
++[11]: static/glide_logo.png
++[12]: https://github.com/bumptech/glide/wiki/Integration-Libraries
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 36297b7d6..28030094b 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ Download
+-You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases).
++You can download a jar from GitHub's [releases page][1].
+@@ -30 +30 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.3.+'
++    compile 'com.github.bumptech.glide:glide:3.4.+'
+@@ -41 +41 @@ Or Maven:
+-  <version>3.3.1</version>
++  <version>3.4.0</version>
+@@ -53 +53 @@ How do I use Glide?
+-Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics, and see the [javadocs](http://bumptech.github.io/glide/javadocs/latest/index.html).
++Checkout the [GitHub wiki][2] for pages on a variety of topics, and see the [javadocs][3].
+@@ -96 +96,2 @@ Volley
+-Volley is now an optional dependency that can be included via a utility library. To use Volley to fetch media over http/https:
++Volley is now an optional dependency that can be included via a utility library. To use Volley to fetch media over
++http/https:
+@@ -102 +103 @@ dependencies {
+-    compile 'com.github.bumptech.glide:volley-integration:1.0.+'
++    compile 'com.github.bumptech.glide:volley-integration:1.1.+'
+@@ -113 +114 @@ Or with Maven:
+-    <version>1.0.1</version>
++    <version>1.1.0</version>
+@@ -137 +138,2 @@ OkHttp
+-In addition to Volley, Glide also includes support for fetching media using OkHttp. To use OkHttp to fetch media over http/https:
++In addition to Volley, Glide also includes support for fetching media using OkHttp. To use OkHttp to fetch media over
++http/https:
+@@ -143 +145 @@ dependencies {
+-    compile 'com.github.bumptech.glide:okhttp-integration:1.0.+'
++    compile 'com.github.bumptech.glide:okhttp-integration:1.1.+'
+@@ -154 +156 @@ Or with Maven:
+-    <version>1.0.1</version>
++    <version>1.1.0</version>
+@@ -184 +186,2 @@ Status
+-Version 3.x is a stable public release used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
++Version 3.x is a stable public release used in multiple open source projects at Google including in the Android Camera
++app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
+@@ -197 +200,2 @@ git submodule init && git submodule update
+-Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment variable is pointing at the SDK or add a `local.properties` file in the root project with a `sdk.dir=...` line.
++Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment
++variable is pointing at the SDK or add a `local.properties` file in the root project with a `sdk.dir=...` line.
+@@ -211 +215,2 @@ Development
+-Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath.
++Follow the steps in the 'Build' section to setup the project and then edit the files however you wish.
++[Intellij IDEA 14][4] cleanly imports both Glide's source and tests and is the recommended way to work with Glide.
+@@ -218 +223 @@ To open the project in Intellij 14:
+-4. Select settings.gradle.
++4. Select glide-parent.iml
+@@ -222 +227,2 @@ Getting Help
+-To report a specific problem or feature request, [open a new issue on Github](https://github.com/bumptech/glide/issues/new). For questions, suggestions, or anything else, join or email [Glide's discussion group](https://groups.google.com/forum/#!forum/glidelibrary)
++To report a specific problem or feature request, [open a new issue on Github][5]. For questions, suggestions, or
++anything else, join or email [Glide's discussion group][6].
+@@ -226 +232 @@ Contributing
+-Before submitting pull requests, contributors must sign Google's [individual contribution license agreement](https://developers.google.com/open-source/cla/individual).
++Before submitting pull requests, contributors must sign Google's [individual contribution license agreement][7].
+@@ -230,4 +236,4 @@ Thanks
+-* The Android team and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) Glide's disk cache is based on.
+-* Dave Smith for the [gif decoder gist](https://gist.github.com/devunwired/4479231) Glide's gif decoder is based on.
+-* Chris Banes for his [gradle-mvn-push](https://github.com/chrisbanes/gradle-mvn-push) script.
+-* Corey Hall for Glide's [amazing logo](static/glide_logo.png).
++* The Android team and Jake Wharton for the [disk cache implementation][8] Glide's disk cache is based on.
++* Dave Smith for the [gif decoder gist][9] Glide's gif decoder is based on.
++* Chris Banes for his [gradle-mvn-push][10] script.
++* Corey Hall for Glide's [amazing logo][11].
+@@ -242,0 +249,12 @@ This is not an official Google product.
++
++[1]: https://github.com/bumptech/glide/releases
++[2]: https://github.com/bumptech/glide/wiki
++[3]: http://bumptech.github.io/glide/javadocs/latest/index.html
++[4]: https://www.jetbrains.com/idea/download/
++[5]: https://github.com/bumptech/glide/issues/new
++[6]: https://groups.google.com/forum/#!forum/glidelibrary
++[7]: https://developers.google.com/open-source/cla/individual
++[8]: https://github.com/JakeWharton/DiskLruCache
++[9]: https://gist.github.com/devunwired/4479231
++[10]: https://github.com/chrisbanes/gradle-mvn-push
++[11]: static/glide_logo.png
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 45c2ca45e..36297b7d6 100644
+--- a/README.md
++++ b/README.md
+@@ -173,0 +174,4 @@ public void onCreate() {
++Android SDK Version
++-------------------
++Glide requires a minimum sdk version of 10.
++
+diff --git a/README.md b/README.md
+index 54475fb07..45c2ca45e 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ dependencies {
+-    compile 'com.android.support:support-v4:19.0.0'
++    compile 'com.android.support:support-v4:19.1.0'
+diff --git a/README.md b/README.md
+index d716d7b0e..54475fb07 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ How do I use Glide?
+-Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics, and see the [javadocs](http://bumptech.github.io/glide/javadocs/330/index.html).
++Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics, and see the [javadocs](http://bumptech.github.io/glide/javadocs/latest/index.html).
+diff --git a/README.md b/README.md
+index dfde0d46f..d716d7b0e 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Or Maven:
+-  <version>3.3.0</version>
++  <version>3.3.1</version>
+@@ -113 +113 @@ Or with Maven:
+-    <version>1.0.0</version>
++    <version>1.0.1</version>
+@@ -154 +154 @@ Or with Maven:
+-    <version>1.0.0</version>
++    <version>1.0.1</version>
+diff --git a/README.md b/README.md
+index 22f3b3e8e..dfde0d46f 100644
+--- a/README.md
++++ b/README.md
+@@ -7,4 +7,7 @@ Glide is a fast and efficient open source media management framework for Android
+-disk caching, and resource pooling into a simple and easy to use interface. Glide supports fetching, decoding, and
+-displaying video stills, images, and animated GIFs. Glide includes a flexible api that allows developers to plug in
+-to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes utility
+-libraries plug in to Google's Volley project or Square's OkHttp library instead.
++disk caching, and resource pooling into a simple and easy to use interface.
++
++![](static/glide_logo.png)
++
++Glide supports fetching, decoding, and displaying video stills, images, and animated GIFs. Glide includes a flexible api
++that allows developers to plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based
++stack, but also includes utility libraries plug in to Google's Volley project or Square's OkHttp library instead.
+@@ -50 +53 @@ How do I use Glide?
+-Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics and links to javadocs.
++Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics, and see the [javadocs](http://bumptech.github.io/glide/javadocs/330/index.html).
+@@ -197,3 +200,3 @@ Follow the steps in the 'Build' section to setup the project and then:
+-gradlew :samples:flickr:run
+-gradlew :samples:giphy:run
+-gradlew :samples:svg:run
++./gradlew :samples:flickr:run
++./gradlew :samples:giphy:run
++./gradlew :samples:svg:run
+@@ -204 +207,8 @@ Development
+-Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath. To open the project in Intellij 14 go to File > Open... > navigate to Glide's root directory > select settings.gradle.
++Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath.
++
++To open the project in Intellij 14:
++
++1. Go to File.
++2. Click on 'Open...'
++3. Navigate to Glide's root directory.
++4. Select settings.gradle.
+@@ -216 +226,5 @@ Thanks
+-Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) Glide's disk cache is based on, to Dave Smith for the [gif decoder implementation](https://gist.github.com/devunwired/4479231) Glide's gif decoder is based on and thanks also to everyone who has contributed code and reported issues!
++* The Android team and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) Glide's disk cache is based on.
++* Dave Smith for the [gif decoder gist](https://gist.github.com/devunwired/4479231) Glide's gif decoder is based on.
++* Chris Banes for his [gradle-mvn-push](https://github.com/chrisbanes/gradle-mvn-push) script.
++* Corey Hall for Glide's [amazing logo](static/glide_logo.png).
++* Everyone who has contributed code and reported issues!
+diff --git a/README.md b/README.md
+index 12357c980..22f3b3e8e 100644
+--- a/README.md
++++ b/README.md
+@@ -190 +190,11 @@ git submodule init && git submodule update
+-Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment variable is pointing at the SDK.
++Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment variable is pointing at the SDK or add a `local.properties` file in the root project with a `sdk.dir=...` line.
++
++Samples
++-------
++Follow the steps in the 'Build' section to setup the project and then:
++
++```
++gradlew :samples:flickr:run
++gradlew :samples:giphy:run
++gradlew :samples:svg:run
++```
+diff --git a/README.md b/README.md
+index dabc0cd2c..12357c980 100644
+--- a/README.md
++++ b/README.md
+@@ -170,0 +171,4 @@ public void onCreate() {
++License
++-------
++BSD, part MIT and Apache 2.0. See LICENSE file for details.
++
+diff --git a/README.md b/README.md
+index f511c7289..dabc0cd2c 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ Glide
+-[![Build Status](https://travis-ci.org/bumptech/glide.svg?branch=3.0a)](https://travis-ci.org/bumptech/glide)
++[![Build Status](https://travis-ci.org/bumptech/glide.svg?branch=master)](https://travis-ci.org/bumptech/glide)
+@@ -6,4 +6,5 @@ Glide
+-Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk
+-caching, and bitmap recycling into one simple and easy to use interface. Glide includes a flexible api allowing it to
+-plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes
+-utility libraries plug in to Google's Volley project or Square's OkHttp library instead.
++Glide is a fast and efficient open source media management framework for Android that wraps media decoding, memory and
++disk caching, and resource pooling into a simple and easy to use interface. Glide supports fetching, decoding, and
++displaying video stills, images, and animated GIFs. Glide includes a flexible api that allows developers to plug in
++to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes utility
++libraries plug in to Google's Volley project or Square's OkHttp library instead.
+@@ -16,2 +17,3 @@ Download
+-You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases) or to use the 3.0 alpha
+-branch, use Gradle:
++You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases).
++
++Or use Gradle:
+@@ -25 +27 @@ dependencies {
+-    compile 'com.github.bumptech.glide:glide:3.3.0'
++    compile 'com.github.bumptech.glide:glide:3.3.+'
+@@ -32,2 +33,0 @@ Or Maven:
+-In your module:
+-
+@@ -50 +50 @@ How do I use Glide?
+-Checkout the GitHub wiki for pages on a variety of topics and links to javadocs.
++Checkout the [GitHub wiki](https://github.com/bumptech/glide/wiki) for pages on a variety of topics and links to javadocs.
+@@ -83 +83 @@ public View getView(int position, View recycled, ViewGroup container) {
+-        .animate(R.anim.fade_in)
++        .crossFade()
+@@ -99 +99 @@ dependencies {
+-    compile 'com.github.bumptech.glide:volley-integration:3.3.0'
++    compile 'com.github.bumptech.glide:volley-integration:1.0.+'
+@@ -110 +110 @@ Or with Maven:
+-    <version>3.3.0</version>
++    <version>1.0.0</version>
+@@ -124 +124,2 @@ public void onCreate() {
+-  Glide.get(this).register(GlideUrl.class, InputStream.class, new VolleyUrlLoader.Factory(yourRequestQueue));
++  Glide.get(this).register(GlideUrl.class, InputStream.class,
++        new VolleyUrlLoader.Factory(yourRequestQueue));
+@@ -139 +140 @@ dependencies {
+-    compile 'com.github.bumptech.glide:okhttp-integration:3.3.0'
++    compile 'com.github.bumptech.glide:okhttp-integration:1.0.+'
+@@ -150 +151 @@ Or with Maven:
+-    <version>3.3.0</version>
++    <version>1.0.0</version>
+@@ -164 +165,2 @@ public void onCreate() {
+-  Glide.get(this).register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(yourOkHttpClient));
++  Glide.get(this).register(GlideUrl.class, InputStream.class,
++        new OkHttpUrlLoader.Factory(yourOkHttpClient));
+@@ -171 +173 @@ Status
+-Version 3.0 is in the beta stage with a nearly final api and is used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
++Version 3.x is a stable public release used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
+@@ -180 +181,0 @@ cd glide
+-git checkout origin/3.0a
+diff --git a/README.md b/README.md
+index 9d8f1609a..f511c7289 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,3 @@ Glide
++
++[![Build Status](https://travis-ci.org/bumptech/glide.svg?branch=3.0a)](https://travis-ci.org/bumptech/glide)
++
+diff --git a/README.md b/README.md
+index bf0f61ee6..9d8f1609a 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ caching, and bitmap recycling into one simple and easy to use interface. Glide i
+-plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes a
+-utility library to plug in to Google's Volley project instead.
++plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes
++utility libraries plug in to Google's Volley project or Square's OkHttp library instead.
+@@ -22 +22 @@ dependencies {
+-    compile('com.github.bumptech.glide:glide:3.3.0a')
++    compile 'com.github.bumptech.glide:glide:3.3.0'
+@@ -45 +44,0 @@ In your module:
+-
+@@ -54 +53 @@ Simple use cases will look something like this:
+-//For a simple view:
++// For a simple view:
+@@ -64 +63 @@ public void onCreate(Bundle savedInstanceState) {
+-//For a list:
++// For a list:
+@@ -169 +168 @@ Status
+-Glide was used at Bump for around a year in two of our Android apps at version 1.0. Version 2.0 was the first public release with a stable api. Version 3.0 is in the beta stage with a nearly final api and is used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
++Version 3.0 is in the beta stage with a nearly final api and is used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
+@@ -187 +186,9 @@ Development
+-Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath.
++Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath. To open the project in Intellij 14 go to File > Open... > navigate to Glide's root directory > select settings.gradle.
++
++Getting Help
++------------
++To report a specific problem or feature request, [open a new issue on Github](https://github.com/bumptech/glide/issues/new). For questions, suggestions, or anything else, join or email [Glide's discussion group](https://groups.google.com/forum/#!forum/glidelibrary)
++
++Contributing
++------------
++Before submitting pull requests, contributors must sign Google's [individual contribution license agreement](https://developers.google.com/open-source/cla/individual).
+@@ -191 +198 @@ Thanks
+-Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide. Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/). Thanks to Dave Smith for his [GifDecoder gist](https://gist.github.com/devunwired/4479231) on which Glide's is based. Thanks also to everyone who has contributed code and reported issues!
++Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) Glide's disk cache is based on, to Dave Smith for the [gif decoder implementation](https://gist.github.com/devunwired/4479231) Glide's gif decoder is based on and thanks also to everyone who has contributed code and reported issues!
+@@ -195,0 +203,4 @@ Sam Judd - @samajudd
++
++Disclaimer
++---------
++This is not an official Google product.
+diff --git a/README.md b/README.md
+index 5a105a887..bf0f61ee6 100644
+--- a/README.md
++++ b/README.md
+@@ -19,3 +18,0 @@ repositories {
+-  maven {
+-      url "https://oss.sonatype.org/content/repositories/snapshots"
+-  }
+@@ -25,4 +22 @@ dependencies {
+-    compile('com.github.bumptech.glide:library:3.3.0a-SNAPSHOT:@aar') {
+-        transitive = true
+-        changing = true
+-    }
++    compile('com.github.bumptech.glide:glide:3.3.0a')
+@@ -35,10 +28,0 @@ Or Maven:
+-In your parent pom:
+-
+-```xml
+-<parent>
+-  <groupId>org.sonatype.oss</groupId>
+-  <artifactId>oss-parent</artifactId>
+-  <version>7</version>
+-</parent>
+-```
+-
+@@ -50,2 +34,2 @@ In your module:
+-  <artifactId>library</artifactId>
+-  <version>3.3.0-SNAPSHOT</version>
++  <artifactId>glide</artifactId>
++  <version>3.3.0</version>
+@@ -55,3 +39,3 @@ In your module:
+-	<groupId>com.google.android</groupId>
+-	<artifactId>support-v4</artifactId>
+-	<version>r7</version>
++  <groupId>com.google.android</groupId>
++  <artifactId>support-v4</artifactId>
++  <version>r7</version>
+@@ -61,38 +44,0 @@ In your module:
+-Volley
+--------
+-Volley is now an optional dependency that can be included via a utility library. More utility libraries for other
+-projects will hopefully be coming soon. To use the utility library with Gradle, add:
+-
+-```groovy
+-dependencies {
+-    compile group: 'com.github.bumptech.glide', name:'volley', version:'3.3.0-SNAPSHOT', changing:true
+-    compile 'com.mcxiaoke.volley:library:1.0.+'
+-}
+-```
+-
+-Or with maven:
+-
+-```xml
+-<dependency>
+-    <groupId>com.github.bumptech.glide</groupId>
+-    <artifactId>volley</artifactId>
+-    <version>3.3.0-SNAPSHOT</version>
+-    <type>aar</type>
+-</dependency>
+-<dependency>
+-    <groupId>com.mcxiaoke.volley</groupId>
+-    <artifactId>library</artifactId>
+-    <version>1.0.5</version>
+-    <type>aar</type>
+-</dependency>
+-```
+-
+-Then in your Activity or Application, register the Volley based model loader:
+-```java
+-public void onCreate() {
+-  Glide.get(this).register(GlideUrl.class, InputStream.class, new VolleyUrlLoader.Factory(yourRequestQueue));
+-  ...
+-}
+-```
+-
+-After the call to register any requests using http or https will go through Volley.
+@@ -142,0 +89,78 @@ public View getView(int position, View recycled, ViewGroup container) {
++Volley
++-------
++Volley is now an optional dependency that can be included via a utility library. To use Volley to fetch media over http/https:
++
++With Gradle:
++
++```groovy
++dependencies {
++    compile 'com.github.bumptech.glide:volley-integration:3.3.0'
++    compile 'com.mcxiaoke.volley:library:1.0.+'
++}
++```
++
++Or with Maven:
++
++```xml
++<dependency>
++    <groupId>com.github.bumptech.glide</groupId>
++    <artifactId>volley-integration</artifactId>
++    <version>3.3.0</version>
++    <type>jar</type>
++</dependency>
++<dependency>
++    <groupId>com.mcxiaoke.volley</groupId>
++    <artifactId>library</artifactId>
++    <version>1.0.5</version>
++    <type>aar</type>
++</dependency>
++```
++
++Then in your Activity or Application, register the Volley based model loader:
++```java
++public void onCreate() {
++  Glide.get(this).register(GlideUrl.class, InputStream.class, new VolleyUrlLoader.Factory(yourRequestQueue));
++  ...
++}
++```
++
++After the call to register any requests using http or https will go through Volley.
++
++OkHttp
++------
++In addition to Volley, Glide also includes support for fetching media using OkHttp. To use OkHttp to fetch media over http/https:
++
++With Gradle:
++
++```groovy
++dependencies {
++    compile 'com.github.bumptech.glide:okhttp-integration:3.3.0'
++    compile 'com.squareup.okhttp:okhttp:2.0.+'
++}
++```
++
++Or with Maven:
++
++```xml
++<dependency>
++    <groupId>com.github.bumptech.glide</groupId>
++    <artifactId>okhttp-integration</artifactId>
++    <version>3.3.0</version>
++    <type>jar</type>
++</dependency>
++<dependency>
++    <groupId>com.squareup.okhttp</groupId>
++    <artifactId>okhttp</artifactId>
++    <version>2.0.0</version>
++    <type>jar</type>
++</dependency>
++```
++
++Then in your Activity or Application, register the OkHttp based model loader:
++```java
++public void onCreate() {
++  Glide.get(this).register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(yourOkHttpClient));
++  ...
++}
++```
++
+@@ -145 +169 @@ Status
+-Glide was used at Bump for around a year in two of our Android apps at version 1.0. Version 2.0 was the first public release with a stable api. Version 3.0 is a work in progress and is in use in open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
++Glide was used at Bump for around a year in two of our Android apps at version 1.0. Version 2.0 was the first public release with a stable api. Version 3.0 is in the beta stage with a nearly final api and is used in multiple open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
+@@ -156 +180 @@ git submodule init && git submodule update
+-./gradlew build releaseJar
++./gradlew jar
+@@ -160,0 +185,4 @@ Note: Make sure your Android SDK has the Android Support Repository installed, a
++Development
++-----------
++Follow the steps in the 'Build' section to setup the project and then edit the files however you wish. Intellij's [IDEA 14 early access build](http://confluence.jetbrains.com/display/IDEADEV/IDEA+14+EAP) cleanly imports both Glide's source and tests and is the recommended way to work with Glide. Earlier versions of intellij do not import the gradle project cleanly. Although Android Studio imports the source cleanly, it is not possible to run or debug the tests without manually modifying the tests' classpath.
++
+diff --git a/README.md b/README.md
+index 230694f0a..5a105a887 100644
+--- a/README.md
++++ b/README.md
+@@ -151,0 +152,3 @@ Building Glide with gradle is fairly straight forward:
++git clone git@github.com:bumptech/glide.git
++cd glide
++git checkout origin/3.0a
+@@ -153,2 +156 @@ git submodule init && git submodule update
+-cd glide/library
+-./gradlew build
++./gradlew build releaseJar
+diff --git a/README.md b/README.md
+index 292658703..230694f0a 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25,5 @@ dependencies {
+-  compile group: 'com.github.bumptech.glide', name:'glide', version:'3.3.0-SNAPSHOT', changing: true
++    compile('com.github.bumptech.glide:library:3.3.0a-SNAPSHOT:@aar') {
++        transitive = true
++        changing = true
++    }
++    compile 'com.android.support:support-v4:19.0.0'
+@@ -49,0 +54,5 @@ In your module:
++<dependency>
++	<groupId>com.google.android</groupId>
++	<artifactId>support-v4</artifactId>
++	<version>r7</version>
++</dependency>
+diff --git a/README.md b/README.md
+index 6310d6124..292658703 100644
+--- a/README.md
++++ b/README.md
+@@ -80,0 +81,10 @@ Or with maven:
++Then in your Activity or Application, register the Volley based model loader:
++```java
++public void onCreate() {
++  Glide.get(this).register(GlideUrl.class, InputStream.class, new VolleyUrlLoader.Factory(yourRequestQueue));
++  ...
++}
++```
++
++After the call to register any requests using http or https will go through Volley.
++
+diff --git a/README.md b/README.md
+index 4a6509298..6310d6124 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,4 @@ Glide
+-Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. By default, Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
++Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk
++caching, and bitmap recycling into one simple and easy to use interface. Glide includes a flexible api allowing it to
++plug in to almost any network stack. By default Glide uses a custom HttpUrlConnection based stack, but also includes a
++utility library to plug in to Google's Volley project instead.
+@@ -5 +8,2 @@ Glide is fast and efficient image loading library for Android that wraps image d
+-Glide's primary focus is on making scrolling any kind of a list of images as smooth and fast as possible, but Glide is also effective for almost any case where you need to fetch, resize, and display a remote image.
++Glide's primary focus is on making scrolling any kind of a list of images as smooth and fast as possible, but Glide is
++also effective for almost any case where you need to fetch, resize, and display a remote image.
+@@ -9 +13,2 @@ Download
+-You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases) or to use the 3.0 alpha branch, use Gradle:
++You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases) or to use the 3.0 alpha
++branch, use Gradle:
+@@ -41 +46 @@ In your module:
+-  <artifactId>glide</artifactId>
++  <artifactId>library</artifactId>
+@@ -46,0 +52,29 @@ In your module:
++Volley
++-------
++Volley is now an optional dependency that can be included via a utility library. More utility libraries for other
++projects will hopefully be coming soon. To use the utility library with Gradle, add:
++
++```groovy
++dependencies {
++    compile group: 'com.github.bumptech.glide', name:'volley', version:'3.3.0-SNAPSHOT', changing:true
++    compile 'com.mcxiaoke.volley:library:1.0.+'
++}
++```
++
++Or with maven:
++
++```xml
++<dependency>
++    <groupId>com.github.bumptech.glide</groupId>
++    <artifactId>volley</artifactId>
++    <version>3.3.0-SNAPSHOT</version>
++    <type>aar</type>
++</dependency>
++<dependency>
++    <groupId>com.mcxiaoke.volley</groupId>
++    <artifactId>library</artifactId>
++    <version>1.0.5</version>
++    <type>aar</type>
++</dependency>
++```
++
+diff --git a/README.md b/README.md
+index 054b5cc6f..4a6509298 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,40 @@ Glide's primary focus is on making scrolling any kind of a list of images as smo
++Download
++--------
++You can download a jar from GitHub's [release page](https://github.com/bumptech/glide/releases) or to use the 3.0 alpha branch, use Gradle:
++
++```groovy
++repositories {
++  mavenCentral()
++  maven {
++      url "https://oss.sonatype.org/content/repositories/snapshots"
++  }
++}
++
++dependencies {
++  compile group: 'com.github.bumptech.glide', name:'glide', version:'3.3.0-SNAPSHOT', changing: true
++}
++```
++
++Or Maven:
++
++In your parent pom:
++
++```xml
++<parent>
++  <groupId>org.sonatype.oss</groupId>
++  <artifactId>oss-parent</artifactId>
++  <version>7</version>
++</parent>
++```
++
++In your module:
++
++```xml
++<dependency>
++  <groupId>com.github.bumptech.glide</groupId>
++  <artifactId>glide</artifactId>
++  <version>3.3.0-SNAPSHOT</version>
++  <type>aar</type>
++</dependency>
++```
++
+@@ -9 +49 @@ How do I use Glide?
+-You can download a .jar from GitHub's release page for the Glide project. The wiki also has pages on a variety of topics and the javadocs for version 2.0+ will also be available via a link there as well.
++Checkout the GitHub wiki for pages on a variety of topics and links to javadocs.
+@@ -22 +62 @@ public void onCreate(Bundle savedInstanceState) {
+-    Glide.load("http://goo.gl/h8qOq7").into(imageView);
++    Glide.with(this).load("http://goo.gl/h8qOq7").into(imageView);
+@@ -38 +78,2 @@ public View getView(int position, View recycled, ViewGroup container) {
+-    Glide.load(url)
++    Glide.with(myFragment)
++        .load(url)
+@@ -51 +92 @@ Status
+-Glide has been in use at Bump for about six months in two of our Android apps at version 1.0. Version 2.0 is the first public release with a stable api. Comments/bugs/questions/pull requests welcome!
++Glide was used at Bump for around a year in two of our Android apps at version 1.0. Version 2.0 was the first public release with a stable api. Version 3.0 is a work in progress and is in use in open source projects at Google including in the Android Camera app and in the 2014 Google IO app. Comments/bugs/questions/pull requests welcome!
+@@ -57,0 +99 @@ Building Glide with gradle is fairly straight forward:
++git submodule init && git submodule update
+@@ -66 +108 @@ Thanks
+-Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide. Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/).
++Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide. Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/). Thanks to Dave Smith for his [GifDecoder gist](https://gist.github.com/devunwired/4479231) on which Glide's is based. Thanks also to everyone who has contributed code and reported issues!
+diff --git a/README.md b/README.md
+index ff9d45582..054b5cc6f 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,11 @@ Glide has been in use at Bump for about six months in two of our Android apps at
++Build
++------
++Building Glide with gradle is fairly straight forward:
++
++```
++cd glide/library
++./gradlew build
++```
++
++Note: Make sure your Android SDK has the Android Support Repository installed, and that your `$ANDROID_HOME` environment variable is pointing at the SDK.
++
+diff --git a/README.md b/README.md
+index 1265a57a8..ff9d45582 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@ public View getView(int position, View recycled, ViewGroup container) {
++    final ImageView myImageView;
+@@ -29 +30,2 @@ public View getView(int position, View recycled, ViewGroup container) {
+-        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
++        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view,
++                container, false);
+diff --git a/README.md b/README.md
+index 0b5fcb258..1265a57a8 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ Author
+-Sam Judd - <sam.a.judd@gmail.com> @samajudd
++Sam Judd - @samajudd
+diff --git a/README.md b/README.md
+index 55812c645..0b5fcb258 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ public View getView(int position, View recycled, ViewGroup container) {
+-        myImageView = (ImageView) recycled);
++        myImageView = (ImageView) recycled;
+diff --git a/README.md b/README.md
+index 705b38c2d..55812c645 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ How do I use Glide?
+-You can download a .jar from GitHub's release page for the Glide project. The wiki also has tutorials on a variety of topics and the javadocs for version 2.0+ will also be available via a link there as well.
++You can download a .jar from GitHub's release page for the Glide project. The wiki also has pages on a variety of topics and the javadocs for version 2.0+ will also be available via a link there as well.
+@@ -53,2 +53 @@ Thanks
+-Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide, and also to Square and [Picasso](https://github.com/square/picasso) for Glide's high level api.
+-Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/).
++Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide. Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/).
+diff --git a/README.md b/README.md
+index 49436d63a..705b38c2d 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ Glide
+-Glide is a view centric image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap reuse into one simple and easy to use interface. Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
++Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. By default, Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
+@@ -5 +5 @@ Glide is a view centric image loading library for Android that wraps image downl
+-Glide works best for long lists or grids where every item contains an image or images, but it's also effective for almost any case where you need to fetch, resize, and display a remote image in a view.
++Glide's primary focus is on making scrolling any kind of a list of images as smooth and fast as possible, but Glide is also effective for almost any case where you need to fetch, resize, and display a remote image.
+@@ -9 +9 @@ How do I use Glide?
+-The GitHub project wiki has tutorials on a variety of topics, including basic usage and adding Glide to a project. The javadocs for version 2.0+ will also be available via a link on the wiki.
++You can download a .jar from GitHub's release page for the Glide project. The wiki also has tutorials on a variety of topics and the javadocs for version 2.0+ will also be available via a link there as well.
+@@ -49 +49 @@ Status
+-Glide has been in use at Bump for about six months in two of our Android apps at version 1.0. Version 2.0 is in progress and will include a more general and easier to use interface. After version 2.0 the api will be stable and any outdated apis will first be deprecated before being removed. That being said, the 2.0+ api is definitely a work in progress and new functionality will probably be added in intermediate versions. Comments/bugs/questions/pull requests welcome!
++Glide has been in use at Bump for about six months in two of our Android apps at version 1.0. Version 2.0 is the first public release with a stable api. Comments/bugs/questions/pull requests welcome!
+@@ -53,2 +53,6 @@ Thanks
+-Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide.
+-Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/)
++Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide, and also to Square and [Picasso](https://github.com/square/picasso) for Glide's high level api.
++Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/).
++
++Author
++------
++Sam Judd - <sam.a.judd@gmail.com> @samajudd
+diff --git a/README.md b/README.md
+index 5d465ca20..49436d63a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ Glide
+-Glide is an all in one image download and resizing library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
++Glide is a view centric image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap reuse into one simple and easy to use interface. Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
+@@ -5 +5 @@ Glide is an all in one image download and resizing library for Android that wrap
+-Glide works best for long lists or grids where every item contains an image or images, but it's also effective for almost any case where you need to fetch, resize, and display a remote image.
++Glide works best for long lists or grids where every item contains an image or images, but it's also effective for almost any case where you need to fetch, resize, and display a remote image in a view.
+@@ -9 +9 @@ How do I use Glide?
+-The GitHub project wiki has tutorials on a variety of topics, including basic usage and adding Glide to a project. The javadocs for version 1.0+ will also be available via a link on the wiki.
++The GitHub project wiki has tutorials on a variety of topics, including basic usage and adding Glide to a project. The javadocs for version 2.0+ will also be available via a link on the wiki.
+@@ -14,0 +15,11 @@ Simple use cases will look something like this:
++//For a simple view:
++@Override
++public void onCreate(Bundle savedInstanceState) {
++    ...
++
++    ImageView imageView = (ImageView) findViewById(R.id.my_image_view);
++
++    Glide.load("http://goo.gl/h8qOq7").into(imageView);
++}
++
++//For a list:
+@@ -17 +27,0 @@ public View getView(int position, View recycled, ViewGroup container) {
+-    final ImageView myImageView;
+@@ -24 +34 @@ public View getView(int position, View recycled, ViewGroup container) {
+-    URL myUrl = myUrls.get(position);
++    String url = myUrls.get(position);
+@@ -26 +36,5 @@ public View getView(int position, View recycled, ViewGroup container) {
+-    Glide.load(myUrl).into(myImageView).centerCrop().animate(R.anim.fade_in).begin();
++    Glide.load(url)
++        .centerCrop()
++        .placeholder(R.drawable.loading_spinner)
++        .animate(R.anim.fade_in)
++        .into(myImageView);
+@@ -29,0 +44 @@ public View getView(int position, View recycled, ViewGroup container) {
++
+@@ -34 +49 @@ Status
+-Glide has been in use at Bump for about six months in two of our Android apps. The API after 1.0 is mostly stable though there may be some superficial changes. Comments/bugs/questions/pull requests welcome!
++Glide has been in use at Bump for about six months in two of our Android apps at version 1.0. Version 2.0 is in progress and will include a more general and easier to use interface. After version 2.0 the api will be stable and any outdated apis will first be deprecated before being removed. That being said, the 2.0+ api is definitely a work in progress and new functionality will probably be added in intermediate versions. Comments/bugs/questions/pull requests welcome!
+diff --git a/README.md b/README.md
+index 0a7dd5c20..5d465ca20 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Thanks to the Android project and Jake Wharton for the [disk cache implementatio
+-Thanks also to Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/)
++Thanks also to the Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/)
+diff --git a/README.md b/README.md
+index 02055aa04..0a7dd5c20 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ Glide
+-Glide is an image loading library for Android that wraps image loading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface.
++Glide is an all in one image download and resizing library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. Glide includes an implementation for fetching images over http based on Google's Volley project for fast, parallelized network operations on Android.
+@@ -7,16 +6,0 @@ Glide works best for long lists or grids where every item contains an image or i
+-Who shouldn't use Glide?
+-------------------------
+-If you only have local assets or very infrequently display remote assets and never display remote or resized assets in a list, then Glide is probably overkill for you.
+-
+-Also you probably shouldn't bother if you're not writing an Android app...
+-
+-Who should use Glide?
+----------------------
+-Anyone who displays large numbers of images can benefit from Glide.
+-
+-Glide abstracts away most of the complications with image view recycling in lists, as well as resizing and caching images.
+-
+-Glide is also unobtrusive. It doesn't require you to change any xml or create any subclasses.
+-
+-Finally Glide is performant. Image loading is fast without using lots of cpu or causing jerk inducing garbage collections.
+-
+@@ -25 +9 @@ How do I use Glide?
+-The only thing you need to implement is a simple interface that fetches a path for a given model. You then need an ImageManager instance which manages loading images from paths in the background, and an ImagePresenter instance per image view. To use Glide in an adapter for a list, your code will look something like this:
++The GitHub project wiki has tutorials on a variety of topics, including basic usage and adding Glide to a project. The javadocs for version 1.0+ will also be available via a link on the wiki.
+@@ -27 +11 @@ The only thing you need to implement is a simple interface that fetches a path f
+-```Java
++Simple use cases will look something like this:
+@@ -29,2 +13 @@ The only thing you need to implement is a simple interface that fetches a path f
+-public class MyAdapter extends BaseAdapter {
+-    private final ImageManager imageManager;
++```Java
+@@ -32,2 +15,7 @@ public class MyAdapter extends BaseAdapter {
+-    public MyAdapter(Context context) {
+-         imageManager = new ImageManager.Builder(context).build();
++@Override
++public View getView(int position, View recycled, ViewGroup container) {
++    final ImageView myImageView;
++    if (recycled == null) {
++        myImageView = (ImageView) inflater.inflate(R.layout.my_image_view, container, false);
++    } else {
++        myImageView = (ImageView) recycled);
+@@ -36,7 +24 @@ public class MyAdapter extends BaseAdapter {
+-    ...
+-    @Override
+-    public View getView(int position, View recycled, ViewGroup container) {
+-        final MyModel current = myModels.get(position);
+-        final ImagePresenter<MyModel> presenter;
+-        if (recycled == null) {
+-            recycled = myInflater.inflate(R.layout.my_image_view, container, false);
++    URL myUrl = myUrls.get(position);
+@@ -44,12 +26 @@ public class MyAdapter extends BaseAdapter {
+-            presenter = new ImagePresenter.Builder<MyModel>()
+-                    .setImageView((ImageView) recycled)
+-                    .setPathLoader(new MyPathLoader())
+-                    .setImageLoader(new CenterCrop(imageManager))
+-                    .build();
+-            recycled.setTag(presenter);
+-        } else {
+-            presenter = (ImagePresenter<MyModel>) recycled.getTag();
+-        }
+-        presenter.setModel(current);
+-    }
+-}
++    Glide.load(myUrl).into(myImageView).centerCrop().animate(R.anim.fade_in).begin();
+@@ -56,0 +28,2 @@ public class MyAdapter extends BaseAdapter {
++    return myImageView;
++}
+@@ -59,19 +31,0 @@ public class MyAdapter extends BaseAdapter {
+-The ImagePresenter will ensure that the view only displays the most recent model. It also determines the exact size of the image and passes that to both the PathLoader and the ImageLoader.
+-
+-This means that you can fetch the correctly sized image directly or Glide can resize each image to the right size even if you don't know the size at compile time (because you're using layout weights for example).
+-
+-Behind the scenes the ImageManager will load resize the image from disk using a background thread and then cache that resized image in memory and on disk. This means that you don't have to waste cpu and memory displaying images that are larger than your view. On newer devices (SDK >= 11), the ImageManager will also recycle bitmaps and prevent the garbage collection pauses that typically go along with bitmap allocation.
+-
+-Fewer garbage collections, less memory per image, and less cpu time dedicated to resizing each image on the fly means dramatically smoother scrolling and faster image loading.
+-
+-
+-How do I add Glide to my project?
+---------------------------------
+-Glide is an Android library project so its fairly straightforward to add it. Either add this repo as a submodule or otherwise check out this repository in your project and then follow the steps in the Android docs to add it as a library project: http://developer.android.com/tools/projects/projects-cmdline.html#ReferencingLibraryProject
+-
+-Intellij and Eclipse instructions coming soon.
+-
+-Great, but how do I actually use Glide in my code?
+------------------------------------------------------
+-For more concrete examples see the wiki for tutorials and/or the sample flickr app.
+-
+@@ -80 +34,6 @@ Status
+-Glide has been in use at Bump for about six months in two of our Android apps. The API is mostly stable though there may be some superficial changes. Comments/bugs/questions/pull requests welcome!
++Glide has been in use at Bump for about six months in two of our Android apps. The API after 1.0 is mostly stable though there may be some superficial changes. Comments/bugs/questions/pull requests welcome!
++
++Thanks
++------
++Thanks to the Android project and Jake Wharton for the [disk cache implementation](https://github.com/JakeWharton/DiskLruCache) included with Glide.
++Thanks also to Android team for [Volley](https://android.googlesource.com/platform/frameworks/volley/)
+diff --git a/README.md b/README.md
+index b3f5cb9b7..02055aa04 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ Glide
+-Glide is an image loading library for Android that wraps image loading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interace.
++Glide is an image loading library for Android that wraps image loading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface.
+@@ -7 +7 @@ Glide works best for long lists or grids where every item contains an image or i
+-Who Shouldn't Use Glide?
++Who shouldn't use Glide?
+@@ -11,2 +10,0 @@ If you only have local assets or very infrequently display remote assets and nev
+-Glide is also focused primarily on loading images from the sdcard efficiently and does not currently include code to download images from a URL (though that code does exist in the sample project).
+-
+@@ -15 +13 @@ Also you probably shouldn't bother if you're not writing an Android app...
+-Who Should Use Glide?
++Who should use Glide?
+@@ -25 +23 @@ Finally Glide is performant. Image loading is fast without using lots of cpu or
+-How Do I Use Glide?
++How do I use Glide?
+@@ -69 +66,0 @@ Fewer garbage collections, less memory per image, and less cpu time dedicated to
+-For more examples see the sample flickr app.
+@@ -73 +70 @@ How do I add Glide to my project?
+-Glide is an Androlid library project so its fairly straightforward to add it. Either add this repo as a submodule or otherwise check out this repository in your project and then follow the steps in the Android docs to add it as a library project: http://developer.android.com/tools/projects/projects-cmdline.html#ReferencingLibraryProject
++Glide is an Android library project so its fairly straightforward to add it. Either add this repo as a submodule or otherwise check out this repository in your project and then follow the steps in the Android docs to add it as a library project: http://developer.android.com/tools/projects/projects-cmdline.html#ReferencingLibraryProject
+@@ -76,0 +74,4 @@ Intellij and Eclipse instructions coming soon.
++Great, but how do I actually use Glide in my code?
++-----------------------------------------------------
++For more concrete examples see the wiki for tutorials and/or the sample flickr app.
++

@@ -1,0 +1,937 @@
+diff --git a/README.md b/README.md
+index 59f8c9a55a..737a4b6d3b 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework [![Build Status](https://build.spring.io/plugins/servlet/wittified/build-status/SPR-PUBM)](https://build.spring.io/browse/SPR-PUBM)
++# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework [![Build Status](https://build.spring.io/plugins/servlet/wittified/build-status/SPR-PUBM)](https://build.spring.io/browse/SPR)
+diff --git a/README.md b/README.md
+index baa2d9c219..59f8c9a55a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework ![Build Status](https://build.spring.io/plugins/servlet/wittified/build-status/SPR-PUBM)
++# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework [![Build Status](https://build.spring.io/plugins/servlet/wittified/build-status/SPR-PUBM)](https://build.spring.io/browse/SPR-PUBM)
+diff --git a/README.md b/README.md
+index 39bd5f2e3a..baa2d9c219 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework
++# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework ![Build Status](https://build.spring.io/plugins/servlet/wittified/build-status/SPR-PUBM)
+diff --git a/README.md b/README.md
+index 004747a85e..39bd5f2e3a 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ The Spring Framework maintains reference documentation ([published](https://docs
+-See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wikipedia page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
++See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wiki page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+diff --git a/README.md b/README.md
+index e5bf1cf9e9..004747a85e 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](h
+-The Spring Framework is released under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
++The Spring Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
+diff --git a/README.md b/README.md
+index 1d96e81702..e5bf1cf9e9 100644
+--- a/README.md
++++ b/README.md
+@@ -17,2 +17,2 @@ For access to artifacts or a distribution zip, see the [Spring Framework Artifac
+-The Spring Framework maintains reference documentation ([published](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
+-[API reference](http://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
++The Spring Framework maintains reference documentation ([published](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
++[API reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
+@@ -26 +26 @@ See the [Build from Source](https://github.com/spring-projects/spring-framework/
+-Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](http://spring.io/blog/), and releases are announced via our [news feed](http://spring.io/blog/category/news).
++Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](https://spring.io/blog/), and releases are announced via our [news feed](https://spring.io/blog/category/news).
+diff --git a/README.md b/README.md
+index ecc39f4dcf..1d96e81702 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). The Spring Framework and the family of Spring projects establishes the term "Spring". 
++This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). Collectively the Spring Framework and the family of Spring projects is often referred to simply as "Spring". 
+@@ -5 +5 @@ This is the home of the Spring Framework: the foundation for all [Spring project
+-Spring provides everything required beyond the Java programming language for creating enterprise applications within a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
++Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
+diff --git a/README.md b/README.md
+index 6e0d5408b3..ecc39f4dcf 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3 @@
+-This is the home of the Spring Framework, the foundation for all
+-[Spring projects](https://spring.io/projects). Together the Spring Framework and the family of Spring projects make up what we call "Spring". 
++This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). The Spring Framework and the family of Spring projects establishes the term "Spring". 
+@@ -6,4 +5 @@ This is the home of the Spring Framework, the foundation for all
+-Spring provides everything you need beyond the Java language to create enterprise
+-applications in a wide range of scenarios and architectures. Please read the
+-[Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction)
+-section in the reference for a more complete introduction.
++Spring provides everything required beyond the Java programming language for creating enterprise applications within a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
+@@ -13,3 +9 @@ section in the reference for a more complete introduction.
+-This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc).
+-By participating you are expected to uphold this code.
+-Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
++This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc). By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+@@ -19,3 +13 @@ Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-For access to artifacts or a distribution zip, see the
+-[Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts)
+-wiki page.
++For access to artifacts or a distribution zip, see the [Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts) wiki page.
+@@ -25,6 +17,2 @@ wiki page.
+-The Spring Frameworks maintains reference documentation
+-([published](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and
+-[source](src/docs/asciidoc)),
+-Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
+-[API reference](http://docs.spring.io/spring-framework/docs/current/javadoc-api/).
+-There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
++The Spring Framework maintains reference documentation ([published](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
++[API reference](http://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
+@@ -34,2 +22 @@ There are also [guides and tutorials](https://spring.io/guides) across Spring pr
+-See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source)
+-wiki page and also [CONTRIBUTING.md](CONTRIBUTING.md).
++See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wikipedia page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+@@ -39,5 +26 @@ wiki page and also [CONTRIBUTING.md](CONTRIBUTING.md).
+-Follow [@SpringCentral](https://twitter.com/springcentral),
+-[@SpringFramework](https://twitter.com/springframework), and its
+-[team members](https://twitter.com/springframework/lists/team/members) on Twitter.
+-In-depth articles can be found at [The Spring Blog](http://spring.io/blog/),
+-and releases are announced via our [news feed](http://spring.io/blog/category/news).
++Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](http://spring.io/blog/), and releases are announced via our [news feed](http://spring.io/blog/category/news).
+@@ -47,2 +30 @@ and releases are announced via our [news feed](http://spring.io/blog/category/ne
+-The Spring Framework is released under version 2.0 of the
+-[Apache License](http://www.apache.org/licenses/LICENSE-2.0).
++The Spring Framework is released under version 2.0 of the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+diff --git a/README.md b/README.md
+index 0b6ca50152..6e0d5408b3 100644
+--- a/README.md
++++ b/README.md
+@@ -25,2 +25,3 @@ wiki page.
+-The Spring Frameworks maintains
+-[reference documentation](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/),
++The Spring Frameworks maintains reference documentation
++([published](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and
++[source](src/docs/asciidoc)),
+diff --git a/README.md b/README.md
+index 9d0931816e..0b6ca50152 100644
+--- a/README.md
++++ b/README.md
+@@ -34,2 +34 @@ See the [Build from Source](https://github.com/spring-projects/spring-framework/
+-wiki page, also [CONTRIBUTING](CONTRIBUTING.md), and the
+-[Gradle build and release FAQ](https://github.com/spring-projects/spring-framework/wiki/Gradle-build-and-release-FAQ).
++wiki page and also [CONTRIBUTING.md](CONTRIBUTING.md).
+diff --git a/README.md b/README.md
+index 3eae2c1768..9d0931816e 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ For access to artifacts or a distribution zip, see the
+-[Spring artifacts](https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts)
++[Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts)
+diff --git a/README.md b/README.md
+index e805cd6097..3eae2c1768 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,4 @@
+-This is the home of the Spring Framework that underlies all
+-[Spring projects](https://spring.io/projects). Collectively the Spring Framework and the
+-family of related Spring projects make up what we call "Spring".
++# <img src="src/docs/asciidoc/images/spring-framework.png" width="80" height="80"> Spring Framework
++
++This is the home of the Spring Framework, the foundation for all
++[Spring projects](https://spring.io/projects). Together the Spring Framework and the family of Spring projects make up what we call "Spring". 
+@@ -22 +23 @@ wiki page.
+-## Docs
++## Documentation
+diff --git a/README.md b/README.md
+index 94e1fe61fa..e805cd6097 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-## Artifacts
++## Access to Binaries
+@@ -18,4 +18,3 @@ Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-For Maven repository information see
+-[downloading Spring artifacts](https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts),
+-or if unable to use Maven or other transitive dependency management tools, see
+-[building a distribution with dependencies](https://github.com/spring-projects/spring-framework/wiki/Building-a-distribution-with-dependencies).
++For access to artifacts or a distribution zip, see the
++[Spring artifacts](https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts)
++wiki page.
+@@ -23 +22 @@ or if unable to use Maven or other transitive dependency management tools, see
+-## Learn
++## Docs
+@@ -29,2 +28 @@ Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), a
+-
+-You can find guides and tutorials on [https://spring.io](https://spring.io/guides).
++There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
+diff --git a/README.md b/README.md
+index d31901ec29..94e1fe61fa 100644
+--- a/README.md
++++ b/README.md
+@@ -34,34 +34,2 @@ You can find guides and tutorials on [https://spring.io](https://spring.io/guide
+-The Spring Framework uses a [Gradle](http://gradle.org) build. In the instructions below,
+-the [Gradle Wrapper](http://vimeo.com/34436402) is invoked from the root of the source
+-tree and serves as a cross-platform, self-contained bootstrap mechanism for the build.
+-
+-To build you will need [Git](http://help.github.com/set-up-git-redirect) and
+-[JDK 8 update 20 or later](http://www.oracle.com/technetwork/java/javase/downloads).
+-Be sure that your `JAVA_HOME` environment variable points to the `jdk1.8.0` folder
+-extracted from the JDK download.
+-
+-Start by checking out the sources:
+-```
+-git clone git@github.com:spring-projects/spring-framework.git
+-```
+-
+-To import into an IDE, ensure JDK 8 is configured. Then run `./import-into-eclipse.sh`
+-or read [import-into-idea.md](import-into-idea.md). For IntelliJ please do read the
+-instructions as a straight-up import will not work.
+-
+-To compile, test, build all jars, distribution zips, and docs use:
+-```
+-./gradlew build
+-```
+-
+-To install all spring-\* jars into your local Maven cache:
+-```
+-./gradlew install
+-```
+-
+-Discover more commands:
+-```
+-./gradlew tasks
+-```
+-
+-See also [CONTRIBUTING](CONTRIBUTING.md) and the
++See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source)
++wiki page, also [CONTRIBUTING](CONTRIBUTING.md), and the
+diff --git a/README.md b/README.md
+index f626d3f528..d31901ec29 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,6 @@
+-Please read the
++This is the home of the Spring Framework that underlies all
++[Spring projects](https://spring.io/projects). Collectively the Spring Framework and the
++family of related Spring projects make up what we call "Spring".
++
++Spring provides everything you need beyond the Java language to create enterprise
++applications in a wide range of scenarios and architectures. Please read the
+@@ -3 +8,3 @@ Please read the
+-in the reference documentation for a quick introduction.
++section in the reference for a more complete introduction.
++
++## Code of Conduct
+@@ -9,3 +16,6 @@ Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-For Maven repository information see [downloading Spring artifacts][], or if unable to
+-use Maven or other transitive dependency management tools, see
+-[building a distribution with dependencies][].
++## Artifacts
++
++For Maven repository information see
++[downloading Spring artifacts](https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts),
++or if unable to use Maven or other transitive dependency management tools, see
++[building a distribution with dependencies](https://github.com/spring-projects/spring-framework/wiki/Building-a-distribution-with-dependencies).
+@@ -13 +23 @@ use Maven or other transitive dependency management tools, see
+-Documentation is available in the form of [reference docs][], [Javadoc][], and Github Wiki pages.
++## Learn
+@@ -15 +25,4 @@ Documentation is available in the form of [reference docs][], [Javadoc][], and G
+-For contributing see the [contributor guidelines][] for details.
++The Spring Frameworks maintains
++[reference documentation](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/),
++Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
++[API reference](http://docs.spring.io/spring-framework/docs/current/javadoc-api/).
+@@ -17,4 +30 @@ For contributing see the [contributor guidelines][] for details.
+-## Building from Source
+-The Spring Framework uses a [Gradle][]-based build system. In the instructions
+-below, [`./gradlew`][] is invoked from the root of the source tree and serves as
+-a cross-platform, self-contained bootstrap mechanism for the build.
++You can find guides and tutorials on [https://spring.io](https://spring.io/guides).
+@@ -22 +32 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-### Prerequisites
++## Build from Source
+@@ -24 +34,3 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [JDK 8 update 20 or later][JDK8 build]
++The Spring Framework uses a [Gradle](http://gradle.org) build. In the instructions below,
++the [Gradle Wrapper](http://vimeo.com/34436402) is invoked from the root of the source
++tree and serves as a cross-platform, self-contained bootstrap mechanism for the build.
+@@ -25,0 +38,2 @@ a cross-platform, self-contained bootstrap mechanism for the build.
++To build you will need [Git](http://help.github.com/set-up-git-redirect) and
++[JDK 8 update 20 or later](http://www.oracle.com/technetwork/java/javase/downloads).
+@@ -29,2 +43,4 @@ extracted from the JDK download.
+-### Check out sources
+-`git clone git@github.com:spring-projects/spring-framework.git`
++Start by checking out the sources:
++```
++git clone git@github.com:spring-projects/spring-framework.git
++```
+@@ -32,3 +48,3 @@ extracted from the JDK download.
+-### Import sources into your IDE
+-Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured properly in your IDE.
++To import into an IDE, ensure JDK 8 is configured. Then run `./import-into-eclipse.sh`
++or read [import-into-idea.md](import-into-idea.md). For IntelliJ please do read the
++instructions as a straight-up import will not work.
+@@ -36,2 +52,4 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-### Install all spring-\* jars into your local Maven cache
+-`./gradlew install`
++To compile, test, build all jars, distribution zips, and docs use:
++```
++./gradlew build
++```
+@@ -39,2 +57,4 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-### Compile and test; build all jars, distribution zips, and docs
+-`./gradlew build`
++To install all spring-\* jars into your local Maven cache:
++```
++./gradlew install
++```
+@@ -42,2 +62,4 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-... and discover more commands with `./gradlew tasks`. See also the [Gradle
+-build and release FAQ][].
++Discover more commands:
++```
++./gradlew tasks
++```
+@@ -45,4 +67,10 @@ build and release FAQ][].
+-## Staying in Touch
+-Follow [@SpringCentral][] as well as [@SpringFramework][] and its [team members][]
+-on Twitter. In-depth articles can be found at [The Spring Blog][], and releases
+-are announced via our [news feed][].
++See also [CONTRIBUTING](CONTRIBUTING.md) and the
++[Gradle build and release FAQ](https://github.com/spring-projects/spring-framework/wiki/Gradle-build-and-release-FAQ).
++
++## Stay in Touch
++
++Follow [@SpringCentral](https://twitter.com/springcentral),
++[@SpringFramework](https://twitter.com/springframework), and its
++[team members](https://twitter.com/springframework/lists/team/members) on Twitter.
++In-depth articles can be found at [The Spring Blog](http://spring.io/blog/),
++and releases are announced via our [news feed](http://spring.io/blog/category/news).
+@@ -51,20 +79,3 @@ are announced via our [news feed][].
+-The Spring Framework is released under version 2.0 of the [Apache License][].
+-
+-[downloading Spring artifacts]: https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts
+-[building a distribution with dependencies]: https://github.com/spring-projects/spring-framework/wiki/Building-a-distribution-with-dependencies
+-[Javadoc]: http://docs.spring.io/spring-framework/docs/current/javadoc-api/
+-[reference docs]: http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/
+-[Spring Framework JIRA]: https://jira.spring.io/browse/SPR
+-[Gradle]: http://gradle.org
+-[`./gradlew`]: http://vimeo.com/34436402
+-[Git]: http://help.github.com/set-up-git-redirect
+-[JDK8 build]: http://www.oracle.com/technetwork/java/javase/downloads
+-[Gradle build and release FAQ]: https://github.com/spring-projects/spring-framework/wiki/Gradle-build-and-release-FAQ
+-[Pull requests]: https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/
+-[contributor guidelines]: https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.adoc
+-[@SpringFramework]: https://twitter.com/springframework
+-[@SpringCentral]: https://twitter.com/springcentral
+-[team members]: https://twitter.com/springframework/lists/team/members
+-[The Spring Blog]: http://spring.io/blog/
+-[news feed]: http://spring.io/blog/category/news
+-[Apache License]: http://www.apache.org/licenses/LICENSE-2.0
++
++The Spring Framework is released under version 2.0 of the
++[Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+diff --git a/README.md b/README.md
+index 2829487331..f626d3f528 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@ Please read the
+-https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction[Overview]
++[Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction)
+@@ -9,3 +9,3 @@ Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-For Maven repository information see [downloading Spring artifacts][]. Unable to
+-use Maven or other transitive dependency management tools?
+-See [building a distribution with dependencies][].
++For Maven repository information see [downloading Spring artifacts][], or if unable to
++use Maven or other transitive dependency management tools, see
++[building a distribution with dependencies][].
+@@ -13 +13 @@ See [building a distribution with dependencies][].
+-For documentation see the current [reference docs][], [Javadoc][], Github Wiki pages.
++Documentation is available in the form of [reference docs][], [Javadoc][], and Github Wiki pages.
+diff --git a/README.md b/README.md
+index 8d65592cdc..2829487331 100644
+--- a/README.md
++++ b/README.md
+@@ -1,18 +1,9 @@
+-## Spring Framework
+-The Spring Framework provides a comprehensive programming and configuration
+-model for modern Java-based enterprise applications -- on any kind of deployment
+-platform. A key element of Spring is infrastructural support at the application
+-level: Spring focuses on the "plumbing" of enterprise applications so that teams
+-can focus on application-level business logic, without unnecessary ties to
+-specific deployment environments.
+-
+-The framework also serves as the foundation for [Spring Integration][], [Spring Batch][]
+-and the rest of the Spring [family of projects][]. Browse the repositories under
+-the [Spring organization][] on GitHub for a full list.
+-
+-## Code of Conduct
+-This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.adoc).
+-By participating, you  are expected to uphold this code. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+-
+-## Downloading Artifacts
+-See [downloading Spring artifacts][] for Maven repository information. Unable to
++Please read the
++https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction[Overview]
++in the reference documentation for a quick introduction.
++
++This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc).
++By participating you are expected to uphold this code.
++Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
++
++For Maven repository information see [downloading Spring artifacts][]. Unable to
+@@ -22,2 +13 @@ See [building a distribution with dependencies][].
+-## Documentation
+-See the current [Javadoc][] and [reference docs][].
++For documentation see the current [reference docs][], [Javadoc][], Github Wiki pages.
+@@ -25,10 +15 @@ See the current [Javadoc][] and [reference docs][].
+-## Getting Support
+-Check out the [spring][spring tags] tags on [Stack Overflow][]. [Commercial support][]
+-is available too.
+-
+-## Issue Tracking
+-Report issues via the [Spring Framework JIRA][]. Understand our issue management
+-process by reading about [the lifecycle of an issue][]. Think you've found a
+-bug? Please consider submitting a reproduction project via the
+-[spring-framework-issues][] GitHub repository. The [readme][] there provides
+-simple step-by-step instructions.
++For contributing see the [contributor guidelines][] for details.
+@@ -64,3 +44,0 @@ build and release FAQ][].
+-## Contributing
+-[Pull requests][] are welcome; see the [contributor guidelines][] for details.
+-
+@@ -75,4 +52,0 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Spring Integration]: https://github.com/spring-projects/spring-integration
+-[Spring Batch]: https://github.com/spring-projects/spring-batch
+-[family of projects]: http://spring.io/projects
+-[Spring organization]: https://github.com/spring-projects
+@@ -83,3 +56,0 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[spring tags]: http://spring.io/questions
+-[Stack Overflow]: http://stackoverflow.com/faq
+-[Commercial support]: http://spring.io/services
+@@ -87,3 +57,0 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[the lifecycle of an issue]: https://github.com/spring-projects/spring-framework/wiki/The-Lifecycle-of-an-Issue
+-[spring-framework-issues]: https://github.com/spring-projects/spring-framework-issues#readme
+-[readme]: https://github.com/spring-projects/spring-framework-issues#readme
+@@ -96 +64 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[contributor guidelines]: https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md
++[contributor guidelines]: https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.adoc
+diff --git a/README.md b/README.md
+index 852ecf38b8..8d65592cdc 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Pull requests]: http://help.github.com/send-pull-requests
++[Pull requests]: https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/
+diff --git a/README.md b/README.md
+index ffd8432a12..852ecf38b8 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,4 @@ the [Spring organization][] on GitHub for a full list.
++## Code of Conduct
++This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.adoc).
++By participating, you  are expected to uphold this code. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
++
+diff --git a/README.md b/README.md
+index 7117a73c31..ffd8432a12 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ The Spring Framework provides a comprehensive programming and configuration
+-model for modern Java-based enterprise applications - on any kind of deployment
++model for modern Java-based enterprise applications -- on any kind of deployment
+@@ -9,3 +9,3 @@ specific deployment environments.
+-The framework also serves as the foundation for [Spring Integration][], [Spring
+-Batch][] and the rest of the Spring [family of projects][]. Browse the repositories
+-under the [Spring organization][] on GitHub for a full list.
++The framework also serves as the foundation for [Spring Integration][], [Spring Batch][]
++and the rest of the Spring [family of projects][]. Browse the repositories under
++the [Spring organization][] on GitHub for a full list.
+@@ -15,2 +15,2 @@ See [downloading Spring artifacts][] for Maven repository information. Unable to
+-use Maven or other transitive dependency management tools? See [building a
+-distribution with dependencies][].
++use Maven or other transitive dependency management tools?
++See [building a distribution with dependencies][].
+@@ -22,2 +22 @@ See the current [Javadoc][] and [reference docs][].
+-Check out the [Spring forums][] and the [spring][spring tag] and
+-[spring-mvc][spring-mvc tag] tags on [Stack Overflow][]. [Commercial support][]
++Check out the [spring][spring tags] tags on [Stack Overflow][]. [Commercial support][]
+@@ -27 +26 @@ is available too.
+-Report issues via the [Spring Framework JIRA]. Understand our issue management
++Report issues via the [Spring Framework JIRA][]. Understand our issue management
+@@ -80,3 +79 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Spring forums]: http://forum.spring.io/
+-[spring tag]: http://stackoverflow.com/questions/tagged/spring
+-[spring-mvc tag]: http://stackoverflow.com/questions/tagged/spring-mvc
++[spring tags]: http://spring.io/questions
+diff --git a/README.md b/README.md
+index e6e6723210..7117a73c31 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[team members]: https://twitter.com/springframework/team/members
++[team members]: https://twitter.com/springframework/lists/team/members
+diff --git a/README.md b/README.md
+index b8ce5927d6..e6e6723210 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [OpenJDK 8 early access build 100 or later][JDK8 build]
++[Git][] and [JDK 8 update 20 or later][JDK8 build]
+@@ -92 +92 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[JDK8 build]: http://jdk8.java.net/download.html
++[JDK8 build]: http://www.oracle.com/technetwork/java/javase/downloads
+diff --git a/README.md b/README.md
+index 28029c049c..b8ce5927d6 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Spring Framework JIRA]: http://jira.springsource.org/browse/SPR
++[Spring Framework JIRA]: https://jira.spring.io/browse/SPR
+diff --git a/README.md b/README.md
+index ac0a3d396e..28029c049c 100644
+--- a/README.md
++++ b/README.md
+@@ -65,3 +65,3 @@ build and release FAQ][].
+-Follow [@springframework][] and its [team members][] on Twitter. In-depth
+-articles can be found at [The Spring Blog][], and releases are announced via
+-our [news feed][].
++Follow [@SpringCentral][] as well as [@SpringFramework][] and its [team members][]
++on Twitter. In-depth articles can be found at [The Spring Blog][], and releases
++are announced via our [news feed][].
+@@ -96 +96,2 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[@springframework]: http://twitter.com/springframework
++[@SpringFramework]: https://twitter.com/springframework
++[@SpringCentral]: https://twitter.com/springcentral
+diff --git a/README.md b/README.md
+index 7c1ae8bf51..ac0a3d396e 100644
+--- a/README.md
++++ b/README.md
+@@ -10,2 +10,2 @@ The framework also serves as the foundation for [Spring Integration][], [Spring
+-Batch][] and the rest of the Spring [family of projects][]. Browse the
+-repositories under the [SpringSource organization][] on GitHub for a full list.
++Batch][] and the rest of the Spring [family of projects][]. Browse the repositories
++under the [Spring organization][] on GitHub for a full list.
+@@ -13 +13 @@ repositories under the [SpringSource organization][] on GitHub for a full list.
+-## Downloading artifacts
++## Downloading Artifacts
+@@ -21 +21 @@ See the current [Javadoc][] and [reference docs][].
+-## Getting support
++## Getting Support
+@@ -33 +33 @@ simple step-by-step instructions.
+-## Building from source
++## Building from Source
+@@ -38 +38 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-### prerequisites
++### Prerequisites
+@@ -45,2 +45,2 @@ extracted from the JDK download.
+-### check out sources
+-`git clone git://github.com/SpringSource/spring-framework.git`
++### Check out sources
++`git clone git@github.com:spring-projects/spring-framework.git`
+@@ -48 +48 @@ extracted from the JDK download.
+-### import sources into your IDE
++### Import sources into your IDE
+@@ -50,2 +50 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured
+-properly in your IDE.
++> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured properly in your IDE.
+@@ -53 +52 @@ properly in your IDE.
+-### install all spring-\* jars into your local Maven cache
++### Install all spring-\* jars into your local Maven cache
+@@ -56 +55 @@ properly in your IDE.
+-### compile and test, build all jars, distribution zips and docs
++### Compile and test; build all jars, distribution zips, and docs
+@@ -65 +64 @@ build and release FAQ][].
+-## Staying in touch
++## Staying in Touch
+@@ -67,2 +66,2 @@ Follow [@springframework][] and its [team members][] on Twitter. In-depth
+-articles can be found at the SpringSource [team blog][], and releases are
+-announced via our [news feed][].
++articles can be found at [The Spring Blog][], and releases are announced via
++our [news feed][].
+@@ -73,9 +72,9 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Spring Integration]: https://github.com/SpringSource/spring-integration
+-[Spring Batch]: https://github.com/SpringSource/spring-batch
+-[family of projects]: http://springsource.org/projects
+-[SpringSource organization]: https://github.com/SpringSource
+-[downloading Spring artifacts]: https://github.com/SpringSource/spring-framework/wiki/Downloading-Spring-artifacts
+-[building a distribution with dependencies]: https://github.com/SpringSource/spring-framework/wiki/Building-a-distribution-with-dependencies
+-[Javadoc]: http://static.springsource.org/spring-framework/docs/current/javadoc-api
+-[reference docs]: http://static.springsource.org/spring-framework/docs/current/spring-framework-reference
+-[Spring forums]: http://forum.springsource.org
++[Spring Integration]: https://github.com/spring-projects/spring-integration
++[Spring Batch]: https://github.com/spring-projects/spring-batch
++[family of projects]: http://spring.io/projects
++[Spring organization]: https://github.com/spring-projects
++[downloading Spring artifacts]: https://github.com/spring-projects/spring-framework/wiki/Downloading-Spring-artifacts
++[building a distribution with dependencies]: https://github.com/spring-projects/spring-framework/wiki/Building-a-distribution-with-dependencies
++[Javadoc]: http://docs.spring.io/spring-framework/docs/current/javadoc-api/
++[reference docs]: http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/
++[Spring forums]: http://forum.spring.io/
+@@ -85 +84 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Commercial support]: http://springsource.com/support/springsupport
++[Commercial support]: http://spring.io/services
+@@ -87,3 +86,3 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[the lifecycle of an issue]: https://github.com/cbeams/spring-framework/wiki/The-Lifecycle-of-an-Issue
+-[spring-framework-issues]: https://github.com/SpringSource/spring-framework-issues#readme
+-[readme]: https://github.com/SpringSource/spring-framework-issues#readme
++[the lifecycle of an issue]: https://github.com/spring-projects/spring-framework/wiki/The-Lifecycle-of-an-Issue
++[spring-framework-issues]: https://github.com/spring-projects/spring-framework-issues#readme
++[readme]: https://github.com/spring-projects/spring-framework-issues#readme
+@@ -94 +93 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[Gradle build and release FAQ]: https://github.com/SpringSource/spring-framework/wiki/Gradle-build-and-release-FAQ
++[Gradle build and release FAQ]: https://github.com/spring-projects/spring-framework/wiki/Gradle-build-and-release-FAQ
+@@ -96 +95 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[contributor guidelines]: https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md
++[contributor guidelines]: https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING.md
+@@ -98,3 +97,3 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[team members]: http://spring.io/team
+-[team blog]: http://blog.springsource.org
+-[news feed]: http://www.springsource.org/news-events
++[team members]: https://twitter.com/springframework/team/members
++[The Spring Blog]: http://spring.io/blog/
++[news feed]: http://spring.io/blog/category/news
+diff --git a/README.md b/README.md
+index a8bf3eff57..7c1ae8bf51 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[team members]: http://twitter.com/springframework/team/members
++[team members]: http://spring.io/team
+diff --git a/README.md b/README.md
+index 0e54cf1243..a8bf3eff57 100644
+--- a/README.md
++++ b/README.md
+@@ -40,4 +40 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88]
+-> **Note:** Do not use the "lambda" edition of JDK b88 when building the
+-framework, as it still causes some errors. It should be fine, however, to
+-*run* against various versions of OpenJDK 1.8, lambda or otherwise.
++[Git][] and [OpenJDK 8 early access build 100 or later][JDK8 build]
+@@ -96 +93 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[JDK18 build 88]: https://jdk8.java.net/archive/8-b88.html
++[JDK8 build]: http://jdk8.java.net/download.html
+diff --git a/README.md b/README.md
+index 55749d0fa3..0e54cf1243 100644
+--- a/README.md
++++ b/README.md
+@@ -42 +42 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-ramework, as it still causes some errors. It should be fine, however, to
++framework, as it still causes some errors. It should be fine, however, to
+diff --git a/README.md b/README.md
+index 0a8672641a..55749d0fa3 100644
+--- a/README.md
++++ b/README.md
+@@ -40,3 +40,7 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88] (get 
+-the JDK and don't get the lambda edition). Set the environment variable `JAVA_HOME`
+-to point to the `jdk1.8.0` folder extracted from the JDK download.
++[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88]
++> **Note:** Do not use the "lambda" edition of JDK b88 when building the
++ramework, as it still causes some errors. It should be fine, however, to
++*run* against various versions of OpenJDK 1.8, lambda or otherwise.
++
++Be sure that your `JAVA_HOME` environment variable points to the `jdk1.8.0` folder
++extracted from the JDK download.
+@@ -49 +53,2 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured properly in your IDE.
++> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured
++properly in your IDE.
+diff --git a/README.md b/README.md
+index 0f2a65fed5..0a8672641a 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40,3 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88].
++[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88] (get 
++the JDK and don't get the lambda edition). Set the environment variable `JAVA_HOME`
++to point to the `jdk1.8.0` folder extracted from the JDK download.
+diff --git a/README.md b/README.md
+index 037b3fbda3..0f2a65fed5 100644
+--- a/README.md
++++ b/README.md
+@@ -46,0 +47 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
++> **Note:** Per the prerequisites above, ensure that you have JDK 8 configured properly in your IDE.
+diff --git a/README.md b/README.md
+index 4397a17f61..037b3fbda3 100644
+--- a/README.md
++++ b/README.md
+@@ -40,3 +40 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88] (get 
+-the JDK and don't get the lambda edition). Set the environment variable `JAVA_HOME`
+-to point to the `jdk1.8.0` folder extracted from the JDK download.
++[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88].
+@@ -47,2 +45,2 @@ to point to the `jdk1.8.0` folder extracted from the JDK download.
+-### compile and test, build all jars, distribution zips and docs
+-`./gradlew build`
++### import sources into your IDE
++Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+@@ -53,2 +51,2 @@ to point to the `jdk1.8.0` folder extracted from the JDK download.
+-### import sources into your IDE
+-Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
++### compile and test, build all jars, distribution zips and docs
++`./gradlew build`
+diff --git a/README.md b/README.md
+index 96793d34c9..4397a17f61 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40,3 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88].
++[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88] (get 
++the JDK and don't get the lambda edition). Set the environment variable `JAVA_HOME`
++to point to the `jdk1.8.0` folder extracted from the JDK download.
+diff --git a/README.md b/README.md
+index 78a45b9545..96793d34c9 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ a cross-platform, self-contained bootstrap mechanism for the build.
+-[Git][] and the latest [Early Access build of OpenJDK 1.8][JDK18].
++[Git][] and [Early Access build of OpenJDK 1.8 build 88][JDK18 build 88].
+@@ -88 +88 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[JDK18]: http://jdk8.java.net/download.html
++[JDK18 build 88]: https://jdk8.java.net/archive/8-b88.html
+diff --git a/README.md b/README.md
+index b89f014b67..78a45b9545 100644
+--- a/README.md
++++ b/README.md
+@@ -13,2 +12,0 @@ repositories under the [SpringSource organization][] on GitHub for a full list.
+-[.NET][] and [Python][] variants are available as well.
+-
+@@ -38,2 +36,5 @@ below, [`./gradlew`][] is invoked from the root of the source tree and serves as
+-a cross-platform, self-contained bootstrap mechanism for the build. The only
+-prerequisites are [Git][] and JDK 1.7+.
++a cross-platform, self-contained bootstrap mechanism for the build.
++
++### prerequisites
++
++[Git][] and the latest [Early Access build of OpenJDK 1.8][JDK18].
+@@ -71,2 +71,0 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[.NET]: https://github.com/SpringSource/spring-net
+-[Python]: https://github.com/SpringSource/spring-python
+@@ -88,0 +88 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
++[JDK18]: http://jdk8.java.net/download.html
+diff --git a/README.md b/README.md
+index 1263578a48..b89f014b67 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ a cross-platform, self-contained bootstrap mechanism for the build. The only
+-prerequisites are [Git][] and JDK 1.6+.
++prerequisites are [Git][] and JDK 1.7+.
+diff --git a/README.md b/README.md
+index 34eb42637a..1263578a48 100644
+--- a/README.md
++++ b/README.md
+@@ -91 +91 @@ The Spring Framework is released under version 2.0 of the [Apache License][].
+-[contributor guidelines]: https://github.com/SpringSource/spring-framework/wiki/Contributor-guidelines
++[contributor guidelines]: https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md
+diff --git a/README.md b/README.md
+index 73f841089d..34eb42637a 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ build and release FAQ][].
+-[Pull requests][] are welcome; see the [contributor guidelines][].
++[Pull requests][] are welcome; see the [contributor guidelines][] for details.
+diff --git a/README.md b/README.md
+index 2f3a95d585..73f841089d 100644
+--- a/README.md
++++ b/README.md
+@@ -2,5 +2,6 @@
+-The Spring Framework provides a comprehensive programming and configuration model for modern
+-Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is
+-infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise
+-applications so that teams can focus on application-level business logic, without unnecessary ties
+-to specific deployment environments.
++The Spring Framework provides a comprehensive programming and configuration
++model for modern Java-based enterprise applications - on any kind of deployment
++platform. A key element of Spring is infrastructural support at the application
++level: Spring focuses on the "plumbing" of enterprise applications so that teams
++can focus on application-level business logic, without unnecessary ties to
++specific deployment environments.
+@@ -8,5 +9,3 @@ to specific deployment environments.
+-The framework also serves as the foundation for
+-[Spring Integration](https://github.com/SpringSource/spring-integration),
+-[Spring Batch](https://github.com/SpringSource/spring-batch) and the rest of the Spring
+-[family of projects](http://springsource.org/projects). Browse the repositories under the
+-[SpringSource organization](https://github.com/SpringSource) on GitHub for a full list.
++The framework also serves as the foundation for [Spring Integration][], [Spring
++Batch][] and the rest of the Spring [family of projects][]. Browse the
++repositories under the [SpringSource organization][] on GitHub for a full list.
+@@ -14,2 +13 @@ The framework also serves as the foundation for
+-[.NET](https://github.com/SpringSource/spring-net) and
+-[Python](https://github.com/SpringSource/spring-python) variants are available as well.
++[.NET][] and [Python][] variants are available as well.
+@@ -18,3 +16,3 @@ The framework also serves as the foundation for
+-See [downloading Spring artifacts](https://github.com/SpringSource/spring-framework/wiki/Downloading-Spring-artifacts)
+-for Maven repository information. Unable to use Maven or other transitive dependency management tools?
+-See [building a distribution with dependencies](https://github.com/SpringSource/spring-framework/wiki/Building-a-distribution-with-dependencies).
++See [downloading Spring artifacts][] for Maven repository information. Unable to
++use Maven or other transitive dependency management tools? See [building a
++distribution with dependencies][].
+@@ -23,2 +21 @@ See [building a distribution with dependencies](https://github.com/SpringSource/
+-See the current [Javadoc](http://static.springsource.org/spring-framework/docs/current/api)
+-and [Reference docs](http://static.springsource.org/spring-framework/docs/current/reference).
++See the current [Javadoc][] and [reference docs][].
+@@ -27,3 +24,3 @@ and [Reference docs](http://static.springsource.org/spring-framework/docs/curren
+-Check out the [Spring forums](http://forum.springsource.org) and the
+-[Spring tag](http://stackoverflow.com/questions/tagged/spring) on StackOverflow.
+-[Commercial support](http://springsource.com/support/springsupport) is available too.
++Check out the [Spring forums][] and the [spring][spring tag] and
++[spring-mvc][spring-mvc tag] tags on [Stack Overflow][]. [Commercial support][]
++is available too.
+@@ -32,5 +29,5 @@ Check out the [Spring forums](http://forum.springsource.org) and the
+-Spring's JIRA issue tracker can be found [here](http://jira.springsource.org/browse/SPR). Think
+-you've found a bug? Please consider submitting a reproduction project via the
+-[spring-framework-issues](https://github.com/SpringSource/spring-framework-issues) repository. The
+-[readme](https://github.com/SpringSource/spring-framework-issues#readme) provides simple
+-step-by-step instructions.  <a name="building_from_source"/>
++Report issues via the [Spring Framework JIRA]. Understand our issue management
++process by reading about [the lifecycle of an issue][]. Think you've found a
++bug? Please consider submitting a reproduction project via the
++[spring-framework-issues][] GitHub repository. The [readme][] there provides
++simple step-by-step instructions.
+@@ -39,4 +36,4 @@ step-by-step instructions.  <a name="building_from_source"/>
+-The Spring Framework uses a [Gradle](http://gradle.org)-based build system. In the instructions
+-below, [`./gradlew`](http://vimeo.com/34436402) is invoked from the root of the source tree and
+-serves as a cross-platform, self-contained bootstrap mechanism for the build. The only
+-prerequisites are [git](http://help.github.com/set-up-git-redirect) and JDK 1.6+.
++The Spring Framework uses a [Gradle][]-based build system. In the instructions
++below, [`./gradlew`][] is invoked from the root of the source tree and serves as
++a cross-platform, self-contained bootstrap mechanism for the build. The only
++prerequisites are [Git][] and JDK 1.6+.
+@@ -56,2 +53,2 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-... and discover more commands with `./gradlew tasks`. See also the
+-[Gradle build and release FAQ](https://github.com/SpringSource/spring-framework/wiki/Gradle-build-and-release-FAQ).
++... and discover more commands with `./gradlew tasks`. See also the [Gradle
++build and release FAQ][].
+@@ -60,2 +57 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-[Pull requests](http://help.github.com/send-pull-requests) are welcome; see the
+-[contributor guidelines](https://github.com/SpringSource/spring-framework/wiki/Contributor-guidelines).
++[Pull requests][] are welcome; see the [contributor guidelines][].
+@@ -64,4 +60,3 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-Follow [@springframework](http://twitter.com/springframework) and its
+-[team members](http://twitter.com/springframework/team/members) on Twitter. In-depth articles can be
+-found at the SpringSource [team blog](http://blog.springsource.org), and releases are announced via
+-our [news feed](http://www.springsource.org/news-events).
++Follow [@springframework][] and its [team members][] on Twitter. In-depth
++articles can be found at the SpringSource [team blog][], and releases are
++announced via our [news feed][].
+@@ -70,2 +65,32 @@ our [news feed](http://www.springsource.org/news-events).
+-The Spring Framework is released under version 2.0 of the
+-[Apache License](http://www.apache.org/licenses/LICENSE-2.0).
++The Spring Framework is released under version 2.0 of the [Apache License][].
++
++[Spring Integration]: https://github.com/SpringSource/spring-integration
++[Spring Batch]: https://github.com/SpringSource/spring-batch
++[family of projects]: http://springsource.org/projects
++[SpringSource organization]: https://github.com/SpringSource
++[.NET]: https://github.com/SpringSource/spring-net
++[Python]: https://github.com/SpringSource/spring-python
++[downloading Spring artifacts]: https://github.com/SpringSource/spring-framework/wiki/Downloading-Spring-artifacts
++[building a distribution with dependencies]: https://github.com/SpringSource/spring-framework/wiki/Building-a-distribution-with-dependencies
++[Javadoc]: http://static.springsource.org/spring-framework/docs/current/javadoc-api
++[reference docs]: http://static.springsource.org/spring-framework/docs/current/spring-framework-reference
++[Spring forums]: http://forum.springsource.org
++[spring tag]: http://stackoverflow.com/questions/tagged/spring
++[spring-mvc tag]: http://stackoverflow.com/questions/tagged/spring-mvc
++[Stack Overflow]: http://stackoverflow.com/faq
++[Commercial support]: http://springsource.com/support/springsupport
++[Spring Framework JIRA]: http://jira.springsource.org/browse/SPR
++[the lifecycle of an issue]: https://github.com/cbeams/spring-framework/wiki/The-Lifecycle-of-an-Issue
++[spring-framework-issues]: https://github.com/SpringSource/spring-framework-issues#readme
++[readme]: https://github.com/SpringSource/spring-framework-issues#readme
++[Gradle]: http://gradle.org
++[`./gradlew`]: http://vimeo.com/34436402
++[Git]: http://help.github.com/set-up-git-redirect
++[Gradle build and release FAQ]: https://github.com/SpringSource/spring-framework/wiki/Gradle-build-and-release-FAQ
++[Pull requests]: http://help.github.com/send-pull-requests
++[contributor guidelines]: https://github.com/SpringSource/spring-framework/wiki/Contributor-guidelines
++[@springframework]: http://twitter.com/springframework
++[team members]: http://twitter.com/springframework/team/members
++[team blog]: http://blog.springsource.org
++[news feed]: http://www.springsource.org/news-events
++[Apache License]: http://www.apache.org/licenses/LICENSE-2.0
+diff --git a/README.md b/README.md
+index 174a2f7eb7..2f3a95d585 100644
+--- a/README.md
++++ b/README.md
+@@ -18,3 +18,3 @@ The framework also serves as the foundation for
+-Instructions on
+-[downloading Spring artifacts](https://github.com/SpringSource/spring-framework/wiki/Downloading-Spring-artifacts)
+-via Maven and other build systems are available via the project wiki.
++See [downloading Spring artifacts](https://github.com/SpringSource/spring-framework/wiki/Downloading-Spring-artifacts)
++for Maven repository information. Unable to use Maven or other transitive dependency management tools?
++See [building a distribution with dependencies](https://github.com/SpringSource/spring-framework/wiki/Building-a-distribution-with-dependencies).
+diff --git a/README.md b/README.md
+index 3a7ba778d1..174a2f7eb7 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +37,0 @@ step-by-step instructions.  <a name="building_from_source"/>
+-
+@@ -61,6 +60,2 @@ Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
+-[Pull requests](http://help.github.com/send-pull-requests) are welcome; you'll be asked to sign our
+-contributor license agreement ([CLA](https://support.springsource.com/spring_committer_signup)).
+-Trivial changes like typo fixes are especially appreciated (just
+-[fork and edit!](https://github.com/blog/844-forking-with-the-edit-button)). For larger changes,
+-please search through JIRA for similiar issues, creating a new one if necessary, and discuss your
+-ideas with the Spring team.
++[Pull requests](http://help.github.com/send-pull-requests) are welcome; see the
++[contributor guidelines](https://github.com/SpringSource/spring-framework/wiki/Contributor-guidelines).
+diff --git a/README.md b/README.md
+index d4549d3a5f..3a7ba778d1 100644
+--- a/README.md
++++ b/README.md
+@@ -34,3 +34,4 @@ you've found a bug? Please consider submitting a reproduction project via the
+-[spring-framework-issues](https://github.com/springsource/spring-framework-issues) repository. The
+-[readme](https://github.com/springsource/spring-framework-issues#readme) provides simple
+-step-by-step instructions.
++[spring-framework-issues](https://github.com/SpringSource/spring-framework-issues) repository. The
++[readme](https://github.com/SpringSource/spring-framework-issues#readme) provides simple
++step-by-step instructions.  <a name="building_from_source"/>
++
+@@ -39,3 +40,19 @@ step-by-step instructions.
+-Instructions on
+-[building Spring from source](https://github.com/SpringSource/spring-framework/wiki/Building-from-source)
+-are available via the project wiki.
++The Spring Framework uses a [Gradle](http://gradle.org)-based build system. In the instructions
++below, [`./gradlew`](http://vimeo.com/34436402) is invoked from the root of the source tree and
++serves as a cross-platform, self-contained bootstrap mechanism for the build. The only
++prerequisites are [git](http://help.github.com/set-up-git-redirect) and JDK 1.6+.
++
++### check out sources
++`git clone git://github.com/SpringSource/spring-framework.git`
++
++### compile and test, build all jars, distribution zips and docs
++`./gradlew build`
++
++### install all spring-\* jars into your local Maven cache
++`./gradlew install`
++
++### import sources into your IDE
++Run `./import-into-eclipse.sh` or read `import-into-idea.md` as appropriate.
++
++... and discover more commands with `./gradlew tasks`. See also the
++[Gradle build and release FAQ](https://github.com/SpringSource/spring-framework/wiki/Gradle-build-and-release-FAQ).
+diff --git a/README.md b/README.md
+index 5aa077745e..d4549d3a5f 100644
+--- a/README.md
++++ b/README.md
+@@ -23,2 +23,2 @@ via Maven and other build systems are available via the project wiki.
+-See the current [Javadoc](http://static.springsource.org/spring/docs/current/javadoc-api)
+-and [Reference docs](http://static.springsource.org/spring/docs/current/spring-framework-reference).
++See the current [Javadoc](http://static.springsource.org/spring-framework/docs/current/api)
++and [Reference docs](http://static.springsource.org/spring-framework/docs/current/reference).
+diff --git a/README.md b/README.md
+index d676872702..5aa077745e 100644
+--- a/README.md
++++ b/README.md
+@@ -10,2 +10,2 @@ The framework also serves as the foundation for
+-[Spring Batch](https://github.com/SpringSource/spring-batch) and the rest of the Spring family of
+-projects. Browse the repositories under the
++[Spring Batch](https://github.com/SpringSource/spring-batch) and the rest of the Spring
++[family of projects](http://springsource.org/projects). Browse the repositories under the
+@@ -48 +48,2 @@ Trivial changes like typo fixes are especially appreciated (just
+-please create a JIRA issue first and discuss your ideas with the Spring team.
++please search through JIRA for similiar issues, creating a new one if necessary, and discuss your
++ideas with the Spring team.

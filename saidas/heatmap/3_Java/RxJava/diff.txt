@@ -1,0 +1,1961 @@
+diff --git a/README.md b/README.md
+index 0dbdf7828..4b9a68990 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54 @@ package rxjava.examples;
+-import io.reactivex.*;
++import io.reactivex.rxjava3.core.*;
+@@ -66 +66 @@ If your platform doesn't support Java 8 lambdas (yet), you have to create an inn
+-import io.reactivex.functions.Consumer;
++import io.reactivex.rxjava3.functions.Consumer;
+@@ -75,0 +76,2 @@ Flowable.just("Hello world")
++Note that RxJava 3 components now live under `io.reactivex.rxjava3` and the base classes and interfaces live under `io.reactivex.rxjava3.core`.
++
+@@ -80,5 +82,5 @@ RxJava 3 features several base classes you can discover operators on:
+-  - [`io.reactivex.Flowable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Flowable.html): 0..N flows, supporting Reactive-Streams and backpressure
+-  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure,
+-  - [`io.reactivex.Single`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error,
+-  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal,
+-  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error.
++  - [`io.reactivex.rxjava3.core.Flowable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Flowable.html): 0..N flows, supporting Reactive-Streams and backpressure
++  - [`io.reactivex.rxjava3.core.Observable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Observable.html): 0..N flows, no backpressure,
++  - [`io.reactivex.rxjava3.core.Single`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Single.html): a flow of exactly 1 item or an error,
++  - [`io.reactivex.rxjava3.core.Completable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Completable.html): a flow without items but only a completion or error signal,
++  - [`io.reactivex.rxjava3.core.Maybe`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/rxjava3/core/Maybe.html): a flow with no items, exactly one item or an error.
+@@ -167 +169 @@ One of the common use cases for RxJava is to run some computation, network reque
+-import io.reactivex.schedulers.Schedulers;
++import io.reactivex.rxjava3.schedulers.Schedulers;
+@@ -520 +522 @@ APIs marked with the `@Deprecated` annotation at the class or method level will
+-#### io.reactivex.internal.*
++#### io.reactivex.rxjava3.internal.*
+@@ -522 +524 @@ APIs marked with the `@Deprecated` annotation at the class or method level will
+-All code inside the `io.reactivex.internal.*` packages is considered private API and should not be relied upon at all. It can change at any time. 
++All code inside the `io.reactivex.rxjava3.internal.*` packages is considered private API and should not be relied upon at all. It can change at any time. 
+diff --git a/README.md b/README.md
+index 6683c5e64..0dbdf7828 100644
+--- a/README.md
++++ b/README.md
+@@ -266,6 +266,4 @@ Flowable<Inventory> inventorySource = warehouse.getInventoryAsync();
+-inventorySource.flatMap(inventoryItem ->
+-    erp.getDemandAsync(inventoryItem.getId())
+-    .map(demand 
+-        -> System.out.println("Item " + inventoryItem.getName() + " has demand " + demand));
+-  )
+-  .subscribe();
++inventorySource
++    .flatMap(inventoryItem -> erp.getDemandAsync(inventoryItem.getId())
++            .map(demand -> "Item " + inventoryItem.getName() + " has demand " + demand))
++    .subscribe(System.out::println);
+diff --git a/README.md b/README.md
+index c29d6d3fc..6683c5e64 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3,3 @@
+-<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=2.x'></a>
+-[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](https://codecov.io/gh/ReactiveX/RxJava/branch/2.x)
+-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava)
++<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=3.x'></a>
++[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=3.x)](https://codecov.io/gh/ReactiveX/RxJava/branch/3.x)
++[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava3/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava3/rxjava)
+@@ -11 +11 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-#### Version 2.x ([Javadoc](http://reactivex.io/RxJava/2.x/javadoc/))
++#### Version 3.x ([Javadoc](http://reactivex.io/RxJava/3.x/javadoc/))
+@@ -15 +15,2 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-- performance gains through design changes learned through the 1.x cycle and through [Reactive-Streams-Commons](https://github.com/reactor/reactive-streams-commons) research project.
++- fixed API mistakes and many limits of RxJava 2
++- intended to be a replacement for RxJava 2 with relatively few binary incompatible changes
+@@ -17 +18 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-- non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc)
++- non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc.)
+@@ -19,0 +21 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
++- test and diagnostic support via test schedulers, test consumers and plugin hooks
+@@ -21 +23 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-Version 2.x and 1.x will live side-by-side for several years. They will have different group ids (`io.reactivex.rxjava2` vs `io.reactivex`) and namespaces (`io.reactivex` vs `rx`). 
++Learn more about RxJava in general on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a>.
+@@ -23 +25,4 @@ Version 2.x and 1.x will live side-by-side for several years. They will have dif
+-See the differences between version 1.x and 2.x in the wiki article [What's different in 2.0](https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0). Learn more about RxJava in general on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a>.
++#### Version 2.x
++
++The [2.x version](https://github.com/ReactiveX/RxJava/tree/2.x) will be supported with bugfixes and important documentation updates till
++**December 31, 2020**. No new features will be added to 2.x.
+@@ -33 +38 @@ The [1.x version](https://github.com/ReactiveX/RxJava/tree/1.x) is end-of-life a
+-The first step is to include RxJava 2 into your project, for example, as a Gradle compile dependency:
++The first step is to include RxJava 3 into your project, for example, as a Gradle compile dependency:
+@@ -36 +41 @@ The first step is to include RxJava 2 into your project, for example, as a Gradl
+-implementation "io.reactivex.rxjava2:rxjava:2.x.y"
++implementation "io.reactivex.rxjava3:rxjava:3.x.y"
+@@ -39 +44 @@ implementation "io.reactivex.rxjava2:rxjava:2.x.y"
+-(Please replace `x` and `y` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava)
++(Please replace `x` and `y` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava3/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava3/rxjava)
+@@ -73 +78 @@ Flowable.just("Hello world")
+-RxJava 2 features several base classes you can discover operators on:
++RxJava 3 features several base classes you can discover operators on:
+@@ -75,5 +80,5 @@ RxJava 2 features several base classes you can discover operators on:
+-  - [`io.reactivex.Flowable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Flowable.html): 0..N flows, supporting Reactive-Streams and backpressure
+-  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure,
+-  - [`io.reactivex.Single`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error,
+-  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal,
+-  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error.
++  - [`io.reactivex.Flowable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Flowable.html): 0..N flows, supporting Reactive-Streams and backpressure
++  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure,
++  - [`io.reactivex.Single`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error,
++  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal,
++  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/3.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error.
+@@ -196 +201 @@ Typically, you can move computations or blocking IO to some other thread via `su
+-RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind a uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. 
++RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind a uniform API. RxJava 3 features several standard schedulers accessible via `Schedulers` utility class. 
+@@ -471 +476 @@ Flowable<T> concatArrayEagerDelayError(Publisher<? extends T>... sources);
+-The base classes can be considered heavy due to the sheer number of static and instance methods on them. RxJava 2's design was heavily influenced by the [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm#reactive-streams) specification, therefore, the library features a class and an interface per each reactive type:
++The base classes can be considered heavy due to the sheer number of static and instance methods on them. RxJava 3's design was heavily influenced by the [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm#reactive-streams) specification, therefore, the library features a class and an interface per each reactive type:
+@@ -499 +504 @@ For further details, consult the [wiki](https://github.com/ReactiveX/RxJava/wiki
+-Version 2.x is now considered stable and final. Version 1.x will be supported for several years along with 2.x. Enhancements and bugfixes will be synchronized between the two in a timely manner.
++Version 3.x is in development. Bugfixes will be applied to both 2.x and 3.x branches, but new features will only be added to 3.x.
+@@ -501 +506 @@ Version 2.x is now considered stable and final. Version 1.x will be supported fo
+-Minor 2.x increments (such as 2.1, 2.2, etc) will occur when non-trivial new functionality is added or significant enhancements or bug fixes occur that may have behavioral changes that may affect some edge cases (such as dependence on behavior resulting from a bug). An example of an enhancement that would classify as this is adding reactive pull backpressure support to an operator that previously did not support it. This should be backwards compatible but does behave differently.
++Minor 3.x increments (such as 3.1, 3.2, etc) will occur when non-trivial new functionality is added or significant enhancements or bug fixes occur that may have behavioral changes that may affect some edge cases (such as dependence on behavior resulting from a bug). An example of an enhancement that would classify as this is adding reactive pull backpressure support to an operator that previously did not support it. This should be backwards compatible but does behave differently.
+@@ -503 +508 @@ Minor 2.x increments (such as 2.1, 2.2, etc) will occur when non-trivial new fun
+-Patch 2.x.y increments (such as 2.0.0 -> 2.0.1, 2.3.1 -> 2.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an [`@Beta`][beta source link] or [`@Experimental`][experimental source link] annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
++Patch 3.x.y increments (such as 3.0.0 -> 3.0.1, 3.3.1 -> 3.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an [`@Beta`][beta source link] or [`@Experimental`][experimental source link] annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
+@@ -524,3 +529,3 @@ All code inside the `io.reactivex.internal.*` packages is considered private API
+-- [Javadoc](http://reactivex.io/RxJava/2.x/javadoc/)
+-- [Latest snaphot Javadoc](http://reactivex.io/RxJava/2.x/javadoc/snapshot/)
+-- Javadoc of a specific [release version](https://github.com/ReactiveX/RxJava/tags): `http://reactivex.io/RxJava/2.x/javadoc/2.x.y/`
++- [Javadoc](http://reactivex.io/RxJava/3.x/javadoc/)
++- [Latest snaphot Javadoc](http://reactivex.io/RxJava/3.x/javadoc/snapshot/)
++- Javadoc of a specific [release version](https://github.com/ReactiveX/RxJava/tags): `http://reactivex.io/RxJava/3.x/javadoc/3.x.y/`
+@@ -530 +535 @@ All code inside the `io.reactivex.internal.*` packages is considered private API
+-Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cio.reactivex.rxjava2).
++Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cio.reactivex.rxjava3).
+@@ -535 +540 @@ Example for Gradle:
+-compile 'io.reactivex.rxjava2:rxjava:x.y.z'
++compile 'io.reactivex.rxjava3:rxjava:x.y.z'
+@@ -542 +547 @@ and for Maven:
+-    <groupId>io.reactivex.rxjava2</groupId>
++    <groupId>io.reactivex.rxjava3</groupId>
+@@ -550 +555 @@ and for Ivy:
+-<dependency org="io.reactivex.rxjava2" name="rxjava" rev="x.y.z" />
++<dependency org="io.reactivex.rxjava3" name="rxjava" rev="x.y.z" />
+@@ -553 +558 @@ and for Ivy:
+-Snapshots are available via https://oss.jfrog.org/libs-snapshot/io/reactivex/rxjava2/rxjava/
++Snapshots are available via https://oss.jfrog.org/libs-snapshot/io/reactivex/rxjava3/rxjava/
+@@ -561 +566 @@ dependencies {
+-    compile 'io.reactivex.rxjava2:rxjava:2.2.0-SNAPSHOT'
++    compile 'io.reactivex.rxjava3:rxjava:3.0.0-SNAPSHOT'
+@@ -598,2 +603,2 @@ For bugs, questions and discussions please use the [Github Issues](https://githu
+-[beta source link]: https://github.com/ReactiveX/RxJava/blob/2.x/src/main/java/io/reactivex/annotations/Beta.java
+-[experimental source link]: https://github.com/ReactiveX/RxJava/blob/2.x/src/main/java/io/reactivex/annotations/Experimental.java
++[beta source link]: https://github.com/ReactiveX/RxJava/blob/3.x/src/main/java/io/reactivex/annotations/Beta.java
++[experimental source link]: https://github.com/ReactiveX/RxJava/blob/3.x/src/main/java/io/reactivex/annotations/Experimental.java
+diff --git a/README.md b/README.md
+index 3fcaf292d..c29d6d3fc 100644
+--- a/README.md
++++ b/README.md
+@@ -372 +372 @@ Each reactive base class features operators that can perform such conversions, i
+-|**Single** | `toFlowable`<sup>3</sup> | `toObservable` |  | `toMaybe` | `toCompletable` |
++|**Single** | `toFlowable`<sup>3</sup> | `toObservable` |  | `toMaybe` | `ignoreElement` |
+diff --git a/README.md b/README.md
+index 92bdf2946..3fcaf292d 100644
+--- a/README.md
++++ b/README.md
+@@ -119 +119 @@ Flowable<Integer> flow = Flowable.range(1, 5)
+-.map(v -> v* v)
++.map(v -> v * v)
+diff --git a/README.md b/README.md
+index 957d1a05e..92bdf2946 100644
+--- a/README.md
++++ b/README.md
+@@ -196 +196 @@ Typically, you can move computations or blocking IO to some other thread via `su
+-RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. 
++RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind a uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. 
+diff --git a/README.md b/README.md
+index 1fadd32ba..957d1a05e 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ The first step is to include RxJava 2 into your project, for example, as a Gradl
+-compile "io.reactivex.rxjava2:rxjava:2.x.y"
++implementation "io.reactivex.rxjava2:rxjava:2.x.y"
+diff --git a/README.md b/README.md
+index 4d3b6533e..1fadd32ba 100644
+--- a/README.md
++++ b/README.md
+@@ -243 +243 @@ Note, however, that `flatMap` doesn't guarantee any order and the end result fro
+-Alternatively, there is a [*beta*](#beta) operator `Flowable.parallel()` and type `ParallelFlowable` that helps achieve the same parallel processing pattern:
++Alternatively, the `Flowable.parallel()` operator and the `ParallelFlowable` type help achieve the same parallel processing pattern:
+diff --git a/README.md b/README.md
+index a6b82c039..4d3b6533e 100644
+--- a/README.md
++++ b/README.md
+@@ -11,9 +10,0 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-#### Version 1.x ([Javadoc](http://reactivex.io/RxJava/1.x/javadoc/))
+-
+-Looking for version 1.x? Jump [to the 1.x branch](https://github.com/ReactiveX/RxJava/tree/1.x).
+-
+-Timeline plans for the 1.x line:
+-
+-  - **June 1, 2017** - feature freeze (no new operators), only bugfixes
+-  - **March 31, 2018** - end of life, no further development
+-
+@@ -33,0 +25,4 @@ See the differences between version 1.x and 2.x in the wiki article [What's diff
++#### Version 1.x
++
++The [1.x version](https://github.com/ReactiveX/RxJava/tree/1.x) is end-of-life as of **March 31, 2018**. No further development, support, maintenance, PRs and updates will happen. The [Javadoc]([Javadoc](http://reactivex.io/RxJava/1.x/javadoc/)) of the very last version, **1.3.8**, will remain accessible.
++
+@@ -529,0 +525,2 @@ All code inside the `io.reactivex.internal.*` packages is considered private API
++- [Latest snaphot Javadoc](http://reactivex.io/RxJava/2.x/javadoc/snapshot/)
++- Javadoc of a specific [release version](https://github.com/ReactiveX/RxJava/tags): `http://reactivex.io/RxJava/2.x/javadoc/2.x.y/`
+diff --git a/README.md b/README.md
+index c1d75b340..a6b82c039 100644
+--- a/README.md
++++ b/README.md
+@@ -440 +440 @@ even compile because at least 4 `concatWith` overloads exist and the compiler fi
+-The user in such situations probably wanted to defer some computation until the `sameSource` has completed, thus the correct
++The user in such situations probably wanted to defer some computation until the `someSource` has completed, thus the correct
+diff --git a/README.md b/README.md
+index 5941e14e8..c1d75b340 100644
+--- a/README.md
++++ b/README.md
+@@ -241 +241 @@ Flowable.range(1, 10)
+-Practically, paralellism in RxJava means running independent flows and merging their results back into a single flow. The operator `flatMap` does this by first mapping each number from 1 to 10 into its own individual `Flowable`, runs them and merges the computed squares.
++Practically, parallelism in RxJava means running independent flows and merging their results back into a single flow. The operator `flatMap` does this by first mapping each number from 1 to 10 into its own individual `Flowable`, runs them and merges the computed squares.
+@@ -276 +276 @@ inventorySource.flatMap(inventoryItem ->
+-Sometimes, when an item has become available, one would like to perform some dependent computations on it. This is sometimes called **continuations** and, depending on what should happen and what types are involed, may involve various operators to accomplish.
++Sometimes, when an item has become available, one would like to perform some dependent computations on it. This is sometimes called **continuations** and, depending on what should happen and what types are involved, may involve various operators to accomplish.
+@@ -460 +460 @@ This can get also ambiguous when functional interface types get involved as the
+-Dataflows can fail, at which point the error is emitted to the consumer(s). Sometimes though, multiple sources may fail at which point there is a choice wether or not wait for all of them to complete or fail. To indicate this opportunity, many operator names are suffixed with the `DelayError` words (while others feature a `delayError` or `delayErrors` boolean flag in one of their overloads):
++Dataflows can fail, at which point the error is emitted to the consumer(s). Sometimes though, multiple sources may fail at which point there is a choice whether or not wait for all of them to complete or fail. To indicate this opportunity, many operator names are suffixed with the `DelayError` words (while others feature a `delayError` or `delayErrors` boolean flag in one of their overloads):
+diff --git a/README.md b/README.md
+index 75abbc25c..5941e14e8 100644
+--- a/README.md
++++ b/README.md
+@@ -259 +259 @@ Flowable.range(1, 10)
+-### Dependend sub-flows
++### Dependent sub-flows
+diff --git a/README.md b/README.md
+index 4d647a9f8..75abbc25c 100644
+--- a/README.md
++++ b/README.md
+@@ -152 +152 @@ Observable.create(emitter -> {
+-             emitter.onError(new IllegalStateException("Odd millisecond!");
++             emitter.onError(new IllegalStateException("Odd millisecond!"));
+diff --git a/README.md b/README.md
+index 1c09be8bf..4d647a9f8 100644
+--- a/README.md
++++ b/README.md
+@@ -332 +332 @@ Observable.range(1, 10)
+-  .doOnNext(ingored -> count.incrementAndGet())
++  .doOnNext(ignored -> count.incrementAndGet())
+@@ -344 +344 @@ Observable.range(1, 10)
+-  .doOnNext(ingored -> count.incrementAndGet())
++  .doOnNext(ignored -> count.incrementAndGet())
+@@ -356 +356 @@ Observable.range(1, 10)
+-  .doOnNext(ingored -> count.incrementAndGet())
++  .doOnNext(ignored -> count.incrementAndGet())
+diff --git a/README.md b/README.md
+index 45f332fd8..1c09be8bf 100644
+--- a/README.md
++++ b/README.md
+@@ -394,0 +395 @@ Many frequently used operator has overloads that can deal with the other types.
++|----------|-----------|
+@@ -397 +398 @@ Many frequently used operator has overloads that can deal with the other types.
+-| `switchMap` | `switchMapSingle`, `switchMapMaybe`, `switchMapCompletable`, `switchMapIterable` |
++| `switchMap` | `switchMapSingle`, `switchMapMaybe`, `switchMapCompletable` |
+diff --git a/README.md b/README.md
+index fabb82663..45f332fd8 100644
+--- a/README.md
++++ b/README.md
+@@ -35,0 +36,2 @@ See the differences between version 1.x and 2.x in the wiki article [What's diff
++### Setting up the dependency
++
+@@ -41,0 +44,5 @@ compile "io.reactivex.rxjava2:rxjava:2.x.y"
++(Please replace `x` and `y` with the latest version numbers: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava)
++)
++
++### Hello World
++
+@@ -68,0 +76,2 @@ Flowable.just("Hello world")
++### Base classes
++
+@@ -72,4 +81,82 @@ RxJava 2 features several base classes you can discover operators on:
+-  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure
+-  - [`io.reactivex.Single`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error
+-  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal
+-  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error
++  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure,
++  - [`io.reactivex.Single`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error,
++  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal,
++  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error.
++
++### Some terminology
++
++#### Upstream, downstream
++
++The dataflows in RxJava consist of a source, zero or more intermediate steps followed by a data consumer or combinator step (where the step is responsible to consume the dataflow by some means):
++
++```java
++source.operator1().operator2().operator3().subscribe(consumer);
++
++source.flatMap(value -> source.operator1().operator2().operator3());
++```
++
++Here, if we imagine ourselves on `operator2`, looking to the left towards the source, is called the **upstream**. Looking to the right towards the subscriber/consumer, is called the **downstream**. This is often more apparent when each element is written on a separate line:
++
++```java
++source
++  .operator1()
++  .operator2()
++  .operator3()
++  .subscribe(consumer)
++```
++
++#### Objects in motion
++
++In RxJava's documentation, **emission**, **emits**, **item**, **event**, **signal**, **data** and **message** are considered synonyms and represent the object traveling along the dataflow.
++
++#### Backpressure
++
++When the dataflow runs through asynchronous steps, each step may perform different things with different speed. To avoid overwhelming such steps, which usually would manifest itself as increased memory usage due to temporary buffering or the need for skipping/dropping data, a so-called backpressure is applied, which is a form of flow control where the steps can express how many items are they ready to process. This allows constraining the memory usage of the dataflows in situations where there is generally no way for a step to know how many items the upstream will send to it.
++
++In RxJava, the dedicated `Flowable` class is designated to support backpressure and `Observable` is dedicated for the non-backpressured operations (short sequences, GUI interactions, etc.). The other types, `Single`, `Maybe` and `Completable` don't support backpressure nor should they; there is always room to store one item temporarily.
++
++#### Assembly time
++
++The preparation of dataflows by applying various intermediate operators happens in the so-called **assembly time**:
++
++```java
++Flowable<Integer> flow = Flowable.range(1, 5)
++.map(v -> v* v)
++.filter(v -> v % 3 == 0)
++;
++```
++
++At this point, the data is not flowing yet and no side-effects are happening.
++
++#### Subscription time
++
++This is a temporary state when `subscribe()` is called on a flow that establishes the chain of processing steps internally:
++
++```java
++flow.subscribe(System.out::println)
++````
++
++This is when the **subscription side-effects** are triggered (see `doOnSubscribe`). Some sources block or start emitting items right away in this state.
++
++#### Runtime
++
++This is the state when the flows are actively emitting items, errors or completion signals:
++
++```java
++
++Observable.create(emitter -> {
++     while (!emitter.isDisposed()) {
++         long time = System.currentTimeMillis();
++         emitter.onNext(time);
++         if (time % 2 != 0) {
++             emitter.onError(new IllegalStateException("Odd millisecond!");
++             break;
++         }
++     }
++})
++.subscribe(System.out::println, Throwable::printStackTrace);
++```
++
++Practically, this is when the body of the given example above executes.
++
++### Simple background computation
+@@ -112 +199,12 @@ Typically, you can move computations or blocking IO to some other thread via `su
+-RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. These are available on all JVM platforms but some specific platforms, such as Android, have their own typical `Scheduler`s defined: `AndroidSchedulers.mainThread()`, `SwingScheduler.instance()` or `JavaFXSchedulers.gui()`.
++### Schedulers
++
++RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. 
++
++- `Schedulers.computation()`: Run computation intensive work on a fixed number of dedicated threads in the background. Most asynchronous operator use this as their default `Scheduler`.
++- `Schedulers.io()`: Run I/O-like or blocking operations on a dynamically changing set of threads.
++- `Schedulers.single()`: Run work on a single thread in a sequential and FIFO manner.
++- `Schedulers.trampoline()`: Run work in a sequential and FIFO manner in one of the participating threads, usually for testing purposes.
++
++These are available on all JVM platforms but some specific platforms, such as Android, have their own typical `Scheduler`s defined: `AndroidSchedulers.mainThread()`, `SwingScheduler.instance()` or `JavaFXSchedulers.gui()`.
++
++In addition, there is option to wrap an existing `Executor` (and its subtypes such as `ExecutorService`) into a `Scheduler` via `Schedulers.from(Executor)`. This can be used, for example, to have a larger but still fixed pool of threads (unlike `computation()` and `io()` respectively).
+@@ -115,0 +214,2 @@ The `Thread.sleep(2000);` at the end is no accident. In RxJava the default `Sche
++### Concurrency within a flow
++
+@@ -126,0 +227,2 @@ This example flow squares the numbers from 1 to 10 on the **computation** `Sched
++### Parallel processing
++
+@@ -141 +243,6 @@ Practically, paralellism in RxJava means running independent flows and merging t
+-Starting from 2.0.5, there is an *experimental* operator `parallel()` and type `ParallelFlowable` that helps achieve the same parallel processing pattern:
++Note, however, that `flatMap` doesn't guarantee any order and the end result from the inner flows may end up interleaved. There are alternative operators:
++
++  - `concatMap` that maps and runs one inner flow at a time and
++  - `concatMapEager` which runs all inner flows "at once" but the output flow will be in the order those inner flows were created.
++
++Alternatively, there is a [*beta*](#beta) operator `Flowable.parallel()` and type `ParallelFlowable` that helps achieve the same parallel processing pattern:
+@@ -151,0 +259,2 @@ Flowable.range(1, 10)
++### Dependend sub-flows
++
+@@ -165 +274 @@ inventorySource.flatMap(inventoryItem ->
+-Note, however, that `flatMap` doesn't guarantee any order and the end result from the inner flows may end up interleaved. There are alternative operators:
++### Continuations
+@@ -167,2 +276,214 @@ Note, however, that `flatMap` doesn't guarantee any order and the end result fro
+-  - `concatMap` that maps and runs one inner flow at a time and
+-  - `concatMapEager` which runs all inner flows "at once" but the output flow will be in the order those inner flows were created.
++Sometimes, when an item has become available, one would like to perform some dependent computations on it. This is sometimes called **continuations** and, depending on what should happen and what types are involed, may involve various operators to accomplish.
++
++#### Dependent
++
++The most typical scenario is to given a value, invoke another service, await and continue with its result:
++
++```java
++service.apiCall()
++.flatMap(value -> service.anotherApiCall(value))
++.flatMap(next -> service.finalCall(next))
++```
++
++It is often the case also that later sequences would require values from earlier mappings. This can be achieved by moving the outer `flatMap` into the inner parts of the previous `flatMap` for example:
++
++```java
++service.apiCall()
++.flatMap(value ->
++    service.anotherApiCall(value)
++    .flatMap(next -> service.finalCallBoth(value, next))
++)
++```
++
++Here, the original `value` will be available inside the inner `flatMap`, courtesy of lambda variable capture.
++
++#### Non-dependent
++
++In other scenarios, the result(s) of the first source/dataflow is irrelevant and one would like to continue with a quasi independent another source. Here, `flatMap` works as well:
++
++```java
++Observable continued = sourceObservable.flatMapSingle(ignored -> someSingleSource)
++continued.map(v -> v.toString())
++  .subscribe(System.out::println, Throwable::printStackTrace);
++```
++
++however, the continuation in this case stays `Observable` instead of the likely more appropriate `Single`. (This is understandable because
++from the perspective of `flatMapSingle`, `sourceObservable` is a multi-valued source and thus the mapping may result in multiple values as well).
++
++Often though there is a way that is somewhat more expressive (and also lower overhead) by using `Completable` as the mediator and its operator `andThen` to resume with something else:
++
++```java
++sourceObservable
++  .ignoreElements()           // returns Completable
++  .andThen(someSingleSource)
++  .map(v -> v.toString())
++```
++
++The only dependency between the `sourceObservable` and the `someSingleSource` is that the former should complete normally in order for the latter to be consumed.
++
++#### Deferred-dependent
++
++Sometimes, there is an implicit data dependency between the previous sequence and the new sequence that, for some reason, was not flowing through the "regular channels". One would be inclined to write such continuations as follows:
++
++```java
++AtomicInteger count = new AtomicInteger();
++
++Observable.range(1, 10)
++  .doOnNext(ingored -> count.incrementAndGet())
++  .ignoreElements()
++  .andThen(Single.just(count.get()))
++  .subscribe(System.out::println);
++```
++
++Unfortunately, this prints `0` because `Single.just(count.get())` is evaluated at **assembly time** when the dataflow hasn't even run yet. We need something that defers the evaluation of this `Single` source until **runtime** when the main source completes:
++
++```java
++AtomicInteger count = new AtomicInteger();
++
++Observable.range(1, 10)
++  .doOnNext(ingored -> count.incrementAndGet())
++  .ignoreElements()
++  .andThen(Single.defer(() -> Single.just(count.get())))
++  .subscribe(System.out::println);
++```
++
++or
++
++```java
++AtomicInteger count = new AtomicInteger();
++
++Observable.range(1, 10)
++  .doOnNext(ingored -> count.incrementAndGet())
++  .ignoreElements()
++  .andThen(Single.fromCallable(() -> count.get()))
++  .subscribe(System.out::println);
++```
++
++
++### Type conversions
++
++Sometimes, a source or service returns a different type than the flow that is supposed to work with it. For example, in the inventory example above, `getDemandAsync` could return a `Single<DemandRecord>`. If the code example is left unchanged, this will result in a compile time error (however, often with misleading error message about lack of overload).
++
++In such situations, there are usually two options to fix the transformation: 1) convert to the desired type or 2) find and use an overload of the specific operator supporting the different type.
++
++#### Converting to the desired type
++
++Each reactive base class features operators that can perform such conversions, including the protocol conversions, to match some other type. The following matrix shows the available conversion options:
++
++|          | Flowable | Observable | Single | Maybe | Completable |
++|----------|----------|------------|--------|-------|-------------|
++|**Flowable**  |          | `toObservable` | `first`, `firstOrError`, `single`, `singleOrError`, `last`, `lastOrError`<sup>1</sup> | `firstElement`, `singleElement`, `lastElement` | `ignoreElements` |
++|**Observable**| `toFlowable`<sup>2</sup> |  | `first`, `firstOrError`, `single`, `singleOrError`, `last`, `lastOrError`<sup>1</sup> | `firstElement`, `singleElement`, `lastElement` | `ignoreElements` |
++|**Single** | `toFlowable`<sup>3</sup> | `toObservable` |  | `toMaybe` | `toCompletable` |
++|**Maybe** | `toFlowable`<sup>3</sup> | `toObservable` | `toSingle` |  | `ignoreElement` |
++|**Completable** | `toFlowable` | `toObservable` | `toSingle` | `toMaybe` |  |
++
++<sup>1</sup>: When turning a multi-valued source into a single valued source, one should decide which of the many source values should be considered as the result.
++
++<sup>2</sup>: Turning an `Observable` into `Flowable` requires an additional decision: what to do with the potential unconstrained flow
++of the source `Observable`? There are several strategies available (such as buffering, dropping, keeping the latest) via the `BackpressureStrategy` parameter or via standard `Flowable` operators such as `onBackpressureBuffer`, `onBackpressureDrop`, `onBackpressureLatest` which also
++allow further customization of the backpressure behavior.
++
++<sup>3</sup>: When there is only (at most) one source item, there is no problem with backpressure as it can be always stored until the downstream is ready to consume.
++
++
++#### Using an overload with the desired type
++
++Many frequently used operator has overloads that can deal with the other types. These are usually named with the suffix of the target type:
++
++| Operator | Overloads |
++| `flatMap` | `flatMapSingle`, `flatMapMaybe`, `flatMapCompletable`, `flatMapIterable` |
++| `concatMap` | `concatMapSingle`, `concatMapMaybe`, `concatMapCompletable`, `concatMapIterable` |
++| `switchMap` | `switchMapSingle`, `switchMapMaybe`, `switchMapCompletable`, `switchMapIterable` |
++
++The reason these operators have a suffix instead of simply having the same name with different signature is type erasure. Java doesn't consider signatures such as `operator(Function<T, Single<R>>)` and `operator(Function<T, Maybe<R>>)` different (unlike C#) and due to erasure, the two `operator`s would end up as duplicate methods with the same signature.
++
++### Operator naming conventions
++
++Naming in programming is one of the hardest things as names are expected to be not long, expressive, capturing and easily memorable. Unfortunately, the target language (and pre-existing conventions) may not give too much help in this regard (unusable keywords, type erasure, type ambiguities, etc.).
++
++#### Unusable keywords
++
++In the original Rx.NET, the operator that emits a single item and then completes is called `Return(T)`. Since the Java convention is to have a lowercase letter start a method name, this would have been `return(T)` which is a keyword in Java and thus not available. Therefore, RxJava chose to name this operator `just(T)`. The same limitation exists for the operator `Switch`, which had to be named `switchOnNext`. Yet another example is `Catch` which was named `onErrorResumeNext`.
++
++#### Type erasure
++
++Many operators that expect the user to provide some function returning a reactive type can't be overloaded because the type erasure around a `Function<T, X>` turns such method signatures into duplicates. RxJava chose to name such operators by appending the type as suffix as well:
++
++```java
++Flowable<R> flatMap(Function<? super T, ? extends Publisher<? extends R>> mapper)
++
++Flowable<R> flatMapMaybe(Function<? super T, ? extends MaybeSource<? extends R>> mapper)
++```
++
++#### Type ambiguities
++
++Even though certain operators have no problems from type erasure, their signature may turn up being ambiguous, especially if one uses Java 8 and lambdas. For example, there are several overloads of `concatWith` taking the various other reactive base types as arguments (for providing convenience and performance benefits in the underlying implementation):
++
++```java
++Flowable<T> concatWith(Publisher<? extends T> other);
++
++Flowable<T> concatWith(SingleSource<? extends T> other);
++```
++
++Both `Publisher` and `SingleSource` appear as functional interfaces (types with one abstract method) and may encourage users to try to provide a lambda expression:
++
++```java
++someSource.concatWith(s -> Single.just(2))
++.subscribe(System.out::println, Throwable::printStackTrace);
++```
++
++Unfortunately, this approach doesn't work and the example does not print `2` at all. In fact, since version 2.1.10, it doesn't
++even compile because at least 4 `concatWith` overloads exist and the compiler finds the code above ambiguous.
++
++The user in such situations probably wanted to defer some computation until the `sameSource` has completed, thus the correct
++unambiguous operator should have been `defer`:
++
++```java
++someSource.concatWith(Single.defer(() -> Single.just(2)))
++.subscribe(System.out::println, Throwable::printStackTrace);
++```
++
++Sometimes, a suffix is added to avoid logical ambiguities that may compile but produce the wrong type in a flow:
++
++```java
++Flowable<T> merge(Publisher<? extends Publisher<? extends T>> sources);
++
++Flowable<T> mergeArray(Publisher<? extends T>... sources);
++```
++
++This can get also ambiguous when functional interface types get involved as the type argument `T`.
++
++#### Error handling
++
++Dataflows can fail, at which point the error is emitted to the consumer(s). Sometimes though, multiple sources may fail at which point there is a choice wether or not wait for all of them to complete or fail. To indicate this opportunity, many operator names are suffixed with the `DelayError` words (while others feature a `delayError` or `delayErrors` boolean flag in one of their overloads):
++
++```java
++Flowable<T> concat(Publisher<? extends Publisher<? extends T>> sources);
++
++Flowable<T> concatDelayError(Publisher<? extends Publisher<? extends T>> sources);
++```
++
++Of course, suffixes of various kinds may appear together:
++
++```java
++Flowable<T> concatArrayEagerDelayError(Publisher<? extends T>... sources);
++```
++
++#### Base class vs base type
++
++The base classes can be considered heavy due to the sheer number of static and instance methods on them. RxJava 2's design was heavily influenced by the [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm#reactive-streams) specification, therefore, the library features a class and an interface per each reactive type:
++
++| Type | Class | Interface | Consumer |
++|------|-------|-----------|----------|
++| 0..N backpressured | `Flowable` | `Publisher`<sup>1</sup> | `Subscriber` |
++| 0..N unbounded | `Observable` | `ObservableSource`<sup>2</sup> | `Observer` |
++| 1 element or error | `Single` | `SingleSource` | `SingleObserver` |
++| 0..1 element or error | `Maybe` | `MaybeSource` | `MaybeObserver` |
++| 0 element or error | `Completable` | `CompletableSource` | `CompletableObserver` |
++
++<sup>1</sup>The `org.reactivestreams.Publisher` is part of the external Reactive Streams library. It is the main type to interact with other reactive libraries through a standardized mechanism governed by the [Reactive Streams specification](https://github.com/reactive-streams/reactive-streams-jvm#specification).
++
++<sup>2</sup>The naming convention of the interface was to append `Source` to the semi-traditional class name. There is no `FlowableSource` since `Publisher` is provided by the Reactive Streams library (and subtyping it wouldn't have helped with interoperation either). These interfaces are, however, not standard in the sense of the Reactive Streams specification and are currently RxJava specific only.
++
++### Further reading
+diff --git a/README.md b/README.md
+index f8f495ed0..fabb82663 100644
+--- a/README.md
++++ b/README.md
+@@ -71,5 +71,5 @@ RxJava 2 features several base classes you can discover operators on:
+-  - `io.reactivex.Flowable`: 0..N flows, supporting Reactive-Streams and backpressure
+-  - `io.reactivex.Observable`: 0..N flows, no backpressure
+-  - `io.reactivex.Single`: a flow of exactly 1 item or an error
+-  - `io.reactivex.Completable`: a flow without items but only a completion or error signal
+-  - `io.reactivex.Maybe`: a flow with no items, exactly one item or an error
++  - [`io.reactivex.Flowable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Flowable.html): 0..N flows, supporting Reactive-Streams and backpressure
++  - [`io.reactivex.Observable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Observable.html): 0..N flows, no backpressure
++  - [`io.reactivex.Single`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Single.html): a flow of exactly 1 item or an error
++  - [`io.reactivex.Completable`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Completable.html): a flow without items but only a completion or error signal
++  - [`io.reactivex.Maybe`](http://reactivex.io/RxJava/2.x/javadoc/io/reactivex/Maybe.html): a flow with no items, exactly one item or an error
+diff --git a/README.md b/README.md
+index e9c6d500a..f8f495ed0 100644
+--- a/README.md
++++ b/README.md
+@@ -114 +114 @@ RxJava operators don't work with `Thread`s or `ExecutorService`s directly but wi
+-The `Thread.sleep(2000);` at the end is no accident. In RxJava the default `Scheduler`s run on daemon threads, which means once the Java main thread exits, they all get stopped and background computations may never happen. Sleeping for some time in this example situations let's you see the output of the flow on the console with time to spare.
++The `Thread.sleep(2000);` at the end is no accident. In RxJava the default `Scheduler`s run on daemon threads, which means once the Java main thread exits, they all get stopped and background computations may never happen. Sleeping for some time in this example situations lets you see the output of the flow on the console with time to spare.
+diff --git a/README.md b/README.md
+index 44470d2ad..e9c6d500a 100644
+--- a/README.md
++++ b/README.md
+@@ -71 +71 @@ RxJava 2 features several base classes you can discover operators on:
+-  - `io.reactivex.Flowable` : 0..N flows, supporting Reactive-Streams and backpressure
++  - `io.reactivex.Flowable`: 0..N flows, supporting Reactive-Streams and backpressure
+@@ -136 +136 @@ Flowable.range(1, 10)
+-.blockingSubscribe(System.out::println);
++  .blockingSubscribe(System.out::println);
+@@ -145,5 +145,5 @@ Flowable.range(1, 10)
+-.parallel()
+-.runOn(Schedulers.computation())
+-.map(v -> v * v)
+-.sequential()
+-.blockingSubscribe(System.out::println);
++  .parallel()
++  .runOn(Schedulers.computation())
++  .map(v -> v * v)
++  .sequential()
++  .blockingSubscribe(System.out::println);
+@@ -161,2 +161,2 @@ inventorySource.flatMap(inventoryItem ->
+-)
+-.subscribe();
++  )
++  .subscribe();
+diff --git a/README.md b/README.md
+index acb596daa..44470d2ad 100644
+--- a/README.md
++++ b/README.md
+@@ -234 +234 @@ and for Ivy:
+-Snapshots are available via [JFrog](https://oss.jfrog.org/webapp/#/home):
++Snapshots are available via https://oss.jfrog.org/libs-snapshot/io/reactivex/rxjava2/rxjava/
+@@ -242 +242 @@ dependencies {
+-    compile 'io.reactivex.rxjava2:rxjava:2.0.0-DP0-SNAPSHOT'
++    compile 'io.reactivex.rxjava2:rxjava:2.2.0-SNAPSHOT'
+diff --git a/README.md b/README.md
+index e70330950..acb596daa 100644
+--- a/README.md
++++ b/README.md
+@@ -253 +252,0 @@ $ cd RxJava/
+-$ git checkout -b 2.x
+diff --git a/README.md b/README.md
+index 82adc7bfa..e70330950 100644
+--- a/README.md
++++ b/README.md
+@@ -266 +266 @@ For bugs, questions and discussions please use the [Github Issues](https://githu
+-Copyright (c) 2016-present, RxJava Contributors.
++    Copyright (c) 2016-present, RxJava Contributors.
+@@ -268,3 +268,3 @@ Copyright (c) 2016-present, RxJava Contributors.
+-Licensed under the Apache License, Version 2.0 (the "License");
+-you may not use this file except in compliance with the License.
+-You may obtain a copy of the License at
++    Licensed under the Apache License, Version 2.0 (the "License");
++    you may not use this file except in compliance with the License.
++    You may obtain a copy of the License at
+@@ -272 +272 @@ You may obtain a copy of the License at
+-<http://www.apache.org/licenses/LICENSE-2.0>
++    http://www.apache.org/licenses/LICENSE-2.0
+@@ -274,5 +274,5 @@ You may obtain a copy of the License at
+-Unless required by applicable law or agreed to in writing, software
+-distributed under the License is distributed on an "AS IS" BASIS,
+-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-See the License for the specific language governing permissions and
+-limitations under the License.
++    Unless required by applicable law or agreed to in writing, software
++    distributed under the License is distributed on an "AS IS" BASIS,
++    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++    See the License for the specific language governing permissions and
++    limitations under the License.
+diff --git a/README.md b/README.md
+index bf17fb329..82adc7bfa 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ For further details, consult the [wiki](https://github.com/ReactiveX/RxJava/wiki
++- [Gitter.im](https://gitter.im/ReactiveX/RxJava)
+diff --git a/README.md b/README.md
+index 4feb10741..bf17fb329 100644
+--- a/README.md
++++ b/README.md
+@@ -66 +66 @@ Flowable.just("Hello world")
+-  );
++  });
+diff --git a/README.md b/README.md
+index 9b2cbf157..4feb10741 100644
+--- a/README.md
++++ b/README.md
+@@ -279,2 +279,2 @@ limitations under the License.
+-[beta source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Beta.java
+-[experimental source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Experimental.java
++[beta source link]: https://github.com/ReactiveX/RxJava/blob/2.x/src/main/java/io/reactivex/annotations/Beta.java
++[experimental source link]: https://github.com/ReactiveX/RxJava/blob/2.x/src/main/java/io/reactivex/annotations/Experimental.java
+diff --git a/README.md b/README.md
+index 3b5d8858f..9b2cbf157 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,2 @@ If your platform doesn't support Java 8 lambdas (yet), you have to create an inn
++import io.reactivex.functions.Consumer;
++
+@@ -77,0 +80,2 @@ One of the common use cases for RxJava is to run some computation, network reque
++import io.reactivex.schedulers.Schedulers;
++
+@@ -108 +112 @@ Typically, you can move computations or blocking IO to some other thread via `su
+-RxJava operators don't work `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. These are available on all JVM platforms but some specific platforms, such as Android, have their own typical `Scheduler`s defined: `AndroidSchedulers.mainThread()`, `SwingScheduler.instance()` or `JavaFXSchedulers.gui()`.
++RxJava operators don't work with `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. These are available on all JVM platforms but some specific platforms, such as Android, have their own typical `Scheduler`s defined: `AndroidSchedulers.mainThread()`, `SwingScheduler.instance()` or `JavaFXSchedulers.gui()`.
+diff --git a/README.md b/README.md
+index 26b331da3..3b5d8858f 100644
+--- a/README.md
++++ b/README.md
+@@ -229 +229 @@ and for Ivy:
+-Snapshots are available via [JFrog](https://oss.jfrog.org/webapp/search/artifact/?5&q=rxjava):
++Snapshots are available via [JFrog](https://oss.jfrog.org/webapp/#/home):
+diff --git a/README.md b/README.md
+index 3b10bf8cd..26b331da3 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-#### Version 1.x
++#### Version 1.x ([Javadoc](http://reactivex.io/RxJava/1.x/javadoc/))
+@@ -20 +20 @@ Timeline plans for the 1.x line:
+-#### Version 2.x
++#### Version 2.x ([Javadoc](http://reactivex.io/RxJava/2.x/javadoc/))
+@@ -30 +29,0 @@ Timeline plans for the 1.x line:
+-
+diff --git a/README.md b/README.md
+index d8308651e..3b10bf8cd 100644
+--- a/README.md
++++ b/README.md
+@@ -131 +131 @@ Flowable.range(1, 10)
+-        .map(v -> v * v)
++        .map(w -> w * w)
+diff --git a/README.md b/README.md
+index 3b9dc6395..d8308651e 100644
+--- a/README.md
++++ b/README.md
+@@ -137,0 +138,11 @@ Practically, paralellism in RxJava means running independent flows and merging t
++Starting from 2.0.5, there is an *experimental* operator `parallel()` and type `ParallelFlowable` that helps achieve the same parallel processing pattern:
++
++```java
++Flowable.range(1, 10)
++.parallel()
++.runOn(Schedulers.computation())
++.map(v -> v * v)
++.sequential()
++.blockingSubscribe(System.out::println);
++```
++
+diff --git a/README.md b/README.md
+index c8492fd0e..3b9dc6395 100644
+--- a/README.md
++++ b/README.md
+@@ -162,0 +163 @@ For further details, consult the [wiki](https://github.com/ReactiveX/RxJava/wiki
++- StackOverflow: [rx-java](http://stackoverflow.com/questions/tagged/rx-java) and [rx-java2](http://stackoverflow.com/questions/tagged/rx-java2)
+diff --git a/README.md b/README.md
+index dd9b752b0..c8492fd0e 100644
+--- a/README.md
++++ b/README.md
+@@ -250 +250 @@ For bugs, questions and discussions please use the [Github Issues](https://githu
+-Copyright 2013-2016 Netflix, Inc.
++Copyright (c) 2016-present, RxJava Contributors.
+diff --git a/README.md b/README.md
+index 7c9f6b742..dd9b752b0 100644
+--- a/README.md
++++ b/README.md
+@@ -60,6 +60,6 @@ If your platform doesn't support Java 8 lambdas (yet), you have to create an inn
+-        Flowable.just("Hello world")
+-        .subscribe(new Consumer<String>() {
+-            @Override public void accept(String s) {
+-                System.out.println(s);
+-            }
+-        );
++Flowable.just("Hello world")
++  .subscribe(new Consumer<String>() {
++      @Override public void accept(String s) {
++          System.out.println(s);
++      }
++  );
+@@ -83,3 +83,3 @@ Flowable.fromCallable(() -> {
+-.subscribeOn(Schedulers.io())
+-.observeOn(Schedulers.single())
+-.subscribe(System.out::println, Throwable::printStackTrace);
++  .subscribeOn(Schedulers.io())
++  .observeOn(Schedulers.single())
++  .subscribe(System.out::println, Throwable::printStackTrace);
+@@ -98 +98 @@ Flowable<String> source = Flowable.fromCallable(() -> {
+-Flowabe<String> runBackground = source.subscribeOn(Schedulers.io());
++Flowable<String> runBackground = source.subscribeOn(Schedulers.io());
+@@ -117,3 +117,3 @@ Flowable.range(1, 10)
+-.observeOn(Schedulers.computation())
+-.map(v -> v * v)
+-.blockingSubscribe(System.out::println);
++  .observeOn(Schedulers.computation())
++  .map(v -> v * v)
++  .blockingSubscribe(System.out::println);
+@@ -128,5 +128,5 @@ Flowable.range(1, 10)
+-.flatMap(v ->
+-    Flowable.just(v)
+-    .subscribeOn(Schedulers.computation())
+-    .map(v -> v * v)
+-)
++  .flatMap(v ->
++      Flowable.just(v)
++        .subscribeOn(Schedulers.computation())
++        .map(v -> v * v)
++  )
+diff --git a/README.md b/README.md
+index 67a3f1082..7c9f6b742 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,9 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
++#### Version 1.x
++
++Looking for version 1.x? Jump [to the 1.x branch](https://github.com/ReactiveX/RxJava/tree/1.x).
++
++Timeline plans for the 1.x line:
++
++  - **June 1, 2017** - feature freeze (no new operators), only bugfixes
++  - **March 31, 2018** - end of life, no further development
++
+@@ -25,0 +35,123 @@ See the differences between version 1.x and 2.x in the wiki article [What's diff
++## Getting started
++
++The first step is to include RxJava 2 into your project, for example, as a Gradle compile dependency:
++
++```groovy
++compile "io.reactivex.rxjava2:rxjava:2.x.y"
++```
++
++The second is to write the **Hello World** program:
++
++```java
++package rxjava.examples;
++
++import io.reactivex.*;
++
++public class HelloWorld {
++    public static void main(String[] args) {
++        Flowable.just("Hello world").subscribe(System.out::println);
++    }
++}
++```
++
++If your platform doesn't support Java 8 lambdas (yet), you have to create an inner class of `Consumer` manually:
++
++```java
++        Flowable.just("Hello world")
++        .subscribe(new Consumer<String>() {
++            @Override public void accept(String s) {
++                System.out.println(s);
++            }
++        );
++```
++
++RxJava 2 features several base classes you can discover operators on:
++
++  - `io.reactivex.Flowable` : 0..N flows, supporting Reactive-Streams and backpressure
++  - `io.reactivex.Observable`: 0..N flows, no backpressure
++  - `io.reactivex.Single`: a flow of exactly 1 item or an error
++  - `io.reactivex.Completable`: a flow without items but only a completion or error signal
++  - `io.reactivex.Maybe`: a flow with no items, exactly one item or an error
++
++One of the common use cases for RxJava is to run some computation, network request on a background thread and show the results (or error) on the UI thread:
++
++```java
++Flowable.fromCallable(() -> {
++    Thread.sleep(1000); //  imitate expensive computation
++    return "Done";
++})
++.subscribeOn(Schedulers.io())
++.observeOn(Schedulers.single())
++.subscribe(System.out::println, Throwable::printStackTrace);
++
++Thread.sleep(2000); // <--- wait for the flow to finish
++```
++
++This style of chaining methods is called a **fluent API** which resembles the **builder pattern**. However, RxJava's reactive types are immutable; each of the method calls returns a new `Flowable` with added behavior. To illustrate, the example can be rewritten as follows:
++
++```java
++Flowable<String> source = Flowable.fromCallable(() -> {
++    Thread.sleep(1000); //  imitate expensive computation
++    return "Done";
++});
++
++Flowabe<String> runBackground = source.subscribeOn(Schedulers.io());
++
++Flowable<String> showForeground = runBackground.observeOn(Schedulers.single());
++
++showForeground.subscribe(System.out::println, Throwable::printStackTrace);
++
++Thread.sleep(2000);
++```
++
++Typically, you can move computations or blocking IO to some other thread via `subscribeOn`. Once the data is ready, you can make sure they get processed on the foreground or GUI thread via `observeOn`. 
++
++RxJava operators don't work `Thread`s or `ExecutorService`s directly but with so called `Scheduler`s that abstract away sources of concurrency behind an uniform API. RxJava 2 features several standard schedulers accessible via `Schedulers` utility class. These are available on all JVM platforms but some specific platforms, such as Android, have their own typical `Scheduler`s defined: `AndroidSchedulers.mainThread()`, `SwingScheduler.instance()` or `JavaFXSchedulers.gui()`.
++
++The `Thread.sleep(2000);` at the end is no accident. In RxJava the default `Scheduler`s run on daemon threads, which means once the Java main thread exits, they all get stopped and background computations may never happen. Sleeping for some time in this example situations let's you see the output of the flow on the console with time to spare.
++
++Flows in RxJava are sequential in nature split into processing stages that may run **concurrently** with each other:
++
++```java
++Flowable.range(1, 10)
++.observeOn(Schedulers.computation())
++.map(v -> v * v)
++.blockingSubscribe(System.out::println);
++```
++
++This example flow squares the numbers from 1 to 10 on the **computation** `Scheduler` and consumes the results on the "main" thread (more precisely, the caller thread of `blockingSubscribe`). However, the lambda `v -> v * v` doesn't run in parallel for this flow; it receives the values 1 to 10 on the same computation thread one after the other.
++
++Processing the numbers 1 to 10 in parallel is a bit more involved:
++
++```java
++Flowable.range(1, 10)
++.flatMap(v ->
++    Flowable.just(v)
++    .subscribeOn(Schedulers.computation())
++    .map(v -> v * v)
++)
++.blockingSubscribe(System.out::println);
++```
++
++Practically, paralellism in RxJava means running independent flows and merging their results back into a single flow. The operator `flatMap` does this by first mapping each number from 1 to 10 into its own individual `Flowable`, runs them and merges the computed squares.
++
++`flatMap` is a powerful operator and helps in a lot of situations. For example, given a service that returns a `Flowable`, we'd like to call another service with values emitted by the first service:
++
++```java
++Flowable<Inventory> inventorySource = warehouse.getInventoryAsync();
++
++inventorySource.flatMap(inventoryItem ->
++    erp.getDemandAsync(inventoryItem.getId())
++    .map(demand 
++        -> System.out.println("Item " + inventoryItem.getName() + " has demand " + demand));
++)
++.subscribe();
++```
++
++Note, however, that `flatMap` doesn't guarantee any order and the end result from the inner flows may end up interleaved. There are alternative operators:
++
++  - `concatMap` that maps and runs one inner flow at a time and
++  - `concatMapEager` which runs all inner flows "at once" but the output flow will be in the order those inner flows were created.
++
++For further details, consult the [wiki](https://github.com/ReactiveX/RxJava/wiki).
++
+@@ -133 +265 @@ limitations under the License.
+-[experimental source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Experimental.java
+\ No newline at end of file
++[experimental source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Experimental.java
+diff --git a/README.md b/README.md
+index df4a54ca8..67a3f1082 100644
+--- a/README.md
++++ b/README.md
+@@ -26,11 +25,0 @@ See the differences between version 1.x and 2.x in the wiki article [What's diff
+-##### Releases
+-
+-The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/issues/4016):
+-
+-  - **25/08/2016: Release Candidate 1: stabilized API and feature set**
+-  - **05/09/2016: Release Candidate 2: addressing feedback from RC 1**
+-  - **23/09/2016: Release Candidate 3: addressing feedback from RC 2**
+-  - **07/10/2016: Release Candidate 4: addressing feedback from RC 3**
+-  - **21/10/2016: Release Candidate 5: addressing feedback from RC 4**
+-  - 29/10/2016: Stable Release: General availability
+-
+@@ -45,3 +34 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-Version 2.x has reached Release Candidate 5. 
+-
+-Version 1.x is now a stable API and will be supported for several years.
++Version 2.x is now considered stable and final. Version 1.x will be supported for several years along with 2.x. Enhancements and bugfixes will be synchronized between the two in a timely manner.
+diff --git a/README.md b/README.md
+index fd4d293bb..df4a54ca8 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  - 21/10/2016: Release Candidate 5: addressing feedback from RC 4
++  - **21/10/2016: Release Candidate 5: addressing feedback from RC 4**
+@@ -45 +45 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-Version 2.x has reached Release Candidate 1. 
++Version 2.x has reached Release Candidate 5. 
+@@ -49 +49 @@ Version 1.x is now a stable API and will be supported for several years.
+-Minor 1.x increments (such as 1.1, 1.2, etc) will occur when non-trivial new functionality is added or significant enhancements or bug fixes occur that may have behavioral changes that may affect some edge cases (such as dependence on behavior resulting from a bug). An example of an enhancement that would classify as this is adding reactive pull backpressure support to an operator that previously did not support it. This should be backwards compatible but does behave differently.
++Minor 2.x increments (such as 2.1, 2.2, etc) will occur when non-trivial new functionality is added or significant enhancements or bug fixes occur that may have behavioral changes that may affect some edge cases (such as dependence on behavior resulting from a bug). An example of an enhancement that would classify as this is adding reactive pull backpressure support to an operator that previously did not support it. This should be backwards compatible but does behave differently.
+@@ -51 +51 @@ Minor 1.x increments (such as 1.1, 1.2, etc) will occur when non-trivial new fun
+-Patch 1.x.y increments (such as 1.0.0 -> 1.0.1, 1.3.1 -> 1.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an [`@Beta`][beta source link] or [`@Experimental`][experimental source link] annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
++Patch 2.x.y increments (such as 2.0.0 -> 2.0.1, 2.3.1 -> 2.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an [`@Beta`][beta source link] or [`@Experimental`][experimental source link] annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
+diff --git a/README.md b/README.md
+index 32af86678..fd4d293bb 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](http://codecov.io/github/ReactiveX/RxJava?branch=2.x)
++[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](https://codecov.io/gh/ReactiveX/RxJava/branch/2.x)
+diff --git a/README.md b/README.md
+index 4bec6d58e..32af86678 100644
+--- a/README.md
++++ b/README.md
+@@ -33 +33 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  - 07/10/2016: Release Candidate 4: addressing feedback from RC 3
++  - **07/10/2016: Release Candidate 4: addressing feedback from RC 3**
+diff --git a/README.md b/README.md
+index 602b972fb..4bec6d58e 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  - 23/09/2016: Release Candidate 3: addressing feedback from RC 2
++  - **23/09/2016: Release Candidate 3: addressing feedback from RC 2**
+diff --git a/README.md b/README.md
+index 33d7e6db2..602b972fb 100644
+--- a/README.md
++++ b/README.md
+@@ -31,2 +31,4 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  - 23/09/2016: Release Candidate 2: addressing feedback from RC 1
+-  - 21/10/2016: Release Candidate 3: addressing feedback from RC 2
++  - **05/09/2016: Release Candidate 2: addressing feedback from RC 1**
++  - 23/09/2016: Release Candidate 3: addressing feedback from RC 2
++  - 07/10/2016: Release Candidate 4: addressing feedback from RC 3
++  - 21/10/2016: Release Candidate 5: addressing feedback from RC 4
+@@ -115 +116,0 @@ $ git clone git@github.com:ReactiveX/RxJava.git
+-$ git checkout -b 2.x
+@@ -116,0 +118 @@ $ cd RxJava/
++$ git checkout -b 2.x
+diff --git a/README.md b/README.md
+index 9402e5ba6..33d7e6db2 100644
+--- a/README.md
++++ b/README.md
+@@ -120 +120 @@ $ ./gradlew build
+-Futher details on building can be found on the [Getting Started](https://github.com/ReactiveX/RxJava/wiki/Getting-Started) page of the wiki.
++Further details on building can be found on the [Getting Started](https://github.com/ReactiveX/RxJava/wiki/Getting-Started) page of the wiki.
+diff --git a/README.md b/README.md
+index ddb264ee9..9402e5ba6 100644
+--- a/README.md
++++ b/README.md
+@@ -70 +70 @@ All code inside the `io.reactivex.internal.*` packages is considered private API
+-- [Javadoc](http://reactivex.io/RxJava/javadoc/2.x/)
++- [Javadoc](http://reactivex.io/RxJava/2.x/javadoc/)
+diff --git a/README.md b/README.md
+index 781466264..ddb264ee9 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,4 @@
++<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=2.x'></a>
++[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](http://codecov.io/github/ReactiveX/RxJava?branch=2.x)
++[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.reactivex.rxjava2/rxjava)
++
+@@ -9 +13,7 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-Version 2.x and 1.x will live side-by-side for several years. They will have different group ids (`io.reactivex.rxjava2` vs `io.reactivex`) and namespaces (`io.reactivex` vs `rx`). 
++- single dependency: [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm)  
++- continued support for Java 6+ & [Android](https://github.com/ReactiveX/RxAndroid) 2.3+
++- performance gains through design changes learned through the 1.x cycle and through [Reactive-Streams-Commons](https://github.com/reactor/reactive-streams-commons) research project.
++- Java 8 lambda-friendly API
++- non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc)
++- async or synchronous execution
++- virtual time and schedulers for parameterized concurrency
+@@ -11 +20,0 @@ Version 2.x and 1.x will live side-by-side for several years. They will have dif
+-The purpose for 2.x is:
+@@ -13,3 +22,3 @@ The purpose for 2.x is:
+-- continued support for Java 6+ & [Android](https://github.com/ReactiveX/RxAndroid) 2.3+
+-- [Reactive Streams](http://www.reactive-streams.org) compatibility
+-- performance gains through design changes learned through the 1.x cycle
++Version 2.x and 1.x will live side-by-side for several years. They will have different group ids (`io.reactivex.rxjava2` vs `io.reactivex`) and namespaces (`io.reactivex` vs `rx`). 
++
++See the differences between version 1.x and 2.x in the wiki article [What's different in 2.0](https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0). Learn more about RxJava in general on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a>.
+@@ -21 +30 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  - 26/08/2016: Release Candidate 1: stabilized API and feature set
++  - **25/08/2016: Release Candidate 1: stabilized API and feature set**
+@@ -25,30 +33,0 @@ The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/iss
+-  
+-The snapshots of merges into the 2.x branch (developer preview) are available as follows:
+-
+-```
+-repositories {
+-    maven { url 'https://oss.jfrog.org/libs-snapshot' }
+-}
+-
+-dependencies {
+-    compile 'io.reactivex.rxjava2:rxjava:2.0.0-DP0-SNAPSHOT'
+-}
+-```
+-
+-#### Version 1.x
+-
+-- Zero Dependencies
+-- < 800KB Jar
+-- Java 6+ & [Android](https://github.com/ReactiveX/RxAndroid) 2.3+
+-- Java 8 lambda support
+-- Polyglot ([Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxClojure) and [Kotlin](https://github.com/ReactiveX/RxKotlin))
+-- Non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc)
+-- Async or synchronous execution
+-- Virtual time and schedulers for parameterized concurrency
+-
+-Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a>.
+-
+-## Master Build Status
+-
+-<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=2.x'></a>
+-[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](http://codecov.io/github/ReactiveX/RxJava?branch=2.x)
+@@ -64 +43 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-Version 2.x has started development. 
++Version 2.x has reached Release Candidate 1. 
+@@ -84 +63 @@ APIs marked with the `@Deprecated` annotation at the class or method level will
+-#### rx.internal.*
++#### io.reactivex.internal.*
+@@ -86 +65 @@ APIs marked with the `@Deprecated` annotation at the class or method level will
+-All code inside the `rx.internal.*` packages is considered private API and should not be relied upon at all. It can change at any time. 
++All code inside the `io.reactivex.internal.*` packages is considered private API and should not be relied upon at all. It can change at any time. 
+@@ -91 +70 @@ All code inside the `rx.internal.*` packages is considered private API and shoul
+-- [Javadoc](http://reactivex.io/RxJava/javadoc/)
++- [Javadoc](http://reactivex.io/RxJava/javadoc/2.x/)
+@@ -95 +74 @@ All code inside the `rx.internal.*` packages is considered private API and shoul
+-Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cio.reactivex.rxjava).
++Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cio.reactivex.rxjava2).
+@@ -100 +79 @@ Example for Gradle:
+-compile 'io.reactivex:rxjava:x.y.z'
++compile 'io.reactivex.rxjava2:rxjava:x.y.z'
+@@ -107 +86 @@ and for Maven:
+-    <groupId>io.reactivex</groupId>
++    <groupId>io.reactivex.rxjava2</groupId>
+@@ -115 +94 @@ and for Ivy:
+-<dependency org="io.reactivex" name="rxjava" rev="x.y.z" />
++<dependency org="io.reactivex.rxjava2" name="rxjava" rev="x.y.z" />
+@@ -126 +105 @@ dependencies {
+-    compile 'io.reactivex:rxjava:1.0.y-SNAPSHOT'
++    compile 'io.reactivex.rxjava2:rxjava:2.0.0-DP0-SNAPSHOT'
+@@ -135,0 +115 @@ $ git clone git@github.com:ReactiveX/RxJava.git
++$ git checkout -b 2.x
+diff --git a/README.md b/README.md
+index 68cda8e03..781466264 100644
+--- a/README.md
++++ b/README.md
+@@ -149 +149 @@ For bugs, questions and discussions please use the [Github Issues](https://githu
+-Copyright 2013 Netflix, Inc.
++Copyright 2013-2016 Netflix, Inc.
+diff --git a/README.md b/README.md
+index ba5a9ccd2..68cda8e03 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
++[![codecov.io](http://codecov.io/github/ReactiveX/RxJava/coverage.svg?branch=2.x)](http://codecov.io/github/ReactiveX/RxJava?branch=2.x)
+diff --git a/README.md b/README.md
+index d134a7373..ba5a9ccd2 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-Version 2.x and 1.x will live side-by-side for several years. They will have different namespaces (io.reactivex vs rx). 
++Version 2.x and 1.x will live side-by-side for several years. They will have different group ids (`io.reactivex.rxjava2` vs `io.reactivex`) and namespaces (`io.reactivex` vs `rx`). 
+@@ -13 +13 @@ The purpose for 2.x is:
+-- leverage Java 8+ features
++- continued support for Java 6+ & [Android](https://github.com/ReactiveX/RxAndroid) 2.3+
+@@ -16,0 +17,21 @@ The purpose for 2.x is:
++##### Releases
++
++The release plan for 2.x is as [follows](https://github.com/ReactiveX/RxJava/issues/4016):
++
++  - 26/08/2016: Release Candidate 1: stabilized API and feature set
++  - 23/09/2016: Release Candidate 2: addressing feedback from RC 1
++  - 21/10/2016: Release Candidate 3: addressing feedback from RC 2
++  - 29/10/2016: Stable Release: General availability
++  
++The snapshots of merges into the 2.x branch (developer preview) are available as follows:
++
++```
++repositories {
++    maven { url 'https://oss.jfrog.org/libs-snapshot' }
++}
++
++dependencies {
++    compile 'io.reactivex.rxjava2:rxjava:2.0.0-DP0-SNAPSHOT'
++}
++```
++
+diff --git a/README.md b/README.md
+index f350fcf9f..d134a7373 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ Minor 1.x increments (such as 1.1, 1.2, etc) will occur when non-trivial new fun
+-Patch 1.x.y increments (such as 1.0.0 -> 1.0.1, 1.3.1 -> 1.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an `@Beta` or `@Experimental` annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
++Patch 1.x.y increments (such as 1.0.0 -> 1.0.1, 1.3.1 -> 1.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an [`@Beta`][beta source link] or [`@Experimental`][experimental source link] annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
+@@ -52 +52 @@ Patch 1.x.y increments (such as 1.0.0 -> 1.0.1, 1.3.1 -> 1.3.2, etc) will occur
+-APIs marked with the `@Beta` annotation at the class or method level are subject to change. They can be modified in any way, or even removed, at any time. If your code is a library itself (i.e. it is used on the CLASSPATH of users outside your own control), you should not use beta APIs, unless you repackage them (e.g. using ProGuard, shading, etc).
++APIs marked with the [`@Beta`][beta source link] annotation at the class or method level are subject to change. They can be modified in any way, or even removed, at any time. If your code is a library itself (i.e. it is used on the CLASSPATH of users outside your own control), you should not use beta APIs, unless you repackage them (e.g. using ProGuard, shading, etc).
+@@ -56 +56 @@ APIs marked with the `@Beta` annotation at the class or method level are subject
+-APIs marked with the `@Experimental` annotation at the class or method level will almost certainly change. They can be modified in any way, or even removed, at any time. You should not use or rely on them in any production code. They are purely to allow broad testing and feedback. 
++APIs marked with the [`@Experimental`][experimental source link] annotation at the class or method level will almost certainly change. They can be modified in any way, or even removed, at any time. You should not use or rely on them in any production code. They are purely to allow broad testing and feedback. 
+@@ -139,0 +140,3 @@ limitations under the License.
++
++[beta source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Beta.java
++[experimental source link]: https://github.com/ReactiveX/RxJava/blob/master/src/main/java/rx/annotations/Experimental.java
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 85ec13a41..f350fcf9f 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=1.x'></a>
++<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=2.x'></a>
+diff --git a/README.md b/README.md
+index 9014a45c7..85ec13a41 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,12 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
++#### Version 2.x
++
++Version 2.x and 1.x will live side-by-side for several years. They will have different namespaces (io.reactivex vs rx). 
++
++The purpose for 2.x is:
++
++- leverage Java 8+ features
++- [Reactive Streams](http://www.reactive-streams.org) compatibility
++- performance gains through design changes learned through the 1.x cycle
++
++#### Version 1.x
++
+@@ -29,0 +42,2 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
++Version 2.x has started development. 
++
+diff --git a/README.md b/README.md
+index a590c9d92..9014a45c7 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61,7 @@ Binaries and dependency information for Maven, Ivy, Gradle and others can be fou
+-Example for Maven:
++Example for Gradle:
++
++```groovy
++compile 'io.reactivex:rxjava:x.y.z'
++```
++
++and for Maven:
+@@ -75,0 +82,12 @@ and for Ivy:
++Snapshots are available via [JFrog](https://oss.jfrog.org/webapp/search/artifact/?5&q=rxjava):
++
++```groovy
++repositories {
++    maven { url 'https://oss.jfrog.org/libs-snapshot' }
++}
++
++dependencies {
++    compile 'io.reactivex:rxjava:1.0.y-SNAPSHOT'
++}
++```
++
+diff --git a/README.md b/README.md
+index 0ab5a2c7a..a590c9d92 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern)
+-- < 700KB Jar
++- < 800KB Jar
+diff --git a/README.md b/README.md
+index 07422aab9..0ab5a2c7a 100644
+--- a/README.md
++++ b/README.md
+@@ -47,0 +48,3 @@ APIs marked with the `@Deprecated` annotation at the class or method level will
++#### rx.internal.*
++
++All code inside the `rx.internal.*` packages is considered private API and should not be relied upon at all. It can change at any time. 
+diff --git a/README.md b/README.md
+index 72321d641..07422aab9 100644
+--- a/README.md
++++ b/README.md
+@@ -30,2 +30 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-As of 1.0.0 RxJava is following semantic versioning.
+-During the 0.x.y releases, the minor (.x) releases were breaking changes.
++Version 1.x is now a stable API and will be supported for several years.
+@@ -33 +32 @@ During the 0.x.y releases, the minor (.x) releases were breaking changes.
+-The 0.x releases were published under the `com.netflix.rxjava` GroupId. The 1.x releases are published under `io.reactivex`. All usage of 0.x and `com.netflix.rxjava` should eventually be migrated to 1.x and `io.reactivex`. This was done as part of the migration of the project from `Netflix/RxJava` to `ReactiveX/RxJava`.
++Minor 1.x increments (such as 1.1, 1.2, etc) will occur when non-trivial new functionality is added or significant enhancements or bug fixes occur that may have behavioral changes that may affect some edge cases (such as dependence on behavior resulting from a bug). An example of an enhancement that would classify as this is adding reactive pull backpressure support to an operator that previously did not support it. This should be backwards compatible but does behave differently.
+@@ -35 +34,13 @@ The 0.x releases were published under the `com.netflix.rxjava` GroupId. The 1.x
+-During the transition it will be possible for an application to resolve both the `com.netflix.rxjava` and `io.reactivex` artifacts. This is unfortunate but was accepted as a reasonable cost for adopting the new name as we hit version 1.0.
++Patch 1.x.y increments (such as 1.0.0 -> 1.0.1, 1.3.1 -> 1.3.2, etc) will occur for bug fixes and trivial functionality (like adding a method overload). New functionality marked with an `@Beta` or `@Experimental` annotation can also be added in patch releases to allow rapid exploration and iteration of unstable new functionality. 
++
++#### @Beta
++
++APIs marked with the `@Beta` annotation at the class or method level are subject to change. They can be modified in any way, or even removed, at any time. If your code is a library itself (i.e. it is used on the CLASSPATH of users outside your own control), you should not use beta APIs, unless you repackage them (e.g. using ProGuard, shading, etc).
++
++#### @Experimental
++
++APIs marked with the `@Experimental` annotation at the class or method level will almost certainly change. They can be modified in any way, or even removed, at any time. You should not use or rely on them in any production code. They are purely to allow broad testing and feedback. 
++
++#### @Deprecated
++
++APIs marked with the `@Deprecated` annotation at the class or method level will remain supported until the next major release but it is recommended to stop using them. 
+@@ -37 +47,0 @@ During the transition it will be possible for an application to resolve both the
+-The 0.20.x branch is being maintained with bug fixes on the `com.netflix.rxjava` GroupId until version 1.0 Final is released to allow time to migrate between the artifacts.
+diff --git a/README.md b/README.md
+index 9296ab910..72321d641 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-RxJava is a Java VM implementation of [Reactive Extensions](://reactivex.io): a library for composing asynchronous and event-based programs by using observable sequences.
++RxJava is a Java VM implementation of [Reactive Extensions](http://reactivex.io): a library for composing asynchronous and event-based programs by using observable sequences.
+diff --git a/README.md b/README.md
+index 8c2d30b7e..9296ab910 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>.
++RxJava is a Java VM implementation of [Reactive Extensions](://reactivex.io): a library for composing asynchronous and event-based programs by using observable sequences.
+@@ -5 +5 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-Some of the goals of RxJava are:
++It extends the [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern) to support sequences of data/events and adds operators that allow you to compose sequences together declaratively while abstracting away concerns about things like low-level threading, synchronization, thread-safety and concurrent data structures.
+@@ -7,4 +7,8 @@ Some of the goals of RxJava are:
+-- Stay close to other Rx implementations while adjusting naming conventions and idioms to Java
+-- Match contracts of Rx should be the same
+-- Target the JVM not a language to allow JVM-language bindings (such as [Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxClojure) and [Kotlin](https://github.com/ReactiveX/RxKotlin)).
+-- Support Java 6+ (to include Android support) 
++- Zero Dependencies
++- < 700KB Jar
++- Java 6+ & [Android](https://github.com/ReactiveX/RxAndroid) 2.3+
++- Java 8 lambda support
++- Polyglot ([Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxClojure) and [Kotlin](https://github.com/ReactiveX/RxKotlin))
++- Non-opinionated about source of concurrency (threads, pools, event loops, fibers, actors, etc)
++- Async or synchronous execution
++- Virtual time and schedulers for parameterized concurrency
+@@ -12 +16 @@ Some of the goals of RxJava are:
+-Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a> and the <a href="http://techblog.netflix.com/2013/02/rxjava-netflix-api.html">Netflix TechBlog post</a> where RxJava was introduced.
++Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a>.
+diff --git a/README.md b/README.md
+index 61046c521..8c2d30b7e 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Some of the goals of RxJava are:
+-- Target the JVM not a language to allow JVM-language bindings (such as [Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxGroovy) and [Kotlin](https://github.com/ReactiveX/RxKotlin)).
++- Target the JVM not a language to allow JVM-language bindings (such as [Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxClojure) and [Kotlin](https://github.com/ReactiveX/RxKotlin)).
+diff --git a/README.md b/README.md
+index 2f72ce22e..61046c521 100644
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,6 @@ During the 0.x.y releases, the minor (.x) releases were breaking changes.
++The 0.x releases were published under the `com.netflix.rxjava` GroupId. The 1.x releases are published under `io.reactivex`. All usage of 0.x and `com.netflix.rxjava` should eventually be migrated to 1.x and `io.reactivex`. This was done as part of the migration of the project from `Netflix/RxJava` to `ReactiveX/RxJava`.
++
++During the transition it will be possible for an application to resolve both the `com.netflix.rxjava` and `io.reactivex` artifacts. This is unfortunate but was accepted as a reasonable cost for adopting the new name as we hit version 1.0.
++
++The 0.20.x branch is being maintained with bug fixes on the `com.netflix.rxjava` GroupId until version 1.0 Final is released to allow time to migrate between the artifacts.
++
+diff --git a/README.md b/README.md
+index 999f2c166..2f72ce22e 100644
+--- a/README.md
++++ b/README.md
+@@ -7,7 +7,3 @@ Some of the goals of RxJava are:
+-- Stay close to the original Rx.Net implementation while adjusting naming conventions and idioms to Java
+-- All contracts of Rx should be the same
+-- Target the JVM not a language. The first languages supported (beyond Java itself) are 
+-<a href="https://github.com/ReactiveX/RxGroovy">Groovy</a>, 
+-<a href="https://github.com/ReactiveX/RxClojure">Clojure</a>, 
+-and <a href="https://github.com/ReactiveX/RxScala">Scala</a>. 
+-New language adapters can be <a href="https://github.com/ReactiveX/RxJava/wiki/How-to-Contribute">contributed</a>.
++- Stay close to other Rx implementations while adjusting naming conventions and idioms to Java
++- Match contracts of Rx should be the same
++- Target the JVM not a language to allow JVM-language bindings (such as [Scala](https://github.com/ReactiveX/RxScala), [Groovy](https://github.com/ReactiveX/RxGroovy), [Clojure](https://github.com/ReactiveX/RxGroovy) and [Kotlin](https://github.com/ReactiveX/RxKotlin)).
+@@ -30,7 +26,2 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-RxJava is working towards a 1.0 release which will be reached once it "more or less" becomes feature complete with the [Rx.Net version](https://rx.codeplex.com). The backlog of features needed to accomplish this are documented in the [project issues](https://github.com/ReactiveX/RxJava/issues).
+-
+-In short, once the current issue list hits 0 open we will bump to version 1.0.
+-
+-Until that time the "semantic versioning" will be prefixed with the 0.* and breaking changes will be done such as 0.5.x -> 0.6.x All incremental non-breaking changes with additive functionality will be done like 0.5.1 -> 0.5.2.
+-
+-Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning approach.
++As of 1.0.0 RxJava is following semantic versioning.
++During the 0.x.y releases, the minor (.x) releases were breaking changes.
+@@ -62,32 +52,0 @@ and for Ivy:
+-If you need to download the jars instead of using a build system, create a Maven pom file like this with the desired version:
+-
+-```xml
+-<?xml version="1.0"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+-  <modelVersion>4.0.0</modelVersion>
+-	<groupId>io.reactivex.rxjava.download</groupId>
+-	<artifactId>rxjava-download</artifactId>
+-	<version>1.0-SNAPSHOT</version>
+-	<name>Simple POM to download rxjava</name>
+-	<url>http://github.com/ReactiveX/RxJava</url>
+-	<dependencies>
+-		<dependency>
+-			<groupId>io.reactivex.rxjava</groupId>
+-			<artifactId>rxjava</artifactId>
+-			<version>x.y.z</version>
+-			<scope/>
+-		</dependency>
+-	</dependencies>
+-</project>
+-```
+-
+-Then execute:
+-
+-```
+-mvn -f download-rxjava-pom.xml dependency:copy-dependencies
+-```
+-
+-It will download rxjava-*.jar and its dependencies into ./target/dependency/.
+-
+-You need Java 6 or later.
+-
+diff --git a/README.md b/README.md
+index 7d0f9ae95..999f2c166 100644
+--- a/README.md
++++ b/README.md
+@@ -20,7 +20 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-CloudBees: <a href='https://netflixoss.ci.cloudbees.com/job/RxJava-master/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-master/badge/icon'></a>
+-
+-Travis: <a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=1.x'></a>
+-
+-## Pull Request Build Status
+-
+-<a href='https://netflixoss.ci.cloudbees.com/job/RxJava-pull-requests/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-pull-requests/badge/icon'></a>
++<a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=1.x'></a>
+diff --git a/README.md b/README.md
+index 4390ee719..7d0f9ae95 100644
+--- a/README.md
++++ b/README.md
+@@ -105 +105 @@ To build:
+-$ git clone git@github.com:ReactivrX/RxJava.git
++$ git clone git@github.com:ReactiveX/RxJava.git
+diff --git a/README.md b/README.md
+index 3a27148c7..4390ee719 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ Example for Maven:
+-    <groupId>io.reactivex.rxjava</groupId>
++    <groupId>io.reactivex</groupId>
+@@ -65 +65 @@ and for Ivy:
+-<dependency org="io.reactivex.rxjava" name="rxjava" rev="x.y.z" />
++<dependency org="io.reactivex" name="rxjava" rev="x.y.z" />
+diff --git a/README.md b/README.md
+index 1feab2215..3a27148c7 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning
+-- <a href="http://netflix.github.com/RxJava/javadoc/">Javadoc</a>
++- [Javadoc](http://reactivex.io/RxJava/javadoc/)
+diff --git a/README.md b/README.md
+index 954a11688..1feab2215 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20,3 @@ Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki
+-<a href='https://netflixoss.ci.cloudbees.com/job/RxJava-master/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-master/badge/icon'></a>
++CloudBees: <a href='https://netflixoss.ci.cloudbees.com/job/RxJava-master/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-master/badge/icon'></a>
++
++Travis: <a href='https://travis-ci.org/ReactiveX/RxJava/builds'><img src='https://travis-ci.org/ReactiveX/RxJava.svg?branch=1.x'></a>
+diff --git a/README.md b/README.md
+index 94e6b9a57..954a11688 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ If you need to download the jars instead of using a build system, create a Maven
+-	<url>http://github.com/Netflix/RxJava</url>
++	<url>http://github.com/ReactiveX/RxJava</url>
+diff --git a/README.md b/README.md
+index 875c7746a..94e6b9a57 100644
+--- a/README.md
++++ b/README.md
+@@ -10,4 +10,4 @@ Some of the goals of RxJava are:
+-<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy</a>, 
+-<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure</a>, 
+-and <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala</a>. 
+-New language adapters can be <a href="https://github.com/Netflix/RxJava/wiki/How-to-Contribute">contributed</a>.
++<a href="https://github.com/ReactiveX/RxGroovy">Groovy</a>, 
++<a href="https://github.com/ReactiveX/RxClojure">Clojure</a>, 
++and <a href="https://github.com/ReactiveX/RxScala">Scala</a>. 
++New language adapters can be <a href="https://github.com/ReactiveX/RxJava/wiki/How-to-Contribute">contributed</a>.
+@@ -16 +16 @@ New language adapters can be <a href="https://github.com/Netflix/RxJava/wiki/How
+-Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki Home</a> and the <a href="http://techblog.netflix.com/2013/02/rxjava-netflix-api.html">Netflix TechBlog post</a> where RxJava was introduced.
++Learn more about RxJava on the <a href="https://github.com/ReactiveX/RxJava/wiki">Wiki Home</a> and the <a href="http://techblog.netflix.com/2013/02/rxjava-netflix-api.html">Netflix TechBlog post</a> where RxJava was introduced.
+@@ -30 +30 @@ Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki
+-- [GitHub Issues](https://github.com/Netflix/RxJava/issues)
++- [GitHub Issues](https://github.com/ReactiveX/RxJava/issues)
+@@ -34 +34 @@ Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki
+-RxJava is working towards a 1.0 release which will be reached once it "more or less" becomes feature complete with the [Rx.Net version](https://rx.codeplex.com). The backlog of features needed to accomplish this are documented in the [project issues](https://github.com/Netflix/RxJava/issues).
++RxJava is working towards a 1.0 release which will be reached once it "more or less" becomes feature complete with the [Rx.Net version](https://rx.codeplex.com). The backlog of features needed to accomplish this are documented in the [project issues](https://github.com/ReactiveX/RxJava/issues).
+@@ -44 +44 @@ Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning
+-- [Wiki](https://github.com/Netflix/RxJava/wiki)
++- [Wiki](https://github.com/ReactiveX/RxJava/wiki)
+@@ -47,9 +46,0 @@ Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning
+-## Code
+-
+-- <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core">Java Core</a>   
+-  - <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core/src/main/java/rx/Observable.java">Observable</a>
+-  - <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core/src/main/java/rx/Observer.java">Observer</a>
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a> 
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a> 
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala Adaptor</a> 
+-
+@@ -58 +49 @@ Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning
+-Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.netflix.rxjava%22).
++Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cio.reactivex.rxjava).
+@@ -64,2 +55,2 @@ Example for Maven:
+-    <groupId>com.netflix.rxjava</groupId>
+-    <artifactId>rxjava-core</artifactId>
++    <groupId>io.reactivex.rxjava</groupId>
++    <artifactId>rxjava</artifactId>
+@@ -72 +63 @@ and for Ivy:
+-<dependency org="com.netflix.rxjava" name="rxjava-core" rev="x.y.z" />
++<dependency org="io.reactivex.rxjava" name="rxjava" rev="x.y.z" />
+@@ -81 +72 @@ If you need to download the jars instead of using a build system, create a Maven
+-	<groupId>com.netflix.rxjava.download</groupId>
++	<groupId>io.reactivex.rxjava.download</groupId>
+@@ -84 +75 @@ If you need to download the jars instead of using a build system, create a Maven
+-	<name>Simple POM to download rxjava-core and dependencies</name>
++	<name>Simple POM to download rxjava</name>
+@@ -88,2 +79,2 @@ If you need to download the jars instead of using a build system, create a Maven
+-			<groupId>com.netflix.rxjava</groupId>
+-			<artifactId>rxjava-core</artifactId>
++			<groupId>io.reactivex.rxjava</groupId>
++			<artifactId>rxjava</artifactId>
+@@ -103 +94 @@ mvn -f download-rxjava-pom.xml dependency:copy-dependencies
+-It will download rxjava-core-*.jar and its dependencies into ./target/dependency/.
++It will download rxjava-*.jar and its dependencies into ./target/dependency/.
+@@ -112 +103 @@ To build:
+-$ git clone git@github.com:Netflix/RxJava.git
++$ git clone git@github.com:ReactivrX/RxJava.git
+@@ -117 +108 @@ $ ./gradlew build
+-Futher details on building can be found on the [Getting Started](https://github.com/Netflix/RxJava/wiki/Getting-Started) page of the wiki.
++Futher details on building can be found on the [Getting Started](https://github.com/ReactiveX/RxJava/wiki/Getting-Started) page of the wiki.
+@@ -121 +112 @@ Futher details on building can be found on the [Getting Started](https://github.
+-For bugs, questions and discussions please use the [Github Issues](https://github.com/Netflix/RxJava/issues).
++For bugs, questions and discussions please use the [Github Issues](https://github.com/ReactiveX/RxJava/issues).
+diff --git a/README.md b/README.md
+index f95505584..875c7746a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# RxJava: Reactive Programming on the JVM
++# RxJava: Reactive Extensions for the JVM
+diff --git a/README.md b/README.md
+index 4486b6769..f95505584 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# RxJava: Functional Reactive Programming on the JVM
++# RxJava: Reactive Programming on the JVM
+diff --git a/README.md b/README.md
+index 66118975f..4486b6769 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ New language adapters can be <a href="https://github.com/Netflix/RxJava/wiki/How
+-- Support Java 5 (to include Android support) and higher with an eventual goal to target a build for Java 8 with its lambda support.
++- Support Java 6+ (to include Android support) 
+diff --git a/README.md b/README.md
+index eee52ee6c..66118975f 100644
+--- a/README.md
++++ b/README.md
+@@ -12,2 +12 @@ Some of the goals of RxJava are:
+-<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala</a> 
+-and <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby</a>. 
++and <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala</a>. 
+@@ -56 +54,0 @@ Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
+diff --git a/README.md b/README.md
+index c5fac173b..eee52ee6c 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27,6 @@ Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki
++## Communication
++
++- Google Group: [RxJava](http://groups.google.com/d/forum/rxjava)
++- Twitter: [@RxJava](http://twitter.com/RxJava)
++- [GitHub Issues](https://github.com/Netflix/RxJava/issues)
++
+diff --git a/README.md b/README.md
+index 04a7b12dd..c5fac173b 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27,10 @@ Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki
++## Versioning
++
++RxJava is working towards a 1.0 release which will be reached once it "more or less" becomes feature complete with the [Rx.Net version](https://rx.codeplex.com). The backlog of features needed to accomplish this are documented in the [project issues](https://github.com/Netflix/RxJava/issues).
++
++In short, once the current issue list hits 0 open we will bump to version 1.0.
++
++Until that time the "semantic versioning" will be prefixed with the 0.* and breaking changes will be done such as 0.5.x -> 0.6.x All incremental non-breaking changes with additive functionality will be done like 0.5.1 -> 0.5.2.
++
++Once we hit 1.0 it will follow the normal major.minor.patch semantic versioning approach.
++
+@@ -52 +62 @@ Example for Maven:
+-    <version>0.5.0</version>
++    <version>x.y.z</version>
+@@ -58 +68 @@ and for Ivy:
+-<dependency org="com.netflix.rxjava" name="rxjava-core" rev="0.5.0" />
++<dependency org="com.netflix.rxjava" name="rxjava-core" rev="x.y.z" />
+@@ -76 +86 @@ If you need to download the jars instead of using a build system, create a Maven
+-			<version>0.5.0</version>
++			<version>x.y.z</version>
+diff --git a/README.md b/README.md
+index dc4736be3..04a7b12dd 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,8 @@ Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki
++## Master Build Status
++
++<a href='https://netflixoss.ci.cloudbees.com/job/RxJava-master/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-master/badge/icon'></a>
++
++## Pull Request Build Status
++
++<a href='https://netflixoss.ci.cloudbees.com/job/RxJava-pull-requests/'><img src='https://netflixoss.ci.cloudbees.com/job/RxJava-pull-requests/badge/icon'></a>
++
+diff --git a/README.md b/README.md
+index b872cf0ab..dc4736be3 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ Some of the goals of RxJava are:
+-<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">and JRuby</a>. 
++and <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby</a>. 
+diff --git a/README.md b/README.md
+index 61be7b9b9..b872cf0ab 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ New language adapters can be <a href="https://github.com/Netflix/RxJava/wiki/How
+-Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki Home</a>.
++Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki Home</a> and the <a href="http://techblog.netflix.com/2013/02/rxjava-netflix-api.html">Netflix TechBlog post</a> where RxJava was introduced.
+diff --git a/README.md b/README.md
+index 13d760393..61be7b9b9 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5,15 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-## Documentation
++Some of the goals of RxJava are:
++
++- Stay close to the original Rx.Net implementation while adjusting naming conventions and idioms to Java
++- All contracts of Rx should be the same
++- Target the JVM not a language. The first languages supported (beyond Java itself) are 
++<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy</a>, 
++<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure</a>, 
++<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala</a> 
++<a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">and JRuby</a>. 
++New language adapters can be <a href="https://github.com/Netflix/RxJava/wiki/How-to-Contribute">contributed</a>.
++- Support Java 5 (to include Android support) and higher with an eventual goal to target a build for Java 8 with its lambda support.
++
++Learn more about Rx on the <a href="https://github.com/Netflix/RxJava/wiki">Wiki Home</a>.
++
++## Full Documentation
+diff --git a/README.md b/README.md
+index 1062e3ad7..13d760393 100644
+--- a/README.md
++++ b/README.md
+@@ -81 +81 @@ $ ./gradlew build
+-Futher details on building can be found on the [Getting Started](RxJava/wiki/Getting-Started) page of the wiki.
++Futher details on building can be found on the [Getting Started](https://github.com/Netflix/RxJava/wiki/Getting-Started) page of the wiki.
+diff --git a/README.md b/README.md
+index 6934ecfaf..1062e3ad7 100644
+--- a/README.md
++++ b/README.md
+@@ -19,0 +20,63 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
++## Binaries
++
++Binaries and dependency information for Maven, Ivy, Gradle and others can be found at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.netflix.rxjava%22).
++
++Example for Maven:
++
++```xml
++<dependency>
++    <groupId>com.netflix.rxjava</groupId>
++    <artifactId>rxjava-core</artifactId>
++    <version>0.5.0</version>
++</dependency>
++```
++and for Ivy:
++
++```xml
++<dependency org="com.netflix.rxjava" name="rxjava-core" rev="0.5.0" />
++```
++
++If you need to download the jars instead of using a build system, create a Maven pom file like this with the desired version:
++
++```xml
++<?xml version="1.0"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++  <modelVersion>4.0.0</modelVersion>
++	<groupId>com.netflix.rxjava.download</groupId>
++	<artifactId>rxjava-download</artifactId>
++	<version>1.0-SNAPSHOT</version>
++	<name>Simple POM to download rxjava-core and dependencies</name>
++	<url>http://github.com/Netflix/RxJava</url>
++	<dependencies>
++		<dependency>
++			<groupId>com.netflix.rxjava</groupId>
++			<artifactId>rxjava-core</artifactId>
++			<version>0.5.0</version>
++			<scope/>
++		</dependency>
++	</dependencies>
++</project>
++```
++
++Then execute:
++
++```
++mvn -f download-rxjava-pom.xml dependency:copy-dependencies
++```
++
++It will download rxjava-core-*.jar and its dependencies into ./target/dependency/.
++
++You need Java 6 or later.
++
++## Build
++
++To build:
++
++```
++$ git clone git@github.com:Netflix/RxJava.git
++$ cd RxJava/
++$ ./gradlew build
++```
++
++Futher details on building can be found on the [Getting Started](RxJava/wiki/Getting-Started) page of the wiki.
++
+diff --git a/README.md b/README.md
+index 89e6e792f..6934ecfaf 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-- [Wiki](RxJava/wiki)
++- [Wiki](https://github.com/Netflix/RxJava/wiki)
+@@ -22 +22 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-For bugs, questions and discussions please use the [Github Issues](RxJava/issues).
++For bugs, questions and discussions please use the [Github Issues](https://github.com/Netflix/RxJava/issues).
+diff --git a/README.md b/README.md
+index 63af7d125..89e6e792f 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-- [Wiki](RxJava/wiki).
++- [Wiki](RxJava/wiki)
+diff --git a/README.md b/README.md
+index cc251774b..63af7d125 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +4,0 @@ This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Ob
+-It is compatible with Java 5 and newer and has several <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors">language adaptors</a>.
+-
+@@ -9 +7,2 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-<a href="http://netflix.github.com/RxJava/javadoc/">Javadoc</a>
++- [Wiki](RxJava/wiki).
++- <a href="http://netflix.github.com/RxJava/javadoc/">Javadoc</a>
+@@ -16 +15,3 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a> 
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a> 
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-scala">Scala Adaptor</a> 
+@@ -18,6 +18,0 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   
+-
+-## Current Status
+-
+-- Javadocs all reference images that aren't yet placed somewhere public.
+-- Wiki documentation is still being finished.
+diff --git a/README.md b/README.md
+index e4f0750e2..cc251774b 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-<a href="http://netflix.github.com/RxJava/">Javadoc</a>
++<a href="http://netflix.github.com/RxJava/javadoc/">Javadoc</a>
+@@ -22 +21,0 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-- API design and naming conventions are being finalized.
+@@ -24,2 +23 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-- Wiki documentation has not been migrated.
+-- Need to audit with <a href="https://rx.codeplex.com">rx.codeplex.com</a> for API
++- Wiki documentation is still being finished.
+diff --git a/README.md b/README.md
+index b6bf8520e..e4f0750e2 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-This library is Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>.
++This library is a Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>.
+diff --git a/README.md b/README.md
+index c38de2bad..b6bf8520e 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ This library is Java implementation of <a href="https://rx.codeplex.com">Rx Obse
+-It is compatible with Java 5 and newer and has several <a href="RxJava/tree/master/language-adaptors">language adaptors</a>.
++It is compatible with Java 5 and newer and has several <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors">language adaptors</a>.
+diff --git a/README.md b/README.md
+index 104c9278a..c38de2bad 100644
+--- a/README.md
++++ b/README.md
+@@ -13,6 +13,6 @@ It is compatible with Java 5 and newer and has several <a href="RxJava/tree/mast
+-- <a href="./RxJava/tree/master/rxjava-core">Java Core</a>   
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/Observable.java">Observable</a>
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/Observer.java">Observer</a>
+-- <a href="RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
+-- <a href="RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
+-- <a href="RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core">Java Core</a>   
++  - <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core/src/main/java/rx/Observable.java">Observable</a>
++  - <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core/src/main/java/rx/Observer.java">Observer</a>
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   
+diff --git a/README.md b/README.md
+index f5bb154f9..104c9278a 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ It is compatible with Java 5 and newer and has several <a href="RxJava/tree/mast
+-- <a href="RxJava/tree/master/rxjava-core">Java Core</a>   
++- <a href="./RxJava/tree/master/rxjava-core">Java Core</a>   
+diff --git a/README.md b/README.md
+index 4d11849e6..f5bb154f9 100644
+--- a/README.md
++++ b/README.md
+@@ -14,2 +14,2 @@ It is compatible with Java 5 and newer and has several <a href="RxJava/tree/mast
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/observables/Observable.java">Observable</a>
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/observables/Observer.java">Observer</a>
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/Observable.java">Observable</a>
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/Observer.java">Observer</a>
+diff --git a/README.md b/README.md
+index 022985bc2..4d11849e6 100644
+--- a/README.md
++++ b/README.md
+@@ -14,2 +14,2 @@ It is compatible with Java 5 and newer and has several <a href="RxJava/tree/mast
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observable.java">Observable</a>
+-  - <a href="RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observer.java">Observer</a>
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/observables/Observable.java">Observable</a>
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/rx/observables/Observer.java">Observer</a>
+diff --git a/README.md b/README.md
+index 4930e067c..022985bc2 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ This library is Java implementation of <a href="https://rx.codeplex.com">Rx Obse
+-It is compatible with Java 5 and newer and has several <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors">language adaptors</a>.
++It is compatible with Java 5 and newer and has several <a href="RxJava/tree/master/language-adaptors">language adaptors</a>.
+@@ -13,6 +13,6 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-- <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core">Java Core</a>   
+-  - <a href="https://github.com/Netflix/RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observable.java">Observable</a>
+-  - <a href="https://github.com/Netflix/RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observer.java">Observer</a>
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
+-- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   
++- <a href="RxJava/tree/master/rxjava-core">Java Core</a>   
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observable.java">Observable</a>
++  - <a href="RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observer.java">Observer</a>
++- <a href="RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
++- <a href="RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
++- <a href="RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   
+@@ -29 +29 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-For bugs, questions and discussions please use the [Github Issues](Hystrix/issues).
++For bugs, questions and discussions please use the [Github Issues](RxJava/issues).
+diff --git a/README.md b/README.md
+index 767507f37..4930e067c 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ It is compatible with Java 5 and newer and has several <a href="https://github.c
+-# Current Status
++## Current Status
+diff --git a/README.md b/README.md
+index 34c114aa6..767507f37 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,5 @@
+-Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>
++This library is Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>.
++
++It is compatible with Java 5 and newer and has several <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors">language adaptors</a>.
++
++## Documentation
+@@ -7 +11 @@ Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>
+-Code:
++## Code
+diff --git a/README.md b/README.md
+index ce43d4ede..34c114aa6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# RxJava
++# RxJava: Functional Reactive Programming on the JVM
+@@ -21,0 +22,21 @@ Code:
++
++## Bugs and Feedback
++
++For bugs, questions and discussions please use the [Github Issues](Hystrix/issues).
++
++ 
++## LICENSE
++
++Copyright 2013 Netflix, Inc.
++
++Licensed under the Apache License, Version 2.0 (the "License");
++you may not use this file except in compliance with the License.
++You may obtain a copy of the License at
++
++<http://www.apache.org/licenses/LICENSE-2.0>
++
++Unless required by applicable law or agreed to in writing, software
++distributed under the License is distributed on an "AS IS" BASIS,
++WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++See the License for the specific language governing permissions and
++limitations under the License.
+diff --git a/README.md b/README.md
+index 9ceabfd28..ce43d4ede 100644
+--- a/README.md
++++ b/README.md
+@@ -14,0 +15,7 @@ Code:
++
++# Current Status
++
++- API design and naming conventions are being finalized.
++- Javadocs all reference images that aren't yet placed somewhere public.
++- Wiki documentation has not been migrated.
++- Need to audit with <a href="https://rx.codeplex.com">rx.codeplex.com</a> for API
+diff --git a/README.md b/README.md
+index 1ea2fa596..9ceabfd28 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10,2 @@ Code:
++  - <a href="https://github.com/Netflix/RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observable.java">Observable</a>
++  - <a href="https://github.com/Netflix/RxJava/blob/master/rxjava-core/src/main/java/org/rx/reactive/Observer.java">Observer</a>
+diff --git a/README.md b/README.md
+index 87f378b01..1ea2fa596 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,12 @@
+-RxJava
+-======
+\ No newline at end of file
++# RxJava
++
++Java implementation of <a href="https://rx.codeplex.com">Rx Observables</a>
++
++<a href="http://netflix.github.com/RxJava/">Javadoc</a>
++
++Code:
++
++- <a href="https://github.com/Netflix/RxJava/tree/master/rxjava-core">Java Core</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-groovy">Groovy Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-jruby">JRuby Adaptor</a>   
++- <a href="https://github.com/Netflix/RxJava/tree/master/language-adaptors/rxjava-clojure">Clojure Adaptor</a>   

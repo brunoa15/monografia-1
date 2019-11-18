@@ -1,0 +1,1493 @@
+diff --git a/README.md b/README.md
+index 89ec151f..80412cc8 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +106 @@ Requests officially supports Python 2.7 & 3.4–3.8.
+-## P.S. — Documentation is Available at [`//2.python-requests.org`](https://2.python-requests.org/).
++## P.S. — Documentation is Available at [`//requests.readthedocs.io`](https://requests.readthedocs.io/en/master/).
+diff --git a/README.md b/README.md
+index cd75a6f8..89ec151f 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++    
+diff --git a/README.md b/README.md
+index ff5641ad..cd75a6f8 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/krequests-logo.png" align="center" /></a>
++    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.png" align="center" /></a>
+@@ -16,2 +15,0 @@
+-<a href="https://www.codecademy.com/articles/http-requests"><img src="https://github.com/psf/requests/blob/master/ext/flower-of-life.jpg?raw=true" /></a>
+-
+diff --git a/README.md b/README.md
+index 61e2ec97..ff5641ad 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/kr.jpg" align="center" /></a>
++    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/krequests-logo.png" align="center" /></a>
+diff --git a/README.md b/README.md
+index 83fc8ba5..61e2ec97 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/deepmind-kr.jpg" align="center" /></a>
++    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/kr.jpg" align="center" /></a>
+diff --git a/README.md b/README.md
+index ed8932e7..83fc8ba5 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-    
++
+@@ -15 +15 @@
+-    
++
+@@ -17 +17 @@
+-    
++
+@@ -19,2 +19,2 @@
+-This software has been designed for you, with much joy, 
+-by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
++This software has been designed for you, with much joy,
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is protected by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
+@@ -22,2 +21,0 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p>&nbsp;</p>
+-<img src="https://github.com/psf/requests/blob/master/ext/flourish.jpg?raw=true" />
+@@ -74,3 +72,3 @@ Requests is ready for the demands of building robust and reliable HTTP–speak a
+-         + Sessions with Cookie Persistence     + Browser-style SSL Verification 
+-         + Basic & Digest Authentication        + Familiar `dict`–like Cookies   
+-         + Automatic Decompression of Content   + Automatic Content Decoding     
++         + Sessions with Cookie Persistence     + Browser-style SSL Verification
++         + Basic & Digest Authentication        + Familiar `dict`–like Cookies
++         + Automatic Decompression of Content   + Automatic Content Decoding
+@@ -78 +76 @@ Requests is ready for the demands of building robust and reliable HTTP–speak a
+-         + Multi-part File Uploads              + SOCKS Proxy Support            
++         + Multi-part File Uploads              + SOCKS Proxy Support
+@@ -80,2 +78,2 @@ Requests is ready for the demands of building robust and reliable HTTP–speak a
+-         + Automatic honoring of `.netrc`       + Chunked HTTP Requests          
+-              
++         + Automatic honoring of `.netrc`       + Chunked HTTP Requests
++
+@@ -130 +127,0 @@ Requests officially supports Python 2.7 & 3.4–3.8.
+-
+diff --git a/README.md b/README.md
+index ee24a30b..ed8932e7 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certianly put your trust in this code.
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certainly put your trust in this code.
+diff --git a/README.md b/README.md
+index dd264ad9..ee24a30b 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certainly put your trust in this code.
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certianly put your trust in this code.
+@@ -87 +87 @@ Requests is ready for the demands of building robust and reliable HTTP–speak a
+-        ✨ 🍰 ✨
++        ✨ 🍰 ✨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+diff --git a/README.md b/README.md
+index 03b7e8a1..dd264ad9 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certianly put your trust in this code.
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certainly put your trust in this code.
+diff --git a/README.md b/README.md
+index 2e528030..03b7e8a1 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You may certianly put your trust in this code.
+diff --git a/README.md b/README.md
+index dd536b80..2e528030 100644
+--- a/README.md
++++ b/README.md
+@@ -128 +128 @@ Requests officially supports Python 2.7 & 3.4–3.8.
+-        <a href="https://github.com/psf/requests/blob/master/LICENSE"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /></a>
++        <a href="https://www.python.org/psf/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/psf.png" align="center" /></a>
+diff --git a/README.md b/README.md
+index 8d400e87..dd536b80 100644
+--- a/README.md
++++ b/README.md
+@@ -118,0 +119 @@ Requests officially supports Python 2.7 & 3.4–3.8.
++<p>&nbsp;</p>
+diff --git a/README.md b/README.md
+index 1e718a41..8d400e87 100644
+--- a/README.md
++++ b/README.md
+@@ -118,0 +119 @@ Requests officially supports Python 2.7 & 3.4–3.8.
++
+@@ -120 +121 @@ Requests officially supports Python 2.7 & 3.4–3.8.
+-        <a href="https://github.com/psf/requests/blob/master/LICENSE"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /></a>
++        <a href="https://kennethreitz.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/kr.png" align="center" /></a>
+@@ -122,0 +124,2 @@ Requests officially supports Python 2.7 & 3.4–3.8.
++<p>&nbsp;</p>
++
+@@ -124 +127 @@ Requests officially supports Python 2.7 & 3.4–3.8.
+-        <a href="https://kennethreitz.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/kr.png" align="center" /></a>
++        <a href="https://github.com/psf/requests/blob/master/LICENSE"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /></a>
+diff --git a/README.md b/README.md
+index 6bdc1472..1e718a41 100644
+--- a/README.md
++++ b/README.md
+@@ -122,0 +123,3 @@ Requests officially supports Python 2.7 & 3.4–3.8.
++<p align="center">
++        <a href="https://kennethreitz.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/kr.png" align="center" /></a>
++</p>
+diff --git a/README.md b/README.md
+index f2c5152b..6bdc1472 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++<img src="https://github.com/psf/requests/blob/master/ext/flourish.jpg?raw=true" />
+diff --git a/README.md b/README.md
+index ae5a3dde..f2c5152b 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.png" align="center" /></a>
++    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/deepmind-kr.jpg" align="center" /></a>
+diff --git a/README.md b/README.md
+index bdbc4e8b..ae5a3dde 100644
+--- a/README.md
++++ b/README.md
+@@ -57,3 +56,0 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-<p align="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
+-<a href="https://pypi.org/project/requests/" rel="nofollow"><img src="https://camo.githubusercontent.com/6d78aeec0a9a1cfe147ad064bfb99069e298e29b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/pypi/pyversions/requests.svg" style="max-width:100%;"></a>
+-<a href="https://github.com/psf/requests/graphs/contributors"><img src="https://camo.githubusercontent.com/a70ea15870b38bba9203b969f6a6b7e7845fbb8a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f7073662f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/github/contributors/psf/requests.svg" style="max-width:100%;"></a></p>
+@@ -64,0 +62,3 @@ Requests is **the most downloaded Python package today**, pulling in around `14M
++<p align="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
++<a href="https://pypi.org/project/requests/" rel="nofollow"><img src="https://camo.githubusercontent.com/6d78aeec0a9a1cfe147ad064bfb99069e298e29b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/pypi/pyversions/requests.svg" style="max-width:100%;"></a>
++<a href="https://github.com/psf/requests/graphs/contributors"><img src="https://camo.githubusercontent.com/a70ea15870b38bba9203b969f6a6b7e7845fbb8a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f7073662f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/github/contributors/psf/requests.svg" style="max-width:100%;"></a></p>
+diff --git a/README.md b/README.md
+index 85fff63e..bdbc4e8b 100644
+--- a/README.md
++++ b/README.md
+@@ -57,2 +56,0 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
+-
+@@ -62,0 +61,3 @@ Requests is **the most downloaded Python package today**, pulling in around `14M
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
++
++
+diff --git a/README.md b/README.md
+index 26286cb9..85fff63e 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is one of **the most downloaded Python packages of all time**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
++Requests is **the most downloaded Python package today**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
+diff --git a/README.md b/README.md
+index 91089f29..26286cb9 100644
+--- a/README.md
++++ b/README.md
+@@ -59,2 +58,0 @@ Requests is one of **the most downloaded Python packages of all time**, pulling
+-<p>&nbsp;</p>
+-
+diff --git a/README.md b/README.md
+index c0585609..91089f29 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +48,0 @@ u'{"type":"User"...'
+-<p>&nbsp;</p>
+@@ -51,5 +49,0 @@ u'{"type":"User"...'
+-<p align="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
+-<a href="https://pypi.org/project/requests/" rel="nofollow"><img src="https://camo.githubusercontent.com/6d78aeec0a9a1cfe147ad064bfb99069e298e29b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/pypi/pyversions/requests.svg" style="max-width:100%;"></a>
+-<a href="https://github.com/psf/requests/graphs/contributors"><img src="https://camo.githubusercontent.com/a70ea15870b38bba9203b969f6a6b7e7845fbb8a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f7073662f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/github/contributors/psf/requests.svg" style="max-width:100%;"></a></p>
+-
+-<p>&nbsp;</p>
+@@ -63 +57,9 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is one of the most downloaded Python packages of all time, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
++Requests is one of **the most downloaded Python packages of all time**, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
++
++<p>&nbsp;</p>
++
++<p align="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
++<a href="https://pypi.org/project/requests/" rel="nofollow"><img src="https://camo.githubusercontent.com/6d78aeec0a9a1cfe147ad064bfb99069e298e29b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/pypi/pyversions/requests.svg" style="max-width:100%;"></a>
++<a href="https://github.com/psf/requests/graphs/contributors"><img src="https://camo.githubusercontent.com/a70ea15870b38bba9203b969f6a6b7e7845fbb8a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f7073662f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/github/contributors/psf/requests.svg" style="max-width:100%;"></a></p>
++
++<p>&nbsp;</p>
+diff --git a/README.md b/README.md
+index 16d9b6e2..c0585609 100644
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ Requests is one of the most downloaded Python packages of all time, pulling in a
+-Requests is ready for the demands of building robust and reliable HTTP–speaking applications, on today's web (or your own infrastructure).
++Requests is ready for the demands of building robust and reliable HTTP–speak applications, for the needs of today.
+diff --git a/README.md b/README.md
+index fbcfb183..16d9b6e2 100644
+--- a/README.md
++++ b/README.md
+@@ -54,0 +55,2 @@ u'{"type":"User"...'
++<p>&nbsp;</p>
++
+diff --git a/README.md b/README.md
+index 93c69244..fbcfb183 100644
+--- a/README.md
++++ b/README.md
+@@ -48,0 +49,2 @@ u'{"type":"User"...'
++<p>&nbsp;</p>
++
+diff --git a/README.md b/README.md
+index cdf6efb0..93c69244 100644
+--- a/README.md
++++ b/README.md
+@@ -31,0 +32,2 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
++<p>&nbsp;</p>
++
+diff --git a/README.md b/README.md
+index e61ce761..cdf6efb0 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,2 @@ u'{"type":"User"...'
++<p>&nbsp;</p>
++
+diff --git a/README.md b/README.md
+index 2b553646..e61ce761 100644
+--- a/README.md
++++ b/README.md
+@@ -80,0 +81 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
++<p>&nbsp;</p>
+diff --git a/README.md b/README.md
+index ba0df046..2b553646 100644
+--- a/README.md
++++ b/README.md
+@@ -56,0 +57,2 @@ Requests is one of the most downloaded Python packages of all time, pulling in a
++<p>&nbsp;</p>
++
+diff --git a/README.md b/README.md
+index 3c23941c..ba0df046 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p align="center"><strong>Requests</strong> is an elegant and simple HTTP library for Python, built with ♥</p>
++<p align="center"><strong>Requests</strong> is an elegant and simple HTTP library for Python, built with ♥.</p>
+diff --git a/README.md b/README.md
+index 84075457..3c23941c 100644
+--- a/README.md
++++ b/README.md
+@@ -93,2 +93 @@ …
+-Requests officially supports Python 2.7 & 3.4–3.8, and runs great on
+-PyPy.
++Requests officially supports Python 2.7 & 3.4–3.8.
+diff --git a/README.md b/README.md
+index d209cb81..84075457 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Documentation is Available at [`://2.python-requests.org`](https://2.python-requests.org/).
++## P.S. — Documentation is Available at [`//2.python-requests.org`](https://2.python-requests.org/).
+diff --git a/README.md b/README.md
+index de302894..d209cb81 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Documentation is Available at [://2.python-requests.org](https://2.python-requests.org/).
++## P.S. — Documentation is Available at [`://2.python-requests.org`](https://2.python-requests.org/).
+diff --git a/README.md b/README.md
+index afa9bcc5..de302894 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Documentation is Available at [//2.python-requests.org](https://2.python-requests.org/).
++## P.S. — Documentation is Available at [://2.python-requests.org](https://2.python-requests.org/).
+diff --git a/README.md b/README.md
+index c4b10012..afa9bcc5 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Documentation is Available at [2.python-requests.org](https://2.python-requests.org/).
++## P.S. — Documentation is Available at [//2.python-requests.org](https://2.python-requests.org/).
+diff --git a/README.md b/README.md
+index e4c05009..c4b10012 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Documentation is Available (*e.g.* read the manual)!
++## P.S. — Documentation is Available at [2.python-requests.org](https://2.python-requests.org/).
+diff --git a/README.md b/README.md
+index 5a25d07d..e4c05009 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ PyPy.
+-## P.S. — Read the Docs!
++## P.S. — Documentation is Available (*e.g.* read the manual)!
+diff --git a/README.md b/README.md
+index db25ef6e..5a25d07d 100644
+--- a/README.md
++++ b/README.md
+@@ -80,2 +80,2 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-Python Module Installation
+---------------------------
++Requests Module Installation
++----------------------------
+diff --git a/README.md b/README.md
+index 82f1767e..db25ef6e 100644
+--- a/README.md
++++ b/README.md
+@@ -80,2 +80,2 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-Installation
+-------------
++Python Module Installation
++--------------------------
+diff --git a/README.md b/README.md
+index 6ab92e85..82f1767e 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.png" align="center" />
++    <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.png" align="center" /></a>
+@@ -16 +16 @@
+-<img src="https://github.com/psf/requests/blob/master/ext/flower-of-life.jpg?raw=true" />
++<a href="https://www.codecademy.com/articles/http-requests"><img src="https://github.com/psf/requests/blob/master/ext/flower-of-life.jpg?raw=true" /></a>
+@@ -83 +83 @@ Installation
+-To install **Requests**, simply use [**pipenv**](http://pipenv.org/) (or **pip**, of
++The recommended way to intall the `requests` module is to simply use [`pipenv`](http://pipenv.org/) (or `pip`, of
+@@ -109 +109 @@ PyPy.
+-        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
++        <a href="https://github.com/psf/requests/blob/master/LICENSE"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /></a>
+diff --git a/README.md b/README.md
+index 26a35083..6ab92e85 100644
+--- a/README.md
++++ b/README.md
+@@ -73,0 +74 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
++
+@@ -75 +76 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
++        ✨ 🍰 ✨
+@@ -105,0 +107 @@ PyPy.
++
+@@ -107 +109 @@ PyPy.
+-        ✨ 🍰 ✨
++        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
+@@ -111,2 +112,0 @@ PyPy.
+-
+-
+diff --git a/README.md b/README.md
+index f8483f9d..26a35083 100644
+--- a/README.md
++++ b/README.md
+@@ -102,0 +103,3 @@ PyPy.
++
++------------------
++
+diff --git a/README.md b/README.md
+index 389923a5..f8483f9d 100644
+--- a/README.md
++++ b/README.md
+@@ -102,0 +103,4 @@ PyPy.
++<p align="center">
++        ✨ 🍰 ✨
++</p>
++
+@@ -105 +108,0 @@ PyPy.
+-✨ 🍰 ✨
+diff --git a/README.md b/README.md
+index a911e003..389923a5 100644
+--- a/README.md
++++ b/README.md
+@@ -94,0 +95,3 @@ PyPy.
++-------------------------------------
++
++## P.S. — Read the Docs!
+diff --git a/README.md b/README.md
+index f27d4bc8..a911e003 100644
+--- a/README.md
++++ b/README.md
+@@ -73,0 +74,4 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
++<p align="center">
++        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
++</p>
++
+@@ -92,2 +96,3 @@ PyPy.
+-Documentation
+--------------
++<p align="center">
++        <a href="https://2.python-requests.org/"><img src="https://raw.githubusercontent.com/psf/requests/master/ext/ss.png" align="center" /></a>
++</p>
+@@ -95,2 +99,0 @@ Documentation
+-Fantastic documentation is available at
+-<http://docs.python-requests.org/>, for a limited time only.
+@@ -98 +100,0 @@ Fantastic documentation is available at
+-Your satisfaction is guaranteed.
+@@ -102,5 +103,0 @@ ✨ 🍰 ✨
+-<p align="center">
+-        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
+-</p>
+-
+-
+diff --git a/README.md b/README.md
+index 23034a04..f27d4bc8 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@
+-    <code> 'An elegant & simple HTTP library. Handcrafted, with ♥, for the Python community.'</code>
++    <code> 'A simple, yet elegant HTTP library. Handcrafted, with ♥, for the Python community.'</code>
+diff --git a/README.md b/README.md
+index e92f818a..23034a04 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p>&nbsp;</p
++<p>&nbsp;</p>
+diff --git a/README.md b/README.md
+index 28d00014..e92f818a 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-
++<p>&nbsp;</p
+diff --git a/README.md b/README.md
+index 856363aa..28d00014 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p>&nsbp;</p><p>&nsbp;</p>
++<p>&nbsp;</p><p>&nbsp;</p>
+diff --git a/README.md b/README.md
+index bebb4b8e..856363aa 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p></p><p></p>
++<p>&nsbp;</p><p>&nsbp;</p>
+diff --git a/README.md b/README.md
+index 4c408c8e..bebb4b8e 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-<p></p>
++<p></p><p></p>
+diff --git a/README.md b/README.md
+index 0a32c39b..4c408c8e 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
++<p></p>
+diff --git a/README.md b/README.md
+index 306bab05..0a32c39b 100644
+--- a/README.md
++++ b/README.md
+@@ -28,2 +27,0 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+----------------------
+-
+diff --git a/README.md b/README.md
+index bcf9c857..306bab05 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /
++<img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
+@@ -104 +104 @@ ✨ 🍰 ✨
+-    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++        <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" />
+@@ -105,0 +106,2 @@ ✨ 🍰 ✨
++
++
+diff --git a/README.md b/README.md
+index 1af0f7e4..bcf9c857 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22,3 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a
+-   </pre>
++
++    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/license.png" align="center" /
++</pre>
+diff --git a/README.md b/README.md
+index 0398e19a..1af0f7e4 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ This software has been designed for you, with much joy,
+-by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is protected by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is secured by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
+diff --git a/README.md b/README.md
+index 190ee663..0398e19a 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ This software has been designed for you, with much joy,
+-by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is kept safe by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is protected by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
+diff --git a/README.md b/README.md
+index 654ab146..190ee663 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ This software has been designed for you, with much joy,
+-by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & is kept safe by The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
+diff --git a/README.md b/README.md
+index c95c3703..654ab146 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@
+-This project has been brought to you, with much joy, 
++This software has been designed for you, with much joy, 
+diff --git a/README.md b/README.md
+index 640a6546..c95c3703 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +22,0 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-<p></p>
+diff --git a/README.md b/README.md
+index c64359c6..640a6546 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Requests is one of the most downloaded Python packages of all time, pulling in around `14M downloads / week`— according to GitHub, Requests is currently depended upon by `367_296` repositories. You can trust this code.
++Requests is one of the most downloaded Python packages of all time, pulling in around `14M downloads / week`— according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `367_296` repositories. You can trust this code.
+diff --git a/README.md b/README.md
+index ac29b3c1..c64359c6 100644
+--- a/README.md
++++ b/README.md
+@@ -55,3 +55 @@ Requests allows you to send HTTP/1.1 requests extremely easily. There’s no nee
+-Besides, all the cool kids are doing it. Requests is one of the most
+-downloaded Python packages of all time, pulling about 60,000,000
+-downloads every month. You don't want to be left out!
++Requests is one of the most downloaded Python packages of all time, pulling in around `14M downloads / week`— according to GitHub, Requests is currently depended upon by `367_296` repositories. You can trust this code.
+diff --git a/README.md b/README.md
+index b1bda3c6..ac29b3c1 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ u'{"type":"User"...'
+-Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — or just use the `json` method!
++Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — but nowadays, just use the `json` method!
+diff --git a/README.md b/README.md
+index 7ad665ff..b1bda3c6 100644
+--- a/README.md
++++ b/README.md
+@@ -53,3 +53 @@ u'{"type":"User"...'
+-Requests allows you to send *organic, grass-fed* HTTP/1.1 requests,
+-without the need for manual labor. There's no need to manually add query
+-strings to your URLs, or to form-encode your `PUT` & `POST` data — you can even send json!
++Requests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — or just use the `json` method!
+diff --git a/README.md b/README.md
+index 62456d4c..7ad665ff 100644
+--- a/README.md
++++ b/README.md
+@@ -55,3 +55 @@ without the need for manual labor. There's no need to manually add query
+-strings to your URLs, or to form-encode your POST data. Keep-alive and
+-HTTP connection pooling are 100% automatic, thanks to
+-[urllib3](https://github.com/shazow/urllib3).
++strings to your URLs, or to form-encode your `PUT` & `POST` data — you can even send json!
+diff --git a/README.md b/README.md
+index 5dcb112d..62456d4c 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21,2 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-   
++   </p>
++   </pre>
+diff --git a/README.md b/README.md
+index 9e02480f..5dcb112d 100644
+--- a/README.md
++++ b/README.md
+@@ -20,4 +20 @@ This project has been brought to you, with much joy,
+-by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
+-</p>
+-    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
+-</pre>  
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.  
+@@ -108,0 +106,4 @@ ✨ 🍰 ✨
++
++<p align="center">
++    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++</p>
+diff --git a/README.md b/README.md
+index 1a69a05f..9e02480f 100644
+--- a/README.md
++++ b/README.md
+@@ -81,2 +80,0 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-
+-
+@@ -85,3 +82,0 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-Requests officially supports Python 2.7 & 3.4–3.8, and runs great on
+-PyPy.
+-
+@@ -101 +96,3 @@ …
+-Satisfaction guaranteed.
++Requests officially supports Python 2.7 & 3.4–3.8, and runs great on
++PyPy.
++
+@@ -108,0 +106 @@ Fantastic documentation is available at
++Your satisfaction is guaranteed.
+diff --git a/README.md b/README.md
+index 734eb812..1a69a05f 100644
+--- a/README.md
++++ b/README.md
+@@ -70,8 +70,8 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-International Domains and URLs      Keep-Alive & Connection Pooling
+-Sessions with Cookie Persistence    Browser-style SSL Verification 
+-Basic & Digest Authentication       Familiar `dict`–like Cookies   
+-Automatic Decompression of Content  Automatic Content Decoding     
+-Automatic Connection Pooling        Unicode Response Bodies<super>*</super>
+-Multi-part File Uploads             SOCKS Proxy Support            
+-Connection Timeouts                 Streaming Downloads
+-Automatic honoring of `.netrc`      Chunked HTTP Requests          
++         + International Domains and URLs       + Keep-Alive & Connection Pooling
++         + Sessions with Cookie Persistence     + Browser-style SSL Verification 
++         + Basic & Digest Authentication        + Familiar `dict`–like Cookies   
++         + Automatic Decompression of Content   + Automatic Content Decoding     
++         + Automatic Connection Pooling         + Unicode Response Bodies<super>*</super>
++         + Multi-part File Uploads              + SOCKS Proxy Support            
++         + Connection Timeouts                  + Streaming Downloads
++         + Automatic honoring of `.netrc`       + Chunked HTTP Requests          
+@@ -79 +79 @@ Automatic honoring of `.netrc`      Chunked HTTP Requests
+-                 &, of course, rock–solid stability!
++                            &, of course, rock–solid stability!
+diff --git a/README.md b/README.md
+index c4921851..734eb812 100644
+--- a/README.md
++++ b/README.md
+@@ -69,17 +69,14 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-<div class="test">
+-International Domains and URLs   
+-Keep-Alive & Connection Pooling
+-Sessions with Cookie Persistence 
+-Browser-style SSL Verification 
+-Basic & Digest Authentication    
+-Familiar `dict`–like Cookies   
+-Automatic Decompression          
+-Automatic Content Decoding     
+-Automatic Connection Pooling     
+-Unicode Response Bodies (smart)
+-Multi-part File Uploads          
+-SOCKS Proxy Support            
+-Connection Timeouts              
+-Streaming Downloads            
+-Automatic honoring of `.netrc`   
+-Chunked HTTP Requests          
++<pre class="test">
++International Domains and URLs      Keep-Alive & Connection Pooling
++Sessions with Cookie Persistence    Browser-style SSL Verification 
++Basic & Digest Authentication       Familiar `dict`–like Cookies   
++Automatic Decompression of Content  Automatic Content Decoding     
++Automatic Connection Pooling        Unicode Response Bodies<super>*</super>
++Multi-part File Uploads             SOCKS Proxy Support            
++Connection Timeouts                 Streaming Downloads
++Automatic honoring of `.netrc`      Chunked HTTP Requests          
++              
++                 &, of course, rock–solid stability!
++</pre>
++
++
+diff --git a/README.md b/README.md
+index e020fb55..c4921851 100644
+--- a/README.md
++++ b/README.md
+@@ -69,21 +69,18 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-<style type="text/css">
+-.tg  {border-collapse:collapse;border-spacing:0;}
+-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+-</style>
+-<table class="tg">
+-  <tr>
+-    <th class="tg-0pky">International Domains and URLs</th>
+-    <th class="tg-0pky">Keep-Alive &amp; Connection Pooling</th>
+-  </tr>
+-  <tr>
+-    <td class="tg-0pky"></td>
+-    <td class="tg-0pky"></td>
+-  </tr>
+-  <tr>
+-    <td class="tg-0pky"></td>
+-    <td class="tg-0pky"></td>
+-  </tr>
+-</table>
+-
++<div class="test">
++International Domains and URLs   
++Keep-Alive & Connection Pooling
++Sessions with Cookie Persistence 
++Browser-style SSL Verification 
++Basic & Digest Authentication    
++Familiar `dict`–like Cookies   
++Automatic Decompression          
++Automatic Content Decoding     
++Automatic Connection Pooling     
++Unicode Response Bodies (smart)
++Multi-part File Uploads          
++SOCKS Proxy Support            
++Connection Timeouts              
++Streaming Downloads            
++Automatic honoring of `.netrc`   
++Chunked HTTP Requests          
++</div>
+diff --git a/README.md b/README.md
+index 3fb3c149..e020fb55 100644
+--- a/README.md
++++ b/README.md
+@@ -69,9 +69,20 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
+-|----------------------------------|---------------------------------|
+-| International Domains and URLs   | Keep-Alive & Connection Pooling |
+-| Sessions with Cookie Persistence | Browser-style SSL Verification  |
+-| Basic & Digest Authentication    | Familiar `dict`–like Cookies    |
+-| Automatic Decompression          | Automatic Content Decoding      |
+-| Automatic Connection Pooling     | Unicode Response Bodies (smart) |
+-| Multi-part File Uploads          | SOCKS Proxy Support             |
+-| Connection Timeouts              | Streaming Downloads             |
+-| Automatic honoring of `.netrc`   | Chunked HTTP Requests           |
++<style type="text/css">
++.tg  {border-collapse:collapse;border-spacing:0;}
++.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
++.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
++.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
++</style>
++<table class="tg">
++  <tr>
++    <th class="tg-0pky">International Domains and URLs</th>
++    <th class="tg-0pky">Keep-Alive &amp; Connection Pooling</th>
++  </tr>
++  <tr>
++    <td class="tg-0pky"></td>
++    <td class="tg-0pky"></td>
++  </tr>
++  <tr>
++    <td class="tg-0pky"></td>
++    <td class="tg-0pky"></td>
++  </tr>
++</table>
+diff --git a/README.md b/README.md
+index 3225543b..3fb3c149 100644
+--- a/README.md
++++ b/README.md
+@@ -68,0 +69 @@ Requests is ready for the demands of building robust and reliable HTTP–speakin
++|----------------------------------|---------------------------------|
+diff --git a/README.md b/README.md
+index fa0c7b9c..3225543b 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ downloads every month. You don't want to be left out!
+-<h2 align="center">Supported Features</h2>
++<h2 align="center">Supported Features & Best–Practices</h2>
+diff --git a/README.md b/README.md
+index 2022ecec..fa0c7b9c 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ downloads every month. You don't want to be left out!
+-<h2 align="center>Supported Features</h2>
++<h2 align="center">Supported Features</h2>
+diff --git a/README.md b/README.md
+index 761614c4..2022ecec 100644
+--- a/README.md
++++ b/README.md
+@@ -65,2 +65 @@ downloads every month. You don't want to be left out!
+-Feature Support
+----------------
++<h2 align="center>Supported Features</h2>
+diff --git a/README.md b/README.md
+index cea19bb5..761614c4 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +49 @@ u'{"type":"User"...'
+-<p alignment="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
++<p align="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
+diff --git a/README.md b/README.md
+index 57614c0d..cea19bb5 100644
+--- a/README.md
++++ b/README.md
+@@ -48,3 +47,0 @@ u'{"type":"User"...'
+-[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
+-[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests/)
+-[![image](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)
+@@ -51,0 +49,3 @@ u'{"type":"User"...'
++<p alignment="center"><a href="https://pepy.tech/project/requests" rel="nofollow"><img src="https://camo.githubusercontent.com/e1dedc9f5ce5cd6b6c699f33d2e812daadcf3645/68747470733a2f2f706570792e746563682f62616467652f7265717565737473" alt="Downloads" data-canonical-src="https://pepy.tech/badge/requests" style="max-width:100%;"></a>
++<a href="https://pypi.org/project/requests/" rel="nofollow"><img src="https://camo.githubusercontent.com/6d78aeec0a9a1cfe147ad064bfb99069e298e29b/68747470733a2f2f696d672e736869656c64732e696f2f707970692f707976657273696f6e732f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/pypi/pyversions/requests.svg" style="max-width:100%;"></a>
++<a href="https://github.com/psf/requests/graphs/contributors"><img src="https://camo.githubusercontent.com/a70ea15870b38bba9203b969f6a6b7e7845fbb8a/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f636f6e7472696275746f72732f7073662f72657175657374732e737667" alt="image" data-canonical-src="https://img.shields.io/github/contributors/psf/requests.svg" style="max-width:100%;"></a></p>
+diff --git a/README.md b/README.md
+index d79ba0f5..57614c0d 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-<span align="center"><strong>Requests</strong> is an elegant and simple HTTP library for Python, built with ♥</span>
++<p align="center"><strong>Requests</strong> is an elegant and simple HTTP library for Python, built with ♥</p>
+diff --git a/README.md b/README.md
+index a9cca880..d79ba0f5 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-**Requests** is an elegant and simple HTTP library for Python, built with ♥
++<span align="center"><strong>Requests</strong> is an elegant and simple HTTP library for Python, built with ♥</span>
+diff --git a/README.md b/README.md
+index 9cdcf223..a9cca880 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-**Requests** is an elegant and simple HTTP library for Python, built with ♥ for the open source community.
++**Requests** is an elegant and simple HTTP library for Python, built with ♥
+diff --git a/README.md b/README.md
+index 90a87b00..9cdcf223 100644
+--- a/README.md
++++ b/README.md
+@@ -32,4 +32 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-**Requests** is an elegant and simple HTTP library for Python, built for human beings.
+-
+-
+-Behold, the power of Requests:
++**Requests** is an elegant and simple HTTP library for Python, built with ♥ for the open source community.
+@@ -71 +68 @@ Feature Support
+-Requests is ready for today's web.
++Requests is ready for the demands of building robust and reliable HTTP–speaking applications, on today's web (or your own infrastructure).
+diff --git a/README.md b/README.md
+index 7c09616f..90a87b00 100644
+--- a/README.md
++++ b/README.md
+@@ -34,4 +33,0 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
+-[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests/)
+-[![image](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)
+-
+@@ -54,0 +51,3 @@ u'{"type":"User"...'
++[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
++[![image](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests/)
++[![image](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)
+@@ -56 +54,0 @@ u'{"type":"User"...'
+-See [the similar code, sans Requests](https://gist.github.com/973705).
+diff --git a/README.md b/README.md
+index fd0d8880..7c09616f 100644
+--- a/README.md
++++ b/README.md
+@@ -75,15 +75,9 @@ Requests is ready for today's web.
+--   International Domains and URLs
+--   Keep-Alive & Connection Pooling
+--   Sessions with Cookie Persistence
+--   Browser-style SSL Verification
+--   Basic/Digest Authentication
+--   Elegant Key/Value Cookies
+--   Automatic Decompression
+--   Automatic Content Decoding
+--   Unicode Response Bodies
+--   Multipart File Uploads
+--   HTTP(S) Proxy Support
+--   Connection Timeouts
+--   Streaming Downloads
+--   `.netrc` Support
+--   Chunked Requests
++| International Domains and URLs   | Keep-Alive & Connection Pooling |
++| Sessions with Cookie Persistence | Browser-style SSL Verification  |
++| Basic & Digest Authentication    | Familiar `dict`–like Cookies    |
++| Automatic Decompression          | Automatic Content Decoding      |
++| Automatic Connection Pooling     | Unicode Response Bodies (smart) |
++| Multi-part File Uploads          | SOCKS Proxy Support             |
++| Connection Timeouts              | Streaming Downloads             |
++| Automatic honoring of `.netrc`   | Chunked HTTP Requests           |
++
+@@ -97 +91 @@ Installation
+-To install Requests, simply use [pipenv](http://pipenv.org/) (or pip, of
++To install **Requests**, simply use [**pipenv**](http://pipenv.org/) (or **pip**, of
+diff --git a/README.md b/README.md
+index a03e1ac0..fd0d8880 100644
+--- a/README.md
++++ b/README.md
+@@ -100 +100 @@ course):
+-``` {.sourceCode .bash}
++```console
+@@ -101,0 +102,3 @@ $ pipenv install requests
++Adding requests to Pipfile's [packages]…
++✔ Installation Succeeded
++…
+diff --git a/README.md b/README.md
+index 0e24dd36..a03e1ac0 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Behold, the power of Requests:
+-``` {.sourceCode .python}
++```pycon
+diff --git a/README.md b/README.md
+index bdd55259..0e24dd36 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ See [the similar code, sans Requests](https://gist.github.com/973705).
+-[![image]()](http://docs.python-requests.org/)
++---------------------------------------------------------------------
+diff --git a/README.md b/README.md
+index 685e961e..bdd55259 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.svg" align="center" />
++    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.png" align="center" />
+diff --git a/README.md b/README.md
+index bbc1fffd..685e961e 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.svg?raw=true"  onerror="this.onerror=null; this.src='https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true'" align="center" />
++    <img src="https://raw.githubusercontent.com/psf/requests/master/ext/requests-logo.svg" align="center" />
+diff --git a/README.md b/README.md
+index d41cc983..bbc1fffd 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.svg?raw=true" align="center" />
++    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.svg?raw=true"  onerror="this.onerror=null; this.src='https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true'" align="center" />
+diff --git a/README.md b/README.md
+index 673f2464..d41cc983 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true" align="center" />
++    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.svg?raw=true" align="center" />
+diff --git a/README.md b/README.md
+index a21adb22..673f2464 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-<img src="https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true" align="center" />
++    <img src="https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true" align="center" />
+diff --git a/README.md b/README.md
+index 7cf41b9f..a21adb22 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-<img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo.png" align="center" />
++<img src="https://github.com/psf/requests/blob/master/ext/requests-logo.png?raw=true" align="center" />
+diff --git a/README.md b/README.md
+index 118b6ac6..7cf41b9f 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-<img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="center" />
++<img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo.png" align="center" />
+diff --git a/README.md b/README.md
+index e43d92d3..118b6ac6 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@
+-
++<img src="https://github.com/psf/requests/blob/master/ext/flower-of-life.jpg?raw=true" />
+diff --git a/README.md b/README.md
+index 956f0d0d..e43d92d3 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
+-
++<p></p>
+diff --git a/README.md b/README.md
+index 442d9db2..956f0d0d 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@
+-    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++
+@@ -21,0 +22 @@ by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://
++    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
+diff --git a/README.md b/README.md
+index 275639f9..442d9db2 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@
+-    <img href="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++    <img src="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
+diff --git a/README.md b/README.md
+index 3701f668..275639f9 100644
+--- a/README.md
++++ b/README.md
+@@ -14,0 +15,3 @@
++    
++    <img href="https://github.com/psf/requests/blob/master/ext/flourish.png?raw=true" />
++    
+diff --git a/README.md b/README.md
+index 3bb4ca88..3701f668 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,2 @@
+-This project has been brought to you, with much joy, by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
++This project has been brought to you, with much joy, 
++by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
+diff --git a/README.md b/README.md
+index d70b7871..3bb4ca88 100644
+--- a/README.md
++++ b/README.md
+@@ -15,3 +15 @@
+-</pre>  
+-   
+-<p align="center">
++    <p align="center">
+@@ -19,0 +18,3 @@ This project has been brought to you, with much joy, by <a href="https://kenneth
++</pre>  
++   
++
+diff --git a/README.md b/README.md
+index 09e3b720..d70b7871 100644
+--- a/README.md
++++ b/README.md
+@@ -2,3 +1,0 @@
+-<p align="center">
+-This project has been brought to you, with much joy, by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
+-</p>
+@@ -19,0 +17,4 @@ This project has been brought to you, with much joy, by <a href="https://kenneth
++<p align="center">
++This project has been brought to you, with much joy, by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
++</p>
++
+diff --git a/README.md b/README.md
+index 022e1f5b..09e3b720 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,5 @@
++
++<p align="center">
++This project has been brought to you, with much joy, by <a href="https://kennethreitz.org/">Kenneth Reitz</a> & The <a href="https://www.python.org/psf/">Python Software Foundation</a>.
++</p>
++
+diff --git a/README.md b/README.md
+index eaa0e84e..022e1f5b 100644
+--- a/README.md
++++ b/README.md
+@@ -90 +89,0 @@ $ pipenv install requests
+-✨ 🍰 ✨
+@@ -100,0 +100,2 @@ Fantastic documentation is available at
++
++✨ 🍰 ✨
+diff --git a/README.md b/README.md
+index ac65ee6c..eaa0e84e 100644
+--- a/README.md
++++ b/README.md
+@@ -90 +90 @@ $ pipenv install requests
+-✨🍰✨
++✨ 🍰 ✨
+diff --git a/README.md b/README.md
+index 4ff5898f..ac65ee6c 100644
+--- a/README.md
++++ b/README.md
+@@ -101,18 +100,0 @@ Fantastic documentation is available at
+-How to Contribute
+------------------
+-
+-1.  Become more familiar with the project by reading our [Contributor's Guide](http://docs.python-requests.org/en/latest/dev/contributing/) and our [development philosophy](http://docs.python-requests.org/en/latest/dev/philosophy/).
+-2.  Check for open issues or open a fresh issue to start a discussion
+-    around a feature idea or a bug. There is a [Contributor
+-    Friendly](https://github.com/psf/requests/issues?direction=desc&labels=Contributor+Friendly&page=1&sort=updated&state=open)
+-    tag for issues that should be ideal for people who are not very
+-    familiar with the codebase yet.
+-3.  Fork [the repository](https://github.com/psf/requests) on
+-    GitHub to start making your changes to the **master** branch (or
+-    branch off of it).
+-4.  Write a test which shows that the bug was fixed or that the feature
+-    works as expected.
+-5.  Send a [pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) and bug the maintainer until it gets merged and
+-    published. :) Make sure to add yourself to
+-    [AUTHORS](https://github.com/psf/requests/blob/master/AUTHORS.rst).
+-
+diff --git a/README.md b/README.md
+index 493c0f65..4ff5898f 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++    <p></p>
+diff --git a/README.md b/README.md
+index 2218d3ce..493c0f65 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-    <img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="center" />
++    
+@@ -3,0 +4 @@
++<img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="center" />
+diff --git a/README.md b/README.md
+index cd7b5f34..2218d3ce 100644
+--- a/README.md
++++ b/README.md
+@@ -1,0 +2 @@
++    <img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="center" />
+@@ -10 +10,0 @@
+-    <img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="right" />
+diff --git a/README.md b/README.md
+index 9dce3e7b..cd7b5f34 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@
++    <img src="https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png" align="right" />
+@@ -43 +44 @@ See [the similar code, sans Requests](https://gist.github.com/973705).
+-[![image](https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png)](http://docs.python-requests.org/)
++[![image]()](http://docs.python-requests.org/)
+diff --git a/README.md b/README.md
+index a8c31c55..9dce3e7b 100644
+--- a/README.md
++++ b/README.md
+@@ -15,0 +16,3 @@
++
++**Requests** is an elegant and simple HTTP library for Python, built for human beings.
++
+@@ -21,2 +23,0 @@
+-**Requests** is an elegant and simple HTTP library for Python, built for human beings.
+-
+diff --git a/README.md b/README.md
+index 0dac50ca..a8c31c55 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +15,0 @@
+-# ☤ Requests: HTTP for Humans, Machines, & You.
+-
+@@ -25,2 +22,0 @@
+-![image](https://farm5.staticflickr.com/4317/35198386374_1939af3de6_k_d.jpg)
+-
+diff --git a/README.md b/README.md
+index a52983eb..0dac50ca 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-    <code> 'An elegant & simple HTTP library.Handcrafted, with ♥, for the Python community.'</code>
++    <code> 'An elegant & simple HTTP library. Handcrafted, with ♥, for the Python community.'</code>
+diff --git a/README.md b/README.md
+index 2ae44b3e..a52983eb 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-    <code> 'an elegant and simple HTTP library for Python'</code>
++    <code> 'An elegant & simple HTTP library.Handcrafted, with ♥, for the Python community.'</code>
+diff --git a/README.md b/README.md
+index 6cc72798..2ae44b3e 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +0,0 @@
+-![vanity image](https://github.com/kennethreitz/bake/blob/master/ext/img.jpg?raw=true)
+-
+-
+@@ -5 +1,0 @@
+-     <em>Thoughtfully handcrafted, with ♥, for the Python community.</em>
+diff --git a/README.md b/README.md
+index cfbccf40..6cc72798 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@
++     <em>Thoughtfully handcrafted, with ♥, for the Python community.</em>
+@@ -14 +15 @@
+-    <p>Carefully handcrafted, with love, for the Python community.</p>
++   
+diff --git a/README.md b/README.md
+index 8e9b1ba3..cfbccf40 100644
+--- a/README.md
++++ b/README.md
+@@ -13,2 +12,0 @@
+-
+-    <p>Carefully handcrafted, with love, for the Python community.</p>
+@@ -15,0 +14 @@
++    <p>Carefully handcrafted, with love, for the Python community.</p>
+diff --git a/README.md b/README.md
+index e6aa92ac..8e9b1ba3 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,2 @@
++    <div align="left">
++    <code> Python 3.7.4 (default, Sep  7 2019, 18:27:02)</code>
+@@ -7,3 +9,6 @@
+-    <code> >>> r = requests.get('test')</code>
+-    <p align="center">an elegant and simple HTTP library for Python</p>
+-    <p>Carefully handcrafted, with love, for the Python community.</pt>
++    <code> >>> r = requests.get('https://api.github.com/repos/psf/requests')</code>
++    <code> >>> r.json()["description"]</code>
++    <code> 'an elegant and simple HTTP library for Python'</code>
++    </div>
++
++    <p>Carefully handcrafted, with love, for the Python community.</p>
+diff --git a/README.md b/README.md
+index fa80abe3..e6aa92ac 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++    <code> >>> r = requests.get('test')</code>
+diff --git a/README.md b/README.md
+index b79a9952..fa80abe3 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-    <p>built just for you.</pt>
++    <p>Carefully handcrafted, with love, for the Python community.</pt>
+diff --git a/README.md b/README.md
+index 76abb271..b79a9952 100644
+--- a/README.md
++++ b/README.md
+@@ -6,3 +6,3 @@
+-    <code> >>> <strong>import requests</strong></code><em></em>
+-    <p>an elegant and simple HTTP library for Python</p>
+-    <p>built for human beings.</pt>
++    <code> >>> <strong>import requests</strong></code>
++    <p align="center">an elegant and simple HTTP library for Python</p>
++    <p>built just for you.</pt>
+diff --git a/README.md b/README.md
+index 0e458dc0..76abb271 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7,2 @@
+-    <font size="+10">an elegant and simple HTTP library for Python, built for human beings.</font>
++    <p>an elegant and simple HTTP library for Python</p>
++    <p>built for human beings.</pt>
+diff --git a/README.md b/README.md
+index c493af0a..0e458dc0 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-    <font size="+10">text</font>
++    <font size="+10">an elegant and simple HTTP library for Python, built for human beings.</font>
+diff --git a/README.md b/README.md
+index b8c8ad8f..c493af0a 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-    <font size="+2">text</font>
++    <font size="+10">text</font>
+diff --git a/README.md b/README.md
+index 041f773b..b8c8ad8f 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-    <span>☤<span>
++    <font size="+2">text</font>
+diff --git a/README.md b/README.md
+index 179f2b40..041f773b 100644
+--- a/README.md
++++ b/README.md
+@@ -6,2 +6,2 @@
+-    <code> >>> <strong>import requests</strong></code><em></em>⏎
+-    <em>☤</em>
++    <code> >>> <strong>import requests</strong></code><em></em>
++    <span>☤<span>
+diff --git a/README.md b/README.md
+index a03cfed1..179f2b40 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-    <code> >>> <strong>import requests</strong></code><em></em>:
++    <code> >>> <strong>import requests</strong></code><em></em>⏎
+diff --git a/README.md b/README.md
+index 5eda8d07..a03cfed1 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,13 @@
+-Requests: HTTP for Humans™
+-==========================
++![vanity image](https://github.com/kennethreitz/bake/blob/master/ext/img.jpg?raw=true)
++
++
++<span align="center">
++<pre>
++    <code> >>> <strong>import requests</strong></code><em></em>:
++    <em>☤</em>
++</pre>  
++</span>
++
++---------------------
++
++# ☤ Requests: HTTP for Humans, Machines, & You.
+diff --git a/README.md b/README.md
+index c2321695..5eda8d07 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Besides, all the cool kids are doing it. Requests is one of the most
+-downloaded Python packages of all time, pulling in over 60,000,000
++downloaded Python packages of all time, pulling about 60,000,000
+diff --git a/README.md b/README.md
+index 1027b108..c2321695 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Besides, all the cool kids are doing it. Requests is one of the most
+-downloaded Python packages of all time, pulling in over 50,000,000
++downloaded Python packages of all time, pulling in over 60,000,000
+diff --git a/README.md b/README.md
+index dc465382..1027b108 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +4,0 @@ Requests: HTTP for Humans™
+-[![image](https://img.shields.io/pypi/v/requests.svg)](https://pypi.org/project/requests/)
+-[![image](https://img.shields.io/pypi/l/requests.svg)](https://pypi.org/project/requests/)
+diff --git a/README.md b/README.md
+index d4ccff94..dc465382 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +7,0 @@ Requests: HTTP for Humans™
+-[![codecov.io](https://codecov.io/github/psf/requests/coverage.svg?branch=master)](https://codecov.io/github/psf/requests)
+diff --git a/README.md b/README.md
+index 84a551a5..d4ccff94 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4 @@ Requests: HTTP for Humans™
++[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
+@@ -9 +10 @@ Requests: HTTP for Humans™
+-[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
++
+diff --git a/README.md b/README.md
+index 57106dee..84a551a5 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11 @@ Requests: HTTP for Humans™
+-Requests is the one and only HTTP library for Python that is safe for human
+-consumption. 
++**Requests** is an elegant and simple HTTP library for Python, built for human beings.
+diff --git a/README.md b/README.md
+index 7b125e13..57106dee 100644
+--- a/README.md
++++ b/README.md
+@@ -14,2 +13,0 @@ consumption.
+-It powers tools that you use every day, and you don't even know ;)
+-
+diff --git a/README.md b/README.md
+index 60ae632b..7b125e13 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12,3 @@ Requests is the one and only HTTP library for Python that is safe for human
+-consumption. It powers tools that you use every day, and you don't even know ;)
++consumption. 
++
++It powers tools that you use every day, and you don't even know ;)
+diff --git a/README.md b/README.md
+index 1596b72b..60ae632b 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Requests is the one and only HTTP library for Python that is safe for human
+-consumption. ;)
++consumption. It powers tools that you use every day, and you don't even know ;)
+diff --git a/README.md b/README.md
+index f0465de7..1596b72b 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Requests: HTTP for Humans™
+-[![image](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/kennethreitz)
++[![Downloads](https://pepy.tech/badge/requests)](https://pepy.tech/project/requests)
+@@ -11,2 +11,2 @@ Requests: HTTP for Humans™
+-Requests is the only *Non-GMO* HTTP library for Python, safe for human
+-consumption.
++Requests is the one and only HTTP library for Python that is safe for human
++consumption. ;)
+@@ -68 +68 @@ Requests is ready for today's web.
+-Requests officially supports Python 2.7 & 3.4–3.7, and runs great on
++Requests officially supports Python 2.7 & 3.4–3.8, and runs great on
+diff --git a/README.md b/README.md
+index 5a23f757..f0465de7 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Requests: HTTP for Humans™
+-[![image](https://img.shields.io/github/contributors/requests/requests.svg)](https://github.com/requests/requests/graphs/contributors)
++[![image](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)
+@@ -35 +35 @@ See [the similar code, sans Requests](https://gist.github.com/973705).
+-[![image](https://raw.githubusercontent.com/requests/requests/master/docs/_static/requests-logo-small.png)](http://docs.python-requests.org/)
++[![image](https://raw.githubusercontent.com/psf/requests/master/docs/_static/requests-logo-small.png)](http://docs.python-requests.org/)
+@@ -96 +96 @@ How to Contribute
+-    Friendly](https://github.com/requests/requests/issues?direction=desc&labels=Contributor+Friendly&page=1&sort=updated&state=open)
++    Friendly](https://github.com/psf/requests/issues?direction=desc&labels=Contributor+Friendly&page=1&sort=updated&state=open)
+@@ -99 +99 @@ How to Contribute
+-3.  Fork [the repository](https://github.com/requests/requests) on
++3.  Fork [the repository](https://github.com/psf/requests) on
+@@ -106 +106 @@ How to Contribute
+-    [AUTHORS](https://github.com/requests/requests/blob/master/AUTHORS.rst).
++    [AUTHORS](https://github.com/psf/requests/blob/master/AUTHORS.rst).
+diff --git a/README.md b/README.md
+index a0874e58..5a23f757 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Requests: HTTP for Humans™
+-[![codecov.io](https://codecov.io/github/requests/requests/coverage.svg?branch=master)](https://codecov.io/github/requests/requests)
++[![codecov.io](https://codecov.io/github/psf/requests/coverage.svg?branch=master)](https://codecov.io/github/psf/requests)
+diff --git a/README.md b/README.md
+index ba63a552..a0874e58 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Requests: HTTP for Humans™
+-[![codecov.io](https://codecov.io/github/psf/requests/coverage.svg?branch=master)](https://codecov.io/github/psf/requests)
++[![codecov.io](https://codecov.io/github/requests/requests/coverage.svg?branch=master)](https://codecov.io/github/requests/requests)
+@@ -44 +44 @@ Besides, all the cool kids are doing it. Requests is one of the most
+-downloaded Python packages of all time, pulling in over 11,000,000
++downloaded Python packages of all time, pulling in over 50,000,000
+diff --git a/README.md b/README.md
+index 41e92667..ba63a552 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Requests: HTTP for Humans™
+-[![codecov.io](https://codecov.io/github/requests/requests/coverage.svg?branch=master)](https://codecov.io/github/requests/requests)
++[![codecov.io](https://codecov.io/github/psf/requests/coverage.svg?branch=master)](https://codecov.io/github/psf/requests)
+diff --git a/README.md b/README.md
+index bcf0b2f8..41e92667 100644
+--- a/README.md
++++ b/README.md
+@@ -104 +104 @@ How to Contribute
+-5.  Send a pull request and bug the maintainer until it gets merged and
++5.  Send a [pull request](https://help.github.com/en/articles/creating-a-pull-request-from-a-fork) and bug the maintainer until it gets merged and
+diff --git a/README.md b/README.md
+index 5e7bba88..bcf0b2f8 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ Behold, the power of Requests:
++>>> import requests
+diff --git a/README.md b/README.md
+index 5174114f..5e7bba88 100644
+--- a/README.md
++++ b/README.md
+@@ -92 +92,2 @@ How to Contribute
+-1.  Check for open issues or open a fresh issue to start a discussion
++1.  Become more familiar with the project by reading our [Contributor's Guide](http://docs.python-requests.org/en/latest/dev/contributing/) and our [development philosophy](http://docs.python-requests.org/en/latest/dev/philosophy/).
++2.  Check for open issues or open a fresh issue to start a discussion
+@@ -97 +98 @@ How to Contribute
+-2.  Fork [the repository](https://github.com/requests/requests) on
++3.  Fork [the repository](https://github.com/requests/requests) on
+@@ -100 +101 @@ How to Contribute
+-3.  Write a test which shows that the bug was fixed or that the feature
++4.  Write a test which shows that the bug was fixed or that the feature
+@@ -102 +103 @@ How to Contribute
+-4.  Send a pull request and bug the maintainer until it gets merged and
++5.  Send a pull request and bug the maintainer until it gets merged and
+diff --git a/README.md b/README.md
+index 1a9359cf..5174114f 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +10,0 @@ Requests: HTTP for Humans™
+-**If you're interested in financially supporting Kenneth Reitz open source, consider [visiting this link](https://cash.me/$KennethReitz). Your support helps tremendously with sustainability of motivation, as Open Source is no longer part of my day job.**
+-
+@@ -21 +18,0 @@ Behold, the power of Requests:
+->>> import requests
+diff --git a/README.md b/README.md
+index ee3b2bf5..1a9359cf 100644
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21 @@ Behold, the power of Requests:
++>>> import requests
+diff --git a/README.md b/README.md
+index 083fd48e..ee3b2bf5 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +9,0 @@ Requests: HTTP for Humans™
+-[![Build Status](https://kennethreitz.visualstudio.com/requests/_apis/build/status/requests-CI)](https://kennethreitz.visualstudio.com/requests/_build/latest?definitionId=1)
+diff --git a/README.md b/README.md
+index ee3b2bf5..083fd48e 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@ Requests: HTTP for Humans™
++[![Build Status](https://kennethreitz.visualstudio.com/requests/_apis/build/status/requests-CI)](https://kennethreitz.visualstudio.com/requests/_build/latest?definitionId=1)
+diff --git a/README.md b/README.md
+index 3e0007fa..ee3b2bf5 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ Requests: HTTP for Humans™
+-Rquests is the only *Non-GMO* HTTP library for Python, safe for human
++Requests is the only *Non-GMO* HTTP library for Python, safe for human
+diff --git a/README.md b/README.md
+index 4b671967..3e0007fa 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,2 @@
+-Requests: HTTP for Humans
+-=========================
++Requests: HTTP for Humans™
++==========================
+@@ -5 +4,0 @@ Requests: HTTP for Humans
+-
+@@ -7 +5,0 @@ Requests: HTTP for Humans
+-
+@@ -9 +6,0 @@ Requests: HTTP for Humans
+-
+@@ -11 +7,0 @@ Requests: HTTP for Humans
+-
+@@ -13 +8,0 @@ Requests: HTTP for Humans
+-
+@@ -16 +11,3 @@ Requests: HTTP for Humans
+-Requests is the only *Non-GMO* HTTP library for Python, safe for human
++**If you're interested in financially supporting Kenneth Reitz open source, consider [visiting this link](https://cash.me/$KennethReitz). Your support helps tremendously with sustainability of motivation, as Open Source is no longer part of my day job.**
++
++Rquests is the only *Non-GMO* HTTP library for Python, safe for human

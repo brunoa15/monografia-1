@@ -1,0 +1,1185 @@
+diff --git a/README.md b/README.md
+index cb5ba8a3..6f2e5458 100644
+--- a/README.md
++++ b/README.md
+@@ -67 +67 @@ implementations][11] for Windows, Mac and Linux.
+-To run Syncthing in Docker, see [the Docker README](16).
++To run Syncthing in Docker, see [the Docker README][16].
+diff --git a/README.md b/README.md
+index 894ab4c2..cb5ba8a3 100644
+--- a/README.md
++++ b/README.md
+@@ -64,0 +65,4 @@ implementations][11] for Windows, Mac and Linux.
++## Docker
++
++To run Syncthing in Docker, see [the Docker README](16).
++
+@@ -112,0 +117 @@ All code is licensed under the [MPLv2 License][7].
++[16]: https://github.com/syncthing/syncthing/blob/master/README-Docker.md
+diff --git a/README.md b/README.md
+index 735d407a..894ab4c2 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@
+-[![Latest Downloads](https://img.shields.io/badge/latest-downloads-brightgreen.svg?style=flat-square)](https://build.syncthing.net/latest/)
+diff --git a/README.md b/README.md
+index 1ab81a2c..735d407a 100644
+--- a/README.md
++++ b/README.md
+@@ -90,2 +90,2 @@ There is also a built in automatic upgrade mechanism (disabled in some
+-distribution channels) which uses a compiled in ECDSA signature. Mac OS
+-X binaries are also properly code signed.
++distribution channels) which uses a compiled in ECDSA signature. macOS
++binaries are also properly code signed.
+diff --git a/README.md b/README.md
+index 796e2406..1ab81a2c 100644
+--- a/README.md
++++ b/README.md
+@@ -113,0 +114 @@ All code is licensed under the [MPLv2 License][7].
++
+diff --git a/README.md b/README.md
+index 3a57b5e1..796e2406 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ Syncthing should be:
+-1. Safe From Data Loss
++1. **Safe From Data Loss**
+@@ -28 +28 @@ Syncthing should be:
+-2. Secure Against Attackers
++2. **Secure Against Attackers**
+@@ -34 +34 @@ Syncthing should be:
+-3. Easy to Use
++3. **Easy to Use**
+@@ -38 +38 @@ Syncthing should be:
+-4. Automatic
++4. **Automatic**
+@@ -42 +42 @@ Syncthing should be:
+-5. Universally Available
++5. **Universally Available**
+@@ -47 +47 @@ Syncthing should be:
+-6. For Individuals
++6. **For Individuals**
+@@ -52 +52 @@ Syncthing should be:
+-7. Everything Else
++7. **Everything Else**
+diff --git a/README.md b/README.md
+index 1d86f33e..3a57b5e1 100644
+--- a/README.md
++++ b/README.md
+@@ -5,5 +5,4 @@
+-[![Latest Linux & Cross Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=linux+%26+cross)](https://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Windows Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-windows.svg?style=flat-square&label=windows)](https://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Mac Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-mac.svg?style=flat-square&label=mac)](https://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Solaris Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-solaris.svg?style=flat-square&label=solaris)](https://build.syncthing.net/job/syncthing/lastBuild/)
+-[![API Documentation](https://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](https://godoc.org/github.com/syncthing/syncthing)
++[![Latest Downloads](https://img.shields.io/badge/latest-downloads-brightgreen.svg?style=flat-square)](https://build.syncthing.net/latest/)
++[![Latest Linux & Cross Build](https://img.shields.io/teamcity/https/build.syncthing.net/s/Syncthing_BuildLinuxCross.svg?style=flat-square&label=linux+%26+cross+build)](https://build.syncthing.net/viewType.html?buildTypeId=Syncthing_BuildLinuxCross&guest=1)
++[![Latest Windows Build](https://img.shields.io/teamcity/https/build.syncthing.net/s/Syncthing_BuildWindows.svg?style=flat-square&label=windows+build)](https://build.syncthing.net/viewType.html?buildTypeId=Syncthing_BuildWindows&guest=1)
++[![Latest Mac Build](https://img.shields.io/teamcity/https/build.syncthing.net/s/Syncthing_BuildMac.svg?style=flat-square&label=mac+build)](https://build.syncthing.net/viewType.html?buildTypeId=Syncthing_BuildMac&guest=1)
+@@ -114 +113 @@ All code is licensed under the [MPLv2 License][7].
+-[15]: https://syncthing.net/ 
++[15]: https://syncthing.net/
+diff --git a/README.md b/README.md
+index 09e71f1b..1d86f33e 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ All code is licensed under the [MPLv2 License][7].
+-[4]: http://www.freenode.net/
++[4]: https://www.freenode.net/
+diff --git a/README.md b/README.md
+index 56824c4b..09e71f1b 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,3 @@
+-# Syncthing
++[![Syncthing][14]][15]
++
++---
+@@ -110,0 +113,2 @@ All code is licensed under the [MPLv2 License][7].
++[14]: assets/logo-text-128.png
++[15]: https://syncthing.net/ 
+diff --git a/README.md b/README.md
+index f8d0afda..56824c4b 100644
+--- a/README.md
++++ b/README.md
+@@ -3,5 +3,5 @@
+-[![Latest Linux & Cross Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=linux+%26+cross)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Windows Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-windows.svg?style=flat-square&label=windows)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Mac Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-mac.svg?style=flat-square&label=mac)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![Latest Solaris Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-solaris.svg?style=flat-square&label=solaris)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![API Documentation](https://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](http://godoc.org/github.com/syncthing/syncthing)
++[![Latest Linux & Cross Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=linux+%26+cross)](https://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Windows Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-windows.svg?style=flat-square&label=windows)](https://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Mac Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-mac.svg?style=flat-square&label=mac)](https://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Solaris Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-solaris.svg?style=flat-square&label=solaris)](https://build.syncthing.net/job/syncthing/lastBuild/)
++[![API Documentation](https://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](https://godoc.org/github.com/syncthing/syncthing)
+@@ -101 +101 @@ All code is licensed under the [MPLv2 License][7].
+-[4]: http://www.freenode.net/irc_servers.shtml
++[4]: http://www.freenode.net/
+diff --git a/README.md b/README.md
+index dd1b41b8..f8d0afda 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@
+-Syncthing is a **continous file synchronization program**. It synchronizes
++Syncthing is a **continuous file synchronization program**. It synchronizes
+diff --git a/README.md b/README.md
+index 287d2186..dd1b41b8 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@
++[![Go Report Card](https://goreportcard.com/badge/github.com/syncthing/syncthing)](https://goreportcard.com/report/github.com/syncthing/syncthing)
+diff --git a/README.md b/README.md
+index 4f840b53..287d2186 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,4 @@
+-[![Latest Build (Official)](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=unix%20build)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Linux & Cross Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=linux+%26+cross)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Windows Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-windows.svg?style=flat-square&label=windows)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Mac Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-mac.svg?style=flat-square&label=mac)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Solaris Build](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing-solaris.svg?style=flat-square&label=solaris)](http://build.syncthing.net/job/syncthing/lastBuild/)
+diff --git a/README.md b/README.md
+index a4e08f3a..4f840b53 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-This is the Syncthing project which pursues the following goals:
++## Goals
+@@ -10,4 +10,5 @@ This is the Syncthing project which pursues the following goals:
+- 1. Define a protocol for synchronization of a folder between a number of
+-    collaborating devices. This protocol should be well defined, unambiguous,
+-    easily understood, free to use, efficient, secure and language neutral.
+-    This is called the [Block Exchange Protocol][1].
++Syncthing is a **continous file synchronization program**. It synchronizes
++files between two or more computers. We strive to fulfill the goals below.
++The goals are listed in order of importance, the most important one being
++the first. This is the summary version of the goal list - for more
++commentary, see the full [Goals document][13].
+@@ -15,3 +16 @@ This is the Syncthing project which pursues the following goals:
+- 2. Provide the reference implementation to demonstrate the usability of
+-    said protocol. This is the `syncthing` utility. We hope that
+-    alternative, compatible implementations of the protocol will arise.
++Syncthing should be:
+@@ -19,3 +18,34 @@ This is the Syncthing project which pursues the following goals:
+-The two are evolving together; the protocol is not to be considered
+-stable until Syncthing 1.0 is released, at which point it is locked down
+-for incompatible changes.
++1. Safe From Data Loss
++
++   Protecting the user's data is paramount. We take every reasonable
++   precaution to avoid corrupting the user's files.
++
++2. Secure Against Attackers
++
++   Again, protecting the user's data is paramount. Regardless of our other
++   goals we must never allow the user's data to be susceptible to
++   eavesdropping or modification by unauthorized parties.
++
++3. Easy to Use
++
++   Syncthing should be approachable, understandable and inclusive.
++
++4. Automatic
++
++   User interaction should be required only when absolutely necessary.
++
++5. Universally Available
++
++   Syncthing should run on every common computer. We are mindful that the
++   latest technology is not always available to any given individual.
++
++6. For Individuals
++
++   Syncthing is primarily about empowering the individual user with safe,
++   secure and easy to use file synchronization.
++
++7. Everything Else
++
++   There are many things we care about that don't make it on to the list. It
++   is fine to optimize for these values, as long as they are not in conflict
++   with the stated goals above.
+@@ -75,0 +106 @@ All code is licensed under the [MPLv2 License][7].
++[13]: https://github.com/syncthing/syncthing/blob/master/GOALS.md
+diff --git a/README.md b/README.md
+index 775bff99..a4e08f3a 100644
+--- a/README.md
++++ b/README.md
+@@ -64,2 +64,2 @@ All code is licensed under the [MPLv2 License][7].
+-[1]: http://docs.syncthing.net/specs/bep-v1.html
+-[2]: http://docs.syncthing.net/intro/getting-started.html
++[1]: https://docs.syncthing.net/specs/bep-v1.html
++[2]: https://docs.syncthing.net/intro/getting-started.html
+@@ -68,2 +68,2 @@ All code is licensed under the [MPLv2 License][7].
+-[5]: http://docs.syncthing.net/dev/building.html
+-[6]: http://docs.syncthing.net/
++[5]: https://docs.syncthing.net/dev/building.html
++[6]: https://docs.syncthing.net/
+@@ -74 +74 @@ All code is licensed under the [MPLv2 License][7].
+-[11]: http://docs.syncthing.net/users/contrib.html#gui-wrappers
++[11]: https://docs.syncthing.net/users/contrib.html#gui-wrappers
+diff --git a/README.md b/README.md
+index 0da2cdb3..775bff99 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/88/badge)](https://bestpractices.coreinfrastructure.org/projects/88)
+diff --git a/README.md b/README.md
+index de444c3f..0da2cdb3 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30,5 @@ implementations][11] for Windows, Mac and Linux.
++## Vote on features/bugs
++
++We'd like to encourage you to [vote][12] on issues that matter to you.
++This helps the team understand what are the biggest pain points for our users, and could potentially influence what is being worked on next.
++
+@@ -68,0 +74 @@ All code is licensed under the [MPLv2 License][7].
++[12]: https://www.bountysource.com/teams/syncthing/issues
+diff --git a/README.md b/README.md
+index 6a5c85f0..de444c3f 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +3,0 @@
+-[![AppVeyor Build](https://img.shields.io/appveyor/ci/calmh/syncthing/master.svg?style=flat-square&label=windows%20build)](https://ci.appveyor.com/project/calmh/syncthing)
+diff --git a/README.md b/README.md
+index 2f683787..6a5c85f0 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ The first and best point of contact is the [Forum][8]. There is also an IRC
+-channel, `#syncthing` on [Freenode][4] (with a [web client][9]), for talking
++channel, `#syncthing` on [freenode][4] (with a [web client][9]), for talking
+diff --git a/README.md b/README.md
+index d74bfa86..2f683787 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28,2 @@ There are a few examples for keeping Syncthing running in the background
+-on your system in [the etc directory][3].
++on your system in [the etc directory][3]. There are also several [GUI
++implementations][11] for Windows, Mac and Linux.
+@@ -39 +40 @@ bug, feel free to report it in the [GitHub issue tracker][10].
+-Building Syncthing from source is easy, and there's a [guide][5].
++Building Syncthing from source is easy, and there's a [guide][5]
+@@ -44,4 +45,7 @@ that describes it for both Unix and Windows systems.
+-As of v0.10.15 and onwards, git tags and release binaries are GPG signed
+-with the key D26E6ED000654A3E (see https://syncthing.net/security.html).
+-For release binaries, MD5 and SHA1 checksums are calculated and signed,
+-available in the md5sum.txt.asc and sha1sum.txt.asc files.
++As of v0.10.15 and onwards release binaries are GPG signed with the key
++D26E6ED000654A3E, available from https://syncthing.net/security.html and
++most key servers.
++
++There is also a built in automatic upgrade mechanism (disabled in some
++distribution channels) which uses a compiled in ECDSA signature. Mac OS
++X binaries are also properly code signed.
+@@ -64,0 +69 @@ All code is licensed under the [MPLv2 License][7].
++[11]: http://docs.syncthing.net/users/contrib.html#gui-wrappers
+diff --git a/README.md b/README.md
+index dccd6fdf..d74bfa86 100644
+--- a/README.md
++++ b/README.md
+@@ -30,2 +30,6 @@ on your system in [the etc directory][3].
+-There is an IRC channel, `#syncthing` on [Freenode][4], for talking directly
+-to developers and users.
++## Getting in Touch
++
++The first and best point of contact is the [Forum][8]. There is also an IRC
++channel, `#syncthing` on [Freenode][4] (with a [web client][9]), for talking
++directly to developers and users. If you've found something that is clearly a
++bug, feel free to report it in the [GitHub issue tracker][10].
+@@ -54 +58 @@ All code is licensed under the [MPLv2 License][7].
+-[4]: https://webchat.freenode.net/
++[4]: http://www.freenode.net/irc_servers.shtml
+@@ -57,0 +62,3 @@ All code is licensed under the [MPLv2 License][7].
++[8]: https://forum.syncthing.net/
++[9]: https://kiwiirc.com/client/irc.freenode.net/#syncthing
++[10]: https://github.com/syncthing/syncthing/issues
+diff --git a/README.md b/README.md
+index 27a077b3..dccd6fdf 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,2 @@
+-[![Latest Build (Official)](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![AppVeyor Build](https://img.shields.io/appveyor/ci/calmh/syncthing/master.svg?style=flat-square)](https://ci.appveyor.com/project/calmh/syncthing)
++[![Latest Build (Official)](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square&label=unix%20build)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![AppVeyor Build](https://img.shields.io/appveyor/ci/calmh/syncthing/master.svg?style=flat-square&label=windows%20build)](https://ci.appveyor.com/project/calmh/syncthing)
+diff --git a/README.md b/README.md
+index bd5fc20a..27a077b3 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ All code is licensed under the [MPLv2 License][7].
+-[1]: https://github.com/syncthing/specs/blob/master/BEPv1.md
++[1]: http://docs.syncthing.net/specs/bep-v1.html
+diff --git a/README.md b/README.md
+index 7d0253f9..bd5fc20a 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-Syncthing
+-=========
++# Syncthing
+@@ -14,2 +13 @@ This is the Syncthing project which pursues the following goals:
+-    This is called the [Block Exchange
+-    Protocol](https://github.com/syncthing/specs/blob/master/BEPv1.md).
++    This is called the [Block Exchange Protocol][1].
+@@ -25,2 +23 @@ for incompatible changes.
+-Getting Started
+----------------
++## Getting Started
+@@ -28,2 +25 @@ Getting Started
+-Take a look at the [getting started
+-guide](http://docs.syncthing.net/intro/getting-started.html).
++Take a look at the [getting started guide][2].
+@@ -32 +28 @@ There are a few examples for keeping Syncthing running in the background
+-on your system in [the etc directory](https://github.com/syncthing/syncthing/blob/master/etc).
++on your system in [the etc directory][3].
+@@ -34 +30 @@ on your system in [the etc directory](https://github.com/syncthing/syncthing/blo
+-There is an IRC channel, `#syncthing` on Freenode, for talking directly
++There is an IRC channel, `#syncthing` on [Freenode][4], for talking directly
+@@ -37,2 +33 @@ to developers and users.
+-Building
+---------
++## Building
+@@ -40,2 +35 @@ Building
+-Building Syncthing from source is easy, and there's a
+-[guide](http://docs.syncthing.net/dev/building.html).
++Building Syncthing from source is easy, and there's a [guide][5].
+@@ -44,2 +38 @@ that describes it for both Unix and Windows systems.
+-Signed Releases
+----------------
++## Signed Releases
+@@ -52,2 +45 @@ available in the md5sum.txt.asc and sha1sum.txt.asc files.
+-Documentation
+-=============
++## Documentation
+@@ -55,2 +47 @@ Documentation
+-Please see the [Syncthing
+-documentation site](http://docs.syncthing.net/).
++Please see the [Syncthing documentation site][6].
+@@ -58,2 +49,9 @@ documentation site](http://docs.syncthing.net/).
+-All code is licensed under the
+-[MPLv2 License](https://github.com/syncthing/syncthing/blob/master/LICENSE).
++All code is licensed under the [MPLv2 License][7].
++
++[1]: https://github.com/syncthing/specs/blob/master/BEPv1.md
++[2]: http://docs.syncthing.net/intro/getting-started.html
++[3]: https://github.com/syncthing/syncthing/blob/master/etc
++[4]: https://webchat.freenode.net/
++[5]: http://docs.syncthing.net/dev/building.html
++[6]: http://docs.syncthing.net/
++[7]: https://github.com/syncthing/syncthing/blob/master/LICENSE
+diff --git a/README.md b/README.md
+index 7a4b1af8..7d0253f9 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@ Syncthing
++[![AppVeyor Build](https://img.shields.io/appveyor/ci/calmh/syncthing/master.svg?style=flat-square)](https://ci.appveyor.com/project/calmh/syncthing)
+diff --git a/README.md b/README.md
+index 5d8d7551..7a4b1af8 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@ Syncthing
+-[![Latest Build (Second Opinion)](https://img.shields.io/circleci/project/syncthing/syncthing.svg?style=flat-square)](https://circleci.com/gh/syncthing/syncthing)
+diff --git a/README.md b/README.md
+index e990cd60..5d8d7551 100644
+--- a/README.md
++++ b/README.md
+@@ -4,3 +4,4 @@ Syncthing
+-[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastBuild/)
+-[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](http://godoc.org/github.com/syncthing/syncthing)
+-[![MPLv2 License](http://img.shields.io/badge/license-MPLv2-blue.svg?style=flat-square)](https://www.mozilla.org/MPL/2.0/)
++[![Latest Build (Official)](https://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastBuild/)
++[![Latest Build (Second Opinion)](https://img.shields.io/circleci/project/syncthing/syncthing.svg?style=flat-square)](https://circleci.com/gh/syncthing/syncthing)
++[![API Documentation](https://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](http://godoc.org/github.com/syncthing/syncthing)
++[![MPLv2 License](https://img.shields.io/badge/license-MPLv2-blue.svg?style=flat-square)](https://www.mozilla.org/MPL/2.0/)
+diff --git a/README.md b/README.md
+index b1b6ea65..e990cd60 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Please see the [Syncthing
+-documentation site](http://docs.syncthing.net/dev/).
++documentation site](http://docs.syncthing.net/).
+diff --git a/README.md b/README.md
+index 128fe5a2..b1b6ea65 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing
++Syncthing
+@@ -8 +8 @@ syncthing
+-This is the `syncthing` project which pursues the following goals:
++This is the Syncthing project which pursues the following goals:
+@@ -21 +21 @@ The two are evolving together; the protocol is not to be considered
+-stable until syncthing 1.0 is released, at which point it is locked down
++stable until Syncthing 1.0 is released, at which point it is locked down
+@@ -28 +28 @@ Take a look at the [getting started
+-guide](https://github.com/syncthing/syncthing/wiki/Getting-Started).
++guide](http://docs.syncthing.net/intro/getting-started.html).
+@@ -30 +30 @@ guide](https://github.com/syncthing/syncthing/wiki/Getting-Started).
+-There are a few examples for keeping syncthing running in the background
++There are a few examples for keeping Syncthing running in the background
+@@ -40 +40 @@ Building Syncthing from source is easy, and there's a
+-[guide](https://github.com/syncthing/syncthing/wiki/Building).
++[guide](http://docs.syncthing.net/dev/building.html).
+@@ -54,3 +54,2 @@ Documentation
+-The [syncthing
+-documentation](https://github.com/syncthing/syncthing/wiki/) is on the
+-Github wiki.
++Please see the [Syncthing
++documentation site](http://docs.syncthing.net/dev/).
+diff --git a/README.md b/README.md
+index 2c14ee41..128fe5a2 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ This is the `syncthing` project which pursues the following goals:
+-    alternative, compatible implementations of the protocol will arrise.
++    alternative, compatible implementations of the protocol will arise.
+diff --git a/README.md b/README.md
+index 295bb370..2c14ee41 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ syncthing
+-This is the `syncthing` project. The following are the project goals:
++This is the `syncthing` project which pursues the following goals:
+@@ -11 +11 @@ This is the `syncthing` project. The following are the project goals:
+-    collaborating devices. The protocol should be well defined, unambiguous,
++    collaborating devices. This protocol should be well defined, unambiguous,
+@@ -13 +13 @@ This is the `syncthing` project. The following are the project goals:
+-    This is the [Block Exchange
++    This is called the [Block Exchange
+@@ -17,3 +17,2 @@ This is the `syncthing` project. The following are the project goals:
+-    said protocol. This is the `syncthing` utility. It is the hope that
+-    alternative, compatible implementations of the protocol will come to
+-    exist.
++    said protocol. This is the `syncthing` utility. We hope that
++    alternative, compatible implementations of the protocol will arrise.
+@@ -35 +34 @@ There is an IRC channel, `#syncthing` on Freenode, for talking directly
+-to developers and users (when awake and present, etc.).
++to developers and users.
+@@ -42 +41 @@ Building Syncthing from source is easy, and there's a
+-that describes it for both Unix and Windows.
++that describes it for both Unix and Windows systems.
+@@ -48 +47 @@ As of v0.10.15 and onwards, git tags and release binaries are GPG signed
+-with the key D26E6ED000654A3E (see http://syncthing.net/security.html).
++with the key D26E6ED000654A3E (see https://syncthing.net/security.html).
+@@ -60 +59 @@ All code is licensed under the
+-[MPLv2](https://github.com/syncthing/syncthing/blob/master/LICENSE).
++[MPLv2 License](https://github.com/syncthing/syncthing/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 13470d34..295bb370 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ syncthing
+-[![GPL License](http://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
++[![MPLv2 License](http://img.shields.io/badge/license-MPLv2-blue.svg?style=flat-square)](https://www.mozilla.org/MPL/2.0/)
+@@ -60,2 +60 @@ All code is licensed under the
+-[GPL](https://github.com/syncthing/syncthing/blob/master/LICENSE), v3 or
+-later.
++[MPLv2](https://github.com/syncthing/syncthing/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 9cac7121..13470d34 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ This is the `syncthing` project. The following are the project goals:
+-    Protocol](https://github.com/syncthing/protocol/blob/master/BEPv1.md).
++    Protocol](https://github.com/syncthing/specs/blob/master/BEPv1.md).
+diff --git a/README.md b/README.md
+index 074b0bd9..9cac7121 100644
+--- a/README.md
++++ b/README.md
+@@ -47,4 +47,4 @@ Signed Releases
+-As of v0.7.0 and onwards, git tags and release binaries are GPG signed with
+-the key BCE524C7 (http://nym.se/gpg.txt). For release binaries, MD5 and
+-SHA1 checksums are calculated and signed, available in the
+-md5sum.txt.asc and sha1sum.txt.asc files.
++As of v0.10.15 and onwards, git tags and release binaries are GPG signed
++with the key D26E6ED000654A3E (see http://syncthing.net/security.html).
++For release binaries, MD5 and SHA1 checksums are calculated and signed,
++available in the md5sum.txt.asc and sha1sum.txt.asc files.
+diff --git a/README.md b/README.md
+index 41485245..074b0bd9 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28,2 @@ Getting Started
+-Take a look at the [getting started guide](http://discourse.syncthing.net/t/46).
++Take a look at the [getting started
++guide](https://github.com/syncthing/syncthing/wiki/Getting-Started).
+@@ -40 +41 @@ Building Syncthing from source is easy, and there's a
+-[guide](http://discourse.syncthing.net/t/44)
++[guide](https://github.com/syncthing/syncthing/wiki/Building).
+@@ -55,2 +56,2 @@ The [syncthing
+-documentation](http://discourse.syncthing.net/category/documentation) is
+-on the discourse site.
++documentation](https://github.com/syncthing/syncthing/wiki/) is on the
++Github wiki.
+diff --git a/README.md b/README.md
+index bd03b8b6..41485245 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ This is the `syncthing` project. The following are the project goals:
+-    Protocol](https://github.com/syncthing/syncthing/blob/master/protocol/PROTOCOL.md).
++    Protocol](https://github.com/syncthing/protocol/blob/master/BEPv1.md).
+@@ -58,7 +57,0 @@ on the discourse site.
+-License
+-=======
+-
+-All documentation and protocol specifications are licensed
+-under the [Creative Commons Attribution 4.0 International
+-License](http://creativecommons.org/licenses/by/4.0/).
+-
+diff --git a/README.md b/README.md
+index 3c8a2b4e..bd03b8b6 100644
+--- a/README.md
++++ b/README.md
+@@ -32,0 +33,3 @@ on your system in [the etc directory](https://github.com/syncthing/syncthing/blo
++There is an IRC channel, `#syncthing` on Freenode, for talking directly
++to developers and users (when awake and present, etc.).
++
+diff --git a/README.md b/README.md
+index 6e538b50..3c8a2b4e 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30,3 @@ Take a look at the [getting started guide](http://discourse.syncthing.net/t/46).
++There are a few examples for keeping syncthing running in the background
++on your system in [the etc directory](https://github.com/syncthing/syncthing/blob/master/etc).
++
+diff --git a/README.md b/README.md
+index c7b1d295..6e538b50 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ syncthing
+-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
++[![GPL License](http://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
+@@ -59,2 +59,3 @@ License](http://creativecommons.org/licenses/by/4.0/).
+-All code is licensed under the [MIT
+-License](https://github.com/syncthing/syncthing/blob/master/LICENSE).
++All code is licensed under the
++[GPL](https://github.com/syncthing/syncthing/blob/master/LICENSE), v3 or
++later.
+diff --git a/README.md b/README.md
+index 080e8edf..c7b1d295 100644
+--- a/README.md
++++ b/README.md
+@@ -10,4 +10,4 @@ This is the `syncthing` project. The following are the project goals:
+- 1. Define a protocol for synchronization of a file folder between a
+-    number of collaborating devices. The protocol should be well defined,
+-    unambiguous, easily understood, free to use, efficient, secure and
+-    language neutral. This is the [Block Exchange
++ 1. Define a protocol for synchronization of a folder between a number of
++    collaborating devices. The protocol should be well defined, unambiguous,
++    easily understood, free to use, efficient, secure and language neutral.
++    This is the [Block Exchange
+diff --git a/README.md b/README.md
+index 3ebd0667..080e8edf 100644
+--- a/README.md
++++ b/README.md
+@@ -10,2 +10,2 @@ This is the `syncthing` project. The following are the project goals:
+- 1. Define a protocol for synchronization of a file repository between a
+-    number of collaborating nodes. The protocol should be well defined,
++ 1. Define a protocol for synchronization of a file folder between a
++    number of collaborating devices. The protocol should be well defined,
+diff --git a/README.md b/README.md
+index afc7b155..3ebd0667 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ syncthing
+-[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastSuccessfulBuild/)
++[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastBuild/)
+diff --git a/README.md b/README.md
+index 097e4d8a..afc7b155 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28,8 @@ Getting Started
+-Take a look at the [getting started guide](http://discourse.syncthing.net/t/getting-started/46).
++Take a look at the [getting started guide](http://discourse.syncthing.net/t/46).
++
++Building
++--------
++
++Building Syncthing from source is easy, and there's a
++[guide](http://discourse.syncthing.net/t/44)
++that describes it for both Unix and Windows.
+diff --git a/README.md b/README.md
+index 28d6aea3..097e4d8a 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ syncthing
+-[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastSuccessfulBuild/artifact/)
++[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastSuccessfulBuild/)
+diff --git a/README.md b/README.md
+index 638d0c6b..28d6aea3 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@ syncthing
+-[![Coverage Status](https://img.shields.io/coveralls/syncthing/syncthing.svg?style=flat-square)](https://coveralls.io/r/syncthing/syncthing?branch=master)
+diff --git a/README.md b/README.md
+index 46e8120e..638d0c6b 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@ syncthing
+-[![Build Status](https://img.shields.io/travis/syncthing/syncthing.svg?style=flat-square)](https://travis-ci.org/syncthing/syncthing)
+diff --git a/README.md b/README.md
+index de46a74d..46e8120e 100644
+--- a/README.md
++++ b/README.md
+@@ -36,2 +36,3 @@ As of v0.7.0 and onwards, git tags and release binaries are GPG signed with
+-the key BCE524C7 (http://nym.se/gpg.txt). The signature is included in the
+-normal release bundle as `syncthing.asc` or `syncthing.exe.asc`.
++the key BCE524C7 (http://nym.se/gpg.txt). For release binaries, MD5 and
++SHA1 checksums are calculated and signed, available in the
++md5sum.txt.asc and sha1sum.txt.asc files.
+diff --git a/README.md b/README.md
+index f1c70df5..de46a74d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,4 +4,5 @@ syncthing
+-[![Build Status](https://img.shields.io/travis/syncthing/syncthing.svg?style=flat)](https://travis-ci.org/syncthing/syncthing)
+-[![Coverage Status](https://img.shields.io/coveralls/syncthing/syncthing.svg?style=flat)](https://coveralls.io/r/syncthing/syncthing?branch=master)
+-[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat)](http://godoc.org/github.com/syncthing/syncthing)
+-[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
++[![Latest Build](http://img.shields.io/jenkins/s/http/build.syncthing.net/syncthing.svg?style=flat-square)](http://build.syncthing.net/job/syncthing/lastSuccessfulBuild/artifact/)
++[![Build Status](https://img.shields.io/travis/syncthing/syncthing.svg?style=flat-square)](https://travis-ci.org/syncthing/syncthing)
++[![Coverage Status](https://img.shields.io/coveralls/syncthing/syncthing.svg?style=flat-square)](https://coveralls.io/r/syncthing/syncthing?branch=master)
++[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat-square)](http://godoc.org/github.com/syncthing/syncthing)
++[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+diff --git a/README.md b/README.md
+index 1ac2ab4c..f1c70df5 100644
+--- a/README.md
++++ b/README.md
+@@ -4,3 +4,3 @@ syncthing
+-[![Build Status](https://img.shields.io/travis/calmh/syncthing.svg?style=flat)](https://travis-ci.org/calmh/syncthing)
+-[![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg?style=flat)](https://coveralls.io/r/calmh/syncthing?branch=master)
+-[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat)](http://godoc.org/github.com/calmh/syncthing)
++[![Build Status](https://img.shields.io/travis/syncthing/syncthing.svg?style=flat)](https://travis-ci.org/syncthing/syncthing)
++[![Coverage Status](https://img.shields.io/coveralls/syncthing/syncthing.svg?style=flat)](https://coveralls.io/r/syncthing/syncthing?branch=master)
++[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat)](http://godoc.org/github.com/syncthing/syncthing)
+@@ -15 +15 @@ This is the `syncthing` project. The following are the project goals:
+-    Protocol](https://github.com/calmh/syncthing/blob/master/protocol/PROTOCOL.md).
++    Protocol](https://github.com/syncthing/syncthing/blob/master/protocol/PROTOCOL.md).
+@@ -53 +53 @@ All code is licensed under the [MIT
+-License](https://github.com/calmh/syncthing/blob/master/LICENSE).
++License](https://github.com/syncthing/syncthing/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index a95339f8..1ac2ab4c 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,2 @@ syncthing
++[![API Documentation](http://img.shields.io/badge/api-Godoc-blue.svg?style=flat)](http://godoc.org/github.com/calmh/syncthing)
++[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
+diff --git a/README.md b/README.md
+index f3ed3913..a95339f8 100644
+--- a/README.md
++++ b/README.md
+@@ -4,2 +4,2 @@ syncthing
+-Build status: [![Build Status](https://drone.io/github.com/calmh/syncthing/status.png)](https://drone.io/github.com/calmh/syncthing/latest)
+-Coverage status: [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)](https://coveralls.io/r/calmh/syncthing?branch=master)
++[![Build Status](https://img.shields.io/travis/calmh/syncthing.svg?style=flat)](https://travis-ci.org/calmh/syncthing)
++[![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg?style=flat)](https://coveralls.io/r/calmh/syncthing?branch=master)
+diff --git a/README.md b/README.md
+index 77a65485..f3ed3913 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing) [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)](https://coveralls.io/r/calmh/syncthing?branch=master)
++syncthing
+@@ -3,0 +4,3 @@ syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=mast
++Build status: [![Build Status](https://drone.io/github.com/calmh/syncthing/status.png)](https://drone.io/github.com/calmh/syncthing/latest)
++Coverage status: [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)](https://coveralls.io/r/calmh/syncthing?branch=master)
++
+diff --git a/README.md b/README.md
+index eeabb9d8..77a65485 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing) [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)]
++syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing) [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)](https://coveralls.io/r/calmh/syncthing?branch=master)
+diff --git a/README.md b/README.md
+index 8417d4d6..eeabb9d8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing)
++syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing) [![Coverage Status](https://img.shields.io/coveralls/calmh/syncthing.svg)]
+diff --git a/README.md b/README.md
+index 490a6b75..8417d4d6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing
++syncthing [![Build Status](https://travis-ci.org/calmh/syncthing.svg?branch=master)](https://travis-ci.org/calmh/syncthing)
+diff --git a/README.md b/README.md
+index d776335f..490a6b75 100644
+--- a/README.md
++++ b/README.md
+@@ -21,7 +20,0 @@ for incompatible changes.
+-Syncthing does not use the BitTorrent protocol. The reasons for this are
+-1) we don't know if BitTorrent Sync does either, so there's nothing to
+-be compatible with, 2) BitTorrent includes a lot of functionality for
+-making sure large swarms of selfish agents behave and somehow work
+-towards a common goal. Here we have a much smaller swarm of cooperative
+-agents and a simpler approach will suffice.
+-
+diff --git a/README.md b/README.md
+index c2b9b5e7..d776335f 100644
+--- a/README.md
++++ b/README.md
+@@ -8,2 +8,2 @@ This is the `syncthing` project. The following are the project goals:
+-    unambigous, easily understood, free to use, efficient, secure and
+-    languange neutral. This is the [Block Exchange
++    unambiguous, easily understood, free to use, efficient, secure and
++    language neutral. This is the [Block Exchange
+diff --git a/README.md b/README.md
+index b178e510..c2b9b5e7 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28,5 @@ agents and a simpler approach will suffice.
++Getting Started
++---------------
++
++Take a look at the [getting started guide](http://discourse.syncthing.net/t/getting-started/46).
++
+diff --git a/README.md b/README.md
+index a138ebcb..b178e510 100644
+--- a/README.md
++++ b/README.md
+@@ -38,2 +38,3 @@ Documentation
+-The syncthing documentation is kept on the
+-[GitHub Wiki](https://github.com/calmh/syncthing/wiki).
++The [syncthing
++documentation](http://discourse.syncthing.net/category/documentation) is
++on the discourse site.
+diff --git a/README.md b/README.md
+index 1a50b103..a138ebcb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing [![Build Status](https://drone.io/github.com/calmh/syncthing/status.png)](https://drone.io/github.com/calmh/syncthing/latest)
++syncthing
+diff --git a/README.md b/README.md
+index 1cdd8441..1a50b103 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28,7 @@ agents and a simpler approach will suffice.
++Signed Releases
++---------------
++
++As of v0.7.0 and onwards, git tags and release binaries are GPG signed with
++the key BCE524C7 (http://nym.se/gpg.txt). The signature is included in the
++normal release bundle as `syncthing.asc` or `syncthing.exe.asc`.
++
+diff --git a/README.md b/README.md
+index bca960da..1cdd8441 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-syncthing
++syncthing [![Build Status](https://drone.io/github.com/calmh/syncthing/status.png)](https://drone.io/github.com/calmh/syncthing/latest)
+diff --git a/README.md b/README.md
+index 5ebebc3a..bca960da 100644
+--- a/README.md
++++ b/README.md
+@@ -4,3 +4 @@ syncthing
+-This is `syncthing`, an open BitTorrent Sync alternative. It is
+-currently far from ready for mass consumption, but it is a usable proof
+-of concept and tech demo. The following are the project goals:
++This is the `syncthing` project. The following are the project goals:
+@@ -8,5 +6,5 @@ of concept and tech demo. The following are the project goals:
+- 1. Define an open, secure, language neutral protocol usable for
+-    efficient synchronization of a file repository between an arbitrary
+-    number of nodes. This is the [Block Exchange
+-    Protocol](https://github.com/calmh/syncthing/blob/master/protocol/PROTOCOL.md)
+-    (BEP).
++ 1. Define a protocol for synchronization of a file repository between a
++    number of collaborating nodes. The protocol should be well defined,
++    unambigous, easily understood, free to use, efficient, secure and
++    languange neutral. This is the [Block Exchange
++    Protocol](https://github.com/calmh/syncthing/blob/master/protocol/PROTOCOL.md).
+@@ -15 +13,3 @@ of concept and tech demo. The following are the project goals:
+-    said protocol. This is the `syncthing` utility.
++    said protocol. This is the `syncthing` utility. It is the hope that
++    alternative, compatible implementations of the protocol will come to
++    exist.
+@@ -37 +37,3 @@ License
+-MIT
++All documentation and protocol specifications are licensed
++under the [Creative Commons Attribution 4.0 International
++License](http://creativecommons.org/licenses/by/4.0/).
+@@ -38,0 +41,2 @@ MIT
++All code is licensed under the [MIT
++License](https://github.com/calmh/syncthing/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 79ea84b3..5ebebc3a 100644
+--- a/README.md
++++ b/README.md
+@@ -28,2 +28,2 @@ agents and a simpler approach will suffice.
+-Features
+---------
++Documentation
++=============
+@@ -31,169 +31,2 @@ Features
+-> To request features and file bugs, see [the issue tracker][issues].
+-
+-The following features are _currently implemented and working_:
+-
+- * The formation of a cluster of nodes, certificate authenticated and
+-   communicating over TLS over TCP.
+-
+- * Synchronization of a single directory among the cluster nodes.
+-
+- * Change detection by periodic scanning of the local repository.
+-
+- * Static configuration of cluster nodes.
+-
+- * Automatic discovery of cluster nodes. See [discover.go][discover.go]
+-   for the protocol specification. Discovery on the LAN is performed by
+-   broadcasts, Internet wide discovery is performed with the assistance
+-   of a global server.
+-
+- * Handling of deleted files. Deletes can be propagated or ignored per
+-   client.
+-
+- * Synchronizing multiple unrelated directory trees by following
+-   symlinks directly below the repository level.
+-
+- * HTTP GUI.
+-
+-The following features are _not yet implemented but planned_:
+-
+- * Change detection by listening to file system notifications instead of
+-   periodic scanning.
+-
+-The following features are _not implemented but may be implemented_ in
+-the future:
+-
+- * Syncing multiple directories from the same syncthing instance.
+-
+- * Automatic NAT handling via UPNP.
+-
+- * Conflict resolution. Currently whichever file has the newest
+-   modification time "wins". The correct behavior in the face of
+-   conflicts is open for discussion.
+-
+-[discover.go]: https://github.com/calmh/syncthing/blob/master/discover/discover.go
+-[issues]: https://github.com/calmh/syncthing/issues
+-
+-Security
+---------
+-
+-Security is one of the primary project goals. This means that it should
+-not be possible for an attacker to join a cluster uninvited, and it
+-should not be possible to extract private information from intercepted
+-traffic. Currently this is implemented as follows.
+-
+-All traffic is protected by TLS. To prevent uninvited nodes from joining
+-a cluster, the certificate fingerprint of each node is compared to a
+-preset list of acceptable nodes at connection establishment. The
+-fingerprint is computed as the SHA-1 hash of the certificate and
+-displayed in BASE32 encoding to form a compact yet convenient string.
+-Currently SHA-1 is deemed secure against preimage attacks.
+-
+-Incoming requests for file data are verified to the extent that the
+-requested file name must exist in the local index and the global model.
+-
+-Installing
+-==========
+-
+-Download the appropriate precompiled binary from the
+-[releases](https://github.com/calmh/syncthing/releases) page. Untar and
+-put the `syncthing` binary somewhere convenient in your `$PATH`.
+-
+-If you are a developer and have Go 1.2 installed you can also install
+-the latest version from source. `go get` works as expected but builds
+-a binary without GUI capabilities. Use the included `build.sh` script
+-without parameters to build a syncthing with GUI.
+-
+-Usage
+-=====
+-
+-Check out the options:
+-
+-```
+-$ syncthing --help
+-Usage:
+-  syncthing [options]
+-
+-...
+-```
+-
+-Run syncthing to let it create it's config directory and certificate:
+-
+-```
+-$ syncthing
+-11:34:13 main.go:85: INFO: Version v0.1-40-gbb0fd87
+-11:34:13 tls.go:61: OK: Created TLS certificate file
+-11:34:13 tls.go:67: OK: Created TLS key file
+-11:34:13 main.go:66: INFO: My ID: NCTBZAAHXR6ZZP3D7SL3DLYFFQERMW4Q
+-11:34:13 main.go:90: FATAL: No config file
+-```
+-
+-Take note of the "My ID: ..." line. Perform the same operation on
+-another computer to create another node. Take note of that ID as well,
+-and create a config file `~/.syncthing/syncthing.ini` looking something
+-like this:
+-
+-```
+-[repository]
+-dir = /Users/jb/Synced
+-
+-[nodes]
+-NCTBZAAHXR6ZZP3D7SL3DLYFFQERMW4Q = 172.16.32.1:22000 192.23.34.56:22000
+-CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL = dynamic
+-```
+-
+-This assumes that the first node is reachable on either of the two
+-addresses listed (perhaps one internal and one port-forwarded external)
+-and that the other node is not normally reachable from the outside. Save
+-this config file, identically, to both nodes.
+-
+-If the nodes are running on the same network, or reachable on port 22000
+-from the outside world, you can set all addresses to "dynamic" and they
+-will find each other using automatic discovery. (This discovery,
+-including port numbers, can be tweaked or disabled using command line
+-options.)
+-
+-Start syncthing on both nodes. For the cautious, one side can be set to
+-be read only.
+-
+-```
+-$ syncthing --ro
+-13:30:55 main.go:85: INFO: Version v0.1-40-gbb0fd87
+-13:30:55 main.go:102: INFO: My ID: NCTBZAAHXR6ZZP3D7SL3DLYFFQERMW4Q
+-13:30:55 main.go:149: INFO: Initial repository scan in progress
+-13:30:59 main.go:153: INFO: Listening for incoming connections
+-13:30:59 main.go:157: INFO: Attempting to connect to other nodes
+-13:30:59 main.go:247: INFO: Starting local discovery
+-13:30:59 main.go:165: OK: Ready to synchronize
+-13:31:04 discover.go:113: INFO: Discovered node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL at 172.16.32.24:22000
+-13:31:14 main.go:296: INFO: Connected to node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL
+-13:31:19 main.go:345: INFO: Transferred 139 KiB in (14 KiB/s), 139 KiB out (14 KiB/s)
+-13:32:20 model.go:94: INFO: CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL: 263.4 KB/s in, 69.1 KB/s out
+-13:32:20 model.go:104: INFO:  18289 files,  24.24 GB in cluster
+-13:32:20 model.go:111: INFO:  17132 files,  22.39 GB in local repo
+-13:32:20 model.go:117: INFO:   1157 files,   1.84 GB to synchronize
+-...
+-```
+-You should see the synchronization start and then finish a short while
+-later. Add nodes to taste.
+-
+-GUI
+----
+-
+-The web based GUI is disabled per default. To enable and access it you
+-must start syncthing with the `--gui` command line option, giving a
+-listen address. For example:
+-
+-```
+-$ syncthing --gui 127.0.0.1:8080
+-```
+-
+-You then point your browser to the given address.
+-
+-Excluding Files
+----------------
+-
+-syncthing looks for files named `.stignore` while walking the
+-repository. The file is expected to contain glob patterns of file names
+-to ignore. Patterns are matched on file name only and apply to files in
+-the same directory as the `.stignore` file and in directories lower down
+-in the hierarchy.
++The syncthing documentation is kept on the
++[GitHub Wiki](https://github.com/calmh/syncthing/wiki).
+diff --git a/README.md b/README.md
+index ad1ccd0f..79ea84b3 100644
+--- a/README.md
++++ b/README.md
+@@ -90,0 +91,3 @@ Currently SHA-1 is deemed secure against preimage attacks.
++Incoming requests for file data are verified to the extent that the
++requested file name must exist in the local index and the global model.
++
+diff --git a/README.md b/README.md
+index e7e4a398..ad1ccd0f 100644
+--- a/README.md
++++ b/README.md
+@@ -188,0 +189,9 @@ You then point your browser to the given address.
++Excluding Files
++---------------
++
++syncthing looks for files named `.stignore` while walking the
++repository. The file is expected to contain glob patterns of file names
++to ignore. Patterns are matched on file name only and apply to files in
++the same directory as the `.stignore` file and in directories lower down
++in the hierarchy.
++
+diff --git a/README.md b/README.md
+index bf604ec2..e7e4a398 100644
+--- a/README.md
++++ b/README.md
+@@ -30,0 +31,2 @@ Features
++> To request features and file bugs, see [the issue tracker][issues].
++
+@@ -71,0 +74 @@ the future:
++[issues]: https://github.com/calmh/syncthing/issues
+diff --git a/README.md b/README.md
+index 7d4ebb92..bf604ec2 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,2 @@ The following features are _currently implemented and working_:
++ * HTTP GUI.
++
+@@ -58,2 +59,0 @@ The following features are _not yet implemented but planned_:
+- * HTTP GUI.
+-
+@@ -96,3 +96,3 @@ If you are a developer and have Go 1.2 installed you can also install
+-the latest version from source:
+-
+-`go get github.com/calmh/syncthing`
++the latest version from source. `go get` works as expected but builds
++a binary without GUI capabilities. Use the included `build.sh` script
++without parameters to build a syncthing with GUI.
+@@ -172,0 +173,13 @@ later. Add nodes to taste.
++GUI
++---
++
++The web based GUI is disabled per default. To enable and access it you
++must start syncthing with the `--gui` command line option, giving a
++listen address. For example:
++
++```
++$ syncthing --gui 127.0.0.1:8080
++```
++
++You then point your browser to the given address.
++
+diff --git a/README.md b/README.md
+index bef85251..7d4ebb92 100644
+--- a/README.md
++++ b/README.md
+@@ -71 +71 @@ the future:
+-[discover.go]: (https://github.com/calmh/syncthing/blob/master/discover/discover.go
++[discover.go]: https://github.com/calmh/syncthing/blob/master/discover/discover.go
+diff --git a/README.md b/README.md
+index b8a1c6d1..bef85251 100644
+--- a/README.md
++++ b/README.md
+@@ -118,2 +118,2 @@ $ syncthing
+-11:34:13 tls.go:61: OK: wrote cert.pem
+-11:34:13 tls.go:67: OK: wrote key.pem
++11:34:13 tls.go:61: OK: Created TLS certificate file
++11:34:13 tls.go:67: OK: Created TLS key file
+@@ -162 +162 @@ $ syncthing --ro
+-13:31:14 main.go:296: OK: Connected to node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL
++13:31:14 main.go:296: INFO: Connected to node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL
+@@ -163,0 +164,4 @@ $ syncthing --ro
++13:32:20 model.go:94: INFO: CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL: 263.4 KB/s in, 69.1 KB/s out
++13:32:20 model.go:104: INFO:  18289 files,  24.24 GB in cluster
++13:32:20 model.go:111: INFO:  17132 files,  22.39 GB in local repo
++13:32:20 model.go:117: INFO:   1157 files,   1.84 GB to synchronize
+diff --git a/README.md b/README.md
+index 0ec86408..b8a1c6d1 100644
+--- a/README.md
++++ b/README.md
+@@ -88,2 +88,9 @@ Currently SHA-1 is deemed secure against preimage attacks.
+-Usage
+-=====
++Installing
++==========
++
++Download the appropriate precompiled binary from the
++[releases](https://github.com/calmh/syncthing/releases) page. Untar and
++put the `syncthing` binary somewhere convenient in your `$PATH`.
++
++If you are a developer and have Go 1.2 installed you can also install
++the latest version from source:
+@@ -92,0 +100,3 @@ Usage
++Usage
++=====
++
+@@ -106,0 +117 @@ $ syncthing
++11:34:13 main.go:85: INFO: Version v0.1-40-gbb0fd87
+@@ -114,4 +125,3 @@ Take note of the "My ID: ..." line. Perform the same operation on
+-another computer (or the same computer but with a different `--home` for
+-testing) to create another node. Take note of that ID as well, and
+-create a config file `~/.syncthing/syncthing.ini` looking something like
+-this:
++another computer to create another node. Take note of that ID as well,
++and create a config file `~/.syncthing/syncthing.ini` looking something
++like this:
+@@ -135,2 +145,3 @@ from the outside world, you can set all addresses to "dynamic" and they
+-will find each other anyway. (This discovery, including port numbers, can
+-be tweaked or disabled using command line options.)
++will find each other using automatic discovery. (This discovery,
++including port numbers, can be tweaked or disabled using command line
++options.)
+@@ -138,4 +149,2 @@ be tweaked or disabled using command line options.)
+-Start syncthing on both nodes. If you're running both on the same
+-computer, one needs a different repository directory (in the config
+-file) and listening port (set as a command line paramter). For the
+-cautious, one side can be set to be read only.
++Start syncthing on both nodes. For the cautious, one side can be set to
++be read only.
+@@ -144,0 +154 @@ $ syncthing --ro
++13:30:55 main.go:85: INFO: Version v0.1-40-gbb0fd87
+@@ -151 +161 @@ $ syncthing --ro
+-13:31:04 discover.go:113: INFO: Discovered node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL at 172.16.32.24:23456
++13:31:04 discover.go:113: INFO: Discovered node CUGAE43Y5N64CRJU26YFH6MTWPSBLSUL at 172.16.32.24:22000
+diff --git a/README.md b/README.md
+index 84b9a51d..0ec86408 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ The following features are _currently implemented and working_:
+- * Synchronizing multiple unrelated directory tries by following
++ * Synchronizing multiple unrelated directory trees by following
+@@ -65,2 +65 @@ the future:
+- * Automatic NAT handling via UPNP. Required for the above, not very
+-   useful without it.
++ * Automatic NAT handling via UPNP.
+diff --git a/README.md b/README.md
+index 4338ed1e..84b9a51d 100644
+--- a/README.md
++++ b/README.md
+@@ -132,3 +132,6 @@ and that the other node is not normally reachable from the outside. Save
+-this config file, identically, to both nodes. If both nodes are running
+-on the same network, you can set all addresses to 'dynamic' and they
+-will find each other by local node discovery.
++this config file, identically, to both nodes.
++
++If the nodes are running on the same network, or reachable on port 22000
++from the outside world, you can set all addresses to "dynamic" and they
++will find each other anyway. (This discovery, including port numbers, can
++be tweaked or disabled using command line options.)
+diff --git a/README.md b/README.md
+index 70f1ce10..4338ed1e 100644
+--- a/README.md
++++ b/README.md
+@@ -42,3 +42,4 @@ The following features are _currently implemented and working_:
+- * Automatic discovery of cluster nodes on the local network. See
+-   [discover.go](https://github.com/calmh/syncthing/blob/master/discover/discover.go)
+-   for the protocol specification.
++ * Automatic discovery of cluster nodes. See [discover.go][discover.go]
++   for the protocol specification. Discovery on the LAN is performed by
++   broadcasts, Internet wide discovery is performed with the assistance
++   of a global server.
+@@ -64,6 +64,0 @@ the future:
+- * Automatic remote node discovery using a DHT. This is not technically
+-   very difficult but requires one or more globally reachable root
+-   nodes. This is open for discussion -- perhaps we can piggyback on an
+-   existing DHT, or root nodes need to be established in some other
+-   manner.
+-
+@@ -76,0 +72,2 @@ the future:
++[discover.go]: (https://github.com/calmh/syncthing/blob/master/discover/discover.go
++
+diff --git a/README.md b/README.md
+index 6568a168..70f1ce10 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +49,2 @@ The following features are _currently implemented and working_:
+-The following features are _not yet implemented but planned_:
++ * Synchronizing multiple unrelated directory tries by following
++   symlinks directly below the repository level.
+@@ -51 +52 @@ The following features are _not yet implemented but planned_:
+- * Syncing multiple directories from the same syncthing instance.
++The following features are _not yet implemented but planned_:
+@@ -60,0 +62,2 @@ the future:
++ * Syncing multiple directories from the same syncthing instance.
++

@@ -1,0 +1,270 @@
+diff --git a/README.rst b/README.rst
+index c28d217f..bd82bff0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -43 +43 @@ Requirements
+-* Python 2.7 or Python 3.4+
++* Python 2.7 or Python 3.5+
+diff --git a/README.rst b/README.rst
+index 1361eac2..c28d217f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -54 +54 @@ For more details see the install section in the documentation:
+-https://doc.scrapy.org/en/latest/intro/install.html
++https://docs.scrapy.org/en/latest/intro/install.html
+@@ -59 +59 @@ Documentation
+-Documentation is available online at https://doc.scrapy.org/ and in the ``docs``
++Documentation is available online at https://docs.scrapy.org/ and in the ``docs``
+@@ -65 +65 @@ Releases
+-You can find release notes at https://doc.scrapy.org/en/latest/news.html
++You can find release notes at https://docs.scrapy.org/en/latest/news.html
+@@ -75 +75 @@ Contributing
+-See https://doc.scrapy.org/en/master/contributing.html
++See https://docs.scrapy.org/en/master/contributing.html
+diff --git a/README.rst b/README.rst
+index 45135c7a..1361eac2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -8,0 +9,4 @@ Scrapy
++.. image:: https://img.shields.io/pypi/pyversions/Scrapy.svg
++   :target: https://pypi.python.org/pypi/Scrapy
++   :alt: Supported Python Versions
++
+@@ -39 +43 @@ Requirements
+-* Python 2.7 or Python 3.3+
++* Python 2.7 or Python 3.4+
+diff --git a/README.rst b/README.rst
+index da63f2b9..45135c7a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -34 +34 @@ For more information including a list of features check the Scrapy homepage at:
+-http://scrapy.org
++https://scrapy.org
+@@ -50 +50 @@ For more details see the install section in the documentation:
+-http://doc.scrapy.org/en/latest/intro/install.html
++https://doc.scrapy.org/en/latest/intro/install.html
+@@ -55 +55 @@ Documentation
+-Documentation is available online at http://doc.scrapy.org/ and in the ``docs``
++Documentation is available online at https://doc.scrapy.org/ and in the ``docs``
+@@ -66 +66 @@ Community (blog, twitter, mail list, IRC)
+-See http://scrapy.org/community/
++See https://scrapy.org/community/
+@@ -71 +71 @@ Contributing
+-See http://doc.scrapy.org/en/master/contributing.html
++See https://doc.scrapy.org/en/master/contributing.html
+@@ -85 +85 @@ Companies using Scrapy
+-See http://scrapy.org/companies/
++See https://scrapy.org/companies/
+@@ -90 +90 @@ Commercial Support
+-See http://scrapy.org/support/
++See https://scrapy.org/support/
+diff --git a/README.rst b/README.rst
+index 27fab8e2..da63f2b9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -10 +10 @@ Scrapy
+-   :target: http://travis-ci.org/scrapy/scrapy
++   :target: https://travis-ci.org/scrapy/scrapy
+@@ -18 +18 @@ Scrapy
+-   :target: http://codecov.io/github/scrapy/scrapy?branch=master
++   :target: https://codecov.io/github/scrapy/scrapy?branch=master
+diff --git a/README.rst b/README.rst
+index 4eb36b44..27fab8e2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52,6 +51,0 @@ http://doc.scrapy.org/en/latest/intro/install.html
+-Releases
+-========
+-
+-You can download the latest stable and development releases from:
+-http://scrapy.org/download/
+-
+@@ -63,0 +58,5 @@ directory.
++Releases
++========
++
++You can find release notes at https://doc.scrapy.org/en/latest/news.html
++
+diff --git a/README.rst b/README.rst
+index 38dda62e..4eb36b44 100644
+--- a/README.rst
++++ b/README.rst
+@@ -16,4 +15,0 @@ Scrapy
+-   
+-.. image:: http://static.scrapy.org/py3progress/badge.svg
+-   :target: https://github.com/scrapy/scrapy/wiki/Python-3-Porting
+-   :alt: Python 3 Porting Status
+diff --git a/README.rst b/README.rst
+index 38ad43eb..38dda62e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -77,0 +78,3 @@ See http://doc.scrapy.org/en/master/contributing.html
++Code of Conduct
++---------------
++
+diff --git a/README.rst b/README.rst
+index b72ebf53..38ad43eb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -75,0 +76,2 @@ Contributing
++See http://doc.scrapy.org/en/master/contributing.html
++
+@@ -82,2 +83,0 @@ Please report unacceptable behavior to opensource@scrapinghub.com.
+-See http://doc.scrapy.org/en/master/contributing.html
+-
+diff --git a/README.rst b/README.rst
+index 74ae1f30..b72ebf53 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24,0 +25,4 @@ Scrapy
++.. image:: https://anaconda.org/conda-forge/scrapy/badges/version.svg
++   :target: https://anaconda.org/conda-forge/scrapy
++   :alt: Conda Version
++
+diff --git a/README.rst b/README.rst
+index a0138970..74ae1f30 100644
+--- a/README.rst
++++ b/README.rst
+@@ -9,4 +8,0 @@ Scrapy
+-.. image:: https://img.shields.io/pypi/dm/Scrapy.svg
+-   :target: https://pypi.python.org/pypi/Scrapy
+-   :alt: PyPI Monthly downloads
+-
+diff --git a/README.rst b/README.rst
+index 3e050bb1..a0138970 100644
+--- a/README.rst
++++ b/README.rst
+@@ -43 +43 @@ Requirements
+-* Python 2.7
++* Python 2.7 or Python 3.3+
+diff --git a/README.rst b/README.rst
+index 8a7d2c71..3e050bb1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -77 +77 @@ Please note that this project is released with a Contributor Code of Conduct
+-(see CODE_OF_CONDUCT.md).
++(see https://github.com/scrapy/scrapy/blob/master/CODE_OF_CONDUCT.md).
+diff --git a/README.rst b/README.rst
+index 6cbed75e..8a7d2c71 100644
+--- a/README.rst
++++ b/README.rst
+@@ -75,0 +76,6 @@ Contributing
++Please note that this project is released with a Contributor Code of Conduct
++(see CODE_OF_CONDUCT.md).
++
++By participating in this project you agree to abide by its terms.
++Please report unacceptable behavior to opensource@scrapinghub.com.
++
+diff --git a/README.rst b/README.rst
+index ec360487..6cbed75e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -8,0 +9,4 @@ Scrapy
++.. image:: https://img.shields.io/pypi/dm/Scrapy.svg
++   :target: https://pypi.python.org/pypi/Scrapy
++   :alt: PyPI Monthly downloads
++
+diff --git a/README.rst b/README.rst
+index 7006925a..ec360487 100644
+--- a/README.rst
++++ b/README.rst
+@@ -20,0 +21,4 @@ Scrapy
++.. image:: https://img.shields.io/codecov/c/github/scrapy/scrapy/master.svg
++   :target: http://codecov.io/github/scrapy/scrapy?branch=master
++   :alt: Coverage report
++
+diff --git a/README.rst b/README.rst
+index 6ca5deb4..7006925a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -15,0 +16,5 @@ Scrapy
++   
++.. image:: http://static.scrapy.org/py3progress/badge.svg
++   :target: https://github.com/scrapy/scrapy/wiki/Python-3-Porting
++   :alt: Python 3 Porting Status
++
+diff --git a/README.rst b/README.rst
+index 56bfad13..6ca5deb4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -20 +20 @@ Overview
+-Scrapy is a fast high-level web crawling and screen scraping framework, used to
++Scrapy is a fast high-level web crawling and web scraping framework, used to
+diff --git a/README.rst b/README.rst
+index 396bb14f..56bfad13 100644
+--- a/README.rst
++++ b/README.rst
+@@ -20 +20 @@ Overview
+-Scrapy is a fast high-level screen scraping and web crawling framework, used to
++Scrapy is a fast high-level web crawling and screen scraping framework, used to
+diff --git a/README.rst b/README.rst
+index bf043e1a..396bb14f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5,2 +5,3 @@ Scrapy
+-.. image:: https://badge.fury.io/py/Scrapy.png
+-   :target: http://badge.fury.io/py/Scrapy
++.. image:: https://img.shields.io/pypi/v/Scrapy.svg
++   :target: https://pypi.python.org/pypi/Scrapy
++   :alt: PyPI Version
+@@ -8 +9 @@ Scrapy
+-.. image:: https://secure.travis-ci.org/scrapy/scrapy.png?branch=master
++.. image:: https://img.shields.io/travis/scrapy/scrapy/master.svg
+@@ -9,0 +11 @@ Scrapy
++   :alt: Build Status
+@@ -11,3 +13,3 @@ Scrapy
+-.. image:: https://pypip.in/wheel/Scrapy/badge.png
+-    :target: https://pypi.python.org/pypi/Scrapy/
+-    :alt: Wheel Status
++.. image:: https://img.shields.io/badge/wheel-yes-brightgreen.svg
++   :target: https://pypi.python.org/pypi/Scrapy
++   :alt: Wheel Status
+@@ -18 +20 @@ Overview
+-Scrapy is a fast high-level web crawling and screen scraping framework, used to
++Scrapy is a fast high-level screen scraping and web crawling framework, used to
+diff --git a/README.rst b/README.rst
+index 7e5dd173..bf043e1a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -18 +18 @@ Overview
+-Scrapy is a fast high-level screen scraping and web crawling framework, used to
++Scrapy is a fast high-level web crawling and screen scraping framework, used to
+diff --git a/README.rst b/README.rst
+index 6020a367..7e5dd173 100644
+--- a/README.rst
++++ b/README.rst
+@@ -61 +61 @@ Contributing
+-See http://doc.scrapy.org/en/latest/contributing.html
++See http://doc.scrapy.org/en/master/contributing.html
+diff --git a/README.rst b/README.rst
+index c84df393..6020a367 100644
+--- a/README.rst
++++ b/README.rst
+@@ -10,0 +11,4 @@ Scrapy
++.. image:: https://pypip.in/wheel/Scrapy/badge.png
++    :target: https://pypi.python.org/pypi/Scrapy/
++    :alt: Wheel Status
++
+diff --git a/README.rst b/README.rst
+index cbc647fc..c84df393 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ Requirements
+-* Python 2.6 or up
++* Python 2.7
+diff --git a/README.rst b/README.rst
+index 5e9065e1..cbc647fc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -4,0 +5,3 @@ Scrapy
++.. image:: https://badge.fury.io/py/Scrapy.png
++   :target: http://badge.fury.io/py/Scrapy
++
+diff --git a/README.rst b/README.rst
+index dc4eeadd..5e9065e1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -4,0 +5,3 @@ Scrapy
++.. image:: https://secure.travis-ci.org/scrapy/scrapy.png?branch=master
++   :target: http://travis-ci.org/scrapy/scrapy
++

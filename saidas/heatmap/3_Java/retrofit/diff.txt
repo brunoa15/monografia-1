@@ -1,0 +1,716 @@
+diff --git a/README.md b/README.md
+index 1db85f72..eefa10e3 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 7 or Android 2.3.
++Retrofit requires at minimum Java 8+ or Android API 21+.
+diff --git a/README.md b/README.md
+index dd861849..1db85f72 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Download
+-Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.6.1`.
++Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.6.2`.
+@@ -16 +16 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 8+ or Android API 21+.
++Retrofit requires at minimum Java 7 or Android 2.3.
+diff --git a/README.md b/README.md
+index 0af4cf24..dd861849 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 7 or Android 2.3.
++Retrofit requires at minimum Java 8+ or Android API 21+.
+diff --git a/README.md b/README.md
+index d2b96a05..0af4cf24 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Download
+-Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.6.0`.
++Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.6.1`.
+@@ -16 +16 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 8+ or Android API 21+.
++Retrofit requires at minimum Java 7 or Android 2.3.
+diff --git a/README.md b/README.md
+index 3c00bbc9..d2b96a05 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 7 or Android 2.3.
++Retrofit requires at minimum Java 8+ or Android API 21+.
+diff --git a/README.md b/README.md
+index 74d6a26f..3c00bbc9 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Download
+-Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.5.0`.
++Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.6.0`.
+diff --git a/README.md b/README.md
+index 5b30970a..74d6a26f 100644
+--- a/README.md
++++ b/README.md
+@@ -12,12 +12 @@ Download
+-Download [the latest JAR][2] or grab via Maven:
+-```xml
+-<dependency>
+-  <groupId>com.squareup.retrofit2</groupId>
+-  <artifactId>retrofit</artifactId>
+-  <version>2.4.0</version>
+-</dependency>
+-```
+-or Gradle:
+-```groovy
+-implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+-```
++Download [the latest JAR][2] or grab from Maven central at the coordinates `com.squareup.retrofit2:retrofit:2.5.0`.
+@@ -33,2 +22 @@ R8 / ProGuard
+-If you are using R8 or ProGuard add the options from
+-[this file](https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro).
++If you are using R8 the shrinking and obfuscation rules are included automatically.
+@@ -36 +24,3 @@ If you are using R8 or ProGuard add the options from
+-You might also need rules for OkHttp and Okio which are dependencies of this library.
++ProGuard users must manually add the options from
++[this file](https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro).
++(Note: You might also need rules for OkHttp and Okio which are dependencies of this library)
+diff --git a/README.md b/README.md
+index 89b31564..5b30970a 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ If you are using R8 or ProGuard add the options from
+-[this file](https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/rules.pro).
++[this file](https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/retrofit2.pro).
+diff --git a/README.md b/README.md
+index 2fa23ac5..89b31564 100644
+--- a/README.md
++++ b/README.md
+@@ -30,2 +30,2 @@ Retrofit requires at minimum Java 7 or Android 2.3.
+-ProGuard
+---------
++R8 / ProGuard
++-------------
+@@ -33,11 +33,2 @@ ProGuard
+-If you are using ProGuard you need to add the following options:
+-```
+-# Retain generic type information for use by reflection by converters and adapters.
+--keepattributes Signature
+-# Retain service method parameters.
+--keepclassmembers,allowshrinking,allowobfuscation interface * {
+-    @retrofit2.http.* <methods>;
+-}
+-# Ignore annotation used for build tooling.
+--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-```
++If you are using R8 or ProGuard add the options from
++[this file](https://github.com/square/retrofit/blob/master/retrofit/src/main/resources/META-INF/proguard/rules.pro).
+@@ -45 +36 @@ If you are using ProGuard you need to add the following options:
+-You might also need rules for OkHttp and Okio which are dependencies.
++You might also need rules for OkHttp and Okio which are dependencies of this library.
+diff --git a/README.md b/README.md
+index cea3f387..2fa23ac5 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ If you are using ProGuard you need to add the following options:
+--keepclassmembernames,allowobfuscation interface * {
++-keepclassmembers,allowshrinking,allowobfuscation interface * {
+diff --git a/README.md b/README.md
+index 6de02b5d..cea3f387 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.3.0</version>
++  <version>2.4.0</version>
+@@ -22 +22 @@ or Gradle:
+-implementation 'com.squareup.retrofit2:retrofit:2.3.0'
++implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+@@ -44,0 +45,2 @@ If you are using ProGuard you need to add the following options:
++You might also need rules for OkHttp and Okio which are dependencies.
++
+diff --git a/README.md b/README.md
+index 65d5cd9b..6de02b5d 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.3.0'
++implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+diff --git a/README.md b/README.md
+index 71fcbaf2..65d5cd9b 100644
+--- a/README.md
++++ b/README.md
+@@ -64 +64 @@ License
+- [1]: http://square.github.io/retrofit/
++ [1]: https://square.github.io/retrofit/
+diff --git a/README.md b/README.md
+index 60b96a0e..71fcbaf2 100644
+--- a/README.md
++++ b/README.md
+@@ -33 +33 @@ ProGuard
+-If you are using ProGuard you might need to add the following options:
++If you are using ProGuard you need to add the following options:
+@@ -35,2 +35,8 @@ If you are using ProGuard you might need to add the following options:
+--dontwarn okio.**
+--dontwarn javax.annotation.**
++# Retain generic type information for use by reflection by converters and adapters.
++-keepattributes Signature
++# Retain service method parameters.
++-keepclassmembernames,allowobfuscation interface * {
++    @retrofit2.http.* <methods>;
++}
++# Ignore annotation used for build tooling.
++-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+diff --git a/README.md b/README.md
+index d9c81889..60b96a0e 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30,9 @@ Retrofit requires at minimum Java 7 or Android 2.3.
++ProGuard
++--------
++
++If you are using ProGuard you might need to add the following options:
++```
++-dontwarn okio.**
++-dontwarn javax.annotation.**
++```
++
+diff --git a/README.md b/README.md
+index 0688de8e..d9c81889 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.2.0</version>
++  <version>2.3.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.2.0'
++compile 'com.squareup.retrofit2:retrofit:2.3.0'
+diff --git a/README.md b/README.md
+index c7a7cdd9..0688de8e 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.1.0</version>
++  <version>2.2.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.1.0'
++compile 'com.squareup.retrofit2:retrofit:2.2.0'
+diff --git a/README.md b/README.md
+index 026930a7..c7a7cdd9 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ License
+- [2]: https://search.maven.org/remote_content?g=com.squareup.retrofit&a=retrofit&v=LATEST
++ [2]: https://search.maven.org/remote_content?g=com.squareup.retrofit2&a=retrofit&v=LATEST
+diff --git a/README.md b/README.md
+index 6ed80949..026930a7 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.3</version>
++  <version>2.1.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.3'
++compile 'com.squareup.retrofit2:retrofit:2.1.0'
+diff --git a/README.md b/README.md
+index 2dd8df08..6ed80949 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.2</version>
++  <version>2.0.3</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.2'
++compile 'com.squareup.retrofit2:retrofit:2.0.3'
+diff --git a/README.md b/README.md
+index 5c76ceba..2dd8df08 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.1</version>
++  <version>2.0.2</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.1'
++compile 'com.squareup.retrofit2:retrofit:2.0.2'
+diff --git a/README.md b/README.md
+index fb52e20e..5c76ceba 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.0</version>
++  <version>2.0.1</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.0'
++compile 'com.squareup.retrofit2:retrofit:2.0.1'
+diff --git a/README.md b/README.md
+index 2d3ddcf9..fb52e20e 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.0-beta4</version>
++  <version>2.0.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
++compile 'com.squareup.retrofit2:retrofit:2.0.0'
+diff --git a/README.md b/README.md
+index 313c353a..2d3ddcf9 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.0-beta3</version>
++  <version>2.0.0-beta4</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
++compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+diff --git a/README.md b/README.md
+index 5bbcdc58..313c353a 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ Download [the latest JAR][2] or grab via Maven:
+-  <groupId>com.squareup.retrofit</groupId>
++  <groupId>com.squareup.retrofit2</groupId>
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.0-beta2</version>
++  <version>2.0.0-beta3</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
++compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+diff --git a/README.md b/README.md
+index a8276e39..5bbcdc58 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>2.0.0-beta1</version>
++  <version>2.0.0-beta2</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
++compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
+diff --git a/README.md b/README.md
+index 9e1b3ed8..a8276e39 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.9.0</version>
++  <version>2.0.0-beta1</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.9.0'
++compile 'com.squareup.retrofit:retrofit:2.0.0-beta1'
+diff --git a/README.md b/README.md
+index e82b64ff..9e1b3ed8 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ Retrofit
+-Type-safe REST client for Android and Java by Square, Inc.
++Type-safe HTTP client for Android and Java by Square, Inc.
+diff --git a/README.md b/README.md
+index c101a007..e82b64ff 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
+-Retrofit requires at minimum Java 6 or Android 2.3.
++Retrofit requires at minimum Java 7 or Android 2.3.
+diff --git a/README.md b/README.md
+index 9b3ac58f..c101a007 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.8.0</version>
++  <version>1.9.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.8.0'
++compile 'com.squareup.retrofit:retrofit:1.9.0'
+diff --git a/README.md b/README.md
+index 72df2c13..9b3ac58f 100644
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24,3 @@ compile 'com.squareup.retrofit:retrofit:1.8.0'
++
++Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
++
+@@ -26,0 +30 @@ Retrofit requires at minimum Java 6 or Android 2.3.
++
+@@ -46,0 +51 @@ License
++ [snap]: https://oss.sonatype.org/content/repositories/snapshots/
+diff --git a/README.md b/README.md
+index 48df17e2..72df2c13 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +46 @@ License
+- [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.retrofit&a=retrofit&v=LATEST
++ [2]: https://search.maven.org/remote_content?g=com.squareup.retrofit&a=retrofit&v=LATEST
+diff --git a/README.md b/README.md
+index 7fe13c3a..48df17e2 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.7.1</version>
++  <version>1.8.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.7.1'
++compile 'com.squareup.retrofit:retrofit:1.8.0'
+diff --git a/README.md b/README.md
+index 471ff04d..7fe13c3a 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.7.0</version>
++  <version>1.7.1</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.7.0'
++compile 'com.squareup.retrofit:retrofit:1.7.1'
+diff --git a/README.md b/README.md
+index 884a5f49..471ff04d 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.6.1</version>
++  <version>1.7.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.6.1'
++compile 'com.squareup.retrofit:retrofit:1.7.0'
+diff --git a/README.md b/README.md
+index 312245c5..884a5f49 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ compile 'com.squareup.retrofit:retrofit:1.6.1'
+-
++Retrofit requires at minimum Java 6 or Android 2.3.
+diff --git a/README.md b/README.md
+index 21f30f4d..312245c5 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.6.0</version>
++  <version>1.6.1</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.6.0'
++compile 'com.squareup.retrofit:retrofit:1.6.1'
+diff --git a/README.md b/README.md
+index 7d8e6300..21f30f4d 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.5.1</version>
++  <version>1.6.0</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.5.1'
++compile 'com.squareup.retrofit:retrofit:1.6.0'
+diff --git a/README.md b/README.md
+index dbc8e6e6..7d8e6300 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Download [the latest JAR][2] or grab via Maven:
+-  <version>1.5.0</version>
++  <version>1.5.1</version>
+@@ -22 +22 @@ or Gradle:
+-compile 'com.squareup.retrofit:retrofit:1.5.0'
++compile 'com.squareup.retrofit:retrofit:1.5.1'
+diff --git a/README.md b/README.md
+index 96a76264..dbc8e6e6 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +12,0 @@ Download [the latest JAR][2] or grab via Maven:
+-
+@@ -16,3 +15,3 @@ Download [the latest JAR][2] or grab via Maven:
+-    <groupId>com.squareup.retrofit</groupId>
+-    <artifactId>retrofit</artifactId>
+-    <version>(insert latest version)</version>
++  <groupId>com.squareup.retrofit</groupId>
++  <artifactId>retrofit</artifactId>
++  <version>1.5.0</version>
+@@ -21 +20,4 @@ Download [the latest JAR][2] or grab via Maven:
+-
++or Gradle:
++```groovy
++compile 'com.squareup.retrofit:retrofit:1.5.0'
++```
+diff --git a/README.md b/README.md
+index 81607e1d..96a76264 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@ Type-safe REST client for Android and Java by Square, Inc.
++For more information please see [the website][1].
+@@ -7,2 +7,0 @@ Type-safe REST client for Android and Java by Square, Inc.
+-Usage
+------
+@@ -10,4 +9,2 @@ Usage
+-Create an interface for your API.  You can create as many of these interfaces as you like.  For
+-each interface you create, calling `RestAdapter.create(MyInterface.class)` will create an
+-instance of that API handler, which you can then store and use throughout your application.  An
+-example interface:
++Download
++--------
+@@ -15,5 +12 @@ example interface:
+-```java
+-public interface DummyServiceAsync {
+-  // Produces a url like "foo/bar?id=idValue".
+-  @GET("foo/bar")
+-  void normalGet(@Name("id") String id, Callback<MyJsonObj> callback);
++Download [the latest JAR][2] or grab via Maven:
+@@ -21,28 +14,6 @@ public interface DummyServiceAsync {
+-  // Produces a url like "foo/idValue/bar?category=categoryValue".
+-  @GET("foo/{id}/bar")
+-  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<MyJsonObj> callback);
+-
+-  // Produces a url like "foo/bar/idValue" and body like "id=idValue&body=bodyValue".
+-  @POST("foo/bar/{id}")
+-  void normalPost(@Name("id") String id, @Name("body") String body, Callback<MyJsonObj> callback);
+-
+-  // Produces a url like "foo/bar/idValue" and body generated by MyJsonObj.
+-  @POST("foo/bar/{id}")
+-  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<MyJsonObj> callback);
+-}
+-```
+-
+-Each method has a `Callback` type specified at the end of the parameter list.  This is how your
+-application will handle the results of your network calls asynchronously: errors and successful
+-responses are both handled by the `Callback` interface.
+-
+-If you want to use the `@SingleEntity` method of specifying request body (see `singleEntityPost` above),
+-your `MyJsonObject` will need to implement `TypedBytes`.
+-
+-For synchronous execution, omit the `Callback` parameter and specify the response as the return type.
+-
+-```java
+-public interface DummyServiceSync {
+-  @GET("foo/bar")
+-  MyJsonObj normalGet(@Name("id") String id);
+-}
++```xml
++<dependency>
++    <groupId>com.squareup.retrofit</groupId>
++    <artifactId>retrofit</artifactId>
++    <version>(insert latest version)</version>
++</dependency>
+@@ -51,4 +21,0 @@ public interface DummyServiceSync {
+-Also worth noting: for POST/PUT requests using default form encoding for the request entity (see
+-normalPost), any path parameters are also included in the request body.  This is different from the
+-behavior of GET/DELETE, where path parameters are excluded from the query string.
+-
+@@ -61 +28 @@ License
+-    Copyright 2012 Square, Inc.
++    Copyright 2013 Square, Inc.
+@@ -73,0 +41,4 @@ License
++
++
++ [1]: http://square.github.io/retrofit/
++ [2]: http://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.squareup.retrofit&a=retrofit&v=LATEST
+diff --git a/README.md b/README.md
+index 9ae60f44..81607e1d 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ public interface DummyServiceAsync {
+-  void normalGet(@Name("id") String id, Callback<Response> callback);
++  void normalGet(@Name("id") String id, Callback<MyJsonObj> callback);
+@@ -23 +23 @@ public interface DummyServiceAsync {
+-  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<Response> callback);
++  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<MyJsonObj> callback);
+@@ -27 +27 @@ public interface DummyServiceAsync {
+-  void normalPost(@Name("id") String id, @Name("body") String body, Callback<Response> callback);
++  void normalPost(@Name("id") String id, @Name("body") String body, Callback<MyJsonObj> callback);
+@@ -31 +31 @@ public interface DummyServiceAsync {
+-  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<Response> callback);
++  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<MyJsonObj> callback);
+@@ -47 +47 @@ public interface DummyServiceSync {
+-  Response normalGet(@Name("id") String id);
++  MyJsonObj normalGet(@Name("id") String id);
+diff --git a/README.md b/README.md
+index 3aaa36d6..9ae60f44 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ public interface DummyServiceAsync {
+-  void normalGet(@Name("id") String id, Callback<SimpleResponse> callback);
++  void normalGet(@Name("id") String id, Callback<Response> callback);
+@@ -23 +23 @@ public interface DummyServiceAsync {
+-  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<SimpleResponse> callback);
++  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<Response> callback);
+@@ -27 +27 @@ public interface DummyServiceAsync {
+-  void normalPost(@Name("id") String id, @Name("body") String body, Callback<SimpleResponse> callback);
++  void normalPost(@Name("id") String id, @Name("body") String body, Callback<Response> callback);
+@@ -31 +31 @@ public interface DummyServiceAsync {
+-  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<SimpleResponse> callback);
++  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<Response> callback);
+@@ -47 +47 @@ public interface DummyServiceSync {
+-  SimpleResponse normalGet(@Name("id") String id);
++  Response normalGet(@Name("id") String id);
+diff --git a/README.md b/README.md
+index d53a1c35..3aaa36d6 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ public interface DummyServiceAsync {
+-  void normalGet(@Named("id") String id, Callback<SimpleResponse> callback);
++  void normalGet(@Name("id") String id, Callback<SimpleResponse> callback);
+@@ -23 +23 @@ public interface DummyServiceAsync {
+-  void getWithPathParam(@Named("id") String id, @Named("category") String category, Callback<SimpleResponse> callback);
++  void getWithPathParam(@Name("id") String id, @Name("category") String category, Callback<SimpleResponse> callback);
+@@ -27 +27 @@ public interface DummyServiceAsync {
+-  void normalPost(@Named("id") String id, @Named("body") String body, Callback<SimpleResponse> callback);
++  void normalPost(@Name("id") String id, @Name("body") String body, Callback<SimpleResponse> callback);
+@@ -31 +31 @@ public interface DummyServiceAsync {
+-  void singleEntityPost(@SingleEntity MyJsonObj card, @Named("id") String id, Callback<SimpleResponse> callback);
++  void singleEntityPost(@SingleEntity MyJsonObj card, @Name("id") String id, Callback<SimpleResponse> callback);
+@@ -47 +47 @@ public interface DummyServiceSync {
+-  SimpleResponse normalGet(@Named("id") String id);
++  SimpleResponse normalGet(@Name("id") String id);
+diff --git a/README.md b/README.md
+index 133940be..d53a1c35 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ Retrofit
+-Reusable Java and Android code from Square, Inc.
++Type-safe REST client for Android and Java by Square, Inc.
+@@ -6 +5,0 @@ Reusable Java and Android code from Square, Inc.
+-Modules:
+@@ -8,7 +7,2 @@ Modules:
+- * http - Abstracts away the messy logic of making network calls (depends on 'io').
+- * io - Utility classes for doing low-level java I/O.
+- * sync - Directory write synchronization.
+-
+-
+-Http Usage
+-----------
++Usage
++-----
+@@ -63,2 +56,0 @@ behavior of GET/DELETE, where path parameters are excluded from the query string
+-Compilation
+------------
+@@ -66 +58,4 @@ Compilation
+-Retrofit is built using Maven and there is a very minimal amount of setup required for compilation.
++License
++=======
++
++    Copyright 2012 Square, Inc.
+@@ -68,2 +63,3 @@ Retrofit is built using Maven and there is a very minimal amount of setup requir
+-Two environment variables are required which point to your Android SDK and native Android SDK. A common
+-place to put these is in a `.bash_profile` file in your home directory.
++    Licensed under the Apache License, Version 2.0 (the "License");
++    you may not use this file except in compliance with the License.
++    You may obtain a copy of the License at
+@@ -71,2 +67 @@ place to put these is in a `.bash_profile` file in your home directory.
+-    export ANDROID_HOME=~/dev/android-sdk
+-    export ANDROID_NDK_HOME=~/dev/android-ndk
++       http://www.apache.org/licenses/LICENSE-2.0
+@@ -74,2 +69,5 @@ place to put these is in a `.bash_profile` file in your home directory.
+-With these two environment variables loaded you can compile the modules and sample application by running
+-`mvn clean verify`. Each module's built artifact will be in its respective `target/` folder.
++    Unless required by applicable law or agreed to in writing, software
++    distributed under the License is distributed on an "AS IS" BASIS,
++    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++    See the License for the specific language governing permissions and
++    limitations under the License.
+diff --git a/README.md b/README.md
+index b187ffc3..133940be 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ example interface:
+-public interface DummyService {
++public interface DummyServiceAsync {
+@@ -41,3 +41,3 @@ public interface DummyService {
+-Note that each method _must_ have a `Callback` object at the end of the parameter list.  This is how
+-your application will handle the results of your network calls: errors and successful responses are
+-both handled by the `Callback` interface.
++Each method has a `Callback` type specified at the end of the parameter list.  This is how your
++application will handle the results of your network calls asynchronously: errors and successful
++responses are both handled by the `Callback` interface.
+@@ -46,2 +46,10 @@ If you want to use the `@SingleEntity` method of specifying request body (see `s
+-your `MyJsonObject` will need to implement `TypedBytes`.  For convenience, you can extend
+-`GsonRequestEntity` if you're just trying to send a JSON string in the request body.
++your `MyJsonObject` will need to implement `TypedBytes`.
++
++For synchronous execution, omit the `Callback` parameter and specify the response as the return type.
++
++```java
++public interface DummyServiceSync {
++  @GET("foo/bar")
++  SimpleResponse normalGet(@Named("id") String id);
++}
++```
+diff --git a/README.md b/README.md
+index 7ba73af7..b187ffc3 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Create an interface for your API.  You can create as many of these interfaces as
+-each interface you create, calling `RestAdapter.service(MyInterface.class)` will create an
++each interface you create, calling `RestAdapter.create(MyInterface.class)` will create an
+diff --git a/README.md b/README.md
+index db6f0a28..7ba73af7 100644
+--- a/README.md
++++ b/README.md
+@@ -21,17 +21,19 @@ example interface:
+-    public interface DummyService {
+-      // Produces a url like "foo/bar?id=idValue".
+-      @GET("foo/bar")
+-      void normalGet(@Named("id") String id, Callback<SimpleResponse> callback);
+-
+-      // Produces a url like "foo/idValue/bar?category=categoryValue".
+-      @GET("foo/{id}/bar")
+-      void getWithPathParam(@Named("id") String id, @Named("category") String category, Callback<SimpleResponse> callback);
+-
+-      // Produces a url like "foo/bar/idValue" and body like "id=idValue&body=bodyValue".
+-      @POST("foo/bar/{id}")
+-      void normalPost(@Named("id") String id, @Named("body") String body, Callback<SimpleResponse> callback);
+-
+-      // Produces a url like "foo/bar/idValue" and body generated by MyJsonObj.
+-      @POST("foo/bar/{id}")
+-      void singleEntityPost(@SingleEntity MyJsonObj card, @Named("id") String id, Callback<SimpleResponse> callback);
+-    }
++```java
++public interface DummyService {
++  // Produces a url like "foo/bar?id=idValue".
++  @GET("foo/bar")
++  void normalGet(@Named("id") String id, Callback<SimpleResponse> callback);
++
++  // Produces a url like "foo/idValue/bar?category=categoryValue".
++  @GET("foo/{id}/bar")
++  void getWithPathParam(@Named("id") String id, @Named("category") String category, Callback<SimpleResponse> callback);
++
++  // Produces a url like "foo/bar/idValue" and body like "id=idValue&body=bodyValue".
++  @POST("foo/bar/{id}")
++  void normalPost(@Named("id") String id, @Named("body") String body, Callback<SimpleResponse> callback);
++
++  // Produces a url like "foo/bar/idValue" and body generated by MyJsonObj.
++  @POST("foo/bar/{id}")
++  void singleEntityPost(@SingleEntity MyJsonObj card, @Named("id") String id, Callback<SimpleResponse> callback);
++}
++```
+diff --git a/README.md b/README.md
+index f3a9564d..db6f0a28 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +9,0 @@ Modules:
+- * queue - File-based queue.
+diff --git a/README.md b/README.md
+index d1847aa1..f3a9564d 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +10,0 @@ Modules:
+- * shake - Shake detection for Android .
+diff --git a/README.md b/README.md
+index c10c97aa..d1847aa1 100644
+--- a/README.md
++++ b/README.md
+@@ -8,2 +8,5 @@ Modules:
+- *  IO - Utility classes for doing low-level java I/O.
+- *  HTTP - Abstracts away the messy logic of making network calls (depends on IO).
++ * http - Abstracts away the messy logic of making network calls (depends on 'io').
++ * io - Utility classes for doing low-level java I/O.
++ * queue - File-based queue.
++ * shake - Shake detection for Android .
++ * sync - Directory write synchronization.
+diff --git a/README.md b/README.md
+index e723ee27..c10c97aa 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +9,0 @@ Modules:
+- *  Android - Contains Android-specific utility classes.
+diff --git a/README.md b/README.md
+index c14aaa04..e723ee27 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +9,0 @@ Modules:
+- *  Core - Some interfaces and utilities used by the other retrofit modules.
+diff --git a/README.md b/README.md
+index 2440a2ee..c14aaa04 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11 @@ Modules:
+- *  Android - Contains two Android-specific utility classes: `ShakeDetector` (for detecting device
+-    shakes) and `QueueFile` (for storing a queue on the android file-system).
++ *  Android - Contains Android-specific utility classes.

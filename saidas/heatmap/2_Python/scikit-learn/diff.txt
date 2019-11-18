@@ -1,0 +1,1436 @@
+diff --git a/README.rst b/README.rst
+index 51f7a2cba..12dccbecd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -58,4 +58,4 @@ scikit-learn 0.21 and later require Python 3.5 or newer.
+-Scikit-learn plotting capabilities (i.e., functions start with "plot_") require
+-Matplotlib (>= 1.5.1). For running the examples Matplotlib >= 1.5.1 is
+-required. A few examples require scikit-image >= 0.12.3, a few examples require
+-pandas >= 0.18.0.
++Scikit-learn plotting capabilities (i.e., functions start with "plot_"
++and classes end with "Display") require Matplotlib (>= 1.5.1). For running the
++examples Matplotlib >= 1.5.1 is required. A few examples require
++scikit-image >= 0.12.3, a few examples require pandas >= 0.18.0.
+diff --git a/README.rst b/README.rst
+index 2c7ba4a9b..51f7a2cba 100644
+--- a/README.rst
++++ b/README.rst
+@@ -63,7 +62,0 @@ pandas >= 0.18.0.
+-scikit-learn also uses CBLAS, the C interface to the Basic Linear Algebra
+-Subprograms library. scikit-learn comes with a reference implementation, but
+-the system CBLAS will be detected by the build system and used if present.
+-CBLAS exists in many implementations; see `Linear algebra libraries
+-<http://scikit-learn.org/stable/modules/computing#linear-algebra-libraries>`_
+-for known issues.
+-
+diff --git a/README.rst b/README.rst
+index a8188dba6..2c7ba4a9b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -55 +55 @@ scikit-learn requires:
+-**Scikit-learn 0.20 was the last version to support Python 2.7.**
++**Scikit-learn 0.20 was the last version to support Python 2.7 and Python 3.4.**
+@@ -58,2 +58,4 @@ scikit-learn 0.21 and later require Python 3.5 or newer.
+-For running the examples Matplotlib >= 1.5.1 is required. A few examples
+-require scikit-image >= 0.12.3, a few examples require pandas >= 0.18.0.
++Scikit-learn plotting capabilities (i.e., functions start with "plot_") require
++Matplotlib (>= 1.5.1). For running the examples Matplotlib >= 1.5.1 is
++required. A few examples require scikit-image >= 0.12.3, a few examples require
++pandas >= 0.18.0.
+diff --git a/README.rst b/README.rst
+index 2a066ddc2..a8188dba6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -114,2 +114,4 @@ Contributing
+-To learn more about making a contribution to scikit-learn, please view the contributing document: 
+-https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md
++
++To learn more about making a contribution to scikit-learn, please see our
++`Contributing guide
++<https://scikit-learn.org/dev/developers/contributing.html>`_.
+diff --git a/README.rst b/README.rst
+index 457da088c..2a066ddc2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -30 +30 @@ scikit-learn is a Python module for machine learning built on top of
+-SciPy and distributed under the 3-Clause BSD license.
++SciPy and is distributed under the 3-Clause BSD license.
+@@ -55,2 +55,2 @@ scikit-learn requires:
+-**Scikit-learn 0.20 was the last version to support Python2.7.**
+-Scikit-learn 0.21 and later require Python 3.5 or newer.
++**Scikit-learn 0.20 was the last version to support Python 2.7.**
++scikit-learn 0.21 and later require Python 3.5 or newer.
+@@ -72 +72 @@ If you already have a working installation of numpy and scipy,
+-the easiest way to install scikit-learn is using ``pip`` ::
++the easiest way to install scikit-learn is using ``pip``   ::
+diff --git a/README.rst b/README.rst
+index 9714fca8d..457da088c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -112,5 +112,4 @@ You can check the latest sources with the command::
+-Setting up a development environment
+-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-
+-Quick tutorial on how to go about setting up your environment to
+-contribute to scikit-learn: https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md
++Contributing
++~~~~~~~~~~~~
++To learn more about making a contribution to scikit-learn, please view the contributing document: 
++https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md
+diff --git a/README.rst b/README.rst
+index 94df109e1..9714fca8d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -59,2 +59 @@ For running the examples Matplotlib >= 1.5.1 is required. A few examples
+-require scikit-image >= 0.12.3, a few examples require pandas >= 0.18.0
+-and a few example require joblib >= 0.11.
++require scikit-image >= 0.12.3, a few examples require pandas >= 0.18.0.
+diff --git a/README.rst b/README.rst
+index 9b9e80f69..94df109e1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52,0 +53 @@ scikit-learn requires:
++- joblib (>= 0.11)
+diff --git a/README.rst b/README.rst
+index 087a98488..9b9e80f69 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3,4 @@
+-|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_ |Python35|_ |PyPi|_ |DOI|_
++|Azure|_ |Travis|_ |Codecov|_ |CircleCI|_ |Python35|_ |PyPi|_ |DOI|_
++
++.. |Azure| image:: https://dev.azure.com/scikit-learn/scikit-learn/_apis/build/status/scikit-learn.scikit-learn?branchName=master
++.. _Azure: https://dev.azure.com/scikit-learn/scikit-learn/_build/latest?definitionId=1&branchName=master
+@@ -8,3 +10,0 @@
+-.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/github/scikit-learn/scikit-learn?branch=master&svg=true
+-.. _AppVeyor: https://ci.appveyor.com/project/sklearn-ci/scikit-learn/history
+-
+diff --git a/README.rst b/README.rst
+index 023736de8..087a98488 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ |DOI|_
++|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_ |Python35|_ |PyPi|_ |DOI|_
+diff --git a/README.rst b/README.rst
+index 70537af85..023736de8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -17,3 +16,0 @@
+-.. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
+-.. _Python27: https://badge.fury.io/py/scikit-learn
+-
+@@ -53,3 +50,3 @@ scikit-learn requires:
+-- Python (>= 2.7 or >= 3.4)
+-- NumPy (>= 1.8.2)
+-- SciPy (>= 0.13.3)
++- Python (>= 3.5)
++- NumPy (>= 1.11.0)
++- SciPy (>= 0.17.0)
+@@ -57,2 +54,2 @@ scikit-learn requires:
+-**Scikit-learn 0.20 is the last version to support Python2.7.**
+-Scikit-learn 0.21 and later will require Python 3.5 or newer.
++**Scikit-learn 0.20 was the last version to support Python2.7.**
++Scikit-learn 0.21 and later require Python 3.5 or newer.
+@@ -60,2 +57,2 @@ Scikit-learn 0.21 and later will require Python 3.5 or newer.
+-For running the examples Matplotlib >= 1.4 is required. A few examples
+-require scikit-image >= 0.11.3, a few examples require pandas >= 0.17.1
++For running the examples Matplotlib >= 1.5.1 is required. A few examples
++require scikit-image >= 0.12.3, a few examples require pandas >= 0.18.0
+diff --git a/README.rst b/README.rst
+index 3be673e39..70537af85 100644
+--- a/README.rst
++++ b/README.rst
+@@ -61 +61,2 @@ For running the examples Matplotlib >= 1.4 is required. A few examples
+-require scikit-image >= 0.11.3 and a few examples require pandas >= 0.17.1.
++require scikit-image >= 0.11.3, a few examples require pandas >= 0.17.1
++and a few example require joblib >= 0.11.
+diff --git a/README.rst b/README.rst
+index 1868f9f50..3be673e39 100644
+--- a/README.rst
++++ b/README.rst
+@@ -67 +67 @@ CBLAS exists in many implementations; see `Linear algebra libraries
+-<http://scikit-learn.org/stable/modules/computational_performance.html#linear-algebra-libraries>`_
++<http://scikit-learn.org/stable/modules/computing#linear-algebra-libraries>`_
+diff --git a/README.rst b/README.rst
+index 5b0c62338..1868f9f50 100644
+--- a/README.rst
++++ b/README.rst
+@@ -170 +170 @@ Communication
+-- Stack Overflow: http://stackoverflow.com/questions/tagged/scikit-learn
++- Stack Overflow: https://stackoverflow.com/questions/tagged/scikit-learn
+diff --git a/README.rst b/README.rst
+index 695c2706d..5b0c62338 100644
+--- a/README.rst
++++ b/README.rst
+@@ -104 +104 @@ Important links
+-- Download releases: https://pypi.python.org/pypi/scikit-learn
++- Download releases: https://pypi.org/project/scikit-learn/
+diff --git a/README.rst b/README.rst
+index b4d67af56..695c2706d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -37 +37,2 @@ of Code project, and since then many volunteers have contributed. See
+-the `AUTHORS.rst <AUTHORS.rst>`_ file for a complete list of contributors.
++the `About us <http://scikit-learn.org/dev/about.html#authors>`_ page
++for a list of core contributors.
+@@ -146 +147,2 @@ of Code project, and since then many volunteers have contributed. See
+-the  `AUTHORS.rst <AUTHORS.rst>`_ file for a complete list of contributors.
++the  `About us <http://scikit-learn.org/dev/about.html#authors>`_ page
++for a list of core contributors.
+diff --git a/README.rst b/README.rst
+index fa2ef793b..b4d67af56 100644
+--- a/README.rst
++++ b/README.rst
+@@ -59,2 +59,2 @@ Scikit-learn 0.21 and later will require Python 3.5 or newer.
+-For running the examples Matplotlib >= 1.3.1 is required. A few examples
+-require scikit-image >= 0.9.3 and a few examples require pandas >= 0.13.1.
++For running the examples Matplotlib >= 1.4 is required. A few examples
++require scikit-image >= 0.11.3 and a few examples require pandas >= 0.17.1.
+diff --git a/README.rst b/README.rst
+index eb1957686..fa2ef793b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -123 +123 @@ After installation, you can launch the test suite from outside the
+-source directory (you will need to have the ``pytest`` package installed)::
++source directory (you will need to have ``pytest`` >= 3.3.0 installed)::
+diff --git a/README.rst b/README.rst
+index 4df228acd..eb1957686 100644
+--- a/README.rst
++++ b/README.rst
+@@ -55,0 +56,3 @@ scikit-learn requires:
++**Scikit-learn 0.20 is the last version to support Python2.7.**
++Scikit-learn 0.21 and later will require Python 3.5 or newer.
++
+diff --git a/README.rst b/README.rst
+index cf011277f..4df228acd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -80,0 +81,6 @@ The documentation includes more detailed `installation instructions <http://scik
++Changelog
++---------
++
++See the `changelog <http://scikit-learn.org/dev/whats_new.html>`__
++for a history of notable changes to scikit-learn.
++
+diff --git a/README.rst b/README.rst
+index 90fa97bee..cf011277f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -57 +57 @@ For running the examples Matplotlib >= 1.3.1 is required. A few examples
+-require scikit-image >= 0.9.3 as well.
++require scikit-image >= 0.9.3 and a few examples require pandas >= 0.13.1.
+diff --git a/README.rst b/README.rst
+index ea7cba68d..90fa97bee 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56 +56,2 @@ scikit-learn requires:
+-For running the examples Matplotlib >= 1.3.1 is required.
++For running the examples Matplotlib >= 1.3.1 is required. A few examples
++require scikit-image >= 0.9.3 as well.
+diff --git a/README.rst b/README.rst
+index 7b9d11015..ea7cba68d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56 +56 @@ scikit-learn requires:
+-For running the examples Matplotlib >= 1.1.1 is required.
++For running the examples Matplotlib >= 1.3.1 is required.
+diff --git a/README.rst b/README.rst
+index 7afc95fb6..7b9d11015 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52 @@ scikit-learn requires:
+-- Python (>= 2.7 or >= 3.3)
++- Python (>= 2.7 or >= 3.4)
+diff --git a/README.rst b/README.rst
+index a1ec4c06f..7afc95fb6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -117 +117 @@ source directory (you will need to have the ``pytest`` package installed)::
+-See the web page http://scikit-learn.org/stable/developers/advanced_installation.html#testing
++See the web page http://scikit-learn.org/dev/developers/advanced_installation.html#testing
+diff --git a/README.rst b/README.rst
+index 64c8875be..a1ec4c06f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -113 +113 @@ After installation, you can launch the test suite from outside the
+-source directory (you will need to have the ``nose`` package installed)::
++source directory (you will need to have the ``pytest`` package installed)::
+@@ -115,7 +115 @@ source directory (you will need to have the ``nose`` package installed)::
+-    nosetests -v sklearn
+-
+-Under Windows, it is recommended to use the following command (adjust the path
+-to the ``python.exe`` program) as using the ``nosetests.exe`` program can badly
+-interact with tests that use ``multiprocessing``::
+-
+-    C:\Python34\python.exe -c "import nose; nose.main()" -v sklearn
++    pytest sklearn
+diff --git a/README.rst b/README.rst
+index 2586523ff..64c8875be 100644
+--- a/README.rst
++++ b/README.rst
+@@ -53 +53 @@ scikit-learn requires:
+-- NumPy (>= 1.8.1)
++- NumPy (>= 1.8.2)
+diff --git a/README.rst b/README.rst
+index c1ed17033..2586523ff 100644
+--- a/README.rst
++++ b/README.rst
+@@ -53,2 +53,2 @@ scikit-learn requires:
+-- NumPy (>= 1.6.1)
+-- SciPy (>= 0.9)
++- NumPy (>= 1.8.1)
++- SciPy (>= 0.13.3)
+diff --git a/README.rst b/README.rst
+index be5e969cf..c1ed17033 100644
+--- a/README.rst
++++ b/README.rst
+@@ -55,0 +56,2 @@ scikit-learn requires:
++For running the examples Matplotlib >= 1.1.1 is required.
++
+diff --git a/README.rst b/README.rst
+index fc4d79e1b..be5e969cf 100644
+--- a/README.rst
++++ b/README.rst
+@@ -161 +161 @@ Communication
+-- IRC channel: ``#scikit-learn`` at ``irc.freenode.net``
++- IRC channel: ``#scikit-learn`` at ``webchat.freenode.net``
+diff --git a/README.rst b/README.rst
+index 41abaa90a..fc4d79e1b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ |DOI|_
++|Travis|_ |AppVeyor|_ |Codecov|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ |DOI|_
+@@ -11,2 +11,2 @@
+-.. |Coveralls| image:: https://coveralls.io/repos/scikit-learn/scikit-learn/badge.svg?branch=master&service=github
+-.. _Coveralls: https://coveralls.io/r/scikit-learn/scikit-learn
++.. |Codecov| image:: https://codecov.io/github/scikit-learn/scikit-learn/badge.svg?branch=master&service=github
++.. _Codecov: https://codecov.io/github/scikit-learn/scikit-learn?branch=master
+diff --git a/README.rst b/README.rst
+index 9996bab11..41abaa90a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -42,0 +43 @@ Website: http://scikit-learn.org
++
+@@ -139 +140 @@ of Code project, and since then many volunteers have contributed. See
+-the AUTHORS.rst file for a complete list of contributors.
++the  `AUTHORS.rst <AUTHORS.rst>`_ file for a complete list of contributors.
+diff --git a/README.rst b/README.rst
+index 75ee8c7c1..9996bab11 100644
+--- a/README.rst
++++ b/README.rst
+@@ -51 +51 @@ scikit-learn requires:
+-- Python (>= 2.6 or >= 3.3)
++- Python (>= 2.7 or >= 3.3)
+diff --git a/README.rst b/README.rst
+index 55ff72f94..75ee8c7c1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -120 +120 @@ interact with tests that use ``multiprocessing``::
+-See the web page http://scikit-learn.org/stable/install.html#testing
++See the web page http://scikit-learn.org/stable/developers/advanced_installation.html#testing
+diff --git a/README.rst b/README.rst
+index e6034a830..55ff72f94 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,0 +2 @@
++
+@@ -164 +165,2 @@ Citation
+-~~~~~~~~~~~~~
++~~~~~~~~
++
+diff --git a/README.rst b/README.rst
+index aabd53f14..e6034a830 100644
+--- a/README.rst
++++ b/README.rst
+@@ -48 +48 @@ Dependencies
+-Scikit-learn requires::
++scikit-learn requires:
+@@ -50,3 +50,3 @@ Scikit-learn requires::
+-- Python (>= 2.6 or >= 3.3),
+-- NumPy (>= 1.6.1),
+-- SciPy (>= 0.9).
++- Python (>= 2.6 or >= 3.3)
++- NumPy (>= 1.6.1)
++- SciPy (>= 0.9)
+@@ -81 +81 @@ community goals are to be helpful, welcoming, and effective. The
+-`Development Guide <http://scikit-learn.org/stable/developers/index.html>`_ 
++`Development Guide <http://scikit-learn.org/stable/developers/index.html>`_
+@@ -111 +111 @@ source directory (you will need to have the ``nose`` package installed)::
+-   $ nosetests -v sklearn
++    nosetests -v sklearn
+@@ -117 +117 @@ interact with tests that use ``multiprocessing``::
+-   C:\Python34\python.exe -c "import nose; nose.main()" -v sklearn
++    C:\Python34\python.exe -c "import nose; nose.main()" -v sklearn
+@@ -133 +133 @@ with our guidelines: http://scikit-learn.org/stable/developers/index.html
+-Project history
++Project History
+@@ -142 +142 @@ The project is currently maintained by a team of volunteers.
+-**Note** `scikit-learn` was previously referred to as `scikits.learn`.
++**Note**: `scikit-learn` was previously referred to as `scikits.learn`.
+diff --git a/README.rst b/README.rst
+index ff9ec69e9..aabd53f14 100644
+--- a/README.rst
++++ b/README.rst
+@@ -161,0 +162,4 @@ Communication
++
++Citation
++~~~~~~~~~~~~~
++If you use scikit-learn in a scientific publication, we would appreciate citations: http://scikit-learn.org/stable/about.html#citing-scikit-learn
+diff --git a/README.rst b/README.rst
+index 51776380c..ff9ec69e9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -81 +81 @@ community goals are to be helpful, welcoming, and effective. The
+-`Contributor's Guide <http://scikit-learn.org/stable/developers/index.html>`_ 
++`Development Guide <http://scikit-learn.org/stable/developers/index.html>`_ 
+diff --git a/README.rst b/README.rst
+index 8d67f2017..51776380c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -89 +89 @@ Important links
+-- Download releases: http://sourceforge.net/projects/scikit-learn/files/
++- Download releases: https://pypi.python.org/pypi/scikit-learn
+@@ -161 +161 @@ Communication
+-- Website: http://scikit-learn.org
+\ No newline at end of file
++- Website: http://scikit-learn.org
+diff --git a/README.rst b/README.rst
+index cbf8058e8..8d67f2017 100644
+--- a/README.rst
++++ b/README.rst
+@@ -34,2 +33,0 @@ SciPy and distributed under the 3-Clause BSD license.
+-<<<<<<< 154635e629fd5585ff5bb4ad782315e2c5610177
+-<<<<<<< 18852978821063655c852f46eff0eff4765e8182
+@@ -42,4 +39,0 @@ It is currently maintained by a team of volunteers.
+-
+-=======
+->>>>>>> Update install
+-=======
+@@ -48 +41,0 @@ Website: http://scikit-learn.org
+->>>>>>> Fix changes re: @amuller
+@@ -83,7 +75,0 @@ The documentation includes more detailed `installation instructions <http://scik
+-Documentation
+--------------
+-
+-- HTML documentation (stable release): http://scikit-learn.org
+-- HTML documentation (development version): http://scikit-learn.org/dev/
+-
+-
+@@ -158,0 +145,10 @@ The project is currently maintained by a team of volunteers.
++Help and Support
++----------------
++
++Documentation
++~~~~~~~~~~~~~
++
++- HTML documentation (stable release): http://scikit-learn.org
++- HTML documentation (development version): http://scikit-learn.org/dev/
++- FAQ: http://scikit-learn.org/stable/faq.html
++
+@@ -160 +156 @@ Communication
+--------------
++~~~~~~~~~~~~~
+@@ -164 +160,2 @@ Communication
+-
++- Stack Overflow: http://stackoverflow.com/questions/tagged/scikit-learn
++- Website: http://scikit-learn.org
+\ No newline at end of file
+diff --git a/README.rst b/README.rst
+index b019f74bf..cbf8058e8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -162 +162 @@ Communication
+-- Mailing list: https://lists.sourceforge.net/lists/listinfo/scikit-learn-general
++- Mailing list: https://mail.python.org/mailman/listinfo/scikit-learn
+diff --git a/README.rst b/README.rst
+index c1bc102f3..b019f74bf 100644
+--- a/README.rst
++++ b/README.rst
+@@ -2,5 +1,0 @@
+-scikit-learn
+-============
+-
+-Website: http://scikit-learn.org
+-
+@@ -32,0 +28,3 @@ Website: http://scikit-learn.org
++scikit-learn
++============
++
+@@ -35,0 +34 @@ SciPy and distributed under the 3-Clause BSD license.
++<<<<<<< 154635e629fd5585ff5bb4ad782315e2c5610177
+@@ -45,0 +45,4 @@ It is currently maintained by a team of volunteers.
++=======
++Website: http://scikit-learn.org
++
++>>>>>>> Fix changes re: @amuller
+@@ -77,10 +79,0 @@ or ``conda``::
+-**We don't recommend installing scipy or numpy using pip on linux**,
+-as this will involve a lengthy build-process with many dependencies.
+-Without careful configuration, building numpy yourself can lead to an installation
+-that is much slower than it should be. 
+-If you are using Linux, consider using your package manager to install
+-scikit-learn. It is usually the easiest way, but might not provide the newest
+-version.
+-If you haven't already installed numpy and scipy and can't install them via
+-your operation system, it is recommended to use a third party distribution.
+-
+@@ -95,0 +89 @@ Documentation
++
+@@ -151,0 +146 @@ with our guidelines: http://scikit-learn.org/stable/developers/index.html
++
+@@ -164 +158,0 @@ The project is currently maintained by a team of volunteers.
+-
+diff --git a/README.rst b/README.rst
+index e48970364..c1bc102f3 100644
+--- a/README.rst
++++ b/README.rst
+@@ -35,0 +36 @@ SciPy and distributed under the 3-Clause BSD license.
++<<<<<<< 18852978821063655c852f46eff0eff4765e8182
+@@ -42,0 +44,2 @@ It is currently maintained by a team of volunteers.
++=======
++>>>>>>> Update install
+@@ -49,3 +52 @@ Dependencies
+-scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.5.
+-(using the same codebase thanks to an embedded copy of
+-`six <http://pythonhosted.org/six/>`_). It should also work with Python 3.3 and 3.4.
++Scikit-learn requires::
+@@ -53,9 +54,3 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.5.
+-The required dependencies to build the software are NumPy >= 1.6.1,
+-SciPy >= 0.9 and a working C/C++ compiler. For the development version,
+-you will also require Cython >=0.23.
+-
+-For running the examples Matplotlib >= 1.1.1 is required and for running the
+-tests you need nose >= 1.1.2.
+-
+-This configuration matches the Ubuntu Precise 12.04 LTS release from April
+-2012.
++- Python (>= 2.6 or >= 3.3),
++- NumPy (>= 1.6.1),
++- SciPy (>= 0.9).
+@@ -70 +64,0 @@ for known issues.
+-
+@@ -74 +68,2 @@ User installation
+-**conda? pip?**
++If you already have a working installation of numpy and scipy,
++the easiest way to install scikit-learn is using ``pip`` ::
+@@ -76,2 +71 @@ User installation
+-This package uses distutils, which is the default way of installing
+-python modules. To install in your home directory, use::
++    pip install -U scikit-learn
+@@ -79 +73 @@ python modules. To install in your home directory, use::
+-  python setup.py install --user
++or ``conda``::
+@@ -81 +75 @@ python modules. To install in your home directory, use::
+-To install for all users on Unix/Linux::
++    conda install scikit-learn
+@@ -83,2 +77,11 @@ To install for all users on Unix/Linux::
+-  python setup.py build
+-  sudo python setup.py install
++**We don't recommend installing scipy or numpy using pip on linux**,
++as this will involve a lengthy build-process with many dependencies.
++Without careful configuration, building numpy yourself can lead to an installation
++that is much slower than it should be. 
++If you are using Linux, consider using your package manager to install
++scikit-learn. It is usually the easiest way, but might not provide the newest
++version.
++If you haven't already installed numpy and scipy and can't install them via
++your operation system, it is recommended to use a third party distribution.
++
++The documentation includes more detailed `installation instructions <http://scikit-learn.org/stable/install.html>`_.
+@@ -86,2 +88,0 @@ To install for all users on Unix/Linux::
+-For more detailed installation instructions,
+-see the web page http://scikit-learn.org/stable/install.html
+@@ -95 +95,0 @@ Documentation
+-
+@@ -98,0 +99,6 @@ Development
++We welcome new contributors of all experience levels. The scikit-learn
++community goals are to be helpful, welcoming, and effective. The
++`Contributor's Guide <http://scikit-learn.org/stable/developers/index.html>`_ 
++has detailed information about contributing code, documentation, tests, and
++more. We've included some basic information in this README.
++
+diff --git a/README.rst b/README.rst
+index 5c8e4c2ae..e48970364 100644
+--- a/README.rst
++++ b/README.rst
+@@ -113,4 +112,0 @@ You can check the latest sources with the command::
+-or if you have write privileges::
+-
+-    git clone git@github.com:scikit-learn/scikit-learn.git
+-
+diff --git a/README.rst b/README.rst
+index 387edebe9..5c8e4c2ae 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,0 +2,4 @@
++scikit-learn
++============
++
++Website: http://scikit-learn.org
+@@ -26 +29,0 @@
+-
+@@ -30,4 +32,0 @@
+-
+-scikit-learn
+-============
+-
+@@ -43,2 +41,0 @@ It is currently maintained by a team of volunteers.
+-**Note** `scikit-learn` was previously referred to as `scikits.learn`.
+-
+@@ -46,10 +43,2 @@ It is currently maintained by a team of volunteers.
+-Important links
+-===============
+-
+-- Official source code repo: https://github.com/scikit-learn/scikit-learn
+-- HTML documentation (stable release): http://scikit-learn.org
+-- HTML documentation (development version): http://scikit-learn.org/dev/
+-- Download releases: http://sourceforge.net/projects/scikit-learn/files/
+-- Issue tracker: https://github.com/scikit-learn/scikit-learn/issues
+-- Mailing list: https://lists.sourceforge.net/lists/listinfo/scikit-learn-general
+-- IRC channel: ``#scikit-learn`` at ``irc.freenode.net``
++Installation
++------------
+@@ -58 +47 @@ Dependencies
+-============
++~~~~~~~~~~~~
+@@ -82,2 +71,4 @@ for known issues.
+-Install
+-=======
++User installation
++~~~~~~~~~~~~~~~~~
++
++**conda? pip?**
+@@ -97,0 +89,7 @@ see the web page http://scikit-learn.org/stable/install.html
++Documentation
++-------------
++
++- HTML documentation (stable release): http://scikit-learn.org
++- HTML documentation (development version): http://scikit-learn.org/dev/
++
++
+@@ -99 +97,4 @@ Development
+-===========
++-----------
++
++Important links
++~~~~~~~~~~~~~~~
+@@ -101,2 +102,3 @@ Development
+-Code
+-----
++- Official source code repo: https://github.com/scikit-learn/scikit-learn
++- Download releases: http://sourceforge.net/projects/scikit-learn/files/
++- Issue tracker: https://github.com/scikit-learn/scikit-learn/issues
+@@ -104,2 +106,2 @@ Code
+-GIT
+-~~~
++Source code
++~~~~~~~~~~~
+@@ -110,0 +113 @@ You can check the latest sources with the command::
++or if you have write privileges::
+@@ -112,2 +115,4 @@ You can check the latest sources with the command::
+-Contributing
+-~~~~~~~~~~~~
++    git clone git@github.com:scikit-learn/scikit-learn.git
++
++Setting up a development environment
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@@ -118,5 +122,0 @@ contribute to scikit-learn: https://github.com/scikit-learn/scikit-learn/blob/ma
+-Before opening a Pull Request, have a look at the
+-full Contributing page to make sure your code complies
+-with our guidelines: http://scikit-learn.org/stable/developers/index.html
+-
+-
+@@ -124 +124 @@ Testing
+--------
++~~~~~~~
+@@ -141,0 +142,27 @@ for more information.
++
++Submitting a Pull Request
++~~~~~~~~~~~~~~~~~~~~~~~~~
++
++Before opening a Pull Request, have a look at the
++full Contributing page to make sure your code complies
++with our guidelines: http://scikit-learn.org/stable/developers/index.html
++
++Project history
++---------------
++
++The project was started in 2007 by David Cournapeau as a Google Summer
++of Code project, and since then many volunteers have contributed. See
++the AUTHORS.rst file for a complete list of contributors.
++
++The project is currently maintained by a team of volunteers.
++
++**Note** `scikit-learn` was previously referred to as `scikits.learn`.
++
++
++
++Communication
++-------------
++
++- Mailing list: https://lists.sourceforge.net/lists/listinfo/scikit-learn-general
++- IRC channel: ``#scikit-learn`` at ``irc.freenode.net``
++
+diff --git a/README.rst b/README.rst
+index d296be6fe..387edebe9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -39 +39 @@ of Code project, and since then many volunteers have contributed. See
+-the AUTHORS.rst file for a complete list of contributors.
++the `AUTHORS.rst <AUTHORS.rst>`_ file for a complete list of contributors.
+diff --git a/README.rst b/README.rst
+index 4649b0564..d296be6fe 100644
+--- a/README.rst
++++ b/README.rst
+@@ -111,4 +110,0 @@ You can check the latest sources with the command::
+-or if you have write privileges::
+-
+-    git clone git@github.com:scikit-learn/scikit-learn.git
+-
+diff --git a/README.rst b/README.rst
+index 873cf56a1..4649b0564 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ 
++|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ |DOI|_
+@@ -25,0 +26,5 @@
++
++.. |DOI| image:: https://zenodo.org/badge/21369/scikit-learn/scikit-learn.svg
++.. _DOI: https://zenodo.org/badge/latestdoi/21369/scikit-learn/scikit-learn
++
++
+diff --git a/README.rst b/README.rst
+index a1aac539f..873cf56a1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -55 +55 @@ Dependencies
+-scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
++scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.5.
+@@ -57 +57 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
+-`six <http://pythonhosted.org/six/>`_). It should also work with Python 3.3.
++`six <http://pythonhosted.org/six/>`_). It should also work with Python 3.3 and 3.4.
+diff --git a/README.rst b/README.rst
+index f09224605..a1aac539f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_
++|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_ |Python27|_ |Python35|_ |PyPi|_ 
+@@ -16,0 +17,8 @@
++.. |Python27| image:: https://img.shields.io/badge/python-2.7-blue.svg
++.. _Python27: https://badge.fury.io/py/scikit-learn
++
++.. |Python35| image:: https://img.shields.io/badge/python-3.5-blue.svg
++.. _Python35: https://badge.fury.io/py/scikit-learn
++
++.. |PyPi| image:: https://badge.fury.io/py/scikit-learn.svg
++.. _PyPi: https://badge.fury.io/py/scikit-learn
+diff --git a/README.rst b/README.rst
+index e8232bcd1..f09224605 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5 +5 @@
+-.. |Travis| image:: https://api.travis-ci.org/scikit-learn/scikit-learn.png?branch=master
++.. |Travis| image:: https://api.travis-ci.org/scikit-learn/scikit-learn.svg?branch=master
+diff --git a/README.rst b/README.rst
+index 81904db03..e8232bcd1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -11 +11 @@
+-.. |Coveralls| image:: https://coveralls.io/repos/scikit-learn/scikit-learn/badge.svg?branch=master
++.. |Coveralls| image:: https://coveralls.io/repos/scikit-learn/scikit-learn/badge.svg?branch=master&service=github
+diff --git a/README.rst b/README.rst
+index 90abcc517..81904db03 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52 @@ The required dependencies to build the software are NumPy >= 1.6.1,
+-SciPy >= 0.9 and a working C/C++ compiler. For a development version,
++SciPy >= 0.9 and a working C/C++ compiler. For the development version,
+diff --git a/README.rst b/README.rst
+index 70a3f669c..90abcc517 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52,2 @@ The required dependencies to build the software are NumPy >= 1.6.1,
+-SciPy >= 0.9, Cython >=0.23 and a working C/C++ compiler. 
++SciPy >= 0.9 and a working C/C++ compiler. For a development version,
++you will also require Cython >=0.23.
+diff --git a/README.rst b/README.rst
+index 0702075a7..70a3f669c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52 @@ The required dependencies to build the software are NumPy >= 1.6.1,
+-SciPy >= 0.9 and a working C/C++ compiler.
++SciPy >= 0.9, Cython >=0.23 and a working C/C++ compiler. 
+diff --git a/README.rst b/README.rst
+index cadb7c6fd..0702075a7 100644
+--- a/README.rst
++++ b/README.rst
+@@ -80,0 +81,2 @@ To install for all users on Unix/Linux::
++For more detailed installation instructions,
++see the web page http://scikit-learn.org/stable/install.html
+diff --git a/README.rst b/README.rst
+index 1437e37e1..cadb7c6fd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_ |Coveralls|_
++|Travis|_ |AppVeyor|_ |Coveralls|_ |CircleCI|_
+@@ -13,0 +14,4 @@
++.. |CircleCI| image:: https://circleci.com/gh/scikit-learn/scikit-learn/tree/master.svg?style=shield&circle-token=:circle-token
++.. _CircleCI: https://circleci.com/gh/scikit-learn/scikit-learn
++
++
+diff --git a/README.rst b/README.rst
+index 848ed54e9..1437e37e1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -11 +11 @@
+-.. |Coveralls| image:: https://img.shields.io/coveralls/scikit-learn/scikit-learn.svg
++.. |Coveralls| image:: https://coveralls.io/repos/scikit-learn/scikit-learn/badge.svg?branch=master
+diff --git a/README.rst b/README.rst
+index 0d7de6508..848ed54e9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_ |AppVeyor|_
++|Travis|_ |AppVeyor|_ |Coveralls|_
+@@ -10,0 +11,3 @@
++.. |Coveralls| image:: https://img.shields.io/coveralls/scikit-learn/scikit-learn.svg
++.. _Coveralls: https://coveralls.io/r/scikit-learn/scikit-learn
++
+diff --git a/README.rst b/README.rst
+index 74150165a..0d7de6508 100644
+--- a/README.rst
++++ b/README.rst
+@@ -8 +8 @@
+-.. |AppVeyor| image:: https://img.shields.io/appveyor/ci/sklearn-ci/scikit-learn/master.png
++.. |AppVeyor| image:: https://ci.appveyor.com/api/projects/status/github/scikit-learn/scikit-learn?branch=master&svg=true
+diff --git a/README.rst b/README.rst
+index 9e084db75..74150165a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3 +3 @@
+-|Travis|_
++|Travis|_ |AppVeyor|_
+@@ -7,0 +8,3 @@
++.. |AppVeyor| image:: https://img.shields.io/appveyor/ci/sklearn-ci/scikit-learn/master.png
++.. _AppVeyor: https://ci.appveyor.com/project/sklearn-ci/scikit-learn/history
++
+diff --git a/README.rst b/README.rst
+index ffc6cec40..9e084db75 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41 +41 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
+-The required dependencies to build the software are NumPy >= 1.6.2,
++The required dependencies to build the software are NumPy >= 1.6.1,
+diff --git a/README.rst b/README.rst
+index 208ff9f32..ffc6cec40 100644
+--- a/README.rst
++++ b/README.rst
+@@ -105 +105 @@ After installation, you can launch the test suite from outside the
+-source directory (you will need to have nosetests installed)::
++source directory (you will need to have the ``nose`` package installed)::
+@@ -107 +107,7 @@ source directory (you will need to have nosetests installed)::
+-   $ nosetests --exe sklearn
++   $ nosetests -v sklearn
++
++Under Windows, it is recommended to use the following command (adjust the path
++to the ``python.exe`` program) as using the ``nosetests.exe`` program can badly
++interact with tests that use ``multiprocessing``::
++
++   C:\Python34\python.exe -c "import nose; nose.main()" -v sklearn
+diff --git a/README.rst b/README.rst
+index 870285267..208ff9f32 100644
+--- a/README.rst
++++ b/README.rst
+@@ -49,0 +50,7 @@ This configuration matches the Ubuntu Precise 12.04 LTS release from April
++scikit-learn also uses CBLAS, the C interface to the Basic Linear Algebra
++Subprograms library. scikit-learn comes with a reference implementation, but
++the system CBLAS will be detected by the build system and used if present.
++CBLAS exists in many implementations; see `Linear algebra libraries
++<http://scikit-learn.org/stable/modules/computational_performance.html#linear-algebra-libraries>`_
++for known issues.
++
+diff --git a/README.rst b/README.rst
+index 397e3324b..870285267 100644
+--- a/README.rst
++++ b/README.rst
+@@ -42 +42 @@ The required dependencies to build the software are NumPy >= 1.6.2,
+-SciPy >= 0.11 and a working C/C++ compiler.
++SciPy >= 0.9 and a working C/C++ compiler.
+@@ -44,2 +44,2 @@ SciPy >= 0.11 and a working C/C++ compiler.
+-For running the examples Matplotlib >= 0.99.1 is required and for running the
+-tests you need nose >= 0.10.
++For running the examples Matplotlib >= 1.1.1 is required and for running the
++tests you need nose >= 1.1.2.
+@@ -47 +47,2 @@ tests you need nose >= 0.10.
+-This configuration matches the Ubuntu 10.04 LTS release from April 2010.
++This configuration matches the Ubuntu Precise 12.04 LTS release from April
++2012.
+diff --git a/README.rst b/README.rst
+index c859fc601..397e3324b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -41,2 +41,2 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
+-The required dependencies to build the software NumPy >= 1.6.2, SciPy >= 0.11
+-and a working C/C++ compiler.
++The required dependencies to build the software are NumPy >= 1.6.2,
++SciPy >= 0.11 and a working C/C++ compiler.
+diff --git a/README.rst b/README.rst
+index 52b66885b..c859fc601 100644
+--- a/README.rst
++++ b/README.rst
+@@ -39,2 +39 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
+-`six <http://pythonhosted.org/six/>`_). It should also work against Python
+-3.3.
++`six <http://pythonhosted.org/six/>`_). It should also work with Python 3.3.
+diff --git a/README.rst b/README.rst
+index 01f2fb417..52b66885b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -42 +42 @@ scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
+-The required dependencies to build the software NumPy >= 1.6.1, SciPy >= 0.9
++The required dependencies to build the software NumPy >= 1.6.2, SciPy >= 0.11
+@@ -89 +89 @@ contribute to scikit-learn: https://github.com/scikit-learn/scikit-learn/blob/ma
+-Before opening a Pull Request, have a look at the 
++Before opening a Pull Request, have a look at the
+diff --git a/README.rst b/README.rst
+index 6ad2b3726..01f2fb417 100644
+--- a/README.rst
++++ b/README.rst
+@@ -37,2 +37,4 @@ Dependencies
+-scikit-learn is tested to work under Python 2.6+ and Python 3.3+
+-(using the same codebase thanks to an embedded copy of `six <http://pythonhosted.org/six/>`_).
++scikit-learn is tested to work under Python 2.6, Python 2.7, and Python 3.4.
++(using the same codebase thanks to an embedded copy of
++`six <http://pythonhosted.org/six/>`_). It should also work against Python
++3.3.
+diff --git a/README.rst b/README.rst
+index b87c004d5..6ad2b3726 100644
+--- a/README.rst
++++ b/README.rst
+@@ -40 +40 @@ scikit-learn is tested to work under Python 2.6+ and Python 3.3+
+-The required dependencies to build the software Numpy >= 1.3, SciPy >= 0.7
++The required dependencies to build the software NumPy >= 1.6.1, SciPy >= 0.9
+diff --git a/README.rst b/README.rst
+index 0cb8a069d..b87c004d5 100644
+--- a/README.rst
++++ b/README.rst
+@@ -105,5 +104,0 @@ for more information.
+-
+-
+-
+-
+-
+diff --git a/README.rst b/README.rst
+index 6888292b1..0cb8a069d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -74 +74 @@ You can check the latest sources with the command::
+-    git clone git://github.com/scikit-learn/scikit-learn.git
++    git clone https://github.com/scikit-learn/scikit-learn.git
+@@ -80,0 +81,11 @@ or if you have write privileges::
++Contributing
++~~~~~~~~~~~~
++
++Quick tutorial on how to go about setting up your environment to
++contribute to scikit-learn: https://github.com/scikit-learn/scikit-learn/blob/master/CONTRIBUTING.md
++
++Before opening a Pull Request, have a look at the 
++full Contributing page to make sure your code complies
++with our guidelines: http://scikit-learn.org/stable/developers/index.html
++
++
+@@ -93,0 +105,5 @@ for more information.
++
++
++
++
++
+diff --git a/README.rst b/README.rst
+index e2d58b983..6888292b1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -38,2 +38 @@ scikit-learn is tested to work under Python 2.6+ and Python 3.3+
+-(using the same codebase thanks to an embedded copy of [six](
+-http://pythonhosted.org/six/)).
++(using the same codebase thanks to an embedded copy of `six <http://pythonhosted.org/six/>`_).
+diff --git a/README.rst b/README.rst
+index 7d8e9a217..e2d58b983 100644
+--- a/README.rst
++++ b/README.rst
+@@ -37,2 +37,6 @@ Dependencies
+-The required dependencies to build the software are Python >= 2.6,
+-setuptools, Numpy >= 1.3, SciPy >= 0.7 and a working C/C++ compiler.
++scikit-learn is tested to work under Python 2.6+ and Python 3.3+
++(using the same codebase thanks to an embedded copy of [six](
++http://pythonhosted.org/six/)).
++
++The required dependencies to build the software Numpy >= 1.3, SciPy >= 0.7
++and a working C/C++ compiler.
+diff --git a/README.rst b/README.rst
+index d9b80087b..7d8e9a217 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52 @@ python modules. To install in your home directory, use::
+-  python setup.py install --home
++  python setup.py install --user
+diff --git a/README.rst b/README.rst
+index 6d209ea78..d9b80087b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5,2 +5,2 @@
+-.. |Travis| image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png?branch=master
+-.. _Travis: https://secure.travis-ci.org/scikit-learn/scikit-learn
++.. |Travis| image:: https://api.travis-ci.org/scikit-learn/scikit-learn.png?branch=master
++.. _Travis: https://travis-ci.org/scikit-learn/scikit-learn
+diff --git a/README.rst b/README.rst
+index 7d12392e1..6d209ea78 100644
+--- a/README.rst
++++ b/README.rst
+@@ -39 +38,0 @@ setuptools, Numpy >= 1.3, SciPy >= 0.7 and a working C/C++ compiler.
+-This configuration matches the Ubuntu 10.04 LTS release from April 2010.
+@@ -41 +40,4 @@ This configuration matches the Ubuntu 10.04 LTS release from April 2010.
+-To run the tests you will also need nose >= 0.10.
++For running the examples Matplotlib >= 0.99.1 is required and for running the
++tests you need nose >= 0.10.
++
++This configuration matches the Ubuntu 10.04 LTS release from April 2010.
+diff --git a/README.rst b/README.rst
+index 767f1d1f8..7d12392e1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5 +5 @@
+-.. |Travis| image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png 
++.. |Travis| image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png?branch=master
+diff --git a/README.rst b/README.rst
+index 56ba5e2f5..767f1d1f8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -2 +2,5 @@
+-.. image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png
++
++|Travis|_
++
++.. |Travis| image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png 
++.. _Travis: https://secure.travis-ci.org/scikit-learn/scikit-learn
+diff --git a/README.rst b/README.rst
+index f2da992f0..56ba5e2f5 100644
+--- a/README.rst
++++ b/README.rst
+@@ -2 +2 @@
+-.. image:: https://secure.travis-ci.org/SnippyHolloW/scikit-learn.png
++.. image:: https://secure.travis-ci.org/scikit-learn/scikit-learn.png
+diff --git a/README.rst b/README.rst
+index e99309188..f2da992f0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,0 +2 @@
++.. image:: https://secure.travis-ci.org/SnippyHolloW/scikit-learn.png
+diff --git a/README.rst b/README.rst
+index e39e33190..e99309188 100644
+--- a/README.rst
++++ b/README.rst
+@@ -75 +75 @@ After installation, you can launch the test suite from outside the
+-source directory (you will need to have nosetest installed)::
++source directory (you will need to have nosetests installed)::
+@@ -77 +77 @@ source directory (you will need to have nosetest installed)::
+-   $ nosetest --exe sklearn 
++   $ nosetests --exe sklearn
+diff --git a/README.rst b/README.rst
+index 3d0531cd0..e39e33190 100644
+--- a/README.rst
++++ b/README.rst
+@@ -77 +77 @@ source directory (you will need to have nosetest installed)::
+-    python -c "import sklearn; sklearn.test()"
++   $ nosetest --exe sklearn 
+diff --git a/README.rst b/README.rst
+index d0b4c83d7..3d0531cd0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -79 +79 @@ source directory (you will need to have nosetest installed)::
+-See web page http://scikit-learn.org/stable/install.html#testing
++See the web page http://scikit-learn.org/stable/install.html#testing
+@@ -82,2 +82,2 @@ for more information.
+-    Random number generation can be controled during testing by setting
+-    the SKLEARN_SEED environment variable
++    Random number generation can be controlled during testing by setting
++    the ``SKLEARN_SEED`` environment variable.
+diff --git a/README.rst b/README.rst
+index ae263a0f6..d0b4c83d7 100644
+--- a/README.rst
++++ b/README.rst
+@@ -79 +79 @@ source directory (you will need to have nosetest installed)::
+-See web page http://scikit-learn.sourceforge.net/install.html#testing
++See web page http://scikit-learn.org/stable/install.html#testing
+diff --git a/README.rst b/README.rst
+index 89c0f05a4..ae263a0f6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -80,0 +81,3 @@ for more information.
++
++    Random number generation can be controled during testing by setting
++    the SKLEARN_SEED environment variable
+diff --git a/README.rst b/README.rst
+index a2a9f09bc..89c0f05a4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3,2 +3,2 @@
+-About
+-=====
++scikit-learn
++============
+diff --git a/README.rst b/README.rst
+index bd17dab4f..a2a9f09bc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -34 +34 @@ setuptools, Numpy >= 1.3, SciPy >= 0.7 and a working C/C++ compiler.
+-This configuration matches the last Ubuntu LTS release from April 2010.
++This configuration matches the Ubuntu 10.04 LTS release from April 2010.
+diff --git a/README.rst b/README.rst
+index 257390628..bd17dab4f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -33 +33,2 @@ The required dependencies to build the software are Python >= 2.6,
+-setuptools, Numpy >= 1.2, SciPy >= 0.7 and a working C++ compiler.
++setuptools, Numpy >= 1.3, SciPy >= 0.7 and a working C/C++ compiler.
++This configuration matches the last Ubuntu LTS release from April 2010.
+diff --git a/README.rst b/README.rst
+index 131b6dbfd..257390628 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32 +32 @@ Dependencies
+-The required dependencies to build the software are Python >= 2.5,
++The required dependencies to build the software are Python >= 2.6,
+diff --git a/README.rst b/README.rst
+index a9bba78a7..131b6dbfd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -7 +7 @@ scikit-learn is a Python module for machine learning built on top of
+-SciPy.
++SciPy and distributed under the 3-Clause BSD license.
+@@ -22,2 +22,2 @@ Important links
+-- HTML documentation (stable release): http://scikit-learn.sourceforge.net/
+-- HTML documentation (development version): http://scikit-learn.sourceforge.net/dev/
++- HTML documentation (stable release): http://scikit-learn.org
++- HTML documentation (development version): http://scikit-learn.org/dev/
+diff --git a/README.rst b/README.rst
+index 3c693b3fd..a9bba78a7 100644
+--- a/README.rst
++++ b/README.rst
+@@ -15 +15 @@ It is currently maintained by a team of volunteers.
+-**Note** The `scikit-learn` was previously referred to as `scikits.learn`
++**Note** `scikit-learn` was previously referred to as `scikits.learn`.
+diff --git a/README.rst b/README.rst
+index 07913bdd6..3c693b3fd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -14,0 +15,2 @@ It is currently maintained by a team of volunteers.
++**Note** The `scikit-learn` was previously referred to as `scikits.learn`
++
+diff --git a/README.rst b/README.rst
+index da03f689d..07913bdd6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -6 +6 @@ About
+-scikits.learn is a Python module for machine learning built on top of
++scikit-learn is a Python module for machine learning built on top of
+diff --git a/README.rst b/README.rst
+index eb3d07e2f..da03f689d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -74 +74 @@ source directory (you will need to have nosetest installed)::
+-    python -c "import scikits.learn as skl; skl.test()"
++    python -c "import sklearn; sklearn.test()"
+diff --git a/README.rst b/README.rst
+index 17f285941..eb3d07e2f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -6,2 +6,2 @@ About
+-scikits.learn is a python module for machine learning built on top of
+-scipy.
++scikits.learn is a Python module for machine learning built on top of
++SciPy.
+@@ -30,2 +30,2 @@ Dependencies
+-The required dependencies to build the software are python >= 2.5,
+-setuptools, NumPy >= 1.2, SciPy >= 0.7 and a working C++ compiler.
++The required dependencies to build the software are Python >= 2.5,
++setuptools, Numpy >= 1.2, SciPy >= 0.7 and a working C++ compiler.
+@@ -39 +39 @@ Install
+-This packages uses distutils, which is the default way of installing
++This package uses distutils, which is the default way of installing
+@@ -77 +77 @@ See web page http://scikit-learn.sourceforge.net/install.html#testing
+-for more information.
+\ No newline at end of file
++for more information.
+diff --git a/README.rst b/README.rst
+index 854da218d..17f285941 100644
+--- a/README.rst
++++ b/README.rst
+@@ -16,6 +16,2 @@ It is currently maintained by a team of volunteers.
+-Download
+-========
+-
+-You can download source code and Windows binaries from SourceForge:
+-
+-http://sourceforge.net/projects/scikit-learn/files/
++Important links
++===============
+@@ -22,0 +19,7 @@ http://sourceforge.net/projects/scikit-learn/files/
++- Official source code repo: https://github.com/scikit-learn/scikit-learn
++- HTML documentation (stable release): http://scikit-learn.sourceforge.net/
++- HTML documentation (development version): http://scikit-learn.sourceforge.net/dev/
++- Download releases: http://sourceforge.net/projects/scikit-learn/files/
++- Issue tracker: https://github.com/scikit-learn/scikit-learn/issues
++- Mailing list: https://lists.sourceforge.net/lists/listinfo/scikit-learn-general
++- IRC channel: ``#scikit-learn`` at ``irc.freenode.net``
+@@ -47,17 +49,0 @@ To install for all users on Unix/Linux::
+-Mailing list
+-============
+-
+-There's a general and development mailing list, visit
+-https://lists.sourceforge.net/lists/listinfo/scikit-learn-general to
+-subscribe to the mailing list.
+-
+-
+-IRC channel
+-===========
+-
+-Some developers tend to hang around the channel ``#scikit-learn``
+-at ``irc.freenode.net``, especially during the week preparing a new
+-release. If nobody is available to answer your questions there don't
+-hesitate to ask it on the mailing list to reach a wider audience.
+-
+-
+@@ -81,7 +66,0 @@ or if you have write privileges::
+-Bugs
+-----
+-
+-Please submit bugs you might encounter, as well as patches and feature
+-requests to the tracker located at github
+-https://github.com/scikit-learn/scikit-learn/issues
+-
+@@ -98,4 +77 @@ See web page http://scikit-learn.sourceforge.net/install.html#testing
+-for more information.
+-
+-
+-
++for more information.
+\ No newline at end of file
+diff --git a/README.rst b/README.rst
+index 154472c45..854da218d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -37 +37 @@ This packages uses distutils, which is the default way of installing
+-python modules. The install command is::
++python modules. To install in your home directory, use::
+@@ -39 +39,6 @@ python modules. The install command is::
+-  python setup.py install
++  python setup.py install --home
++
++To install for all users on Unix/Linux::
++
++  python setup.py build
++  sudo python setup.py install
+diff --git a/README.rst b/README.rst
+index 1815a48d5..154472c45 100644
+--- a/README.rst
++++ b/README.rst
+@@ -28,3 +28 @@ The required dependencies to build the software are python >= 2.5,
+-setuptools, NumPy >= 1.1, SciPy >= 0.6 (although having at least 0.7
+-is highly recommended and required by some modules) and a working C++
+-compiler.
++setuptools, NumPy >= 1.2, SciPy >= 0.7 and a working C++ compiler.
+diff --git a/README.rst b/README.rst
+index a13497381..1815a48d5 100644
+--- a/README.rst
++++ b/README.rst
+@@ -82,2 +82,2 @@ Please submit bugs you might encounter, as well as patches and feature
+-requests to the tracker located at the address
+-https://sourceforge.net/apps/trac/scikit-learn/report
++requests to the tracker located at github
++https://github.com/scikit-learn/scikit-learn/issues
+diff --git a/README.rst b/README.rst
+index a884d76ef..a13497381 100644
+--- a/README.rst
++++ b/README.rst
+@@ -89,2 +89,2 @@ Testing
+-After installation, you can launch the test suite (you will need to
+-have nosetest installed)::
++After installation, you can launch the test suite from outside the
++source directory (you will need to have nosetest installed)::
+@@ -94,4 +94,3 @@ have nosetest installed)::
+-Note that this must be run from outisde the project's root
+-directory. See web page
+-http://scikit-learn.sourceforge.net/developers/ for complete
+-documentation on developement
++See web page http://scikit-learn.sourceforge.net/install.html#testing
++for more information.
++
+diff --git a/README.rst b/README.rst
+index 86065f069..a884d76ef 100644
+--- a/README.rst
++++ b/README.rst
+@@ -28,2 +28,3 @@ The required dependencies to build the software are python >= 2.5,
+-NumPy >= 1.1, SciPy >= 0.6 (although having at least 0.7 is highly
+-recommended and required by some modules) and a working C++ compiler.
++setuptools, NumPy >= 1.1, SciPy >= 0.6 (although having at least 0.7
++is highly recommended and required by some modules) and a working C++
++compiler.
+diff --git a/README.rst b/README.rst
+index e5b0800e0..86065f069 100644
+--- a/README.rst
++++ b/README.rst
+@@ -88 +88 @@ Testing
+-After installation, you can launch the test suite(you will need to
++After installation, you can launch the test suite (you will need to
+@@ -93,2 +93,4 @@ have nosetest installed)::
+-See web page http://scikit-learn.sourceforge.net/developers/ for
+-complete documentation on developement
++Note that this must be run from outisde the project's root
++directory. See web page
++http://scikit-learn.sourceforge.net/developers/ for complete
++documentation on developement
+diff --git a/README.rst b/README.rst
+index aa0a2978c..e5b0800e0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -88,3 +88,2 @@ Testing
+-After having installed the software, you can launch the test suite by
+-executing the script test.py in this diretory (you will need to have
+-nosetest installed)::
++After installation, you can launch the test suite(you will need to
++have nosetest installed)::
+@@ -92 +91,4 @@ nosetest installed)::
+-    python test.py
++    python -c "import scikits.learn as skl; skl.test()"
++
++See web page http://scikit-learn.sourceforge.net/developers/ for
++complete documentation on developement
+diff --git a/README.rst b/README.rst
+index 18b32798d..aa0a2978c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -88,6 +88,3 @@ Testing
+-To execute the test suite, you must first compile the sources inplace::
+-
+-   python setup.py build_ext --inplace
+-
+-and then run from the same directory (you will need to have nosetest
+-installed)::
++After having installed the software, you can launch the test suite by
++executing the script test.py in this diretory (you will need to have
++nosetest installed)::
+diff --git a/README.rst b/README.rst
+index 67ffa8d9f..18b32798d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -88,2 +88,6 @@ Testing
+-To execute the test suite, run from the project's top directory (you
+-will need to have nosetest installed)::
++To execute the test suite, you must first compile the sources inplace::
++
++   python setup.py build_ext --inplace
++
++and then run from the same directory (you will need to have nosetest
++installed)::
+diff --git a/README.rst b/README.rst
+index 829cb7ad8..67ffa8d9f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -28 +28,2 @@ The required dependencies to build the software are python >= 2.5,
+-NumPy >= 1.1, SciPy and a working C++ compiler.
++NumPy >= 1.1, SciPy >= 0.6 (although having at least 0.7 is highly
++recommended and required by some modules) and a working C++ compiler.
+@@ -30 +31 @@ NumPy >= 1.1, SciPy and a working C++ compiler.
+-To run the tests you will also need nosetests.
++To run the tests you will also need nose >= 0.10.
+diff --git a/README.rst b/README.rst
+index 2ece5352d..829cb7ad8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -90 +90 @@ will need to have nosetest installed)::
+-    nosetests
++    python test.py
+diff --git a/README.rst b/README.rst
+index ef51696b0..2ece5352d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -9 +9 @@ scipy.
+-The project was started in 2007 by David Cournapeu as a Google Summer
++The project was started in 2007 by David Cournapeau as a Google Summer
+diff --git a/README.rst b/README.rst
+index bd4ec0db6..ef51696b0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -11 +11 @@ of Code project, and since then many volunteers have contributed. See
+-the AUTHORS file for a complete list of contributors.
++the AUTHORS.rst file for a complete list of contributors.
+diff --git a/README.rst b/README.rst
+index a9ea82dc2..bd4ec0db6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -90 +90 @@ will need to have nosetest installed)::
+-    python setup.py test
++    nosetests
+diff --git a/README.rst b/README.rst
+index b1ca54db6..a9ea82dc2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -30,5 +30 @@ NumPy >= 1.1, SciPy and a working C++ compiler.
+-Optional dependencies are scikits.optimization and the Boost libraries
+-for module scikits.learn.manifold.
+-
+-To run the tests you will also need nosetests and python-dap
+-(http://pypi.python.org/pypi/dap/).
++To run the tests you will also need nosetests.
+diff --git a/README.rst b/README.rst
+index 73396454f..b1ca54db6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -72 +72 @@ GIT
+-You can check out the current repository with the command::
++You can check the latest sources with the command::
+@@ -74 +74 @@ You can check out the current repository with the command::
+-    git clone git://scikit-learn.git.sourceforge.net/gitroot/scikit-learn/scikit-learn
++    git clone git://github.com/scikit-learn/scikit-learn.git
+@@ -76 +76 @@ You can check out the current repository with the command::
+-Developers with write privileges should instead use the command::
++or if you have write privileges::
+@@ -78,3 +78 @@ Developers with write privileges should instead use the command::
+-    git clone ssh://USERNAME@scikit-learn.git.sourceforge.net/gitroot/scikit-learn/scikit-learn
+-
+-where USERNAME is your sourceforge username.
++    git clone git@github.com:scikit-learn/scikit-learn.git
+diff --git a/README.rst b/README.rst
+index 5cfa55ddc..73396454f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -53,0 +54,9 @@ subscribe to the mailing list.
++IRC channel
++===========
++
++Some developers tend to hang around the channel ``#scikit-learn``
++at ``irc.freenode.net``, especially during the week preparing a new
++release. If nobody is available to answer your questions there don't
++hesitate to ask it on the mailing list to reach a wider audience.
++
++
+@@ -65 +74 @@ You can check out the current repository with the command::
+-    git clone git://scikit-learn.git.sourceforge.net/gitroot/scikit-learn/scikit-learn 
++    git clone git://scikit-learn.git.sourceforge.net/gitroot/scikit-learn/scikit-learn
+diff --git a/README.rst b/README.rst
+index 5fb228243..5cfa55ddc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -28 +28 @@ The required dependencies to build the software are python >= 2.5,
+-NumPy >= 1.1, SciPy, the Boost libraries and a working C++ compiler.
++NumPy >= 1.1, SciPy and a working C++ compiler.
+@@ -30,2 +30,2 @@ NumPy >= 1.1, SciPy, the Boost libraries and a working C++ compiler.
+-Optional dependencies are scikits.optimization for module
+-machine.manifold.
++Optional dependencies are scikits.optimization and the Boost libraries
++for module scikits.learn.manifold.

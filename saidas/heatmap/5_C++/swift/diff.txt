@@ -1,0 +1,2598 @@
+diff --git a/README.md b/README.md
+index 23feec3424..dd00bfd1f3 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +20,0 @@
+-|**[Debian 9.5](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_debian_9.5.json)** | x86_64 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5)|
+diff --git a/README.md b/README.md
+index 98f49b0741..23feec3424 100644
+--- a/README.md
++++ b/README.md
+@@ -21,3 +20,0 @@
+-|**[Ubuntu 16.04 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow)|
+-|**[macOS 10.13 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_macos_high_sierra_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow)|
+-|**[Ubuntu 16.04 (TensorFlow with GPU)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow_gpu.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu)|
+@@ -26,0 +24,7 @@
++**Swift TensorFlow Community-Hosted CI Platforms**
++
++| **OS** | **Architecture** | **Build** |
++|---|:---:|:---:|
++|**[Ubuntu 16.04](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow)|
++|**[macOS 10.13](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_macos_high_sierra_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow)|
++|**[Ubuntu 16.04 (GPU)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow_gpu.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu)|
+diff --git a/README.md b/README.md
+index 9f38a44806..98f49b0741 100644
+--- a/README.md
++++ b/README.md
+@@ -17,3 +16,0 @@
+-|**[Debian 9.1 (Raspberry Pi)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/armv7_debian_stretch.json)** | ARMv7 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
+-|**[Fedora 27](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_fedora_27.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
+-|**[Ubuntu 16.04](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04)|
+diff --git a/README.md b/README.md
+index 20652e39e0..9f38a44806 100644
+--- a/README.md
++++ b/README.md
+@@ -90 +90 @@ Please make sure you use Python 2.x. Python 3.x is not supported currently.
+-To build for macOS, you need [Xcode 11 beta 5](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 11 beta 6](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 6b9e190fd1..20652e39e0 100644
+--- a/README.md
++++ b/README.md
+@@ -44,0 +45,11 @@ To learn more about the programming language, visit [swift.org](https://swift.or
++- [Contributing to Swift](#contributing-to-swift)
++- [Getting Started](#getting-started)
++  - [System Requirements](#system-requirements)
++  - [Getting Sources for Swift and Related Projects](#getting-sources-for-swift-and-related-projects)
++  - [Building Swift](#building-swift)
++  - [Swift Toolchains](#swift-toolchains)
++  - [Build Failures](#build-failures)
++- [Testing Swift](#testing-swift)
++- [Learning More](#learning-more)
++- [Build Dependencies](#build-dependencies)
++
+diff --git a/README.md b/README.md
+index e2f1f45d19..6b9e190fd1 100644
+--- a/README.md
++++ b/README.md
+@@ -79 +79 @@ Please make sure you use Python 2.x. Python 3.x is not supported currently.
+-To build for macOS, you need [Xcode 11 beta 4](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 11 beta 5](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 085470309b..e2f1f45d19 100644
+--- a/README.md
++++ b/README.md
+@@ -79 +79 @@ Please make sure you use Python 2.x. Python 3.x is not supported currently.
+-To build for macOS, you need [Xcode 11 beta](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 11 beta 4](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 7d3fb306ea..085470309b 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@
+-|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/ppc64le_ubuntu_16_04.json)** | PPC64LE |[![Build Status](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le)|
++|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/ppc64le_ubuntu_16_04.json)** | PPC64LE |[![Build Status](https://ci-external.swift.org/job/oss-swift-5.1-RA-linux-ubuntu-16.04-ppc64le/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-5.1-RA-linux-ubuntu-16.04-ppc64le)|
+diff --git a/README.md b/README.md
+index b361c3f019..7d3fb306ea 100644
+--- a/README.md
++++ b/README.md
+@@ -101 +101 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+diff --git a/README.md b/README.md
+index 76f2490215..b361c3f019 100644
+--- a/README.md
++++ b/README.md
+@@ -101 +101 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+diff --git a/README.md b/README.md
+index 62e26b5ae2..76f2490215 100644
+--- a/README.md
++++ b/README.md
+@@ -79 +79 @@ Please make sure you use Python 2.x. Python 3.x is not supported currently.
+-To build for macOS, you need [Xcode 10.2 beta](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 11 beta](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index b7b9bdbae9..62e26b5ae2 100644
+--- a/README.md
++++ b/README.md
+@@ -144,2 +144 @@ To build using Ninja, run:
+-    cd swift
+-    utils/build-script --release-debuginfo
++    swift/utils/build-script --release-debuginfo
+@@ -151,3 +150,3 @@ are some examples of using debug variants:
+-    utils/build-script --release-debuginfo --debug-swift # Swift frontend built in debug
+-    utils/build-script --release-debuginfo --debug-swift-stdlib # Standard library built in debug
+-    utils/build-script --release-debuginfo --debug-swift --force-optimized-typechecker # Swift frontend sans type checker built in debug
++    swift/utils/build-script --release-debuginfo --debug-swift # Swift frontend built in debug
++    swift/utils/build-script --release-debuginfo --debug-swift-stdlib # Standard library built in debug
++    swift/utils/build-script --release-debuginfo --debug-swift --force-optimized-typechecker # Swift frontend sans type checker built in debug
+@@ -159 +158 @@ the entire project in debug, you can run:
+-    utils/build-script --debug
++    swift/utils/build-script --debug
+@@ -164 +163 @@ information, see the inline help:
+-    utils/build-script -h
++    swift/utils/build-script -h
+@@ -227 +226 @@ locally reproduce such builds for development or distribution purposes. E.x.:
+-  $ ./utils/build-toolchain $BUNDLE_PREFIX
++  $ ./swift/utils/build-toolchain $BUNDLE_PREFIX
+diff --git a/README.md b/README.md
+index ff2892c3cf..b7b9bdbae9 100644
+--- a/README.md
++++ b/README.md
+@@ -143,0 +144 @@ To build using Ninja, run:
++    cd swift
+diff --git a/README.md b/README.md
+index 5483969b1a..ff2892c3cf 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@
++|**[Windows 2019](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_windows_2019.json)** | x86_64 | [![Build Status](https://ci-external.swift.org/job/oss-swift-windows-x86_64/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-windows-x86_64)|
+diff --git a/README.md b/README.md
+index 5c28220efd..5483969b1a 100644
+--- a/README.md
++++ b/README.md
+@@ -300 +300 @@ command:
+-    easy_install -U Sphinx
++    easy_install -U "Sphinx < 2.0"
+diff --git a/README.md b/README.md
+index 79d79910b7..5c28220efd 100644
+--- a/README.md
++++ b/README.md
+@@ -73,0 +74,2 @@ supported host development operating systems.
++Please make sure you use Python 2.x. Python 3.x is not supported currently.
++
+@@ -298 +300 @@ command:
+-    easy_install -U "Sphinx < 2.0"
++    easy_install -U Sphinx
+diff --git a/README.md b/README.md
+index 6a2314c1b9..79d79910b7 100644
+--- a/README.md
++++ b/README.md
+@@ -298 +298 @@ command:
+-    easy_install -U Sphinx
++    easy_install -U "Sphinx < 2.0"
+diff --git a/README.md b/README.md
+index ff4d8810fd..6a2314c1b9 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22,2 @@
+-|**[Ubuntu 16.04 (Android)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_LTS_android.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android)|
++|**[Android](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_LTS_android.json)** | ARMv7 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android)|
++|**[Android](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_LTS_android.json)** | AArch64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android-arm64/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android-arm64)|
+diff --git a/README.md b/README.md
+index 1bfb1b8ede..ff4d8810fd 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 10.0](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10.2 beta](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 41fdd51a0d..1bfb1b8ede 100644
+--- a/README.md
++++ b/README.md
+@@ -222 +222 @@ locally reproduce such builds for development or distribution purposes. E.x.:
+-  $ ./utils/build-toolchain $TOOLCHAIN_PREFIX
++  $ ./utils/build-toolchain $BUNDLE_PREFIX
+@@ -225,4 +225,6 @@ locally reproduce such builds for development or distribution purposes. E.x.:
+-where ``$TOOLCHAIN_PREFIX`` is a string that will be prepended to the swift
+-package name in the produced tar ball. For instance, if ``$TOOLCHAIN_PREFIX``
+-was ``macOS``, the produced archive will have the name
+-``swift-macOS.tar.gz``.
++where ``$BUNDLE_PREFIX`` is a string that will be prepended to the build 
++date to give the bundle identifier of the toolchain's ``Info.plist``. For 
++instance, if ``$BUNDLE_PREFIX`` was ``com.example``, the toolchain 
++produced will have the bundle identifier ``com.example.YYYYMMDD``. It 
++will be created in the directory you run the script with a filename 
++of the form: ``swift-LOCAL-YYYY-MM-DD-a-osx.tar.gz``.
+@@ -230,2 +232,2 @@ was ``macOS``, the produced archive will have the name
+-Beyond building the toolchain, ``build-toolchain`` also supports the following
+-(non-exhaustive) set of useful options::
++Beyond building the toolchain, ``build-toolchain`` also supports the 
++following (non-exhaustive) set of useful options::
+@@ -249,2 +251,11 @@ On macOS if one wants to install such a toolchain into Xcode:
+-  $ tar -xzf swift-macOS.tar.gz -C /
+-  $ tar -xzf swift-macOS.tar.gz -C ~/
++  $ sudo tar -xzf swift-LOCAL-YYYY-MM-DD-a-osx.tar.gz -C /
++  $ tar -xzf swift-LOCAL-YYYY-MM-DD-a-osx.tar.gz -C ~/
++```
++
++The script also generates an archive containing debug symbols which
++can be installed over the main archive allowing symbolication of any
++compiler crashes.
++
++```
++  $ sudo tar -xzf swift-LOCAL-YYYY-MM-DD-a-osx-symbols.tar.gz -C /
++  $ tar -xzf swift-LOCAL-YYYY-MM-DD-a-osx-symbols.tar.gz -C ~/
+diff --git a/README.md b/README.md
+index f4e2aa4b1d..41fdd51a0d 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@
+-|**[Debian 9.5](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_debian_9.5.json)** | ARMv7 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5)|
++|**[Debian 9.5](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_debian_9.5.json)** | x86_64 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5)|
+diff --git a/README.md b/README.md
+index 8982620b87..f4e2aa4b1d 100644
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26 @@
++|**[Debian 9.5](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_debian_9.5.json)** | ARMv7 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_5)|
+diff --git a/README.md b/README.md
+index e7add90bf3..8982620b87 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28 @@
+-**Welcome to Swift!**
++## Welcome to Swift
+diff --git a/README.md b/README.md
+index 1ebe13d3fb..e7add90bf3 100644
+--- a/README.md
++++ b/README.md
+@@ -74 +74 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 10 beta 6](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10.0](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 344d5b6f81..1ebe13d3fb 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +10,0 @@
+-| **Ubuntu 16.10** | x86_64 | [![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
+diff --git a/README.md b/README.md
+index f6e7639826..344d5b6f81 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +20,0 @@
+-|**[Ubuntu 16.04 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow)|
+@@ -24,0 +24 @@
++|**[Ubuntu 16.04 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow)|
+diff --git a/README.md b/README.md
+index a1e654e392..f6e7639826 100644
+--- a/README.md
++++ b/README.md
+@@ -11,0 +12 @@
++| **Ubuntu 18.04** | x86_64 | [![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-18_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-18_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-18_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-18_04)|
+diff --git a/README.md b/README.md
+index 4b9ec0f3a3..a1e654e392 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25 @@
++|**[Ubuntu 16.04 (TensorFlow with GPU)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow_gpu.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu)|
+diff --git a/README.md b/README.md
+index be93510206..4b9ec0f3a3 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +24,0 @@
+-|**[Ubuntu 16.04 (TensorFlow with GPU)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow_gpu.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu)|
+@@ -210,0 +210,43 @@ then run the build product in Terminal.
++### Swift Toolchains
++
++#### Building
++
++Swift toolchains are created using the script
++[build-toolchain](https://github.com/apple/swift/blob/master/utils/build-toolchain). This
++script is used by swift.org's CI to produce snapshots and can allow for one to
++locally reproduce such builds for development or distribution purposes. E.x.:
++
++```
++  $ ./utils/build-toolchain $TOOLCHAIN_PREFIX
++```
++
++where ``$TOOLCHAIN_PREFIX`` is a string that will be prepended to the swift
++package name in the produced tar ball. For instance, if ``$TOOLCHAIN_PREFIX``
++was ``macOS``, the produced archive will have the name
++``swift-macOS.tar.gz``.
++
++Beyond building the toolchain, ``build-toolchain`` also supports the following
++(non-exhaustive) set of useful options::
++
++- ``--dry-run``: Perform a dry run build. This is off by default.
++- ``--test``: Test the toolchain after it has been compiled. This is off by default.
++- ``--distcc``: Use distcc to speed up the build by distributing the c++ part of
++  the swift build. This is off by default.
++
++More options may be added over time. Please pass ``--help`` to
++``build-toolchain`` to see the full set of options.
++
++#### Installing into Xcode
++
++On macOS if one wants to install such a toolchain into Xcode:
++
++1. Untar and copy the toolchain to one of `/Library/Developer/Toolchains/` or
++   `~/Library/Developer/Toolchains/`. E.x.:
++
++```
++  $ tar -xzf swift-macOS.tar.gz -C /
++  $ tar -xzf swift-macOS.tar.gz -C ~/
++```
++
++2. Specify the local toolchain for Xcode's use via `Xcode->Toolchains`.
++
+diff --git a/README.md b/README.md
+index 6df9a38582..be93510206 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25 @@
++|**[Ubuntu 16.04 (TensorFlow with GPU)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow_gpu.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow-gpu)|
+diff --git a/README.md b/README.md
+index cb893dbd30..6df9a38582 100644
+--- a/README.md
++++ b/README.md
+@@ -73 +73 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 10 beta 5](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10 beta 6](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 133c3b5859..cb893dbd30 100644
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24 @@
++|**[macOS 10.13 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_macos_high_sierra_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-macOS-tensorflow)|
+diff --git a/README.md b/README.md
+index 060cf56f7f..133c3b5859 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 10 beta 3](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10 beta 5](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 9641d5b1e2..060cf56f7f 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 10 beta](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10 beta 3](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 97d1c901df..9641d5b1e2 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21,4 @@
+-|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/ppc64le_16_04.json)** | PPC64LE |[![Build Status](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le)|
++|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/ppc64le_ubuntu_16_04.json)** | PPC64LE |[![Build Status](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le)|
++|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/aarch64_ubuntu_16.04.json)** | AArch64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-aarch64/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-aarch64)|
++|**[Ubuntu 16.04 (Android)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_LTS_android.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-android)|
++
+diff --git a/README.md b/README.md
+index 1d2060b28b..97d1c901df 100644
+--- a/README.md
++++ b/README.md
+@@ -211 +211 @@ If you have changed Xcode versions but still encounter errors that appear to
+-be related to the Xcode version, try passing `--rebuild` to `build-script`.
++be related to the Xcode version, try passing `--clean` to `build-script`.
+diff --git a/README.md b/README.md
+index b4fa3d503a..1d2060b28b 100644
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.3](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 10 beta](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index f7e8aac1e4..b4fa3d503a 100644
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21 @@
++|**[Ubuntu 16.04 ](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/ppc64le_16_04.json)** | PPC64LE |[![Build Status](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-4.1-RA-linux-ubuntu-16.04-ppc64le)|
+diff --git a/README.md b/README.md
+index f51a6b2efd..f7e8aac1e4 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@
+-|**[Debian 9.1](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/armv7_debian_stretch.json)** | ARMv7 (Raspberry Pi) | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
++|**[Debian 9.1 (Raspberry Pi)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/armv7_debian_stretch.json)** | ARMv7 | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
+diff --git a/README.md b/README.md
+index 0b82115292..f51a6b2efd 100644
+--- a/README.md
++++ b/README.md
+@@ -6,6 +6,6 @@
+-| | **Swift** | **Package** |
+-|---|:---:|:---:|
+-|**macOS**        |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
+-|**Ubuntu 16.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04)|
+-|**Ubuntu 16.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
++| | **Architecture** | **Master** | **Package** |
++|---|:---:|:---:|:---:|
++| **macOS**        | x86_64 |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
++| **Ubuntu 14.04** | x86_64 | [![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
++| **Ubuntu 16.04** | x86_64 | [![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04)|
++| **Ubuntu 16.10** | x86_64 | [![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
+@@ -15,5 +15,6 @@
+-| | **Swift** |
+-|---|:---:|
+-|**Debian 9.1** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
+-|**Fedora 27** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
+-|**Ubuntu 16.04** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04)|
++| **OS** | **Architecture** | **Build** |
++|---|:---:|:---:|
++|**[Debian 9.1](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/armv7_debian_stretch.json)** | ARMv7 (Raspberry Pi) | [![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
++|**[Fedora 27](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_fedora_27.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
++|**[Ubuntu 16.04](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04)|
++|**[Ubuntu 16.04 (TensorFlow)](https://github.com/apple/swift-community-hosted-continuous-integration/blob/master/nodes/x86_64_ubuntu_16_04_tensorflow.json)** | x86_64 |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04-tensorflow)|
+diff --git a/README.md b/README.md
+index d84290ecfe..0b82115292 100644
+--- a/README.md
++++ b/README.md
+@@ -17,2 +17,3 @@
+-|**Debian** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
+-|**Fedora** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
++|**Debian 9.1** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
++|**Fedora 27** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
++|**Ubuntu 16.04** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-ubuntu-16.04)|
+diff --git a/README.md b/README.md
+index 68eb6a2fd7..d84290ecfe 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@
++
+@@ -11,0 +13,7 @@
++**Swift Community-Hosted CI Platforms**
++
++| | **Swift** |
++|---|:---:|
++|**Debian** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-debian-9_1)|
++|**Fedora** |[![Build Status](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27/lastCompletedBuild/badge/icon)](https://ci-external.swift.org/job/oss-swift-RA-linux-fedora-27)|
++
+diff --git a/README.md b/README.md
+index e2a583cd8a..68eb6a2fd7 100644
+--- a/README.md
++++ b/README.md
+@@ -7,4 +7,4 @@
+-|**macOS**        |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
+-|**Ubuntu 16.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04)|
+-|**Ubuntu 16.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
++|**macOS**        |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
++|**Ubuntu 16.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04)|
++|**Ubuntu 16.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/lastCompletedBuild/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
+diff --git a/README.md b/README.md
+index c609454831..e2a583cd8a 100644
+--- a/README.md
++++ b/README.md
+@@ -45,3 +45,4 @@ These instructions give the most direct path to a working Swift development
+-environment. To build from source you will need 2 GB of disk space for the
+-source code and over 20 GB of disk space for the build artifacts. A clean
+-build can take multiple hours, but incremental builds will finish much faster.
++environment. To build from source you will need about 2 GB of disk space for the
++source code and up to 70 GB of disk space for the build artifacts with full
++debugging. Depending on your machine, a clean build can take a few minutes to
++several hours. Naturally, incremental builds are much faster.
+diff --git a/README.md b/README.md
+index 3e44e9da6b..c609454831 100644
+--- a/README.md
++++ b/README.md
+@@ -79 +79 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata rsync
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync
+diff --git a/README.md b/README.md
+index 5264e0545b..3e44e9da6b 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.3 beta](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.3](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 54819c2f45..5264e0545b 100644
+--- a/README.md
++++ b/README.md
+@@ -79 +79 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata rsync
+diff --git a/README.md b/README.md
+index 685586ba5f..54819c2f45 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.2](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.3 beta](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 4f82124738..685586ba5f 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
++|**macOS**        |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
+@@ -213,4 +213,5 @@ See [docs/Testing.md](docs/Testing.md), in particular the section on [lit.py](do
+-Be sure to look through the [docs/] docs directory for more information about the
+-compiler. In particular, the document on [Debugging The Compiler](docs/DebuggingTheCompiler.rst),
+-and [Continuous Integration.md](docs/ContinuousIntegration.md) are very helpful
+-to understand before submitting your first PR.
++Be sure to look through the [docs](https://github.com/apple/swift/tree/master/docs)
++directory for more information about the compiler. In particular, the documents
++titled [Debugging the Swift Compiler](docs/DebuggingTheCompiler.rst) and
++[Continuous Integration for Swift](docs/ContinuousIntegration.md) are very
++helpful to understand before submitting your first PR.
+@@ -221 +222,2 @@ To read the compiler documentation, start by installing the
+-[Sphinx](http://sphinx-doc.org) documentation generator tool by running the command:
++[Sphinx](http://sphinx-doc.org) documentation generator tool by running the
++command:
+@@ -223 +225 @@ To read the compiler documentation, start by installing the
+-`easy_install -U Sphinx`
++    easy_install -U Sphinx
+diff --git a/README.md b/README.md
+index 8a4f6b56bf..4f82124738 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.1 beta 2](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index d3a6522bfc..8a4f6b56bf 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.2](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.1 beta 2](https://developer.apple.com/xcode/downloads/).
+@@ -117 +117 @@ There are two primary build systems to use: Xcode and Ninja. The Xcode build
+-system allows you to work in Xcode.app, but Ninja is a bit faster and supports
++system allows you to work in Xcode, but Ninja is a bit faster and supports
+@@ -146 +146 @@ To build using Xcode, specify the `--xcode` argument on any of the above command
+-Xcode.app can be used to edit the Swift source code, but it is not currently
++Xcode can be used to edit the Swift source code, but it is not currently
+@@ -162 +162 @@ helps to save this directory as an environment variable for future use.
+-Once the first build has completed, ninja can perform fast incremental builds of
++Once the first build has completed, Ninja can perform fast incremental builds of
+diff --git a/README.md b/README.md
+index 7ef4f79a05..d3a6522bfc 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.2 beta 2](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 8c31bbecea..7ef4f79a05 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.1](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.2 beta 2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 036c7fad21..8c31bbecea 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.1 beta 2](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.1](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 973263f4ed..036c7fad21 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.0](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.1 beta 2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index dbbfe3be84..973263f4ed 100644
+--- a/README.md
++++ b/README.md
+@@ -73 +73 @@ which can be installed via a package manager:
+-Instructions for installing CMake and Ninja directly can be found [below](#build-dependencies)
++Instructions for installing CMake and Ninja directly can be found [below](#build-dependencies).
+@@ -84 +84 @@ with version 2 shipped with Ubuntu.
+-Build instructions for Ubuntu 14.04 LTS can be found [here](docs/Ubuntu14.md)
++Build instructions for Ubuntu 14.04 LTS can be found [here](docs/Ubuntu14.md).
+@@ -184,6 +184,6 @@ common debug flow would involve:
+- - Select the 'swift' scheme
+- - Pull up the scheme editor (⌘⇧<)
+- - Select the 'Arguments' tab and click the '+'
+- - Add the command line options
+- - Close the scheme editor
+- - Build and run
++ - Select the 'swift' scheme.
++ - Pull up the scheme editor (⌘⇧<).
++ - Select the 'Arguments' tab and click the '+'.
++ - Add the command line options.
++ - Close the scheme editor.
++ - Build and run.
+diff --git a/README.md b/README.md
+index f773f21f83..dbbfe3be84 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.0 beta 6](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.0](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index adc3987df1..f773f21f83 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-To build for macOS, you need [Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you need [Xcode 9.0 beta 6](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index c27f8caadb..adc3987df1 100644
+--- a/README.md
++++ b/README.md
+@@ -124 +124,3 @@ To build using Ninja, run:
+-If you are interested in debugging the compiler, run:
++When developing Swift, it helps to build what you're working on in a debug
++configuration while building the rest of the project with optimizations. Below
++are some examples of using debug variants:
+@@ -126,5 +128,3 @@ If you are interested in debugging the compiler, run:
+-    utils/build-script --debug
+-
+-However, the compiler will be slower when built in debug mode. When developing
+-in a specific area of the compiler, it helps to build an optimized compiler and
+-override specific projects to use the debug variant.
++    utils/build-script --release-debuginfo --debug-swift # Swift frontend built in debug
++    utils/build-script --release-debuginfo --debug-swift-stdlib # Standard library built in debug
++    utils/build-script --release-debuginfo --debug-swift --force-optimized-typechecker # Swift frontend sans type checker built in debug
+@@ -132 +132,3 @@ override specific projects to use the debug variant.
+-Below are some examples of using debug variants:
++Limiting the amount of debug code in the compiler has a very large impact on
++Swift compile times, and in turn the test execution time. If you want to build
++the entire project in debug, you can run:
+@@ -134,3 +136 @@ Below are some examples of using debug variants:
+-    utils/build-script --release-debuginfo --debug-swift
+-    utils/build-script --release-debuginfo --debug-swift-stdlib
+-    utils/build-script --release-debuginfo --debug-swift --force-optimized-typechecker
++    utils/build-script --debug
+diff --git a/README.md b/README.md
+index c766f766d2..c27f8caadb 100644
+--- a/README.md
++++ b/README.md
+@@ -58,3 +58,3 @@ To build for macOS, you need [Xcode 9.0 beta 4](https://developer.apple.com/xcod
+-The version of Xcode required to build swift changes frequently, and is often a
+-pre-release version of Xcode. Check this document or [here](https://ci.swift.org)
+-to see the version required.
++The required version of Xcode changes frequently, and is often a beta release.
++Check this document or the host information on <https://ci.swift.org> for the
++current required version.
+@@ -154 +154 @@ All of the build products are placed in `swift-source/build/${TOOL}-${MODE}/${PR
+-If macOS swift with Ninja in DebugAssert mode was built, all of the products
++If macOS Swift with Ninja in DebugAssert mode was built, all of the products
+@@ -169 +169 @@ and debugging.
+-This will build the swift compiler, but will not rebuild the standard library or
++This will build the Swift compiler, but will not rebuild the standard library or
+@@ -180 +180 @@ It is always a good idea to do a full build after using `update-checkout`.
+-To open the swift project in Xcode, open `${SWIFT_BUILD_DIR}/Swift.xcodeproj`.
++To open the Swift project in Xcode, open `${SWIFT_BUILD_DIR}/Swift.xcodeproj`.
+diff --git a/README.md b/README.md
+index 847e5e912a..c766f766d2 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +46 @@ environment. To build from source you will need 2 GB of disk space for the
+-source code and over 20 GB of disk space for the build artifacts. The first
++source code and over 20 GB of disk space for the build artifacts. A clean
+@@ -116,7 +116,3 @@ Manager, building for various platforms, running tests after builds, and more.
+-View the inline help to find out more, in particular the section "Typical uses":
+-
+-    utils/build-script -h
+-
+-There are two primary build options to use with CMake, xcodebuild or Ninja.
+-xcodebuild integrates with Xcode.app, but Ninja is a bit faster and
+-supports more environments.
++There are two primary build systems to use: Xcode and Ninja. The Xcode build
++system allows you to work in Xcode.app, but Ninja is a bit faster and supports
++more environments.
+@@ -128,4 +124 @@ To build using Ninja, run:
+-If you are interested in compiler development it helps to build LLVM + Clang
+-with optimizations enabled, but enable debug support in Swift. This is a good
+-starting point since the debugger will work in the swift code base, and the
+-tests will run faster:
++If you are interested in debugging the compiler, run:
+@@ -133 +126 @@ tests will run faster:
+-    utils/build-script --release-debuginfo --debug-swift
++    utils/build-script --debug
+@@ -135,3 +128,3 @@ tests will run faster:
+-This will only build the compiler, and it will not build the standard library.
+-Add `--debug-swift-stdlib` to build both the compiler and the standard library
+-with debug info.
++However, the compiler will be slower when built in debug mode. When developing
++in a specific area of the compiler, it helps to build an optimized compiler and
++override specific projects to use the debug variant.
+@@ -139,3 +132 @@ with debug info.
+-If you are interested in standard library development, this will build a fully
+-optimized compiler, but will build the standard library and swift overlays with
+-debug information:
++Below are some examples of using debug variants:
+@@ -142,0 +134 @@ debug information:
++    utils/build-script --release-debuginfo --debug-swift
+@@ -143,0 +136,4 @@ debug information:
++    utils/build-script --release-debuginfo --debug-swift --force-optimized-typechecker
++
++For documentation of all available arguments, as well as additional usage
++information, see the inline help:
+@@ -145,2 +141 @@ debug information:
+-The build script also supports presets that define the various CI builds. Look
+-for 'Preset Mode' in the build script help for more information.
++    utils/build-script -h
+diff --git a/README.md b/README.md
+index 6749563972..847e5e912a 100644
+--- a/README.md
++++ b/README.md
+@@ -136 +136,2 @@ This will only build the compiler, and it will not build the standard library.
+-Add `--debug-swift-stdlib` to build both the compiler and the standard library.
++Add `--debug-swift-stdlib` to build both the compiler and the standard library
++with debug info.
+diff --git a/README.md b/README.md
+index b4730abf83..6749563972 100644
+--- a/README.md
++++ b/README.md
+@@ -120,7 +119,0 @@ View the inline help to find out more, in particular the section "Typical uses":
+-A basic command to build Swift with optimizations and run basic tests with
+-Ninja:
+-
+-    utils/build-script --release --test
+-
+-### Development Environment
+-
+@@ -128 +121 @@ There are two primary build options to use with CMake, xcodebuild or Ninja.
+-xcodebuild integrates nicely with Xcode.app, but Ninja is a bit faster and
++xcodebuild integrates with Xcode.app, but Ninja is a bit faster and
+@@ -131,12 +123,0 @@ supports more environments.
+-To build using Xcode, run:
+-
+-    utils/build-script --xcode
+-
+-The Xcode IDE can be used to edit the Swift source code, but it is not currently
+-fully supported as a build environment for SDKs other than macOS. The generated
+-Xcode project does not integrate with the test runner, but the tests can be run
+-with the 'check-swift' target.
+-
+-If you need to work with other SDKs, you'll need to create a second build using
+-Ninja.
+-
+@@ -145 +126 @@ To build using Ninja, run:
+-    utils/build-script --release
++    utils/build-script --release-debuginfo
+@@ -150 +131 @@ starting point since the debugger will work in the swift code base, and the
+-tests will run faster.
++tests will run faster:
+@@ -153,0 +135,3 @@ tests will run faster.
++This will only build the compiler, and it will not build the standard library.
++Add `--debug-swift-stdlib` to build both the compiler and the standard library.
++
+@@ -156 +140,3 @@ optimized compiler, but will build the standard library and swift overlays with
+-debug information.
++debug information:
++
++    utils/build-script --release-debuginfo --debug-swift-stdlib
+@@ -160,0 +147,7 @@ for 'Preset Mode' in the build script help for more information.
++#### Xcode
++
++To build using Xcode, specify the `--xcode` argument on any of the above commands.
++Xcode.app can be used to edit the Swift source code, but it is not currently
++fully supported as a build environment for SDKs other than macOS. The generated
++Xcode project does not integrate with the test runner, but the tests can be run
++with the 'check-swift' target.
+diff --git a/README.md b/README.md
+index d5829f0d72..b4730abf83 100644
+--- a/README.md
++++ b/README.md
+@@ -114,2 +114 @@ options such as building a Swift-compatible LLDB, building the Swift Package
+-Manager, building for iOS, running tests after builds, and more. It also
+-supports presets, which you can define for common combinations of build options.
++Manager, building for various platforms, running tests after builds, and more.
+@@ -159 +158,2 @@ debug information.
+-    utils/build-script --release --debug-swift-stdlib
++The build script also supports presets that define the various CI builds. Look
++for 'Preset Mode' in the build script help for more information.
+diff --git a/README.md b/README.md
+index 422f24d616..d5829f0d72 100644
+--- a/README.md
++++ b/README.md
+@@ -182 +182,2 @@ any other target. Building the `swift-stdlib` target as an additional layer of
+-testing from time to time is also a good idea.
++testing from time to time is also a good idea. To build just the standard
++library, run:
+@@ -186,3 +186,0 @@ testing from time to time is also a good idea.
+-This command will rebuild the stdlib and skip the `benchmarks` target. This
+-is great for developers interested in working on the standard library.
+-
+diff --git a/README.md b/README.md
+index c718434072..422f24d616 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55,2 @@ supported host development operating systems.
+-<a name="xcode"></a>
++#### macOS
++
+@@ -208 +209 @@ then run the build product in Terminal.
+-Make sure you are using the [correct release](#xcode) of Xcode.
++Make sure you are using the [correct release](#macos) of Xcode.
+diff --git a/README.md b/README.md
+index 2798da29ae..c718434072 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ modules, eliminating the need for headers and the code duplication they entail.
+-To learn more about the programming language, visit [swift.org](https://swift.org/documentation/)
++To learn more about the programming language, visit [swift.org](https://swift.org/documentation/).
+diff --git a/README.md b/README.md
+index d1b30e0142..2798da29ae 100644
+--- a/README.md
++++ b/README.md
+@@ -184 +183,0 @@ testing from time to time is also a good idea.
+-    ninja benchmarks
+@@ -186,3 +185,2 @@ testing from time to time is also a good idea.
+-This command will rebuild the stdlib, and is great for developers interested in
+-working on the standard library. The `benchmarks` target can also help measure
+-the impact of your change.
++This command will rebuild the stdlib and skip the `benchmarks` target. This
++is great for developers interested in working on the standard library.
+@@ -190 +188 @@ the impact of your change.
+-It is still always a good idea to do a full build after using `update-checkout`.
++It is always a good idea to do a full build after using `update-checkout`.
+diff --git a/README.md b/README.md
+index d2d9356f2b..d1b30e0142 100644
+--- a/README.md
++++ b/README.md
+@@ -168 +168 @@ helps to save this directory as an environment variable for future use.
+-    export SWIFT_BUILD_ROOT="~/swift-source/build/Ninja-DebugAssert/swift-macosx-x86_64"
++    export SWIFT_BUILD_DIR="~/swift-source/build/Ninja-DebugAssert/swift-macosx-x86_64"
+@@ -176 +176 @@ and debugging.
+-    cd ${SWIFT_BUILD_ROOT}
++    cd ${SWIFT_BUILD_DIR}
+@@ -194 +194 @@ It is still always a good idea to do a full build after using `update-checkout`.
+-To open the swift project in Xcode, open `${SWIFT_BUILD_ROOT}/Swift.xcodeproj`.
++To open the swift project in Xcode, open `${SWIFT_BUILD_DIR}/Swift.xcodeproj`.
+diff --git a/README.md b/README.md
+index f2408dd910..d2d9356f2b 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ source code and over 20 GB of disk space for the build artifacts. The first
+-build will take multiple hours, but incremental builds will finish much faster.
++build can take multiple hours, but incremental builds will finish much faster.
+@@ -72 +72 @@ which can be installed via a package manager:
+-Instructions for installing CMake and Ninja directly can be found [here](#build-dependencies)
++Instructions for installing CMake and Ninja directly can be found [below](#build-dependencies)
+@@ -116 +116 @@ supports presets, which you can define for common combinations of build options.
+-View the inline help to find out more, in particular the section "Typical uses"
++View the inline help to find out more, in particular the section "Typical uses":
+@@ -123 +123 @@ Ninja:
+-    utils/build-script -r -t
++    utils/build-script --release --test
+@@ -133 +133 @@ To build using Xcode, run:
+-    utils/build-script -x
++    utils/build-script --xcode
+@@ -136,2 +136,6 @@ The Xcode IDE can be used to edit the Swift source code, but it is not currently
+-fully supported as a build environment for SDKs other than macOS. If you need to
+-work with other SDKs, you'll need to create a second build using Ninja.
++fully supported as a build environment for SDKs other than macOS. The generated
++Xcode project does not integrate with the test runner, but the tests can be run
++with the 'check-swift' target.
++
++If you need to work with other SDKs, you'll need to create a second build using
++Ninja.
+@@ -141 +145,14 @@ To build using Ninja, run:
+-    utils/build-script -R --debug-swift
++    utils/build-script --release
++
++If you are interested in compiler development it helps to build LLVM + Clang
++with optimizations enabled, but enable debug support in Swift. This is a good
++starting point since the debugger will work in the swift code base, and the
++tests will run faster.
++
++    utils/build-script --release-debuginfo --debug-swift
++
++If you are interested in standard library development, this will build a fully
++optimized compiler, but will build the standard library and swift overlays with
++debug information.
++
++    utils/build-script --release --debug-swift-stdlib
+@@ -143,3 +159,0 @@ To build using Ninja, run:
+-This will build LLVM+Clang with optimizations and no debug symbols, but will
+-build swift with debug symbols. This is a good starting point since the debugger
+-will work in the swift code base, and the tests will run faster.
+@@ -158,2 +172,3 @@ helps to save this directory as an environment variable for future use.
+-Once the first build has been finished with `build-script`, ninja can perform
+-fast incremental builds of various products.
++Once the first build has completed, ninja can perform fast incremental builds of
++various products. These incremental builds are a big timesaver when developing
++and debugging.
+@@ -162,0 +178,5 @@ fast incremental builds of various products.
++
++This will build the swift compiler, but will not rebuild the standard library or
++any other target. Building the `swift-stdlib` target as an additional layer of
++testing from time to time is also a good idea.
++
+@@ -163,0 +184,5 @@ fast incremental builds of various products.
++    ninja benchmarks
++
++This command will rebuild the stdlib, and is great for developers interested in
++working on the standard library. The `benchmarks` target can also help measure
++the impact of your change.
+@@ -165,4 +190 @@ fast incremental builds of various products.
+-These incremental builds are a big timesaver when developing and debugging. It
+-is still always a good idea to do a full build after using `update-checkout`.
+-Building the `swift-stdlib` target as an additional layer of testing from time
+-to time is also a good idea.
++It is still always a good idea to do a full build after using `update-checkout`.
+@@ -170 +192 @@ to time is also a good idea.
+-#### Xcode
++#### Using Xcode
+@@ -172,3 +194,3 @@ to time is also a good idea.
+-To open the swift in Xcode, open `${SWIFT_BUILD_ROOT}/Swift.xcodeproj`. It will
+-auto-create a *lot* of schemes for all of the available targets. A common debug
+-flow would involve:
++To open the swift project in Xcode, open `${SWIFT_BUILD_ROOT}/Swift.xcodeproj`.
++It will auto-create a *lot* of schemes for all of the available targets. A
++common debug flow would involve:
+@@ -176,3 +198,3 @@ flow would involve:
+- - Select the ‘swift’ scheme
+- - Pull up the scheme editor (⌘+⇧+<)
+- - Select the ‘Arguments’ tab and click the ‘+’
++ - Select the 'swift' scheme
++ - Pull up the scheme editor (⌘⇧<)
++ - Select the 'Arguments' tab and click the '+'
+@@ -182,0 +205,3 @@ flow would involve:
++Another option is to change the scheme to "Wait for executable to be launched",
++then run the build product in Terminal.
++
+@@ -188 +213,4 @@ If you have changed Xcode versions but still encounter errors that appear to
+-be related to the Xcode version, try passing `-- --rebuild` to `build-script`.
++be related to the Xcode version, try passing `--rebuild` to `build-script`.
++
++When a new version of Xcode is released, you can update your build without
++recompiling the entire project by passing the `--reconfigure` option.
+@@ -195 +223 @@ described above.
+-See [docs/Testing.md](docs/Testing.md).
++See [docs/Testing.md](docs/Testing.md), in particular the section on [lit.py](docs/Testing.md#using-litpy).
+@@ -197 +225 @@ See [docs/Testing.md](docs/Testing.md).
+-## Debugging the Compiler
++## Learning More
+@@ -199 +227,4 @@ See [docs/Testing.md](docs/Testing.md).
+-See [docs/DebuggingTheCompiler.md](docs/DebuggingTheCompiler.md).
++Be sure to look through the [docs/] docs directory for more information about the
++compiler. In particular, the document on [Debugging The Compiler](docs/DebuggingTheCompiler.rst),
++and [Continuous Integration.md](docs/ContinuousIntegration.md) are very helpful
++to understand before submitting your first PR.
+@@ -201 +232 @@ See [docs/DebuggingTheCompiler.md](docs/DebuggingTheCompiler.md).
+-## Documentation
++### Building Documentation
+diff --git a/README.md b/README.md
+index 169eb845b7..f2408dd910 100644
+--- a/README.md
++++ b/README.md
+@@ -55,3 +55,7 @@ supported host development operating systems.
+-To build for macOS, you always need the latest version of Xcode, currently
+-[Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/). You will
+-also need [CMake](https://cmake.org) and [Ninja](https://ninja-build.org),
++<a name="xcode"></a>
++To build for macOS, you need [Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/).
++The version of Xcode required to build swift changes frequently, and is often a
++pre-release version of Xcode. Check this document or [here](https://ci.swift.org)
++to see the version required.
++
++You will also need [CMake](https://cmake.org) and [Ninja](https://ninja-build.org),
+@@ -72,2 +76 @@ Instructions for installing CMake and Ninja directly can be found [here](#build-
+-<a name="linux-dependencies"></a>For Ubuntu, you'll need the following
+-development dependencies:
++For Ubuntu, you'll need the following development dependencies:
+@@ -182 +185,2 @@ flow would involve:
+-Make sure you are using the latest release of Xcode to build, including Betas.
++Make sure you are using the [correct release](#xcode) of Xcode.
++
+@@ -230 +234 @@ On Linux, if you have not already installed Swift's [development
+-dependencies](#linux-dependencies), you can download and install the CMake
++dependencies](#linux), you can download and install the CMake
+diff --git a/README.md b/README.md
+index 65e8685a0f..169eb845b7 100644
+--- a/README.md
++++ b/README.md
+@@ -45,2 +45,2 @@ These instructions give the most direct path to a working Swift development
+-environment. To build from source you will need 2gb of disk space for the
+-source code and over 20gb of disk space for the build artifacts. The first
++environment. To build from source you will need 2 GB of disk space for the
++source code and over 20 GB of disk space for the build artifacts. The first
+diff --git a/README.md b/README.md
+index 671d812272..65e8685a0f 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ well. For more, see the [Code of Conduct](https://swift.org/community/#code-of-c
+-These instructions give the most direct path to a working Swiftdevelopment
++These instructions give the most direct path to a working Swift development
+@@ -199 +199 @@ See [docs/DebuggingTheCompiler.md](docs/DebuggingTheCompiler.md).
+-To read the documentation, start by installing the
++To read the compiler documentation, start by installing the
+diff --git a/README.md b/README.md
+index 252dbde967..671d812272 100644
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24,2 @@ modules, eliminating the need for headers and the code duplication they entail.
++To learn more about the programming language, visit [swift.org](https://swift.org/documentation/)
++
+diff --git a/README.md b/README.md
+index f84d83f333..252dbde967 100644
+--- a/README.md
++++ b/README.md
+@@ -190,0 +191,4 @@ See [docs/Testing.md](docs/Testing.md).
++## Debugging the Compiler
++
++See [docs/DebuggingTheCompiler.md](docs/DebuggingTheCompiler.md).
++
+diff --git a/README.md b/README.md
+index 22902c1973..f84d83f333 100644
+--- a/README.md
++++ b/README.md
+@@ -120 +120 @@ Ninja:
+-## Developing Swift in Xcode
++### Development Environment
+@@ -122 +122,5 @@ Ninja:
+-`build-script` can also generate Xcode projects:
++There are two primary build options to use with CMake, xcodebuild or Ninja.
++xcodebuild integrates nicely with Xcode.app, but Ninja is a bit faster and
++supports more environments.
++
++To build using Xcode, run:
+@@ -129,0 +134,53 @@ work with other SDKs, you'll need to create a second build using Ninja.
++To build using Ninja, run:
++
++    utils/build-script -R --debug-swift
++
++This will build LLVM+Clang with optimizations and no debug symbols, but will
++build swift with debug symbols. This is a good starting point since the debugger
++will work in the swift code base, and the tests will run faster.
++
++#### Build Products
++
++All of the build products are placed in `swift-source/build/${TOOL}-${MODE}/${PRODUCT}-${PLATFORM}/`.
++If macOS swift with Ninja in DebugAssert mode was built, all of the products
++would be in `swift-source/build/Ninja-DebugAssert/swift-macosx-x86_64/`. It
++helps to save this directory as an environment variable for future use.
++
++    export SWIFT_BUILD_ROOT="~/swift-source/build/Ninja-DebugAssert/swift-macosx-x86_64"
++
++#### Ninja
++
++Once the first build has been finished with `build-script`, ninja can perform
++fast incremental builds of various products.
++
++    cd ${SWIFT_BUILD_ROOT}
++    ninja swift
++    ninja swift-stdlib
++
++These incremental builds are a big timesaver when developing and debugging. It
++is still always a good idea to do a full build after using `update-checkout`.
++Building the `swift-stdlib` target as an additional layer of testing from time
++to time is also a good idea.
++
++#### Xcode
++
++To open the swift in Xcode, open `${SWIFT_BUILD_ROOT}/Swift.xcodeproj`. It will
++auto-create a *lot* of schemes for all of the available targets. A common debug
++flow would involve:
++
++ - Select the ‘swift’ scheme
++ - Pull up the scheme editor (⌘+⇧+<)
++ - Select the ‘Arguments’ tab and click the ‘+’
++ - Add the command line options
++ - Close the scheme editor
++ - Build and run
++
++### Build Failures
++
++Make sure you are using the latest release of Xcode to build, including Betas.
++If you have changed Xcode versions but still encounter errors that appear to
++be related to the Xcode version, try passing `-- --rebuild` to `build-script`.
++
++Make sure all repositories are up to date with the `update-checkout` command
++described above.
++
+diff --git a/README.md b/README.md
+index d0b664eba6..22902c1973 100644
+--- a/README.md
++++ b/README.md
+@@ -115,3 +114,0 @@ View the inline help to find out more, in particular the section "Typical uses"
+-Note: Arguments after "--" above are forwarded to `build-script-impl`, which is
+-the ultimate shell script that invokes the actual build and test commands.
+-
+diff --git a/README.md b/README.md
+index 55b6cb4320..d0b664eba6 100644
+--- a/README.md
++++ b/README.md
+@@ -111 +111 @@ supports presets, which you can define for common combinations of build options.
+-To find out more:
++View the inline help to find out more, in particular the section "Typical uses"
+diff --git a/README.md b/README.md
+index 363e258a8b..55b6cb4320 100644
+--- a/README.md
++++ b/README.md
+@@ -42,3 +42,5 @@ well. For more, see the [Code of Conduct](https://swift.org/community/#code-of-c
+-These instructions give the most direct path to a working Swift
+-development environment. Options for doing things differently are
+-discussed below.
++These instructions give the most direct path to a working Swiftdevelopment
++environment. To build from source you will need 2gb of disk space for the
++source code and over 20gb of disk space for the build artifacts. The first
++build will take multiple hours, but incremental builds will finish much faster.
++
+diff --git a/README.md b/README.md
+index 9cd7433a61..363e258a8b 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +45,0 @@ discussed below.
+-
+@@ -52 +51,16 @@ supported host development operating systems.
+-For macOS, you need [Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/).
++To build for macOS, you always need the latest version of Xcode, currently
++[Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/). You will
++also need [CMake](https://cmake.org) and [Ninja](https://ninja-build.org),
++which can be installed via a package manager:
++
++**[Homebrew](https://brew.sh/)**
++
++    brew install cmake ninja
++
++**[MacPorts](https://macports.org)**
++
++    sudo port install cmake ninja
++
++Instructions for installing CMake and Ninja directly can be found [here](#build-dependencies)
++
++#### Linux
+@@ -88,46 +101,0 @@ cloning over SSH may provide a better experience (which requires
+-#### CMake
+-[CMake](https://cmake.org) is the core infrastructure used to configure builds of 
+-Swift and its companion projects; at least version 3.4.3 is required. 
+-
+-On macOS, you can download the [CMake Binary Distribution](https://cmake.org/download),
+-bundled as an application, copy it to `/Applications`, and add the embedded
+-command line tools to your `PATH`:
+-
+-    export PATH=/Applications/CMake.app/Contents/bin:$PATH
+-    
+-On Linux, if you have not already installed Swift's [development
+-dependencies](#linux-dependencies), you can download and install the CMake
+-package separately using the following command:
+-
+-    sudo apt-get install cmake
+-    
+-
+-#### Ninja
+-[Ninja](https://ninja-build.org) is the current recommended build system
+-for building Swift and is the default configuration generated by CMake. [Pre-built
+-packages](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
+-are available for macOS and Linux distributions. You can also clone Ninja
+-next to the other projects and it will be bootstrapped automatically:
+-
+-**Via HTTPS**
+-
+-    git clone https://github.com/ninja-build/ninja.git && cd ninja
+-    git checkout release
+-    cat README
+-
+-**Via SSH**
+-
+-    git clone git@github.com:ninja-build/ninja.git && cd ninja
+-    git checkout release
+-    cat README
+-
+-#### Install via third-party packaging tool (macOS only)
+-
+-**[Homebrew](https://brew.sh/)**
+-
+-    brew install cmake ninja
+-
+-**[MacPorts](https://macports.org)**
+-
+-    sudo port install cmake ninja
+-
+@@ -185,0 +154,38 @@ expressed today.
++
++## Build Dependencies
++
++### CMake
++[CMake](https://cmake.org) is the core infrastructure used to configure builds of 
++Swift and its companion projects; at least version 3.4.3 is required. 
++
++On macOS, you can download the [CMake Binary Distribution](https://cmake.org/download),
++bundled as an application, copy it to `/Applications`, and add the embedded
++command line tools to your `PATH`:
++
++    export PATH=/Applications/CMake.app/Contents/bin:$PATH
++
++On Linux, if you have not already installed Swift's [development
++dependencies](#linux-dependencies), you can download and install the CMake
++package separately using the following command:
++
++    sudo apt-get install cmake
++
++
++### Ninja
++[Ninja](https://ninja-build.org) is the current recommended build system
++for building Swift and is the default configuration generated by CMake. [Pre-built
++packages](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
++are available for macOS and Linux distributions. You can also clone Ninja
++next to the other projects and it will be bootstrapped automatically:
++
++**Via HTTPS**
++
++    git clone https://github.com/ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
++
++**Via SSH**
++
++    git clone git@github.com:ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
+diff --git a/README.md b/README.md
+index 08be87c630..9cd7433a61 100644
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24 @@ modules, eliminating the need for headers and the code duplication they entail.
++## Contributing to Swift
+@@ -25,14 +26,2 @@ modules, eliminating the need for headers and the code duplication they entail.
+-## Documentation
+-
+-To read the documentation, start by installing the
+-[Sphinx](http://sphinx-doc.org) documentation generator tool by running the command:
+-
+-`easy_install -U Sphinx`
+-
+-Once complete, you can build the Swift documentation by changing directory into
+-[docs](https://github.com/apple/swift/tree/master/docs) and typing `make`. This
+-compiles the `.rst` files in the [docs](https://github.com/apple/swift/tree/master/docs)
+-directory into HTML in the `docs/_build/html` directory.
+-
+-Many of the docs are out of date, but you can see some historical design
+-documents in the `docs` directory.
++Contributions to Swift are welcomed and encouraged! Please see the
++[Contributing to Swift guide](https://swift.org/contributing/).
+@@ -40,4 +29,5 @@ documents in the `docs` directory.
+-Another source of documentation is the standard library itself, located in
+-`stdlib`. Much of the language is actually implemented in the library
+-(including `Int`), and the standard library gives some examples of what can be
+-expressed today.
++To be a truly great community, [Swift.org](https://swift.org/) needs to welcome
++developers from all walks of life, with different backgrounds, and with a wide
++range of experience. A diverse and friendly community will have more great
++ideas, more unique perspectives, and produce more great code. We will work
++diligently to make the Swift community welcoming to everyone.
+@@ -44,0 +35,4 @@ expressed today.
++To give clarity of what is expected of our members, Swift has adopted the
++code of conduct defined by the Contributor Covenant. This document is used
++across many open source communities, and we think it articulates our values
++well. For more, see the [Code of Conduct](https://swift.org/community/#code-of-conduct).
+@@ -173 +167 @@ See [docs/Testing.md](docs/Testing.md).
+-## Contributing to Swift
++## Documentation
+@@ -175,2 +169,2 @@ See [docs/Testing.md](docs/Testing.md).
+-Contributions to Swift are welcomed and encouraged! Please see the
+-[Contributing to Swift guide](https://swift.org/contributing/).
++To read the documentation, start by installing the
++[Sphinx](http://sphinx-doc.org) documentation generator tool by running the command:
+@@ -178,5 +172 @@ Contributions to Swift are welcomed and encouraged! Please see the
+-To be a truly great community, [Swift.org](https://swift.org/) needs to welcome
+-developers from all walks of life, with different backgrounds, and with a wide
+-range of experience. A diverse and friendly community will have more great
+-ideas, more unique perspectives, and produce more great code. We will work
+-diligently to make the Swift community welcoming to everyone.
++`easy_install -U Sphinx`
+@@ -184,4 +174,12 @@ diligently to make the Swift community welcoming to everyone.
+-To give clarity of what is expected of our members, Swift has adopted the
+-code of conduct defined by the Contributor Covenant. This document is used
+-across many open source communities, and we think it articulates our values
+-well. For more, see the [Code of Conduct](https://swift.org/community/#code-of-conduct).
++Once complete, you can build the Swift documentation by changing directory into
++[docs](https://github.com/apple/swift/tree/master/docs) and typing `make`. This
++compiles the `.rst` files in the [docs](https://github.com/apple/swift/tree/master/docs)
++directory into HTML in the `docs/_build/html` directory.
++
++Many of the docs are out of date, but you can see some historical design
++documents in the `docs` directory.
++
++Another source of documentation is the standard library itself, located in
++`stdlib`. Much of the language is actually implemented in the library
++(including `Int`), and the standard library gives some examples of what can be
++expressed today.
+diff --git a/README.md b/README.md
+index 5fc35def11..08be87c630 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ supported host development operating systems.
+-For macOS, you need [Xcode 9.0 beta 2](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 9.0 beta 4](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 505121b6d9..5fc35def11 100644
+--- a/README.md
++++ b/README.md
+@@ -33,2 +33,3 @@ Once complete, you can build the Swift documentation by changing directory into
+-[docs](https://github.com/apple/swift/tree/master/docs) and typing `make`. This compiles the `.rst` files in the [docs](https://github.com/apple/swift/tree/master/docs) directory
+-into HTML in the `docs/_build/html` directory.
++[docs](https://github.com/apple/swift/tree/master/docs) and typing `make`. This
++compiles the `.rst` files in the [docs](https://github.com/apple/swift/tree/master/docs)
++directory into HTML in the `docs/_build/html` directory.
+@@ -59 +60,2 @@ For macOS, you need [Xcode 9.0 beta 2](https://developer.apple.com/xcode/downloa
+-For Ubuntu, you'll need the following development dependencies:
++<a name="linux-dependencies"></a>For Ubuntu, you'll need the following
++development dependencies:
+@@ -102,3 +104,3 @@ command line tools to your `PATH`:
+-On Linux, if the CMake package was not downloaded in the development dependencies you can download and 
+-install the CMake package using the following command:
+-
++On Linux, if you have not already installed Swift's [development
++dependencies](#linux-dependencies), you can download and install the CMake
++package separately using the following command:
+@@ -173 +175,2 @@ See [docs/Testing.md](docs/Testing.md).
+-Contributions to Swift are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing/).
++Contributions to Swift are welcomed and encouraged! Please see the
++[Contributing to Swift guide](https://swift.org/contributing/).
+@@ -175,5 +178,5 @@ Contributions to Swift are welcomed and encouraged! Please see the [Contributing
+-To be a truly great community, [Swift.org](https://swift.org/) needs to welcome developers from all
+-walks of life, with different backgrounds, and with a wide range of experience.
+-A diverse and friendly community will have more great ideas, more unique
+-perspectives, and produce more great code. We will work diligently to make the
+-Swift community welcoming to everyone.
++To be a truly great community, [Swift.org](https://swift.org/) needs to welcome
++developers from all walks of life, with different backgrounds, and with a wide
++range of experience. A diverse and friendly community will have more great
++ideas, more unique perspectives, and produce more great code. We will work
++diligently to make the Swift community welcoming to everyone.
+diff --git a/README.md b/README.md
+index a140c024c4..505121b6d9 100644
+--- a/README.md
++++ b/README.md
+@@ -93,3 +93,3 @@ cloning over SSH may provide a better experience (which requires
+-[CMake](https://cmake.org) is the core infrastructure used to configure builds of
+-Swift and its companion projects; at least version 3.4.3 is required. Your
+-favorite Linux distribution likely already has a CMake package you can install.
++[CMake](https://cmake.org) is the core infrastructure used to configure builds of 
++Swift and its companion projects; at least version 3.4.3 is required. 
++
+@@ -100,0 +101,7 @@ command line tools to your `PATH`:
++    
++On Linux, if the CMake package was not downloaded in the development dependencies you can download and 
++install the CMake package using the following command:
++
++
++    sudo apt-get install cmake
++    
+diff --git a/README.md b/README.md
+index 06d8af58ee..a140c024c4 100644
+--- a/README.md
++++ b/README.md
+@@ -104,3 +104,4 @@ command line tools to your `PATH`:
+-for building Swift and is the default configuration generated by CMake. If
+-you're on macOS or don't install it as part of your Linux distribution, clone
+-it next to the other projects and it will be bootstrapped automatically:
++for building Swift and is the default configuration generated by CMake. [Pre-built
++packages](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
++are available for macOS and Linux distributions. You can also clone Ninja
++next to the other projects and it will be bootstrapped automatically:
+@@ -108 +108,0 @@ it next to the other projects and it will be bootstrapped automatically:
+-##### Build from source
+diff --git a/README.md b/README.md
+index a401c6014d..06d8af58ee 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-For macOS, you need [Xcode 9.0 beta 1](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 9.0 beta 2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 062adf0029..a401c6014d 100644
+--- a/README.md
++++ b/README.md
+@@ -162 +162 @@ work with other SDKs, you'll need to create a second build using Ninja.
+-See [docs/Testing.rst](docs/Testing.rst).
++See [docs/Testing.md](docs/Testing.md).
+diff --git a/README.md b/README.md
+index 36ecd79fad..062adf0029 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-For macOS, you need [Xcode 8.3.2](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 9.0 beta 1](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index a29b10ea75..36ecd79fad 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata
+diff --git a/README.md b/README.md
+index c7666146a1..a29b10ea75 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev
+@@ -87 +87 @@ cloning over SSH may provide a better experience (which requires
+-uploading SSH keys to GitHub):
++[uploading SSH keys to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)):
+diff --git a/README.md b/README.md
+index e39200af3e..c7666146a1 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev tzdata
+diff --git a/README.md b/README.md
+index 65ff1c6a5e..e39200af3e 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-For macOS, you need [Xcode 8.3](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 8.3.2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 53f4101de9..65ff1c6a5e 100644
+--- a/README.md
++++ b/README.md
+@@ -93 +93 @@ uploading SSH keys to GitHub):
+-[CMake](http://cmake.org) is the core infrastructure used to configure builds of
++[CMake](https://cmake.org) is the core infrastructure used to configure builds of
+@@ -123 +123 @@ it next to the other projects and it will be bootstrapped automatically:
+-**[Homebrew](http://brew.sh/)**
++**[Homebrew](https://brew.sh/)**
+diff --git a/README.md b/README.md
+index 1a851f17c3..53f4101de9 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ supported host development operating systems.
+-For macOS, you need [Xcode 8.3 Beta 4](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 8.3](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 899b6c682d..1a851f17c3 100644
+--- a/README.md
++++ b/README.md
+@@ -1,0 +2 @@
++
+@@ -4,2 +5,2 @@
+-|| **Swift** | **Package** |
+-|---|---|---|
++| | **Swift** | **Package** |
++|---|:---:|:---:|
+diff --git a/README.md b/README.md
+index 6d91388145..899b6c682d 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ supported host development operating systems.
+-For macOS, you need [Xcode 8.3 Beta 3](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 8.3 Beta 4](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index fe7b822248..6d91388145 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ supported host development operating systems.
+-For macOS, you need [Xcode 8.3 Beta 2](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 8.3 Beta 3](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 0db9f1ee6d..fe7b822248 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ supported host development operating systems.
+-For macOS, you need [the latest Xcode](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [Xcode 8.3 Beta 2](https://developer.apple.com/xcode/downloads/).
+diff --git a/README.md b/README.md
+index 38f9d003d5..0db9f1ee6d 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
+@@ -64 +65 @@ with version 2 shipped with Ubuntu.
+-Ubuntu 14.04 LTS is no longer supported. Unsupported build instructions for Ubuntu 14.04 LTS can be found [here](docs/Ubuntu14.md)
++Build instructions for Ubuntu 14.04 LTS can be found [here](docs/Ubuntu14.md)
+diff --git a/README.md b/README.md
+index 58277a80da..38f9d003d5 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev autoconf libtool systemtap-sdt-dev
+diff --git a/README.md b/README.md
+index 4677ae2998..58277a80da 100644
+--- a/README.md
++++ b/README.md
+@@ -64,6 +64 @@ with version 2 shipped with Ubuntu.
+-If you are building on Ubuntu 14.04 LTS, you'll need to upgrade your clang
+-compiler for C++14 support and create a symlink:
+-
+-    sudo apt-get install clang-3.6
+-    sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+-    sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
++Ubuntu 14.04 LTS is no longer supported. Unsupported build instructions for Ubuntu 14.04 LTS can be found [here](docs/Ubuntu14.md)
+diff --git a/README.md b/README.md
+index d0ef4435e3..4677ae2998 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +6,0 @@
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
+-|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10)|
+diff --git a/README.md b/README.md
+index 726c75057f..d0ef4435e3 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@
++|**Ubuntu 16.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_10)|
+diff --git a/README.md b/README.md
+index d7b654c4c7..726c75057f 100644
+--- a/README.md
++++ b/README.md
+@@ -8,0 +9 @@
++|**Ubuntu 16.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-16_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-16_04)|
+diff --git a/README.md b/README.md
+index 19e14496f8..d7b654c4c7 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev
+diff --git a/README.md b/README.md
+index 094174da60..19e14496f8 100644
+--- a/README.md
++++ b/README.md
+@@ -28,3 +28 @@ To read the documentation, start by installing the
+-`easy_install -U Sphinx==1.3.4`
+-
+-More recent versions are currently **not supported.**
++`easy_install -U Sphinx`
+diff --git a/README.md b/README.md
+index bb98791ba2..094174da60 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@
+-|| **Status** |
+-|---|---|
+-|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|
+-|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|
++|| **Swift** | **Package** |
++|---|---|---|
++|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
++|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10)|
+diff --git a/README.md b/README.md
+index 227378864d..bb98791ba2 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75 @@ compiler for C++14 support and create a symlink:
+-First create a directory for all of the swift sources:
++First create a directory for all of the Swift sources:
+diff --git a/README.md b/README.md
+index 8d03f0d91f..227378864d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@
+-|| **Swift** | **Package** |
+-|---|---|---|
+-|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
+-|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10)|
++|| **Status** |
++|---|---|
++|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|
++|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|
+@@ -81,2 +81,2 @@ First create a directory for all of the swift sources:
+-repositories next to the swift source directory. This means that if one clones
+-swift and has other unrelated repositories, update-checkout may not clone those
++repositories next to the Swift source directory. This means that if one clones
++Swift and has other unrelated repositories, update-checkout may not clone those
+@@ -141 +141 @@ Manager, building for iOS, running tests after builds, and more. It also
+-supports presets which you can define for common combinations of build options.
++supports presets, which you can define for common combinations of build options.
+diff --git a/README.md b/README.md
+index 7748b24b15..8d03f0d91f 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@
+-|| **Status** |
+-|---|---|
+-|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
+-|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|
+-|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|
++|| **Swift** | **Package** |
++|---|---|---|
++|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|[![Build Status](https://ci.swift.org/job/oss-swift-package-osx/badge/icon)](https://ci.swift.org/job/oss-swift-package-osx)|
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-14_04)|
++|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|[![Build Status](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-package-linux-ubuntu-15_10)|
+diff --git a/README.md b/README.md
+index 1164b17b29..7748b24b15 100644
+--- a/README.md
++++ b/README.md
+@@ -99 +99 @@ uploading SSH keys to GitHub):
+-Swift and its companion projects; at least version 2.8.12.2 is required. Your
++Swift and its companion projects; at least version 3.4.3 is required. Your
+diff --git a/README.md b/README.md
+index 5bba01876b..1164b17b29 100644
+--- a/README.md
++++ b/README.md
+@@ -74,0 +75,10 @@ compiler for C++14 support and create a symlink:
++First create a directory for all of the swift sources:
++
++    mkdir swift-source
++    cd swift-source
++
++**Note:** This is important since update-checkout (see below) checks out
++repositories next to the swift source directory. This means that if one clones
++swift and has other unrelated repositories, update-checkout may not clone those
++repositories and will update them instead.
++
+@@ -78,2 +88 @@ compiler for C++14 support and create a symlink:
+-    cd swift
+-    ./utils/update-checkout --clone
++    ./swift/utils/update-checkout --clone
+@@ -86,2 +95 @@ uploading SSH keys to GitHub):
+-    cd swift
+-    ./utils/update-checkout --clone-with-ssh
++    ./swift/utils/update-checkout --clone-with-ssh
+diff --git a/README.md b/README.md
+index 6829d9a08d..5bba01876b 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-|**OS X**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
++|**macOS**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
+@@ -54 +54 @@ discussed below.
+-OS X, Ubuntu Linux LTS, and the latest Ubuntu Linux release are the current
++macOS, Ubuntu Linux LTS, and the latest Ubuntu Linux release are the current
+@@ -57 +57 @@ supported host development operating systems.
+-For OS X, you need [the latest Xcode](https://developer.apple.com/xcode/downloads/).
++For macOS, you need [the latest Xcode](https://developer.apple.com/xcode/downloads/).
+@@ -93 +93 @@ favorite Linux distribution likely already has a CMake package you can install.
+-On OS X, you can download the [CMake Binary Distribution](https://cmake.org/download),
++On macOS, you can download the [CMake Binary Distribution](https://cmake.org/download),
+@@ -102 +102 @@ for building Swift and is the default configuration generated by CMake. If
+-you're on OS X or don't install it as part of your Linux distribution, clone
++you're on macOS or don't install it as part of your Linux distribution, clone
+@@ -118 +118 @@ it next to the other projects and it will be bootstrapped automatically:
+-#### Install via third-party packaging tool (OS X only)
++#### Install via third-party packaging tool (macOS only)
+@@ -154 +154 @@ The Xcode IDE can be used to edit the Swift source code, but it is not currently
+-fully supported as a build environment for SDKs other than OS X. If you need to
++fully supported as a build environment for SDKs other than macOS. If you need to
+diff --git a/README.md b/README.md
+index f821113980..6829d9a08d 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev
+diff --git a/README.md b/README.md
+index 418586d6e2..f821113980 100644
+--- a/README.md
++++ b/README.md
+@@ -33 +33 @@ Once complete, you can build the Swift documentation by changing directory into
+-`docs` and typing `make`. This compiles the `.rst` files in the `docs` directory
++[docs](https://github.com/apple/swift/tree/master/docs) and typing `make`. This compiles the `.rst` files in the [docs](https://github.com/apple/swift/tree/master/docs) directory
+@@ -165 +165 @@ Contributions to Swift are welcomed and encouraged! Please see the [Contributing
+-To be a truly great community, Swift.org needs to welcome developers from all
++To be a truly great community, [Swift.org](https://swift.org/) needs to welcome developers from all
+@@ -174 +174 @@ across many open source communities, and we think it articulates our values
+-well. For more, see [the website](https://swift.org/community/#code-of-conduct).
++well. For more, see the [Code of Conduct](https://swift.org/community/#code-of-conduct).
+diff --git a/README.md b/README.md
+index 6bb6bde92f..418586d6e2 100644
+--- a/README.md
++++ b/README.md
+@@ -118 +118 @@ it next to the other projects and it will be bootstrapped automatically:
+-#### Install via third-party packaging tool (OSX only)
++#### Install via third-party packaging tool (OS X only)
+diff --git a/README.md b/README.md
+index eec762d537..6bb6bde92f 100644
+--- a/README.md
++++ b/README.md
+@@ -93 +93 @@ favorite Linux distribution likely already has a CMake package you can install.
+-On OS X, you can download the [CMake Binary Distribution](https://cmake.org/install),
++On OS X, you can download the [CMake Binary Distribution](https://cmake.org/download),
+diff --git a/README.md b/README.md
+index 909f46b20a..eec762d537 100644
+--- a/README.md
++++ b/README.md
+@@ -142 +142,2 @@ the ultimate shell script that invokes the actual build and test commands.
+-A basic command to build Swift and run basic tests with Ninja:
++A basic command to build Swift with optimizations and run basic tests with
++Ninja:
+@@ -144 +145 @@ A basic command to build Swift and run basic tests with Ninja:
+-    utils/build-script -t
++    utils/build-script -r -t
+@@ -148,7 +149 @@ A basic command to build Swift and run basic tests with Ninja:
+-The Xcode IDE can be used to edit the Swift source code, but it is not currently
+-fully supported as a build environment for SDKs other than OS X. If you'd like
+-to build for other SDKs but still use Xcode, once you've built Swift using Ninja
+-or one of the other supported CMake generators, you can set up an IDE-only Xcode
+-environment using the build-script's `-X` flag:
+-
+-    utils/build-script -X --skip-build -- --reconfigure
++`build-script` can also generate Xcode projects:
+@@ -156,3 +151 @@ environment using the build-script's `-X` flag:
+-The `--skip-build` flag tells `build-script` to only generate the project,
+-not build it in its entirety. A bare minimum of LLVM tools will build in order
+-to configure the Xcode projects.
++    utils/build-script -x
+@@ -160,4 +153,3 @@ to configure the Xcode projects.
+-The `--reconfigure` flag tells `build-script-impl` to run the CMake configuration
+-step even if there is a cached configuration. As you develop in Xcode, you may
+-need to rerun this from time to time to refresh your generated Xcode project,
+-picking up new targets, file removals, or file additions.
++The Xcode IDE can be used to edit the Swift source code, but it is not currently
++fully supported as a build environment for SDKs other than OS X. If you need to
++work with other SDKs, you'll need to create a second build using Ninja.
+diff --git a/README.md b/README.md
+index 3f5dff3770..909f46b20a 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ and modern syntax, offers seamless access to existing C and Objective-C code
+-and frameworks, and is memory safe (by default).
++and frameworks, and is memory safe by default.
+@@ -26,6 +26,9 @@ To read the documentation, start by installing the
+-[Sphinx](http://sphinx-doc.org) documentation generator tool (just run
+-`easy_install -U Sphinx==1.3.4` (more recent versions are currently not supported) 
+-from the command line and you're good to go). Once you
+- have that, you can build the Swift documentation by going into `docs` and
+-typing `make`. This compiles the `.rst` files in the `docs` directory into
+-HTML in the `docs/_build/html` directory.
++[Sphinx](http://sphinx-doc.org) documentation generator tool by running the command:
++
++`easy_install -U Sphinx==1.3.4`
++
++More recent versions are currently **not supported.**
++
++Once complete, you can build the Swift documentation by changing directory into
++`docs` and typing `make`. This compiles the `.rst` files in the `docs` directory
++into HTML in the `docs/_build/html` directory.
+@@ -60 +63 @@ For Ubuntu, you'll need the following development dependencies:
+-Note: LLDB currently requires at least swig-1.3.40 but will successfully build
++**Note:** LLDB currently requires at least `swig-1.3.40` but will successfully build
+@@ -91 +94 @@ On OS X, you can download the [CMake Binary Distribution](https://cmake.org/inst
+-bundled as an application, copy it to /Applications, and add the embedded
++bundled as an application, copy it to `/Applications`, and add the embedded
+@@ -103 +106 @@ it next to the other projects and it will be bootstrapped automatically:
+-**Via https**
++**Via HTTPS**
+@@ -109 +112 @@ it next to the other projects and it will be bootstrapped automatically:
+-**Via ssh**
++**Via SSH**
+diff --git a/README.md b/README.md
+index e0d2c68617..3f5dff3770 100644
+--- a/README.md
++++ b/README.md
+@@ -85,0 +86 @@ uploading SSH keys to GitHub):
++#### CMake
+@@ -94,0 +96 @@ command line tools to your `PATH`:
++#### Ninja
+@@ -100 +102,2 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/ninja-build/ninja.git
++##### Build from source
++**Via https**
+@@ -102 +105,3 @@ it next to the other projects and it will be bootstrapped automatically:
+-or
++    git clone https://github.com/ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
+@@ -104 +109 @@ or
+-    git clone git@github.com:ninja-build/ninja.git
++**Via ssh**
+@@ -106,2 +111,7 @@ or
+-You can also install CMake and Ninja on OS X using a third-party
+-packaging tool like [Homebrew](http://brew.sh)…
++    git clone git@github.com:ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
++
++#### Install via third-party packaging tool (OSX only)
++
++**[Homebrew](http://brew.sh/)**
+@@ -111 +121 @@ packaging tool like [Homebrew](http://brew.sh)…
+-…or [MacPorts](https://macports.org).
++**[MacPorts](https://macports.org)**
+diff --git a/README.md b/README.md
+index d5e2e3a49d..e0d2c68617 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27,2 @@ To read the documentation, start by installing the
+-`easy_install -U Sphinx` from the command line and you're good to go). Once you
++`easy_install -U Sphinx==1.3.4` (more recent versions are currently not supported) 
++from the command line and you're good to go). Once you
+diff --git a/README.md b/README.md
+index 8ff57beeeb..d5e2e3a49d 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4,6 @@
++|| **Status** |
++|---|---|
++|**OS X**         |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-osx/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-osx)|
++|**Ubuntu 14.04** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-14_04)|
++|**Ubuntu 15.10** |[![Build Status](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10/badge/icon)](https://ci.swift.org/job/oss-swift-incremental-RA-linux-ubuntu-15_10)|
++
+@@ -79 +84,0 @@ uploading SSH keys to GitHub):
+-#### CMake
+@@ -89 +93,0 @@ command line tools to your `PATH`:
+-#### Ninja
+@@ -95,8 +99 @@ it next to the other projects and it will be bootstrapped automatically:
+-##### Build from source
+-**Via https**
+-
+-    git clone https://github.com/ninja-build/ninja.git && cd ninja
+-    git checkout release
+-    cat README
+-
+-**Via ssh**
++    git clone https://github.com/ninja-build/ninja.git
+@@ -104,3 +101 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone git@github.com:ninja-build/ninja.git && cd ninja
+-    git checkout release
+-    cat README
++or
+@@ -108 +103 @@ it next to the other projects and it will be bootstrapped automatically:
+-#### Install via third-party packaging tool (OSX only)
++    git clone git@github.com:ninja-build/ninja.git
+@@ -110 +105,2 @@ it next to the other projects and it will be bootstrapped automatically:
+-**[Homebrew](http://brew.sh/)**
++You can also install CMake and Ninja on OS X using a third-party
++packaging tool like [Homebrew](http://brew.sh)…
+@@ -114 +110 @@ it next to the other projects and it will be bootstrapped automatically:
+-**[MacPorts](https://macports.org)**
++…or [MacPorts](https://macports.org).
+diff --git a/README.md b/README.md
+index 070dd10827..8ff57beeeb 100644
+--- a/README.md
++++ b/README.md
+@@ -78,0 +79 @@ uploading SSH keys to GitHub):
++#### CMake
+@@ -87,0 +89 @@ command line tools to your `PATH`:
++#### Ninja
+@@ -93 +95,2 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/ninja-build/ninja.git
++##### Build from source
++**Via https**
+@@ -95 +98,3 @@ it next to the other projects and it will be bootstrapped automatically:
+-or
++    git clone https://github.com/ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
+@@ -97 +102 @@ or
+-    git clone git@github.com:ninja-build/ninja.git
++**Via ssh**
+@@ -99,2 +104,7 @@ or
+-You can also install CMake and Ninja on OS X using a third-party
+-packaging tool like [Homebrew](http://brew.sh)…
++    git clone git@github.com:ninja-build/ninja.git && cd ninja
++    git checkout release
++    cat README
++
++#### Install via third-party packaging tool (OSX only)
++
++**[Homebrew](http://brew.sh/)**
+@@ -104 +114 @@ packaging tool like [Homebrew](http://brew.sh)…
+-…or [MacPorts](https://macports.org).
++**[MacPorts](https://macports.org)**
+diff --git a/README.md b/README.md
+index ec5d9470ea..070dd10827 100644
+--- a/README.md
++++ b/README.md
+@@ -59,3 +59,3 @@ compiler for C++14 support and create a symlink:
+-     sudo apt-get install clang-3.6
+-     sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
+-     sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
++    sudo apt-get install clang-3.6
++    sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
++    sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+diff --git a/README.md b/README.md
+index ac4435ac8f..ec5d9470ea 100644
+--- a/README.md
++++ b/README.md
+@@ -26,3 +25,0 @@ HTML in the `docs/_build/html` directory.
+-A potentially useful document to start off with is `docs/LangRef`, which gives a low level
+-tour of how the language works from the implementation perspective.
+-
+diff --git a/README.md b/README.md
+index 1e5ff17577..ac4435ac8f 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ HTML in the `docs/_build/html` directory.
+-A potentially useful document to start is `docs/LangRef`, which gives a low level
++A potentially useful document to start off with is `docs/LangRef`, which gives a low level
+diff --git a/README.md b/README.md
+index e2f62b4283..1e5ff17577 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ HTML in the `docs/_build/html` directory.
+-A potentially useful document to start off with is `docs/LangRef`, which gives a low level
++A potentially useful document to start is `docs/LangRef`, which gives a low level
+@@ -54 +54 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
++    sudo apt-get install git cmake ninja-build clang python uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+diff --git a/README.md b/README.md
+index 2979b70647..e2f62b4283 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ HTML in the `docs/_build/html` directory.
+-A potentially useful document to start is `docs/LangRef`, which gives a low level
++A potentially useful document to start off with is `docs/LangRef`, which gives a low level
+diff --git a/README.md b/README.md
+index b7e513dc5f..2979b70647 100644
+--- a/README.md
++++ b/README.md
+@@ -80 +80 @@ uploading SSH keys to GitHub):
+-    ./utils/update-checkout --clone-via-ssh
++    ./utils/update-checkout --clone-with-ssh
+diff --git a/README.md b/README.md
+index 89ff48c7ce..b7e513dc5f 100644
+--- a/README.md
++++ b/README.md
+@@ -68 +68 @@ compiler for C++14 support and create a symlink:
+-#### Swift Sources
++**Via HTTPS**  For those checking out sources as read-only, HTTPS works best:
+@@ -70 +69,0 @@ compiler for C++14 support and create a symlink:
+-**Via HTTPS**
+@@ -72,8 +71 @@ compiler for C++14 support and create a symlink:
+-
+-**Via SSH**
+-    git clone git@github.com:apple/swift.git
+-
+-#### Related Project Sources
+-
+-**Via HTTPS**
+-    cd <local_path_to_swift_repo>
++    cd swift
+@@ -82,3 +74,3 @@ compiler for C++14 support and create a symlink:
+-**Via SSH**
+-    cd <local_path_to_swift_repo>
+-    ./utils/update-checkout --clone-via-ssh
++**Via SSH**  For those who plan on regularly making direct commits,
++cloning over SSH may provide a better experience (which requires
++uploading SSH keys to GitHub):
+@@ -85,0 +78,3 @@ compiler for C++14 support and create a symlink:
++    git clone git@github.com:apple/swift.git
++    cd swift
++    ./utils/update-checkout --clone-via-ssh
+diff --git a/README.md b/README.md
+index 2a7b1cd61d..89ff48c7ce 100644
+--- a/README.md
++++ b/README.md
+@@ -68,25 +68,18 @@ compiler for C++14 support and create a symlink:
+-For those checking out sources as read-only:
+-
+-     git clone https://github.com/apple/swift.git swift
+-     git clone https://github.com/apple/swift-llvm.git llvm
+-     git clone https://github.com/apple/swift-clang.git clang
+-     git clone https://github.com/apple/swift-lldb.git lldb
+-     git clone https://github.com/apple/swift-cmark.git cmark
+-     git clone https://github.com/apple/swift-llbuild.git llbuild
+-     git clone https://github.com/apple/swift-package-manager.git swiftpm
+-     git clone https://github.com/apple/swift-corelibs-xctest.git
+-     git clone https://github.com/apple/swift-corelibs-foundation.git
+-
+-For those who plan on regularly making direct commits, cloning over
+-SSH may provide a better experience (which requires uploading
+-SSH keys to GitHub):
+-
+-     git clone git@github.com:apple/swift.git swift
+-     git clone git@github.com:apple/swift-llvm.git llvm
+-     git clone git@github.com:apple/swift-clang.git clang
+-     git clone git@github.com:apple/swift-lldb.git lldb
+-     git clone git@github.com:apple/swift-cmark.git cmark
+-     git clone git@github.com:apple/swift-llbuild.git llbuild
+-     git clone git@github.com:apple/swift-package-manager.git swiftpm
+-     git clone git@github.com:apple/swift-corelibs-xctest.git
+-     git clone git@github.com:apple/swift-corelibs-foundation.git
++#### Swift Sources
++
++**Via HTTPS**
++    git clone https://github.com/apple/swift.git
++
++**Via SSH**
++    git clone git@github.com:apple/swift.git
++
++#### Related Project Sources
++
++**Via HTTPS**
++    cd <local_path_to_swift_repo>
++    ./utils/update-checkout --clone
++
++**Via SSH**
++    cd <local_path_to_swift_repo>
++    ./utils/update-checkout --clone-via-ssh
++
+diff --git a/README.md b/README.md
+index da1f788a13..2a7b1cd61d 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ features like flow control, data structures, and functions, with high-level
+-constructs like objects, protocols, closures, and generics.  Swift embraces
++constructs like objects, protocols, closures, and generics. Swift embraces
+@@ -19,2 +19,2 @@ modules, eliminating the need for headers and the code duplication they entail.
+-To read the documentation, start by installing the 
+-[Sphinx](http://sphinx-doc.org) documentation generator tool (just run 
++To read the documentation, start by installing the
++[Sphinx](http://sphinx-doc.org) documentation generator tool (just run
+@@ -22,2 +22,2 @@ To read the documentation, start by installing the
+- have that, you can build the Swift documentation by going into `docs` and 
+-typing `make`.  This compiles the `.rst` files in the `docs` directory into 
++ have that, you can build the Swift documentation by going into `docs` and
++typing `make`. This compiles the `.rst` files in the `docs` directory into
+@@ -26,3 +26 @@ HTML in the `docs/_build/html` directory.
+-Once built, the best place to start is with the Swift white paper, which gives a
+-tour of the language (in `docs/_build/html/whitepaper/index.html`).
+-Another potentially useful document is `docs/LangRef`, which gives a low level
++A potentially useful document to start is `docs/LangRef`, which gives a low level
+@@ -35 +33 @@ Another source of documentation is the standard library itself, located in
+-`stdlib`.  Much of the language is actually implemented in the library
++`stdlib`. Much of the language is actually implemented in the library
+@@ -43 +41 @@ These instructions give the most direct path to a working Swift
+-development environment.  Options for doing things differently are
++development environment. Options for doing things differently are
+@@ -70,18 +68,25 @@ compiler for C++14 support and create a symlink:
+-#### Swift Sources
+-
+-**Via HTTPS**
+-    git clone https://github.com/apple/swift.git
+-
+-**Via SSH**
+-    git clone git@github.com:apple/swift.git
+-
+-#### Related Project Sources
+-
+-**Via HTTPS**
+-    cd <local_path_to_swift_repo>
+-    ./utils/update-checkout --clone
+-
+-**Via SSH**
+-    cd <local_path_to_swift_repo>
+-    ./utils/update-checkout --clone-via-ssh
+-
++For those checking out sources as read-only:
++
++     git clone https://github.com/apple/swift.git swift
++     git clone https://github.com/apple/swift-llvm.git llvm
++     git clone https://github.com/apple/swift-clang.git clang
++     git clone https://github.com/apple/swift-lldb.git lldb
++     git clone https://github.com/apple/swift-cmark.git cmark
++     git clone https://github.com/apple/swift-llbuild.git llbuild
++     git clone https://github.com/apple/swift-package-manager.git swiftpm
++     git clone https://github.com/apple/swift-corelibs-xctest.git
++     git clone https://github.com/apple/swift-corelibs-foundation.git
++
++For those who plan on regularly making direct commits, cloning over
++SSH may provide a better experience (which requires uploading
++SSH keys to GitHub):
++
++     git clone git@github.com:apple/swift.git swift
++     git clone git@github.com:apple/swift-llvm.git llvm
++     git clone git@github.com:apple/swift-clang.git clang
++     git clone git@github.com:apple/swift-lldb.git lldb
++     git clone git@github.com:apple/swift-cmark.git cmark
++     git clone git@github.com:apple/swift-llbuild.git llbuild
++     git clone git@github.com:apple/swift-package-manager.git swiftpm
++     git clone git@github.com:apple/swift-corelibs-xctest.git
++     git clone git@github.com:apple/swift-corelibs-foundation.git
+@@ -103 +108 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/martine/ninja.git
++    git clone https://github.com/ninja-build/ninja.git
+@@ -107 +112 @@ or
+-    git clone git@github.com:martine/ninja.git
++    git clone git@github.com:ninja-build/ninja.git
+diff --git a/README.md b/README.md
+index 0418d16634..da1f788a13 100644
+--- a/README.md
++++ b/README.md
+@@ -80 +79,0 @@ compiler for C++14 support and create a symlink:
+-
+diff --git a/README.md b/README.md
+index 780b14e7f9..0418d16634 100644
+--- a/README.md
++++ b/README.md
+@@ -70,25 +70,19 @@ compiler for C++14 support and create a symlink:
+-For those checking out sources as read-only:
+-
+-     git clone https://github.com/apple/swift.git swift
+-     git clone https://github.com/apple/swift-llvm.git llvm
+-     git clone https://github.com/apple/swift-clang.git clang
+-     git clone https://github.com/apple/swift-lldb.git lldb
+-     git clone https://github.com/apple/swift-cmark.git cmark
+-     git clone https://github.com/apple/swift-llbuild.git llbuild
+-     git clone https://github.com/apple/swift-package-manager.git swiftpm
+-     git clone https://github.com/apple/swift-corelibs-xctest.git
+-     git clone https://github.com/apple/swift-corelibs-foundation.git
+-
+-For those who plan on regularly making direct commits, cloning over
+-SSH may provide a better experience (which requires uploading 
+-SSH keys to GitHub):
+-
+-     git clone git@github.com:apple/swift.git swift
+-     git clone git@github.com:apple/swift-llvm.git llvm
+-     git clone git@github.com:apple/swift-clang.git clang
+-     git clone git@github.com:apple/swift-lldb.git lldb
+-     git clone git@github.com:apple/swift-cmark.git cmark
+-     git clone git@github.com:apple/swift-llbuild.git llbuild
+-     git clone git@github.com:apple/swift-package-manager.git swiftpm
+-     git clone git@github.com:apple/swift-corelibs-xctest.git
+-     git clone git@github.com:apple/swift-corelibs-foundation.git
++#### Swift Sources
++
++**Via HTTPS**
++    git clone https://github.com/apple/swift.git
++
++**Via SSH**
++    git clone git@github.com:apple/swift.git
++
++#### Related Project Sources
++
++
++**Via HTTPS**
++    cd <local_path_to_swift_repo>
++    ./utils/update-checkout --clone
++
++**Via SSH**
++    cd <local_path_to_swift_repo>
++    ./utils/update-checkout --clone-via-ssh
++
+@@ -110 +104 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/ninja-build/ninja.git
++    git clone https://github.com/martine/ninja.git
+@@ -114 +108 @@ or
+-    git clone git@github.com:ninja-build/ninja.git
++    git clone git@github.com:martine/ninja.git
+diff --git a/README.md b/README.md
+index 1ae1bedc88..780b14e7f9 100644
+--- a/README.md
++++ b/README.md
+@@ -110 +110 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/martine/ninja.git
++    git clone https://github.com/ninja-build/ninja.git
+@@ -114 +114 @@ or
+-    git clone git@github.com:martine/ninja.git
++    git clone git@github.com:ninja-build/ninja.git
+diff --git a/README.md b/README.md
+index b590ea6a79..1ae1bedc88 100644
+--- a/README.md
++++ b/README.md
+@@ -82 +82 @@ For those checking out sources as read-only:
+-For those who plan on regular making direct commits, cloning over
++For those who plan on regularly making direct commits, cloning over
+@@ -109,0 +110,4 @@ it next to the other projects and it will be bootstrapped automatically:
++    git clone https://github.com/martine/ninja.git
++
++or
++
+diff --git a/README.md b/README.md
+index ed81d8e756..b590ea6a79 100644
+--- a/README.md
++++ b/README.md
+@@ -19,6 +19,6 @@ modules, eliminating the need for headers and the code duplication they entail.
+-To read the documentation, start by installing the Sphinx documentation
+-generator tool (http://sphinx-doc.org, just run `easy_install -U Sphinx` from
+-the command line and you're good to go).  Once you have that, you can build the
+-Swift documentation by going into `docs` and typing `make`.  This compiles
+-the `.rst` files in the `docs` directory into HTML in the `docs/_build/html`
+-directory.
++To read the documentation, start by installing the 
++[Sphinx](http://sphinx-doc.org) documentation generator tool (just run 
++`easy_install -U Sphinx` from the command line and you're good to go). Once you
++ have that, you can build the Swift documentation by going into `docs` and 
++typing `make`.  This compiles the `.rst` files in the `docs` directory into 
++HTML in the `docs/_build/html` directory.
+@@ -82 +82 @@ For those checking out sources as read-only:
+-For those who plan on regularly making direct commits, cloning over
++For those who plan on regular making direct commits, cloning over
+@@ -110,4 +109,0 @@ it next to the other projects and it will be bootstrapped automatically:
+-    git clone https://github.com/martine/ninja.git
+-
+-or
+-
+diff --git a/README.md b/README.md
+index 2cc7ec2206..ed81d8e756 100644
+--- a/README.md
++++ b/README.md
+@@ -82 +82 @@ For those checking out sources as read-only:
+-For those who plan on regular making direct commits, cloning over
++For those who plan on regularly making direct commits, cloning over
+diff --git a/README.md b/README.md
+index 382f43e296..2cc7ec2206 100644
+--- a/README.md
++++ b/README.md
+@@ -109,0 +110,4 @@ it next to the other projects and it will be bootstrapped automatically:
++    git clone https://github.com/martine/ninja.git
++
++or
++
+diff --git a/README.md b/README.md
+index a9aaaf2d37..382f43e296 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++<img src="https://swift.org/assets/images/swift.svg" alt="Swift logo" height="70" >
+diff --git a/README.md b/README.md
+index d13077995d..a9aaaf2d37 100644
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ compiler for C++14 support and create a symlink:
+-	For those checking out sources as read-only:
++For those checking out sources as read-only:
+@@ -81,3 +81,3 @@ compiler for C++14 support and create a symlink:
+-	For those who plan on regular making direct commits, cloning over
+-	SSH may provide a better experience (which requires uploading 
+-	SSH keys to GitHub):
++For those who plan on regular making direct commits, cloning over
++SSH may provide a better experience (which requires uploading 
++SSH keys to GitHub):
+diff --git a/README.md b/README.md
+index 92453e3808..d13077995d 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Swift is a high-performance system programming language.  It has a clean
+-and modern syntax, and offers seamless access to existing C and Objective-C code
++and modern syntax, offers seamless access to existing C and Objective-C code
+diff --git a/README.md b/README.md
+index 10534d8223..92453e3808 100644
+--- a/README.md
++++ b/README.md
+@@ -68,0 +69,16 @@ compiler for C++14 support and create a symlink:
++	For those checking out sources as read-only:
++
++     git clone https://github.com/apple/swift.git swift
++     git clone https://github.com/apple/swift-llvm.git llvm
++     git clone https://github.com/apple/swift-clang.git clang
++     git clone https://github.com/apple/swift-lldb.git lldb
++     git clone https://github.com/apple/swift-cmark.git cmark
++     git clone https://github.com/apple/swift-llbuild.git llbuild
++     git clone https://github.com/apple/swift-package-manager.git swiftpm
++     git clone https://github.com/apple/swift-corelibs-xctest.git
++     git clone https://github.com/apple/swift-corelibs-foundation.git
++
++	For those who plan on regular making direct commits, cloning over
++	SSH may provide a better experience (which requires uploading 
++	SSH keys to GitHub):
++
+@@ -79 +94,0 @@ compiler for C++14 support and create a symlink:
+-
+diff --git a/README.md b/README.md
+index 01d5749762..10534d8223 100644
+--- a/README.md
++++ b/README.md
+@@ -96,2 +96,2 @@ it next to the other projects and it will be bootstrapped automatically:
+-You can also use a third-party packaging tool like [Homebrew](http://brew.sh) or
+-[MacPorts](https://macports.org) to install CMake and Ninja on OS X:
++You can also install CMake and Ninja on OS X using a third-party
++packaging tool like [Homebrew](http://brew.sh)…
+@@ -99,0 +100,3 @@ You can also use a third-party packaging tool like [Homebrew](http://brew.sh) or
++
++…or [MacPorts](https://macports.org).
++
+diff --git a/README.md b/README.md
+index e1c7ca2172..01d5749762 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +0,0 @@
+-<img src="https://swift.org/assets/images/swift.svg" alt="Swift logo" height="70" >
+@@ -97,2 +96,2 @@ it next to the other projects and it will be bootstrapped automatically:
+-You can also use a third-party packaging tool like [Homebrew](http://brew.sh) to
+-install CMake and Ninja on OS X:
++You can also use a third-party packaging tool like [Homebrew](http://brew.sh) or
++[MacPorts](https://macports.org) to install CMake and Ninja on OS X:
+@@ -100,0 +100 @@ install CMake and Ninja on OS X:
++    sudo port install cmake ninja
+@@ -120 +120 @@ A basic command to build Swift and run basic tests with Ninja:
+-## Develop Swift in Xcode
++## Developing Swift in Xcode
+diff --git a/README.md b/README.md
+index 404f533c3e..e1c7ca2172 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++<img src="https://swift.org/assets/images/swift.svg" alt="Swift logo" height="70" >
+@@ -119 +120 @@ A basic command to build Swift and run basic tests with Ninja:
+-## Developing Swift in Xcode
++## Develop Swift in Xcode
+diff --git a/README.md b/README.md
+index c982f6708b..404f533c3e 100644
+--- a/README.md
++++ b/README.md
+@@ -119 +119 @@ A basic command to build Swift and run basic tests with Ninja:
+-## Develop Swift in Xcode
++## Developing Swift in Xcode
+diff --git a/README.md b/README.md
+index 75964e6b1e..c982f6708b 100644
+--- a/README.md
++++ b/README.md
+@@ -144,0 +145,11 @@ Contributions to Swift are welcomed and encouraged! Please see the [Contributing
++
++To be a truly great community, Swift.org needs to welcome developers from all
++walks of life, with different backgrounds, and with a wide range of experience.
++A diverse and friendly community will have more great ideas, more unique
++perspectives, and produce more great code. We will work diligently to make the
++Swift community welcoming to everyone.
++
++To give clarity of what is expected of our members, Swift has adopted the
++code of conduct defined by the Contributor Covenant. This document is used
++across many open source communities, and we think it articulates our values
++well. For more, see [the website](https://swift.org/community/#code-of-conduct).
+diff --git a/README.md b/README.md
+index 8a5a28d609..75964e6b1e 100644
+--- a/README.md
++++ b/README.md
+@@ -89 +89 @@ command line tools to your `PATH`:
+-[Ninja](http://martine.github.io/ninja/) is the current recommended build system
++[Ninja](https://ninja-build.org) is the current recommended build system
+diff --git a/README.md b/README.md
+index 176189daa2..8a5a28d609 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Swift is a high-performance systems programming language.  It has a clean
++Swift is a high-performance system programming language.  It has a clean
+diff --git a/README.md b/README.md
+index 962706af30..176189daa2 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Swift is a high performance systems programming language.  It has a clean
++Swift is a high-performance systems programming language.  It has a clean
+@@ -21,2 +21,2 @@ the command line and you're good to go).  Once you have that, you can build the
+-swift documentation by going into `swift/docs` and typing `make`.  This compiles
+-the 'rst' files in the docs directory into HTML in the `swift/docs/_build/html`
++Swift documentation by going into `docs` and typing `make`.  This compiles
++the `.rst` files in the `docs` directory into HTML in the `docs/_build/html`
+@@ -25,2 +25,2 @@ directory.
+-Once built, the best place to start is with the swift whitepaper, which gives a
+-tour of the language (in `swift/docs/_build/html/whitepaper/index.html`).
++Once built, the best place to start is with the Swift white paper, which gives a
++tour of the language (in `docs/_build/html/whitepaper/index.html`).
+@@ -33,2 +33,2 @@ documents in the `docs` directory.
+-Another source of documentation is the standard library itself, located at
+-`swift/stdlib`.  Much of the language is actually implemented in the library
++Another source of documentation is the standard library itself, located in
++`stdlib`.  Much of the language is actually implemented in the library
+@@ -110 +110 @@ To find out more:
+-    swift/utils/build-script -h
++    utils/build-script -h
+@@ -117 +117 @@ A basic command to build Swift and run basic tests with Ninja:
+-    swift/utils/build-script -t
++    utils/build-script -t
+@@ -127 +127 @@ environment using the build-script's `-X` flag:
+-    swift/utils/build-script -X --skip-build -- --reconfigure
++    utils/build-script -X --skip-build -- --reconfigure
+@@ -129 +129 @@ environment using the build-script's `-X` flag:
+-The `--skip-build` flag tells build-script to only generate the project,
++The `--skip-build` flag tells `build-script` to only generate the project,
+@@ -133 +133 @@ to configure the Xcode projects.
+-The `--reconfigure` flag tells build-script-impl to run the CMake configuration
++The `--reconfigure` flag tells `build-script-impl` to run the CMake configuration
+diff --git a/README.md b/README.md
+index e17afec69d..962706af30 100644
+--- a/README.md
++++ b/README.md
+@@ -69,9 +69,9 @@ compiler for C++14 support and create a symlink:
+-     git clone git@github.com:/apple/swift.git swift
+-     git clone git@github.com:/apple/swift-llvm.git llvm
+-     git clone git@github.com:/apple/swift-clang.git clang
+-     git clone git@github.com:/apple/swift-lldb.git lldb
+-     git clone git@github.com:/apple/swift-cmark.git cmark
+-     git clone git@github.com:/apple/swift-llbuild.git llbuild
+-     git clone git@github.com:/apple/swift-package-manager.git swiftpm
+-     git clone git@github.com:/apple/swift-corelibs-xctest.git 
+-     git clone git@github.com:/apple/swift-corelibs-foundation.git 
++     git clone git@github.com:apple/swift.git swift
++     git clone git@github.com:apple/swift-llvm.git llvm
++     git clone git@github.com:apple/swift-clang.git clang
++     git clone git@github.com:apple/swift-lldb.git lldb
++     git clone git@github.com:apple/swift-cmark.git cmark
++     git clone git@github.com:apple/swift-llbuild.git llbuild
++     git clone git@github.com:apple/swift-package-manager.git swiftpm
++     git clone git@github.com:apple/swift-corelibs-xctest.git
++     git clone git@github.com:apple/swift-corelibs-foundation.git
+@@ -144 +144 @@ See [docs/Testing.rst](docs/Testing.rst).
+-Contributions to Swift are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing/).
+\ No newline at end of file
++Contributions to Swift are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing/).
+diff --git a/README.md b/README.md
+index c7536b3869..e17afec69d 100644
+--- a/README.md
++++ b/README.md
+@@ -140 +140 @@ picking up new targets, file removals, or file additions.
+-See docs/Testing.rst.
++See [docs/Testing.rst](docs/Testing.rst).
+diff --git a/README.md b/README.md
+index 2e34a827ed..c7536b3869 100644
+--- a/README.md
++++ b/README.md
+@@ -76,2 +76,2 @@ compiler for C++14 support and create a symlink:
+-     git clone git@github.com:/apple/swift-corelibs-xctest.git XCTest
+-     git clone git@github.com:/apple/swift-corelibs-foundation.git Foundation
++     git clone git@github.com:/apple/swift-corelibs-xctest.git 
++     git clone git@github.com:/apple/swift-corelibs-foundation.git 
+diff --git a/README.md b/README.md
+index 2498f9356c..2e34a827ed 100644
+--- a/README.md
++++ b/README.md
+@@ -141,0 +142,3 @@ See docs/Testing.rst.
++## Contributing to Swift
++
++Contributions to Swift are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing/).
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 93c50218af..2498f9356c 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
++    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+@@ -75,0 +76,2 @@ compiler for C++14 support and create a symlink:
++     git clone git@github.com:/apple/swift-corelibs-xctest.git XCTest
++     git clone git@github.com:/apple/swift-corelibs-foundation.git Foundation
+diff --git a/README.md b/README.md
+index a4cc18fcfa..93c50218af 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ You can also use a third-party packaging tool like [Homebrew](http://brew.sh) to
+-install the CMake and Ninja on OS X:
++install CMake and Ninja on OS X:
+diff --git a/README.md b/README.md
+index 2d11193b64..a4cc18fcfa 100644
+--- a/README.md
++++ b/README.md
+@@ -59,0 +60,6 @@ with version 2 shipped with Ubuntu.
++If you are building on Ubuntu 14.04 LTS, you'll need to upgrade your clang
++compiler for C++14 support and create a symlink:
++
++     sudo apt-get install clang-3.6
++     sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100
++     sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100
+diff --git a/README.md b/README.md
+index c8b197bf26..2d11193b64 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev pkg-config
++    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config
+diff --git a/README.md b/README.md
+index e46feb6542..c8b197bf26 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev
++    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev pkg-config
+diff --git a/README.md b/README.md
+index 4ba4284032..e46feb6542 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev
++    sudo apt-get install git cmake ninja-build clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev
+diff --git a/README.md b/README.md
+index 3ec48c08e3..4ba4284032 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Swift is a new, high performance systems programming language.  It has a clean
++Swift is a high performance systems programming language.  It has a clean
+diff --git a/README.md b/README.md
+index b88117c371..3ec48c08e3 100644
+--- a/README.md
++++ b/README.md
+@@ -51,3 +50,0 @@ supported host development operating systems.
+-[CMake](http://cmake.org) is used to build Swift and its companion projects; at
+-least version 2.8.12.2 is required.
+-
+@@ -66,7 +63,7 @@ with version 2 shipped with Ubuntu.
+-      git clone git@github.com:/apple/swift.git swift
+-      git clone git@github.com:/apple/swift-llvm.git llvm
+-      git clone git@github.com:/apple/swift-clang.git clang
+-      git clone git@github.com:/apple/swift-lldb.git lldb
+-      git clone git@github.com:/apple/swift-cmark.git cmark
+-      git clone git@github.com:/apple/swift-llbuild.git llbuild
+-      git clone git@github.com:/apple/swift-package-manager.git swiftpm
++     git clone git@github.com:/apple/swift.git swift
++     git clone git@github.com:/apple/swift-llvm.git llvm
++     git clone git@github.com:/apple/swift-clang.git clang
++     git clone git@github.com:/apple/swift-lldb.git lldb
++     git clone git@github.com:/apple/swift-cmark.git cmark
++     git clone git@github.com:/apple/swift-llbuild.git llbuild
++     git clone git@github.com:/apple/swift-package-manager.git swiftpm
+@@ -75 +72,6 @@ with version 2 shipped with Ubuntu.
+-### Building Swift
++[CMake](http://cmake.org) is the core infrastructure used to configure builds of
++Swift and its companion projects; at least version 2.8.12.2 is required. Your
++favorite Linux distribution likely already has a CMake package you can install.
++On OS X, you can download the [CMake Binary Distribution](https://cmake.org/install),
++bundled as an application, copy it to /Applications, and add the embedded
++command line tools to your `PATH`:
+@@ -77 +79 @@ with version 2 shipped with Ubuntu.
+-    swift/utils/build-script -t
++    export PATH=/Applications/CMake.app/Contents/bin:$PATH
+@@ -79,5 +81,6 @@ with version 2 shipped with Ubuntu.
+-Note: Arguments after "--" above are forwarded build-script-impl, which is
+-invoked by build-script.  [Ninja](http://martine.github.io/ninja/), is the
+-current recommended cross-platform build system for building Swift. It's the
+-default if you have it installed or have it checked out next to the swift
+-directory.
++[Ninja](http://martine.github.io/ninja/) is the current recommended build system
++for building Swift and is the default configuration generated by CMake. If
++you're on OS X or don't install it as part of your Linux distribution, clone
++it next to the other projects and it will be bootstrapped automatically:
++
++    git clone git@github.com:martine/ninja.git
+@@ -85 +88,2 @@ directory.
+-       swift/utils/build-script -m -t -- --build-args=-j8
++You can also use a third-party packaging tool like [Homebrew](http://brew.sh) to
++install the CMake and Ninja on OS X:
+@@ -87 +91 @@ directory.
+-## Build and Test Options
++    brew install cmake ninja
+@@ -89,2 +93,8 @@ directory.
+-The `build-script` has lots of useful options, including the ability to build an
+-LLDB that's compatible with the Swift in your working copy.  To find out more:
++### Building Swift
++
++The `build-script` is a high-level build automation script that supports basic
++options such as building a Swift-compatible LLDB, building the Swift Package
++Manager, building for iOS, running tests after builds, and more. It also
++supports presets which you can define for common combinations of build options.
++
++To find out more:
+@@ -94 +104,2 @@ LLDB that's compatible with the Swift in your working copy.  To find out more:
+-To get verbose output, pass `--build-args="VERBOSE=1"`
++Note: Arguments after "--" above are forwarded to `build-script-impl`, which is
++the ultimate shell script that invokes the actual build and test commands.
+@@ -95,0 +107,3 @@ To get verbose output, pass `--build-args="VERBOSE=1"`
++A basic command to build Swift and run basic tests with Ninja:
++
++    swift/utils/build-script -t
+diff --git a/README.md b/README.md
+index 7f77ab58ed..b88117c371 100644
+--- a/README.md
++++ b/README.md
+@@ -68 +67,0 @@ with version 2 shipped with Ubuntu.
+-      (cd llvm && git checkout -t origin/stable)
+@@ -70 +68,0 @@ with version 2 shipped with Ubuntu.
+-      (cd clang && git checkout -t origin/stable)
+@@ -75,0 +74 @@ with version 2 shipped with Ubuntu.
++
+diff --git a/README.md b/README.md
+index b88117c371..7f77ab58ed 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68 @@ with version 2 shipped with Ubuntu.
++      (cd llvm && git checkout -t origin/stable)
+@@ -68,0 +70 @@ with version 2 shipped with Ubuntu.
++      (cd clang && git checkout -t origin/stable)
+@@ -74 +75,0 @@ with version 2 shipped with Ubuntu.
+-
+diff --git a/README.md b/README.md
+index e70b3b2f80..b88117c371 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ For Ubuntu, you'll need the following development dependencies:
+-    sudo apt-get install git cmake ninja clang uuid-dev libicu-dev libbsd-dev libedit-dev swig libpython-dev libncurses5-dev
++    sudo apt-get install git cmake ninja clang uuid-dev libicu-dev libbsd-dev libedit-dev libxml2-dev swig libpython-dev libncurses5-dev
+diff --git a/README.md b/README.md
+index 85dbbfc33c..e70b3b2f80 100644
+--- a/README.md
++++ b/README.md
+@@ -105 +105 @@ environment using the build-script's `-X` flag:
+-    swift/utils/build-script -X --skip-build -- --llvm-config=$HOME/build/swift/Ninja-DebugAssert/llvm-macosx-x86_64/bin/llvm-config
++    swift/utils/build-script -X --skip-build -- --reconfigure
+@@ -107,3 +107,8 @@ environment using the build-script's `-X` flag:
+-The `--skip-build` parameter tells build-script to only generate the project,
+-not build it, and the `--llvm-config` parameter allows the Xcode project to
+-share the LLVM build products and environment with Ninja.
++The `--skip-build` flag tells build-script to only generate the project,
++not build it in its entirety. A bare minimum of LLVM tools will build in order
++to configure the Xcode projects.
++
++The `--reconfigure` flag tells build-script-impl to run the CMake configuration
++step even if there is a cached configuration. As you develop in Xcode, you may
++need to rerun this from time to time to refresh your generated Xcode project,
++picking up new targets, file removals, or file additions.
+diff --git a/README.md b/README.md
+index f52d493a61..85dbbfc33c 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ with version 2 shipped with Ubuntu.
+-      git clone git@github.com:/apple/swift-source-package-manager.git swiftpm
++      git clone git@github.com:/apple/swift-package-manager.git swiftpm
+diff --git a/README.md b/README.md
+index 85dbbfc33c..f52d493a61 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ with version 2 shipped with Ubuntu.
+-      git clone git@github.com:/apple/swift-package-manager.git swiftpm
++      git clone git@github.com:/apple/swift-source-package-manager.git swiftpm
+diff --git a/README.md b/README.md
+index 3af4d0c305..85dbbfc33c 100644
+--- a/README.md
++++ b/README.md
+@@ -66,7 +66,7 @@ with version 2 shipped with Ubuntu.
+-      git clone git@github.com:/apple/swift.git
+-      git clone git@github.com:/apple/swift-llvm.git
+-      git clone git@github.com:/apple/swift-clang.git
+-      git clone git@github.com:/apple/swift-lldb.git
+-      git clone git@github.com:/apple/swift-cmark.git
+-      git clone git@github.com:/apple/swift-llbuild.git
+-      git clone git@github.com:/apple/swift-package-manager.git
++      git clone git@github.com:/apple/swift.git swift
++      git clone git@github.com:/apple/swift-llvm.git llvm
++      git clone git@github.com:/apple/swift-clang.git clang
++      git clone git@github.com:/apple/swift-lldb.git lldb
++      git clone git@github.com:/apple/swift-cmark.git cmark
++      git clone git@github.com:/apple/swift-llbuild.git llbuild
++      git clone git@github.com:/apple/swift-package-manager.git swiftpm

@@ -1,0 +1,1376 @@
+diff --git a/README.md b/README.md
+index 3a167564..806d6bbd 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ to be true.
+-Prometheus' main distinguishing features as compared to other monitoring systems are:
++Prometheus's main distinguishing features as compared to other monitoring systems are:
+diff --git a/README.md b/README.md
+index f87408a6..3a167564 100644
+--- a/README.md
++++ b/README.md
+@@ -62 +62 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.12 or greater installed](https://golang.org/doc/install).
++Go environment with [version 1.13 or greater installed](https://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index 908a2ccc..f87408a6 100644
+--- a/README.md
++++ b/README.md
+@@ -8,0 +9 @@
++[![fuzzit](https://app.fuzzit.dev/badge?org_id=prometheus&branch=master)](https://fuzzit.dev)
+diff --git a/README.md b/README.md
+index 8bf15c7e..908a2ccc 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.11 or greater installed](https://golang.org/doc/install).
++Go environment with [version 1.12 or greater installed](https://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index fd20383d..8bf15c7e 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.11 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.11 or greater installed](https://golang.org/doc/install).
+@@ -90 +90 @@ The Makefile provides several targets:
+-  * The source code is periodically indexed: [Prometheus Core](http://godoc.org/github.com/prometheus/prometheus).
++  * The source code is periodically indexed: [Prometheus Core](https://godoc.org/github.com/prometheus/prometheus).
+diff --git a/README.md b/README.md
+index 326244c2..fd20383d 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)][travis]
++# Prometheus 
+@@ -2,0 +3 @@
++[![Build Status](https://travis-ci.org/prometheus/prometheus.svg)][travis]
+diff --git a/README.md b/README.md
+index d43c23d6..326244c2 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +49 @@ Debian packages [are available](https://packages.debian.org/sid/net/prometheus).
+-Docker images are available on [Quay.io](https://quay.io/repository/prometheus/prometheus).
++Docker images are available on [Quay.io](https://quay.io/repository/prometheus/prometheus) or [Docker Hub](https://hub.docker.com/r/prom/prometheus/).
+@@ -53 +53 @@ You can launch a Prometheus container for trying it out with
+-    $ docker run --name prometheus -d -p 127.0.0.1:9090:9090 quay.io/prometheus/prometheus
++    $ docker run --name prometheus -d -p 127.0.0.1:9090:9090 prom/prometheus
+diff --git a/README.md b/README.md
+index 64ef62a0..d43c23d6 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.10 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.11 or greater installed](http://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index 90e1c78b..64ef62a0 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-![](https://cdn.rawgit.com/prometheus/prometheus/c34257d069c630685da35bcef084632ffd5d6209/documentation/images/architecture.svg)
++![](https://cdn.jsdelivr.net/gh/prometheus/prometheus@c34257d069c630685da35bcef084632ffd5d6209/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index c1e35913..90e1c78b 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.9 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.10 or greater installed](http://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index 388ef759..c1e35913 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/486/badge)](https://bestpractices.coreinfrastructure.org/projects/486)
+diff --git a/README.md b/README.md
+index 4c7f50f2..388ef759 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.8 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.9 or greater installed](http://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index a8f20a4d..4c7f50f2 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +6,0 @@
+-[![Code Climate](https://codeclimate.com/github/prometheus/prometheus/badges/gpa.svg)](https://codeclimate.com/github/prometheus/prometheus)
+-[![Issue Count](https://codeclimate.com/github/prometheus/prometheus/badges/issue_count.svg)](https://codeclimate.com/github/prometheus/prometheus)
+diff --git a/README.md b/README.md
+index e899e2d2..a8f20a4d 100644
+--- a/README.md
++++ b/README.md
+@@ -64,3 +64 @@ You can directly use the `go` tool to download and install the `prometheus`
+-and `promtool` binaries into your `GOPATH`. We use Go 1.5's experimental
+-vendoring feature, so you will also need to set the `GO15VENDOREXPERIMENT=1`
+-environment variable in this case:
++and `promtool` binaries into your `GOPATH`:
+@@ -68 +66 @@ environment variable in this case:
+-    $ GO15VENDOREXPERIMENT=1 go get github.com/prometheus/prometheus/cmd/...
++    $ go get github.com/prometheus/prometheus/cmd/...
+diff --git a/README.md b/README.md
+index e7e93358..e899e2d2 100644
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ environment variable in this case:
+-    $ prometheus -config.file=your_config.yml
++    $ prometheus --config.file=your_config.yml
+@@ -78 +78 @@ You can also clone the repository yourself and build using `make`:
+-    $ ./prometheus -config.file=your_config.yml
++    $ ./prometheus --config.file=your_config.yml
+diff --git a/README.md b/README.md
+index 98c469f5..e7e93358 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +61 @@ To build Prometheus from the source code yourself you need to have a working
+-Go environment with [version 1.5 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.8 or greater installed](http://golang.org/doc/install).
+diff --git a/README.md b/README.md
+index d0afa6e4..98c469f5 100644
+--- a/README.md
++++ b/README.md
+@@ -83,0 +84 @@ The Makefile provides several targets:
++  * *test-short*: run the short tests
+diff --git a/README.md b/README.md
+index f17d9c1b..d0afa6e4 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-![](https://cdn.rawgit.com/prometheus/prometheus/e761f0d/documentation/images/architecture.svg)
++![](https://cdn.rawgit.com/prometheus/prometheus/c34257d069c630685da35bcef084632ffd5d6209/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index cb0b7a0a..f17d9c1b 100644
+--- a/README.md
++++ b/README.md
+@@ -51,0 +52,6 @@ Docker images are available on [Quay.io](https://quay.io/repository/prometheus/p
++You can launch a Prometheus container for trying it out with
++
++    $ docker run --name prometheus -d -p 127.0.0.1:9090:9090 quay.io/prometheus/prometheus
++
++Prometheus will now be reachable at http://localhost:9090/.
++
+diff --git a/README.md b/README.md
+index 32289ced..cb0b7a0a 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,2 @@
++[![Code Climate](https://codeclimate.com/github/prometheus/prometheus/badges/gpa.svg)](https://codeclimate.com/github/prometheus/prometheus)
++[![Issue Count](https://codeclimate.com/github/prometheus/prometheus/badges/issue_count.svg)](https://codeclimate.com/github/prometheus/prometheus)
+@@ -89 +91 @@ The Makefile provides several targets:
+-Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
++Refer to [CONTRIBUTING.md](https://github.com/prometheus/prometheus/blob/master/CONTRIBUTING.md)
+@@ -93 +95 @@ Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+-Apache License 2.0, see [LICENSE](LICENSE).
++Apache License 2.0, see [LICENSE](https://github.com/prometheus/prometheus/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 93e6a4f8..32289ced 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +6,0 @@
+-[![Code Climate](https://codeclimate.com/github/prometheus/prometheus/badges/gpa.svg)](https://codeclimate.com/github/prometheus/prometheus)
+-[![Issue Count](https://codeclimate.com/github/prometheus/prometheus/badges/issue_count.svg)](https://codeclimate.com/github/prometheus/prometheus)
+@@ -87 +85 @@ The Makefile provides several targets:
+-  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers) and the `#prometheus` channel on `irc.freenode.net`.
++  * See the [Community page](https://prometheus.io/community) for how to reach the Prometheus developers and users on various communication channels.
+@@ -91 +89 @@ The Makefile provides several targets:
+-Refer to [CONTRIBUTING.md](https://github.com/prometheus/prometheus/blob/master/CONTRIBUTING.md)
++Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+@@ -95 +93 @@ Refer to [CONTRIBUTING.md](https://github.com/prometheus/prometheus/blob/master/
+-Apache License 2.0, see [LICENSE](https://github.com/prometheus/prometheus/blob/master/LICENSE).
++Apache License 2.0, see [LICENSE](LICENSE).
+diff --git a/README.md b/README.md
+index c678e24d..93e6a4f8 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,2 @@
++[![Code Climate](https://codeclimate.com/github/prometheus/prometheus/badges/gpa.svg)](https://codeclimate.com/github/prometheus/prometheus)
++[![Issue Count](https://codeclimate.com/github/prometheus/prometheus/badges/issue_count.svg)](https://codeclimate.com/github/prometheus/prometheus)
+diff --git a/README.md b/README.md
+index 308a253f..c678e24d 100644
+--- a/README.md
++++ b/README.md
+@@ -89 +89 @@ The Makefile provides several targets:
+-Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
++Refer to [CONTRIBUTING.md](https://github.com/prometheus/prometheus/blob/master/CONTRIBUTING.md)
+@@ -93 +93 @@ Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+-Apache License 2.0, see [LICENSE](LICENSE).
++Apache License 2.0, see [LICENSE](https://github.com/prometheus/prometheus/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 1077f281..308a253f 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++[![Go Report Card](https://goreportcard.com/badge/github.com/prometheus/prometheus)](https://goreportcard.com/report/github.com/prometheus/prometheus)
+@@ -39,2 +40,2 @@ on [prometheus.io](https://prometheus.io). Using the latest production release b
+-is the recommended way of installing Prometheus. 
+-See the [Installing](https://prometheus.io/docs/introduction/install/) 
++is the recommended way of installing Prometheus.
++See the [Installing](https://prometheus.io/docs/introduction/install/)
+diff --git a/README.md b/README.md
+index e788f47b..1077f281 100644
+--- a/README.md
++++ b/README.md
+@@ -37,2 +37,2 @@ Precompiled binaries for released versions are available in the
+-[*releases* section](https://github.com/prometheus/prometheus/releases)
+-of the GitHub repository. Using the latest production release binary
++[*download* section](https://prometheus.io/download/)
++on [prometheus.io](https://prometheus.io). Using the latest production release binary
+@@ -45 +45 @@ Debian packages [are available](https://packages.debian.org/sid/net/prometheus).
+-### Container images
++### Docker images
+@@ -47 +47 @@ Debian packages [are available](https://packages.debian.org/sid/net/prometheus).
+-Container images are available on [Quay.io](https://quay.io/repository/prometheus/prometheus).
++Docker images are available on [Quay.io](https://quay.io/repository/prometheus/prometheus).
+diff --git a/README.md b/README.md
+index c439b1b1..e788f47b 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ Debian packages [are available](https://packages.debian.org/sid/net/prometheus).
+-Container images are available on [Quay.io](https://quay.io/organization/prometheus).
++Container images are available on [Quay.io](https://quay.io/repository/prometheus/prometheus).
+diff --git a/README.md b/README.md
+index a1ab44a9..c439b1b1 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ examples and guides.
+-Prometheus is a systems and service monitoring system. It collects metrics
++Prometheus, a [Cloud Native Computing Foundation](https://cncf.io/) project, is a systems and service monitoring system. It collects metrics
+diff --git a/README.md b/README.md
+index f826966b..a1ab44a9 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43,5 @@ chapter in the documentation for all the details.
+-Debian and RPM packages are being worked on.
++Debian packages [are available](https://packages.debian.org/sid/net/prometheus).
++
++### Container images
++
++Container images are available on [Quay.io](https://quay.io/organization/prometheus).
+diff --git a/README.md b/README.md
+index 6e28a76d..f826966b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,4 +4,2 @@
+-[![Docker Stars](https://img.shields.io/docker/stars/prom/prometheus.svg)][hub]
+-[![Docker Pulls](https://img.shields.io/docker/pulls/prom/prometheus.svg)][hub]
+-[![Image Size](https://img.shields.io/imagelayers/image-size/prom/prometheus/latest.svg)][imagelayers]
+-[![Image Layers](https://img.shields.io/imagelayers/layers/prom/prometheus/latest.svg)][imagelayers]
++[![Docker Repository on Quay](https://quay.io/repository/prometheus/prometheus/status)][quay]
++[![Docker Pulls](https://img.shields.io/docker/pulls/prom/prometheus.svg?maxAge=604800)][hub]
+@@ -96 +94 @@ Apache License 2.0, see [LICENSE](LICENSE).
+-[imagelayers]: https://imagelayers.io/?images=prom/prometheus:latest
++[quay]: https://quay.io/repository/prometheus/prometheus
+diff --git a/README.md b/README.md
+index e7a9bdc7..6e28a76d 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41,3 @@ of the GitHub repository. Using the latest production release binary
+-is the recommended way of installing Prometheus.
++is the recommended way of installing Prometheus. 
++See the [Installing](https://prometheus.io/docs/introduction/install/) 
++chapter in the documentation for all the details.
+diff --git a/README.md b/README.md
+index 23dd67b7..e7a9bdc7 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,7 @@
+-# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)](https://travis-ci.org/prometheus/prometheus) [![Circle CI](https://circleci.com/gh/prometheus/prometheus/tree/master.svg?style=svg)](https://circleci.com/gh/prometheus/prometheus/tree/master)
++# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)][travis]
++
++[![CircleCI](https://circleci.com/gh/prometheus/prometheus/tree/master.svg?style=shield)][circleci]
++[![Docker Stars](https://img.shields.io/docker/stars/prom/prometheus.svg)][hub]
++[![Docker Pulls](https://img.shields.io/docker/pulls/prom/prometheus.svg)][hub]
++[![Image Size](https://img.shields.io/imagelayers/image-size/prom/prometheus/latest.svg)][imagelayers]
++[![Image Layers](https://img.shields.io/imagelayers/layers/prom/prometheus/latest.svg)][imagelayers]
+@@ -82,0 +89,6 @@ Apache License 2.0, see [LICENSE](LICENSE).
++
++
++[travis]: https://travis-ci.org/prometheus/prometheus
++[hub]: https://hub.docker.com/r/prom/prometheus/
++[circleci]: https://circleci.com/gh/prometheus/prometheus
++[imagelayers]: https://imagelayers.io/?images=prom/prometheus:latest
+diff --git a/README.md b/README.md
+index a7c3be64..23dd67b7 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,3 @@
++Visit [prometheus.io](https://prometheus.io) for the full documentation,
++examples and guides.
++
+diff --git a/README.md b/README.md
+index 8531a6b5..a7c3be64 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ You can also clone the repository yourself and build using `make`:
+-    $ make
++    $ make build
+diff --git a/README.md b/README.md
+index babe114b..8531a6b5 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-- **federation support** coming soon
++- support for hierarchical and horizontal **federation**
+diff --git a/README.md b/README.md
+index 333c7173..babe114b 100644
+--- a/README.md
++++ b/README.md
+@@ -19,5 +18,0 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-## Hacktoberfest 2015
+-
+-Prometheus is a featured project in [DigitalOcean's Hacktoberfest](https://hacktoberfest.digitalocean.com/). 
+-We have prepared a [list of potential projects](https://docs.google.com/document/d/1u1iPsFZ0kaa1SJZ1BKoNdm0j5c2lxB1pFah1b4Na8Sg/edit#heading=h.lgmt23h6abgp) to get you started.
+-
+diff --git a/README.md b/README.md
+index 56d8478a..333c7173 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47,3 @@ You can directly use the `go` tool to download and install the `prometheus`
+-and `promtool` binaries into your `GOPATH`:
++and `promtool` binaries into your `GOPATH`. We use Go 1.5's experimental
++vendoring feature, so you will also need to set the `GO15VENDOREXPERIMENT=1`
++environment variable in this case:
+@@ -49 +51 @@ and `promtool` binaries into your `GOPATH`:
+-    $ go get github.com/prometheus/prometheus/...
++    $ GO15VENDOREXPERIMENT=1 go get github.com/prometheus/prometheus/cmd/...
+diff --git a/README.md b/README.md
+index 4de9e6f4..56d8478a 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,5 @@ Prometheus' main distinguishing features as compared to other monitoring systems
++## Hacktoberfest 2015
++
++Prometheus is a featured project in [DigitalOcean's Hacktoberfest](https://hacktoberfest.digitalocean.com/). 
++We have prepared a [list of potential projects](https://docs.google.com/document/d/1u1iPsFZ0kaa1SJZ1BKoNdm0j5c2lxB1pFah1b4Na8Sg/edit#heading=h.lgmt23h6abgp) to get you started.
++
+diff --git a/README.md b/README.md
+index 2579ef58..4de9e6f4 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ To build Prometheus from the source code yourself you need to have a working
+-go environment with [version 1.5 or greater installed](http://golang.org/doc/install).
++Go environment with [version 1.5 or greater installed](http://golang.org/doc/install).
+@@ -56 +56 @@ You can also clone the repository yourself and build using `make`:
+-The makefile provides several targets:
++The Makefile provides several targets:
+diff --git a/README.md b/README.md
+index ce1a0726..2579ef58 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ Debian and RPM packages are being worked on.
+-### Use `make`
++### Building from source
+@@ -38,6 +38,2 @@ Debian and RPM packages are being worked on.
+-Clone the repository in the usual way with `git clone`. (If you
+-download and unpack the source archives provided by GitHub instead of
+-using `git clone`, you need to set an environment variable `VERSION`
+-to make the below work. See
+-[issue #609](https://github.com/prometheus/prometheus/issues/609) for
+-context.)
++To build Prometheus from the source code yourself you need to have a working
++go environment with [version 1.5 or greater installed](http://golang.org/doc/install).
+@@ -45 +41,2 @@ context.)
+-In most circumstances, the following should work:
++You can directly use the `go` tool to download and install the `prometheus`
++and `promtool` binaries into your `GOPATH`:
+@@ -47,2 +44,2 @@ In most circumstances, the following should work:
+-    $ make build
+-    $ ./prometheus -config.file=documentation/examples/prometheus.yml
++    $ go get github.com/prometheus/prometheus/...
++    $ prometheus -config.file=your_config.yml
+@@ -50,2 +47 @@ In most circumstances, the following should work:
+-The above requires a number of common tools to be installed, namely
+-`curl`, `git`, `gzip`, `hg` (Mercurial CLI).
++You can also clone the repository yourself and build using `make`:
+@@ -53,3 +49,6 @@ The above requires a number of common tools to be installed, namely
+-Everything else will be downloaded and installed into a staging
+-environment in the `.build` sub-directory. That includes a Go
+-development environment of the appropriate version.
++    $ mkdir -p $GOPATH/src/github.com/prometheus
++    $ cd $GOPATH/src/github.com/prometheus
++    $ git clone https://github.com/prometheus/prometheus.git
++    $ cd prometheus
++    $ make
++    $ ./prometheus -config.file=your_config.yml
+@@ -57 +56 @@ development environment of the appropriate version.
+-The `Makefile` offers a number of useful targets. Some examples:
++The makefile provides several targets:
+@@ -59,15 +58,6 @@ The `Makefile` offers a number of useful targets. Some examples:
+-* `make test` runs tests.
+-* `make tarball` creates a tarball with the binary for distribution.
+-* `make race_condition_run` compiles and runs a binary with the race detector enabled. To pass arguments when running Prometheus this way, set the `ARGUMENTS` environment variable (e.g. `ARGUMENTS="-config.file=./prometheus.conf" make race_condition_run`).
+-
+-### Use your own Go development environment
+-
+-Using your own Go development environment with the usual tooling is
+-possible, too. After making changes to the files in `web/static` you
+-have to run `make` in the `web/` directory. This generates the respective
+-`web/blob/files.go` file which embedds the static assets in the compiled binary.
+-
+-Furthermore, the version information (see `version/info.go`) will not be
+-populated if you simply run `go build`. You have to pass in command
+-line flags as defined in `Makefile.INCLUDE` (see `${BUILDFLAGS}`) to
+-do that.
++  * *build*: build the `prometheus` and `promtool` binaries
++  * *test*: run the tests
++  * *format*: format the source code
++  * *vet*: check the source code for common errors
++  * *assets*: rebuild the static assets
++  * *docker*: build a docker container for the current `HEAD`
+diff --git a/README.md b/README.md
+index d671fa4a..ce1a0726 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-![](https://cdn.rawgit.com/prometheus/prometheus/62b69b0/documentation/images/architecture.svg)
++![](https://cdn.rawgit.com/prometheus/prometheus/e761f0d/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index f27a9d1a..d671fa4a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)](https://travis-ci.org/prometheus/prometheus)
++# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)](https://travis-ci.org/prometheus/prometheus) [![Circle CI](https://circleci.com/gh/prometheus/prometheus/tree/master.svg?style=svg)](https://circleci.com/gh/prometheus/prometheus/tree/master)
+diff --git a/README.md b/README.md
+index 0dce8dd6..f27a9d1a 100644
+--- a/README.md
++++ b/README.md
+@@ -51,5 +51 @@ The above requires a number of common tools to be installed, namely
+-`curl`, `git`, `gzip`, `hg` (Mercurial CLI), `sed`, `xxd`. Should you
+-need to change any of the protocol buffer definition files
+-(`*.proto`), you also need the protocol buffer compiler
+-[`protoc`](http://code.google.com/p/protobuf/), v2.5.0 or higher,
+-in your `$PATH`.
++`curl`, `git`, `gzip`, `hg` (Mercurial CLI).
+@@ -70,2 +66,3 @@ Using your own Go development environment with the usual tooling is
+-possible, too, but you have to take care of various generated files
+-(usually by running `make` in the respective sub-directory):
++possible, too. After making changes to the files in `web/static` you
++have to run `make` in the `web/` directory. This generates the respective
++`web/blob/files.go` file which embedds the static assets in the compiled binary.
+@@ -73,5 +70 @@ possible, too, but you have to take care of various generated files
+-* Compiling the protocol buffer definitions in `config` (only if you have changed them).
+-* Generating the parser and lexer code in `rules` (only if you have changed `parser.y` or `lexer.l`).
+-* The `files.go` blob in `web/blob`, which embeds the static web content into the binary.
+-
+-Furthermore, the build info (see `build_info.go`) will not be
++Furthermore, the version information (see `version/info.go`) will not be
+diff --git a/README.md b/README.md
+index cc1d5a88..0dce8dd6 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ In most circumstances, the following should work:
+-    $ ./prometheus -config.file=documentation/examples/prometheus.conf
++    $ ./prometheus -config.file=documentation/examples/prometheus.yml
+diff --git a/README.md b/README.md
+index 4c321d51..cc1d5a88 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ There are various ways of installing Prometheus.
+-### Precompiled packages
++### Precompiled binaries
+@@ -29,3 +29,6 @@ There are various ways of installing Prometheus.
+-We plan to provide precompiled binaries for various platforms and even
+-packages for common Linux distributions soon. Once those are offered,
+-it will be the recommended way of installing Prometheus.
++Precompiled binaries for released versions are available in the
++[*releases* section](https://github.com/prometheus/prometheus/releases)
++of the GitHub repository. Using the latest production release binary
++is the recommended way of installing Prometheus.
++
++Debian and RPM packages are being worked on.
+@@ -35,4 +38,6 @@ it will be the recommended way of installing Prometheus.
+-Clone the repository in the usual way with `git clone`. _Do not
+-download and unpack the source archives provided by GitHub._ (The
+-makefile depends on running in a git repository. This will be fixed
+-eventually.)
++Clone the repository in the usual way with `git clone`. (If you
++download and unpack the source archives provided by GitHub instead of
++using `git clone`, you need to set an environment variable `VERSION`
++to make the below work. See
++[issue #609](https://github.com/prometheus/prometheus/issues/609) for
++context.)
+diff --git a/README.md b/README.md
+index 253a9d46..4c321d51 100644
+--- a/README.md
++++ b/README.md
+@@ -34,0 +35,5 @@ it will be the recommended way of installing Prometheus.
++Clone the repository in the usual way with `git clone`. _Do not
++download and unpack the source archives provided by GitHub._ (The
++makefile depends on running in a git repository. This will be fixed
++eventually.)
++
+diff --git a/README.md b/README.md
+index 6b7dd55d..253a9d46 100644
+--- a/README.md
++++ b/README.md
+@@ -35 +35 @@ it will be the recommended way of installing Prometheus.
+-In most cirumstances, the following should work:
++In most circumstances, the following should work:
+diff --git a/README.md b/README.md
+index 87f0f5b7..6b7dd55d 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Prometheus ![](https://api.travis-ci.org/prometheus/prometheus.svg)
++# Prometheus [![Build Status](https://travis-ci.org/prometheus/prometheus.svg)](https://travis-ci.org/prometheus/prometheus)
+diff --git a/README.md b/README.md
+index d666d6de..87f0f5b7 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Prometheus
++# Prometheus ![](https://api.travis-ci.org/prometheus/prometheus.svg)
+diff --git a/README.md b/README.md
+index a7878f11..d666d6de 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-![](https://cdn.rawgit.com/prometheus/prometheus/9c43ed7/documentation/images/architecture.svg)
++![](https://cdn.rawgit.com/prometheus/prometheus/62b69b0/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index 046fad69..a7878f11 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-![](https://cdn.rawgit.com/prometheus/prometheus/master/documentation/images/architecture.svg)
++![](https://cdn.rawgit.com/prometheus/prometheus/9c43ed7/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index d768b0d7..046fad69 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ The `Makefile` offers a number of useful targets. Some examples:
+-* `make race_condition_run` compiles and runs a binary with the race detector enabled. To pass arguments when running Prometheus this way, set the `ARGUMENTS` environment variable (e.g. `ARGUMENTS=-config.file=./prometheus.conf make race_condition_run`).
++* `make race_condition_run` compiles and runs a binary with the race detector enabled. To pass arguments when running Prometheus this way, set the `ARGUMENTS` environment variable (e.g. `ARGUMENTS="-config.file=./prometheus.conf" make race_condition_run`).
+diff --git a/README.md b/README.md
+index aca9dfb9..d768b0d7 100644
+--- a/README.md
++++ b/README.md
+@@ -44,2 +44,2 @@ need to change any of the protocol buffer definition files
+-[`protoc`](http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/),
+-v2.5.0 or higher, in your `$PATH`.
++[`protoc`](http://code.google.com/p/protobuf/), v2.5.0 or higher,
++in your `$PATH`.
+diff --git a/README.md b/README.md
+index 8e925412..aca9dfb9 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-## Architecture Overview
++## Architecture overview
+diff --git a/README.md b/README.md
+index 185bc181..8e925412 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Prometheus' main distinguishing features as compared to other monitoring systems
+-This diagram gives a simplified view of Prometheus' architecture:
++## Architecture Overview
+diff --git a/README.md b/README.md
+index e5c6e249..185bc181 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ This diagram gives a simplified view of Prometheus' architecture:
+-![](https://github.com/prometheus/prometheus/blob/master/documentation/images/architecture.svg)
++![](https://cdn.rawgit.com/prometheus/prometheus/master/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index fb5cea16..e5c6e249 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,6 @@
+-Prometheus is a systems and service monitoring system. Prometheus' main
+-distinguishing features as compared to other monitoring systems are:
++Prometheus is a systems and service monitoring system. It collects metrics
++from configured targets at given intervals, evaluates rule expressions,
++displays the results, and can trigger alerts if some condition is observed
++to be true.
++
++Prometheus' main distinguishing features as compared to other monitoring systems are:
+@@ -15,3 +19,3 @@ distinguishing features as compared to other monitoring systems are:
+-Prometheus collects metrics from configured targets at given intervals,
+-evaluates rule expressions, displays the results, and can trigger alerts
+-if some condition is observed to be true.
++This diagram gives a simplified view of Prometheus' architecture:
++
++![](https://github.com/prometheus/prometheus/blob/master/documentation/images/architecture.svg)
+diff --git a/README.md b/README.md
+index e59a6c02..fb5cea16 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ We plan to provide precompiled binaries for various platforms and even
+-packages for common Linux distribution soon. Once those are offered,
++packages for common Linux distributions soon. Once those are offered,
+diff --git a/README.md b/README.md
+index 43c3f21c..e59a6c02 100644
+--- a/README.md
++++ b/README.md
+@@ -3,16 +3,15 @@
+-Bedecke deinen Himmel, Zeus!  A new kid is in town.
+-
+-Prometheus is a generic time series collection and computation server that is
+-useful in the following fields:
+-
+-* Industrial Experimentation / Real-Time Behavioral Validation / Software Release Qualification
+-* Econometric and Natural Sciences
+-* Operational Concerns and Monitoring
+-
+-The system is designed to collect telemetry from named targets on given
+-intervals, evaluate rule expressions, display the results, and trigger an
+-action if some condition is observed to be true.
+-
+-TODO: The above description is somewhat esoteric. Rephrase it into
+-something that tells normal people how they will usually benefit from
+-using Prometheus.
++Prometheus is a systems and service monitoring system. Prometheus' main
++distinguishing features as compared to other monitoring systems are:
++
++- a **multi-dimensional** data model (timeseries defined by metric name and set of key/value dimensions)
++- a **flexible query language** to leverage this dimensionality
++- no dependency on distributed storage; **single server nodes are autonomous**
++- timeseries collection happens via a **pull model** over HTTP
++- **pushing timeseries** is supported via an intermediary gateway
++- targets are discovered via **service discovery** or **static configuration**
++- multiple modes of **graphing and dashboarding support**
++- **federation support** coming soon
++
++Prometheus collects metrics from configured targets at given intervals,
++evaluates rule expressions, displays the results, and can trigger alerts
++if some condition is observed to be true.
+diff --git a/README.md b/README.md
+index 2bb49f32..43c3f21c 100644
+--- a/README.md
++++ b/README.md
+@@ -34,5 +34,2 @@ In most cirumstances, the following should work:
+-    $ make
+-    $ ARGUMENTS="-config.file=documentation/examples/prometheus.conf" make run
+-
+-``${ARGUMENTS}`` is passed verbatim to the commandline starting the Prometheus binary.
+-This is useful for quick one-off invocations and smoke testing.
++    $ make build
++    $ ./prometheus -config.file=documentation/examples/prometheus.conf
+@@ -54,2 +51,2 @@ The `Makefile` offers a number of useful targets. Some examples:
+-* `make tarball` creates a tar ball with the binary for distribution.
+-* `make race_condition_run` compiles and runs a binary with the race detector enabled.
++* `make tarball` creates a tarball with the binary for distribution.
++* `make race_condition_run` compiles and runs a binary with the race detector enabled. To pass arguments when running Prometheus this way, set the `ARGUMENTS` environment variable (e.g. `ARGUMENTS=-config.file=./prometheus.conf make race_condition_run`).
+@@ -76 +73 @@ do that.
+-  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers).
++  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers) and the `#prometheus` channel on `irc.freenode.net`.
+diff --git a/README.md b/README.md
+index be44109f..2bb49f32 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ TODO: The above description is somewhat esoteric. Rephrase it into
+-somethith that tells normal people how they will usually benefit from
++something that tells normal people how they will usually benefit from
+diff --git a/README.md b/README.md
+index 0fccbac9..be44109f 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,3 @@ action if some condition is observed to be true.
+-## Prerequisites
++TODO: The above description is somewhat esoteric. Rephrase it into
++somethith that tells normal people how they will usually benefit from
++using Prometheus.
+@@ -18,5 +20 @@ action if some condition is observed to be true.
+-In your `PATH`, you must have the following binaries available:
+-- `curl`
+-- `xxd`
+-- `sed`
+-- `gzip`
++## Install
+@@ -24 +22 @@ In your `PATH`, you must have the following binaries available:
+-If you change any of the `*.proto` files, you need to install [`protoc`, the protobuf compiler](http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/), v2.5.0 or higher.
++There are various ways of installing Prometheus.
+@@ -26 +24 @@ If you change any of the `*.proto` files, you need to install [`protoc`, the pro
+-TODO: lexer, golex
++### Precompiled packages
+@@ -28 +26,3 @@ TODO: lexer, golex
+-## Getting Started
++We plan to provide precompiled binaries for various platforms and even
++packages for common Linux distribution soon. Once those are offered,
++it will be the recommended way of installing Prometheus.
+@@ -30 +30 @@ TODO: lexer, golex
+-For basic help how to get started:
++### Use `make`
+@@ -32,7 +32 @@ For basic help how to get started:
+-  * The source code is periodically indexed: [Prometheus Core](http://godoc.org/github.com/prometheus/prometheus).
+-  * For UNIX-like environment users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile_.
+-  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers).
+-
+-### General
+-
+-For first time users, simply run the following:
++In most cirumstances, the following should work:
+@@ -41,12 +35 @@ For first time users, simply run the following:
+-    $ ARGUMENTS="-configFile=documentation/examples/prometheus.conf" make run
+-
+-``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
+-``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
+-testing.
+-
+-If you run into problems, try the following:
+-
+-    $ SILENCE_THIRD_PARTY_BUILDS=false make
+-
+-Upon having a satisfactory build, it's possible to create an artifact for
+-end-user distribution:
++    $ ARGUMENTS="-config.file=documentation/examples/prometheus.conf" make run
+@@ -54,2 +37,2 @@ end-user distribution:
+-    $ make package
+-    $ find build/package
++``${ARGUMENTS}`` is passed verbatim to the commandline starting the Prometheus binary.
++This is useful for quick one-off invocations and smoke testing.
+@@ -57,5 +40,6 @@ end-user distribution:
+-``build/package`` will be sufficient for whatever archiving mechanism you
+-choose.  The important thing to note is that Go presently does not
+-staticly link against C dependency libraries, so including the ``lib``
+-directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
+-``DYLD_LIBRARY_PATH`` in a scaffolding shell script is advised.
++The above requires a number of common tools to be installed, namely
++`curl`, `git`, `gzip`, `hg` (Mercurial CLI), `sed`, `xxd`. Should you
++need to change any of the protocol buffer definition files
++(`*.proto`), you also need the protocol buffer compiler
++[`protoc`](http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/),
++v2.5.0 or higher, in your `$PATH`.
+@@ -62,0 +47,3 @@ directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
++Everything else will be downloaded and installed into a staging
++environment in the `.build` sub-directory. That includes a Go
++development environment of the appropriate version.
+@@ -64,4 +51 @@ directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
+-### Problems
+-If at any point you run into an error with the ``make`` build system in terms of
+-its not properly scaffolding things on a given environment, please file a bug or
+-open a pull request with your changes if you can fix it yourself.
++The `Makefile` offers a number of useful targets. Some examples:
+@@ -69,3 +53,3 @@ open a pull request with your changes if you can fix it yourself.
+-Please note that we're explicitly shooting for stable runtime environments and
+-not the latest-whiz bang releases; thusly, we ask you to provide ample
+-architecture and release identification remarks for us.
++* `make test` runs tests.
++* `make tarball` creates a tar ball with the binary for distribution.
++* `make race_condition_run` compiles and runs a binary with the race detector enabled.
+@@ -73 +57 @@ architecture and release identification remarks for us.
+-## Testing
++### Use your own Go development environment
+@@ -75 +59,3 @@ architecture and release identification remarks for us.
+-    $ make test
++Using your own Go development environment with the usual tooling is
++possible, too, but you have to take care of various generated files
++(usually by running `make` in the respective sub-directory):
+@@ -77 +63,3 @@ architecture and release identification remarks for us.
+-## Packaging
++* Compiling the protocol buffer definitions in `config` (only if you have changed them).
++* Generating the parser and lexer code in `rules` (only if you have changed `parser.y` or `lexer.l`).
++* The `files.go` blob in `web/blob`, which embeds the static web content into the binary.
+@@ -79 +67,4 @@ architecture and release identification remarks for us.
+-    $ make package
++Furthermore, the build info (see `build_info.go`) will not be
++populated if you simply run `go build`. You have to pass in command
++line flags as defined in `Makefile.INCLUDE` (see `${BUILDFLAGS}`) to
++do that.
+@@ -81 +72 @@ architecture and release identification remarks for us.
+-### Race Detector
++## More information
+@@ -83,14 +74,3 @@ architecture and release identification remarks for us.
+-Go 1.1 includes a [race detector](http://tip.golang.org/doc/articles/race_detector.html)
+-which can be enabled at build time. Here's how to use it with Prometheus
+-(assumes that you've already run a successful build).
+-
+-To run the tests with race detection:
+-
+-    $ GORACE="log_path=/tmp/foo" go test -race ./...
+-
+-To run the server with race detection:
+-
+-    $ go build -race .
+-    $ GORACE="log_path=/tmp/foo" ./prometheus
+-
+-[![Build Status](https://travis-ci.org/prometheus/prometheus.png)](https://travis-ci.org/prometheus/prometheus)
++  * The source code is periodically indexed: [Prometheus Core](http://godoc.org/github.com/prometheus/prometheus).
++  * You will find a Travis CI configuration in `.travis.yml`.
++  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers).
+@@ -104 +84 @@ Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+-Apache License 2.0
++Apache License 2.0, see [LICENSE](LICENSE).
+diff --git a/README.md b/README.md
+index 6abc31cd..0fccbac9 100644
+--- a/README.md
++++ b/README.md
+@@ -17,11 +17,10 @@ action if some condition is observed to be true.
+-If you read below in the _Getting Started_ section, the build infrastructure
+-will take care of the following things for you in most cases:
+-
+-  1. Go 1.1.
+-  2. LevelDB: [https://code.google.com/p/leveldb/](https://code.google.com/p/leveldb/).
+-  3. Protocol Buffers Compiler: [http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/).
+-  4. goprotobuf: the code generator and runtime library: [http://code.google.com/p/goprotobuf/](http://code.google.com/p/goprotobuf/).
+-  5. Levigo, a Go-wrapper around LevelDB's C library: [https://github.com/jmhodges/levigo](https://github.com/jmhodges/levigo).
+-  6. GoRest, a RESTful style web-services framework: [http://code.google.com/p/gorest/](http://code.google.com/p/gorest/).
+-  7. Prometheus Client, Prometheus in Prometheus [https://github.com/prometheus/client_golang](https://github.com/prometheus/client_golang).
+-  8. Snappy, a compression library for LevelDB and Levigo [http://code.google.com/p/snappy/](http://code.google.com/p/snappy/).
++
++In your `PATH`, you must have the following binaries available:
++- `curl`
++- `xxd`
++- `sed`
++- `gzip`
++
++If you change any of the `*.proto` files, you need to install [`protoc`, the protobuf compiler](http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/), v2.5.0 or higher.
++
++TODO: lexer, golex
+diff --git a/README.md b/README.md
+index 6e219759..6abc31cd 100644
+--- a/README.md
++++ b/README.md
+@@ -101,17 +101 @@ To run the server with race detection:
+-1. To start, reach out via our mailing list (mentioned above) and ask us what
+-   the current priorities are.  We can find a good isolated starter project for
+-   you.
+-
+-2. Keeping code hygiene is important.  We thusly have a practical preference
+-   for the following:
+-
+-   1. Run ``make format`` to ensure the correctness of the Go code's layout.
+-
+-   2. Run ``make advice`` to find facial errors with a static analyzer.
+-
+-   3. Try to capture your changes in some form of a test.  Go makes it easy to
+-      write [Table Driven Tests](https://code.google.com/p/go-wiki/wiki/TableDrivenTests).
+-      There is no mandate to use this said scaffolding mechanism, but it _can_
+-      make your life easier in the right circumstances.
+-
+-3. Welcome aboard!
++Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+diff --git a/README.md b/README.md
+index 84290830..6e219759 100644
+--- a/README.md
++++ b/README.md
+@@ -41,0 +42,5 @@ For first time users, simply run the following:
++    $ ARGUMENTS="-configFile=documentation/examples/prometheus.conf" make run
++
++``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
++``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
++testing.
+@@ -59,7 +63,0 @@ directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
+-Executing the following target will start up Prometheus for lazy users:
+-
+-   $ ARGUMENTS="-foo -bar -baz" make run
+-
+-``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
+-``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
+-testing.
+@@ -103 +101,17 @@ To run the server with race detection:
+-Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
++1. To start, reach out via our mailing list (mentioned above) and ask us what
++   the current priorities are.  We can find a good isolated starter project for
++   you.
++
++2. Keeping code hygiene is important.  We thusly have a practical preference
++   for the following:
++
++   1. Run ``make format`` to ensure the correctness of the Go code's layout.
++
++   2. Run ``make advice`` to find facial errors with a static analyzer.
++
++   3. Try to capture your changes in some form of a test.  Go makes it easy to
++      write [Table Driven Tests](https://code.google.com/p/go-wiki/wiki/TableDrivenTests).
++      There is no mandate to use this said scaffolding mechanism, but it _can_
++      make your life easier in the right circumstances.
++
++3. Welcome aboard!
+diff --git a/README.md b/README.md
+index a6d418ba..84290830 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ To run the server with race detection:
+-Refer to (CONTRIBUTING.md)
++Refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+diff --git a/README.md b/README.md
+index a8e3840a..a6d418ba 100644
+--- a/README.md
++++ b/README.md
+@@ -103,17 +103 @@ To run the server with race detection:
+-1. To start, reach out via our mailing list (mentioned above) and ask us what
+-   the current priorities are.  We can find a good isolated starter project for
+-   you.
+-
+-2. Keeping code hygiene is important.  We thusly have a practical preference
+-   for the following:
+-
+-   1. Run ``make format`` to ensure the correctness of the Go code's layout.
+-
+-   2. Run ``make advice`` to find facial errors with a static analyzer.
+-
+-   3. Try to capture your changes in some form of a test.  Go makes it easy to
+-      write [Table Driven Tests](https://code.google.com/p/go-wiki/wiki/TableDrivenTests).
+-      There is no mandate to use this said scaffolding mechanism, but it _can_
+-      make your life easier in the right circumstances.
+-
+-3. Welcome aboard!
++Refer to (CONTRIBUTING.md)
+diff --git a/README.md b/README.md
+index 43a99994..a8e3840a 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ For basic help how to get started:
+-  * For UNIX-like environment users users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile_.
++  * For UNIX-like environment users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile_.
+@@ -42,5 +41,0 @@ For first time users, simply run the following:
+-    $ ARGUMENTS="-configFile=documentation/examples/prometheus.conf" make run
+-
+-``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
+-``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
+-testing.
+@@ -63,0 +59,7 @@ directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
++Executing the following target will start up Prometheus for lazy users:
++
++   $ ARGUMENTS="-foo -bar -baz" make run
++
++``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
++``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
++testing.
+diff --git a/README.md b/README.md
+index db3992ee..43a99994 100644
+--- a/README.md
++++ b/README.md
+@@ -41,0 +42,5 @@ For first time users, simply run the following:
++    $ ARGUMENTS="-configFile=documentation/examples/prometheus.conf" make run
++
++``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
++``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
++testing.
+@@ -59,7 +63,0 @@ directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
+-Executing the following target will start up Prometheus for lazy users:
+-
+-   $ ARGUMENTS="-foo -bar -baz" make run
+-
+-``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
+-``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
+-testing.
+diff --git a/README.md b/README.md
+index a732c172..db3992ee 100644
+--- a/README.md
++++ b/README.md
+@@ -21,8 +21,7 @@ will take care of the following things for you in most cases:
+-  2. GVM: [https://github.com/moovweb/gvm](https://github.com/moovweb/gvm) is highly recommended as well.
+-  3. LevelDB: [https://code.google.com/p/leveldb/](https://code.google.com/p/leveldb/).
+-  4. Protocol Buffers Compiler: [http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/).
+-  5. goprotobuf: the code generator and runtime library: [http://code.google.com/p/goprotobuf/](http://code.google.com/p/goprotobuf/).
+-  6. Levigo, a Go-wrapper around LevelDB's C library: [https://github.com/jmhodges/levigo](https://github.com/jmhodges/levigo).
+-  7. GoRest, a RESTful style web-services framework: [http://code.google.com/p/gorest/](http://code.google.com/p/gorest/).
+-  8. Prometheus Client, Prometheus in Prometheus [https://github.com/prometheus/client_golang](https://github.com/prometheus/client_golang).
+-  9. Snappy, a compression library for LevelDB and Levigo [http://code.google.com/p/snappy/](http://code.google.com/p/snappy/).
++  2. LevelDB: [https://code.google.com/p/leveldb/](https://code.google.com/p/leveldb/).
++  3. Protocol Buffers Compiler: [http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/).
++  4. goprotobuf: the code generator and runtime library: [http://code.google.com/p/goprotobuf/](http://code.google.com/p/goprotobuf/).
++  5. Levigo, a Go-wrapper around LevelDB's C library: [https://github.com/jmhodges/levigo](https://github.com/jmhodges/levigo).
++  6. GoRest, a RESTful style web-services framework: [http://code.google.com/p/gorest/](http://code.google.com/p/gorest/).
++  7. Prometheus Client, Prometheus in Prometheus [https://github.com/prometheus/client_golang](https://github.com/prometheus/client_golang).
++  8. Snappy, a compression library for LevelDB and Levigo [http://code.google.com/p/snappy/](http://code.google.com/p/snappy/).
+@@ -38,26 +36,0 @@ For basic help how to get started:
+-### Working with GVM
+-Starting out, the following workflow is advised:
+-
+-    $ gvm install go1.1
+-    $ gvm use go1.1
+-    $ gvm pkgset create prometheus
+-    $ gvm pkgset use prometheus
+-
+-This is mainly due to the fact that it allows the user to partition the
+-compile-time side-effects from the rest of one's work environment, particularly
+-``${GOPATH}``.
+-
+-Read below in the _General_ section.
+-
+-### Not Using GVM
+-It is entirely possible to build Prometheus without ``gvm``.  I presently do not
+-advise taking this route due to build environment pollution both against
+-Prometheus and from its build infrastructure onto the system---namely
+-``${GOPATH}``.
+-
+-If you really want to avoid GVM, execute the following:
+-
+-    $ touch build/gvm-stamp
+-
+-Read below in the _General_ section.
+-
+@@ -113,4 +86,3 @@ architecture and release identification remarks for us.
+-Go 1.1 includes a [race
+-detector](http://tip.golang.org/doc/articles/race_detector.html) which can be
+-enabled at build time. Here's how to use it with prometheus (assumes that
+-you've already run a successful build).
++Go 1.1 includes a [race detector](http://tip.golang.org/doc/articles/race_detector.html)
++which can be enabled at build time. Here's how to use it with Prometheus
++(assumes that you've already run a successful build).
+diff --git a/README.md b/README.md
+index e86cdfc8..a732c172 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +0,0 @@
+-
+@@ -9,3 +8,3 @@ useful in the following fields:
+-1. Industrial Experimentation / Real-Time Behavioral Validation / Software Release Qualification
+-2. Econometric and Natural Sciences
+-3. Operational Concerns and Monitoring
++* Industrial Experimentation / Real-Time Behavioral Validation / Software Release Qualification
++* Econometric and Natural Sciences
++* Operational Concerns and Monitoring
+diff --git a/README.md b/README.md
+index 6537ca3a..e86cdfc8 100644
+--- a/README.md
++++ b/README.md
+@@ -107,0 +108,4 @@ architecture and release identification remarks for us.
++## Packaging
++
++    $ make package
++
+diff --git a/README.md b/README.md
+index 557726c8..6537ca3a 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ will take care of the following things for you in most cases:
+-  1. Go 1.0.3.
++  1. Go 1.1.
+@@ -42,2 +42,2 @@ Starting out, the following workflow is advised:
+-    $ gvm install go1.0.3
+-    $ gvm use go1.0.3
++    $ gvm install go1.1
++    $ gvm use go1.1
+diff --git a/README.md b/README.md
+index cec2a80a..557726c8 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++
+diff --git a/README.md b/README.md
+index 1bcafbbb..cec2a80a 100644
+--- a/README.md
++++ b/README.md
+@@ -94,3 +93,0 @@ testing.
+-### Mac OS X
+-We have a handy [Getting started on Mac OS X](documentation/guides/getting-started-osx.md) guide.
+-
+diff --git a/README.md b/README.md
+index 726315c9..1bcafbbb 100644
+--- a/README.md
++++ b/README.md
+@@ -109,0 +110,16 @@ architecture and release identification remarks for us.
++### Race Detector
++
++Go 1.1 includes a [race
++detector](http://tip.golang.org/doc/articles/race_detector.html) which can be
++enabled at build time. Here's how to use it with prometheus (assumes that
++you've already run a successful build).
++
++To run the tests with race detection:
++
++    $ GORACE="log_path=/tmp/foo" go test -race ./...
++
++To run the server with race detection:
++
++    $ go build -race .
++    $ GORACE="log_path=/tmp/foo" ./prometheus
++
+diff --git a/README.md b/README.md
+index fe450141..726315c9 100644
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,2 @@ action if some condition is observed to be true.
++If you read below in the _Getting Started_ section, the build infrastructure
++will take care of the following things for you in most cases:
+@@ -18,8 +20,9 @@ action if some condition is observed to be true.
+-  1. Go 1.0.X. [GVM](https://github.com/moovweb/gvm) is highly recommended as well.
+-  2. LevelDB: (https://code.google.com/p/leveldb/).
+-  3. Protocol Buffers Compiler: (http://code.google.com/p/protobuf/).
+-  4. goprotobuf: the code generator and runtime library: (http://code.google.com/p/goprotobuf/).
+-  5. Levigo, a Go-wrapper around LevelDB's C library: (https://github.com/jmhodges/levigo).
+-  6. GoRest, a RESTful style web-services framework: (http://code.google.com/p/gorest/).
+-  7. Prometheus Client, Prometheus in Prometheus (https://github.com/prometheus/client_golang).
+-  8. Snappy, a compression library for LevelDB and Levigo (http://code.google.com/p/snappy/).
++  1. Go 1.0.3.
++  2. GVM: [https://github.com/moovweb/gvm](https://github.com/moovweb/gvm) is highly recommended as well.
++  3. LevelDB: [https://code.google.com/p/leveldb/](https://code.google.com/p/leveldb/).
++  4. Protocol Buffers Compiler: [http://code.google.com/p/protobuf/](http://code.google.com/p/protobuf/).
++  5. goprotobuf: the code generator and runtime library: [http://code.google.com/p/goprotobuf/](http://code.google.com/p/goprotobuf/).
++  6. Levigo, a Go-wrapper around LevelDB's C library: [https://github.com/jmhodges/levigo](https://github.com/jmhodges/levigo).
++  7. GoRest, a RESTful style web-services framework: [http://code.google.com/p/gorest/](http://code.google.com/p/gorest/).
++  8. Prometheus Client, Prometheus in Prometheus [https://github.com/prometheus/client_golang](https://github.com/prometheus/client_golang).
++  9. Snappy, a compression library for LevelDB and Levigo [http://code.google.com/p/snappy/](http://code.google.com/p/snappy/).
+@@ -32,2 +35 @@ For basic help how to get started:
+-  * For Linux users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile.TRAVIS_.
+-  * [Getting started on Mac OSX](documentation/guides/getting-started-osx.md)
++  * For UNIX-like environment users users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile_.
+@@ -35,0 +38,68 @@ For basic help how to get started:
++### Working with GVM
++Starting out, the following workflow is advised:
++
++    $ gvm install go1.0.3
++    $ gvm use go1.0.3
++    $ gvm pkgset create prometheus
++    $ gvm pkgset use prometheus
++
++This is mainly due to the fact that it allows the user to partition the
++compile-time side-effects from the rest of one's work environment, particularly
++``${GOPATH}``.
++
++Read below in the _General_ section.
++
++### Not Using GVM
++It is entirely possible to build Prometheus without ``gvm``.  I presently do not
++advise taking this route due to build environment pollution both against
++Prometheus and from its build infrastructure onto the system---namely
++``${GOPATH}``.
++
++If you really want to avoid GVM, execute the following:
++
++    $ touch build/gvm-stamp
++
++Read below in the _General_ section.
++
++### General
++
++For first time users, simply run the following:
++
++    $ make
++
++If you run into problems, try the following:
++
++    $ SILENCE_THIRD_PARTY_BUILDS=false make
++
++Upon having a satisfactory build, it's possible to create an artifact for
++end-user distribution:
++
++    $ make package
++    $ find build/package
++
++``build/package`` will be sufficient for whatever archiving mechanism you
++choose.  The important thing to note is that Go presently does not
++staticly link against C dependency libraries, so including the ``lib``
++directory is paramount.  Providing ``LD_LIBRARY_PATH`` or
++``DYLD_LIBRARY_PATH`` in a scaffolding shell script is advised.
++
++Executing the following target will start up Prometheus for lazy users:
++
++   $ ARGUMENTS="-foo -bar -baz" make run
++
++``${ARGUMENTS}`` is passed verbatim into the makefile and thusly Prometheus as
++``$(ARGUMENTS)``.  This is useful for quick one-off invocations and smoke
++testing.
++
++### Mac OS X
++We have a handy [Getting started on Mac OS X](documentation/guides/getting-started-osx.md) guide.
++
++### Problems
++If at any point you run into an error with the ``make`` build system in terms of
++its not properly scaffolding things on a given environment, please file a bug or
++open a pull request with your changes if you can fix it yourself.
++
++Please note that we're explicitly shooting for stable runtime environments and
++not the latest-whiz bang releases; thusly, we ask you to provide ample
++architecture and release identification remarks for us.
++
+@@ -37,0 +108,2 @@ For basic help how to get started:
++    $ make test
++
+@@ -39,0 +112,20 @@ For basic help how to get started:
++## Contributing
++
++1. To start, reach out via our mailing list (mentioned above) and ask us what
++   the current priorities are.  We can find a good isolated starter project for
++   you.
++
++2. Keeping code hygiene is important.  We thusly have a practical preference
++   for the following:
++
++   1. Run ``make format`` to ensure the correctness of the Go code's layout.
++
++   2. Run ``make advice`` to find facial errors with a static analyzer.
++
++   3. Try to capture your changes in some form of a test.  Go makes it easy to
++      write [Table Driven Tests](https://code.google.com/p/go-wiki/wiki/TableDrivenTests).
++      There is no mandate to use this said scaffolding mechanism, but it _can_
++      make your life easier in the right circumstances.
++
++3. Welcome aboard!
++
+diff --git a/README.md b/README.md
+index b29028f8..fe450141 100644
+--- a/README.md
++++ b/README.md
+@@ -35,0 +36,4 @@ For basic help how to get started:
++## Testing
++
++[![Build Status](https://travis-ci.org/prometheus/prometheus.png)](https://travis-ci.org/prometheus/prometheus)
++
+diff --git a/README.md b/README.md
+index 8f1ace54..b29028f8 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ action if some condition is observed to be true.
+-## Getting started
++## Getting Started
+@@ -31 +31,2 @@ For basic help how to get started:
+-  * For Linux users, please consult the Travis CI configuration in _.travis.yml_.
++  * The source code is periodically indexed: [Prometheus Core](http://godoc.org/github.com/prometheus/prometheus).
++  * For Linux users, please consult the Travis CI configuration in _.travis.yml_ and _Makefile.TRAVIS_.
+@@ -32,0 +34 @@ For basic help how to get started:
++  * All of the core developers are accessible via the [Prometheus Developers Mailinglist](https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers).
+diff --git a/README.md b/README.md
+index e2bdfcf9..8f1ace54 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ action if some condition is observed to be true.
+-  8. Snappy, a compression library for LevelDB and Levigo (code.google.com/p/snappy/).
++  8. Snappy, a compression library for LevelDB and Levigo (http://code.google.com/p/snappy/).
+diff --git a/README.md b/README.md
+index dfa21834..e2bdfcf9 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ For basic help how to get started:
+-  * [Getting started on Mac OSX](guides/getting-started-osx.md)
++  * [Getting started on Mac OSX](documentation/guides/getting-started-osx.md)
+diff --git a/README.md b/README.md
+index 46187deb..dfa21834 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ action if some condition is observed to be true.
+-  7. Prometheus Client, Prometheus in Prometheus (https://github.com/matttproud/golang_instrumentation).
++  7. Prometheus Client, Prometheus in Prometheus (https://github.com/prometheus/client_golang).
+diff --git a/README.md b/README.md
+index 977da119..46187deb 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25 @@ action if some condition is observed to be true.
++  8. Snappy, a compression library for LevelDB and Levigo (code.google.com/p/snappy/).
+diff --git a/README.md b/README.md
+index 35578d99..977da119 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,10 @@ Bedecke deinen Himmel, Zeus!  A new kid is in town.
++Prometheus is a generic time series collection and computation server that is
++useful in the following fields:
++
++1. Industrial Experimentation / Real-Time Behavioral Validation / Software Release Qualification
++2. Econometric and Natural Sciences
++3. Operational Concerns and Monitoring
++
++The system is designed to collect telemetry from named targets on given
++intervals, evaluate rule expressions, display the results, and trigger an
++action if some condition is observed to be true.
+@@ -8 +18 @@ Bedecke deinen Himmel, Zeus!  A new kid is in town.
+-  1. Go 1.0.X.
++  1. Go 1.0.X. [GVM](https://github.com/moovweb/gvm) is highly recommended as well.
+@@ -19,0 +30 @@ For basic help how to get started:
++  * For Linux users, please consult the Travis CI configuration in _.travis.yml_.
+@@ -22,12 +32,0 @@ For basic help how to get started:
+-
+-## Initial Hurdles
+-
+-  1. A bit of this grew organically without an easy way of binding it all together.  The tests will pass but slowly.  They were not optimized for speed but end-to-end coverage of the whole storage model.  This is something immediate to fix.
+-  2. Protocol Buffer generator for Go changed emitted output API.  This will need to be fixed before other contributors can participate.
+-
+-
+-## Milestones
+-
+-  1. In-memory archive, basic rule language, simple computation engine, and naive exposition system.
+-
+-
+diff --git a/README.md b/README.md
+index 22270b88..35578d99 100644
+--- a/README.md
++++ b/README.md
+@@ -15,0 +16,6 @@ Bedecke deinen Himmel, Zeus!  A new kid is in town.
++## Getting started
++
++For basic help how to get started:
++
++  * [Getting started on Mac OSX](guides/getting-started-osx.md)
++
+diff --git a/README.md b/README.md
+index 81cd56bb..22270b88 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-Prometheus
+-==========
++# Prometheus
+@@ -6,7 +4,0 @@ Bedecke deinen Himmel, Zeus!  A new kid is in town.
+-Prerequisites
+-=============
+-1.  Go 1.0.X.
+-2.  LevelDB: (https://code.google.com/p/leveldb/).
+-3.  Protocol Buffers Compiler: (http://code.google.com/p/protobuf/).
+-4.  goprotobuf: the code generator and runtime library: (http://code.google.com/p/goprotobuf/).
+-5.  Levigo, a Go-wrapper around LevelDB's C library: (https://github.com/jmhodges/levigo).
+@@ -14,4 +6 @@ Prerequisites
+-Initial Hurdles
+-===============
+-1.  A bit of this grew organically without an easy way of binding it all together.  The tests will pass but slowly.  They were not optimized for speed but end-to-end coverage of the whole storage model.  This is something immediate to fix.
+-2.  Protocol Buffer generator for Go changed emitted output API.  This will need to be fixed before other contributors can participate.
++## Prerequisites
+@@ -18,0 +8,7 @@ Initial Hurdles
++  1. Go 1.0.X.
++  2. LevelDB: (https://code.google.com/p/leveldb/).
++  3. Protocol Buffers Compiler: (http://code.google.com/p/protobuf/).
++  4. goprotobuf: the code generator and runtime library: (http://code.google.com/p/goprotobuf/).
++  5. Levigo, a Go-wrapper around LevelDB's C library: (https://github.com/jmhodges/levigo).
++  6. GoRest, a RESTful style web-services framework: (http://code.google.com/p/gorest/).
++  7. Prometheus Client, Prometheus in Prometheus (https://github.com/matttproud/golang_instrumentation).
+@@ -20,3 +15,0 @@ Initial Hurdles
+-Milestones
+-==========
+-1.  In-memory archive, basic rule language, simple computation engine, and naive exposition system.
+@@ -23,0 +17,12 @@ Milestones
++## Initial Hurdles
++
++  1. A bit of this grew organically without an easy way of binding it all together.  The tests will pass but slowly.  They were not optimized for speed but end-to-end coverage of the whole storage model.  This is something immediate to fix.
++  2. Protocol Buffer generator for Go changed emitted output API.  This will need to be fixed before other contributors can participate.
++
++
++## Milestones
++
++  1. In-memory archive, basic rule language, simple computation engine, and naive exposition system.
++
++
++## License
+@@ -25,2 +29,0 @@ Milestones
+-License
+-=======
+diff --git a/README.md b/README.md
+index 682fbbf6..81cd56bb 100644
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23,5 @@ Milestones
++
++
++License
++=======
++Apache License 2.0
+diff --git a/README.md b/README.md
+index 464dcc78..682fbbf6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-prometheus
++Prometheus
+@@ -4 +4,19 @@ prometheus
+-Bedecke deinen Himmel, Zeus!
+\ No newline at end of file
++Bedecke deinen Himmel, Zeus!  A new kid is in town.
++
++Prerequisites
++=============
++1.  Go 1.0.X.
++2.  LevelDB: (https://code.google.com/p/leveldb/).
++3.  Protocol Buffers Compiler: (http://code.google.com/p/protobuf/).
++4.  goprotobuf: the code generator and runtime library: (http://code.google.com/p/goprotobuf/).
++5.  Levigo, a Go-wrapper around LevelDB's C library: (https://github.com/jmhodges/levigo).
++
++Initial Hurdles
++===============
++1.  A bit of this grew organically without an easy way of binding it all together.  The tests will pass but slowly.  They were not optimized for speed but end-to-end coverage of the whole storage model.  This is something immediate to fix.
++2.  Protocol Buffer generator for Go changed emitted output API.  This will need to be fixed before other contributors can participate.
++
++
++Milestones
++==========
++1.  In-memory archive, basic rule language, simple computation engine, and naive exposition system.

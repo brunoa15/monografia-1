@@ -1,0 +1,3236 @@
+diff --git a/README.md b/README.md
+index a321f99..4ef90b6 100755
+--- a/README.md
++++ b/README.md
+@@ -299 +299 @@ These are the available config options for making requests. Only the `url` is re
+-  // sintaxe alternative to send data into the body
++  // syntax alternative to send data into the body
+diff --git a/README.md b/README.md
+index f212285..a321f99 100755
+--- a/README.md
++++ b/README.md
+@@ -100 +100 @@ axios.get('/user', {
+-  .then(function () {
++  .finally(function () {
+diff --git a/README.md b/README.md
+index e5896cc..f212285 100755
+--- a/README.md
++++ b/README.md
+@@ -59,0 +60,9 @@ Using cdn:
++### note: CommonJS usage
++In order to gain the TypeScript typings (for intellisense / autocomplete) while using CommonJS imports with `require()` use the following approach:
++
++```js
++const axios = require('axios').default;
++
++// axios.<method> will now provide autocomplete and parameter typings
++```
++
+diff --git a/README.md b/README.md
+index 153a90e..e5896cc 100755
+--- a/README.md
++++ b/README.md
+@@ -288,0 +289,5 @@ These are the available config options for making requests. Only the `url` is re
++  
++  // sintaxe alternative to send data into the body
++  // method post
++  // only the value is sent, not the key
++  data: 'Country=Brasil&City=Belo Horizonte',
+diff --git a/README.md b/README.md
+index 5bac444..153a90e 100755
+--- a/README.md
++++ b/README.md
+@@ -686 +686 @@ axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/
+-MIT
++[MIT](LICENSE)
+diff --git a/README.md b/README.md
+index 3c7d721..5bac444 100755
+--- a/README.md
++++ b/README.md
+@@ -494,0 +495 @@ axios.interceptors.response.use(function (response) {
++    // Any status code that lie within the range of 2xx cause this function to trigger
+@@ -497,0 +499 @@ axios.interceptors.response.use(function (response) {
++    // Any status codes that falls outside the range of 2xx cause this function to trigger
+diff --git a/README.md b/README.md
+index f17e2a5..3c7d721 100755
+--- a/README.md
++++ b/README.md
+@@ -541 +541 @@ axios.get('/user/12345')
+-You can define a custom HTTP status code error range using the `validateStatus` config option.
++Using the `validateStatus` config option, you can define HTTP code(s) that should throw an error.
+diff --git a/README.md b/README.md
+index a18fa7a..f17e2a5 100755
+--- a/README.md
++++ b/README.md
+@@ -503 +503 @@ axios.interceptors.response.use(function (response) {
+-If you may need to remove an interceptor later you can.
++If you need to remove an interceptor later you can.
+diff --git a/README.md b/README.md
+index 2533e8d..a18fa7a 100755
+--- a/README.md
++++ b/README.md
+@@ -416 +416 @@ The response for a request contains the following information.
+-  // and an XMLHttpRequest instance the browser
++  // and an XMLHttpRequest instance in the browser
+diff --git a/README.md b/README.md
+index 346f429..2533e8d 100755
+--- a/README.md
++++ b/README.md
+@@ -306,0 +307,2 @@ These are the available config options for making requests. Only the `url` is re
++  // Please note that only HTTP Basic auth is configurable through this parameter.
++  // For Bearer tokens and such, use `Authorization` custom headers instead.
+diff --git a/README.md b/README.md
+index 45583c9..346f429 100755
+--- a/README.md
++++ b/README.md
+@@ -247 +247 @@ These are the available config options for making requests. Only the `url` is re
+-  // This is only applicable for request methods 'PUT', 'POST', and 'PATCH'
++  // This is only applicable for request methods 'PUT', 'POST', 'PATCH' and 'DELETE'
+diff --git a/README.md b/README.md
+index bc7cd43..45583c9 100755
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,6 @@ $ bower install axios
++Using yarn:
++
++```bash
++$ yarn add axios
++```
++
+diff --git a/README.md b/README.md
+index 1d34885..bc7cd43 100755
+--- a/README.md
++++ b/README.md
+@@ -156,3 +156,3 @@ axios({
+-  method:'get',
+-  url:'http://bit.ly/2mTM3nY',
+-  responseType:'stream'
++  method: 'get',
++  url: 'http://bit.ly/2mTM3nY',
++  responseType: 'stream'
+diff --git a/README.md b/README.md
+index 29f1574..1d34885 100755
+--- a/README.md
++++ b/README.md
+@@ -69 +69 @@ axios.get('/user?ID=12345')
+-  .then(function () {
++  .finally(function () {
+diff --git a/README.md b/README.md
+index 1aab5f3..29f1574 100755
+--- a/README.md
++++ b/README.md
+@@ -307 +307,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // options are 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
++  // options are: 'arraybuffer', 'document', 'json', 'text', 'stream'
++  //   browser only: 'blob'
+diff --git a/README.md b/README.md
+index 476d34a..1aab5f3 100755
+--- a/README.md
++++ b/README.md
+@@ -641,0 +642,3 @@ You can also use the [`qs`](https://github.com/ljharb/qs) library.
++###### NOTE
++The `qs` library is preferable if you need to stringify nested objects, as the `querystring` method has known issues with that use case (https://github.com/nodejs/node-v0.x-archive/issues/1665).
++
+diff --git a/README.md b/README.md
+index 6c0bc57..476d34a 100755
+--- a/README.md
++++ b/README.md
+@@ -160 +160 @@ axios({
+-  .then(function(response) {
++  .then(function (response) {
+@@ -270 +270 @@ These are the available config options for making requests. Only the `url` is re
+-  paramsSerializer: function(params) {
++  paramsSerializer: function (params) {
+@@ -416 +416 @@ axios.get('/user/12345')
+-  .then(function(response) {
++  .then(function (response) {
+@@ -556 +556 @@ axios.get('/user/12345', {
+-}).catch(function(thrown) {
++}).catch(function (thrown) {
+diff --git a/README.md b/README.md
+index 151264f..6c0bc57 100755
+--- a/README.md
++++ b/README.md
+@@ -286 +286 @@ These are the available config options for making requests. Only the `url` is re
+-  timeout: 1000,
++  timeout: 1000, // default is `0` (no timeout)
+diff --git a/README.md b/README.md
+index ee99033..151264f 100755
+--- a/README.md
++++ b/README.md
+@@ -220,0 +221 @@ The available instance methods are listed below. The specified config will be me
++##### axios#getUri([config])
+diff --git a/README.md b/README.md
+index 4612584..ee99033 100755
+--- a/README.md
++++ b/README.md
+@@ -356 +356,5 @@ These are the available config options for making requests. Only the `url` is re
+-  // 'proxy' defines the hostname and port of the proxy server
++  // 'proxy' defines the hostname and port of the proxy server.
++  // You can also define your proxy using the conventional `http_proxy` and
++  // `https_proxy` environment variables. If you are using environment variables
++  // for your proxy configuration, you can also define a `no_proxy` environment
++  // variable as a comma-separated list of domains that should not be proxied.
+diff --git a/README.md b/README.md
+index 4baef1d..4612584 100755
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++[![install size](https://packagephobia.now.sh/badge?p=axios)](https://packagephobia.now.sh/result?p=axios)
+diff --git a/README.md b/README.md
+index 2dc2043..4baef1d 100755
+--- a/README.md
++++ b/README.md
+@@ -160,2 +160,2 @@ axios({
+-  response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+-});
++    response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
++  });
+diff --git a/README.md b/README.md
+index 777b5a4..2dc2043 100755
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ Promise based HTTP client for the browser and node.js
+-Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
++Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✔ |
+diff --git a/README.md b/README.md
+index d1f94c8..777b5a4 100755
+--- a/README.md
++++ b/README.md
+@@ -55,0 +56,2 @@ Performing a `GET` request
++const axios = require('axios');
++
+diff --git a/README.md b/README.md
+index 8c83949..d1f94c8 100755
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59 @@ axios.get('/user?ID=12345')
++    // handle success
+@@ -61,0 +63 @@ axios.get('/user?ID=12345')
++    // handle error
+@@ -62,0 +65,3 @@ axios.get('/user?ID=12345')
++  })
++  .then(function () {
++    // always executed
+@@ -76 +81,4 @@ axios.get('/user', {
+-  });
++  })
++  .then(function () {
++    // always executed
++  });  
+diff --git a/README.md b/README.md
+index 7c54b61..8c83949 100755
+--- a/README.md
++++ b/README.md
+@@ -191 +191 @@ You can create a new instance of axios with a custom config.
+-var instance = axios.create({
++const instance = axios.create({
+@@ -427 +427 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
+-var instance = axios.create({
++const instance = axios.create({
+@@ -442 +442 @@ Config will be merged with an order of precedence. The order is library defaults
+-var instance = axios.create();
++const instance = axios.create();
+@@ -481 +481 @@ If you may need to remove an interceptor later you can.
+-var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
++const myInterceptor = axios.interceptors.request.use(function () {/*...*/});
+@@ -488 +488 @@ You can add interceptors to a custom instance of axios.
+-var instance = axios.create();
++const instance = axios.create();
+@@ -535,2 +535,2 @@ You can create a cancel token using the `CancelToken.source` factory as shown be
+-var CancelToken = axios.CancelToken;
+-var source = CancelToken.source();
++const CancelToken = axios.CancelToken;
++const source = CancelToken.source();
+@@ -561,2 +561,2 @@ You can also create a cancel token by passing an executor function to the `Cance
+-var CancelToken = axios.CancelToken;
+-var cancel;
++const CancelToken = axios.CancelToken;
++let cancel;
+@@ -586 +586 @@ In a browser, you can use the [`URLSearchParams`](https://developer.mozilla.org/
+-var params = new URLSearchParams();
++const params = new URLSearchParams();
+@@ -597 +597 @@ Alternatively, you can encode data using the [`qs`](https://github.com/ljharb/qs
+-var qs = require('qs');
++const qs = require('qs');
+@@ -620 +620 @@ In node.js, you can use the [`querystring`](https://nodejs.org/api/querystring.h
+-var querystring = require('querystring');
++const querystring = require('querystring');
+diff --git a/README.md b/README.md
+index bf0d796..7c54b61 100755
+--- a/README.md
++++ b/README.md
+@@ -318 +318 @@ These are the available config options for making requests. Only the `url` is re
+-  // `maxContentLength` defines the max size of the http response content allowed
++  // `maxContentLength` defines the max size of the http response content in bytes allowed
+diff --git a/README.md b/README.md
+index 1b66d04..bf0d796 100755
+--- a/README.md
++++ b/README.md
+@@ -600,0 +601,14 @@ axios.post('/foo', qs.stringify({ 'bar': 123 }));
++Or in another way (ES6),
++
++```js
++import qs from 'qs';
++const data = { 'bar': 123 };
++const options = {
++  method: 'POST',
++  headers: { 'content-type': 'application/x-www-form-urlencoded' },
++  data: qs.stringify(data),
++  url,
++};
++axios(options);
++```
++
+diff --git a/README.md b/README.md
+index 89dfccd..1b66d04 100755
+--- a/README.md
++++ b/README.md
+@@ -77 +77 @@ axios.get('/user', {
+-  
++
+@@ -89 +89 @@ async function getUser() {
+-> **NOTE:** `async/await` is part of ECMAScript 2017 and is not supported in Internet 
++> **NOTE:** `async/await` is part of ECMAScript 2017 and is not supported in Internet
+@@ -445 +445 @@ var instance = axios.create();
+-// Now all requests will wait 2.5 seconds before timing out
++// Now all requests using this instance will wait 2.5 seconds before timing out
+diff --git a/README.md b/README.md
+index 273d461..89dfccd 100755
+--- a/README.md
++++ b/README.md
+@@ -297,0 +298,4 @@ These are the available config options for making requests. Only the `url` is re
++  // `responseEncoding` indicates encoding to use for decoding responses
++  // Note: Ignored for `responseType` of 'stream' or client-side requests
++  responseEncoding: 'utf8', // default
++
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+index b7dd152..273d461
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+@@ -327,0 +329,6 @@ These are the available config options for making requests. Only the `url` is re
++  // `socketPath` defines a UNIX Socket to be used in node.js.
++  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
++  // Only either `socketPath` or `proxy` can be specified.
++  // If both are specified, `socketPath` is used.
++  socketPath: null, // default
++
+@@ -426 +433 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+-Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
+@@ -536,0 +544,6 @@ axios.get('/user/12345', {
++axios.post('/user/12345', {
++  name: 'new name'
++}, {
++  cancelToken: source.token
++})
++
+diff --git a/README.md b/README.md
+old mode 100755
+new mode 100644
+index ec78817..b7dd152
+--- a/README.md
++++ b/README.md
+@@ -8 +7,0 @@
+-[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+@@ -76,0 +76,10 @@ axios.get('/user', {
++  
++// Want to use async/await? Add the `async` keyword to your outer function/method.
++async function getUser() {
++  try {
++    const response = await axios.get('/user?ID=12345');
++    console.log(response);
++  } catch (error) {
++    console.error(error);
++  }
++}
+@@ -78,0 +88,3 @@ axios.get('/user', {
++> **NOTE:** `async/await` is part of ECMAScript 2017 and is not supported in Internet 
++> Explorer and older browsers, so use with caution.
++
+@@ -316,6 +327,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // `socketPath` defines a UNIX Socket to be used in node.js.
+-  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
+-  // Only either `socketPath` or `proxy` can be specified.
+-  // If both are specified, `socketPath` is used.
+-  socketPath: null, // default
+-
+@@ -420 +426 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+-Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
+@@ -531,6 +536,0 @@ axios.get('/user/12345', {
+-axios.post('/user/12345', {
+-  name: 'new name'
+-}, {
+-  cancelToken: source.token
+-})
+-
+diff --git a/README.md b/README.md
+index 5130b9a..ec78817 100755
+--- a/README.md
++++ b/README.md
+@@ -420 +420 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+-Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
+diff --git a/README.md b/README.md
+index d781aca..5130b9a 100755
+--- a/README.md
++++ b/README.md
+@@ -317,0 +318,2 @@ These are the available config options for making requests. Only the `url` is re
++  // Only either `socketPath` or `proxy` can be specified.
++  // If both are specified, `socketPath` is used.
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+index 5eabb95..d781aca
+--- a/README.md
++++ b/README.md
+@@ -315,0 +316,4 @@ These are the available config options for making requests. Only the `url` is re
++  // `socketPath` defines a UNIX Socket to be used in node.js.
++  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
++  socketPath: null, // default
++
+@@ -414 +418 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+-Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
+diff --git a/README.md b/README.md
+index 75b899e..5eabb95 100644
+--- a/README.md
++++ b/README.md
+@@ -414 +414 @@ instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+-Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++Config will be merged with an order of precedence. The order is library defaults found in [lib/defaults.js](https://github.com/axios/axios/blob/master/lib/defaults.js#L28), then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
+diff --git a/README.md b/README.md
+index dc919b9..75b899e 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+diff --git a/README.md b/README.md
+index ac532ad..dc919b9 100644
+--- a/README.md
++++ b/README.md
+@@ -524,22 +524,5 @@ axios.get('/user/12345', {
+-// cancel the request (the message parameter is optional)
+-source.cancel('Operation canceled by the user.');
+-```
+-
+-```js
+-var CancelToken = axios.CancelToken;
+-var source = CancelToken.source();
+-
+-axios(
+-      method: 'POST',
+-      url:    '/user/12345',
+-      data: {
+-        name: 'new name'
+-      },
+-      cancelToken: source.token
+-}).catch(function(thrown) {
+-  if (axios.isCancel(thrown)) {
+-    console.log('Request canceled', thrown.message);
+-  } else {
+-    // handle error
+-  }
+-});
++axios.post('/user/12345', {
++  name: 'new name'
++}, {
++  cancelToken: source.token
++})
+diff --git a/README.md b/README.md
+index 3a75337..ac532ad 100644
+--- a/README.md
++++ b/README.md
+@@ -76,8 +75,0 @@ axios.get('/user', {
+-  
+-  // Want to use async/await?
+-  try {
+-    const response = axios.get('/user?ID=12345');
+-    console.log(response);
+-  } catch (error) {
+-    console.log(error);
+-  }
+@@ -532,0 +525,23 @@ axios.get('/user/12345', {
++source.cancel('Operation canceled by the user.');
++```
++
++```js
++var CancelToken = axios.CancelToken;
++var source = CancelToken.source();
++
++axios(
++      method: 'POST',
++      url:    '/user/12345',
++      data: {
++        name: 'new name'
++      },
++      cancelToken: source.token
++}).catch(function(thrown) {
++  if (axios.isCancel(thrown)) {
++    console.log('Request canceled', thrown.message);
++  } else {
++    // handle error
++  }
++});
++
++// cancel the request (the message parameter is optional)
+diff --git a/README.md b/README.md
+index aade09b..3a75337 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +7,0 @@
+-[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+@@ -76,0 +76,8 @@ axios.get('/user', {
++  
++  // Want to use async/await?
++  try {
++    const response = axios.get('/user?ID=12345');
++    console.log(response);
++  } catch (error) {
++    console.log(error);
++  }
+diff --git a/README.md b/README.md
+index 95d91e7..aade09b 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![code helpers](https://www.codetriage.com/axios/axios/badges/users.svg)](https://www.codetriage.com/axios/axios)
+diff --git a/README.md b/README.md
+index 526d13f..95d91e7 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![build status](https://img.shields.io/travis/mzabriskie/axios.svg?style=flat-square)](https://travis-ci.org/mzabriskie/axios)
++[![build status](https://img.shields.io/travis/axios/axios.svg?style=flat-square)](https://travis-ci.org/axios/axios)
+diff --git a/README.md b/README.md
+old mode 100755
+new mode 100644
+index 4bf0f42..526d13f
+--- a/README.md
++++ b/README.md
+@@ -315,4 +314,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // `socketPath` defines a UNIX Socket to be used in node.js.
+-  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
+-  socketPath: null, // default
+-
+@@ -584 +580 @@ axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+-You can also use the `qs` library.
++You can also use the [`qs`](https://github.com/ljharb/qs) library.
+@@ -604,5 +600,5 @@ axios.get('/user?ID=12345');
+-* [Changelog](https://github.com/mzabriskie/axios/blob/master/CHANGELOG.md)
+-* [Upgrade Guide](https://github.com/mzabriskie/axios/blob/master/UPGRADE_GUIDE.md)
+-* [Ecosystem](https://github.com/mzabriskie/axios/blob/master/ECOSYSTEM.md)
+-* [Contributing Guide](https://github.com/mzabriskie/axios/blob/master/CONTRIBUTING.md)
+-* [Code of Conduct](https://github.com/mzabriskie/axios/blob/master/CODE_OF_CONDUCT.md)
++* [Changelog](https://github.com/axios/axios/blob/master/CHANGELOG.md)
++* [Upgrade Guide](https://github.com/axios/axios/blob/master/UPGRADE_GUIDE.md)
++* [Ecosystem](https://github.com/axios/axios/blob/master/ECOSYSTEM.md)
++* [Contributing Guide](https://github.com/axios/axios/blob/master/CONTRIBUTING.md)
++* [Code of Conduct](https://github.com/axios/axios/blob/master/CODE_OF_CONDUCT.md)
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+index 4ba1cd7..4bf0f42
+--- a/README.md
++++ b/README.md
+@@ -314,0 +315,4 @@ These are the available config options for making requests. Only the `url` is re
++  // `socketPath` defines a UNIX Socket to be used in node.js.
++  // e.g. '/var/run/docker.sock' to send requests to the docker daemon.
++  socketPath: null, // default
++
+@@ -580 +584 @@ axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+-You can also use the [`qs`](https://github.com/ljharb/qs) library.
++You can also use the `qs` library.
+diff --git a/README.md b/README.md
+index dfe1f0a..4ba1cd7 100644
+--- a/README.md
++++ b/README.md
+@@ -218 +218,2 @@ These are the available config options for making requests. Only the `url` is re
+-  transformRequest: [function (data) {
++  // You may modify the headers object.
++  transformRequest: [function (data, headers) {
+@@ -283,4 +283,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // `responseEncoding` indicates encoding to use for decoding responses
+-  // Note: Ignored for `responseType` of 'stream' or client-side requests
+-  responseEncoding: 'utf8', // default
+-
+@@ -324,0 +322 @@ These are the available config options for making requests. Only the `url` is re
++  // Use `false` to disable proxies, ignoring environment variables.
+@@ -564 +562 @@ axios.post('/foo', params);
+-> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
++> Note that `URLSearchParams` is not supported by all browsers (see [caniuse.com](http://www.caniuse.com/#feat=urlsearchparams)), but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
+@@ -582 +580 @@ axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+-You can also use the `qs` library.
++You can also use the [`qs`](https://github.com/ljharb/qs) library.
+diff --git a/README.md b/README.md
+index c3d16c1..dfe1f0a 100644
+--- a/README.md
++++ b/README.md
+@@ -218,2 +218 @@ These are the available config options for making requests. Only the `url` is re
+-  // You may modify the headers object.
+-  transformRequest: [function (data, headers) {
++  transformRequest: [function (data) {
+@@ -283,0 +283,4 @@ These are the available config options for making requests. Only the `url` is re
++  // `responseEncoding` indicates encoding to use for decoding responses
++  // Note: Ignored for `responseType` of 'stream' or client-side requests
++  responseEncoding: 'utf8', // default
++
+@@ -322 +324,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // Use `false` to disable proxies, ignoring environment variables.
+@@ -562 +564 @@ axios.post('/foo', params);
+-> Note that `URLSearchParams` is not supported by all browsers (see [caniuse.com](http://www.caniuse.com/#feat=urlsearchparams)), but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
++> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
+diff --git a/README.md b/README.md
+index 921133a..c3d16c1 100644
+--- a/README.md
++++ b/README.md
+@@ -321,0 +322 @@ These are the available config options for making requests. Only the `url` is re
++  // Use `false` to disable proxies, ignoring environment variables.
+diff --git a/README.md b/README.md
+index 87a571e..921133a 100644
+--- a/README.md
++++ b/README.md
+@@ -218 +218,2 @@ These are the available config options for making requests. Only the `url` is re
+-  transformRequest: [function (data) {
++  // You may modify the headers object.
++  transformRequest: [function (data, headers) {
+diff --git a/README.md b/README.md
+index f48ea58..87a571e 100644
+--- a/README.md
++++ b/README.md
+@@ -560 +560 @@ axios.post('/foo', params);
+-> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
++> Note that `URLSearchParams` is not supported by all browsers (see [caniuse.com](http://www.caniuse.com/#feat=urlsearchparams)), but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
+diff --git a/README.md b/README.md
+index a7bf758..f48ea58 100644
+--- a/README.md
++++ b/README.md
+@@ -472 +472 @@ axios.get('/user/12345')
+-      // The request was made, but the server responded with a status code
++      // The request was made and the server responded with a status code
+@@ -476,0 +477,5 @@ axios.get('/user/12345')
++    } else if (error.request) {
++      // The request was made but no response was received
++      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
++      // http.ClientRequest in node.js
++      console.log(error.request);
+diff --git a/README.md b/README.md
+index 3bc66e9..a7bf758 100644
+--- a/README.md
++++ b/README.md
+@@ -361 +361,6 @@ The response for a request contains the following information.
+-  config: {}
++  config: {},
++
++  // `request` is the request that generated this response
++  // It is the last ClientRequest instance in node.js (in redirects)
++  // and an XMLHttpRequest instance the browser
++  request: {}
+diff --git a/README.md b/README.md
+index cab98de..3bc66e9 100644
+--- a/README.md
++++ b/README.md
+@@ -216 +216,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
++  // The last function in the array must return a string or an instance of Buffer, ArrayBuffer,
++  // FormData or Stream
+@@ -251 +252 @@ These are the available config options for making requests. Only the `url` is re
+-  // - Node only: Stream
++  // - Node only: Stream, Buffer
+diff --git a/README.md b/README.md
+index 3b3d1c0..cab98de 100644
+--- a/README.md
++++ b/README.md
+@@ -314 +314 @@ These are the available config options for making requests. Only the `url` is re
+-  // and https requests, respectively, in node.js. This allows to configure options like
++  // and https requests, respectively, in node.js. This allows options to be added like
+@@ -320,2 +320,4 @@ These are the available config options for making requests. Only the `url` is re
+-  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and supplies credentials.
+-  // This will set an `Proxy-Authorization` header, overwriting any existing `Proxy-Authorization` custom headers you have set using `headers`.
++  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and
++  // supplies credentials.
++  // This will set an `Proxy-Authorization` header, overwriting any existing
++  // `Proxy-Authorization` custom headers you have set using `headers`.
+diff --git a/README.md b/README.md
+index 612e4a9..3b3d1c0 100644
+--- a/README.md
++++ b/README.md
+@@ -353,0 +354 @@ The response for a request contains the following information.
++  // All header names are lower cased
+@@ -357,6 +358 @@ The response for a request contains the following information.
+-  config: {},
+-
+-  // `request` is the request that generated this response
+-  // It is the last ClientRequest instance in node.js (in redirects)
+-  // and an XMLHttpRequest instance the browser
+-  request: {}
++  config: {}
+diff --git a/README.md b/README.md
+index 38cbb22..612e4a9 100644
+--- a/README.md
++++ b/README.md
+@@ -357 +357,6 @@ The response for a request contains the following information.
+-  config: {}
++  config: {},
++
++  // `request` is the request that generated this response
++  // It is the last ClientRequest instance in node.js (in redirects)
++  // and an XMLHttpRequest instance the browser
++  request: {}
+diff --git a/README.md b/README.md
+index 91161da..38cbb22 100644
+--- a/README.md
++++ b/README.md
+@@ -127,0 +128,12 @@ axios({
++```js
++// GET request for remote image
++axios({
++  method:'get',
++  url:'http://bit.ly/2mTM3nY',
++  responseType:'stream'
++})
++  .then(function(response) {
++  response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
++});
++```
++
+@@ -531 +543 @@ params.append('param2', 'value2');
+-axios.post('/foo', params); 
++axios.post('/foo', params);
+diff --git a/README.md b/README.md
+index d38b46d..91161da 100644
+--- a/README.md
++++ b/README.md
+@@ -313 +313 @@ These are the available config options for making requests. Only the `url` is re
+-    auth: : {
++    auth: {
+diff --git a/README.md b/README.md
+index 6c3a472..d38b46d 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ Promise based HTTP client for the browser and node.js
++- Cancel requests
+@@ -23 +24 @@ Promise based HTTP client for the browser and node.js
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
++![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
+@@ -203 +204 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, or a Stream
++  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
+@@ -252 +253 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see [response docs](#response-api)).
++  // Return a promise and supply a valid response (see lib/adapters/README.md).
+@@ -306,0 +308,2 @@ These are the available config options for making requests. Only the `url` is re
++  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and supplies credentials.
++  // This will set an `Proxy-Authorization` header, overwriting any existing `Proxy-Authorization` custom headers you have set using `headers`.
+@@ -309,2 +312,11 @@ These are the available config options for making requests. Only the `url` is re
+-    port: 9000
+-  }
++    port: 9000,
++    auth: : {
++      username: 'mikeymike',
++      password: 'rapunz3l'
++    }
++  },
++
++  // `cancelToken` specifies a cancel token that can be used to cancel the request
++  // (see Cancellation section below for details)
++  cancelToken: new CancelToken(function (cancel) {
++  })
+@@ -461,0 +474,80 @@ axios.get('/user/12345', {
++## Cancellation
++
++You can cancel a request using a *cancel token*.
++
++> The axios cancel token API is based on the withdrawn [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
++
++You can create a cancel token using the `CancelToken.source` factory as shown below:
++
++```js
++var CancelToken = axios.CancelToken;
++var source = CancelToken.source();
++
++axios.get('/user/12345', {
++  cancelToken: source.token
++}).catch(function(thrown) {
++  if (axios.isCancel(thrown)) {
++    console.log('Request canceled', thrown.message);
++  } else {
++    // handle error
++  }
++});
++
++// cancel the request (the message parameter is optional)
++source.cancel('Operation canceled by the user.');
++```
++
++You can also create a cancel token by passing an executor function to the `CancelToken` constructor:
++
++```js
++var CancelToken = axios.CancelToken;
++var cancel;
++
++axios.get('/user/12345', {
++  cancelToken: new CancelToken(function executor(c) {
++    // An executor function receives a cancel function as a parameter
++    cancel = c;
++  })
++});
++
++// cancel the request
++cancel();
++```
++
++> Note: you can cancel several requests with the same cancel token.
++
++## Using application/x-www-form-urlencoded format
++
++By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
++
++### Browser
++
++In a browser, you can use the [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) API as follows:
++
++```js
++var params = new URLSearchParams();
++params.append('param1', 'value1');
++params.append('param2', 'value2');
++axios.post('/foo', params); 
++```
++
++> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
++
++Alternatively, you can encode data using the [`qs`](https://github.com/ljharb/qs) library:
++
++```js
++var qs = require('qs');
++axios.post('/foo', qs.stringify({ 'bar': 123 }));
++```
++
++### Node.js
++
++In node.js, you can use the [`querystring`](https://nodejs.org/api/querystring.html) module as follows:
++
++```js
++var querystring = require('querystring');
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
++```
++
++You can also use the `qs` library.
++
+diff --git a/README.md b/README.md
+index 053501d..6c3a472 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +17,0 @@ Promise based HTTP client for the browser and node.js
+-- Cancel requests
+@@ -24 +23 @@ Promise based HTTP client for the browser and node.js
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
++![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
+@@ -142,0 +142 @@ For convenience aliases have been provided for all supported request methods.
++##### axios.options(url[, config])
+@@ -178,0 +179 @@ The available instance methods are listed below. The specified config will be me
++##### axios#options(url[, config])
+@@ -202 +203 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
++  // The last function in the array must return a string, an ArrayBuffer, or a Stream
+@@ -251 +252 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see lib/adapters/README.md).
++  // Return a promise and supply a valid response (see [response docs](#response-api)).
+@@ -306,2 +306,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and supplies credentials.
+-  // This will set an `Proxy-Authorization` header, overwriting any existing `Proxy-Authorization` custom headers you have set using `headers`.
+@@ -310,11 +309,2 @@ These are the available config options for making requests. Only the `url` is re
+-    port: 9000,
+-    auth: {
+-      username: 'mikeymike',
+-      password: 'rapunz3l'
+-    }
+-  },
+-
+-  // `cancelToken` specifies a cancel token that can be used to cancel the request
+-  // (see Cancellation section below for details)
+-  cancelToken: new CancelToken(function (cancel) {
+-  })
++    port: 9000
++  }
+@@ -472,80 +461,0 @@ axios.get('/user/12345', {
+-## Cancellation
+-
+-You can cancel a request using a *cancel token*.
+-
+-> The axios cancel token API is based on the withdrawn [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
+-
+-You can create a cancel token using the `CancelToken.source` factory as shown below:
+-
+-```js
+-var CancelToken = axios.CancelToken;
+-var source = CancelToken.source();
+-
+-axios.get('/user/12345', {
+-  cancelToken: source.token
+-}).catch(function(thrown) {
+-  if (axios.isCancel(thrown)) {
+-    console.log('Request canceled', thrown.message);
+-  } else {
+-    // handle error
+-  }
+-});
+-
+-// cancel the request (the message parameter is optional)
+-source.cancel('Operation canceled by the user.');
+-```
+-
+-You can also create a cancel token by passing an executor function to the `CancelToken` constructor:
+-
+-```js
+-var CancelToken = axios.CancelToken;
+-var cancel;
+-
+-axios.get('/user/12345', {
+-  cancelToken: new CancelToken(function executor(c) {
+-    // An executor function receives a cancel function as a parameter
+-    cancel = c;
+-  })
+-});
+-
+-// cancel the request
+-cancel();
+-```
+-
+-> Note: you can cancel several requests with the same cancel token.
+-
+-## Using application/x-www-form-urlencoded format
+-
+-By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
+-
+-### Browser
+-
+-In a browser, you can use the [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) API as follows:
+-
+-```js
+-var params = new URLSearchParams();
+-params.append('param1', 'value1');
+-params.append('param2', 'value2');
+-axios.post('/foo', params); 
+-```
+-
+-> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
+-
+-Alternatively, you can encode data using the [`qs`](https://github.com/ljharb/qs) library:
+-
+-```js
+-var qs = require('qs');
+-axios.post('/foo', qs.stringify({ 'bar': 123 }));
+-```
+-
+-### Node.js
+-
+-In node.js, you can use the [`querystring`](https://nodejs.org/api/querystring.html) module as follows:
+-
+-```js
+-var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+-```
+-
+-You can also use the `qs` library.
+-
+diff --git a/README.md b/README.md
+index 55d069d..053501d 100644
+--- a/README.md
++++ b/README.md
+@@ -311 +311 @@ These are the available config options for making requests. Only the `url` is re
+-    auth: : {
++    auth: {
+diff --git a/README.md b/README.md
+index 8b21f6f..55d069d 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Promise based HTTP client for the browser and node.js
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Internet_Explorer_10_logo.svg/48px-Internet_Explorer_10_logo.svg.png) |
++![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
+diff --git a/README.md b/README.md
+index 53d528b..8b21f6f 100644
+--- a/README.md
++++ b/README.md
+@@ -128,12 +127,0 @@ axios({
+-```js
+-// GET request for remote image
+-axios({
+-  method:'get',
+-  url:'http://bit.ly/2mTM3nY',
+-  responseType:'stream'
+-})
+-  .then(function(response) {
+-  response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+-});
+-```
+-
+@@ -214 +202 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, or a Stream
++  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
+@@ -541 +529 @@ params.append('param2', 'value2');
+-axios.post('/foo', params);
++axios.post('/foo', params); 
+diff --git a/README.md b/README.md
+index 33ddc59..53d528b 100644
+--- a/README.md
++++ b/README.md
+@@ -127,0 +128,12 @@ axios({
++```js
++// GET request for remote image
++axios({
++  method:'get',
++  url:'http://bit.ly/2mTM3nY',
++  responseType:'stream'
++})
++  .then(function(response) {
++  response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
++});
++```
++
+@@ -529 +541 @@ params.append('param2', 'value2');
+-axios.post('/foo', params); 
++axios.post('/foo', params);
+diff --git a/README.md b/README.md
+index 4f0762a..33ddc59 100644
+--- a/README.md
++++ b/README.md
+@@ -251 +251 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see [this](https://github.com/mzabriskie/axios/blob/master/lib/adapters/README.md) for details).
++  // Return a promise and supply a valid response (see lib/adapters/README.md).
+diff --git a/README.md b/README.md
+index 761c3bf..4f0762a 100644
+--- a/README.md
++++ b/README.md
+@@ -476 +476 @@ You can cancel a request using a *cancel token*.
+-> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
++> The axios cancel token API is based on the withdrawn [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
+@@ -547 +547 @@ var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+diff --git a/README.md b/README.md
+index d353fba..761c3bf 100644
+--- a/README.md
++++ b/README.md
+@@ -251 +251 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see [response docs](#response-api)).
++  // Return a promise and supply a valid response (see [this](https://github.com/mzabriskie/axios/blob/master/lib/adapters/README.md) for details).
+@@ -476 +476 @@ You can cancel a request using a *cancel token*.
+-> The axios cancel token API is based on the withdrawn [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
++> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
+@@ -547 +547 @@ var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
+diff --git a/README.md b/README.md
+index 0cc4a2e..d353fba 100644
+--- a/README.md
++++ b/README.md
+@@ -547 +547 @@ var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+diff --git a/README.md b/README.md
+index 8c94299..0cc4a2e 100644
+--- a/README.md
++++ b/README.md
+@@ -202 +202 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
++  // The last function in the array must return a string, an ArrayBuffer, or a Stream
+@@ -476 +476 @@ You can cancel a request using a *cancel token*.
+-> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
++> The axios cancel token API is based on the withdrawn [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises).
+diff --git a/README.md b/README.md
+index 0bcc7f0..8c94299 100644
+--- a/README.md
++++ b/README.md
+@@ -202 +202 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, or a Stream
++  // The last function in the array must return a string, an ArrayBuffer, FormData, or a Stream
+@@ -547 +547 @@ var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
+diff --git a/README.md b/README.md
+index 701238d..0bcc7f0 100644
+--- a/README.md
++++ b/README.md
+@@ -251 +251 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see lib/adapters/README.md).
++  // Return a promise and supply a valid response (see [response docs](#response-api)).
+@@ -547 +547 @@ var querystring = require('querystring');
+-axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' }));
+diff --git a/README.md b/README.md
+index 5b3c913..701238d 100644
+--- a/README.md
++++ b/README.md
+@@ -251 +251 @@ These are the available config options for making requests. Only the `url` is re
+-  // Return a promise and supply a valid response (see [response docs](#response-api)).
++  // Return a promise and supply a valid response (see lib/adapters/README.md).
+diff --git a/README.md b/README.md
+index 8e8eb02..5b3c913 100644
+--- a/README.md
++++ b/README.md
+@@ -538 +538 @@ var qs = require('qs');
+-axios.post('/foo', qs.stringify({ 'bar': 123 });
++axios.post('/foo', qs.stringify({ 'bar': 123 }));
+diff --git a/README.md b/README.md
+index 5ad4662..8e8eb02 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Promise based HTTP client for the browser and node.js
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
++![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Internet_Explorer_10_logo.svg/48px-Internet_Explorer_10_logo.svg.png) |
+diff --git a/README.md b/README.md
+index 1657552..5ad4662 100644
+--- a/README.md
++++ b/README.md
+@@ -523 +523 @@ By default, axios serializes JavaScript objects to `JSON`. To send data in the `
+-In a browser, you can use [`URLSearchParam`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) as follows:
++In a browser, you can use the [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) API as follows:
+diff --git a/README.md b/README.md
+index 7bf0638..1657552 100644
+--- a/README.md
++++ b/README.md
+@@ -515 +515,36 @@ cancel();
+-Note : you can cancel several requests with the same cancel token.
++> Note: you can cancel several requests with the same cancel token.
++
++## Using application/x-www-form-urlencoded format
++
++By default, axios serializes JavaScript objects to `JSON`. To send data in the `application/x-www-form-urlencoded` format instead, you can use one of the following options.
++
++### Browser
++
++In a browser, you can use [`URLSearchParam`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) as follows:
++
++```js
++var params = new URLSearchParams();
++params.append('param1', 'value1');
++params.append('param2', 'value2');
++axios.post('/foo', params); 
++```
++
++> Note that `URLSearchParams` is not supported by all browsers, but there is a [polyfill](https://github.com/WebReflection/url-search-params) available (make sure to polyfill the global environment).
++
++Alternatively, you can encode data using the [`qs`](https://github.com/ljharb/qs) library:
++
++```js
++var qs = require('qs');
++axios.post('/foo', qs.stringify({ 'bar': 123 });
++```
++
++### Node.js
++
++In node.js, you can use the [`querystring`](https://nodejs.org/api/querystring.html) module as follows:
++
++```js
++var querystring = require('querystring');
++axios.post('http://something.com/', querystring.stringify({ foo: 'bar' });
++```
++
++You can also use the `qs` library.
+diff --git a/README.md b/README.md
+index 2b7f992..7bf0638 100644
+--- a/README.md
++++ b/README.md
+@@ -514,0 +515,2 @@ cancel();
++Note : you can cancel several requests with the same cancel token.
++
+diff --git a/README.md b/README.md
+index 3aa0132..2b7f992 100644
+--- a/README.md
++++ b/README.md
+@@ -305,0 +306,2 @@ These are the available config options for making requests. Only the `url` is re
++  // `auth` indicates that HTTP Basic auth should be used to connect to the proxy, and supplies credentials.
++  // This will set an `Proxy-Authorization` header, overwriting any existing `Proxy-Authorization` custom headers you have set using `headers`.
+@@ -308 +310,5 @@ These are the available config options for making requests. Only the `url` is re
+-    port: 9000
++    port: 9000,
++    auth: : {
++      username: 'mikeymike',
++      password: 'rapunz3l'
++    }
+diff --git a/README.md b/README.md
+index 40fbfde..3aa0132 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ Promise based HTTP client for the browser and node.js
++- Cancel requests
+@@ -145 +145,0 @@ For convenience aliases have been provided for all supported request methods.
+-##### axios.options(url[, data[, config]])
+@@ -309 +309,6 @@ These are the available config options for making requests. Only the `url` is re
+-  }
++  },
++
++  // `cancelToken` specifies a cancel token that can be used to cancel the request
++  // (see Cancellation section below for details)
++  cancelToken: new CancelToken(function (cancel) {
++  })
+@@ -460,0 +466,43 @@ axios.get('/user/12345', {
++## Cancellation
++
++You can cancel a request using a *cancel token*.
++
++> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
++
++You can create a cancel token using the `CancelToken.source` factory as shown below:
++
++```js
++var CancelToken = axios.CancelToken;
++var source = CancelToken.source();
++
++axios.get('/user/12345', {
++  cancelToken: source.token
++}).catch(function(thrown) {
++  if (axios.isCancel(thrown)) {
++    console.log('Request canceled', thrown.message);
++  } else {
++    // handle error
++  }
++});
++
++// cancel the request (the message parameter is optional)
++source.cancel('Operation canceled by the user.');
++```
++
++You can also create a cancel token by passing an executor function to the `CancelToken` constructor:
++
++```js
++var CancelToken = axios.CancelToken;
++var cancel;
++
++axios.get('/user/12345', {
++  cancelToken: new CancelToken(function executor(c) {
++    // An executor function receives a cancel function as a parameter
++    cancel = c;
++  })
++});
++
++// cancel the request
++cancel();
++```
++
+diff --git a/README.md b/README.md
+index c325338..40fbfde 100644
+--- a/README.md
++++ b/README.md
+@@ -144,0 +145 @@ For convenience aliases have been provided for all supported request methods.
++##### axios.options(url[, data[, config]])
+@@ -308,6 +309 @@ These are the available config options for making requests. Only the `url` is re
+-  },
+-
+-  // `cancelToken` specifies a cancel token that can be used to cancel the request
+-  // (see Cancellation section below for details)
+-  cancelToken: new CancelToken(function (cancel) {
+-  })
++  }
+@@ -465,43 +460,0 @@ axios.get('/user/12345', {
+-## Cancellation
+-
+-You can cancel a request using a *cancel token*.
+-
+-> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
+-
+-You can create a cancel token using the `CancelToken.source` factory as shown below:
+-
+-```js
+-var CancelToken = axios.CancelToken;
+-var source = CancelToken.source();
+-
+-axios.get('/user/12345', {
+-  cancelToken: source.token
+-}).catch(function(thrown) {
+-  if (axios.isCancel(thrown)) {
+-    console.log('Request canceled', thrown.message);
+-  } else {
+-    // handle error
+-  }
+-});
+-
+-// cancel the request (the message parameter is optional)
+-source.cancel('Operation canceled by the user.');
+-```
+-
+-You can also create a cancel token by passing an executor function to the `CancelToken` constructor:
+-
+-```js
+-var CancelToken = axios.CancelToken;
+-var cancel;
+-
+-axios.get('/user/12345', {
+-  cancelToken: new CancelToken(function executor(c) {
+-    // An executor function receives a cancel function as a parameter
+-    cancel = c;
+-  })
+-});
+-
+-// cancel the request
+-cancel();
+-```
+-
+diff --git a/README.md b/README.md
+index 862e48a..c325338 100644
+--- a/README.md
++++ b/README.md
+@@ -474 +473,0 @@ You can create a cancel token using the `CancelToken.source` factory as shown be
+-var Cancel = axios.Cancel;
+@@ -481 +480 @@ axios.get('/user/12345', {
+-  if (thrown instanceof Cancel) {
++  if (axios.isCancel(thrown)) {
+diff --git a/README.md b/README.md
+index bb6abdc..862e48a 100644
+--- a/README.md
++++ b/README.md
+@@ -469 +469 @@ You can cancel a request using a *cancel token*.
+-> The axios cancel token API is based on [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
++> The axios cancel token API is based on the [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
+@@ -471 +471 @@ You can cancel a request using a *cancel token*.
+-You can create a cancel token by passing an executor function to the `CancelToken` constructor as shown below:
++You can create a cancel token using the `CancelToken.source` factory as shown below:
+@@ -476,2 +476 @@ var CancelToken = axios.CancelToken;
+-
+-var cancel;
++var source = CancelToken.source();
+@@ -480,5 +479 @@ axios.get('/user/12345', {
+-  cancelToken: new CancelToken(function executor(c) {
+-    // An executor function receives a cancel function as a parameter
+-    // You can use the cancel function to cancel the request later
+-    cancel = c;
+-  })
++  cancelToken: source.token
+@@ -494 +489 @@ axios.get('/user/12345', {
+-cancel('Operation canceled by the user.');
++source.cancel('Operation canceled by the user.');
+@@ -497 +492 @@ cancel('Operation canceled by the user.');
+-You can also create a cancel token using the `CancelToken.source` factory:
++You can also create a cancel token by passing an executor function to the `CancelToken` constructor:
+@@ -501 +496 @@ var CancelToken = axios.CancelToken;
+-var source = CancelToken.source();
++var cancel;
+@@ -504 +499,4 @@ axios.get('/user/12345', {
+-  cancelToken: source.token
++  cancelToken: new CancelToken(function executor(c) {
++    // An executor function receives a cancel function as a parameter
++    cancel = c;
++  })
+@@ -507 +505,2 @@ axios.get('/user/12345', {
+-source.cancel();
++// cancel the request
++cancel();
+diff --git a/README.md b/README.md
+index 6c42a02..bb6abdc 100644
+--- a/README.md
++++ b/README.md
+@@ -308 +308,6 @@ These are the available config options for making requests. Only the `url` is re
+-  }
++  },
++
++  // `cancelToken` specifies a cancel token that can be used to cancel the request
++  // (see Cancellation section below for details)
++  cancelToken: new CancelToken(function (cancel) {
++  })
+@@ -459,0 +465,45 @@ axios.get('/user/12345', {
++## Cancellation
++
++You can cancel a request using a *cancel token*.
++
++> The axios cancel token API is based on [cancelable promises proposal](https://github.com/tc39/proposal-cancelable-promises), which is currently at Stage 1.
++
++You can create a cancel token by passing an executor function to the `CancelToken` constructor as shown below:
++
++```js
++var Cancel = axios.Cancel;
++var CancelToken = axios.CancelToken;
++
++var cancel;
++
++axios.get('/user/12345', {
++  cancelToken: new CancelToken(function executor(c) {
++    // An executor function receives a cancel function as a parameter
++    // You can use the cancel function to cancel the request later
++    cancel = c;
++  })
++}).catch(function(thrown) {
++  if (thrown instanceof Cancel) {
++    console.log('Request canceled', thrown.message);
++  } else {
++    // handle error
++  }
++});
++
++// cancel the request (the message parameter is optional)
++cancel('Operation canceled by the user.');
++```
++
++You can also create a cancel token using the `CancelToken.source` factory:
++
++```js
++var CancelToken = axios.CancelToken;
++var source = CancelToken.source();
++
++axios.get('/user/12345', {
++  cancelToken: source.token
++});
++
++source.cancel();
++```
++
+diff --git a/README.md b/README.md
+index 0c89144..6c42a02 100644
+--- a/README.md
++++ b/README.md
+@@ -261 +261 @@ These are the available config options for making requests. Only the `url` is re
+-  }
++  },
+diff --git a/README.md b/README.md
+index 09f7b25..0c89144 100644
+--- a/README.md
++++ b/README.md
+@@ -31,6 +30,0 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+-Using cdn:
+-
+-```html
+-<script src="https://npmcdn.com/axios/dist/axios.min.js"></script>
+-```
+-
+@@ -48,0 +43,6 @@ $ bower install axios
++Using cdn:
++
++```html
++<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
++```
++
+diff --git a/README.md b/README.md
+index 79b1c61..09f7b25 100644
+--- a/README.md
++++ b/README.md
+@@ -470 +470 @@ If your environment doesn't support ES6 Promises, you can [polyfill](https://git
+-axios includes a [TypeScript](http://typescriptlang.org) definition.
++axios includes [TypeScript](http://typescriptlang.org) definitions.
+@@ -472,2 +472 @@ axios includes a [TypeScript](http://typescriptlang.org) definition.
+-/// <reference path="axios.d.ts" />
+-import * as axios from 'axios';
++import axios from 'axios';
+diff --git a/README.md b/README.md
+index 3fb4ea4..79b1c61 100644
+--- a/README.md
++++ b/README.md
+@@ -302 +302,7 @@ These are the available config options for making requests. Only the `url` is re
+-  httpsAgent: new https.Agent({ keepAlive: true })
++  httpsAgent: new https.Agent({ keepAlive: true }),
++
++  // 'proxy' defines the hostname and port of the proxy server
++  proxy: {
++    host: '127.0.0.1',
++    port: 9000
++  }
+diff --git a/README.md b/README.md
+index 20d7e19..3fb4ea4 100644
+--- a/README.md
++++ b/README.md
+@@ -273,3 +273,7 @@ These are the available config options for making requests. Only the `url` is re
+-  // `progress` allows handling of progress events for 'POST' and 'PUT uploads'
+-  // as well as 'GET' downloads
+-  progress: function (progressEvent) {
++  // `onUploadProgress` allows handling of progress events for uploads
++  onUploadProgress: function (progressEvent) {
++    // Do whatever you want with the native progress event
++  },
++
++  // `onDownloadProgress` allows handling of progress events for downloads
++  onDownloadProgress: function (progressEvent) {
+diff --git a/README.md b/README.md
+index 253a811..20d7e19 100644
+--- a/README.md
++++ b/README.md
+@@ -325 +325 @@ The response for a request contains the following information.
+-When using `then` or `catch`, you will receive the response as follows:
++When using `then`, you will receive the response as follows:
+@@ -335 +335 @@ axios.get('/user/12345')
+-});
++  });
+@@ -337,0 +338,2 @@ axios.get('/user/12345')
++When using `catch`, or passing a [rejection callback](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) as second parameter of `then`, the response will be available through the `error` object as explained in the [Handling Errors](#handling-errors) section.
++
+diff --git a/README.md b/README.md
+index e66db3c..253a811 100644
+--- a/README.md
++++ b/README.md
+@@ -292 +292,7 @@ These are the available config options for making requests. Only the `url` is re
+-  maxRedirects: 5 // default
++  maxRedirects: 5, // default
++
++  // `httpAgent` and `httpsAgent` define a custom agent to be used when performing http
++  // and https requests, respectively, in node.js. This allows to configure options like
++  // `keepAlive` that are not enabled by default.
++  httpAgent: new http.Agent({ keepAlive: true }),
++  httpsAgent: new https.Agent({ keepAlive: true })
+diff --git a/README.md b/README.md
+index 5d80cfa..e66db3c 100644
+--- a/README.md
++++ b/README.md
+@@ -250,2 +250,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // Call `resolve` or `reject` and supply a valid response (see [response docs](#response-api)).
+-  adapter: function (resolve, reject, config) {
++  // Return a promise and supply a valid response (see [response docs](#response-api)).
++  adapter: function (config) {
+diff --git a/README.md b/README.md
+index 50b2bce..5d80cfa 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+-[![Browser Matrix](https://saucelabs.com/browser-matrix/axios.svg)](https://saucelabs.com/u/axios)
++[![Browser Matrix](https://saucelabs.com/open_sauce/build_matrix/axios.svg)](https://saucelabs.com/u/axios)
+diff --git a/README.md b/README.md
+index b22cc48..50b2bce 100644
+--- a/README.md
++++ b/README.md
+@@ -461,0 +462 @@ axios.get('/user?ID=12345');
++* [Upgrade Guide](https://github.com/mzabriskie/axios/blob/master/UPGRADE_GUIDE.md)
+diff --git a/README.md b/README.md
+index 2d39982..b22cc48 100644
+--- a/README.md
++++ b/README.md
+@@ -59,2 +59,2 @@ axios.get('/user?ID=12345')
+-  .catch(function (response) {
+-    console.log(response);
++  .catch(function (error) {
++    console.log(error);
+@@ -72,2 +72,2 @@ axios.get('/user', {
+-  .catch(function (response) {
+-    console.log(response);
++  .catch(function (error) {
++    console.log(error);
+@@ -87,2 +87,2 @@ axios.post('/user', {
+-  .catch(function (response) {
+-    console.log(response);
++  .catch(function (error) {
++    console.log(error);
+@@ -417,5 +417,2 @@ axios.get('/user/12345')
+-  .catch(function (response) {
+-    if (response instanceof Error) {
+-      // Something happened in setting up the request that triggered an Error
+-      console.log('Error', response.message);
+-    } else {
++  .catch(function (error) {
++    if (error.response) {
+@@ -424,4 +421,6 @@ axios.get('/user/12345')
+-      console.log(response.data);
+-      console.log(response.status);
+-      console.log(response.headers);
+-      console.log(response.config);
++      console.log(error.response.data);
++      console.log(error.response.status);
++      console.log(error.response.headers);
++    } else {
++      // Something happened in setting up the request that triggered an Error
++      console.log('Error', error.message);
+@@ -428,0 +428 @@ axios.get('/user/12345')
++    console.log(error.config);
+diff --git a/README.md b/README.md
+index af6f984..2d39982 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-[![npm downloads](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
++[![npm downloads](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](http://npm-stat.com/charts.html?package=axios)
+diff --git a/README.md b/README.md
+index c5a9029..af6f984 100644
+--- a/README.md
++++ b/README.md
+@@ -288 +288,5 @@ These are the available config options for making requests. Only the `url` is re
+-  }
++  },
++
++  // `maxRedirects` defines the maximum number of redirects to follow in node.js.
++  // If set to 0, no redirects will be followed.
++  maxRedirects: 5 // default
+diff --git a/README.md b/README.md
+index df1d3bf..c5a9029 100644
+--- a/README.md
++++ b/README.md
+@@ -219,0 +220 @@ These are the available config options for making requests. Only the `url` is re
++  // Must be a plain object or a URLSearchParams object
+@@ -232 +233,4 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
++  // When no `transformRequest` is set, must be of one of the following types:
++  // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
++  // - Browser only: FormData, File, Blob
++  // - Node only: Stream
+diff --git a/README.md b/README.md
+index 36868ef..df1d3bf 100644
+--- a/README.md
++++ b/README.md
+@@ -137,0 +138 @@ For convenience aliases have been provided for all supported request methods.
++##### axios.request(config)
+@@ -219 +219,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // Must be a plain object or a URLSearchParams object
+@@ -232,4 +232 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be of one of the following types:
+-  // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
+-  // - Browser only: FormData, File, Blob
+-  // - Node only: Stream
++  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
+diff --git a/README.md b/README.md
+index 3ea7108..36868ef 100644
+--- a/README.md
++++ b/README.md
+@@ -218,0 +219 @@ These are the available config options for making requests. Only the `url` is re
++  // Must be a plain object or a URLSearchParams object
+@@ -231 +232,4 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
++  // When no `transformRequest` is set, must be of one of the following types:
++  // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
++  // - Browser only: FormData, File, Blob
++  // - Node only: Stream
+diff --git a/README.md b/README.md
+index d727500..3ea7108 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+-Using bower:
++Using cdn:
+@@ -33,2 +33,2 @@ Using bower:
+-```bash
+-$ bower install axios
++```html
++<script src="https://npmcdn.com/axios/dist/axios.min.js"></script>
+@@ -42,0 +43,6 @@ $ npm install axios
++Using bower:
++
++```bash
++$ bower install axios
++```
++
+diff --git a/README.md b/README.md
+index 1a72061..d727500 100644
+--- a/README.md
++++ b/README.md
+@@ -264 +264 @@ These are the available config options for making requests. Only the `url` is re
+-  progress: function(progressEvent) {
++  progress: function (progressEvent) {
+@@ -269 +269,9 @@ These are the available config options for making requests. Only the `url` is re
+-  maxContentLength: 2000
++  maxContentLength: 2000,
++
++  // `validateStatus` defines whether to resolve or reject the promise for a given
++  // HTTP response status code. If `validateStatus` returns `true` (or is set to `null`
++  // or `undefined`), the promise will be resolved; otherwise, the promise will be
++  // rejected.
++  validateStatus: function (status) {
++    return status >= 200 && status < 300; // default
++  }
+@@ -408,0 +417,10 @@ axios.get('/user/12345')
++You can define a custom HTTP status code error range using the `validateStatus` config option.
++
++```js
++axios.get('/user/12345', {
++  validateStatus: function (status) {
++    return status < 500; // Reject only if the status code is greater than or equal to 500
++  }
++})
++```
++
+diff --git a/README.md b/README.md
+index c5ff569..1a72061 100644
+--- a/README.md
++++ b/README.md
+@@ -194 +194 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string or an ArrayBuffer
++  // The last function in the array must return a string, an ArrayBuffer, or a Stream
+@@ -225 +225 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
++  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
+@@ -253 +253 @@ These are the available config options for making requests. Only the `url` is re
+-  // options are 'arraybuffer', 'blob', 'document', 'json', 'text'
++  // options are 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
+diff --git a/README.md b/README.md
+index 4b13f00..c5ff569 100644
+--- a/README.md
++++ b/README.md
+@@ -183 +183 @@ These are the available config options for making requests. Only the `url` is re
+-  
++
+@@ -187,2 +187,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // `baseURL` will be prepended to `url` unless `url` is absolute. 
+-  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
++  // `baseURL` will be prepended to `url` unless `url` is absolute.
++  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
+@@ -267 +267 @@ These are the available config options for making requests. Only the `url` is re
+-  
++
+@@ -349 +349 @@ instance.get('/longRequest', {
+-}); 
++});
+@@ -425,0 +426,7 @@ axios.get('/user?ID=12345');
++## Resources
++
++* [Changelog](https://github.com/mzabriskie/axios/blob/master/CHANGELOG.md)
++* [Ecosystem](https://github.com/mzabriskie/axios/blob/master/ECOSYSTEM.md)
++* [Contributing Guide](https://github.com/mzabriskie/axios/blob/master/CONTRIBUTING.md)
++* [Code of Conduct](https://github.com/mzabriskie/axios/blob/master/CODE_OF_CONDUCT.md)
++
+diff --git a/README.md b/README.md
+index 8368f89..4b13f00 100644
+--- a/README.md
++++ b/README.md
+@@ -124 +124 @@ axios({
+-// Sned a GET request (default method)
++// Send a GET request (default method)
+@@ -183 +183 @@ These are the available config options for making requests. Only the `url` is re
+-
++  
+@@ -187,2 +187,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // `baseURL` will be prepended to `url` unless `url` is absolute.
+-  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
++  // `baseURL` will be prepended to `url` unless `url` is absolute. 
++  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
+@@ -194 +194 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string, an ArrayBuffer, or a Stream
++  // The last function in the array must return a string or an ArrayBuffer
+@@ -225 +225 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
++  // When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
+@@ -253 +253 @@ These are the available config options for making requests. Only the `url` is re
+-  // options are 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
++  // options are 'arraybuffer', 'blob', 'document', 'json', 'text'
+@@ -267 +267 @@ These are the available config options for making requests. Only the `url` is re
+-
++  
+@@ -349 +349 @@ instance.get('/longRequest', {
+-});
++}); 
+diff --git a/README.md b/README.md
+index 427c630..8368f89 100644
+--- a/README.md
++++ b/README.md
+@@ -194 +194 @@ These are the available config options for making requests. Only the `url` is re
+-  // The last function in the array must return a string or an ArrayBuffer
++  // The last function in the array must return a string, an ArrayBuffer, or a Stream
+@@ -225 +225 @@ These are the available config options for making requests. Only the `url` is re
+-  // When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
++  // When no `transformRequest` is set, must be a string, an ArrayBuffer, a hash, or a Stream
+@@ -253 +253 @@ These are the available config options for making requests. Only the `url` is re
+-  // options are 'arraybuffer', 'blob', 'document', 'json', 'text'
++  // options are 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
+@@ -426,7 +425,0 @@ axios.get('/user?ID=12345');
+-## Resources
+-
+-* [Changelog](https://github.com/mzabriskie/axios/blob/master/CHANGELOG.md)
+-* [Ecosystem](https://github.com/mzabriskie/axios/blob/master/ECOSYSTEM.md)
+-* [Contributing Guide](https://github.com/mzabriskie/axios/blob/master/CONTRIBUTING.md)
+-* [Code of Conduct](https://github.com/mzabriskie/axios/blob/master/CODE_OF_CONDUCT.md)
+-
+diff --git a/README.md b/README.md
+index be573d6..427c630 100644
+--- a/README.md
++++ b/README.md
+@@ -183 +183 @@ These are the available config options for making requests. Only the `url` is re
+-  
++
+@@ -187,2 +187,2 @@ These are the available config options for making requests. Only the `url` is re
+-  // `baseURL` will be prepended to `url` unless `url` is absolute. 
+-  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
++  // `baseURL` will be prepended to `url` unless `url` is absolute.
++  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
+@@ -267 +267 @@ These are the available config options for making requests. Only the `url` is re
+-  
++
+@@ -349 +349 @@ instance.get('/longRequest', {
+-}); 
++});
+@@ -425,0 +426,7 @@ axios.get('/user?ID=12345');
++## Resources
++
++* [Changelog](https://github.com/mzabriskie/axios/blob/master/CHANGELOG.md)
++* [Ecosystem](https://github.com/mzabriskie/axios/blob/master/ECOSYSTEM.md)
++* [Contributing Guide](https://github.com/mzabriskie/axios/blob/master/CONTRIBUTING.md)
++* [Code of Conduct](https://github.com/mzabriskie/axios/blob/master/CODE_OF_CONDUCT.md)
++
+diff --git a/README.md b/README.md
+index c9f643a..be573d6 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-[![dev dependencies](https://img.shields.io/david/dev/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios#info=devDependencies)
++[![gitter chat](https://img.shields.io/gitter/room/mzabriskie/axios.svg?style=flat-square)](https://gitter.im/mzabriskie/axios)
+diff --git a/README.md b/README.md
+index 0e3426f..c9f643a 100644
+--- a/README.md
++++ b/README.md
+@@ -266 +266,4 @@ These are the available config options for making requests. Only the `url` is re
+-  }
++  },
++  
++  // `maxContentLength` defines the max size of the http response content allowed
++  maxContentLength: 2000
+diff --git a/README.md b/README.md
+index d9ba506..0e3426f 100644
+--- a/README.md
++++ b/README.md
+@@ -212 +212 @@ These are the available config options for making requests. Only the `url` is re
+-  // `param` are the URL parameters to be sent with the request
++  // `params` are the URL parameters to be sent with the request
+diff --git a/README.md b/README.md
+index af5c4b5..d9ba506 100644
+--- a/README.md
++++ b/README.md
+@@ -23,3 +23,3 @@ Promise based HTTP client for the browser and node.js
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
+---- | --- | --- | --- | --- |
+-Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
++![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
++--- | --- | --- | --- | --- | --- |
++Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+diff --git a/README.md b/README.md
+index 042aff2..af5c4b5 100644
+--- a/README.md
++++ b/README.md
+@@ -260 +260,7 @@ These are the available config options for making requests. Only the `url` is re
+-  xsrfHeaderName: 'X-XSRF-TOKEN' // default
++  xsrfHeaderName: 'X-XSRF-TOKEN', // default
++
++  // `progress` allows handling of progress events for 'POST' and 'PUT uploads'
++  // as well as 'GET' downloads
++  progress: function(progressEvent) {
++    // Do whatever you want with the native progress event
++  }
+diff --git a/README.md b/README.md
+index 2fb164a..042aff2 100644
+--- a/README.md
++++ b/README.md
+@@ -175 +175 @@ The available instance methods are listed below. The specified config will be me
+-## Request API
++## Request Config
+@@ -264 +264 @@ These are the available config options for making requests. Only the `url` is re
+-## Response API
++## Response Schema
+diff --git a/README.md b/README.md
+index 1031266..2fb164a 100644
+--- a/README.md
++++ b/README.md
+@@ -109,0 +110 @@ Requests can be made by passing the relevant config to `axios`.
++// Send a POST request
+@@ -111,2 +112,6 @@ axios({
+-  method: 'get',
+-  url: '/user/12345'
++  method: 'post',
++  url: '/user/12345',
++  data: {
++    firstName: 'Fred',
++    lastName: 'Flintstone'
++  }
+@@ -115,0 +121,7 @@ axios({
++##### axios(url[, config])
++
++```js
++// Sned a GET request (default method)
++axios('/user/12345');
++```
++
+diff --git a/README.md b/README.md
+index 21b69ee..1031266 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27,2 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
++[![Browser Matrix](https://saucelabs.com/browser-matrix/axios.svg)](https://saucelabs.com/u/axios)
++
+diff --git a/README.md b/README.md
+index e637e2b..21b69ee 100644
+--- a/README.md
++++ b/README.md
+@@ -399 +399 @@ axios includes a [TypeScript](http://typescriptlang.org) definition.
+-import axios = require('axios');
++import * as axios from 'axios';
+diff --git a/README.md b/README.md
+index 373946b..e637e2b 100644
+--- a/README.md
++++ b/README.md
+@@ -306 +306 @@ var instance = axios.create({
+-// Alter defaults after instace has been created
++// Alter defaults after instance has been created
+diff --git a/README.md b/README.md
+index b092135..373946b 100644
+--- a/README.md
++++ b/README.md
+@@ -285,0 +286,43 @@ axios.get('/user/12345')
++## Config Defaults
++
++You can specify config defaults that will be applied to every request.
++
++### Global axios defaults
++
++```js
++axios.defaults.baseURL = 'https://api.example.com';
++axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
++axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
++```
++
++### Custom instance defaults
++
++```js
++// Set config defaults when creating the instance
++var instance = axios.create({
++  baseURL: 'https://api.example.com'
++});
++
++// Alter defaults after instace has been created
++instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
++```
++
++### Config order of precedence
++
++Config will be merged with an order of precedence. The order is library defaults found in `lib/defaults.js`, then `defaults` property of the instance, and finally `config` argument for the request. The latter will take precedence over the former. Here's an example.
++
++```js
++// Create an instance using the config defaults provided by the library
++// At this point the timeout config value is `0` as is the default for the library
++var instance = axios.create();
++
++// Override timeout default for the library
++// Now all requests will wait 2.5 seconds before timing out
++instance.defaults.timeout = 2500;
++
++// Override timeout for this request as it's known to take a long time
++instance.get('/longRequest', {
++  timeout: 5000
++}); 
++```
++
+diff --git a/README.md b/README.md
+index 0a50e1e..b092135 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170,3 @@ These are the available config options for making requests. Only the `url` is re
++  // `method` is the request method to be used when making the request
++  method: 'get', // default
++
+@@ -175,3 +177,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // `method` is the request method to be used when making the request
+-  method: 'get', // default
+-
+@@ -223,0 +224,6 @@ These are the available config options for making requests. Only the `url` is re
++  // `adapter` allows custom handling of requests which makes testing easier.
++  // Call `resolve` or `reject` and supply a valid response (see [response docs](#response-api)).
++  adapter: function (resolve, reject, config) {
++    /* ... */
++  },
++
+diff --git a/README.md b/README.md
+index ae390cc..0a50e1e 100644
+--- a/README.md
++++ b/README.md
+@@ -142,0 +143 @@ var instance = axios.create({
++  baseURL: 'https://some-domain.com/api/',
+@@ -167,0 +169,5 @@ These are the available config options for making requests. Only the `url` is re
++  
++  // `baseURL` will be prepended to `url` unless `url` is absolute. 
++  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
++  // to methods of that instance.
++  baseURL: 'https://some-domain.com/api/',
+diff --git a/README.md b/README.md
+index 4213134..ae390cc 100644
+--- a/README.md
++++ b/README.md
+@@ -221,2 +220,0 @@ These are the available config options for making requests. Only the `url` is re
+-  // The username can be supplied as `user` or `username`
+-  // The password can be supplied as `pass` or `password`
+@@ -224,2 +222,2 @@ These are the available config options for making requests. Only the `url` is re
+-    user: 'janedoe',
+-    pass: 's00pers3cret'
++    username: 'janedoe',
++    password: 's00pers3cret'
+diff --git a/README.md b/README.md
+index 16285b0..4213134 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54 @@ axios.get('/user?ID=12345')
+-	
++
+@@ -177 +177 @@ These are the available config options for making requests. Only the `url` is re
+-	
++
+@@ -185 +185 @@ These are the available config options for making requests. Only the `url` is re
+-	
++
+@@ -218,0 +219,2 @@ These are the available config options for making requests. Only the `url` is re
++  // This will set an `Authorization` header, overwriting any existing
++  // `Authorization` custom headers you have set using `headers`.
+@@ -249 +251 @@ The response for a request contains the following information.
+-  
++
+diff --git a/README.md b/README.md
+index c168286..16285b0 100644
+--- a/README.md
++++ b/README.md
+@@ -143 +142,0 @@ var instance = axios.create({
+-  baseURL: 'https://some-domain.com/api/',
+@@ -169,5 +167,0 @@ These are the available config options for making requests. Only the `url` is re
+-  
+-  // `baseURL` will be prepended to `url` unless `url` is absolute. 
+-  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
+-  // to methods of that instance.
+-  baseURL: 'https://some-domain.com/api/',
+@@ -223,0 +218,8 @@ These are the available config options for making requests. Only the `url` is re
++  // `auth` indicates that HTTP Basic auth should be used, and supplies credentials.
++  // The username can be supplied as `user` or `username`
++  // The password can be supplied as `pass` or `password`
++  auth: {
++    user: 'janedoe',
++    pass: 's00pers3cret'
++  }
++
+diff --git a/README.md b/README.md
+index 3cba598..c168286 100644
+--- a/README.md
++++ b/README.md
+@@ -142,0 +143 @@ var instance = axios.create({
++  baseURL: 'https://some-domain.com/api/',
+@@ -167,0 +169,5 @@ These are the available config options for making requests. Only the `url` is re
++  
++  // `baseURL` will be prepended to `url` unless `url` is absolute. 
++  // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs 
++  // to methods of that instance.
++  baseURL: 'https://some-domain.com/api/',
+diff --git a/README.md b/README.md
+index 37cdc6d..3cba598 100644
+--- a/README.md
++++ b/README.md
+@@ -134,0 +135,25 @@ Helper functions for dealing with concurrent requests.
++### Creating an instance
++
++You can create a new instance of axios with a custom config.
++
++##### axios.create([config])
++
++```js
++var instance = axios.create({
++  timeout: 1000,
++  headers: {'X-Custom-Header': 'foobar'}
++});
++```
++
++### Instance methods
++
++The available instance methods are listed below. The specified config will be merged with the instance config.
++
++##### axios#request(config)
++##### axios#get(url[, config])
++##### axios#delete(url[, config])
++##### axios#head(url[, config])
++##### axios#post(url[, data[, config]])
++##### axios#put(url[, data[, config]])
++##### axios#patch(url[, data[, config]])
++
+@@ -137 +162 @@ Helper functions for dealing with concurrent requests.
+-This is the available config options for making requests. Only the `url` is required. Requests will default to `GET` if `method` is not specified.
++These are the available config options for making requests. Only the `url` is required. Requests will default to `GET` if `method` is not specified.
+@@ -271,0 +297,7 @@ axios.interceptors.request.eject(myInterceptor);
++You can add interceptors to a custom instance of axios.
++
++```js
++var instance = axios.create();
++instance.interceptors.request.use(function () {/*...*/});
++```
++
+diff --git a/README.md b/README.md
+index 72311f2..37cdc6d 100644
+--- a/README.md
++++ b/README.md
+@@ -170,0 +171,6 @@ This is the available config options for making requests. Only the `url` is requ
++
++  // `paramsSerializer` is an optional function in charge of serializing `params`
++  // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
++  paramsSerializer: function(params) {
++    return Qs.stringify(params, {arrayFormat: 'brackets'})
++  },
+diff --git a/README.md b/README.md
+index fa896da..72311f2 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Promise based HTTP client for the browser and node.js
+-## Semver
++## Browser Support
+@@ -23 +23,3 @@ Promise based HTTP client for the browser and node.js
+-Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
++![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
++--- | --- | --- | --- | --- |
++Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+@@ -39,11 +40,0 @@ $ npm install axios
+-## Browser Support
+-
+-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
+---- | --- | --- | --- | --- |
+-Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+-
+-## Promises
+-
+-axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises).
+-If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
+-
+@@ -294 +285,10 @@ axios.get('/user/12345')
+-## TypeScript Definition
++## Semver
++
++Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
++
++## Promises
++
++axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises).
++If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
++
++## TypeScript
+diff --git a/README.md b/README.md
+index b162257..fa896da 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ $ npm install axios
+-## Compatibility
++## Browser Support
+@@ -41 +41,3 @@ $ npm install axios
+-Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
++![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
++--- | --- | --- | --- | --- |
++Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
+diff --git a/README.md b/README.md
+index 42acfbe..b162257 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +7 @@
+-[![dependency status](https://img.shields.io/david/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios)
+-[![dev dependency status](https://img.shields.io/david/dev/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios#info=devDependencies)
++[![dev dependencies](https://img.shields.io/david/dev/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios#info=devDependencies)
+diff --git a/README.md b/README.md
+index 21a6a7e..42acfbe 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![dev dependency status](https://img.shields.io/david/dev/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios#info=devDependencies)
+diff --git a/README.md b/README.md
+index 5be5d92..21a6a7e 100644
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21,4 @@ Promise based HTTP client for the browser and node.js
++## Semver
++
++Until axios reaches a `1.0` release, breaking changes will be released with a new minor version. For example `0.5.1`, and `0.5.4` will have the same API, but `0.6.0` will have breaking changes.
++
+@@ -38,0 +43,5 @@ Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
++## Promises
++
++axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises).
++If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise).
++
+@@ -52 +61 @@ axios.get('/user?ID=12345')
+-
++	
+@@ -150 +159 @@ This is the available config options for making requests. Only the `url` is requ
+-
++	
+@@ -158 +167 @@ This is the available config options for making requests. Only the `url` is requ
+-
++	
+@@ -176,0 +186,4 @@ This is the available config options for making requests. Only the `url` is requ
++  // `timeout` specifies the number of milliseconds before the request times out.
++  // If the request takes longer than `timeout`, the request will be aborted.
++  timeout: 1000,
++
+@@ -189,7 +202 @@ This is the available config options for making requests. Only the `url` is requ
+-  xsrfHeaderName: 'X-XSRF-TOKEN', // default
+-
+-  // `progress` allows handling of progress events for 'POST' and 'PUT uploads'
+-  // as well as 'GET' downloads
+-  progress: function(progressEvent) {
+-    // Do whatever you want with the native progress event
+-  }
++  xsrfHeaderName: 'X-XSRF-TOKEN' // default
+@@ -210 +217 @@ The response for a request contains the following information.
+-
++  
+@@ -297,2 +303,0 @@ axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/
+-axios uses the [es6-promise](https://github.com/jakearchibald/es6-promise) polyfill by [Jake Archibald](https://github.com/jakearchibald). Until we [can use](http://caniuse.com/promises) ES6 Promises natively in all browsers, this polyfill is a life saver.
+-
+diff --git a/README.md b/README.md
+index cfac61b..5be5d92 100644
+--- a/README.md
++++ b/README.md
+@@ -39,5 +38,0 @@ Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
+-## Promises
+-
+-axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises).
+-If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise)
+-
+@@ -57 +52 @@ axios.get('/user?ID=12345')
+-	
++
+@@ -155 +150 @@ This is the available config options for making requests. Only the `url` is requ
+-	
++
+@@ -163 +158 @@ This is the available config options for making requests. Only the `url` is requ
+-	
++
+@@ -182,4 +176,0 @@ This is the available config options for making requests. Only the `url` is requ
+-  // `timeout` specifies the number of milliseconds before the request times out.
+-  // If the request takes longer than `timeout`, the request will be aborted.
+-  timeout: 1000,
+-
+@@ -198 +189,7 @@ This is the available config options for making requests. Only the `url` is requ
+-  xsrfHeaderName: 'X-XSRF-TOKEN' // default
++  xsrfHeaderName: 'X-XSRF-TOKEN', // default
++
++  // `progress` allows handling of progress events for 'POST' and 'PUT uploads'
++  // as well as 'GET' downloads
++  progress: function(progressEvent) {
++    // Do whatever you want with the native progress event
++  }
+@@ -213 +210 @@ The response for a request contains the following information.
+-  
++
+@@ -299,0 +297,2 @@ axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/
++axios uses the [es6-promise](https://github.com/jakearchibald/es6-promise) polyfill by [Jake Archibald](https://github.com/jakearchibald). Until we [can use](http://caniuse.com/promises) ES6 Promises natively in all browsers, this polyfill is a life saver.
++
+diff --git a/README.md b/README.md
+index 62879c8..cfac61b 100644
+--- a/README.md
++++ b/README.md
+@@ -38,0 +39,5 @@ Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
++## Promises
++
++axios depends on a native ES6 Promise implementation to be [supported](http://caniuse.com/promises).
++If your environment doesn't support ES6 Promises, you can [polyfill](https://github.com/jakearchibald/es6-promise)
++
+@@ -295,2 +299,0 @@ axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/
+-axios uses the [es6-promise](https://github.com/jakearchibald/es6-promise) polyfill by [Jake Archibald](https://github.com/jakearchibald). Until we [can use](http://caniuse.com/promises) ES6 Promises natively in all browsers, this polyfill is a life saver.
+-
+diff --git a/README.md b/README.md
+index 5cba5ed..62879c8 100644
+--- a/README.md
++++ b/README.md
+@@ -176,0 +177,4 @@ This is the available config options for making requests. Only the `url` is requ
++  // `timeout` specifies the number of milliseconds before the request times out.
++  // If the request takes longer than `timeout`, the request will be aborted.
++  timeout: 1000,
++
+diff --git a/README.md b/README.md
+index faed339..5cba5ed 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-#axios
++# axios
+@@ -4 +3,0 @@
+-[![npm downloadsi](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
+@@ -5,0 +5,2 @@
++[![code coverage](https://img.shields.io/coveralls/mzabriskie/axios.svg?style=flat-square)](https://coveralls.io/r/mzabriskie/axios)
++[![npm downloads](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
+diff --git a/README.md b/README.md
+index fb569d5..faed339 100644
+--- a/README.md
++++ b/README.md
+@@ -205 +205 @@ The response for a request contains the following information.
+-  status: 'OK',
++  statusText: 'OK',
+diff --git a/README.md b/README.md
+index 8cca8c1..fb569d5 100644
+--- a/README.md
++++ b/README.md
+@@ -202,0 +203,3 @@ The response for a request contains the following information.
++  
++  // `statusText` is the HTTP status message from the server response
++  status: 'OK',
+@@ -218,0 +222 @@ axios.get('/user/12345')
++    console.log(response.statusText);
+diff --git a/README.md b/README.md
+index 6407c23..8cca8c1 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,6 @@
+-# axios [![Build Status](https://travis-ci.org/mzabriskie/axios.svg?branch=master)](https://travis-ci.org/mzabriskie/axios)
++#axios
++
++[![npm version](https://img.shields.io/npm/v/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
++[![npm downloadsi](https://img.shields.io/npm/dm/axios.svg?style=flat-square)](https://www.npmjs.org/package/axios)
++[![build status](https://img.shields.io/travis/mzabriskie/axios.svg?style=flat-square)](https://travis-ci.org/mzabriskie/axios)
++[![dependency status](https://img.shields.io/david/mzabriskie/axios.svg?style=flat-square)](https://david-dm.org/mzabriskie/axios)
+@@ -9,0 +15 @@ Promise based HTTP client for the browser and node.js
++- Intercept request and response
+@@ -217,0 +224,31 @@ axios.get('/user/12345')
++## Interceptors
++
++You can intercept requests or responses before they are handled by `then` or `catch`.
++
++```js
++// Add a request interceptor
++axios.interceptors.request.use(function (config) {
++    // Do something before request is sent
++    return config;
++  }, function (error) {
++    // Do something with request error
++    return Promise.reject(error);
++  });
++
++// Add a response interceptor
++axios.interceptors.response.use(function (response) {
++    // Do something with response data
++    return response;
++  }, function (error) {
++    // Do something with response error
++    return Promise.reject(error);
++  });
++```
++
++If you may need to remove an interceptor later you can.
++
++```js
++var myInterceptor = axios.interceptors.request.use(function () {/*...*/});
++axios.interceptors.request.eject(myInterceptor);
++```
++
+@@ -238 +275 @@ axios.get('/user/12345')
+-Axios includes a [TypeScript](http://typescriptlang.org) definition.
++axios includes a [TypeScript](http://typescriptlang.org) definition.
+diff --git a/README.md b/README.md
+index c74435d..6407c23 100644
+--- a/README.md
++++ b/README.md
+@@ -236,0 +237,8 @@ axios.get('/user/12345')
++## TypeScript Definition
++Axios includes a [TypeScript](http://typescriptlang.org) definition.
++```typescript
++/// <reference path="axios.d.ts" />
++import axios = require('axios');
++axios.get('/user?ID=12345');
++```
++
+@@ -245 +253 @@ axios uses the [es6-promise](https://github.com/jakearchibald/es6-promise) polyf
+-MIT
+\ No newline at end of file
++MIT
+diff --git a/README.md b/README.md
+index 9843757..c74435d 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +12,0 @@ Promise based HTTP client for the browser and node.js
+-- Specify HTTP request headers
+@@ -40,6 +39,6 @@ axios.get('/user?ID=12345')
+-	.then(function (response) {
+-		console.log(response);
+-	})
+-	.catch(function (response) {
+-		console.log(response);
+-	});
++  .then(function (response) {
++    console.log(response);
++  })
++  .catch(function (response) {
++    console.log(response);
++  });
+@@ -49,10 +48,10 @@ axios.get('/user', {
+-		params: {
+-			ID: 12345
+-		}
+-	})
+-	.then(function (response) {
+-		console.log(response);
+-	})
+-	.catch(function (response) {
+-		console.log(response);
+-	});
++    params: {
++      ID: 12345
++    }
++  })
++  .then(function (response) {
++    console.log(response);
++  })
++  .catch(function (response) {
++    console.log(response);
++  });
+@@ -65,9 +64,9 @@ axios.post('/user', {
+-		firstName: 'Fred',
+-		lastName: 'Flintstone'
+-	})
+-	.then(function (response) {
+-		console.log(response);
+-	})
+-	.catch(function (response) {
+-		console.log(response);
+-	});
++    firstName: 'Fred',
++    lastName: 'Flintstone'
++  })
++  .then(function (response) {
++    console.log(response);
++  })
++  .catch(function (response) {
++    console.log(response);
++  });
+@@ -80 +79 @@ function getUserAccount() {
+-	return axios.get('/user/12345');
++  return axios.get('/user/12345');
+@@ -84 +83 @@ function getUserPermissions() {
+-	return axios.get('/user/permissions/12345');
++  return axios.get('/user/12345/permissions');
+@@ -88,3 +87,3 @@ axios.all([getUserAccount(), getUserPermissions()])
+-	.then(axios.spread(function (acct, perms) {
+-		// Both requests are now complete
+-	}));
++  .then(axios.spread(function (acct, perms) {
++    // Both requests are now complete
++  }));
+@@ -101,2 +100,2 @@ axios({
+-	method: 'get',
+-	url: '/user/12345'
++  method: 'get',
++  url: '/user/12345'
+@@ -133,45 +132,11 @@ This is the available config options for making requests. Only the `url` is requ
+-	// `url` is the server URL that will be used for the request
+-	url: '/user',
+-	
+-	// `method` is the request method to be used when making the request
+-	method: 'get', // default
+-	
+-	// `transformRequest` allows changes to the request data before it is sent to the server
+-	// This is only applicable for request methods 'PUT', 'POST', and 'PATCH'
+-	// The last function in the array must return a string or an ArrayBuffer
+-	transformRequest: [function (data) {
+-		// Do whatever you want to transform the data
+-		
+-		return data;
+-	}],
+-	
+-	// `transformResponse` allows changes to the response data to be made before
+-	// it is passed to then/catch
+-	transformResponse: [function (data) {
+-		// Do whatever you want to transform the data
+-		
+-		return data;
+-	}],
+-	
+-	// `headers` are custom headers to be sent
+-	headers: {'X-Requested-With': 'XMLHttpRequest'},
+-	
+-	// `param` are the URL parameters to be sent with the request
+-	params: {
+-		ID: 12345
+-	},
+-	
+-	// `data` is the data to be sent as the request body
+-	// Only applicable for request methods 'PUT', 'POST', and 'PATCH'
+-	// When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
+-	data: {
+-		firstName: 'Fred'
+-	},
+-	
+-	// `withCredentials` indicates whether or not cross-site Access-Control requests
+-	// should be made using credentials
+-	withCredentials: false, // default
+-	
+-	// `responseType` indicates the type of data that the server will respond with
+-	// options are 'arraybuffer', 'blob', 'document', 'json', 'text'
+-	responseType: 'json', // default
++  // `url` is the server URL that will be used for the request
++  url: '/user',
++
++  // `method` is the request method to be used when making the request
++  method: 'get', // default
++
++  // `transformRequest` allows changes to the request data before it is sent to the server
++  // This is only applicable for request methods 'PUT', 'POST', and 'PATCH'
++  // The last function in the array must return a string or an ArrayBuffer
++  transformRequest: [function (data) {
++    // Do whatever you want to transform the data
+@@ -179,2 +144,7 @@ This is the available config options for making requests. Only the `url` is requ
+-	// `xsrfCookieName` is the name of the cookie to use as a value for xsrf token
+-	xsrfCookieName: 'XSRF-TOKEN', // default
++    return data;
++  }],
++
++  // `transformResponse` allows changes to the response data to be made before
++  // it is passed to then/catch
++  transformResponse: [function (data) {
++    // Do whatever you want to transform the data
+@@ -182,2 +152,31 @@ This is the available config options for making requests. Only the `url` is requ
+-	// `xsrfHeaderName` is the name of the http header that carries the xsrf token value
+-	xsrfHeaderName: 'X-XSRF-TOKEN' // default
++    return data;
++  }],
++
++  // `headers` are custom headers to be sent
++  headers: {'X-Requested-With': 'XMLHttpRequest'},
++
++  // `param` are the URL parameters to be sent with the request
++  params: {
++    ID: 12345
++  },
++
++  // `data` is the data to be sent as the request body
++  // Only applicable for request methods 'PUT', 'POST', and 'PATCH'
++  // When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
++  data: {
++    firstName: 'Fred'
++  },
++
++  // `withCredentials` indicates whether or not cross-site Access-Control requests
++  // should be made using credentials
++  withCredentials: false, // default
++
++  // `responseType` indicates the type of data that the server will respond with
++  // options are 'arraybuffer', 'blob', 'document', 'json', 'text'
++  responseType: 'json', // default
++
++  // `xsrfCookieName` is the name of the cookie to use as a value for xsrf token
++  xsrfCookieName: 'XSRF-TOKEN', // default
++
++  // `xsrfHeaderName` is the name of the http header that carries the xsrf token value
++  xsrfHeaderName: 'X-XSRF-TOKEN' // default
+@@ -193,11 +192,11 @@ The response for a request contains the following information.
+-	// `data` is the response that was provided by the server
+-	data: {},
+-	
+-	// `status` is the HTTP status code from the server response
+-	status: 200,
+-	
+-	// `headers` the headers that the server responded with
+-	headers: {},
+-	
+-	// `config` is the config that was provided to `axios` for the request
+-	config: {}
++  // `data` is the response that was provided by the server
++  data: {},
++
++  // `status` is the HTTP status code from the server response
++  status: 200,
++
++  // `headers` the headers that the server responded with
++  headers: {},
++
++  // `config` is the config that was provided to `axios` for the request
++  config: {}
+@@ -211,6 +210,25 @@ axios.get('/user/12345')
+-	.then(function(response) {
+-		console.log(response.data);
+-		console.log(response.status);
+-		console.log(response.headers);
+-		console.log(response.config);
+-	});
++  .then(function(response) {
++    console.log(response.data);
++    console.log(response.status);
++    console.log(response.headers);
++    console.log(response.config);
++});
++```
++
++## Handling Errors
++
++```js
++axios.get('/user/12345')
++  .catch(function (response) {
++    if (response instanceof Error) {
++      // Something happened in setting up the request that triggered an Error
++      console.log('Error', response.message);
++    } else {
++      // The request was made, but the server responded with a status code
++      // that falls out of the range of 2xx
++      console.log(response.data);
++      console.log(response.status);
++      console.log(response.headers);
++      console.log(response.config);
++    }
++  });
+diff --git a/README.md b/README.md
+index cef4529..9843757 100644
+--- a/README.md
++++ b/README.md
+@@ -76,12 +75,0 @@ axios.post('/user', {
+-Aliases are provided for success and error
+-
+-```js
+-axios.get('/user/12345')
+-	.success(function () {
+-		console.log('user found');
+-	})
+-	.error(function () {
+-		console.log('error finding user');
+-	});
+-```
+-
+@@ -161 +149 @@ This is the available config options for making requests. Only the `url` is requ
+-	// it is passed to the success/error handlers
++	// it is passed to then/catch
+@@ -219 +207 @@ The response for a request contains the following information.
+-When using `then` or `catch`, you will receive a single response object.
++When using `then` or `catch`, you will receive the response as follows:
+@@ -231,13 +218,0 @@ axios.get('/user/12345')
+-For either `success` or `error`, the response is broken up into individual arguments.
+-
+-```js
+-axios.get('/user/12345')
+-	.success(function (data, status, headers, config) {
+-		console.log(data);
+-		console.log(status);
+-		console.log(headers);
+-		console.log(config);
+-	});
+-}
+-```
+-
+diff --git a/README.md b/README.md
+index 6e39714..cef4529 100644
+--- a/README.md
++++ b/README.md
+@@ -152,0 +153 @@ This is the available config options for making requests. Only the `url` is requ
++	// The last function in the array must return a string or an ArrayBuffer
+@@ -176,0 +178 @@ This is the available config options for making requests. Only the `url` is requ
++	// When no `transformRequest` is set, must be a string, an ArrayBuffer or a hash
+diff --git a/README.md b/README.md
+index 08e152e..6e39714 100644
+--- a/README.md
++++ b/README.md
+@@ -105 +105 @@ axios.all([getUserAccount(), getUserPermissions()])
+-## Request API
++## axios API
+@@ -139 +139 @@ Helper functions for dealing with concurrent requests.
+-### Config
++## Request API
+diff --git a/README.md b/README.md
+index 454fac2..08e152e 100644
+--- a/README.md
++++ b/README.md
+@@ -199 +199,19 @@ This is the available config options for making requests. Only the `url` is requ
+-For either `success` or `error`, the following response will be provided.
++The response for a request contains the following information.
++
++```js
++{
++	// `data` is the response that was provided by the server
++	data: {},
++	
++	// `status` is the HTTP status code from the server response
++	status: 200,
++	
++	// `headers` the headers that the server responded with
++	headers: {},
++	
++	// `config` is the config that was provided to `axios` for the request
++	config: {}
++}
++```
++
++When using `then` or `catch`, you will receive a single response object.
+@@ -203,14 +221,17 @@ axios.get('/user/12345')
+-	.success(function (
+-		// `data` is the response that was provided by the server
+-		data,
+-		
+-		// `status` is the HTTP status code from the server response
+-		status,
+-		
+-		// `headers` the headers that the server responded with
+-		headers,
+-		
+-		// `config` is the config that was provided to `axios` for the request
+-		config
+-		) {
+-		// Do something with result
++	.then(function(response) {
++		console.log(response.data);
++		console.log(response.status);
++		console.log(response.headers);
++		console.log(response.config);
++	});
++```
++
++For either `success` or `error`, the response is broken up into individual arguments.
++
++```js
++axios.get('/user/12345')
++	.success(function (data, status, headers, config) {
++		console.log(data);
++		console.log(status);
++		console.log(headers);
++		console.log(config);
+diff --git a/README.md b/README.md
+index aa7f29f..454fac2 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ $ npm install axios
+-## Compatability
++## Compatibility
+diff --git a/README.md b/README.md
+index 7e372cc..aa7f29f 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +7,2 @@ Promise based HTTP client for the browser and node.js
+-- Making [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
+-- Making [http](http://nodejs.org/api/http.html) requests from node.js
++- Make [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
++- Make [http](http://nodejs.org/api/http.html) requests from node.js
+@@ -10,3 +10 @@ Promise based HTTP client for the browser and node.js
+-- Transforming request and response data
+-- Client side support for protecting against [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
+-- Specifying HTTP request headers
++- Transform request and response data
+@@ -13,0 +12,2 @@ Promise based HTTP client for the browser and node.js
++- Client side support for protecting against [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
++- Specify HTTP request headers
+diff --git a/README.md b/README.md
+index 3f0ce8a..7e372cc 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-Promise based XHR library
++Promise based HTTP client for the browser and node.js
+@@ -7 +7,3 @@ Promise based XHR library
+-- Making [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) supporting the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
++- Making [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) from the browser
++- Making [http](http://nodejs.org/api/http.html) requests from node.js
++- Supports the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
+diff --git a/README.md b/README.md
+index d447786..3f0ce8a 100644
+--- a/README.md
++++ b/README.md
+@@ -131,0 +132,2 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
++Helper functions for dealing with concurrent requests.
++
+diff --git a/README.md b/README.md
+index 8a4ee19..d447786 100644
+--- a/README.md
++++ b/README.md
+@@ -88 +88 @@ Performing multiple concurrent requests
+-```
++```js
+diff --git a/README.md b/README.md
+index 2205a19..8a4ee19 100644
+--- a/README.md
++++ b/README.md
+@@ -85,0 +86,17 @@ axios.get('/user/12345')
++Performing multiple concurrent requests
++
++```
++function getUserAccount() {
++	return axios.get('/user/12345');
++}
++
++function getUserPermissions() {
++	return axios.get('/user/permissions/12345');
++}
++
++axios.all([getUserAccount(), getUserPermissions()])
++	.then(axios.spread(function (acct, perms) {
++		// Both requests are now complete
++	}));
++```
++
+@@ -112,0 +130,5 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
++### Concurrency
++
++##### axios.all(iterable)
++##### axios.spread(callback)
++
+diff --git a/README.md b/README.md
+index 644e93a..2205a19 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,3 @@ axios.get('/user?ID=12345')
++	.catch(function (response) {
++		console.log(response);
++	});
+@@ -50,0 +54,3 @@ axios.get('/user', {
++	.catch(function (response) {
++		console.log(response);
++	});
+@@ -62,0 +69,3 @@ axios.post('/user', {
++	.catch(function (response) {
++		console.log(response);
++	});
+diff --git a/README.md b/README.md
+index 733663a..644e93a 100644
+--- a/README.md
++++ b/README.md
+@@ -186 +186 @@ axios.get('/user/12345')
+-## Thanks
++## Credits
+diff --git a/README.md b/README.md
+index 5c286b1..733663a 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +106 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-This is the available config options for making requests. Only the `url` is required. Requests will default to `GET` if not specified.
++This is the available config options for making requests. Only the `url` is required. Requests will default to `GET` if `method` is not specified.
+diff --git a/README.md b/README.md
+index b03af40..5c286b1 100644
+--- a/README.md
++++ b/README.md
+@@ -105,0 +106,2 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
++This is the available config options for making requests. Only the `url` is required. Requests will default to `GET` if not specified.
++
+@@ -112 +114 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	method: 'get',
++	method: 'get', // default
+diff --git a/README.md b/README.md
+index 1e8bc33..b03af40 100644
+--- a/README.md
++++ b/README.md
+@@ -148,2 +148,2 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	// `responseType` indicates the type of data that the server will responsd with
+-	// config are 'arraybuffer', 'blob', 'document', 'json', 'text'
++	// `responseType` indicates the type of data that the server will respond with
++	// options are 'arraybuffer', 'blob', 'document', 'json', 'text'
+@@ -176 +176 @@ axios.get('/user/12345')
+-		// `config` is the config that were provided to `axios` for the request
++		// `config` is the config that was provided to `axios` for the request
+@@ -186 +186,3 @@ axios.get('/user/12345')
+-axios is heavily inspired by Angular's $http service.
++axios is heavily inspired by the [$http service](https://docs.angularjs.org/api/ng/service/$http) provided in [Angular](https://angularjs.org/). Ultimately axios is an effort to provide a standalone `$http`-like service for use outside of Angular.
++
++axios uses the [es6-promise](https://github.com/jakearchibald/es6-promise) polyfill by [Jake Archibald](https://github.com/jakearchibald). Until we [can use](http://caniuse.com/promises) ES6 Promises natively in all browsers, this polyfill is a life saver.
+diff --git a/README.md b/README.md
+index 96307fd..1e8bc33 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,18 @@ Promise based XHR library
++## Installing
++
++Using bower:
++
++```bash
++$ bower install axios
++```
++
++Using npm:
++
++```bash
++$ npm install axios
++```
++
++## Compatability
++
++Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
++
+@@ -146 +164 @@ For either `success` or `error`, the following response will be provided.
+-```
++```js
+@@ -166,18 +183,0 @@ axios.get('/user/12345')
+-## Installing
+-
+-Using bower:
+-
+-```bash
+-$ bower install axios
+-```
+-
+-Using npm:
+-
+-```bash
+-$ npm install axios
+-```
+-
+-## Compatability
+-
+-Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
+-
+diff --git a/README.md b/README.md
+index b48dedc..96307fd 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,9 @@
+-Lightweight Promise based XHR library
++Promise based XHR library
++
++## Features
++
++- Making [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) supporting the [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) API
++- Transforming request and response data
++- Client side support for protecting against [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
++- Specifying HTTP request headers
++- Automatic transforms for JSON data
+@@ -12,3 +20,3 @@ axios.get('/user?ID=12345')
+-.then(function (response) {
+-	console.log(response);
+-})
++	.then(function (response) {
++		console.log(response);
++	})
+@@ -18,7 +26,7 @@ axios.get('/user', {
+-	params: {
+-		ID: 12345
+-	}
+-})
+-.then(function (response) {
+-	console.log(response);
+-})
++		params: {
++			ID: 12345
++		}
++	})
++	.then(function (response) {
++		console.log(response);
++	})
+@@ -31,6 +39,6 @@ axios.post('/user', {
+-	firstName: 'Fred',
+-	lastName: 'Flintstone'
+-})
+-.then(function (response) {
+-	console.log(response);
+-})
++		firstName: 'Fred',
++		lastName: 'Flintstone'
++	})
++	.then(function (response) {
++		console.log(response);
++	})
+@@ -43,6 +51,6 @@ axios.get('/user/12345')
+-.success(function () {
+-	console.log('user found');
+-})
+-.error(function () {
+-	console.log('error finding user');
+-});
++	.success(function () {
++		console.log('user found');
++	})
++	.error(function () {
++		console.log('error finding user');
++	});
+@@ -59,2 +67,2 @@ axios({
+-	url: '/user/12345',
+-	method: 'get'
++	method: 'get',
++	url: '/user/12345'
+@@ -138,13 +146,17 @@ For either `success` or `error`, the following response will be provided.
+-```js
+-{
+-	// `data` is the response that was provided by the server
+-	data: {/*...*/}	,
+-	
+-	// `status` is the HTTP status code from the server response
+-	status: 200,
+-	
+-	// `headers` the headers that the server responded with
+-	headers: {/*...*/},
+-	
+-	// `config` is the config that were provided to `axios` for the request
+-	config: {/*...*/}
++```
++axios.get('/user/12345')
++	.success(function (
++		// `data` is the response that was provided by the server
++		data,
++		
++		// `status` is the HTTP status code from the server response
++		status,
++		
++		// `headers` the headers that the server responded with
++		headers,
++		
++		// `config` is the config that were provided to `axios` for the request
++		config
++		) {
++		// Do something with result
++	});
+@@ -172 +184 @@ Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
+-## Attribution
++## Thanks
+diff --git a/README.md b/README.md
+index f0680e0..b48dedc 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ axios.get('/user?ID=12345')
+-.success(function (response) {
++.then(function (response) {
+@@ -15,3 +14,0 @@ axios.get('/user?ID=12345')
+-.error(function (response) {
+-	console.log(response);
+-});
+@@ -25 +22 @@ axios.get('/user', {
+-.success(function (response) {
++.then(function (response) {
+@@ -28,3 +24,0 @@ axios.get('/user', {
+-.error(function (response) {
+-	console.log(response);
+-});
+@@ -40 +34 @@ axios.post('/user', {
+-.success(function (response) {
++.then(function (response) {
+@@ -43,2 +37,11 @@ axios.post('/user', {
+-.error(function (response) {
+-	console.log(response);
++```
++
++Aliases are provided for success and error
++
++```js
++axios.get('/user/12345')
++.success(function () {
++	console.log('user found');
++})
++.error(function () {
++	console.log('error finding user');
+@@ -117 +120 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	withCredentials: true,
++	withCredentials: false, // default
+@@ -121 +124,7 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	responseType: 'json'
++	responseType: 'json', // default
++	
++	// `xsrfCookieName` is the name of the cookie to use as a value for xsrf token
++	xsrfCookieName: 'XSRF-TOKEN', // default
++	
++	// `xsrfHeaderName` is the name of the http header that carries the xsrf token value
++	xsrfHeaderName: 'X-XSRF-TOKEN' // default
+@@ -140 +149 @@ For either `success` or `error`, the following response will be provided.
+-	// `config` are the config that were provided to `axios` for the request
++	// `config` is the config that were provided to `axios` for the request
+diff --git a/README.md b/README.md
+index 4e90620..f0680e0 100644
+--- a/README.md
++++ b/README.md
+@@ -50 +50 @@ axios.post('/user', {
+-Requests can be made by passing the relevant options to `axios`.
++Requests can be made by passing the relevant config to `axios`.
+@@ -52 +52 @@ Requests can be made by passing the relevant options to `axios`.
+-##### axios(options)
++##### axios(config)
+@@ -65,6 +65,6 @@ For convenience aliases have been provided for all supported request methods.
+-##### axios.get(url[, options])
+-##### axios.delete(url[, options])
+-##### axios.head(url[, options])
+-##### axios.post(url[, data[, options]])
+-##### axios.put(url[, data[, options]])
+-##### axios.patch(url[, data[, options]])
++##### axios.get(url[, config])
++##### axios.delete(url[, config])
++##### axios.head(url[, config])
++##### axios.post(url[, data[, config]])
++##### axios.put(url[, data[, config]])
++##### axios.patch(url[, data[, config]])
+@@ -73 +73 @@ For convenience aliases have been provided for all supported request methods.
+-When using the alias methods `url`, `method`, and `data` properties don't need to be specified in options.
++When using the alias methods `url`, `method`, and `data` properties don't need to be specified in config.
+@@ -75 +75 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-### Options
++### Config
+@@ -120 +120 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	// options are 'arraybuffer', 'blob', 'document', 'json', 'text'
++	// config are 'arraybuffer', 'blob', 'document', 'json', 'text'
+@@ -140 +140 @@ For either `success` or `error`, the following response will be provided.
+-	// `config` are the options that were provided to `axios` for the request
++	// `config` are the config that were provided to `axios` for the request
+diff --git a/README.md b/README.md
+index 3888d15..4e90620 100644
+--- a/README.md
++++ b/README.md
+@@ -12,6 +12,6 @@ axios.get('/user?ID=12345')
+-	.success(function (response) {
+-		console.log(response);
+-	})
+-	.error(function (response) {
+-		console.log(response);
+-	});
++.success(function (response) {
++	console.log(response);
++})
++.error(function (response) {
++	console.log(response);
++});
+@@ -158,0 +159,4 @@ $ npm install axios
++## Compatability
++
++Tested to work with >=IE8, Chrome, Firefox, Safari, and Opera.
++
+diff --git a/README.md b/README.md
+index b8affdc..3888d15 100644
+--- a/README.md
++++ b/README.md
+@@ -13,0 +14,3 @@ axios.get('/user?ID=12345')
++	})
++	.error(function (response) {
++		console.log(response);
+@@ -23,0 +27,3 @@ axios.get('/user', {
++})
++.error(function (response) {
++	console.log(response);
+@@ -35,0 +42,3 @@ axios.post('/user', {
++})
++.error(function (response) {
++	console.log(response);
+diff --git a/README.md b/README.md
+index 7536fb8..b8affdc 100644
+--- a/README.md
++++ b/README.md
+@@ -105,0 +106,2 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
++	// `withCredentials` indicates whether or not cross-site Access-Control requests
++	// should be made using credentials
+@@ -108 +110,3 @@ When using the alias methods `url`, `method`, and `data` properties don't need t
+-	responseType: 'json' // default
++	// `responseType` indicates the type of data that the server will responsd with
++	// options are 'arraybuffer', 'blob', 'document', 'json', 'text'
++	responseType: 'json'
+diff --git a/README.md b/README.md
+index 7a30706..7536fb8 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4,149 @@ Lightweight Promise based XHR library
++
++## Example
++
++Performing a `GET` request
++
++```js
++// Make a request for a user with a given ID
++axios.get('/user?ID=12345')
++	.success(function (response) {
++		console.log(response);
++	});
++	
++// Optionally the request above could also be done as
++axios.get('/user', {
++	params: {
++		ID: 12345
++	}
++})
++.success(function (response) {
++	console.log(response);
++});
++```
++
++Performing a `POST` request
++
++```js
++axios.post('/user', {
++	firstName: 'Fred',
++	lastName: 'Flintstone'
++})
++.success(function (response) {
++	console.log(response);
++});
++```
++
++## Request API
++
++Requests can be made by passing the relevant options to `axios`.
++
++##### axios(options)
++
++```js
++axios({
++	url: '/user/12345',
++	method: 'get'
++});
++```
++
++### Request method aliases
++
++For convenience aliases have been provided for all supported request methods.
++
++##### axios.get(url[, options])
++##### axios.delete(url[, options])
++##### axios.head(url[, options])
++##### axios.post(url[, data[, options]])
++##### axios.put(url[, data[, options]])
++##### axios.patch(url[, data[, options]])
++
++###### NOTE
++When using the alias methods `url`, `method`, and `data` properties don't need to be specified in options.
++
++### Options
++
++```js
++{
++	// `url` is the server URL that will be used for the request
++	url: '/user',
++	
++	// `method` is the request method to be used when making the request
++	method: 'get',
++	
++	// `transformRequest` allows changes to the request data before it is sent to the server
++	// This is only applicable for request methods 'PUT', 'POST', and 'PATCH'
++	transformRequest: [function (data) {
++		// Do whatever you want to transform the data
++		
++		return data;
++	}],
++	
++	// `transformResponse` allows changes to the response data to be made before
++	// it is passed to the success/error handlers
++	transformResponse: [function (data) {
++		// Do whatever you want to transform the data
++		
++		return data;
++	}],
++	
++	// `headers` are custom headers to be sent
++	headers: {'X-Requested-With': 'XMLHttpRequest'},
++	
++	// `param` are the URL parameters to be sent with the request
++	params: {
++		ID: 12345
++	},
++	
++	// `data` is the data to be sent as the request body
++	// Only applicable for request methods 'PUT', 'POST', and 'PATCH'
++	data: {
++		firstName: 'Fred'
++	},
++	
++	withCredentials: true,
++	
++	responseType: 'json' // default
++}
++```
++
++## Response API
++
++For either `success` or `error`, the following response will be provided.
++
++```js
++{
++	// `data` is the response that was provided by the server
++	data: {/*...*/}	,
++	
++	// `status` is the HTTP status code from the server response
++	status: 200,
++	
++	// `headers` the headers that the server responded with
++	headers: {/*...*/},
++	
++	// `config` are the options that were provided to `axios` for the request
++	config: {/*...*/}
++}
++```
++
++## Installing
++
++Using bower:
++
++```bash
++$ bower install axios
++```
++
++Using npm:
++
++```bash
++$ npm install axios
++```
++
++## Attribution
++
++axios is heavily inspired by Angular's $http service.
++
++## License
++
++MIT
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 6b5abac..7a30706 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# axios
++# axios [![Build Status](https://travis-ci.org/mzabriskie/axios.svg?branch=master)](https://travis-ci.org/mzabriskie/axios)

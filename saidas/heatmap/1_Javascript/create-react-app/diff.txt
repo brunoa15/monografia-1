@@ -1,0 +1,2537 @@
+diff --git a/README.md b/README.md
+index f499fdd4..630ed3bd 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9,2 @@ Create React App works on macOS, Windows, and Linux.<br>
+-If something doesn’t work, please [file an issue](https://github.com/facebook/create-react-app/issues/new).
++If something doesn’t work, please [file an issue](https://github.com/facebook/create-react-app/issues/new).<br>
++If you have questions or need help, please ask in our [Spectrum](https://spectrum.chat/create-react-app) community.
+diff --git a/README.md b/README.md
+index 347d4359..f499fdd4 100644
+--- a/README.md
++++ b/README.md
+@@ -37 +37 @@ Just create a project, and you’re good to go.
+-**You’ll need to have Node 8.10.0 or later on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
++**You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 75aed91b..347d4359 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
++# Create React App [![Build Status](https://dev.azure.com/facebook/create-react-app/_apis/build/status/facebook.create-react-app?branchName=master)](https://dev.azure.com/facebook/create-react-app/_build/latest?definitionId=1&branchName=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
+diff --git a/README.md b/README.md
+index 881ba7f4..75aed91b 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ Create React App is a great fit for:
+-Here are few common cases where you might want to try something else:
++Here are a few common cases where you might want to try something else:
+diff --git a/README.md b/README.md
+index 374f2ea5..881ba7f4 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Create React apps with no build configuration.
+-- [User Guide](https://facebook.github.io/create-react-app/docs/folder-structure) – How to develop apps bootstrapped with Create React App.
++- [User Guide](https://facebook.github.io/create-react-app/) – How to develop apps bootstrapped with Create React App.
+diff --git a/README.md b/README.md
+index f3d80c61..374f2ea5 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls) 
++# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls)
+@@ -114 +114 @@ By default, runs tests related to files changed since the last commit.
+-[Read more about testing.](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
++[Read more about testing.](https://facebook.github.io/create-react-app/docs/running-tests)
+@@ -156 +156 @@ Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an ov
+-The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) and customize it, but then you will need to maintain this configuration.
++The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject) and customize it, but then you will need to maintain this configuration.
+diff --git a/README.md b/README.md
+index 7583c13c..f3d80c61 100644
+--- a/README.md
++++ b/README.md
+@@ -151 +151 @@ Your environment will have everything you need to build a modern single-page Rea
+-- An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria. (_Note: Using the service worker is opt-in as of `react-scripts@2.0.0` and higher_)
++- An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app) criteria. (_Note: Using the service worker is opt-in as of `react-scripts@2.0.0` and higher_)
+diff --git a/README.md b/README.md
+index 10146556..7583c13c 100644
+--- a/README.md
++++ b/README.md
+@@ -137 +137 @@ Please refer to the [User Guide](https://facebook.github.io/create-react-app/doc
+-- **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
++- **No Configuration Required:** You don't need to configure anything. A reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+@@ -166 +166 @@ Create React App is a great fit for:
+-Here’s a few common cases where you might want to try something else:
++Here are few common cases where you might want to try something else:
+diff --git a/README.md b/README.md
+index 7132f498..10146556 100644
+--- a/README.md
++++ b/README.md
+@@ -191 +191 @@ Looking for something similar, but for React Native?<br>
+-Check out [Create React Native App](https://github.com/react-community/create-react-native-app/).
++Check out [Expo CLI](https://github.com/expo/expo-cli).
+diff --git a/README.md b/README.md
+index 8972d8f1..7132f498 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app)
++# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/facebook/create-react-app/pulls) 
+diff --git a/README.md b/README.md
+index 8e33b113..8972d8f1 100644
+--- a/README.md
++++ b/README.md
+@@ -170 +170 @@ Here’s a few common cases where you might want to try something else:
+-- If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker).
++- If you need to **integrate React code with a server-side template framework** like Rails, Django or Symfony, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker). For Symfony, try [Symfony's Webpack Encore](https://symfony.com/doc/current/frontend/encore/reactjs.html).
+diff --git a/README.md b/README.md
+index 473e6ab3..8e33b113 100644
+--- a/README.md
++++ b/README.md
+@@ -37 +37 @@ Just create a project, and you’re good to go.
+-**You’ll need to have Node 8.9.0 or later on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
++**You’ll need to have Node 8.10.0 or later on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 6928c028..473e6ab3 100644
+--- a/README.md
++++ b/README.md
+@@ -37 +37 @@ Just create a project, and you’re good to go.
+-**You’ll need to have Node >= 6 on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
++**You’ll need to have Node 8.9.0 or later on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 65ed8421..6928c028 100644
+--- a/README.md
++++ b/README.md
+@@ -145 +145 @@ Your environment will have everything you need to build a modern single-page Rea
+-- React, JSX, ES6, and Flow syntax support.
++- React, JSX, ES6, TypeScript and Flow syntax support.
+@@ -178,2 +177,0 @@ Here’s a few common cases where you might want to try something else:
+-- If you want to use **TypeScript**, consider using [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
+-
+diff --git a/README.md b/README.md
+index 453409a0..65ed8421 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Create React apps with no build configuration.
+-- [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
++- [User Guide](https://facebook.github.io/create-react-app/docs/folder-structure) – How to develop apps bootstrapped with Create React App.
+diff --git a/README.md b/README.md
+index dae86042..453409a0 100644
+--- a/README.md
++++ b/README.md
+@@ -127,45 +127 @@ Your app is ready to be deployed.
+-The [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) includes information on different topics, such as:
+-
+-- [Updating to New Releases](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
+-- [Folder Structure](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
+-- [Available Scripts](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
+-- [Supported Browsers](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
+-- [Supported Language Features and Polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features)
+-- [Syntax Highlighting in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
+-- [Displaying Lint Output in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
+-- [Formatting Code Automatically](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
+-- [Debugging in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
+-- [Changing the Page `<title>`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
+-- [Installing a Dependency](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
+-- [Importing a Component](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
+-- [Code Splitting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
+-- [Adding a Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
+-- [Adding a Sass Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-sass-stylesheet)
+-- [Adding a CSS Modules Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-modules-stylesheet)
+-- [Post-Processing CSS](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
+-- [Adding Images, Fonts, and Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
+-- [Adding SVGs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-svgs)
+-- [Using the `public` Folder](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
+-- [Using Global Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
+-- [Adding Bootstrap](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+-- [Adding Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
+-- [Adding a Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
+-- [Adding Custom Environment Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
+-- [Can I Use Decorators?](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
+-- [Fetching Data with AJAX Requests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
+-- [Integrating with an API Backend](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
+-- [Proxying API Requests in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
+-- [Using HTTPS in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
+-- [Generating Dynamic `<meta>` Tags on the Server](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
+-- [Pre-Rendering into Static HTML Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
+-- [Running Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+-- [Debugging Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
+-- [Developing Components in Isolation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+-- [Publishing Components to npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
+-- [Making a Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+-- [Analyzing the Bundle Size](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
+-- [Deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
+-- [Advanced Configuration](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
+-- [Troubleshooting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting-1)
+-
+-A copy of the user guide will be created as `README.md` in your project folder.
++You can find detailed instructions on using Create React App and many tips in [its documentation](https://facebook.github.io/create-react-app/).
+@@ -175 +131 @@ A copy of the user guide will be created as `README.md` in your project folder.
+-Please refer to the [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases) for this and other information.
++Please refer to the [User Guide](https://facebook.github.io/create-react-app/docs/updating-to-new-releases) for this and other information.
+diff --git a/README.md b/README.md
+index 3054e765..dae86042 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147 @@ The [User Guide](https://github.com/facebook/create-react-app/blob/master/packag
++- [Adding SVGs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-svgs)
+diff --git a/README.md b/README.md
+index ffa70b38..3054e765 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ └── src
+-    └── registerServiceWorker.js
++    └── serviceWorker.js
+diff --git a/README.md b/README.md
+index a466656b..ffa70b38 100644
+--- a/README.md
++++ b/README.md
+@@ -133 +133 @@ The [User Guide](https://github.com/facebook/create-react-app/blob/master/packag
+-- [Supported Language Features and Polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
++- [Supported Language Features and Polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features)
+diff --git a/README.md b/README.md
+index 99fb1859..a466656b 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ Create React apps with no build configuration.
+-* [Creating an App](#creating-an-app) – How to create a new app.
+-* [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
++- [Creating an App](#creating-an-app) – How to create a new app.
++- [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
+@@ -19 +19 @@ npm start
+-*([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))*
++_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+@@ -47 +47 @@ npx create-react-app my-app
+-*([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))*
++_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+@@ -54 +54,2 @@ npm init react-app my-app
+-*`npm init <initializer>` is available in npm 6+*
++
++_`npm init <initializer>` is available in npm 6+_
+@@ -61 +62,2 @@ yarn create react-app my-app
+-*`yarn create` is available in Yarn 0.25+*
++
++_`yarn create` is available in Yarn 0.25+_
+@@ -176 +178 @@ Please refer to the [User Guide](https://github.com/facebook/create-react-app/bl
+-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
++- **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+@@ -178 +180 @@ Please refer to the [User Guide](https://github.com/facebook/create-react-app/bl
+-* **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
++- **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+@@ -180 +182 @@ Please refer to the [User Guide](https://github.com/facebook/create-react-app/bl
+-* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
++- **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
+@@ -186,8 +188,8 @@ Your environment will have everything you need to build a modern single-page Rea
+-* React, JSX, ES6, and Flow syntax support.
+-* Language extras beyond ES6 like the object spread operator.
+-* Autoprefixed CSS, so you don’t need `-webkit-` or other prefixes.
+-* A fast interactive unit test runner with built-in support for coverage reporting.
+-* A live development server that warns about common mistakes.
+-* A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
+-* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria. (*Note: Using the service worker is opt-in as of `react-scripts@2.0.0` and higher*)
+-* Hassle-free updates for the above tools with a single dependency.
++- React, JSX, ES6, and Flow syntax support.
++- Language extras beyond ES6 like the object spread operator.
++- Autoprefixed CSS, so you don’t need `-webkit-` or other prefixes.
++- A fast interactive unit test runner with built-in support for coverage reporting.
++- A live development server that warns about common mistakes.
++- A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
++- An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria. (_Note: Using the service worker is opt-in as of `react-scripts@2.0.0` and higher_)
++- Hassle-free updates for the above tools with a single dependency.
+@@ -203,3 +205,3 @@ Create React App is a great fit for:
+-* **Learning React** in a comfortable and feature-rich development environment.
+-* **Starting new single-page React applications.**
+-* **Creating examples** with React for your libraries and components.
++- **Learning React** in a comfortable and feature-rich development environment.
++- **Starting new single-page React applications.**
++- **Creating examples** with React for your libraries and components.
+@@ -209 +211 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to **try React** without hundreds of transitive build tool dependencies, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
++- If you want to **try React** without hundreds of transitive build tool dependencies, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
+@@ -211 +213 @@ Here’s a few common cases where you might want to try something else:
+-* If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker).
++- If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker).
+@@ -213 +215 @@ Here’s a few common cases where you might want to try something else:
+-* If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries), as well as [Neutrino's react-components preset](https://neutrino.js.org/packages/react-components/).
++- If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries), as well as [Neutrino's react-components preset](https://neutrino.js.org/packages/react-components/).
+@@ -215 +217 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to do **server rendering** with React and Node.js, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
++- If you want to do **server rendering** with React and Node.js, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
+@@ -217 +219 @@ Here’s a few common cases where you might want to try something else:
+-* If your website is **mostly static** (for example, a portfolio or a blog), consider using [Gatsby](https://www.gatsbyjs.org/) instead. Unlike Create React App, it pre-renders the website into HTML at the build time.
++- If your website is **mostly static** (for example, a portfolio or a blog), consider using [Gatsby](https://www.gatsbyjs.org/) instead. Unlike Create React App, it pre-renders the website into HTML at the build time.
+@@ -219 +221 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to use **TypeScript**, consider using [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
++- If you want to use **TypeScript**, consider using [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
+@@ -221 +223 @@ Here’s a few common cases where you might want to try something else:
+-* Finally, if you need **more customization**, check out [Neutrino](https://neutrino.js.org/) and its [React preset](https://neutrino.js.org/packages/react/).
++- Finally, if you need **more customization**, check out [Neutrino](https://neutrino.js.org/) and its [React preset](https://neutrino.js.org/packages/react/).
+@@ -240,3 +242,3 @@ We are grateful to the authors of existing related projects for their ideas and
+-* [@eanplatter](https://github.com/eanplatter)
+-* [@insin](https://github.com/insin)
+-* [@mxstbr](https://github.com/mxstbr)
++- [@eanplatter](https://github.com/eanplatter)
++- [@insin](https://github.com/insin)
++- [@mxstbr](https://github.com/mxstbr)
+diff --git a/README.md b/README.md
+index 8c52da30..99fb1859 100644
+--- a/README.md
++++ b/README.md
+@@ -221,2 +220,0 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to use **Parcel** instead of **Webpack** as your bundler, consider using [create-react-app-parcel](https://github.com/sw-yx/create-react-app-parcel).
+-
+diff --git a/README.md b/README.md
+index c4390b59..8c52da30 100644
+--- a/README.md
++++ b/README.md
+@@ -140,0 +141,2 @@ The [User Guide](https://github.com/facebook/create-react-app/blob/master/packag
++- [Adding a Sass Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-sass-stylesheet)
++- [Adding a CSS Modules Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-modules-stylesheet)
+@@ -142 +143,0 @@ The [User Guide](https://github.com/facebook/create-react-app/blob/master/packag
+-- [Adding a CSS Preprocessor (Sass, Less etc.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+diff --git a/README.md b/README.md
+index f3ca57c3..c4390b59 100644
+--- a/README.md
++++ b/README.md
+@@ -120 +119,0 @@ The build is minified and the filenames include the hashes.<br>
+-By default, it also [includes a service worker](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) so that your app loads from local cache on future visits.
+@@ -192 +191 @@ Your environment will have everything you need to build a modern single-page Rea
+-* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria.
++* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria. (*Note: Using the service worker is opt-in as of `react-scripts@2.0.0` and higher*)
+diff --git a/README.md b/README.md
+index ee9deb69..f3ca57c3 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ The [User Guide](https://github.com/facebook/create-react-app/blob/master/packag
+-- [Troubleshooting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
++- [Troubleshooting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting-1)
+diff --git a/README.md b/README.md
+index 086416db..ee9deb69 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39,3 @@ Just create a project, and you’re good to go.
+-To create a new app, run a single command:
++To create a new app, you may choose one of the following methods:
++
++### npx
+@@ -46,0 +49,14 @@ npx create-react-app my-app
++### npm
++
++```sh
++npm init react-app my-app
++```
++*`npm init <initializer>` is available in npm 6+*
++
++### Yarn
++
++```sh
++yarn create react-app my-app
++```
++*`yarn create` is available in Yarn 0.25+*
++
+diff --git a/README.md b/README.md
+index 7470ef15..086416db 100644
+--- a/README.md
++++ b/README.md
+@@ -57,2 +57,2 @@ ├── public
+-│   └── favicon.ico
+-│   └── index.html
++│   ├── favicon.ico
++│   ├── index.html
+@@ -61,6 +61,6 @@ └── src
+-    └── App.css
+-    └── App.js
+-    └── App.test.js
+-    └── index.css
+-    └── index.js
+-    └── logo.svg
++    ├── App.css
++    ├── App.js
++    ├── App.test.js
++    ├── index.css
++    ├── index.js
++    ├── logo.svg
+diff --git a/README.md b/README.md
+index 655aeff4..7470ef15 100644
+--- a/README.md
++++ b/README.md
+@@ -204,0 +205,2 @@ Here’s a few common cases where you might want to try something else:
++* If you want to use **Parcel** instead of **Webpack** as your bundler, consider using [create-react-app-parcel](https://github.com/sw-yx/create-react-app-parcel).
++
+diff --git a/README.md b/README.md
+index 698cf4fc..655aeff4 100644
+--- a/README.md
++++ b/README.md
+@@ -226,0 +227,4 @@ We are grateful to the authors of existing related projects for their ideas and
++
++## License
++
++Create React App is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
+diff --git a/README.md b/README.md
+index 3ffa5fe7..698cf4fc 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
++# Create React App [![Build Status](https://travis-ci.org/facebook/create-react-app.svg?branch=master)](https://travis-ci.org/facebook/create-react-app)
+@@ -6 +6 @@ Create React apps with no build configuration.
+-* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
++* [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
+@@ -9 +9 @@ Create React App works on macOS, Windows, and Linux.<br>
+-If something doesn’t work, please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new).
++If something doesn’t work, please [file an issue](https://github.com/facebook/create-react-app/issues/new).
+@@ -25 +25 @@ When you’re ready to deploy to production, create a minified bundle with `npm
+-<img src='https://cdn.rawgit.com/facebookincubator/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
++<img src='https://cdn.rawgit.com/facebook/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
+@@ -96 +96 @@ By default, runs tests related to files changed since the last commit.
+-[Read more about testing.](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
++[Read more about testing.](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+@@ -104 +104 @@ The build is minified and the filenames include the hashes.<br>
+-By default, it also [includes a service worker](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) so that your app loads from local cache on future visits.
++By default, it also [includes a service worker](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) so that your app loads from local cache on future visits.
+@@ -110,41 +110,41 @@ Your app is ready to be deployed.
+-The [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) includes information on different topics, such as:
+-
+-- [Updating to New Releases](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
+-- [Folder Structure](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
+-- [Available Scripts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
+-- [Supported Browsers](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
+-- [Supported Language Features and Polyfills](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
+-- [Syntax Highlighting in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
+-- [Displaying Lint Output in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
+-- [Formatting Code Automatically](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
+-- [Debugging in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
+-- [Changing the Page `<title>`](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
+-- [Installing a Dependency](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
+-- [Importing a Component](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
+-- [Code Splitting](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
+-- [Adding a Stylesheet](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
+-- [Post-Processing CSS](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
+-- [Adding a CSS Preprocessor (Sass, Less etc.)](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+-- [Adding Images, Fonts, and Files](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
+-- [Using the `public` Folder](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
+-- [Using Global Variables](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
+-- [Adding Bootstrap](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+-- [Adding Flow](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
+-- [Adding a Router](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
+-- [Adding Custom Environment Variables](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
+-- [Can I Use Decorators?](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
+-- [Fetching Data with AJAX Requests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
+-- [Integrating with an API Backend](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
+-- [Proxying API Requests in Development](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
+-- [Using HTTPS in Development](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
+-- [Generating Dynamic `<meta>` Tags on the Server](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
+-- [Pre-Rendering into Static HTML Files](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
+-- [Running Tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+-- [Debugging Tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
+-- [Developing Components in Isolation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+-- [Publishing Components to npm](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
+-- [Making a Progressive Web App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+-- [Analyzing the Bundle Size](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
+-- [Deployment](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
+-- [Advanced Configuration](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
+-- [Troubleshooting](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
++The [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) includes information on different topics, such as:
++
++- [Updating to New Releases](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
++- [Folder Structure](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
++- [Available Scripts](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
++- [Supported Browsers](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
++- [Supported Language Features and Polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
++- [Syntax Highlighting in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
++- [Displaying Lint Output in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
++- [Formatting Code Automatically](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
++- [Debugging in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
++- [Changing the Page `<title>`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
++- [Installing a Dependency](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
++- [Importing a Component](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
++- [Code Splitting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
++- [Adding a Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
++- [Post-Processing CSS](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
++- [Adding a CSS Preprocessor (Sass, Less etc.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
++- [Adding Images, Fonts, and Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
++- [Using the `public` Folder](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
++- [Using Global Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
++- [Adding Bootstrap](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
++- [Adding Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
++- [Adding a Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
++- [Adding Custom Environment Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
++- [Can I Use Decorators?](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
++- [Fetching Data with AJAX Requests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
++- [Integrating with an API Backend](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
++- [Proxying API Requests in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
++- [Using HTTPS in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
++- [Generating Dynamic `<meta>` Tags on the Server](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
++- [Pre-Rendering into Static HTML Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
++- [Running Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
++- [Debugging Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
++- [Developing Components in Isolation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
++- [Publishing Components to npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
++- [Making a Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
++- [Analyzing the Bundle Size](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
++- [Deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
++- [Advanced Configuration](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
++- [Troubleshooting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
+@@ -156 +156 @@ A copy of the user guide will be created as `README.md` in your project folder.
+-Please refer to the [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases) for this and other information.
++Please refer to the [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases) for this and other information.
+@@ -176 +176 @@ Your environment will have everything you need to build a modern single-page Rea
+-* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria.
++* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria.
+@@ -181 +181 @@ Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an ov
+-The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) and customize it, but then you will need to maintain this configuration.
++The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) and customize it, but then you will need to maintain this configuration.
+diff --git a/README.md b/README.md
+index 90f8cd7b..3ffa5fe7 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ Your environment will have everything you need to build a modern single-page Rea
+-* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
++* Autoprefixed CSS, so you don’t need `-webkit-` or other prefixes.
+diff --git a/README.md b/README.md
+index c873d8f1..90f8cd7b 100644
+--- a/README.md
++++ b/README.md
+@@ -195 +195 @@ Here’s a few common cases where you might want to try something else:
+-* If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
++* If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker).
+diff --git a/README.md b/README.md
+index ca507071..c873d8f1 100644
+--- a/README.md
++++ b/README.md
+@@ -87 +87,3 @@ You will see the build errors and lint warnings in the console.
+-<img src='https://camo.githubusercontent.com/41678b3254cf583d3186c365528553c7ada53c6e/687474703a2f2f692e696d6775722e636f6d2f466e4c566677362e706e67' width='600' alt='Build errors'>
++<p align='center'>
++<img src='https://cdn.rawgit.com/marionebl/create-react-app/9f62826/screencast-error.svg' width='600' alt='Build errors'>
++</p>
+diff --git a/README.md b/README.md
+index b09630e9..ca507071 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ When you’re ready to deploy to production, create a minified bundle with `npm
+-<img src='https://cdn.rawgit.com/facebookincubator/create-react-app/6ab67e6b96457720d843aa3c557ff951a41bafc2/screencast.svg' width='600' alt=''>
++<img src='https://cdn.rawgit.com/facebookincubator/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
+diff --git a/README.md b/README.md
+index d6945417..b09630e9 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ npm start
++*([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))*
++
+diff --git a/README.md b/README.md
+index a0938338..d6945417 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +193 @@ Here’s a few common cases where you might want to try something else:
+-* If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries).
++* If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries), as well as [Neutrino's react-components preset](https://neutrino.js.org/packages/react-components/).
+diff --git a/README.md b/README.md
+index a17a00f3..a0938338 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22,3 @@ When you’re ready to deploy to production, create a minified bundle with `npm
+-<img src='https://camo.githubusercontent.com/506a5a0a33aebed2bf0d24d3999af7f582b31808/687474703a2f2f692e696d6775722e636f6d2f616d794e66434e2e706e67' width='600' alt='npm start'>
++<p align='center'>
++<img src='https://cdn.rawgit.com/facebookincubator/create-react-app/6ab67e6b96457720d843aa3c557ff951a41bafc2/screencast.svg' width='600' alt=''>
++</p>
+diff --git a/README.md b/README.md
+index 72c448c6..a17a00f3 100644
+--- a/README.md
++++ b/README.md
+@@ -129,0 +130 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Fetching Data with AJAX Requests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
+diff --git a/README.md b/README.md
+index bfa09f9d..72c448c6 100644
+--- a/README.md
++++ b/README.md
+@@ -186 +186 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to **try React** without installing hundreds of `node_modules`, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
++* If you want to **try React** without hundreds of transitive build tool dependencies, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
+diff --git a/README.md b/README.md
+index 959b17f0..bfa09f9d 100644
+--- a/README.md
++++ b/README.md
+@@ -135,0 +136 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Debugging Tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
+diff --git a/README.md b/README.md
+index 31313ec9..959b17f0 100644
+--- a/README.md
++++ b/README.md
+@@ -191 +191 @@ Here’s a few common cases where you might want to try something else:
+-* If you want to do **server rendering** with React, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
++* If you want to do **server rendering** with React and Node.js, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
+diff --git a/README.md b/README.md
+index dbb9f7d3..31313ec9 100644
+--- a/README.md
++++ b/README.md
+@@ -194,0 +195,2 @@ Here’s a few common cases where you might want to try something else:
++* If you want to use **TypeScript**, consider using [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
++
+diff --git a/README.md b/README.md
+index ad55b212..dbb9f7d3 100644
+--- a/README.md
++++ b/README.md
+@@ -187 +187 @@ Here’s a few common cases where you might want to try something else:
+-* If you need to **integrate your React code with a template-based server framework** like Rails or Django or **aren’t building a single-page app**, consider using [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
++* If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
+diff --git a/README.md b/README.md
+index 4b8e3a42..ad55b212 100644
+--- a/README.md
++++ b/README.md
+@@ -187 +187 @@ Here’s a few common cases where you might want to try something else:
+-* Maybe you are **not building a single-page application** and need to integrate your React code with an existing template-based server framework such as Rails or Django. In this case, consider using projects like [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
++* If you need to **integrate your React code with a template-based server framework** like Rails or Django or **aren’t building a single-page app**, consider using [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
+diff --git a/README.md b/README.md
+index ebea335c..4b8e3a42 100644
+--- a/README.md
++++ b/README.md
+@@ -33 +33 @@ Just create a project, and you’re good to go.
+-**For the build tools, you’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects. Note that Create React App **works with any backend** because it produces static HTML/JS/CSS bundles.
++**You’ll need to have Node >= 6 on your local development machine** (but it’s not required on the server). You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 9eed9a66..ebea335c 100644
+--- a/README.md
++++ b/README.md
+@@ -177 +177 @@ The tradeoff is that **these tools are preconfigured to work in a specific way**
+-This project is a great fit for:
++Create React App is a great fit for:
+@@ -179,3 +179,3 @@ This project is a great fit for:
+-* Learning React in a comfortable and feature-rich development environment.
+-* Starting new single-page React applications.
+-* Creating examples with React for your library.
++* **Learning React** in a comfortable and feature-rich development environment.
++* **Starting new single-page React applications.**
++* **Creating examples** with React for your libraries and components.
+diff --git a/README.md b/README.md
+index 353119a8..9eed9a66 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Create React apps with no build configuration.
+-* [Getting Started](#getting-started) – How to create a new app.
++* [Creating an App](#creating-an-app) – How to create a new app.
+@@ -31 +31 @@ Just create a project, and you’re good to go.
+-## Getting Started
++## Creating an App
+@@ -33,7 +33 @@ Just create a project, and you’re good to go.
+-### Prerequisites
+-
+-**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+-
+-**This tool doesn’t assume a Node backend**. The Node installation is only required for Create React App itself.
+-
+-### Creating an App
++**For the build tools, you’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects. Note that Create React App **works with any backend** because it produces static HTML/JS/CSS bundles.
+@@ -47 +41 @@ npx create-react-app my-app
+-([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))
++*([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))*
+@@ -164 +158 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-## Why Use This?
++## What’s Included?
+@@ -166 +160 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-**If you’re getting started** with React, use `create-react-app` to automate the build of your app. There is no configuration file, and `react-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
++Your environment will have everything you need to build a modern single-page React app:
+@@ -170,2 +163,0 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* A dev server that lints for common errors.
+-* Import CSS and image files directly from JavaScript.
+@@ -173 +165,3 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* A `build` script to bundle JS, CSS, and images for production, with sourcemaps.
++* A fast interactive unit test runner with built-in support for coverage reporting.
++* A live development server that warns about common mistakes.
++* A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
+@@ -174,0 +169 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
++* Hassle-free updates for the above tools with a single dependency.
+@@ -176,5 +171 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
+-
+-**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
+-
+-### Converting to a Custom Setup
++Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an overview of how these tools fit together.
+@@ -182 +173 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-**If you’re a power user** and you aren’t happy with the default configuration, you can “eject” from the tool and use it as a boilerplate generator.
++The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) and customize it, but then you will need to maintain this configuration.
+@@ -184 +175 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-Running `npm run eject` copies all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. Commands like `npm start` and `npm run build` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
++## Popular Alternatives
+@@ -186 +177 @@ Running `npm run eject` copies all the configuration files and the transitive de
+-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
++This project is a great fit for:
+@@ -188 +179,3 @@ Running `npm run eject` copies all the configuration files and the transitive de
+-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
++* Learning React in a comfortable and feature-rich development environment.
++* Starting new single-page React applications.
++* Creating examples with React for your library.
+@@ -190 +183 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
+-## Limitations
++Here’s a few common cases where you might want to try something else:
+@@ -192 +185 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
+-Some features are currently **not supported**:
++* If you want to **try React** without installing hundreds of `node_modules`, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
+@@ -194,5 +187 @@ Some features are currently **not supported**:
+-* Server rendering.
+-* Some experimental syntax extensions (e.g. decorators).
+-* CSS Modules (see [#2285](https://github.com/facebookincubator/create-react-app/pull/2285)).
+-* Importing LESS or Sass directly ([but you still can use them](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)).
+-* Hot reloading of components.
++* Maybe you are **not building a single-page application** and need to integrate your React code with an existing template-based server framework such as Rails or Django. In this case, consider using projects like [nwb](https://github.com/insin/nwb) or [Neutrino](https://neutrino.js.org/) which are more flexible.
+@@ -200 +189 @@ Some features are currently **not supported**:
+-Some of them might get added in the future if they are stable, are useful to majority of React apps, don’t conflict with existing tools, and don’t introduce additional configuration.
++* If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries).
+@@ -202 +191 @@ Some of them might get added in the future if they are stable, are useful to maj
+-## What’s Inside?
++* If you want to do **server rendering** with React, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
+@@ -204,2 +193 @@ Some of them might get added in the future if they are stable, are useful to maj
+-The tools used by Create React App are subject to change.
+-Currently it is a thin layer on top of many amazing community projects, such as:
++* If your website is **mostly static** (for example, a portfolio or a blog), consider using [Gatsby](https://www.gatsbyjs.org/) instead. Unlike Create React App, it pre-renders the website into HTML at the build time.
+@@ -207,6 +195 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [webpack](https://webpack.js.org/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
+-* [Babel](http://babeljs.io/) with ES6 and extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
+-* [Autoprefixer](https://github.com/postcss/autoprefixer)
+-* [ESLint](http://eslint.org/)
+-* [Jest](http://facebook.github.io/jest)
+-* and others.
++* Finally, if you need **more customization**, check out [Neutrino](https://neutrino.js.org/) and its [React preset](https://neutrino.js.org/packages/react/).
+@@ -214 +197 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-All of them are transitive dependencies of the provided npm package.
++All of the above tools can work with little to no configuration.
+@@ -216 +199 @@ All of them are transitive dependencies of the provided npm package.
+-Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an overview of how these tools fit together.
++If you prefer configuring the build yourself, [follow this guide](https://reactjs.org/docs/add-react-to-an-existing-app.html).
+@@ -234,29 +216,0 @@ We are grateful to the authors of existing related projects for their ideas and
+-
+-## Alternatives
+-
+-If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs.<br>
+-Some of the more popular and actively maintained ones are:
+-
+-* [insin/nwb](https://github.com/insin/nwb)
+-* [mozilla-neutrino/neutrino-dev](https://github.com/mozilla-neutrino/neutrino-dev)
+-* [jaredpalmer/razzle](https://github.com/jaredpalmer/razzle)
+-* [NYTimes/kyt](https://github.com/NYTimes/kyt)
+-* [zeit/next.js](https://github.com/zeit/next.js)
+-* [gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby)
+-* [electrode-io/electrode](https://github.com/electrode-io/electrode)
+-
+-Notable alternatives also include:
+-
+-* [enclave](https://github.com/eanplatter/enclave)
+-* [motion](https://github.com/steelbrain/pundle/tree/master/packages/motion)
+-* [quik](https://github.com/satya164/quik)
+-* [sagui](https://github.com/saguijs/sagui)
+-* [roc](https://github.com/rocjs/roc)
+-* [aik](https://github.com/d4rkr00t/aik)
+-* [react-app](https://github.com/kriasoft/react-app)
+-* [dev-toolkit](https://github.com/stoikerty/dev-toolkit)
+-* [sku](https://github.com/seek-oss/sku)
+-* [gluestick](https://github.com/TrueCar/gluestick)
+-
+-You can also use module bundlers like [webpack](http://webpack.js.org) and [Browserify](http://browserify.org/) directly.<br>
+-React documentation includes [a walkthrough](https://reactjs.org/docs/installation.html#development-and-production-versions) on this topic.
+diff --git a/README.md b/README.md
+index 68fd8036..353119a8 100644
+--- a/README.md
++++ b/README.md
+@@ -215,0 +216,2 @@ All of them are transitive dependencies of the provided npm package.
++Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an overview of how these tools fit together.
++
+diff --git a/README.md b/README.md
+index 6aa6195f..68fd8036 100644
+--- a/README.md
++++ b/README.md
+@@ -14,4 +14,2 @@ If something doesn’t work, please [file an issue](https://github.com/facebooki
+-npm install -g create-react-app
+-
+-create-react-app my-app
+-cd my-app/
++npx create-react-app my-app
++cd my-app
+@@ -35,7 +33 @@ Just create a project, and you’re good to go.
+-### Installation
+-
+-Install it once globally:
+-
+-```sh
+-npm install -g create-react-app
+-```
++### Prerequisites
+@@ -49 +41 @@ npm install -g create-react-app
+-To create a new app, run:
++To create a new app, run a single command:
+@@ -52,2 +44 @@ To create a new app, run:
+-create-react-app my-app
+-cd my-app
++npx create-react-app my-app
+@@ -55,0 +47,2 @@ cd my-app
++([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))
++
+@@ -80 +73,7 @@ No configuration or complicated folder structures, just the files you need to bu
+-Once the installation is done, you can run some commands inside the project folder:
++Once the installation is done, you can open your project folder:
++
++```sh
++cd my-app
++```
++
++Inside the newly created project, you can run some built-in commands:
+diff --git a/README.md b/README.md
+index bbdd9568..6aa6195f 100644
+--- a/README.md
++++ b/README.md
+@@ -143,0 +144 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Publishing Components to npm](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
+diff --git a/README.md b/README.md
+index 97462799..bbdd9568 100644
+--- a/README.md
++++ b/README.md
+@@ -133,0 +134 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Adding a Router](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
+diff --git a/README.md b/README.md
+index 67b55d0e..97462799 100644
+--- a/README.md
++++ b/README.md
+@@ -115,0 +116 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Supported Browsers](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
+diff --git a/README.md b/README.md
+index 6009e8a6..67b55d0e 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) to easily switch Node versions between different projects.
++**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 65b6bade..6009e8a6 100644
+--- a/README.md
++++ b/README.md
+@@ -258 +258 @@ You can also use module bundlers like [webpack](http://webpack.js.org) and [Brow
+-React documentation includes [a walkthrough](https://facebook.github.io/react/docs/package-management.html) on this topic.
++React documentation includes [a walkthrough](https://reactjs.org/docs/installation.html#development-and-production-versions) on this topic.
+diff --git a/README.md b/README.md
+index 6f7b7a19..65b6bade 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Create React App works on macOS, Windows, and Linux.<br>
+-If something doesn’t work please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new).
++If something doesn’t work, please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new).
+@@ -87 +87 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-The page will reload if you make edits.<br>
++The page will automatically reload if you make changes to the code.<br>
+diff --git a/README.md b/README.md
+index 8f38e73c..6f7b7a19 100644
+--- a/README.md
++++ b/README.md
+@@ -194 +194 @@ Some features are currently **not supported**:
+-* CSS Modules.
++* CSS Modules (see [#2285](https://github.com/facebookincubator/create-react-app/pull/2285)).
+diff --git a/README.md b/README.md
+index 5d525e07..8f38e73c 100644
+--- a/README.md
++++ b/README.md
+@@ -241,0 +242 @@ Some of the more popular and actively maintained ones are:
++* [electrode-io/electrode](https://github.com/electrode-io/electrode)
+diff --git a/README.md b/README.md
+index 9f40a4d9..5d525e07 100644
+--- a/README.md
++++ b/README.md
+@@ -246 +246 @@ Notable alternatives also include:
+-* [motion](https://github.com/motion/motion)
++* [motion](https://github.com/steelbrain/pundle/tree/master/packages/motion)
+diff --git a/README.md b/README.md
+index 0c428ef6..9f40a4d9 100644
+--- a/README.md
++++ b/README.md
+@@ -253,0 +254 @@ Notable alternatives also include:
++* [gluestick](https://github.com/TrueCar/gluestick)
+diff --git a/README.md b/README.md
+index 1197d7b4..0c428ef6 100644
+--- a/README.md
++++ b/README.md
+@@ -237,0 +238 @@ Some of the more popular and actively maintained ones are:
++* [jaredpalmer/razzle](https://github.com/jaredpalmer/razzle)
+diff --git a/README.md b/README.md
+index 296925aa..1197d7b4 100644
+--- a/README.md
++++ b/README.md
+@@ -142,0 +143 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Analyzing the Bundle Size](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
+diff --git a/README.md b/README.md
+index 544aa12d..296925aa 100644
+--- a/README.md
++++ b/README.md
+@@ -140,0 +141 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Developing Components in Isolation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+diff --git a/README.md b/README.md
+index 969d0311..544aa12d 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
++**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#installation) to easily switch Node versions between different projects.
+@@ -60,17 +60,17 @@ Inside that directory, it will generate the initial project structure and instal
+-my-app/
+-  README.md
+-  node_modules/
+-  package.json
+-  .gitignore
+-  public/
+-    favicon.ico
+-    index.html
+-    manifest.json
+-  src/
+-    App.css
+-    App.js
+-    App.test.js
+-    index.css
+-    index.js
+-    logo.svg
+-    registerServiceWorker.js
++my-app
++├── README.md
++├── node_modules
++├── package.json
++├── .gitignore
++├── public
++│   └── favicon.ico
++│   └── index.html
++│   └── manifest.json
++└── src
++    └── App.css
++    └── App.js
++    └── App.test.js
++    └── index.css
++    └── index.js
++    └── logo.svg
++    └── registerServiceWorker.js
+diff --git a/README.md b/README.md
+index 06a2fbf4..969d0311 100644
+--- a/README.md
++++ b/README.md
+@@ -118,0 +119 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Formatting Code Automatically](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
+diff --git a/README.md b/README.md
+index 8cd74f24..06a2fbf4 100644
+--- a/README.md
++++ b/README.md
+@@ -202 +202 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [webpack](https://webpack.github.io/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
++* [webpack](https://webpack.js.org/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
+@@ -251 +251 @@ Notable alternatives also include:
+-You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.<br>
++You can also use module bundlers like [webpack](http://webpack.js.org) and [Browserify](http://browserify.org/) directly.<br>
+diff --git a/README.md b/README.md
+index eee9d7da..8cd74f24 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68 @@ my-app/
++    manifest.json
+@@ -74,0 +76 @@ my-app/
++    registerServiceWorker.js
+diff --git a/README.md b/README.md
+index e6f039fc..eee9d7da 100644
+--- a/README.md
++++ b/README.md
+@@ -247 +246,0 @@ Notable alternatives also include:
+-* [tarec](https://github.com/geowarin/tarec)
+diff --git a/README.md b/README.md
+index 94556f83..e6f039fc 100644
+--- a/README.md
++++ b/README.md
+@@ -138,3 +137,0 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
+-<!--
+-- [Developing Components in Isolation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+--->
+diff --git a/README.md b/README.md
+index 79fc6c6e..94556f83 100644
+--- a/README.md
++++ b/README.md
+@@ -103,2 +103,3 @@ The build is minified and the filenames include the hashes.<br>
+-A [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) using an [offline-first caching strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network) is automatically generated.<br>
+-Your ([progressive web](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)) app is ready to be deployed
++By default, it also [includes a service worker](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) so that your app loads from local cache on future visits.
++
++Your app is ready to be deployed.
+diff --git a/README.md b/README.md
+index 286a0cf7..79fc6c6e 100644
+--- a/README.md
++++ b/README.md
+@@ -136,0 +137 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++<!--
+@@ -137,0 +139 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++-->
+diff --git a/README.md b/README.md
+index 892987c9..286a0cf7 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Code Splitting](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
+diff --git a/README.md b/README.md
+index e9658d85..892987c9 100644
+--- a/README.md
++++ b/README.md
+@@ -103,2 +102,0 @@ The build is minified and the filenames include the hashes.<br>
+-Your app is ready to be deployed!
+-<!--TODO: uncoment and maybe revise
+@@ -106 +104 @@ A [service worker](https://developers.google.com/web/fundamentals/getting-starte
+-Your ([progressive web](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)) app is ready to be deployed!-->
++Your ([progressive web](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)) app is ready to be deployed
+@@ -168 +165,0 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-<!--TODO: uncomment
+@@ -170 +166,0 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+--->
+diff --git a/README.md b/README.md
+index 4a0eeab5..e9658d85 100644
+--- a/README.md
++++ b/README.md
+@@ -103,0 +104,3 @@ Your app is ready to be deployed!
++<!--TODO: uncoment and maybe revise
++A [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) using an [offline-first caching strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network) is automatically generated.<br>
++Your ([progressive web](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)) app is ready to be deployed!-->
+@@ -164,0 +168,3 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
++<!--TODO: uncomment
++* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria.
++-->
+diff --git a/README.md b/README.md
+index 96562f4e..4a0eeab5 100644
+--- a/README.md
++++ b/README.md
+@@ -43,3 +43 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 4 on your machine**.
+-
+-**We strongly recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage.** You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
++**You’ll need to have Node >= 6 on your machine**. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index 95683422..96562f4e 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ Runs the test watcher in an interactive mode.<br>
+-By default, runs tests related to files changes since the last commit.
++By default, runs tests related to files changed since the last commit.
+diff --git a/README.md b/README.md
+index ec24d939..95683422 100644
+--- a/README.md
++++ b/README.md
+@@ -246,0 +247 @@ Notable alternatives also include:
++* [sku](https://github.com/seek-oss/sku)
+diff --git a/README.md b/README.md
+index cac8811b..ec24d939 100644
+--- a/README.md
++++ b/README.md
+@@ -211,0 +212,5 @@ We'd love to have your helping hand on `create-react-app`! See [CONTRIBUTING.md]
++## React Native
++
++Looking for something similar, but for React Native?<br>
++Check out [Create React Native App](https://github.com/react-community/create-react-native-app/).
++
+diff --git a/README.md b/README.md
+index 0e469932..cac8811b 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ npm install -g create-react-app
+-**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel.
++**This tool doesn’t assume a Node backend**. The Node installation is only required for Create React App itself.
+diff --git a/README.md b/README.md
+index 62814476..0e469932 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ If something doesn’t work please [file an issue](https://github.com/facebookin
+-## tl;dr
++## Quick Overview
+@@ -25,0 +26,7 @@ When you’re ready to deploy to production, create a minified bundle with `npm
++### Get Started Immediately
++
++You **don’t** need to install or configure tools like Webpack or Babel.<br>
++They are preconfigured and hidden so that you can focus on the code.
++
++Just create a project, and you’re good to go.
++
+diff --git a/README.md b/README.md
+index 3b87e1e5..62814476 100644
+--- a/README.md
++++ b/README.md
+@@ -146 +146 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* **Zero Configuration:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
++* **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+diff --git a/README.md b/README.md
+index 128b71d9..3b87e1e5 100644
+--- a/README.md
++++ b/README.md
+@@ -146 +146 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* **Convention over Configuration:** You don't need to configure anything by default. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
++* **Zero Configuration:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+diff --git a/README.md b/README.md
+index 39baa1a5..128b71d9 100644
+--- a/README.md
++++ b/README.md
+@@ -117 +117 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
+-- [Adding Images and Fonts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-and-fonts)
++- [Adding Images, Fonts, and Files](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
+diff --git a/README.md b/README.md
+index 5d5a3139..39baa1a5 100644
+--- a/README.md
++++ b/README.md
+@@ -127,0 +128 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Pre-Rendering into Static HTML Files](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
+diff --git a/README.md b/README.md
+index 14f0061f..5d5a3139 100644
+--- a/README.md
++++ b/README.md
+@@ -109,0 +110 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Debugging in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
+diff --git a/README.md b/README.md
+index eafafb2a..14f0061f 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Create React apps with no build configuration.
+-Create React App works on macOS, Windows, and Linux.  
++Create React App works on macOS, Windows, and Linux.<br>
+diff --git a/README.md b/README.md
+index 0b9ed59b..eafafb2a 100644
+--- a/README.md
++++ b/README.md
+@@ -217 +217 @@ Some of the more popular and actively maintained ones are:
+-* [mozilla/neo](https://github.com/mozilla/neo)
++* [mozilla-neutrino/neutrino-dev](https://github.com/mozilla-neutrino/neutrino-dev)
+diff --git a/README.md b/README.md
+index e0c79274..0b9ed59b 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Create React apps with no build configuration.
+-Create React App works on MacOS, Windows, and Linux.  
++Create React App works on macOS, Windows, and Linux.  
+diff --git a/README.md b/README.md
+index 56a29984..e0c79274 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Create React apps with no build configuration.
+-Create React App works on MacOS, Linux, and Windows.  
++Create React App works on MacOS, Windows, and Linux.  
+diff --git a/README.md b/README.md
+index af4603b5..56a29984 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,3 @@ Create React apps with no build configuration.
++Create React App works on MacOS, Linux, and Windows.  
++If something doesn’t work please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new).
++
+diff --git a/README.md b/README.md
+index 912b9abd..af4603b5 100644
+--- a/README.md
++++ b/README.md
+@@ -103,0 +104 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Supported Language Features and Polyfills](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
+diff --git a/README.md b/README.md
+index e31b7377..912b9abd 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +15,0 @@ npm start
+-
+@@ -73 +72 @@ Once the installation is done, you can run some commands inside the project fold
+-### `npm start`
++### `npm start` or `yarn start`
+@@ -83 +82 @@ You will see the build errors and lint warnings in the console.
+-### `npm test`
++### `npm test` or `yarn test`
+@@ -90 +89 @@ By default, runs tests related to files changes since the last commit.
+-### `npm run build`
++### `npm run build` or `yarn build`
+diff --git a/README.md b/README.md
+index 1c009332..e31b7377 100644
+--- a/README.md
++++ b/README.md
+@@ -177 +177 @@ Some features are currently **not supported**:
+-* LESS or Sass.
++* Importing LESS or Sass directly ([but you still can use them](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)).
+diff --git a/README.md b/README.md
+index 52843b57..1c009332 100644
+--- a/README.md
++++ b/README.md
+@@ -111,0 +112 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Adding a CSS Preprocessor (Sass, Less etc.)](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+diff --git a/README.md b/README.md
+index 85a23174..52843b57 100644
+--- a/README.md
++++ b/README.md
+@@ -126,0 +127 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Advanced Configuration](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
+diff --git a/README.md b/README.md
+index ed755a20..85a23174 100644
+--- a/README.md
++++ b/README.md
+@@ -119 +119 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
+-- [Integrating with a Node Backend](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-a-node-backend)
++- [Integrating with an API Backend](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
+diff --git a/README.md b/README.md
+index 2c387f6c..ed755a20 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ You will see the build errors and lint warnings in the console.
+-Runs the test watcher in an interactive mode.  
++Runs the test watcher in an interactive mode.<br>
+@@ -208 +208 @@ We are grateful to the authors of existing related projects for their ideas and
+-If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs.  
++If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs.<br>
+diff --git a/README.md b/README.md
+index e9f8c1b6..2c387f6c 100644
+--- a/README.md
++++ b/README.md
+@@ -147 +147 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* React, JSX, and ES6 support.
++* React, JSX, ES6, and Flow syntax support.
+diff --git a/README.md b/README.md
+index 6fec35d4..e9f8c1b6 100644
+--- a/README.md
++++ b/README.md
+@@ -106,0 +107 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Changing the Page `<title>`](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
+diff --git a/README.md b/README.md
+index f204942a..6fec35d4 100644
+--- a/README.md
++++ b/README.md
+@@ -104,0 +105 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Syntax Highlighting in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
+diff --git a/README.md b/README.md
+index 9daf3924..f204942a 100644
+--- a/README.md
++++ b/README.md
+@@ -122,0 +123 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Making a Progressive Web App](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+diff --git a/README.md b/README.md
+index 89d4cf06..9daf3924 100644
+--- a/README.md
++++ b/README.md
+@@ -123,0 +124 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Troubleshooting](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
+diff --git a/README.md b/README.md
+index 7469acea..89d4cf06 100644
+--- a/README.md
++++ b/README.md
+@@ -135 +135 @@ Please refer to the [User Guide](https://github.com/facebookincubator/create-rea
+-* **Zero Configuration:** There are no configuration files or command line options. Configuring both development and production builds is handled for you so you can focus on writing code.
++* **Convention over Configuration:** You don't need to configure anything by default. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+diff --git a/README.md b/README.md
+index df0046aa..7469acea 100644
+--- a/README.md
++++ b/README.md
+@@ -111,0 +112 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Using Global Variables](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
+@@ -120,0 +122 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Developing Components in Isolation](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+diff --git a/README.md b/README.md
+index b7e1f1f4..df0046aa 100644
+--- a/README.md
++++ b/README.md
+@@ -208,0 +209 @@ Some of the more popular and actively maintained ones are:
++* [gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby)
+diff --git a/README.md b/README.md
+index 334dd477..b7e1f1f4 100644
+--- a/README.md
++++ b/README.md
+@@ -207,0 +208 @@ Some of the more popular and actively maintained ones are:
++* [zeit/next.js](https://github.com/zeit/next.js)
+diff --git a/README.md b/README.md
+index 6c967b90..334dd477 100644
+--- a/README.md
++++ b/README.md
+@@ -124,0 +125,4 @@ A copy of the user guide will be created as `README.md` in your project folder.
++## How to Update to New Versions?
++
++Please refer to the [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases) for this and other information.
++
+diff --git a/README.md b/README.md
+index f4954a1e..6c967b90 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +54,0 @@ my-app/
+-  index.html
+@@ -58,0 +58,3 @@ my-app/
++  public/
++    favicon.ico
++    index.html
+@@ -63 +64,0 @@ my-app/
+-    favicon.ico
+@@ -109,0 +111 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
++- [Using the `public` Folder](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
+@@ -117 +119 @@ The [User Guide](https://github.com/facebookincubator/create-react-app/blob/mast
+-- [Adding `<link>` and `<meta>` Tags](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-link-and-meta-tags)
++- [Generating Dynamic `<meta>` Tags on the Server](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
+diff --git a/README.md b/README.md
+index 16059470..f4954a1e 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Create React apps with no build configuration.
+-* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md) – How to develop apps bootstrapped with Create React App.
++* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
+@@ -87 +87 @@ By default, runs tests related to files changes since the last commit.
+-[Read more about testing.](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#running-tests)
++[Read more about testing.](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+@@ -99,21 +99,21 @@ Your app is ready to be deployed!
+-The [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md) includes information on different topics, such as:
+-
+-- [Updating to New Releases](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#updating-to-new-releases)
+-- [Folder Structure](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#folder-structure)
+-- [Available Scripts](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#available-scripts)
+-- [Displaying Lint Output in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#displaying-lint-output-in-the-editor)
+-- [Installing a Dependency](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#installing-a-dependency)
+-- [Importing a Component](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#importing-a-component)
+-- [Adding a Stylesheet](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-a-stylesheet)
+-- [Post-Processing CSS](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#post-processing-css)
+-- [Adding Images and Fonts](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-images-and-fonts)
+-- [Adding Bootstrap](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-bootstrap)
+-- [Adding Flow](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-flow)
+-- [Adding Custom Environment Variables](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-custom-environment-variables)
+-- [Can I Use Decorators?](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#can-i-use-decorators)
+-- [Integrating with a Node Backend](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#integrating-with-a-node-backend)
+-- [Proxying API Requests in Development](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#proxying-api-requests-in-development)
+-- [Using HTTPS in Development](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#using-https-in-development)
+-- [Adding `<link>` and `<meta>` Tags](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-link-and-meta-tags)
+-- [Running Tests](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#running-tests)
+-- [Deployment](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#deployment)
++The [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) includes information on different topics, such as:
++
++- [Updating to New Releases](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
++- [Folder Structure](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
++- [Available Scripts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
++- [Displaying Lint Output in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
++- [Installing a Dependency](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
++- [Importing a Component](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
++- [Adding a Stylesheet](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
++- [Post-Processing CSS](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
++- [Adding Images and Fonts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-and-fonts)
++- [Adding Bootstrap](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
++- [Adding Flow](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
++- [Adding Custom Environment Variables](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
++- [Can I Use Decorators?](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
++- [Integrating with a Node Backend](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-a-node-backend)
++- [Proxying API Requests in Development](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
++- [Using HTTPS in Development](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
++- [Adding `<link>` and `<meta>` Tags](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-link-and-meta-tags)
++- [Running Tests](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
++- [Deployment](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
+diff --git a/README.md b/README.md
+index 28d36e4d..16059470 100644
+--- a/README.md
++++ b/README.md
+@@ -196 +196,8 @@ We are grateful to the authors of existing related projects for their ideas and
+-If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs:
++If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs.  
++Some of the more popular and actively maintained ones are:
++
++* [insin/nwb](https://github.com/insin/nwb)
++* [mozilla/neo](https://github.com/mozilla/neo)
++* [NYTimes/kyt](https://github.com/NYTimes/kyt)
++
++Notable alternatives also include:
+@@ -199 +205,0 @@ If you don’t agree with the choices made in this project, you might want to ex
+-* [nwb](https://github.com/insin/nwb)
+@@ -201,3 +206,0 @@ If you don’t agree with the choices made in this project, you might want to ex
+-* [rackt-cli](https://github.com/mzabriskie/rackt-cli)
+-* [budō](https://github.com/mattdesl/budo)
+-* [rwb](https://github.com/petehunt/rwb)
+@@ -210 +212,0 @@ If you don’t agree with the choices made in this project, you might want to ex
+-* [mozilla-neo](https://github.com/mozilla/neo)
+@@ -212 +213,0 @@ If you don’t agree with the choices made in this project, you might want to ex
+-* [kyt](https://github.com/NYTimes/kyt)
+diff --git a/README.md b/README.md
+index 222d4cb6..28d36e4d 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34,3 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
++**You’ll need to have Node >= 4 on your machine**.
++
++**We strongly recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage.** You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
+diff --git a/README.md b/README.md
+index fc8434a6..222d4cb6 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +53,0 @@ my-app/
+-  favicon.ico
+@@ -61,0 +61 @@ my-app/
++    favicon.ico
+diff --git a/README.md b/README.md
+index 3c0a07a2..fc8434a6 100644
+--- a/README.md
++++ b/README.md
+@@ -209,0 +210 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [kyt](https://github.com/NYTimes/kyt)
+diff --git a/README.md b/README.md
+index 978b6a6e..3c0a07a2 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Create React App
++# Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
+diff --git a/README.md b/README.md
+index ccb23c46..978b6a6e 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ By default, runs tests related to files changes since the last commit.
+-[Read more about testing.](template/README.md#running-tests)
++[Read more about testing.](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#running-tests)
+@@ -97,21 +97,21 @@ Your app is ready to be deployed!
+-The [User Guide](template/README.md) includes information on different topics, such as:
+-
+-- [Updating to New Releases](template/README.md#updating-to-new-releases)
+-- [Folder Structure](template/README.md#folder-structure)
+-- [Available Scripts](template/README.md#available-scripts)
+-- [Displaying Lint Output in the Editor](template/README.md#displaying-lint-output-in-the-editor)
+-- [Installing a Dependency](template/README.md#installing-a-dependency)
+-- [Importing a Component](template/README.md#importing-a-component)
+-- [Adding a Stylesheet](template/README.md#adding-a-stylesheet)
+-- [Post-Processing CSS](template/README.md#post-processing-css)
+-- [Adding Images and Fonts](template/README.md#adding-images-and-fonts)
+-- [Adding Bootstrap](template/README.md#adding-bootstrap)
+-- [Adding Flow](template/README.md#adding-flow)
+-- [Adding Custom Environment Variables](template/README.md#adding-custom-environment-variables)
+-- [Can I Use Decorators?](template/README.md#can-i-use-decorators)
+-- [Integrating with a Node Backend](template/README.md#integrating-with-a-node-backend)
+-- [Proxying API Requests in Development](template/README.md#proxying-api-requests-in-development)
+-- [Using HTTPS in Development](template/README.md#using-https-in-development)
+-- [Adding `<link>` and `<meta>` Tags](template/README.md#adding-link-and-meta-tags)
+-- [Running Tests](template/README.md#running-tests)
+-- [Deployment](template/README.md#deployment)
++The [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md) includes information on different topics, such as:
++
++- [Updating to New Releases](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#updating-to-new-releases)
++- [Folder Structure](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#folder-structure)
++- [Available Scripts](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#available-scripts)
++- [Displaying Lint Output in the Editor](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#displaying-lint-output-in-the-editor)
++- [Installing a Dependency](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#installing-a-dependency)
++- [Importing a Component](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#importing-a-component)
++- [Adding a Stylesheet](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-a-stylesheet)
++- [Post-Processing CSS](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#post-processing-css)
++- [Adding Images and Fonts](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-images-and-fonts)
++- [Adding Bootstrap](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-bootstrap)
++- [Adding Flow](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-flow)
++- [Adding Custom Environment Variables](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-custom-environment-variables)
++- [Can I Use Decorators?](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#can-i-use-decorators)
++- [Integrating with a Node Backend](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#integrating-with-a-node-backend)
++- [Proxying API Requests in Development](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#proxying-api-requests-in-development)
++- [Using HTTPS in Development](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#using-https-in-development)
++- [Adding `<link>` and `<meta>` Tags](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#adding-link-and-meta-tags)
++- [Running Tests](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#running-tests)
++- [Deployment](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md#deployment)
+diff --git a/README.md b/README.md
+index 0541db4b..ccb23c46 100644
+--- a/README.md
++++ b/README.md
+@@ -97,2 +97,23 @@ Your app is ready to be deployed!
+-The generated project will include a guide in its README.<br>
+-You can also read its latest version [here](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md).
++The [User Guide](template/README.md) includes information on different topics, such as:
++
++- [Updating to New Releases](template/README.md#updating-to-new-releases)
++- [Folder Structure](template/README.md#folder-structure)
++- [Available Scripts](template/README.md#available-scripts)
++- [Displaying Lint Output in the Editor](template/README.md#displaying-lint-output-in-the-editor)
++- [Installing a Dependency](template/README.md#installing-a-dependency)
++- [Importing a Component](template/README.md#importing-a-component)
++- [Adding a Stylesheet](template/README.md#adding-a-stylesheet)
++- [Post-Processing CSS](template/README.md#post-processing-css)
++- [Adding Images and Fonts](template/README.md#adding-images-and-fonts)
++- [Adding Bootstrap](template/README.md#adding-bootstrap)
++- [Adding Flow](template/README.md#adding-flow)
++- [Adding Custom Environment Variables](template/README.md#adding-custom-environment-variables)
++- [Can I Use Decorators?](template/README.md#can-i-use-decorators)
++- [Integrating with a Node Backend](template/README.md#integrating-with-a-node-backend)
++- [Proxying API Requests in Development](template/README.md#proxying-api-requests-in-development)
++- [Using HTTPS in Development](template/README.md#using-https-in-development)
++- [Adding `<link>` and `<meta>` Tags](template/README.md#adding-link-and-meta-tags)
++- [Running Tests](template/README.md#running-tests)
++- [Deployment](template/README.md#deployment)
++
++A copy of the user guide will be created as `README.md` in your project folder.
+diff --git a/README.md b/README.md
+index 2fa9f43d..0541db4b 100644
+--- a/README.md
++++ b/README.md
+@@ -60,0 +61 @@ my-app/
++    App.test.js
+@@ -78,0 +80,7 @@ You will see the build errors and lint warnings in the console.
++### `npm test`
++
++Runs the test watcher in an interactive mode.  
++By default, runs tests related to files changes since the last commit.
++
++[Read more about testing.](template/README.md#running-tests)
++
+@@ -111 +119 @@ You can also read its latest version [here](https://github.com/facebookincubator
+-**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
++**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
+@@ -130 +137,0 @@ Some features are currently **not supported**:
+-* Testing.
+@@ -147 +154,2 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* and more.
++* [Jest](http://facebook.github.io/jest)
++* and others.
+diff --git a/README.md b/README.md
+index fcc1f93e..2fa9f43d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,3 @@ Create React apps with no build configuration.
++* [Getting Started](#getting-started) – How to create a new app.
++* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md) – How to develop apps bootstrapped with Create React App.
++
+@@ -84 +87 @@ Your app is ready to be deployed!
+-## How Do I…?
++## User Guide
+diff --git a/README.md b/README.md
+index aac5d0b0..fcc1f93e 100644
+--- a/README.md
++++ b/README.md
+@@ -176,0 +177 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [tarec](https://github.com/geowarin/tarec)
+diff --git a/README.md b/README.md
+index 8004ef81..aac5d0b0 100644
+--- a/README.md
++++ b/README.md
+@@ -175,0 +176 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [mozilla-neo](https://github.com/mozilla/neo)
+diff --git a/README.md b/README.md
+index ae2ea187..8004ef81 100644
+--- a/README.md
++++ b/README.md
+@@ -174,0 +175 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [dev-toolkit](https://github.com/stoikerty/dev-toolkit)
+diff --git a/README.md b/README.md
+index 521b6ac5..ae2ea187 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54 @@ my-app/
++  .gitignore
+diff --git a/README.md b/README.md
+index aa5f8ae4..521b6ac5 100644
+--- a/README.md
++++ b/README.md
+@@ -172,0 +173 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [react-app](https://github.com/kriasoft/react-app)
+diff --git a/README.md b/README.md
+index 25971b8f..aa5f8ae4 100644
+--- a/README.md
++++ b/README.md
+@@ -171,0 +172 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [aik](https://github.com/d4rkr00t/aik)
+diff --git a/README.md b/README.md
+index 70dbf1a6..25971b8f 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ It will create a directory called `my-app` inside the current folder.<br>
+-Inside that directory, it will generate the initial project structure and install the transient dependencies:
++Inside that directory, it will generate the initial project structure and install the transitive dependencies:
+@@ -115 +115 @@ You can also read its latest version [here](https://github.com/facebookincubator
+-Running `npm run eject` copies all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. Commands like `npm start` and `npm run build` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
++Running `npm run eject` copies all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. Commands like `npm start` and `npm run build` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
+@@ -145 +145 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-All of them are transient dependencies of the provided npm package.
++All of them are transitive dependencies of the provided npm package.
+diff --git a/README.md b/README.md
+index e1b02e05..70dbf1a6 100644
+--- a/README.md
++++ b/README.md
+@@ -149,11 +149 @@ All of them are transient dependencies of the provided npm package.
+-Clone the repo and run `npm install` in the root and the `global-cli` folder.
+-
+-Once it is done, you can modify any file locally and run `npm start` or `npm run build` just like in a generated project.
+-If you want to try out the end-to-end flow with the global CLI, you can do this too:
+-
+-```
+-npm run create-react-app my-app
+-cd my-app
+-```
+-
+-and then run `npm start` or `npm run build`.
++We'd love to have your helping hand on `create-react-app`! See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
+diff --git a/README.md b/README.md
+index 2156f661..e1b02e05 100644
+--- a/README.md
++++ b/README.md
+@@ -83 +83 @@ Your app is ready to be deployed!
+-## How Do I?...
++## How Do I…?
+diff --git a/README.md b/README.md
+index 13cb297e..2156f661 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ Your app is ready to be deployed!
+-The generated project will include a guide in its README.
++The generated project will include a guide in its README.<br>
+@@ -183 +183 @@ If you don’t agree with the choices made in this project, you might want to ex
+-You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.
++You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.<br>
+diff --git a/README.md b/README.md
+index 5a5f77de..13cb297e 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ Your app is ready to be deployed!
+-The generated project will include a guide in its README.  
++The generated project will include a guide in its README.
+@@ -178,0 +179 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [quik](https://github.com/satya164/quik)
+@@ -182 +183 @@ If you don’t agree with the choices made in this project, you might want to ex
+-You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.  
++You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.
+diff --git a/README.md b/README.md
+index a29de337..5a5f77de 100644
+--- a/README.md
++++ b/README.md
+@@ -179,0 +180 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [roc](https://github.com/rocjs/roc)
+diff --git a/README.md b/README.md
+index 820510d5..a29de337 100644
+--- a/README.md
++++ b/README.md
+@@ -178,0 +179 @@ If you don’t agree with the choices made in this project, you might want to ex
++* [sagui](https://github.com/saguijs/sagui)
+diff --git a/README.md b/README.md
+index 9cec18eb..820510d5 100644
+--- a/README.md
++++ b/README.md
+@@ -44,2 +44 @@ cd my-app
+-It will create a directory called `my-app` inside the current folder.
+-
++It will create a directory called `my-app` inside the current folder.<br>
+@@ -63,2 +62 @@ my-app/
+-No configuration or complicated folder structures, just the files you need to build your app.
+-
++No configuration or complicated folder structures, just the files you need to build your app.<br>
+diff --git a/README.md b/README.md
+index 702bbe89..9cec18eb 100644
+--- a/README.md
++++ b/README.md
+@@ -33 +33 @@ npm install -g create-react-app
+-**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html`, a minified JavaScript bundle, and bundled images and styles, so you can host them anywhere you like.
++**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel.
+@@ -73 +73 @@ The page will reload if you make edits.<br>
+-You will also build errors and lint warnings in the console.
++You will see the build errors and lint warnings in the console.
+@@ -123,13 +122,0 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
+-## What’s Inside?
+-
+-The tools used by Create React App are subject to change.
+-Currently it is a thin layer on top of many amazing community projects, such as:
+-
+-* [webpack](https://webpack.github.io/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
+-* [Babel](http://babeljs.io/) with ES6 and extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
+-* [Autoprefixer](https://github.com/postcss/autoprefixer)
+-* [ESLint](http://eslint.org/)
+-* and more.
+-
+-All of them are transient dependencies of the provided npm package.
+-
+@@ -148,0 +136,13 @@ Some of them might get added in the future if they are stable, are useful to maj
++## What’s Inside?
++
++The tools used by Create React App are subject to change.
++Currently it is a thin layer on top of many amazing community projects, such as:
++
++* [webpack](https://webpack.github.io/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
++* [Babel](http://babeljs.io/) with ES6 and extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
++* [Autoprefixer](https://github.com/postcss/autoprefixer)
++* [ESLint](http://eslint.org/)
++* and more.
++
++All of them are transient dependencies of the provided npm package.
++
+diff --git a/README.md b/README.md
+index df99550a..702bbe89 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,2 @@ npm start
+-Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
++Then open [http://localhost:3000/](http://localhost:3000/) to see your app.<br>
++When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+@@ -20,2 +20,0 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
+-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+-
+diff --git a/README.md b/README.md
+index 568e8cbb..df99550a 100644
+--- a/README.md
++++ b/README.md
+@@ -114 +114 @@ You can also read its latest version [here](https://github.com/facebookincubator
+-### No Lock-In
++### Converting to a Custom Setup
+@@ -116 +116 @@ You can also read its latest version [here](https://github.com/facebookincubator
+-**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator.
++**If you’re a power user** and you aren’t happy with the default configuration, you can “eject” from the tool and use it as a boilerplate generator.
+@@ -118,3 +118 @@ You can also read its latest version [here](https://github.com/facebookincubator
+-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-
+-If you aren’t satisfied with the build tool and configuration choices, you can `npm run eject` at any time. This command will remove the single build dependency from your project.
++Running `npm run eject` copies all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. Commands like `npm start` and `npm run build` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
+@@ -122 +120 @@ If you aren’t satisfied with the build tool and configuration choices, you can
+-Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
++**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+diff --git a/README.md b/README.md
+index f3ac2c43..568e8cbb 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
++<img src='https://camo.githubusercontent.com/506a5a0a33aebed2bf0d24d3999af7f582b31808/687474703a2f2f692e696d6775722e636f6d2f616d794e66434e2e706e67' width='600' alt='npm start'>
++
+@@ -72 +74,3 @@ The page will reload if you make edits.<br>
+-You will also see any lint errors in the console.
++You will also build errors and lint warnings in the console.
++
++<img src='https://camo.githubusercontent.com/41678b3254cf583d3186c365528553c7ada53c6e/687474703a2f2f692e696d6775722e636f6d2f466e4c566677362e706e67' width='600' alt='Build errors'>
+diff --git a/README.md b/README.md
+index bccbd38e..f3ac2c43 100644
+--- a/README.md
++++ b/README.md
+@@ -81,0 +82,5 @@ Your app is ready to be deployed!
++## How Do I?...
++
++The generated project will include a guide in its README.  
++You can also read its latest version [here](https://github.com/facebookincubator/create-react-app/blob/master/template/README.md).
++
+diff --git a/README.md b/README.md
+index bab0ae1e..bccbd38e 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51 @@ my-app/
++  favicon.ico
+@@ -56 +56,0 @@ my-app/
+-    favicon.ico
+diff --git a/README.md b/README.md
+index 3e54a2b9..bab0ae1e 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ npm start
+-Then open http://localhost:3000/ to see your app.
++Then open [http://localhost:3000/](http://localhost:3000/) to see your app.
+@@ -18 +18 @@ Then open http://localhost:3000/ to see your app.
+-When you're ready to deploy to production, you can use `npm run build` to make a minified bundle ready for deployment.
++When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+@@ -62 +62 @@ my-app/
+-No complicated folder structures, just the files you need to build your app.
++No configuration or complicated folder structures, just the files you need to build your app.
+@@ -105 +105 @@ Your app is ready to be deployed!
+-### Graduating from create-react-app
++### No Lock-In
+diff --git a/README.md b/README.md
+index 90844c7b..3e54a2b9 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +0,0 @@
+-
+@@ -6 +5 @@ Create React apps with no build configuration.
+-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
++## tl;dr
+@@ -8 +7,2 @@ Create React apps with no build configuration.
+-* **Zero Configuration:** There are no configuration files or command line options. Configuring both development and production builds is handled for you so you can focus on writing code.
++```sh
++npm install -g create-react-app
+@@ -10 +10,3 @@ Create React apps with no build configuration.
+-* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
++create-react-app my-app
++cd my-app/
++npm start
+@@ -12 +14,9 @@ Create React apps with no build configuration.
+-## Installation
++```
++
++Then open http://localhost:3000/ to see your app.
++
++When you're ready to deploy to production, you can use `npm run build` to make a minified bundle ready for deployment.
++
++## Getting Started
++
++### Installation
+@@ -24,18 +34 @@ npm install -g create-react-app
+-## Why Use This?
+-
+-**If you’re getting started** with React, use `create-react-app` to automate the build of your app. There is no configuration file, and `react-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
+-
+-* React, JSX, and ES6 support.
+-* Language extras beyond ES6 like the object spread operator.
+-* A dev server that lints for common errors.
+-* Import CSS and image files directly from JavaScript.
+-* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
+-* A `build` script to bundle JS, CSS, and images for production, with sourcemaps.
+-
+-**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
+-
+-**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” from it, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
+-
+-**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
+-
+-## Usage
++### Creating an App
+@@ -52,2 +45,20 @@ It will create a directory called `my-app` inside the current folder.
+-Inside that directory, it will generate the initial project structure and install the transient dependencies.<br>
+-Once the installation is done, you can run some commands inside the project folder!
++Inside that directory, it will generate the initial project structure and install the transient dependencies:
++
++```
++my-app/
++  README.md
++  index.html
++  node_modules/
++  package.json
++  src/
++    App.css
++    App.js
++    favicon.ico
++    index.css
++    index.js
++    logo.svg
++```
++
++No complicated folder structures, just the files you need to build your app.
++
++Once the installation is done, you can run some commands inside the project folder:
+@@ -71 +82,26 @@ Your app is ready to be deployed!
+-### `npm run eject`
++## Philosophy
++
++* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
++
++* **Zero Configuration:** There are no configuration files or command line options. Configuring both development and production builds is handled for you so you can focus on writing code.
++
++* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
++
++## Why Use This?
++
++**If you’re getting started** with React, use `create-react-app` to automate the build of your app. There is no configuration file, and `react-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
++
++* React, JSX, and ES6 support.
++* Language extras beyond ES6 like the object spread operator.
++* A dev server that lints for common errors.
++* Import CSS and image files directly from JavaScript.
++* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
++* A `build` script to bundle JS, CSS, and images for production, with sourcemaps.
++
++**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
++
++**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
++
++### Graduating from create-react-app
++
++**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator.
+@@ -75 +111 @@ Your app is ready to be deployed!
+-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
++If you aren’t satisfied with the build tool and configuration choices, you can `npm run eject` at any time. This command will remove the single build dependency from your project.
+diff --git a/README.md b/README.md
+index 0922c3f0..90844c7b 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/creationix/nvm#usage) to easily switch the Node versions between different projects.
++**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
+@@ -57 +57 @@ Once the installation is done, you can run some commands inside the project fold
+-Runs the app in the development mode.<br>
++Runs the app in development mode.<br>
+@@ -77 +77 @@ If you aren’t satisfied with the build tool and configuration choices, you can
+-Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
++Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
+diff --git a/README.md b/README.md
+index 97372601..0922c3f0 100644
+--- a/README.md
++++ b/README.md
+@@ -98,6 +98,6 @@ Some features are currently **not supported**:
+-* Server rendering
+-* Testing
+-* Some experimental syntax extensions (e.g. decorators)
+-* CSS Modules
+-* LESS or Sass
+-* Hot reloading of components
++* Server rendering.
++* Testing.
++* Some experimental syntax extensions (e.g. decorators).
++* CSS Modules.
++* LESS or Sass.
++* Hot reloading of components.
+@@ -138,0 +139,3 @@ If you don’t agree with the choices made in this project, you might want to ex
++
++You can also use module bundlers like [webpack](http://webpack.github.io) and [Browserify](http://browserify.org/) directly.  
++React documentation includes [a walkthrough](https://facebook.github.io/react/docs/package-management.html) on this topic.
+diff --git a/README.md b/README.md
+index 36676b69..97372601 100644
+--- a/README.md
++++ b/README.md
+@@ -93,0 +94,13 @@ All of them are transient dependencies of the provided npm package.
++## Limitations
++
++Some features are currently **not supported**:
++
++* Server rendering
++* Testing
++* Some experimental syntax extensions (e.g. decorators)
++* CSS Modules
++* LESS or Sass
++* Hot reloading of components
++
++Some of them might get added in the future if they are stable, are useful to majority of React apps, don’t conflict with existing tools, and don’t introduce additional configuration.
++
+diff --git a/README.md b/README.md
+index 14715665..36676b69 100644
+--- a/README.md
++++ b/README.md
+@@ -112,3 +112,14 @@ We are grateful to the authors of existing related projects for their ideas and
+-* [enclave](https://github.com/eanplatter/enclave) by [@eanplatter](https://github.com/eanplatter)
+-* [nwb](https://github.com/insin/nwb) by [@insin](https://github.com/insin)
+-* [react-boilerplate](https://github.com/mxstbr/react-boilerplate) by [@mxstbr](https://github.com/mxstbr)
++* [@eanplatter](https://github.com/eanplatter)
++* [@insin](https://github.com/insin)
++* [@mxstbr](https://github.com/mxstbr)
++
++## Alternatives
++
++If you don’t agree with the choices made in this project, you might want to explore alternatives with different tradeoffs:
++
++* [enclave](https://github.com/eanplatter/enclave)
++* [nwb](https://github.com/insin/nwb)
++* [motion](https://github.com/motion/motion)
++* [rackt-cli](https://github.com/mzabriskie/rackt-cli)
++* [budō](https://github.com/mattdesl/budo)
++* [rwb](https://github.com/petehunt/rwb)
+diff --git a/README.md b/README.md
+index 7a7b4c4e..14715665 100644
+--- a/README.md
++++ b/README.md
+@@ -87 +87 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [Babel](http://babeljs.io/) with ES2016 and the extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
++* [Babel](http://babeljs.io/) with ES6 and extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
+diff --git a/README.md b/README.md
+index 16d61f06..7a7b4c4e 100644
+--- a/README.md
++++ b/README.md
+@@ -28,6 +28,6 @@ npm install -g create-react-app
+-* React, JSX, and ES6 support
+-* Language extras beyond ES6 like the object spread operator
+-* A dev server that lints for common errors
+-* Import css and image files directly from JavaScript
+-* Autoprefixed CSS, so you don't need `-webkit` or other prefixes
+-* A `build` script to bundle js, css, and images for production, with sourcemaps
++* React, JSX, and ES6 support.
++* Language extras beyond ES6 like the object spread operator.
++* A dev server that lints for common errors.
++* Import CSS and image files directly from JavaScript.
++* Autoprefixed CSS, so you don’t need `-webkit` or other prefixes.
++* A `build` script to bundle JS, CSS, and images for production, with sourcemaps.
+diff --git a/README.md b/README.md
+index ec27a176..16d61f06 100644
+--- a/README.md
++++ b/README.md
+@@ -87 +87 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [Babel](http://babeljs.io/) with ES2016 and the extensions we use at Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
++* [Babel](http://babeljs.io/) with ES2016 and the extensions used by Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
+diff --git a/README.md b/README.md
+index dd66bd86..ec27a176 100644
+--- a/README.md
++++ b/README.md
+@@ -87 +87 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [Babel](http://babeljs.io/) with [preset-es2015](https://www.npmjs.com/package/babel-preset-es2015), [preset-es2016](https://www.npmjs.com/package/babel-preset-es2016), [preset-react](https://www.npmjs.com/package/babel-preset-react) and [transform-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/)
++* [Babel](http://babeljs.io/) with ES2016 and the extensions we use at Facebook (JSX, [object spread](https://github.com/sebmarkbage/ecmascript-rest-spread/commits/master), [class properties](https://github.com/jeffmo/es-class-public-fields))
+diff --git a/README.md b/README.md
+index 43789715..dd66bd86 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ npm install -g create-react-app
+-**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html`, a minified `.js` bundle, and bundled images and css, so you can host them anywhere you like.
++**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html`, a minified JavaScript bundle, and bundled images and styles, so you can host them anywhere you like.
+diff --git a/README.md b/README.md
+index 4fb82cd7..43789715 100644
+--- a/README.md
++++ b/README.md
+@@ -89 +89 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [ESLint](http://eslint.org/) with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
++* [ESLint](http://eslint.org/)
+diff --git a/README.md b/README.md
+index 7d050285..4fb82cd7 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ npm install -g create-react-app
+-* Autoprefixed CSS, so you don't need `-webkit` prefixes
++* Autoprefixed CSS, so you don't need `-webkit` or other prefixes
+diff --git a/README.md b/README.md
+index bdb82784..7d050285 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ npm install -g create-react-app
+-**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html` and a minified `.js` bundle so you can host them anywhere you like.
++**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html`, a minified `.js` bundle, and bundled images and css, so you can host them anywhere you like.
+@@ -26 +26,8 @@ npm install -g create-react-app
+-**If you’re getting started** with React, use this tool to automate the build of your app. You can get an app running with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
++**If you’re getting started** with React, use `create-react-app` to automate the build of your app. There is no configuration file, and `react-scripts` is the only extra build dependency in your `package.json`. Your environment will have everything you need to build a modern React app:
++
++* React, JSX, and ES6 support
++* Language extras beyond ES6 like the object spread operator
++* A dev server that lints for common errors
++* Import css and image files directly from JavaScript
++* Autoprefixed CSS, so you don't need `-webkit` prefixes
++* A `build` script to bundle js, css, and images for production, with sourcemaps
+@@ -87 +94 @@ All of them are transient dependencies of the provided npm package.
+-## Contibuting
++## Contributing
+diff --git a/README.md b/README.md
+index d83936b1..bdb82784 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ It will create a directory called `my-app` inside the current folder.
+-Inside that directory, it will generate the initial project structure and install the transient dependencies.
++Inside that directory, it will generate the initial project structure and install the transient dependencies.<br>
+@@ -50 +50 @@ Once the installation is done, you can run some commands inside the project fold
+-Runs the app in the development mode.
++Runs the app in the development mode.<br>
+@@ -53 +53 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-The page will reload if you make edits.
++The page will reload if you make edits.<br>
+@@ -58 +58 @@ You will also see any lint errors in the console.
+-Builds the app for production to the `build` folder.
++Builds the app for production to the `build` folder.<br>
+@@ -61 +61 @@ It correctly bundles React in production mode and optimizes the build for the be
+-The build is minified and the filenames include the hashes.
++The build is minified and the filenames include the hashes.<br>
+diff --git a/README.md b/README.md
+index a6469bc2..d83936b1 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ npm install -g create-react-app
+-**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 5 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/tj/n) to easily switch the Node versions between different projects.
++**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/creationix/nvm#usage) to easily switch the Node versions between different projects.
+@@ -43 +43 @@ cd my-app
+-It will create a directory called `my-app` inside the current folder.  
++It will create a directory called `my-app` inside the current folder.
+@@ -45 +45 @@ It will create a directory called `my-app` inside the current folder.
+-Inside that directory, it will generate the initial project structure and install the transient dependencies.  
++Inside that directory, it will generate the initial project structure and install the transient dependencies.
+@@ -50 +50 @@ Once the installation is done, you can run some commands inside the project fold
+-Runs the app in the development mode.  
++Runs the app in the development mode.
+@@ -53 +53 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-The page will reload if you make edits.  
++The page will reload if you make edits.
+@@ -58 +58 @@ You will also see any lint errors in the console.
+-Builds the app for production to the `build` folder.  
++Builds the app for production to the `build` folder.
+@@ -61 +61 @@ It correctly bundles React in production mode and optimizes the build for the be
+-The build is minified and the filenames include the hashes.  
++The build is minified and the filenames include the hashes.
+@@ -76 +76 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
+-The tools used by Create React App are subject to change.  
++The tools used by Create React App are subject to change.
+@@ -91 +91 @@ Clone the repo and run `npm install` in the root and the `global-cli` folder.
+-Once it is done, you can modify any file locally and run `npm start` or `npm run build` just like in a generated project.  
++Once it is done, you can modify any file locally and run `npm start` or `npm run build` just like in a generated project.
+diff --git a/README.md b/README.md
+index a56d72a8..a6469bc2 100644
+--- a/README.md
++++ b/README.md
+@@ -26 +26 @@ npm install -g create-react-app
+-**If you’re getting started** with React, use this tool to automate the build of your app. Get started with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
++**If you’re getting started** with React, use this tool to automate the build of your app. You can get an app running with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
+diff --git a/README.md b/README.md
+index 045c6d8c..a56d72a8 100644
+--- a/README.md
++++ b/README.md
+@@ -12,10 +11,0 @@ Create React apps with no build configuration.
+-## Why Use This?
+-
+-**If you’re getting started** with React, use this tool to automate the build of your app. Get started with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
+-
+-**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
+-
+-**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” from it, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
+-
+-**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
+-
+@@ -30,5 +20 @@ npm install -g create-react-app
+->**Note:**
+->
+->**You need to have Node >= 4 running locally**. We recommend to use Node >= 5 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/tj/n) to easily switch the Node versions between different projects.
+->
+->**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html` and a minified `.js` bundle so you can host them anywhere you like.
++**You’ll need to have Node >= 4 on your machine**. We recommend to use Node >= 5 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/tj/n) to easily switch the Node versions between different projects.
+@@ -35,0 +22,11 @@ npm install -g create-react-app
++**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html` and a minified `.js` bundle so you can host them anywhere you like.
++
++## Why Use This?
++
++**If you’re getting started** with React, use this tool to automate the build of your app. Get started with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
++
++**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
++
++**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” from it, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
++
++**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
+diff --git a/README.md b/README.md
+index 6cd893d3..045c6d8c 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Create React apps with no build configuration.
+-## How to Use This
++## Why Use This?
+@@ -18 +18,3 @@ Create React apps with no build configuration.
+-**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” to that mode, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
++**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” from it, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
++
++**You don’t have to use this.** Historically it has been easy to [gradually adopt](https://www.youtube.com/watch?v=BF58ZJ1ZQxY) React. However many people create new single-page React apps from scratch every day. We’ve heard [loud](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) and [clear](https://twitter.com/thomasfuchs/status/708675139253174273) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack. This project is an attempt to figure out a good way to start developing React apps.
+@@ -27,0 +30,7 @@ npm install -g create-react-app
++>**Note:**
++>
++>**You need to have Node >= 4 running locally**. We recommend to use Node >= 5 and npm >= 3 for faster installation speed and better disk usage. You can use [n](https://github.com/tj/n) to easily switch the Node versions between different projects.
++>
++>**This tool doesn’t assume a Node backend**. The Node installation is only required for the build tools that rely on it locally, such as Webpack and Babel. The output folder includes an `index.html` and a minified `.js` bundle so you can host them anywhere you like.
++
++
+@@ -79,9 +88 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-All of them are transient dependencies of the provided npm package so you don’t need to worry about upgrading them or resolving conflicts.
+-
+-## You Don’t Have to Use This
+-
+-This is not the “one true way” to create React apps. You don’t need to port your project to use this if you’re happy with your setup.
+-
+-Historically it has been easy to gradually adopt React, but many people create new single-page React apps from scratch every day. We’ve heard [loud and clear](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack.
+-
+-This project is an attempt to figure out a good way to start developing React apps. We don’t claim it’s the best possible stack, and there are intentional limitations, but we think you can ship a production app with it, and with your help we’ll make it better over time.
++All of them are transient dependencies of the provided npm package.
+diff --git a/README.md b/README.md
+index ad031cd8..6cd893d3 100644
+--- a/README.md
++++ b/README.md
+@@ -11,0 +12,8 @@ Create React apps with no build configuration.
++## How to Use This
++
++**If you’re getting started** with React, use this tool to automate the build of your app. Get started with React, JSX, and ES6 in minutes. You don’t have to learn the configuration format of Babel, Webpack, and ESLint, or manage their versions. There is no configuration file, and this tool is the only build dependency in your `package.json`.
++
++**The feature set is intentionally limited**. It doesn’t support advanced features such as server rendering or CSS modules. Currently, it doesn’t support testing either. The tool is also **non-configurable** because it is hard to provide a cohesive experience and easy updates across a set of tools when the user can tweak anything.
++
++**If you’re a power user** and are comfortable with configuring build dependencies yourself, you can use this tool as a boilerplate generator. When you “eject” to that mode, the tool moves all the configuration right into your project, and removes itself from the dependencies. This way you can customize everything in this setup but you won’t get the upstream updates of the curated set of plugins.
++
+@@ -73,8 +80,0 @@ All of them are transient dependencies of the provided npm package so you don’
+-## Limitations
+-
+-Our goal is to provide a tool that bootstraps a minimal production-ready React project with a great developer experience and sane defaults.
+-
+-This is why many features such as server rendering, experimental Babel plugins, or custom ESLint configuration, are not supported. It is hard to add features that would work for everyone without adding configuration. Having no configuration is an explicit design decision of this project. Currently, even running tests is not supported, although this limitation is temporary.
+-
+-If you want an advanced feature, you can still use this tool, and later run `npm run eject` (but then there’s no going back!)
+-
+diff --git a/README.md b/README.md
+index ead079cd..ad031cd8 100644
+--- a/README.md
++++ b/README.md
+@@ -52 +52 @@ Your app is ready to be deployed!
+-**Note: this is a one-way operation. Once you “eject”, you can’t go back!**
++**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+@@ -54 +54 @@ Your app is ready to be deployed!
+-If you aren’t satisfied with the build tool and configuration choices, you can “eject” at any time. This command will remove the single build dependency from your project.
++If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+@@ -58 +58 @@ Instead, it will copy all the configuration files and the transient dependencies
+-You don’t have to ever `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
++You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+diff --git a/README.md b/README.md
+index ca8d032c..ead079cd 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ Create React apps with no build configuration.
+-* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up where we left off.
++* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
+@@ -58 +58 @@ Instead, it will copy all the configuration files and the transient dependencies
+-You don’t have to ever eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
++You don’t have to ever `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+diff --git a/README.md b/README.md
+index ea37d325..ca8d032c 100644
+--- a/README.md
++++ b/README.md
+@@ -65,2 +65 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [webpack](https://webpack.github.io/)
+-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
++* [webpack](https://webpack.github.io/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) and [style-loader](https://github.com/webpack/style-loader)
+@@ -69,4 +68 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin)
+-* [style-loader](https://github.com/webpack/style-loader)
+-* [ESLint](http://eslint.org/)
+-* [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
++* [ESLint](http://eslint.org/) with [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
+diff --git a/README.md b/README.md
+index 0d225ca5..ea37d325 100644
+--- a/README.md
++++ b/README.md
+@@ -67 +67 @@ Currently it is a thin layer on top of many amazing community projects, such as:
+-* [Babel](http://babeljs.io/) with [preset-es2015](https://www.npmjs.com/package/babel-preset-es2015), [preset-es2016](https://www.npmjs.com/package/babel-preset-es2016) and [transform-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/)
++* [Babel](http://babeljs.io/) with [preset-es2015](https://www.npmjs.com/package/babel-preset-es2015), [preset-es2016](https://www.npmjs.com/package/babel-preset-es2016), [preset-react](https://www.npmjs.com/package/babel-preset-react) and [transform-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/)
+diff --git a/README.md b/README.md
+index a3bb2e42..0d225ca5 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ Create React apps with no build configuration.
+-* **No Lock-In:** You can “graduate” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up where we left off.
++* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up where we left off.
+@@ -50 +50 @@ Your app is ready to be deployed!
+-### `npm run graduate`
++### `npm run eject`
+@@ -52 +52 @@ Your app is ready to be deployed!
+-**Note: this is a one-way operation. Once you “graduate”, you can’t go back!**
++**Note: this is a one-way operation. Once you “eject”, you can’t go back!**
+@@ -54 +54 @@ Your app is ready to be deployed!
+-If you aren’t satisfied with the build tool and configuration choices, you can “graduate” at any time. This command will remove the single build dependency from your project.
++If you aren’t satisfied with the build tool and configuration choices, you can “eject” at any time. This command will remove the single build dependency from your project.
+@@ -56 +56 @@ If you aren’t satisfied with the build tool and configuration choices, you can
+-Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `graduate` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
++Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+@@ -58 +58 @@ Instead, it will copy all the configuration files and the transient dependencies
+-You don’t have to ever graduate. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
++You don’t have to ever eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+@@ -83 +83 @@ This is why many features such as server rendering, experimental Babel plugins,
+-If you want an advanced feature, you can still use this tool, and later run `npm run graduate` (but then there’s no going back!)
++If you want an advanced feature, you can still use this tool, and later run `npm run eject` (but then there’s no going back!)
+diff --git a/README.md b/README.md
+index 61e18ef9..a3bb2e42 100644
+--- a/README.md
++++ b/README.md
+@@ -105,0 +106,8 @@ and then run `npm start` or `npm run build`.
++
++## Acknowledgements
++
++We are grateful to the authors of existing related projects for their ideas and collaboration:
++
++* [enclave](https://github.com/eanplatter/enclave) by [@eanplatter](https://github.com/eanplatter)
++* [nwb](https://github.com/insin/nwb) by [@insin](https://github.com/insin)
++* [react-boilerplate](https://github.com/mxstbr/react-boilerplate) by [@mxstbr](https://github.com/mxstbr)
+diff --git a/README.md b/README.md
+index b54d06ab..61e18ef9 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ This project is an attempt to figure out a good way to start developing React ap
+-Clone the repo and run `npm install`.
++Clone the repo and run `npm install` in the root and the `global-cli` folder.
+diff --git a/README.md b/README.md
+index a6049028..b54d06ab 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ The tools used by Create React App are subject to change.
+-Currently we use:
++Currently it is a thin layer on top of many amazing community projects, such as:
+@@ -73 +73 @@ Currently we use:
+-* and some more.
++* and more.
+diff --git a/README.md b/README.md
+index cd4aa34a..a6049028 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Create React apps with no build configuration.
+-* **One Dependency:** Once you create an app, there is just one build dependency. Internally we use Webpack, Babel, ESLint, and other amazing projects, but we manage their versions and provide a curated experience on top of them.
++* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+@@ -8 +8 @@ Create React apps with no build configuration.
+-* **Zero Configuration:** There are no configuration files or command line options. Let us take care of configuring the build both for development and production so you can focus on creating an app.
++* **Zero Configuration:** There are no configuration files or command line options. Configuring both development and production builds is handled for you so you can focus on writing code.
+@@ -10 +10 @@ Create React apps with no build configuration.
+-* **No Lock-In:** You can “graduate” to a custom setup at any time. Run a single command, and we will remove the tool and copy all the configuration and dependencies into your project, so you can pick up where we left off.
++* **No Lock-In:** You can “graduate” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up where we left off.
+@@ -29 +29 @@ cd my-app
+-This will create a directory called `my-app` inside the current folder.  
++It will create a directory called `my-app` inside the current folder.  
+@@ -31,2 +31,2 @@ This will create a directory called `my-app` inside the current folder.
+-Inside that directory, we will generate the initial project structure and install the transient dependencies.  
+-Once it’s finished, you can run some commands inside the project folder!
++Inside that directory, it will generate the initial project structure and install the transient dependencies.  
++Once the installation is done, you can run some commands inside the project folder!
+@@ -54 +54 @@ Your app is ready to be deployed!
+-If you aren’t satisfied with the defaults we provide, and want to change or extend your build configuration, you can graduate at any time. This command will remove the single build dependency we provided from your project.
++If you aren’t satisfied with the build tool and configuration choices, you can “graduate” at any time. This command will remove the single build dependency from your project.
+@@ -56 +56 @@ If you aren’t satisfied with the defaults we provide, and want to change or ex
+-Instead, it will copy all the configuration files and the dependencies we have been using under the hood into your project so you have full control over them. All of the commands except `graduate` will still work, but we will point them to the copied scripts so you can tweak them. At this point you’re on your own.
++Instead, it will copy all the configuration files and the transient dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `graduate` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+@@ -58,5 +58 @@ Instead, it will copy all the configuration files and the dependencies we have b
+-You don’t have to ever graduate. We intend to keep the curated feature set suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-
+-## Limitations
+-
+-We don’t currently intend to support advanced features such as server rendering, experimental Babel plugins, custom ESLint configuration, etc. Our goal is to provide a tool that bootstraps a minimal production-ready React project with a great developer experience and sane defaults. If you want an advanced feature, you can still use this tool, and later run `npm run graduate` to customize the experience (but then there’s no going back!)
++You don’t have to ever graduate. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+@@ -79 +75 @@ Currently we use:
+-We hide all of them behind our npm package so you don’t need to worry about upgrading them or solving conflicts.
++All of them are transient dependencies of the provided npm package so you don’t need to worry about upgrading them or resolving conflicts.
+@@ -81 +77 @@ We hide all of them behind our npm package so you don’t need to worry about up
+-## You Don’t Have to Use This
++## Limitations
+@@ -83 +79,7 @@ We hide all of them behind our npm package so you don’t need to worry about up
+-This is not the “one true way” to create React apps. You don’t need to port your project to use this if you’re happy with your setup. There are also many things we won’t provide (see “Limitations” above).
++Our goal is to provide a tool that bootstraps a minimal production-ready React project with a great developer experience and sane defaults.
++
++This is why many features such as server rendering, experimental Babel plugins, or custom ESLint configuration, are not supported. It is hard to add features that would work for everyone without adding configuration. Having no configuration is an explicit design decision of this project. Currently, even running tests is not supported, although this limitation is temporary.
++
++If you want an advanced feature, you can still use this tool, and later run `npm run graduate` (but then there’s no going back!)
++
++## You Don’t Have to Use This
+@@ -85 +87 @@ This is not the “one true way” to create React apps. You don’t need to por
+-Historically we’ve made it easy to gradually adopt React, but many people create new single-page React apps every day, and we’ve heard [loud and clear](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack.
++This is not the “one true way” to create React apps. You don’t need to port your project to use this if you’re happy with your setup.
+@@ -87 +89 @@ Historically we’ve made it easy to gradually adopt React, but many people crea
+-This project is our attempt to figure out a good way to start developing React apps. We don’t claim it’s the best possible stack, and there are intentional limitations, but we think you can ship a production app with it, and we’ll make it even better over time.
++Historically it has been easy to gradually adopt React, but many people create new single-page React apps from scratch every day. We’ve heard [loud and clear](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack.
+@@ -89 +91 @@ This project is our attempt to figure out a good way to start developing React a
+-We also want you to feel in control so you can “graduate” from this tool at any time (see instructions above!).
++This project is an attempt to figure out a good way to start developing React apps. We don’t claim it’s the best possible stack, and there are intentional limitations, but we think you can ship a production app with it, and with your help we’ll make it better over time.
+diff --git a/README.md b/README.md
+index ce38371a..cd4aa34a 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++
+@@ -3 +4 @@
+-A new blessed “getting started” experience for building SPAs in React that we can actually ship.
++Create React apps with no build configuration.
+@@ -5 +6 @@ A new blessed “getting started” experience for building SPAs in React that w
+-## Goal
++* **One Dependency:** Once you create an app, there is just one build dependency. Internally we use Webpack, Babel, ESLint, and other amazing projects, but we manage their versions and provide a curated experience on top of them.
+@@ -7 +8 @@ A new blessed “getting started” experience for building SPAs in React that w
+-Make it easy to get started with React.
++* **Zero Configuration:** There are no configuration files or command line options. Let us take care of configuring the build both for development and production so you can focus on creating an app.
+@@ -9 +10 @@ Make it easy to get started with React.
+-## Why This Won't Fail
++* **No Lock-In:** You can “graduate” to a custom setup at any time. Run a single command, and we will remove the tool and copy all the configuration and dependencies into your project, so you can pick up where we left off.
+@@ -11,3 +12 @@ Make it easy to get started with React.
+-* We hide a small curated set of tools behind a CLI with zero configuration. The scope is very limited: we intentionally offer the minimal tools we think are useful, and we don't allow any addons or feature creep.
+-* We let you exit the "getting started" experience at any time. A single CLI command removes the dependency on React CLI and replaces it with real Webpack/ESLint/Babel configs and commands. You are on your own now.
+-* We promote the hell out of it on in the docs. This is built by the team so people trust it.
++## Installation
+@@ -15 +14 @@ Make it easy to get started with React.
+-## Philosophy
++Install it once globally:
+@@ -17 +16,3 @@ Make it easy to get started with React.
+-### Zero Configuration
++```sh
++npm install -g create-react-app
++```
+@@ -19 +20 @@ Make it easy to get started with React.
+-This is a hard constraint. We are committed to having zero configuration in the project.
++## Usage
+@@ -21 +22 @@ This is a hard constraint. We are committed to having zero configuration in the
+-If you use `create-react-app`, you should have `src/index.js`, your bundle will be compiled to `build/index.html`, and it will run at http://localhost:3000 in development. You can’t change this.
++To create a new app, run:
+@@ -23 +24,4 @@ If you use `create-react-app`, you should have `src/index.js`, your bundle will
+-It will have Babel, ESLint, Autprefixr and some other stuff we think it useful for getting started, but you won’t be exposed to it, and won’t be able to configure it. We curate the setup completely.
++```sh
++create-react-app my-app
++cd my-app
++```
+@@ -25 +29 @@ It will have Babel, ESLint, Autprefixr and some other stuff we think it useful f
+-### Exit Strategy
++This will create a directory called `my-app` inside the current folder.  
+@@ -27 +31,2 @@ It will have Babel, ESLint, Autprefixr and some other stuff we think it useful f
+-You can say goodbye to `create-react-app` at any time. Type `npm run export-scripts`, and it will create the configs and replace the generated `scripts` in `package.json` with the equivalent "real thing" (e.g. `webpack-dev-server` and `webpack` calls). You're on your own now.
++Inside that directory, we will generate the initial project structure and install the transient dependencies.  
++Once it’s finished, you can run some commands inside the project folder!
+@@ -29 +34 @@ You can say goodbye to `create-react-app` at any time. Type `npm run export-scri
+-This is why "zero configuration" can work as a constraint. We can punt on many real-world features (code splitting, Google Analytics, custom Babel plugins) because we let you leave the "getting started" experience any time.
++### `npm start`
+@@ -31 +36,2 @@ This is why "zero configuration" can work as a constraint. We can punt on many r
+-This makes Create React App a feasible way to get started with a "real" React project without learning the tools. Once you export, you can't go back.
++Runs the app in the development mode.  
++Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+@@ -33 +39,2 @@ This makes Create React App a feasible way to get started with a "real" React pr
+-### One Dependency
++The page will reload if you make edits.  
++You will also see any lint errors in the console.
+@@ -35 +42 @@ This makes Create React App a feasible way to get started with a "real" React pr
+-It works like `react-native-cli`. There is just one thing in your `devDependencies`, and it hides Babel, ESLint, and all the other stuff. But as I wrote above, you can `npm run exports-scripts` at any time.
++### `npm run build`
+@@ -37 +44,2 @@ It works like `react-native-cli`. There is just one thing in your `devDependenci
+-## How to use
++Builds the app for production to the `build` folder.  
++It correctly bundles React in production mode and optimizes the build for the best performance.
+@@ -39 +47,2 @@ It works like `react-native-cli`. There is just one thing in your `devDependenci
+-Install once:
++The build is minified and the filenames include the hashes.  
++Your app is ready to be deployed!
+@@ -41,3 +50 @@ Install once:
+-```bash
+-npm install -g create-react-app
+-```
++### `npm run graduate`
+@@ -45 +52 @@ npm install -g create-react-app
+-When creating a new app:
++**Note: this is a one-way operation. Once you “graduate”, you can’t go back!**
+@@ -47,5 +54 @@ When creating a new app:
+-```
+-create-react-app my-app
+-cd my-app
+-npm start
+-```
++If you aren’t satisfied with the defaults we provide, and want to change or extend your build configuration, you can graduate at any time. This command will remove the single build dependency we provided from your project.
+@@ -53 +56 @@ npm start
+-Done!
++Instead, it will copy all the configuration files and the dependencies we have been using under the hood into your project so you have full control over them. All of the commands except `graduate` will still work, but we will point them to the copied scripts so you can tweak them. At this point you’re on your own.
+@@ -55 +58 @@ Done!
+-If you want to build it for production
++You don’t have to ever graduate. We intend to keep the curated feature set suitable for small and middle deployments, and you shouldn’t feel obliged to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+@@ -57,3 +60 @@ If you want to build it for production
+-```
+-npm run build
+-```
++## Limitations
+@@ -61 +62 @@ npm run build
+-and if you want to tweak it
++We don’t currently intend to support advanced features such as server rendering, experimental Babel plugins, custom ESLint configuration, etc. Our goal is to provide a tool that bootstraps a minimal production-ready React project with a great developer experience and sane defaults. If you want an advanced feature, you can still use this tool, and later run `npm run graduate` to customize the experience (but then there’s no going back!)
+@@ -63,3 +64 @@ and if you want to tweak it
+-```
+-npm run exports-scripts # Beware, this is a one-way operation, can't go back!
+-```
++## What’s Inside?
+@@ -67 +66,2 @@ npm run exports-scripts # Beware, this is a one-way operation, can't go back!
+-## How to develop it
++The tools used by Create React App are subject to change.  
++Currently we use:
+@@ -69 +69,9 @@ npm run exports-scripts # Beware, this is a one-way operation, can't go back!
+-You first need to
++* [webpack](https://webpack.github.io/)
++* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
++* [Babel](http://babeljs.io/) with [preset-es2015](https://www.npmjs.com/package/babel-preset-es2015), [preset-es2016](https://www.npmjs.com/package/babel-preset-es2016) and [transform-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/)
++* [Autoprefixer](https://github.com/postcss/autoprefixer)
++* [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin)
++* [style-loader](https://github.com/webpack/style-loader)
++* [ESLint](http://eslint.org/)
++* [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
++* and some more.
+@@ -71,3 +79 @@ You first need to
+-```
+-npm install
+-```
++We hide all of them behind our npm package so you don’t need to worry about upgrading them or solving conflicts.
+@@ -75 +81 @@ npm install
+-Once it is done, you can modify any file locally and do
++## You Don’t Have to Use This
+@@ -77,4 +83,11 @@ Once it is done, you can modify any file locally and do
+-```
+-npm start
+-npm run build
+-```
++This is not the “one true way” to create React apps. You don’t need to port your project to use this if you’re happy with your setup. There are also many things we won’t provide (see “Limitations” above).
++
++Historically we’ve made it easy to gradually adopt React, but many people create new single-page React apps every day, and we’ve heard [loud and clear](https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4) that this process can be error-prone and tedious, especially if this is your first JavaScript build stack.
++
++This project is our attempt to figure out a good way to start developing React apps. We don’t claim it’s the best possible stack, and there are intentional limitations, but we think you can ship a production app with it, and we’ll make it even better over time.
++
++We also want you to feel in control so you can “graduate” from this tool at any time (see instructions above!).
++
++## Contibuting
++
++Clone the repo and run `npm install`.
+@@ -82 +95,2 @@ npm run build
+-If you want to try out the end to end flow with the global cli
++Once it is done, you can modify any file locally and run `npm start` or `npm run build` just like in a generated project.  
++If you want to try out the end-to-end flow with the global CLI, you can do this too:
+@@ -87 +100,0 @@ cd my-app
+-npm run
+@@ -89,0 +103 @@ npm run
++and then run `npm start` or `npm run build`.
+diff --git a/README.md b/README.md
+index ff0dd5d7..ce38371a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# React CLI
++# Create React App
+@@ -21 +21 @@ This is a hard constraint. We are committed to having zero configuration in the
+-If you use `react-cli`, you should have `src/index.js`, your bundle will be compiled to `dist/`, and it will run at http://localhost:3000 in development. You can’t change this.
++If you use `create-react-app`, you should have `src/index.js`, your bundle will be compiled to `build/index.html`, and it will run at http://localhost:3000 in development. You can’t change this.
+@@ -27 +27 @@ It will have Babel, ESLint, Autprefixr and some other stuff we think it useful f
+-You can say goodbye to `react-cli` at any time. Type `react-cli export`, and it will create the configs and replace the generated `scripts` in `package.json` with the equivalent "real thing" (e.g. `webpack-dev-server` and `webpack` calls). You're on your own now.
++You can say goodbye to `create-react-app` at any time. Type `npm run export-scripts`, and it will create the configs and replace the generated `scripts` in `package.json` with the equivalent "real thing" (e.g. `webpack-dev-server` and `webpack` calls). You're on your own now.
+@@ -31 +31 @@ This is why "zero configuration" can work as a constraint. We can punt on many r
+-This makes React CLI a feasible way to get started with a "real" React project without learning the tools. Once you export, you can't go back.
++This makes Create React App a feasible way to get started with a "real" React project without learning the tools. Once you export, you can't go back.
+@@ -35 +35 @@ This makes React CLI a feasible way to get started with a "real" React project w
+-It works like `react-native-cli`. There is just one thing in your `devDependencies`, and it hides Babel, ESLint, and all the other stuff. But as I wrote above, you can `react-cli export` at any time.
++It works like `react-native-cli`. There is just one thing in your `devDependencies`, and it hides Babel, ESLint, and all the other stuff. But as I wrote above, you can `npm run exports-scripts` at any time.
+@@ -36,0 +37 @@ It works like `react-native-cli`. There is just one thing in your `devDependenci
++## How to use
+@@ -37,0 +39,50 @@ It works like `react-native-cli`. There is just one thing in your `devDependenci
++Install once:
++
++```bash
++npm install -g create-react-app
++```
++
++When creating a new app:
++
++```
++create-react-app my-app
++cd my-app
++npm start
++```
++
++Done!
++
++If you want to build it for production
++
++```
++npm run build
++```
++
++and if you want to tweak it
++
++```
++npm run exports-scripts # Beware, this is a one-way operation, can't go back!
++```
++
++## How to develop it
++
++You first need to
++
++```
++npm install
++```
++
++Once it is done, you can modify any file locally and do
++
++```
++npm start
++npm run build
++```
++
++If you want to try out the end to end flow with the global cli
++
++```
++npm run create-react-app my-app
++cd my-app
++npm run
++```
+diff --git a/README.md b/README.md
+index a70ebe2a..ff0dd5d7 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+-# react-getting-started
+\ No newline at end of file
++# React CLI
++
++A new blessed “getting started” experience for building SPAs in React that we can actually ship.
++
++## Goal
++
++Make it easy to get started with React.
++
++## Why This Won't Fail
++
++* We hide a small curated set of tools behind a CLI with zero configuration. The scope is very limited: we intentionally offer the minimal tools we think are useful, and we don't allow any addons or feature creep.
++* We let you exit the "getting started" experience at any time. A single CLI command removes the dependency on React CLI and replaces it with real Webpack/ESLint/Babel configs and commands. You are on your own now.
++* We promote the hell out of it on in the docs. This is built by the team so people trust it.
++
++## Philosophy
++
++### Zero Configuration
++
++This is a hard constraint. We are committed to having zero configuration in the project.
++
++If you use `react-cli`, you should have `src/index.js`, your bundle will be compiled to `dist/`, and it will run at http://localhost:3000 in development. You can’t change this.
++
++It will have Babel, ESLint, Autprefixr and some other stuff we think it useful for getting started, but you won’t be exposed to it, and won’t be able to configure it. We curate the setup completely.
++
++### Exit Strategy
++
++You can say goodbye to `react-cli` at any time. Type `react-cli export`, and it will create the configs and replace the generated `scripts` in `package.json` with the equivalent "real thing" (e.g. `webpack-dev-server` and `webpack` calls). You're on your own now.
++
++This is why "zero configuration" can work as a constraint. We can punt on many real-world features (code splitting, Google Analytics, custom Babel plugins) because we let you leave the "getting started" experience any time.
++
++This makes React CLI a feasible way to get started with a "real" React project without learning the tools. Once you export, you can't go back.
++
++### One Dependency
++
++It works like `react-native-cli`. There is just one thing in your `devDependencies`, and it hides Babel, ESLint, and all the other stuff. But as I wrote above, you can `react-cli export` at any time.
++
++
++

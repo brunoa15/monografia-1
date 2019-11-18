@@ -1,0 +1,1535 @@
+diff --git a/README.md b/README.md
+index 4750f171..7e2fa602 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ Keras is compatible with: __Python 2.7-3.6__.
+-Keras 2.2.5 is the last release of Keras that implements the 2.2.* API. It is the last release to only support TensorFlow 1 (as well as Theano and CNTK).
++**At this time, we recommend that Keras users who use multi-backend Keras with the TensorFlow backend switch to `tf.keras` in TensorFlow 2.0**. `tf.keras` is better maintained and has better integration with TensorFlow features (eager execution, distribution support and other).
+@@ -29 +29 @@ Keras 2.2.5 is the last release of Keras that implements the 2.2.* API. It is th
+-The next release will be 2.3.0, which makes significant API changes and add support for TensorFlow 2.0. The 2.3.0 release will be the last major release of multi-backend Keras. Multi-backend Keras is superseded by tf.keras.
++Keras 2.2.5 was the last release of Keras implementing the 2.2.* API. It was the last release to only support TensorFlow 1 (as well as Theano and CNTK).
+@@ -31 +31 @@ The next release will be 2.3.0, which makes significant API changes and add supp
+-At this time, we recommend that Keras users who use multi-backend Keras with the TensorFlow backend switch to tf.keras in TensorFlow 2.0. tf.keras is better maintained and has better integration with TensorFlow features (eager execution, distribution support and other).
++The current release is Keras 2.3.0, which makes significant API changes and add support for TensorFlow 2.0. The 2.3.0 release will be the last major release of multi-backend Keras. Multi-backend Keras is superseded by `tf.keras`.
+@@ -33 +33 @@ At this time, we recommend that Keras users who use multi-backend Keras with the
+-Bugs present in multi-backend Keras will only be fixed until April 2020.
++Bugs present in multi-backend Keras will only be fixed until April 2020 (as part of minor releases).
+@@ -36,0 +37 @@ For more information about the future of Keras, see [the Keras meeting notes](ht
++
+diff --git a/README.md b/README.md
+index 484d8f95..4750f171 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25,13 @@ Keras is compatible with: __Python 2.7-3.6__.
++## Multi-backend Keras and tf.keras:
++
++Keras 2.2.5 is the last release of Keras that implements the 2.2.* API. It is the last release to only support TensorFlow 1 (as well as Theano and CNTK).
++
++The next release will be 2.3.0, which makes significant API changes and add support for TensorFlow 2.0. The 2.3.0 release will be the last major release of multi-backend Keras. Multi-backend Keras is superseded by tf.keras.
++
++At this time, we recommend that Keras users who use multi-backend Keras with the TensorFlow backend switch to tf.keras in TensorFlow 2.0. tf.keras is better maintained and has better integration with TensorFlow features (eager execution, distribution support and other).
++
++Bugs present in multi-backend Keras will only be fixed until April 2020.
++
++For more information about the future of Keras, see [the Keras meeting notes](http://bit.ly/keras-meeting-notes).
++
++------------------
+diff --git a/README.md b/README.md
+index b64cd53a..484d8f95 100644
+--- a/README.md
++++ b/README.md
+@@ -130,0 +131,3 @@ Then, you can install Keras itself. There are two ways to install Keras:
++Note: These installation steps assume that you are on a Linux or Mac environment.
++If you are on Windows, you will need to remove `sudo` to run the commands below.
++
+diff --git a/README.md b/README.md
+index 93d6cb8b..b64cd53a 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ Keras is compatible with: __Python 2.7-3.6__.
+-- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully configurable modules that can be plugged together with as few restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
++- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully configurable modules that can be plugged together with as few restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions and regularization schemes are all standalone modules that you can combine to create new models.
+diff --git a/README.md b/README.md
+index 8d51120c..93d6cb8b 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ Keras is compatible with: __Python 2.7-3.6__.
+-- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as few restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
++- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully configurable modules that can be plugged together with as few restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
+diff --git a/README.md b/README.md
+index 45655364..8d51120c 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ Keras is compatible with: __Python 2.7-3.6__.
+-- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
++- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as few restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
+diff --git a/README.md b/README.md
+index 4caa603c..45655364 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158 @@ sudo python setup.py install
+-## Using a different backend than TensorFlow
++## Configuring your Keras backend
+diff --git a/README.md b/README.md
+index 6396f8b8..4caa603c 100644
+--- a/README.md
++++ b/README.md
+@@ -123,3 +123,3 @@ You may also consider installing the following **optional dependencies**:
+-- cuDNN (recommended if you plan on running Keras on GPU).
+-- HDF5 and h5py (required if you plan on saving Keras models to disk).
+-- graphviz and pydot (used by [visualization utilities](https://keras.io/visualization/) to plot model graphs).
++- [cuDNN](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/) (recommended if you plan on running Keras on GPU).
++- HDF5 and [h5py](http://docs.h5py.org/en/latest/build.html) (required if you plan on saving Keras models to disk).
++- [graphviz](https://graphviz.gitlab.io/download/) and [pydot](https://github.com/erocarrera/pydot) (used by [visualization utilities](https://keras.io/visualization/) to plot model graphs).
+diff --git a/README.md b/README.md
+index 234ad7d1..6396f8b8 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158 @@ sudo python setup.py install
+-## Switching from TensorFlow to CNTK or Theano
++## Using a different backend than TensorFlow
+diff --git a/README.md b/README.md
+index b042d451..234ad7d1 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ You can ask questions and join the development discussion:
+-You can also post **bug reports and feature requests** (only) in [Github issues](https://github.com/keras-team/keras/issues). Make sure to read [our guidelines](https://github.com/keras-team/keras/blob/master/CONTRIBUTING.md) first.
++You can also post **bug reports and feature requests** (only) in [GitHub issues](https://github.com/keras-team/keras/issues). Make sure to read [our guidelines](https://github.com/keras-team/keras/blob/master/CONTRIBUTING.md) first.
+diff --git a/README.md b/README.md
+index d1cea96a..b042d451 100644
+--- a/README.md
++++ b/README.md
+@@ -141 +141 @@ pip install keras
+-- **Alternatively: install Keras from the Github source:**
++- **Alternatively: install Keras from the GitHub source:**
+diff --git a/README.md b/README.md
+index b3d6712e..d1cea96a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-﻿# Keras: Deep Learning for Python
++﻿# Keras: Deep Learning for humans
+diff --git a/README.md b/README.md
+index b4baf9b2..b3d6712e 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ ﻿# Keras: Deep Learning for Python
+-[![Build Status](https://travis-ci.org/fchollet/keras.svg?branch=master)](https://travis-ci.org/fchollet/keras)
+-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/fchollet/keras/blob/master/LICENSE)
++[![Build Status](https://travis-ci.org/keras-team/keras.svg?branch=master)](https://travis-ci.org/keras-team/keras)
++[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/keras-team/keras/blob/master/LICENSE)
+@@ -107 +107 @@ For a more in-depth tutorial about Keras, you can check out:
+-In the [examples folder](https://github.com/fchollet/keras/tree/master/examples) of the repository, you will find more advanced models: question-answering with memory networks, text generation with stacked LSTMs, etc.
++In the [examples folder](https://github.com/keras-team/keras/tree/master/examples) of the repository, you will find more advanced models: question-answering with memory networks, text generation with stacked LSTMs, etc.
+@@ -146 +146 @@ First, clone Keras using `git`:
+-git clone https://github.com/fchollet/keras.git
++git clone https://github.com/keras-team/keras.git
+@@ -172 +172 @@ You can ask questions and join the development discussion:
+-You can also post **bug reports and feature requests** (only) in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
++You can also post **bug reports and feature requests** (only) in [Github issues](https://github.com/keras-team/keras/issues). Make sure to read [our guidelines](https://github.com/keras-team/keras/blob/master/CONTRIBUTING.md) first.
+diff --git a/README.md b/README.md
+index 77129a40..b4baf9b2 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Stacking layers is as easy as `.add()`:
+-from keras.layers import Dense, Activation
++from keras.layers import Dense
+@@ -57,4 +57,2 @@ from keras.layers import Dense, Activation
+-model.add(Dense(units=64, input_dim=100))
+-model.add(Activation('relu'))
+-model.add(Dense(units=10))
+-model.add(Activation('softmax'))
++model.add(Dense(units=64, activation='relu', input_dim=100))
++model.add(Dense(units=10, activation='softmax'))
+diff --git a/README.md b/README.md
+index a3aed55b..77129a40 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ ﻿# Keras: Deep Learning for Python
+-![Keras logo](https://s3.amazonaws.com/keras.io/img/keras-logo-2018-transparent-large.png)
++![Keras logo](https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png)
+diff --git a/README.md b/README.md
+index 8e6988b7..a3aed55b 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ ﻿# Keras: Deep Learning for Python
+-![Keras logo](https://s3.amazonaws.com/keras.io/img/keras-logo-medium.png)
++![Keras logo](https://s3.amazonaws.com/keras.io/img/keras-logo-2018-transparent-large.png)
+diff --git a/README.md b/README.md
+index f3ade919..8e6988b7 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@ ﻿# Keras: Deep Learning for Python
++![Keras logo](https://s3.amazonaws.com/keras.io/img/keras-logo-medium.png)
++
+diff --git a/README.md b/README.md
+index cf319eb6..f3ade919 100644
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ Read the documentation at [Keras.io](https://keras.io).
+-Keras is compatible with: __Python 2.7-3.5__.
++Keras is compatible with: __Python 2.7-3.6__.
+diff --git a/README.md b/README.md
+index 5b44e996..cf319eb6 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Use Keras if you need a deep learning library that:
+-Read the documentation at [Keras.io](http://keras.io).
++Read the documentation at [Keras.io](https://keras.io).
+@@ -40 +40 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. The simplest type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide), which allows to build arbitrary graphs of layers.
++The core data structure of Keras is a __model__, a way to organize layers. The simplest type of model is the [`Sequential`](https://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](https://keras.io/getting-started/functional-api-guide), which allows to build arbitrary graphs of layers.
+@@ -104,2 +104,2 @@ For a more in-depth tutorial about Keras, you can check out:
+-- [Getting started with the Sequential model](http://keras.io/getting-started/sequential-model-guide)
+-- [Getting started with the functional API](http://keras.io/getting-started/functional-api-guide)
++- [Getting started with the Sequential model](https://keras.io/getting-started/sequential-model-guide)
++- [Getting started with the functional API](https://keras.io/getting-started/functional-api-guide)
+@@ -160 +160 @@ sudo python setup.py install
+-By default, Keras will use TensorFlow as its tensor manipulation library. [Follow these instructions](http://keras.io/backend/) to configure the Keras backend.
++By default, Keras will use TensorFlow as its tensor manipulation library. [Follow these instructions](https://keras.io/backend/) to configure the Keras backend.
+diff --git a/README.md b/README.md
+index 6c656abd..5b44e996 100644
+--- a/README.md
++++ b/README.md
+@@ -115 +115 @@ In the [examples folder](https://github.com/fchollet/keras/tree/master/examples)
+-Keras uses the following dependencies:
++Before installing Keras, please install one of its backend engines: TensorFlow, Theano, or CNTK. We recommend the TensorFlow backend.
+@@ -117,4 +117,3 @@ Keras uses the following dependencies:
+-- numpy, scipy
+-- yaml
+-- HDF5 and h5py (optional, required if you use model saving/loading functions)
+-- Optional but recommended if you use CNNs: cuDNN.
++- [TensorFlow installation instructions](https://www.tensorflow.org/install/).
++- [Theano installation instructions](http://deeplearning.net/software/theano/install.html#install).
++- [CNTK installation instructions](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine).
+@@ -121,0 +121 @@ Keras uses the following dependencies:
++You may also consider installing the following **optional dependencies**:
+@@ -123 +123,3 @@ Keras uses the following dependencies:
+-*When using the TensorFlow backend:*
++- cuDNN (recommended if you plan on running Keras on GPU).
++- HDF5 and h5py (required if you plan on saving Keras models to disk).
++- graphviz and pydot (used by [visualization utilities](https://keras.io/visualization/) to plot model graphs).
+@@ -125,2 +127 @@ Keras uses the following dependencies:
+-- TensorFlow
+-    - [See installation instructions](https://www.tensorflow.org/install/).
++Then, you can install Keras itself. There are two ways to install Keras:
+@@ -128 +129 @@ Keras uses the following dependencies:
+-*When using the CNTK backend:*
++- **Install Keras from PyPI (recommended):**
+@@ -130,2 +131,9 @@ Keras uses the following dependencies:
+-- CNTK
+-    - [See installation instructions](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine).
++```sh
++sudo pip install keras
++```
++
++If you are using a virtualenv, you may want to avoid using sudo:
++
++```sh
++pip install keras
++```
+@@ -133 +141 @@ Keras uses the following dependencies:
+-*When using the Theano backend:*
++- **Alternatively: install Keras from the Github source:**
+@@ -135,2 +143 @@ Keras uses the following dependencies:
+-- Theano
+-    - [See installation instructions](http://deeplearning.net/software/theano/install.html#install).
++First, clone Keras using `git`:
+@@ -138 +144,0 @@ Keras uses the following dependencies:
+-To install Keras, `cd` to the Keras folder and run the install command:
+@@ -140 +146 @@ To install Keras, `cd` to the Keras folder and run the install command:
+-sudo python setup.py install
++git clone https://github.com/fchollet/keras.git
+@@ -143 +149 @@ sudo python setup.py install
+-You can also install Keras from PyPI:
++ Then, `cd` to the Keras folder and run the install command:
+@@ -145 +151,2 @@ You can also install Keras from PyPI:
+-sudo pip install keras
++cd keras
++sudo python setup.py install
+diff --git a/README.md b/README.md
+index 6ed8e7d0..6c656abd 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ ﻿# Keras: Deep Learning for Python
+-Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow), [CNTK](https://github.com/Microsoft/cntk) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
++Keras is a high-level neural networks API, written in Python and capable of running on top of [TensorFlow](https://github.com/tensorflow/tensorflow), [CNTK](https://github.com/Microsoft/cntk), or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+diff --git a/README.md b/README.md
+index d2814716..6ed8e7d0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-﻿# Keras: Deep Learning library for TensorFlow, CNTK, and Theano
++﻿# Keras: Deep Learning for Python
+@@ -8 +8 @@ ﻿# Keras: Deep Learning library for TensorFlow, CNTK, and Theano
+-Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) [CNTK](https://github.com/Microsoft/cntk) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
++Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow), [CNTK](https://github.com/Microsoft/cntk) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+diff --git a/README.md b/README.md
+index 1b45ea56..d2814716 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Keras: Deep Learning library for TensorFlow and Theano
++﻿# Keras: Deep Learning library for TensorFlow, CNTK, and Theano
+@@ -8 +8 @@
+-Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
++Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) [CNTK](https://github.com/Microsoft/cntk) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+@@ -127,0 +128,5 @@ Keras uses the following dependencies:
++*When using the CNTK backend:*
++
++- CNTK
++    - [See installation instructions](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-cntk-on-your-machine).
++
+@@ -146 +151 @@ sudo pip install keras
+-## Switching from TensorFlow to Theano
++## Switching from TensorFlow to CNTK or Theano
+diff --git a/README.md b/README.md
+index d3dec43b..1b45ea56 100644
+--- a/README.md
++++ b/README.md
+@@ -6,2 +5,0 @@
+-# Keras: Deep Learning library for Theano and TensorFlow
+-
+@@ -28 +26 @@ Keras is compatible with: __Python 2.7-3.5__.
+-- __User friendliness.__ Keras is an API designed for human beings, not machines. It puts user experience front and center. Keras follows best practices for reducing cognitive load: it offers consistent & simple APIs, it minimizes the number user actions required for common use cases, and it provides clear and actionable feedback upon user error.
++- __User friendliness.__ Keras is an API designed for human beings, not machines. It puts user experience front and center. Keras follows best practices for reducing cognitive load: it offers consistent & simple APIs, it minimizes the number of user actions required for common use cases, and it provides clear and actionable feedback upon user error.
+@@ -42 +40 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. The simplest type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide), allowing to build arbitrary graphs of layers.
++The core data structure of Keras is a __model__, a way to organize layers. The simplest type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide), which allows to build arbitrary graphs of layers.
+diff --git a/README.md b/README.md
+index 64ada903..d3dec43b 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++# Keras: Deep Learning library for Theano and TensorFlow
+@@ -9 +10 @@
+-Keras is a high-level neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
++Keras is a high-level neural networks API, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+@@ -13 +14 @@ Use Keras if you need a deep learning library that:
+-- Allows for easy and fast prototyping (through total modularity, minimalism, and extensibility).
++- Allows for easy and fast prototyping (through user friendliness, modularity, and extensibility).
+@@ -15 +15,0 @@ Use Keras if you need a deep learning library that:
+-- Supports arbitrary connectivity schemes (including multi-input and multi-output training).
+@@ -28 +28 @@ Keras is compatible with: __Python 2.7-3.5__.
+-- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
++- __User friendliness.__ Keras is an API designed for human beings, not machines. It puts user experience front and center. Keras follows best practices for reducing cognitive load: it offers consistent & simple APIs, it minimizes the number user actions required for common use cases, and it provides clear and actionable feedback upon user error.
+@@ -30 +30 @@ Keras is compatible with: __Python 2.7-3.5__.
+-- __Minimalism.__ Each module should be kept short and simple. Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate.
++- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
+@@ -32 +32 @@ Keras is compatible with: __Python 2.7-3.5__.
+-- __Easy extensibility.__ New modules are dead simple to add (as new classes and functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for advanced research.
++- __Easy extensibility.__ New modules are simple to add (as new classes and functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for advanced research.
+@@ -42 +42 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide).
++The core data structure of Keras is a __model__, a way to organize layers. The simplest type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide), allowing to build arbitrary graphs of layers.
+@@ -44 +44 @@ The core data structure of Keras is a __model__, a way to organize layers. The m
+-Here's the `Sequential` model:
++Here is the `Sequential` model:
+@@ -57 +57 @@ from keras.layers import Dense, Activation
+-model.add(Dense(output_dim=64, input_dim=100))
++model.add(Dense(units=64, input_dim=100))
+@@ -59 +59 @@ model.add(Activation('relu'))
+-model.add(Dense(output_dim=10))
++model.add(Dense(units=10))
+@@ -63,0 +64 @@ Once your model looks good, configure its learning process with `.compile()`:
++
+@@ -65 +66,3 @@ Once your model looks good, configure its learning process with `.compile()`:
+-model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
++model.compile(loss='categorical_crossentropy',
++              optimizer='sgd',
++              metrics=['accuracy'])
+@@ -70,2 +73,2 @@ If you need to, you can further configure your optimizer. A core principle of Ke
+-from keras.optimizers import SGD
+-model.compile(loss='categorical_crossentropy', optimizer=SGD(lr=0.01, momentum=0.9, nesterov=True))
++model.compile(loss=keras.losses.categorical_crossentropy,
++              optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True))
+@@ -74,0 +78 @@ You can now iterate on your training data in batches:
++
+@@ -76 +80,2 @@ You can now iterate on your training data in batches:
+-model.fit(X_train, Y_train, nb_epoch=5, batch_size=32)
++# x_train and y_train are Numpy arrays --just like in the Scikit-Learn API.
++model.fit(x_train, y_train, epochs=5, batch_size=32)
+@@ -79,0 +85 @@ Alternatively, you can feed batches to your model manually:
++
+@@ -81 +87 @@ Alternatively, you can feed batches to your model manually:
+-model.train_on_batch(X_batch, Y_batch)
++model.train_on_batch(x_batch, y_batch)
+@@ -84,0 +91 @@ Evaluate your performance in one line:
++
+@@ -86 +93 @@ Evaluate your performance in one line:
+-loss_and_metrics = model.evaluate(X_test, Y_test, batch_size=32)
++loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
+@@ -89,0 +97 @@ Or generate predictions on new data:
++
+@@ -91,2 +99 @@ Or generate predictions on new data:
+-classes = model.predict_classes(X_test, batch_size=32)
+-proba = model.predict_proba(X_test, batch_size=32)
++classes = model.predict(x_test, batch_size=128)
+@@ -95 +102 @@ proba = model.predict_proba(X_test, batch_size=32)
+-Building a question answering system, an image classification model, a Neural Turing Machine, a word2vec embedder or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
++Building a question answering system, an image classification model, a Neural Turing Machine, or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
+@@ -113 +120 @@ Keras uses the following dependencies:
+-- pyyaml
++- yaml
+@@ -121 +128 @@ Keras uses the following dependencies:
+-    - [See installation instructions](https://www.tensorflow.org/install/)
++    - [See installation instructions](https://www.tensorflow.org/install/).
+diff --git a/README.md b/README.md
+index c6315b0d..64ada903 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ Keras uses the following dependencies:
+-    - [See installation instructions](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/g3doc/get_started/os_setup.md)
++    - [See installation instructions](https://www.tensorflow.org/install/)
+diff --git a/README.md b/README.md
+index bcc06429..c6315b0d 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ Keras uses the following dependencies:
+-    - [See installation instructions](https://github.com/tensorflow/tensorflow#download-and-setup).
++    - [See installation instructions](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/g3doc/get_started/os_setup.md)
+diff --git a/README.md b/README.md
+index b3398b0e..bcc06429 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ model.add(Dense(output_dim=64, input_dim=100))
+-model.add(Activation("relu"))
++model.add(Activation('relu'))
+@@ -60 +60 @@ model.add(Dense(output_dim=10))
+-model.add(Activation("softmax"))
++model.add(Activation('softmax'))
+diff --git a/README.md b/README.md
+index 4d888c60..b3398b0e 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@
+-[![Join the chat at https://gitter.im/Keras-io/Lobby](https://badges.gitter.im/Keras-io/Lobby.svg)](https://gitter.im/Keras-io/Lobby)
+@@ -154 +153 @@ You can ask questions and join the development discussion:
+-- On the [Keras Gitter channel](https://gitter.im/Keras-io/Lobby).
++- On the [Keras Slack channel](https://kerasteam.slack.com). Use [this link](https://keras-slack-autojoin.herokuapp.com/) to request an invitation to the channel.
+@@ -156 +155 @@ You can ask questions and join the development discussion:
+-You can also post bug reports and feature requests in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
++You can also post **bug reports and feature requests** (only) in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
+diff --git a/README.md b/README.md
+index b5c8519a..4d888c60 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +3,0 @@
+-[![PyPI version](https://badge.fury.io/py/keras.svg)](https://badge.fury.io/py/keras)
+diff --git a/README.md b/README.md
+index eaea7fa9..b5c8519a 100644
+--- a/README.md
++++ b/README.md
+@@ -152 +152,4 @@ By default, Keras will use TensorFlow as its tensor manipulation library. [Follo
+-You can ask questions and join the development discussion on the [Keras Google group](https://groups.google.com/forum/#!forum/keras-users).
++You can ask questions and join the development discussion:
++
++- On the [Keras Google group](https://groups.google.com/forum/#!forum/keras-users).
++- On the [Keras Gitter channel](https://gitter.im/Keras-io/Lobby).
+diff --git a/README.md b/README.md
+index 0b8846a8..eaea7fa9 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@
+-Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
++Keras is a high-level neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+diff --git a/README.md b/README.md
+index ba112046..0b8846a8 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,2 @@
++[![Join the chat at https://gitter.im/Keras-io/Lobby](https://badges.gitter.im/Keras-io/Lobby.svg)](https://gitter.im/Keras-io/Lobby)
++
+diff --git a/README.md b/README.md
+index 1e62b7ea..ba112046 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Keras: Deep Learning library for Theano and TensorFlow
++# Keras: Deep Learning library for TensorFlow and Theano
+@@ -9 +9 @@
+-Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
++Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. *Being able to go from idea to result with the least possible delay is key to doing good research.*
+@@ -13,4 +13,4 @@ Use Keras if you need a deep learning library that:
+-- allows for easy and fast prototyping (through total modularity, minimalism, and extensibility).
+-- supports both convolutional networks and recurrent networks, as well as combinations of the two.
+-- supports arbitrary connectivity schemes (including multi-input and multi-output training).
+-- runs seamlessly on CPU and GPU.
++- Allows for easy and fast prototyping (through total modularity, minimalism, and extensibility).
++- Supports both convolutional networks and recurrent networks, as well as combinations of the two.
++- Supports arbitrary connectivity schemes (including multi-input and multi-output training).
++- Runs seamlessly on CPU and GPU.
+@@ -117,4 +116,0 @@ Keras uses the following dependencies:
+-*When using the Theano backend:*
+-
+-- Theano
+-    - [See installation instructions](http://deeplearning.net/software/theano/install.html#install).
+@@ -126,0 +123,5 @@ Keras uses the following dependencies:
++*When using the Theano backend:*
++
++- Theano
++    - [See installation instructions](http://deeplearning.net/software/theano/install.html#install).
++
+@@ -140 +141 @@ sudo pip install keras
+-## Switching from Theano to TensorFlow
++## Switching from TensorFlow to Theano
+@@ -142 +143 @@ sudo pip install keras
+-By default, Keras will use Theano as its tensor manipulation library. [Follow these instructions](http://keras.io/backend/) to configure the Keras backend.
++By default, Keras will use TensorFlow as its tensor manipulation library. [Follow these instructions](http://keras.io/backend/) to configure the Keras backend.
+diff --git a/README.md b/README.md
+index dfd1d29c..1e62b7ea 100644
+--- a/README.md
++++ b/README.md
+@@ -128 +128 @@ To install Keras, `cd` to the Keras folder and run the install command:
+-```
++```sh
+@@ -133 +133 @@ You can also install Keras from PyPI:
+-```
++```sh
+diff --git a/README.md b/README.md
+index 2b5ab7d9..dfd1d29c 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@
++[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://github.com/fchollet/keras/blob/master/LICENSE)
+diff --git a/README.md b/README.md
+index 9bac5149..2b5ab7d9 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54 @@ Stacking layers is as easy as `.add()`:
+-from keras.layers.core import Dense, Activation
++from keras.layers import Dense, Activation
+diff --git a/README.md b/README.md
+index e3ca451a..9bac5149 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras function API](http://keras.io/getting-started/functional-api-guide).
++The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras functional API](http://keras.io/getting-started/functional-api-guide).
+diff --git a/README.md b/README.md
+index d976cf65..e3ca451a 100644
+--- a/README.md
++++ b/README.md
+@@ -121,5 +120,0 @@ Keras uses the following dependencies:
+-**Note**: You should use the latest version of Theano, not the PyPI version. Install it with:
+-```
+-sudo pip install git+git://github.com/Theano/Theano.git
+-```
+-
+diff --git a/README.md b/README.md
+index 181da6c3..d976cf65 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,2 @@
+-![Build status](https://api.travis-ci.org/fchollet/keras.svg)
++[![Build Status](https://travis-ci.org/fchollet/keras.svg?branch=master)](https://travis-ci.org/fchollet/keras)
++[![PyPI version](https://badge.fury.io/py/keras.svg)](https://badge.fury.io/py/keras)
+diff --git a/README.md b/README.md
+index 8db0c090..181da6c3 100644
+--- a/README.md
++++ b/README.md
+@@ -99 +98,0 @@ For a more in-depth tutorial about Keras, you can check out:
+-- [Starter examples](http://keras.io/examples)
+diff --git a/README.md b/README.md
+index 56edae3e..8db0c090 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/models/#sequential) model, a linear stack of layers. For more complex architectures, you should use the [Keras function API]().
++The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/getting-started/sequential-model-guide) model, a linear stack of layers. For more complex architectures, you should use the [Keras function API](http://keras.io/getting-started/functional-api-guide).
+@@ -84 +84 @@ Evaluate your performance in one line:
+-objective_score = model.evaluate(X_test, Y_test, batch_size=32)
++loss_and_metrics = model.evaluate(X_test, Y_test, batch_size=32)
+@@ -93 +93 @@ proba = model.predict_proba(X_test, batch_size=32)
+-Building a network of LSTMs, a deep CNN, a Neural Turing Machine, a word2vec embedder or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
++Building a question answering system, an image classification model, a Neural Turing Machine, a word2vec embedder or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
+@@ -97,3 +97,3 @@ For a more in-depth tutorial about Keras, you can check out:
+-- [Getting started with the Sequential model]()
+-- [Getting started with the functional API]()
+-- [Starter examples]()
++- [Getting started with the Sequential model](http://keras.io/getting-started/sequential-model-guide)
++- [Getting started with the functional API](http://keras.io/getting-started/functional-api-guide)
++- [Starter examples](http://keras.io/examples)
+diff --git a/README.md b/README.md
+index 1a1db152..56edae3e 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core data structure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](http://keras.io/models/#sequential) and [`Graph`](http://keras.io/models/#graph).
++The core data structure of Keras is a __model__, a way to organize layers. The main type of model is the [`Sequential`](http://keras.io/models/#sequential) model, a linear stack of layers. For more complex architectures, you should use the [Keras function API]().
+@@ -42 +42 @@ The core data structure of Keras is a __model__, a way to organize layers. There
+-Here's the `Sequential` model (a linear pile of layers):
++Here's the `Sequential` model:
+@@ -55 +55 @@ from keras.layers.core import Dense, Activation
+-model.add(Dense(output_dim=64, input_dim=100, init="glorot_uniform"))
++model.add(Dense(output_dim=64, input_dim=100))
+@@ -57 +57 @@ model.add(Activation("relu"))
+-model.add(Dense(output_dim=10, init="glorot_uniform"))
++model.add(Dense(output_dim=10))
+@@ -63 +63 @@ Once your model looks good, configure its learning process with `.compile()`:
+-model.compile(loss='categorical_crossentropy', optimizer='sgd')
++model.compile(loss='categorical_crossentropy', optimizer='sgd', metrics=['accuracy'])
+@@ -95 +95 @@ Building a network of LSTMs, a deep CNN, a Neural Turing Machine, a word2vec emb
+-Have a look at these [starter examples](http://keras.io/examples/).
++For a more in-depth tutorial about Keras, you can check out:
+@@ -97 +97,5 @@ Have a look at these [starter examples](http://keras.io/examples/).
+-In the [examples folder](https://github.com/fchollet/keras/tree/master/examples) of the repo, you will find more advanced models: question-answering with memory networks, text generation with stacked LSTMs, neural turing machines, etc.
++- [Getting started with the Sequential model]()
++- [Getting started with the functional API]()
++- [Starter examples]()
++
++In the [examples folder](https://github.com/fchollet/keras/tree/master/examples) of the repository, you will find more advanced models: question-answering with memory networks, text generation with stacked LSTMs, etc.
+diff --git a/README.md b/README.md
+index 36c8392f..1a1db152 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ Keras is compatible with: __Python 2.7-3.5__.
+-The core datastructure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](http://keras.io/models/#sequential) and [`Graph`](http://keras.io/models/#graph).
++The core data structure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](http://keras.io/models/#sequential) and [`Graph`](http://keras.io/models/#graph).
+diff --git a/README.md b/README.md
+index 59cb6477..36c8392f 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-Keras is a minimalist, highly modular neural networks library, written in Python and capable of running either on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
++Keras is a minimalist, highly modular neural networks library, written in Python and capable of running on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
+@@ -9,0 +10 @@ Use Keras if you need a deep learning library that:
++
+@@ -111,0 +113 @@ Keras uses the following dependencies:
++
+@@ -120,0 +123 @@ sudo pip install git+git://github.com/Theano/Theano.git
++
+diff --git a/README.md b/README.md
+index f2ae174c..59cb6477 100644
+--- a/README.md
++++ b/README.md
+@@ -17,3 +17 @@ Read the documentation at [Keras.io](http://keras.io).
+-Keras is compatible with:
+-    - __Python 2.7-3.5__ with the Theano backend
+-    - __Python 2.7__ with the TensorFlow backend
++Keras is compatible with: __Python 2.7-3.5__.
+diff --git a/README.md b/README.md
+index 54f8a0f2..f2ae174c 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++![Build status](https://api.travis-ci.org/fchollet/keras.svg)
++
+@@ -162 +164 @@ Keras was initially developed as part of the research effort of project ONEIROS
+-------------------
+\ No newline at end of file
++------------------
+diff --git a/README.md b/README.md
+index ce8fc1ea..54f8a0f2 100644
+--- a/README.md
++++ b/README.md
+@@ -148,14 +148 @@ You can ask questions and join the development discussion on the [Keras Google g
+-------------------
+-
+-
+-## Contribution Guidelines
+-
+-Keras welcomes all contributions from the community. 
+-
+-- Keep a pragmatic mindset and avoid bloat. Only add to the source if that is the only path forward.
+-- New features should be documented. Make sure you update the documentation along with your Pull Request.
+-- Any new function or class should have a proper docstring.
+-- The documentation for every new feature should include a usage example in the form of a code snippet. 
+-- All changes should be tested. Make sure any new feature you add has a corresponding unit test.
+-- Please no Pull Requests about coding style.
+-- Even if you don't contribute to the Keras source code, if you have an application of Keras that is concise and powerful, please consider adding it to our collection of [examples](https://github.com/fchollet/keras/tree/master/examples).
++You can also post bug reports and feature requests in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
+diff --git a/README.md b/README.md
+index 6e2d876c..ce8fc1ea 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Keras is compatible with:
+-The core datastructure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](/models/#sequential) and [`Graph`](/models/#graph).
++The core datastructure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](http://keras.io/models/#sequential) and [`Graph`](http://keras.io/models/#graph).
+@@ -148 +148,14 @@ You can ask questions and join the development discussion on the [Keras Google g
+-You can also post bug reports and feature requests in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
++------------------
++
++
++## Contribution Guidelines
++
++Keras welcomes all contributions from the community. 
++
++- Keep a pragmatic mindset and avoid bloat. Only add to the source if that is the only path forward.
++- New features should be documented. Make sure you update the documentation along with your Pull Request.
++- Any new function or class should have a proper docstring.
++- The documentation for every new feature should include a usage example in the form of a code snippet. 
++- All changes should be tested. Make sure any new feature you add has a corresponding unit test.
++- Please no Pull Requests about coding style.
++- Even if you don't contribute to the Keras source code, if you have an application of Keras that is concise and powerful, please consider adding it to our collection of [examples](https://github.com/fchollet/keras/tree/master/examples).
+diff --git a/README.md b/README.md
+index 00b5cde5..6e2d876c 100644
+--- a/README.md
++++ b/README.md
+@@ -148,14 +148 @@ You can ask questions and join the development discussion on the [Keras Google g
+-------------------
+-
+-
+-## Contribution Guidelines
+-
+-Keras welcomes all contributions from the community. 
+-
+-- Keep a pragmatic mindset and avoid bloat. Only add to the source if that is the only path forward.
+-- New features should be documented. Make sure you update the documentation along with your Pull Request.
+-- Any new function or class should have a proper docstring.
+-- The documentation for every new feature should include a usage example in the form of a code snippet. 
+-- All changes should be tested. Make sure any new feature you add has a corresponding unit test.
+-- Please no Pull Requests about coding style.
+-- Even if you don't contribute to the Keras source code, if you have an application of Keras that is concise and powerful, please consider adding it to our collection of [examples](https://github.com/fchollet/keras/tree/master/examples).
++You can also post bug reports and feature requests in [Github issues](https://github.com/fchollet/keras/issues). Make sure to read [our guidelines](https://github.com/fchollet/keras/blob/master/CONTRIBUTING.md) first.
+diff --git a/README.md b/README.md
+index 70d74758..00b5cde5 100644
+--- a/README.md
++++ b/README.md
+@@ -111 +111 @@ Keras uses the following dependencies:
+-When using the Theano backend:
++*When using the Theano backend:*
+@@ -120 +120 @@ sudo pip install git+git://github.com/Theano/Theano.git
+-When using the TensorFlow backend:
++*When using the TensorFlow backend:*
+@@ -124 +124 @@ When using the TensorFlow backend:
+-To install, `cd` to the Keras folder and run the install command:
++To install Keras, `cd` to the Keras folder and run the install command:
+diff --git a/README.md b/README.md
+index 6205716e..70d74758 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Keras: Theano-based Deep Learning library
++# Keras: Deep Learning library for Theano and TensorFlow
+@@ -5 +5 @@
+-Keras is a minimalist, highly modular neural network library in the spirit of Torch, written in Python / Theano so as not to have to deal with the dearth of ecosystem in Lua. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
++Keras is a minimalist, highly modular neural networks library, written in Python and capable of running either on top of either [TensorFlow](https://github.com/tensorflow/tensorflow) or [Theano](https://github.com/Theano/Theano). It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
+@@ -15 +15,7 @@ Read the documentation at [Keras.io](http://keras.io).
+-Keras is compatible with __Python 2.7-3.4__.
++Keras is compatible with:
++    - __Python 2.7-3.5__ with the Theano backend
++    - __Python 2.7__ with the TensorFlow backend
++
++
++------------------
++
+@@ -21 +27,6 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate.
++- __Minimalism.__ Each module should be kept short and simple. Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate.
++
++- __Easy extensibility.__ New modules are dead simple to add (as new classes and functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for advanced research.
++
++- __Work with Python__. No separate models configuration files in a declarative format. Models are described in Python code, which is compact, easier to debug, and allows for ease of extensibility.
++
+@@ -23 +34 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Easy extensibility.__ New modules are dead simple to add (as new classes/functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for advanced research.
++------------------
+@@ -25 +35,0 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Work with Python__. No separate models configuration files in a declarative format (like in Caffe or PyLearn2). Models are described in Python code, which is compact, easier to debug, and allows for ease of extensibility.
+@@ -27 +37 @@ Keras is compatible with __Python 2.7-3.4__.
+-## Examples
++## Getting started: 30 seconds to Keras
+@@ -29 +39,3 @@ Keras is compatible with __Python 2.7-3.4__.
+-### Multilayer Perceptron (MLP):
++The core datastructure of Keras is a __model__, a way to organize layers. There are two types of models: [`Sequential`](/models/#sequential) and [`Graph`](/models/#graph).
++
++Here's the `Sequential` model (a linear pile of layers):
+@@ -33,2 +44,0 @@ from keras.models import Sequential
+-from keras.layers.core import Dense, Dropout, Activation
+-from keras.optimizers import SGD
+@@ -37,17 +46,0 @@ model = Sequential()
+-# Dense(64) is a fully-connected layer with 64 hidden units.
+-# in the first layer, you must specify the expected input data shape:
+-# here, 20-dimensional vectors.
+-model.add(Dense(64, input_dim=20, init='uniform'))
+-model.add(Activation('tanh'))
+-model.add(Dropout(0.5))
+-model.add(Dense(64, init='uniform'))
+-model.add(Activation('tanh'))
+-model.add(Dropout(0.5))
+-model.add(Dense(2, init='uniform'))
+-model.add(Activation('softmax'))
+-
+-sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+-model.compile(loss='mean_squared_error', optimizer=sgd)
+-
+-model.fit(X_train, y_train, nb_epoch=20, batch_size=16)
+-score = model.evaluate(X_test, y_test, batch_size=16)
+@@ -56 +49 @@ score = model.evaluate(X_test, y_test, batch_size=16)
+-### Alternative implementation of MLP:
++Stacking layers is as easy as `.add()`:
+@@ -59,9 +52,6 @@ score = model.evaluate(X_test, y_test, batch_size=16)
+-model = Sequential()
+-model.add(Dense(64, input_dim=20, init='uniform', activation='tanh'))
+-model.add(Dropout(0.5))
+-model.add(Dense(64, init='uniform', activation='tanh'))
+-model.add(Dropout(0.5))
+-model.add(Dense(2, init='uniform', activation='softmax'))
+-
+-sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+-model.compile(loss='mean_squared_error', optimizer=sgd)
++from keras.layers.core import Dense, Activation
++
++model.add(Dense(output_dim=64, input_dim=100, init="glorot_uniform"))
++model.add(Activation("relu"))
++model.add(Dense(output_dim=10, init="glorot_uniform"))
++model.add(Activation("softmax"))
+@@ -70 +60,4 @@ model.compile(loss='mean_squared_error', optimizer=sgd)
+-### VGG-like convnet:
++Once your model looks good, configure its learning process with `.compile()`:
++```python
++model.compile(loss='categorical_crossentropy', optimizer='sgd')
++```
+@@ -71,0 +65 @@ model.compile(loss='mean_squared_error', optimizer=sgd)
++If you need to, you can further configure your optimizer. A core principle of Keras is to make things reasonably simple, while allowing the user to be fully in control when they need to (the ultimate control being the easy extensibility of the source code).
+@@ -73,3 +66,0 @@ model.compile(loss='mean_squared_error', optimizer=sgd)
+-from keras.models import Sequential
+-from keras.layers.core import Dense, Dropout, Activation, Flatten
+-from keras.layers.convolutional import Convolution2D, MaxPooling2D
+@@ -77,32 +68 @@ from keras.optimizers import SGD
+-
+-model = Sequential()
+-# input: 100x100 images with 3 channels -> (3, 100, 100) tensors.
+-# this applies 32 convolution filters of size 3x3 each.
+-model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100)))
+-model.add(Activation('relu'))
+-model.add(Convolution2D(32, 3, 3))
+-model.add(Activation('relu'))
+-model.add(MaxPooling2D(pool_size=(2, 2)))
+-model.add(Dropout(0.25))
+-
+-model.add(Convolution2D(64, 3, 3, border_mode='valid'))
+-model.add(Activation('relu'))
+-model.add(Convolution2D(64, 3, 3))
+-model.add(Activation('relu'))
+-model.add(MaxPooling2D(pool_size=(2, 2)))
+-model.add(Dropout(0.25))
+-
+-model.add(Flatten())
+-# Note: Keras does automatic shape inference.
+-model.add(Dense(256))
+-model.add(Activation('relu'))
+-model.add(Dropout(0.5))
+-
+-model.add(Dense(10))
+-model.add(Activation('softmax'))
+-
+-sgd = SGD(lr=0.1, decay=1e-6, momentum=0.9, nesterov=True)
+-model.compile(loss='categorical_crossentropy', optimizer=sgd)
+-
+-model.fit(X_train, Y_train, batch_size=32, nb_epoch=1)
+-
++model.compile(loss='categorical_crossentropy', optimizer=SGD(lr=0.01, momentum=0.9, nesterov=True))
+@@ -111,2 +71 @@ model.fit(X_train, Y_train, batch_size=32, nb_epoch=1)
+-### Sequence classification with LSTM:
+-
++You can now iterate on your training data in batches:
+@@ -114,16 +73 @@ model.fit(X_train, Y_train, batch_size=32, nb_epoch=1)
+-from keras.models import Sequential
+-from keras.layers.core import Dense, Dropout, Activation
+-from keras.layers.embeddings import Embedding
+-from keras.layers.recurrent import LSTM
+-
+-model = Sequential()
+-model.add(Embedding(max_features, 256, input_length=maxlen))
+-model.add(LSTM(output_dim=128, activation='sigmoid', inner_activation='hard_sigmoid'))
+-model.add(Dropout(0.5))
+-model.add(Dense(1))
+-model.add(Activation('sigmoid'))
+-
+-model.compile(loss='binary_crossentropy', optimizer='rmsprop')
+-
+-model.fit(X_train, Y_train, batch_size=16, nb_epoch=10)
+-score = model.evaluate(X_test, Y_test, batch_size=16)
++model.fit(X_train, Y_train, nb_epoch=5, batch_size=32)
+@@ -132,2 +76,4 @@ score = model.evaluate(X_test, Y_test, batch_size=16)
+-### Architecture for learning image captions with a convnet and a Gated Recurrent Unit:
+-(word-level embedding, caption of maximum length 16 words).
++Alternatively, you can feed batches to your model manually:
++```python
++model.train_on_batch(X_batch, Y_batch)
++```
+@@ -135 +81,4 @@ score = model.evaluate(X_test, Y_test, batch_size=16)
+-Note that getting this to work well will require using a bigger convnet, initialized with pre-trained weights.
++Evaluate your performance in one line:
++```python
++objective_score = model.evaluate(X_test, Y_test, batch_size=32)
++```
+@@ -136,0 +86 @@ Note that getting this to work well will require using a bigger convnet, initial
++Or generate predictions on new data:
+@@ -138,54 +88,2 @@ Note that getting this to work well will require using a bigger convnet, initial
+-max_caption_len = 16
+-vocab_size = 10000
+-
+-# first, let's define an image model that
+-# will encode pictures into 128-dimensional vectors.
+-# it should be initialized with pre-trained weights.
+-image_model = Sequential()
+-image_model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100)))
+-image_model.add(Activation('relu'))
+-image_model.add(Convolution2D(32, 3, 3))
+-image_model.add(Activation('relu'))
+-image_model.add(MaxPooling2D(pool_size=(2, 2)))
+-
+-image_model.add(Convolution2D(64, 3, 3, border_mode='full'))
+-image_model.add(Activation('relu'))
+-image_model.add(Convolution2D(64, 3, 3))
+-image_model.add(Activation('relu'))
+-image_model.add(MaxPooling2D(pool_size=(2, 2)))
+-
+-image_model.add(Flatten())
+-image_model.add(Dense(128))
+-
+-# let's load the weights from a save file.
+-image_model.load_weights('weight_file.h5')
+-
+-# next, let's define a RNN model that encodes sequences of words
+-# into sequences of 128-dimensional word vectors.
+-language_model = Sequential()
+-language_model.add(Embedding(vocab_size, 256, input_length=max_caption_len))
+-language_model.add(GRU(output_dim=128, return_sequences=True))
+-language_model.add(TimeDistributedDense(128))
+-
+-# let's repeat the image vector to turn it into a sequence.
+-image_model.add(RepeatVector(max_caption_len))
+-
+-# the output of both models will be tensors of shape (samples, max_caption_len, 128).
+-# let's concatenate these 2 vector sequences.
+-model = Merge([image_model, language_model], mode='concat', concat_axis=-1)
+-# let's encode this vector sequence into a single vector
+-model.add(GRU(256, 256, return_sequences=False))
+-# which will be used to compute a probability
+-# distribution over what the next word in the caption should be!
+-model.add(Dense(vocab_size))
+-model.add(Activation('softmax'))
+-
+-model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
+-
+-# "images" is a numpy float array of shape (nb_samples, nb_channels=3, width, height).
+-# "captions" is a numpy integer array of shape (nb_samples, max_caption_len)
+-# containing word index sequences representing partial captions.
+-# "next_words" is a numpy float array of shape (nb_samples, vocab_size)
+-# containing a categorical encoding (0s and 1s) of the next word in the corresponding
+-# partial caption.
+-model.fit([images, partial_captions], next_words, batch_size=16, nb_epoch=100)
++classes = model.predict_classes(X_test, batch_size=32)
++proba = model.predict_proba(X_test, batch_size=32)
+@@ -194,6 +92 @@ model.fit([images, partial_captions], next_words, batch_size=16, nb_epoch=100)
+-In the examples folder, you will find example models for real datasets:
+-- CIFAR10 small images classification: Convolutional Neural Network (CNN) with realtime data augmentation
+-- IMDB movie review sentiment classification: LSTM over sequences of words
+-- Reuters newswires topic classification: Multilayer Perceptron (MLP)
+-- MNIST handwritten digits classification: MLP & CNN
+-- Character-level text generation with LSTM
++Building a network of LSTMs, a deep CNN, a Neural Turing Machine, a word2vec embedder or any other model is just as fast. The ideas behind deep learning are simple, so why should their implementation be painful?
+@@ -201 +94 @@ In the examples folder, you will find example models for real datasets:
+-...and more.
++Have a look at these [starter examples](http://keras.io/examples/).
+@@ -202,0 +96 @@ In the examples folder, you will find example models for real datasets:
++In the [examples folder](https://github.com/fchollet/keras/tree/master/examples) of the repo, you will find more advanced models: question-answering with memory networks, text generation with stacked LSTMs, neural turing machines, etc.
+@@ -204 +97,0 @@ In the examples folder, you will find example models for real datasets:
+-## Current capabilities
+@@ -206 +99 @@ In the examples folder, you will find example models for real datasets:
+-For complete coverage of the API, check out [the Keras documentation](http://keras.io).
++------------------
+@@ -208 +100,0 @@ For complete coverage of the API, check out [the Keras documentation](http://ker
+-A few highlights: convnets, LSTM, GRU, word2vec-style embeddings, PReLU, BatchNormalization...
+@@ -216,2 +107,0 @@ Keras uses the following dependencies:
+-- Theano
+-    - See installation instructions: http://deeplearning.net/software/theano/install.html#install
+@@ -220,0 +111,4 @@ Keras uses the following dependencies:
++When using the Theano backend:
++- Theano
++    - [See installation instructions](http://deeplearning.net/software/theano/install.html#install).
++
+@@ -225,0 +120,4 @@ sudo pip install git+git://github.com/Theano/Theano.git
++When using the TensorFlow backend:
++- TensorFlow
++    - [See installation instructions](https://github.com/tensorflow/tensorflow#download-and-setup).
++
+@@ -235,0 +134,33 @@ sudo pip install keras
++------------------
++
++
++## Switching from Theano to TensorFlow
++
++By default, Keras will use Theano as its tensor manipulation library. [Follow these instructions](http://keras.io/backend/) to configure the Keras backend.
++
++------------------
++
++
++## Support
++
++You can ask questions and join the development discussion on the [Keras Google group](https://groups.google.com/forum/#!forum/keras-users).
++
++------------------
++
++
++## Contribution Guidelines
++
++Keras welcomes all contributions from the community. 
++
++- Keep a pragmatic mindset and avoid bloat. Only add to the source if that is the only path forward.
++- New features should be documented. Make sure you update the documentation along with your Pull Request.
++- Any new function or class should have a proper docstring.
++- The documentation for every new feature should include a usage example in the form of a code snippet. 
++- All changes should be tested. Make sure any new feature you add has a corresponding unit test.
++- Please no Pull Requests about coding style.
++- Even if you don't contribute to the Keras source code, if you have an application of Keras that is concise and powerful, please consider adding it to our collection of [examples](https://github.com/fchollet/keras/tree/master/examples).
++
++
++------------------
++
++
+@@ -240 +171 @@ Keras (κέρας) means _horn_ in Greek. It is a reference to a literary image
+-Keras was developed as part of the research effort of project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System).
++Keras was initially developed as part of the research effort of project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System).
+@@ -242,0 +174,2 @@ Keras was developed as part of the research effort of project ONEIROS (Open-ende
++
++------------------
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 874c5aba..6205716e 100644
+--- a/README.md
++++ b/README.md
+@@ -168 +168 @@ language_model.add(GRU(output_dim=128, return_sequences=True))
+-language_model.add(Dense(128))
++language_model.add(TimeDistributedDense(128))
+diff --git a/README.md b/README.md
+index f7512ecd..874c5aba 100644
+--- a/README.md
++++ b/README.md
+@@ -220,0 +221,5 @@ Keras uses the following dependencies:
++**Note**: You should use the latest version of Theano, not the PyPI version. Install it with:
++```
++sudo pip install git+git://github.com/Theano/Theano.git
++```
++
+diff --git a/README.md b/README.md
+index dad31c6b..f7512ecd 100644
+--- a/README.md
++++ b/README.md
+@@ -120 +120 @@ model = Sequential()
+-model.add(Embedding(max_features, 256))
++model.add(Embedding(max_features, 256, input_length=maxlen))
+diff --git a/README.md b/README.md
+index 382cad72..dad31c6b 100644
+--- a/README.md
++++ b/README.md
+@@ -81 +81 @@ model = Sequential()
+-model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100))) 
++model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100)))
+@@ -85 +85 @@ model.add(Activation('relu'))
+-model.add(MaxPooling2D(poolsize=(2, 2)))
++model.add(MaxPooling2D(pool_size=(2, 2)))
+@@ -88 +88 @@ model.add(Dropout(0.25))
+-model.add(Convolution2D(64, 3, 3, border_mode='valid')) 
++model.add(Convolution2D(64, 3, 3, border_mode='valid'))
+@@ -90 +90 @@ model.add(Activation('relu'))
+-model.add(Convolution2D(64, 3, 3)) 
++model.add(Convolution2D(64, 3, 3))
+@@ -92 +92 @@ model.add(Activation('relu'))
+-model.add(MaxPooling2D(poolsize=(2, 2)))
++model.add(MaxPooling2D(pool_size=(2, 2)))
+@@ -145 +145 @@ image_model = Sequential()
+-image_model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100))) 
++image_model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100)))
+@@ -149 +149 @@ image_model.add(Activation('relu'))
+-image_model.add(MaxPooling2D(poolsize=(2, 2)))
++image_model.add(MaxPooling2D(pool_size=(2, 2)))
+@@ -151 +151 @@ image_model.add(MaxPooling2D(poolsize=(2, 2)))
+-image_model.add(Convolution2D(64, 3, 3, border_mode='full')) 
++image_model.add(Convolution2D(64, 3, 3, border_mode='full'))
+@@ -153 +153 @@ image_model.add(Activation('relu'))
+-image_model.add(Convolution2D(64, 3, 3)) 
++image_model.add(Convolution2D(64, 3, 3))
+@@ -155 +155 @@ image_model.add(Activation('relu'))
+-image_model.add(MaxPooling2D(poolsize=(2, 2)))
++image_model.add(MaxPooling2D(pool_size=(2, 2)))
+@@ -171 +171 @@ language_model.add(Dense(128))
+-image_model.add(RepeatVector(max_caption_len)) 
++image_model.add(RepeatVector(max_caption_len))
+@@ -178 +178 @@ model.add(GRU(256, 256, return_sequences=False))
+-# which will be used to compute a probability 
++# which will be used to compute a probability
+@@ -238 +237,0 @@ Keras was developed as part of the research effort of project ONEIROS (Open-ende
+-
+diff --git a/README.md b/README.md
+index 697daf80..382cad72 100644
+--- a/README.md
++++ b/README.md
+@@ -37 +37,4 @@ model = Sequential()
+-model.add(Dense(20, 64, init='uniform'))
++# Dense(64) is a fully-connected layer with 64 hidden units.
++# in the first layer, you must specify the expected input data shape:
++# here, 20-dimensional vectors.
++model.add(Dense(64, input_dim=20, init='uniform'))
+@@ -40 +43 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 64, init='uniform'))
++model.add(Dense(64, init='uniform'))
+@@ -43 +46 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 2, init='uniform'))
++model.add(Dense(2, init='uniform'))
+@@ -57 +60 @@ model = Sequential()
+-model.add(Dense(20, 64, init='uniform', activation='tanh'))
++model.add(Dense(64, input_dim=20, init='uniform', activation='tanh'))
+@@ -59 +62 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 64, init='uniform', activation='tanh'))
++model.add(Dense(64, init='uniform', activation='tanh'))
+@@ -61 +64 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 2, init='uniform', activation='softmax'))
++model.add(Dense(2, init='uniform', activation='softmax'))
+@@ -76 +79,3 @@ model = Sequential()
+-model.add(Convolution2D(32, 3, 3, 3, border_mode='full')) 
++# input: 100x100 images with 3 channels -> (3, 100, 100) tensors.
++# this applies 32 convolution filters of size 3x3 each.
++model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100))) 
+@@ -78 +83 @@ model.add(Activation('relu'))
+-model.add(Convolution2D(32, 32, 3, 3))
++model.add(Convolution2D(32, 3, 3))
+@@ -83 +88 @@ model.add(Dropout(0.25))
+-model.add(Convolution2D(64, 32, 3, 3, border_mode='full')) 
++model.add(Convolution2D(64, 3, 3, border_mode='valid')) 
+@@ -85 +90 @@ model.add(Activation('relu'))
+-model.add(Convolution2D(64, 64, 3, 3)) 
++model.add(Convolution2D(64, 3, 3)) 
+@@ -91 +96,2 @@ model.add(Flatten())
+-model.add(Dense(64*8*8, 256))
++# Note: Keras does automatic shape inference.
++model.add(Dense(256))
+@@ -95 +101 @@ model.add(Dropout(0.5))
+-model.add(Dense(256, 10))
++model.add(Dense(10))
+@@ -115 +121 @@ model.add(Embedding(max_features, 256))
+-model.add(LSTM(256, 128, activation='sigmoid', inner_activation='hard_sigmoid'))
++model.add(LSTM(output_dim=128, activation='sigmoid', inner_activation='hard_sigmoid'))
+@@ -117 +123 @@ model.add(Dropout(0.5))
+-model.add(Dense(128, 1))
++model.add(Dense(1))
+@@ -129,2 +135 @@ score = model.evaluate(X_test, Y_test, batch_size=16)
+-Note that getting this to actually "work" will require using a bigger convnet, initialized with pre-trained weights.
+-Displaying readable results will also require an embedding decoder.
++Note that getting this to work well will require using a bigger convnet, initialized with pre-trained weights.
+@@ -133,0 +139,43 @@ max_caption_len = 16
++vocab_size = 10000
++
++# first, let's define an image model that
++# will encode pictures into 128-dimensional vectors.
++# it should be initialized with pre-trained weights.
++image_model = Sequential()
++image_model.add(Convolution2D(32, 3, 3, border_mode='full', input_shape=(3, 100, 100))) 
++image_model.add(Activation('relu'))
++image_model.add(Convolution2D(32, 3, 3))
++image_model.add(Activation('relu'))
++image_model.add(MaxPooling2D(poolsize=(2, 2)))
++
++image_model.add(Convolution2D(64, 3, 3, border_mode='full')) 
++image_model.add(Activation('relu'))
++image_model.add(Convolution2D(64, 3, 3)) 
++image_model.add(Activation('relu'))
++image_model.add(MaxPooling2D(poolsize=(2, 2)))
++
++image_model.add(Flatten())
++image_model.add(Dense(128))
++
++# let's load the weights from a save file.
++image_model.load_weights('weight_file.h5')
++
++# next, let's define a RNN model that encodes sequences of words
++# into sequences of 128-dimensional word vectors.
++language_model = Sequential()
++language_model.add(Embedding(vocab_size, 256, input_length=max_caption_len))
++language_model.add(GRU(output_dim=128, return_sequences=True))
++language_model.add(Dense(128))
++
++# let's repeat the image vector to turn it into a sequence.
++image_model.add(RepeatVector(max_caption_len)) 
++
++# the output of both models will be tensors of shape (samples, max_caption_len, 128).
++# let's concatenate these 2 vector sequences.
++model = Merge([image_model, language_model], mode='concat', concat_axis=-1)
++# let's encode this vector sequence into a single vector
++model.add(GRU(256, 256, return_sequences=False))
++# which will be used to compute a probability 
++# distribution over what the next word in the caption should be!
++model.add(Dense(vocab_size))
++model.add(Activation('softmax'))
+@@ -135,29 +183 @@ max_caption_len = 16
+-model = Sequential()
+-model.add(Convolution2D(32, 3, 3, 3, border_mode='full')) 
+-model.add(Activation('relu'))
+-model.add(Convolution2D(32, 32, 3, 3))
+-model.add(Activation('relu'))
+-model.add(MaxPooling2D(poolsize=(2, 2)))
+-
+-model.add(Convolution2D(64, 32, 3, 3, border_mode='full')) 
+-model.add(Activation('relu'))
+-model.add(Convolution2D(64, 64, 3, 3)) 
+-model.add(Activation('relu'))
+-model.add(MaxPooling2D(poolsize=(2, 2)))
+-
+-model.add(Convolution2D(128, 64, 3, 3, border_mode='full')) 
+-model.add(Activation('relu'))
+-model.add(Convolution2D(128, 128, 3, 3)) 
+-model.add(Activation('relu'))
+-model.add(MaxPooling2D(poolsize=(2, 2)))
+-
+-model.add(Flatten())
+-model.add(Dense(128*4*4, 256))
+-model.add(Activation('relu'))
+-model.add(Dropout(0.5))
+-
+-model.add(RepeatVector(max_caption_len)) 
+-# the GRU below returns sequences of max_caption_len vectors of size 256 (our word embedding size)
+-model.add(GRU(256, 256, return_sequences=True))
+-
+-model.compile(loss='mean_squared_error', optimizer='rmsprop')
++model.compile(loss='categorical_crossentropy', optimizer='rmsprop')
+@@ -165,5 +185,7 @@ model.compile(loss='mean_squared_error', optimizer='rmsprop')
+-# "images" is a numpy array of shape (nb_samples, nb_channels=3, width, height) 
+-# "captions" is a numpy array of shape (nb_samples, max_caption_len=16, embedding_dim=256)
+-# captions are supposed already embedded (dense vectors).
+-model.fit(images, captions, batch_size=16, nb_epoch=100)
+-    
++# "images" is a numpy float array of shape (nb_samples, nb_channels=3, width, height).
++# "captions" is a numpy integer array of shape (nb_samples, max_caption_len)
++# containing word index sequences representing partial captions.
++# "next_words" is a numpy float array of shape (nb_samples, vocab_size)
++# containing a categorical encoding (0s and 1s) of the next word in the corresponding
++# partial caption.
++model.fit([images, partial_captions], next_words, batch_size=16, nb_epoch=100)
+@@ -173 +195 @@ In the examples folder, you will find example models for real datasets:
+-- CIFAR10 small images classification: Convnet with realtime data augmentation
++- CIFAR10 small images classification: Convolutional Neural Network (CNN) with realtime data augmentation
+@@ -186 +208 @@ For complete coverage of the API, check out [the Keras documentation](http://ker
+-A few highlights: convnets, LSTM, GRU, word2vec-style embeddings, PReLU, batch normalization...
++A few highlights: convnets, LSTM, GRU, word2vec-style embeddings, PReLU, BatchNormalization...
+@@ -199 +221 @@ Keras uses the following dependencies:
+-Once you have the dependencies installed, cd to the Keras folder and run the install command:
++To install, `cd` to the Keras folder and run the install command:
+diff --git a/README.md b/README.md
+index a6a51176..697daf80 100644
+--- a/README.md
++++ b/README.md
+@@ -159 +159 @@ model.add(Dropout(0.5))
+-model.add(Repeat(max_caption_len)) 
++model.add(RepeatVector(max_caption_len)) 
+diff --git a/README.md b/README.md
+index cd8d94a6..a6a51176 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Easy extensibility.__ New modules are dead simple to add (as new classes/functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for adavanced research.
++- __Easy extensibility.__ New modules are dead simple to add (as new classes/functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for advanced research.
+diff --git a/README.md b/README.md
+index e62a39ae..cd8d94a6 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ In the examples folder, you will find example models for real datasets:
++
+diff --git a/README.md b/README.md
+index c2d4d34b..e62a39ae 100644
+--- a/README.md
++++ b/README.md
+@@ -192 +191,0 @@ Keras uses the following dependencies:
+-
+@@ -194 +192,0 @@ Keras uses the following dependencies:
+-
+@@ -197 +194,0 @@ Keras uses the following dependencies:
+-
+@@ -199 +195,0 @@ Keras uses the following dependencies:
+-
+diff --git a/README.md b/README.md
+index b3a21484..c2d4d34b 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9,3 @@ Use Keras if you need a deep learning library that:
+-- supports both convolutional networks (for vision) and recurrent networks (for sequence data). As well as combinations of the two. 
+-- runs seamlessly on the CPU and the GPU.
++- supports both convolutional networks and recurrent networks, as well as combinations of the two.
++- supports arbitrary connectivity schemes (including multi-input and multi-output training).
++- runs seamlessly on CPU and GPU.
+@@ -18 +19 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Modularity.__ A model is understood as a sequence of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions and dropout are all standalone modules that you can combine to create new models. 
++- __Modularity.__ A model is understood as a sequence or a graph of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions, regularization schemes are all standalone modules that you can combine to create new models.
+@@ -20 +21 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate. 
++- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate.
+@@ -22 +23 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Easy extensibility.__ New features (a new module, per the above definition, or a new way to combine modules together) are dead simple to add (as new classes/functions), and existing modules provide ample examples.
++- __Easy extensibility.__ New modules are dead simple to add (as new classes/functions), and existing modules provide ample examples. To be able to easily create new modules allows for total expressiveness, making Keras suitable for adavanced research.
+@@ -24 +25 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Work with Python__. No separate models configuration files in a declarative format (like in Caffe or PyLearn2). Models are described in Python code, which is compact, easier to debug, benefits from syntax highlighting, and most of all, allows for ease of extensibility. See for yourself with the examples below.
++- __Work with Python__. No separate models configuration files in a declarative format (like in Caffe or PyLearn2). Models are described in Python code, which is compact, easier to debug, and allows for ease of extensibility.
+@@ -174,2 +175,4 @@ In the examples folder, you will find example models for real datasets:
+-- Reuters newswires topic classification: Multilayer Perceptron
+-- MNIST handwritten digits classification: Multilayer Perceptron
++- Reuters newswires topic classification: Multilayer Perceptron (MLP)
++- MNIST handwritten digits classification: MLP & CNN
++- Character-level text generation with LSTM
++...and more.
+@@ -189,0 +193,2 @@ Keras uses the following dependencies:
++- pyyaml
++
+@@ -201,0 +207,5 @@ sudo python setup.py install
++You can also install Keras from PyPI:
++```
++sudo pip install keras
++```
++
+@@ -208 +218 @@ Keras was developed as part of the research effort of project ONEIROS (Open-ende
+-_"Oneiroi are beyond our unravelling --who can be sure what tale they tell? Not all that men look for comes to pass. Two gates there are that give passage to fleeting Oneiroi; one is made of horn, one of ivory. The Oneiroi that pass through sawn ivory are deceitful, bearing a message that will not be fulfilled; those that come out through polished horn have truth behind them, to be accomplished for men who see them."_ Homer, Odyssey 19. 562 ff (Shewring translation).
++>_"Oneiroi are beyond our unravelling --who can be sure what tale they tell? Not all that men look for comes to pass. Two gates there are that give passage to fleeting Oneiroi; one is made of horn, one of ivory. The Oneiroi that pass through sawn ivory are deceitful, bearing a message that will not be fulfilled; those that come out through polished horn have truth behind them, to be accomplished for men who see them."_ Homer, Odyssey 19. 562 ff (Shewring translation).
+diff --git a/README.md b/README.md
+index 41faa5ea..b3a21484 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +193 @@ Keras uses the following dependencies:
+-- h5py (optional, required if you use model saving/loading functions)
++- HDF5 and h5py (optional, required if you use model saving/loading functions)
+diff --git a/README.md b/README.md
+index d447ee0a..41faa5ea 100644
+--- a/README.md
++++ b/README.md
+@@ -174,0 +175 @@ In the examples folder, you will find example models for real datasets:
++- MNIST handwritten digits classification: Multilayer Perceptron
+diff --git a/README.md b/README.md
+index c0f94111..d447ee0a 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +108,2 @@ from keras.models import Sequential
+-from keras.layers.core import Dense, Dropout, Activation, Embedding
++from keras.layers.core import Dense, Dropout, Activation
++from keras.layers.embeddings import Embedding
+diff --git a/README.md b/README.md
+index 23db5d3e..c0f94111 100644
+--- a/README.md
++++ b/README.md
+@@ -42 +42 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 1, init='uniform'))
++model.add(Dense(64, 2, init='uniform'))
+@@ -60 +60 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 1, init='uniform', activation='softmax'))
++model.add(Dense(64, 2, init='uniform', activation='softmax'))
+diff --git a/README.md b/README.md
+index 9d7c2ccd..23db5d3e 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 1, init='uniform', activation='softmax')
++model.add(Dense(64, 1, init='uniform', activation='softmax'))
+diff --git a/README.md b/README.md
+index c8b36e53..9d7c2ccd 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ Keras is compatible with __Python 2.7-3.4__.
+-- __Easy extensibility.__ A new feature (a new module, per the above definition, or a new way to combine modules together) are dead simple to add (as new classes/functions), and existing modules provide ample examples.
++- __Easy extensibility.__ New features (a new module, per the above definition, or a new way to combine modules together) are dead simple to add (as new classes/functions), and existing modules provide ample examples.
+diff --git a/README.md b/README.md
+index 62b3f9e3..c8b36e53 100644
+--- a/README.md
++++ b/README.md
+@@ -191 +191 @@ Keras uses the following dependencies:
+-- PIL (optional, required if you use preprocessing.image)
++- h5py (optional, required if you use model saving/loading functions)
+diff --git a/README.md b/README.md
+index a8b768bf..62b3f9e3 100644
+--- a/README.md
++++ b/README.md
+@@ -13,0 +14,2 @@ Read the documentation at [Keras.io](http://keras.io).
++Keras is compatible with __Python 2.7-3.4__.
++
+diff --git a/README.md b/README.md
+index 36eb653e..a8b768bf 100644
+--- a/README.md
++++ b/README.md
+@@ -173,3 +172,0 @@ In the examples folder, you will find example models for real datasets:
+-## Warning
+-
+-This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appear.
+diff --git a/README.md b/README.md
+index 9086d774..36eb653e 100644
+--- a/README.md
++++ b/README.md
+@@ -11,0 +12,2 @@ Use Keras if you need a deep learning library that:
++Read the documentation at [Keras.io](http://keras.io).
++
+@@ -177,63 +179 @@ This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appea
+-- model architectures:
+-    - Sequential (pipeline of layers)
+-
+-- layers: 
+-    - layers.core:
+-        - Dense
+-        - Dropout
+-        - Activation
+-        - Embedding
+-        - Reshape
+-        - Flatten
+-        - RepeatVector
+-    - layers.convolutional:
+-        - Convolution2D
+-        - MaxPooling2D
+-    - layers.recurrent:
+-        - SimpleRNN
+-        - SimpleDeepRNN
+-        - GRU
+-        - LSTM
+-    - layers.advanced_activations:
+-        - LeakyReLU
+-        - PReLU
+-    - layers.normalization:
+-        - BatchNormalization
+-
+-- optimizers: 
+-    - SGD (supports decay, momentum, Nesterov momentum)
+-    - RMSprop
+-    - Adagrad
+-    - Adadelta
+-
+-- datasets:
+-    - CIFAR10: thumbnail image classification
+-    - Reuters: newswire topic classification
+-    - IMDB: sentiment classification
+-
+-- preprocessing:
+-    - image:
+-        - ImageDataGenerator: realtime image data augmentation and preprocessing (normalization, ZCA whitening)
+-        - random_rotation
+-        - random_shift
+-        - horizontal_flip
+-        - vertical_flip
+-    - text:
+-        - Tokenizer
+-        - one_hot
+-    - sequence:
+-        - pad_sequences
+-
+-- objectives:
+-    - mean_squared_error
+-    - mean_absolute_error
+-    - hinge
+-    - squared_hinge
+-    - binary_crossentropy
+-    - categorical_crossentropy
+-
+-- activation functions:
+-    softmax, softplus, relu, sigmoid, hard_sigmoid, linear
+-
+-- initialization functions:
+-    normal, uniform, lecun_uniform, orthogonal
++For complete coverage of the API, check out [the Keras documentation](http://keras.io).
+@@ -240,0 +181 @@ This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appea
++A few highlights: convnets, LSTM, GRU, word2vec-style embeddings, PReLU, batch normalization...
+diff --git a/README.md b/README.md
+index 21f8c071..9086d774 100644
+--- a/README.md
++++ b/README.md
+@@ -85 +85 @@ model.add(Dropout(0.25))
+-model.add(Flatten(64*8*8))
++model.add(Flatten())
+@@ -148 +148 @@ model.add(MaxPooling2D(poolsize=(2, 2)))
+-model.add(Flatten(128*4*4))
++model.add(Flatten())
+diff --git a/README.md b/README.md
+index d3a8b834..21f8c071 100644
+--- a/README.md
++++ b/README.md
+@@ -167,3 +167,3 @@ In the examples folder, you will find example models for real datasets:
+-- CIFAR10 small images classification: convnet with realtime data augmentation
+-- IMDB movie reviews: sentiment classification
+-- Reuters newswires: topic classification
++- CIFAR10 small images classification: Convnet with realtime data augmentation
++- IMDB movie review sentiment classification: LSTM over sequences of words
++- Reuters newswires topic classification: Multilayer Perceptron
+@@ -178 +178 @@ This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appea
+-    sequential (pipeline of layers)
++    - Sequential (pipeline of layers)
+@@ -184,0 +185 @@ This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appea
++        - Embedding
+@@ -187,2 +188 @@ This is a 0.0.1 alpha release. Feature scope is limited, and wild bugs may appea
+-        - Embedding
+-        - Repeat
++        - RepeatVector
+@@ -262 +262 @@ sudo python setup.py install
+-Keras (κέρας) means _horn_ in Greek. It is a reference to a literary image from ancient Greek and Latin literature, first found in the _Odyssee_, where dream spirits (_Oneiroi_, singular _Oneiros_) are divided between those who deceive men with false visions, who arrive to Earth through a gate of ivory, and those who announce a future that will come to pass, who arrive through a gate of horn. It's a play on the words κέρας (horn) / κραίνω (fulfill), and ἐλέφας (ivory) / ἐλεφαίρομαι (deceive).
++Keras (κέρας) means _horn_ in Greek. It is a reference to a literary image from ancient Greek and Latin literature, first found in the _Odyssey_, where dream spirits (_Oneiroi_, singular _Oneiros_) are divided between those who deceive men with false visions, who arrive to Earth through a gate of ivory, and those who announce a future that will come to pass, who arrive through a gate of horn. It's a play on the words κέρας (horn) / κραίνω (fulfill), and ἐλέφας (ivory) / ἐλεφαίρομαι (deceive).
+diff --git a/README.md b/README.md
+index bea77f16..d3a8b834 100644
+--- a/README.md
++++ b/README.md
+@@ -254,0 +255,4 @@ Keras uses the following dependencies:
++Once you have the dependencies installed, cd to the Keras folder and run the install command:
++```
++sudo python setup.py install
++```
+diff --git a/README.md b/README.md
+index 3588bbba..bea77f16 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Use Keras if you need a deep learning library that:
+-- __Modularity.__ A model is understood as a sequence of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions and dropout are all standlone modules that you can combine to create new models. 
++- __Modularity.__ A model is understood as a sequence of standalone, fully-configurable modules that can be plugged together with as little restrictions as possible. In particular, neural layers, cost functions, optimizers, initialization schemes, activation functions and dropout are all standalone modules that you can combine to create new models. 
+@@ -258 +258 @@ Keras uses the following dependencies:
+-Keras (κέρας) means _horn_ in Greek. It is a reference to a literary image from ancient Greek and Latin literature, first found in the _Odyssee_, where dream spirits (_Oneiroi_, singular _Oneiros_) are divided between those who deceive men with false visions, who arrive to Earth through a gate of ivory, and those who anounce a future that will come to pass, who arrive through a gate of horn. It's a play on the words κέρας (horn) / κραίνω (fulfill), and ἐλέφας (ivory) / ἐλεφαίρομαι (deceive).
++Keras (κέρας) means _horn_ in Greek. It is a reference to a literary image from ancient Greek and Latin literature, first found in the _Odyssee_, where dream spirits (_Oneiroi_, singular _Oneiros_) are divided between those who deceive men with false visions, who arrive to Earth through a gate of ivory, and those who announce a future that will come to pass, who arrive through a gate of horn. It's a play on the words κέρας (horn) / κραίνω (fulfill), and ἐλέφας (ivory) / ἐλεφαίρομαι (deceive).
+diff --git a/README.md b/README.md
+index 53ff47ee..3588bbba 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Keras is a minimalist, highly modular neural network library in the spirit of Torch, written in Python / Theano so as not to have to deal with the derth of ecosystem in Lua. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
++Keras is a minimalist, highly modular neural network library in the spirit of Torch, written in Python / Theano so as not to have to deal with the dearth of ecosystem in Lua. It was developed with a focus on enabling fast experimentation. Being able to go from idea to result with the least possible delay is key to doing good research.
+@@ -10 +10 @@ Use Keras if you need a deep learning library that:
+-- runs seemlessly on the CPU and the GPU.
++- runs seamlessly on the CPU and the GPU.
+diff --git a/README.md b/README.md
+index 576b97ac..53ff47ee 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Use Keras if you need a deep learning library that:
+-- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurst iteration speed and ability to innovate. 
++- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate. 
+diff --git a/README.md b/README.md
+index 3e1c5eaa..576b97ac 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Use Keras if you need a deep learning library that:
+-- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate. 
++- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurst iteration speed and ability to innovate. 
+@@ -56 +56 @@ model.add(Dropout(0.5))
+-model.add(Dense(64, 1, init='uniform', activation='sigmoid')
++model.add(Dense(64, 1, init='uniform', activation='softmax')
+@@ -109 +109 @@ model.add(Embedding(max_features, 256))
+-model.add(LSTM(256, 128), activation='sigmoid', inner_activation='hard_sigmoid')
++model.add(LSTM(256, 128, activation='sigmoid', inner_activation='hard_sigmoid'))
+@@ -155 +155 @@ model.add(Repeat(max_caption_len))
+-model.add(GRU(256, 256), return_sequences=True)
++model.add(GRU(256, 256, return_sequences=True))
+@@ -167,3 +167,3 @@ In the examples folder, you will find example models for real datasets:
+-    - CIFAR10 small images classification: convnet with realtime data augmentation
+-    - IMDB movie reviews: sentiment classification
+-    - Reuters newswires: topic classification
++- CIFAR10 small images classification: convnet with realtime data augmentation
++- IMDB movie reviews: sentiment classification
++- Reuters newswires: topic classification
+diff --git a/README.md b/README.md
+index 696757f3..3e1c5eaa 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Use Keras if you need a deep learning library that:
+-- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurst iteration speed and ability to innovate. 
++- __Minimalism.__ Each module should be kept short and simple (<100 lines of code). Every piece of code should be transparent upon first reading. No black magic: it hurts iteration speed and ability to innovate. 
+diff --git a/README.md b/README.md
+index 5661abd6..696757f3 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Keras - Theano-based Deep Learning library
++# Keras: Theano-based Deep Learning library
+@@ -55 +54,0 @@ model.add(Dense(64, 64, init='uniform', activation='tanh'))
+-model.add(Activation('tanh'))
+@@ -63 +62 @@ model.compile(loss='mean_squared_error', optimizer=sgd)
+-### VGG-like net:
++### VGG-like convnet:

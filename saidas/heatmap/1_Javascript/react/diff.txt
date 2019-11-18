@@ -1,0 +1,1374 @@
+diff --git a/README.md b/README.md
+index 808ad63cf..83d107c0f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+diff --git a/README.md b/README.md
+index 1cf000920..808ad63cf 100644
+--- a/README.md
++++ b/README.md
+@@ -43,4 +43,2 @@ We have several examples [on the website](https://reactjs.org/). Here is the fir
+-class HelloMessage extends React.Component {
+-  render() {
+-    return <div>Hello {this.props.name}</div>;
+-  }
++function HelloMessage({ name }) {
++  return <div>Hello {name}</div>;
+diff --git a/README.md b/README.md
+index a1d1d976d..1cf000920 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ The main purpose of this repository is to continue to evolve React core, making
+-### [Code of Conduct](https://code.facebook.com/codeofconduct)
++### [Code of Conduct](https://code.fb.com/codeofconduct)
+@@ -65 +65 @@ The main purpose of this repository is to continue to evolve React core, making
+-Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.facebook.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
++Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.fb.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
+diff --git a/README.md b/README.md
+index c40e26c79..a1d1d976d 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ This example will render "Hello Taylor" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. If you're using React as a `<script>` tag, read [this section](https://reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx) on integrating JSX; otherwise, the [recommended JavaScript toolchains](https://reactjs.org/docs/create-a-new-react-app.html) handle it automatically.
+diff --git a/README.md b/README.md
+index 8c28048f3..c40e26c79 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,10 @@ React is a JavaScript library for building user interfaces.
++## Installation
++
++React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
++
++* Use [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds) to get a taste of React.
++* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) as a `<script>` tag in one minute.
++* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html) if you're looking for a powerful JavaScript toolchain.
++
++You can use React as a `<script>` tag from a [CDN](https://reactjs.org/docs/cdn-links.html), or as a `react` package on [npm](https://www.npmjs.com/).
++
+@@ -49,10 +58,0 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs
+-## Installation
+-
+-React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
+-
+-* Use [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds) to get a taste of React.
+-* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) as a `<script>` tag in one minute.
+-* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html) if you're looking for a powerful JavaScript toolchain.
+-
+-You can use React as a `<script>` tag from a [CDN](https://reactjs.org/docs/cdn-links.html), or as a `react` package on [npm](https://www.npmjs.com/).
+-
+diff --git a/README.md b/README.md
+index 29e56e16b..8c28048f3 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ This example will render "Hello Taylor" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. The next section contains instructions for integrating React and JSX (optionally) into your project.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
+diff --git a/README.md b/README.md
+index 896046f4a..29e56e16b 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ ReactDOM.render(
+-  <HelloMessage name="John" />,
++  <HelloMessage name="Taylor" />,
+@@ -45 +45 @@ ReactDOM.render(
+-This example will render "Hello John" into a container on the page.
++This example will render "Hello Taylor" into a container on the page.
+@@ -47 +47 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. We recommend using [Babel](https://babeljs.io/) with a [React preset](https://babeljs.io/docs/plugins/preset-react/) to convert JSX into native JavaScript for browsers to digest.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. The next section contains instructions for integrating React and JSX (optionally) into your project.
+@@ -51 +51 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs
+-React is designed for gradual adoption, and **you can use as little or as much React as you need**.
++React has been designed for gradual adoption from the start, and **you can use as little or as much React as you need**:
+@@ -53 +53,3 @@ React is designed for gradual adoption, and **you can use as little or as much R
+-Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started:
++* Use [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds) to get a taste of React.
++* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) as a `<script>` tag in one minute.
++* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html) if you're looking for a powerful JavaScript toolchain.
+@@ -55,5 +57 @@ Whether you want to get a taste of React, add some interactivity to a simple HTM
+-* [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds)
+-* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html)
+-* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html)
+-
+-React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/cdn-links.html).
++You can use React as a `<script>` tag from a [CDN](https://reactjs.org/docs/cdn-links.html), or as a `react` package on [npm](https://www.npmjs.com/).
+diff --git a/README.md b/README.md
+index cacf99807..896046f4a 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Whether you want to get a taste of React, add some interactivity to a simple HTM
+-* [Online Plagrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds)
++* [Online Playgrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds)
+diff --git a/README.md b/README.md
+index edacd88e0..cacf99807 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +13,0 @@ You can find the React documentation [on the website](https://reactjs.org/docs).
+-It is divided into several sections:
+@@ -16 +15,6 @@ It is divided into several sections:
+-* [Quick Start](https://reactjs.org/docs/hello-world.html)
++Check out the [Getting Started](https://reactjs.org/docs/getting-started.html) page for a quick overview.
++
++The documentation is divided into several sections:
++
++* [Tutorial](https://reactjs.org/tutorial/tutorial.html)
++* [Main Concepts](https://reactjs.org/docs/hello-world.html)
+@@ -19 +22,0 @@ It is divided into several sections:
+-* [Tutorial](https://reactjs.org/tutorial/tutorial.html)
+@@ -48 +51 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs
+-React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/cdn-links.html).
++React is designed for gradual adoption, and **you can use as little or as much React as you need**.
+@@ -50 +53 @@ React is available as the `react` package on [npm](https://www.npmjs.com/). It i
+-React is flexible and can be used in a variety of projects. You can create new apps with it, but you can also gradually introduce it into an existing codebase without doing a rewrite.
++Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started:
+@@ -52 +55,3 @@ React is flexible and can be used in a variety of projects. You can create new a
+-The recommended way to install React depends on your project. Here you can find short guides for the most common scenarios:
++* [Online Plagrounds](https://reactjs.org/docs/getting-started.html#online-playgrounds)
++* [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html)
++* [Create a New React App](https://reactjs.org/docs/create-a-new-react-app.html)
+@@ -54,3 +59 @@ The recommended way to install React depends on your project. Here you can find
+-* [Trying Out React](https://reactjs.org/docs/try-react.html)
+-* [Creating a New Application](https://reactjs.org/docs/add-react-to-a-new-app.html)
+-* [Adding React to an Existing Application](https://reactjs.org/docs/add-react-to-an-existing-app.html)
++React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/cdn-links.html).
+diff --git a/README.md b/README.md
+index 9673d8538..edacd88e0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![React Documentation](https://img.shields.io/badge/react-reference-blue.svg)](https://reactjs.org/docs/react-api.html) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+diff --git a/README.md b/README.md
+index edacd88e0..9673d8538 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![React Documentation](https://img.shields.io/badge/react-reference-blue.svg)](https://reactjs.org/docs/react-api.html) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+diff --git a/README.md b/README.md
+index 1e9e6deb3..edacd88e0 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs
+-React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/installation.html#using-a-cdn).
++React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/cdn-links.html).
+@@ -54,3 +54,3 @@ The recommended way to install React depends on your project. Here you can find
+-* [Trying Out React](https://reactjs.org/docs/installation.html#trying-out-react)
+-* [Creating a New Application](https://reactjs.org/docs/installation.html#creating-a-new-application)
+-* [Adding React to an Existing Application](https://reactjs.org/docs/installation.html#adding-react-to-an-existing-application)
++* [Trying Out React](https://reactjs.org/docs/try-react.html)
++* [Creating a New Application](https://reactjs.org/docs/add-react-to-a-new-app.html)
++* [Adding React to an Existing Application](https://reactjs.org/docs/add-react-to-an-existing-app.html)
+diff --git a/README.md b/README.md
+index fd102ef65..1e9e6deb3 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+diff --git a/README.md b/README.md
+index f06169c21..fd102ef65 100644
+--- a/README.md
++++ b/README.md
+@@ -70 +70 @@ Read our [contributing guide](https://reactjs.org/contributing/how-to-contribute
+-### Beginner Friendly Bugs
++### Good First Issues
+@@ -72 +72 @@ Read our [contributing guide](https://reactjs.org/contributing/how-to-contribute
+-To help you get your feet wet and get you familiar with our contribution process, we have a list of [beginner friendly bugs](https://github.com/facebook/react/labels/Difficulty%3A%20beginner) that contain bugs which are fairly easy to fix. This is a great place to get started.
++To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first issues](https://github.com/facebook/react/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. This is a great place to get started.
+diff --git a/README.md b/README.md
+index 1f42ccdfa..f06169c21 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index d5c181241..1f42ccdfa 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/master/LICENSE) [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index 82ede9dff..d5c181241 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) <!--[![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master)--> [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index d0545d11c..82ede9dff 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,14 @@ React is a JavaScript library for building user interfaces.
++## Documentation
++
++You can find the React documentation [on the website](https://reactjs.org/docs).  
++It is divided into several sections:
++
++* [Quick Start](https://reactjs.org/docs/hello-world.html)
++* [Advanced Guides](https://reactjs.org/docs/jsx-in-depth.html)
++* [API Reference](https://reactjs.org/docs/react-api.html)
++* [Tutorial](https://reactjs.org/tutorial/tutorial.html)
++* [Where to Get Support](https://reactjs.org/community/support.html)
++* [Contributing Guide](https://reactjs.org/docs/how-to-contribute.html)
++
++You can improve it by sending pull requests to [this repository](https://github.com/reactjs/reactjs.org).
++
+@@ -52 +66 @@ Facebook has adopted a Code of Conduct that we expect project participants to ad
+-### Contributing Guide
++### [Contributing Guide](https://reactjs.org/contributing/how-to-contribute.html)
+diff --git a/README.md b/README.md
+index d39c8e97c..d0545d11c 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) <!--[![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master)--> [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index a460bc645..d39c8e97c 100644
+--- a/README.md
++++ b/README.md
+@@ -63,2 +62,0 @@ React is [MIT licensed](./LICENSE).
+-
+-React documentation is [Creative Commons licensed](./LICENSE-docs).
+diff --git a/README.md b/README.md
+index 541b8c4ad..a460bc645 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://reactjs.org/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+@@ -9 +9 @@ React is a JavaScript library for building user interfaces.
+-[Learn how to use React in your own project](https://facebook.github.io/react/docs/getting-started.html).
++[Learn how to use React in your own project](https://reactjs.org/docs/getting-started.html).
+@@ -13 +13 @@ React is a JavaScript library for building user interfaces.
+-We have several examples [on the website](https://facebook.github.io/react/). Here is the first one to get you started:
++We have several examples [on the website](https://reactjs.org/). Here is the first one to get you started:
+@@ -30 +30 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](https://facebook.github.io/react/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. We recommend using [Babel](https://babeljs.io/) with a [React preset](https://babeljs.io/docs/plugins/preset-react/) to convert JSX into native JavaScript for browsers to digest.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://reactjs.org/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. We recommend using [Babel](https://babeljs.io/) with a [React preset](https://babeljs.io/docs/plugins/preset-react/) to convert JSX into native JavaScript for browsers to digest.
+@@ -34 +34 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://facebook.github.io/react/docs/installation.html#using-a-cdn).
++React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://reactjs.org/docs/installation.html#using-a-cdn).
+@@ -40,3 +40,3 @@ The recommended way to install React depends on your project. Here you can find
+-* [Trying Out React](https://facebook.github.io/react/docs/installation.html#trying-out-react)
+-* [Creating a New Application](https://facebook.github.io/react/docs/installation.html#creating-a-new-application)
+-* [Adding React to an Existing Application](https://facebook.github.io/react/docs/installation.html#adding-react-to-an-existing-application)
++* [Trying Out React](https://reactjs.org/docs/installation.html#trying-out-react)
++* [Creating a New Application](https://reactjs.org/docs/installation.html#creating-a-new-application)
++* [Adding React to an Existing Application](https://reactjs.org/docs/installation.html#adding-react-to-an-existing-application)
+@@ -54 +54 @@ Facebook has adopted a Code of Conduct that we expect project participants to ad
+-Read our [contributing guide](https://facebook.github.io/react/contributing/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
++Read our [contributing guide](https://reactjs.org/contributing/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
+diff --git a/README.md b/README.md
+index e149fd76b..541b8c4ad 100644
+--- a/README.md
++++ b/README.md
+@@ -65,2 +64,0 @@ React documentation is [Creative Commons licensed](./LICENSE-docs).
+-
+-Examples provided in this repository and in the documentation are [separately licensed](./LICENSE-examples).
+diff --git a/README.md b/README.md
+index d03dee61f..e149fd76b 100644
+--- a/README.md
++++ b/README.md
+@@ -62 +62 @@ To help you get your feet wet and get you familiar with our contribution process
+-React is [BSD licensed](./LICENSE). We also provide an additional [patent grant](./PATENTS).
++React is [MIT licensed](./LICENSE).
+diff --git a/README.md b/README.md
+index 7f401a98b..d03dee61f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://facebook.github.io/react/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index 2ae261c69..7f401a98b 100644
+--- a/README.md
++++ b/README.md
+@@ -67,3 +66,0 @@ Examples provided in this repository and in the documentation are [separately li
+-
+-## Troubleshooting
+-See the [Troubleshooting Guide](https://github.com/facebook/react/wiki/Troubleshooting)
+diff --git a/README.md b/README.md
+index e22b705c1..2ae261c69 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ Read our [contributing guide](https://facebook.github.io/react/contributing/how-
+-### Good First Bug
++### Beginner Friendly Bugs
+@@ -58 +58 @@ Read our [contributing guide](https://facebook.github.io/react/contributing/how-
+-To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first bugs](https://github.com/facebook/react/labels/good%20first%20bug) that contain bugs which are fairly easy to fix. This is a great place to get started.
++To help you get your feet wet and get you familiar with our contribution process, we have a list of [beginner friendly bugs](https://github.com/facebook/react/labels/Difficulty%3A%20beginner) that contain bugs which are fairly easy to fix. This is a great place to get started.
+diff --git a/README.md b/README.md
+index df717360f..e22b705c1 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ The recommended way to install React depends on your project. Here you can find
+-* [Creating a Single Page Application](https://facebook.github.io/react/docs/installation.html#creating-a-single-page-application)
++* [Creating a New Application](https://facebook.github.io/react/docs/installation.html#creating-a-new-application)
+diff --git a/README.md b/README.md
+index 334f740e0..df717360f 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](https://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://facebook.github.io/react/docs/introducing-jsx.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. We recommend using [Babel](https://babeljs.io/) with a [React preset](https://babeljs.io/docs/plugins/preset-react/) to convert JSX into native JavaScript for browsers to digest.
+@@ -34 +34 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-The fastest way to get started is to serve JavaScript from a CDN. We're using [unpkg](https://unpkg.com/) below but React is also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react):
++React is available as the `react` package on [npm](https://www.npmjs.com/). It is also available on a [CDN](https://facebook.github.io/react/docs/installation.html#using-a-cdn).
+@@ -36,10 +36 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-```html
+-<!-- The core React library -->
+-<script src="https://unpkg.com/react@15.4.0/dist/react.js"></script>
+-<!-- The ReactDOM Library -->
+-<script src="https://unpkg.com/react-dom@15.4.0/dist/react-dom.js"></script>
+-```
+-
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.4.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+-
+-If you'd like to use [bower](http://bower.io), it's as easy as:
++React is flexible and can be used in a variety of projects. You can create new apps with it, but you can also gradually introduce it into an existing codebase without doing a rewrite.
+@@ -47,5 +38 @@ If you'd like to use [bower](http://bower.io), it's as easy as:
+-```sh
+-bower install --save react
+-```
+-
+-And it's just as easy with [npm](http://npmjs.com):
++The recommended way to install React depends on your project. Here you can find short guides for the most common scenarios:
+@@ -53,3 +40,3 @@ And it's just as easy with [npm](http://npmjs.com):
+-```sh
+-npm i --save react
+-```
++* [Trying Out React](https://facebook.github.io/react/docs/installation.html#trying-out-react)
++* [Creating a Single Page Application](https://facebook.github.io/react/docs/installation.html#creating-a-single-page-application)
++* [Adding React to an Existing Application](https://facebook.github.io/react/docs/installation.html#adding-react-to-an-existing-application)
+diff --git a/README.md b/README.md
+index 4b916bdbc..334f740e0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react/) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
++# [React](https://facebook.github.io/react/) &middot; [![CircleCI Status](https://circleci.com/gh/facebook/react.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/facebook/react) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index fbb7689b2..4b916bdbc 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
++<script src="https://unpkg.com/react@15.4.0/dist/react.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
++<script src="https://unpkg.com/react-dom@15.4.0/dist/react-dom.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.4.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 44bbf811a..fbb7689b2 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ npm i --save react
+-The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take a part in improving React.
++The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
+diff --git a/README.md b/README.md
+index 2bba0361d..44bbf811a 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ We have several examples [on the website](https://facebook.github.io/react/). He
+-```js
++```jsx
+diff --git a/README.md b/README.md
+index 366c7d39e..2bba0361d 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +16,2 @@ We have several examples [on the website](https://facebook.github.io/react/). He
+-var HelloMessage = React.createClass({
+-  render: function() {
++class HelloMessage extends React.Component {
++  render() {
+@@ -20 +20 @@ var HelloMessage = React.createClass({
+-});
++}
+diff --git a/README.md b/README.md
+index a2201bcf2..366c7d39e 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ npm i --save react
+-The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. If you're interested in helping with that, check out our [contribution guide](https://facebook.github.io/react/contributing/how-to-contribute.html).
++The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take a part in improving React.
+@@ -64,0 +65,4 @@ Facebook has adopted a Code of Conduct that we expect project participants to ad
++### Contributing Guide
++
++Read our [contributing guide](https://facebook.github.io/react/contributing/how-to-contribute.html) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
++
+diff --git a/README.md b/README.md
+index d949a68b8..a2201bcf2 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ npm i --save react
+-## Contribute
++## Contributing
+@@ -59 +59 @@ npm i --save react
+-The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. If you're interested in helping with that, then keep reading. If you're not interested in helping right now that's ok too. :) Any feedback you have about using React would be greatly appreciated.
++The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. If you're interested in helping with that, check out our [contribution guide](https://facebook.github.io/react/contributing/how-to-contribute.html).
+@@ -61 +61 @@ The main purpose of this repository is to continue to evolve React core, making
+-### Building Your Copy of React
++### [Code of Conduct](https://code.facebook.com/codeofconduct)
+@@ -63,34 +63 @@ The main purpose of this repository is to continue to evolve React core, making
+-The process to build `react.js` is built entirely on top of node.js, using many libraries you may already be familiar with.
+-
+-#### Prerequisites
+-
+-* You have `node` installed at v4.0.0+ and `npm` at v2.0.0+.
+-* You have `gcc` installed or are comfortable installing a compiler if needed. Some of our `npm` dependencies may require a compilation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
+-* You are familiar with `npm` and know whether or not you need to use `sudo` when installing packages globally.
+-* You are familiar with `git`.
+-
+-#### Build
+-
+-Once you have the repository cloned, building a copy of `react.js` is really easy.
+-
+-```sh
+-# grunt-cli is needed by grunt; you might have this installed already
+-npm install -g grunt-cli
+-npm install
+-grunt build
+-```
+-
+-At this point, you should now have a `build/` directory populated with everything you need to use React. The examples should all work.
+-
+-### Grunt
+-
+-We use grunt to automate many tasks. Run `grunt -h` to see a mostly complete listing. The important ones to know:
+-
+-```sh
+-# Build and run tests with PhantomJS
+-grunt test
+-# Lint the code with ESLint
+-grunt lint
+-# Wipe out build directory
+-grunt clean
+-```
++Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://code.facebook.com/codeofconduct) so that you can understand what actions will and will not be tolerated.
+@@ -99 +65,0 @@ grunt clean
+-To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first bugs](https://github.com/facebook/react/labels/good%20first%20bug) that contain bugs which are fairly easy to fix.  This is a great place to get started.
+@@ -100,0 +67 @@ To help you get your feet wet and get you familiar with our contribution process
++To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first bugs](https://github.com/facebook/react/labels/good%20first%20bug) that contain bugs which are fairly easy to fix. This is a great place to get started.
+@@ -110,4 +76,0 @@ Examples provided in this repository and in the documentation are [separately li
+-### More…
+-
+-There's only so much we can cram in here. To read more about the community and guidelines for submitting pull requests, please read the [Contributing document](CONTRIBUTING.md).
+-
+diff --git a/README.md b/README.md
+index 4c9e168bf..d949a68b8 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-<script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>
++<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-<script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
++<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [u
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 68dd9725d..4c9e168bf 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-The fastest way to get started is to serve JavaScript from a CDN. We're using [npmcdn](https://npmcdn.com/) below but React is also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react):
++The fastest way to get started is to serve JavaScript from a CDN. We're using [unpkg](https://unpkg.com/) below but React is also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react):
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [n
+-<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
++<script src="https://unpkg.com/react@15.3.1/dist/react.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [n
+-<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
++<script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
+diff --git a/README.md b/README.md
+index 204754122..68dd9725d 100644
+--- a/README.md
++++ b/README.md
+@@ -68 +68 @@ The process to build `react.js` is built entirely on top of node.js, using many
+-* You have `gcc` installed or are comfortable installing a compiler if needed. Some of our `npm` dependencies may require a compliation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
++* You have `gcc` installed or are comfortable installing a compiler if needed. Some of our `npm` dependencies may require a compilation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
+diff --git a/README.md b/README.md
+index 6d618ff78..204754122 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [n
+-<script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
++<script src="https://npmcdn.com/react@15.3.1/dist/react.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [n
+-<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
++<script src="https://npmcdn.com/react-dom@15.3.1/dist/react-dom.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from a CDN. We're using [n
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 7ddf5abbc..6d618ff78 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react)):
++The fastest way to get started is to serve JavaScript from a CDN. We're using [npmcdn](https://npmcdn.com/) below but React is also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react):
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.3.0.js"></script>
++<script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.3.0.js"></script>
++<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+diff --git a/README.md b/README.md
+index e26c89bfe..7ddf5abbc 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.2.1.js"></script>
++<script src="https://fb.me/react-15.3.0.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.2.1.js"></script>
++<script src="https://fb.me/react-dom-15.3.0.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.2.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.3.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index f8057a923..e26c89bfe 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.2.0.js"></script>
++<script src="https://fb.me/react-15.2.1.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.2.0.js"></script>
++<script src="https://fb.me/react-dom-15.2.1.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.2.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.2.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 16c6abbb7..f8057a923 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.1.0.js"></script>
++<script src="https://fb.me/react-15.2.0.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.1.0.js"></script>
++<script src="https://fb.me/react-dom-15.2.0.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.1.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.2.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index d920a0f17..16c6abbb7 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68 @@ The process to build `react.js` is built entirely on top of node.js, using many
++* You have `gcc` installed or are comfortable installing a compiler if needed. Some of our `npm` dependencies may require a compliation step. On OS X, the Xcode Command Line Tools will cover this. On Ubuntu, `apt-get install build-essential` will install the required packages. Similar commands should work on other Linux distros. Windows will require some additional steps, see the [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation) for details.
+diff --git a/README.md b/README.md
+index 15bea2b90..d920a0f17 100644
+--- a/README.md
++++ b/README.md
+@@ -5,5 +5,3 @@ React is a JavaScript library for building user interfaces.
+-* **Just the UI:** Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it's easy to try it out on a small feature in an existing project.
+-* **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](https://facebook.github.io/react-native/).
+-* **Data flow:** React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.
+-
+-**NEW**! Check out our newest project [React Native](https://github.com/facebook/react-native), which uses React and JavaScript to create native mobile apps.
++* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
++* **Component-Based:** Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM.
++* **Learn Once, Write Anywhere:** We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using [React Native](https://facebook.github.io/react-native/).
+diff --git a/README.md b/README.md
+index 0e7e21286..15bea2b90 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.0.2.js"></script>
++<script src="https://fb.me/react-15.1.0.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.0.2.js"></script>
++<script src="https://fb.me/react-dom-15.1.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.1.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index a483539d7..0e7e21286 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.0.1.js"></script>
++<script src="https://fb.me/react-15.0.2.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.0.1.js"></script>
++<script src="https://fb.me/react-dom-15.0.2.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 5d8c75626..a483539d7 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-15.0.0.js"></script>
++<script src="https://fb.me/react-15.0.1.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-15.0.0.js"></script>
++<script src="https://fb.me/react-dom-15.0.1.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 982d5adb0..5d8c75626 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.8.js"></script>
++<script src="https://fb.me/react-15.0.0.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.8.js"></script>
++<script src="https://fb.me/react-dom-15.0.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.8.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-15.0.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 99301fc5d..982d5adb0 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.7.js"></script>
++<script src="https://fb.me/react-0.14.8.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.7.js"></script>
++<script src="https://fb.me/react-dom-0.14.8.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.7.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.8.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 293a5cfb8..99301fc5d 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react/) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
++# [React](https://facebook.github.io/react/) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+diff --git a/README.md b/README.md
+index d6aa2f2bc..293a5cfb8 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,6 @@ bower install --save react
++And it's just as easy with [npm](http://npmjs.com):
++
++```sh
++npm i --save react
++```
++
+diff --git a/README.md b/README.md
+index 3e7df5b82..d6aa2f2bc 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/#!react)):
++The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/projects/react)):
+diff --git a/README.md b/README.md
+index 19ca236fc..3e7df5b82 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](https://faceboo
+-The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](http://www.jsdelivr.com/#!react)):
++The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](https://www.jsdelivr.com/#!react)):
+diff --git a/README.md b/README.md
+index 19c788686..19ca236fc 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.6.js"></script>
++<script src="https://fb.me/react-0.14.7.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.6.js"></script>
++<script src="https://fb.me/react-dom-0.14.7.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.6.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.7.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index ae9f1723c..19c788686 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.5.js"></script>
++<script src="https://fb.me/react-0.14.6.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.5.js"></script>
++<script src="https://fb.me/react-dom-0.14.6.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.5.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.6.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 6c15a9a66..ae9f1723c 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.4.js"></script>
++<script src="https://fb.me/react-0.14.5.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.4.js"></script>
++<script src="https://fb.me/react-dom-0.14.5.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.4.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.5.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 17fa06cc8..6c15a9a66 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.3.js"></script>
++<script src="https://fb.me/react-0.14.4.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.3.js"></script>
++<script src="https://fb.me/react-dom-0.14.4.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.3.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.4.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index d25e8fb85..17fa06cc8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react/) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react) [![npm version](https://badge.fury.io/js/react.svg)](http://badge.fury.io/js/react)
++# [React](https://facebook.github.io/react/) [![Build Status](https://img.shields.io/travis/facebook/react/master.svg?style=flat)](https://travis-ci.org/facebook/react) [![Coverage Status](https://img.shields.io/coveralls/facebook/react/master.svg?style=flat)](https://coveralls.io/github/facebook/react?branch=master) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
+diff --git a/README.md b/README.md
+index 27d60548b..d25e8fb85 100644
+--- a/README.md
++++ b/README.md
+@@ -87,2 +86,0 @@ grunt test
+-# Build and run tests in your browser
+-grunt test --debug
+diff --git a/README.md b/README.md
+index c1fd504a4..27d60548b 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.2.js"></script>
++<script src="https://fb.me/react-0.14.3.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.2.js"></script>
++<script src="https://fb.me/react-dom-0.14.3.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.3.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 37bb3e522..c1fd504a4 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.1.js"></script>
++<script src="https://fb.me/react-0.14.2.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.1.js"></script>
++<script src="https://fb.me/react-dom-0.14.2.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 40e910b1b..37bb3e522 100644
+--- a/README.md
++++ b/README.md
+@@ -94,0 +95,4 @@ grunt clean
++### Good First Bug
++To help you get your feet wet and get you familiar with our contribution process, we have a list of [good first bugs](https://github.com/facebook/react/labels/good%20first%20bug) that contain bugs which are fairly easy to fix.  This is a great place to get started.
++
++
+diff --git a/README.md b/README.md
+index a1f03f917..40e910b1b 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.14.0.js"></script>
++<script src="https://fb.me/react-0.14.1.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-dom-0.14.0.js"></script>
++<script src="https://fb.me/react-dom-0.14.1.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 08f37a80c..a1f03f917 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ var HelloMessage = React.createClass({
+-React.render(
++ReactDOM.render(
+diff --git a/README.md b/README.md
+index e334a4249..08f37a80c 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ The process to build `react.js` is built entirely on top of node.js, using many
+-* You have `node` installed at v0.10.0+ (it might work at lower versions, we just haven't tested) and `npm` at v2.0.0+.
++* You have `node` installed at v4.0.0+ and `npm` at v2.0.0+.
+diff --git a/README.md b/README.md
+index 7c2c46c65..e334a4249 100644
+--- a/README.md
++++ b/README.md
+@@ -40,3 +40,3 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.13.3.js"></script>
+-<!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
+-<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
++<script src="https://fb.me/react-0.14.0.js"></script>
++<!-- The ReactDOM Library -->
++<script src="https://fb.me/react-dom-0.14.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.13.3.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.14.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index ef55244d2..7c2c46c65 100644
+--- a/README.md
++++ b/README.md
+@@ -89,2 +88,0 @@ grunt test --debug
+-# For speed, you can use fasttest and add --filter to only run one test
+-grunt fasttest --filter=ReactIdentity
+diff --git a/README.md b/README.md
+index 60d236055..ef55244d2 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ The process to build `react.js` is built entirely on top of node.js, using many
+-* You have `node` installed at v0.10.0+ (it might work at lower versions, we just haven't tested).
++* You have `node` installed at v0.10.0+ (it might work at lower versions, we just haven't tested) and `npm` at v2.0.0+.
+@@ -110 +110 @@ There's only so much we can cram in here. To read more about the community and g
+-See the [Troubleshooting Guide](https://github.com/facebook/react/wiki/Troubleshooting) 
++See the [Troubleshooting Guide](https://github.com/facebook/react/wiki/Troubleshooting)
+diff --git a/README.md b/README.md
+index 7ae5a4aba..60d236055 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react) [![npm version](https://badge.fury.io/js/react.svg)](http://badge.fury.io/js/react)
++# [React](https://facebook.github.io/react/) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react) [![npm version](https://badge.fury.io/js/react.svg)](http://badge.fury.io/js/react)
+diff --git a/README.md b/README.md
+index b27fd9e9f..7ae5a4aba 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ React is a JavaScript library for building user interfaces.
+-[Learn how to use React in your own project.](https://facebook.github.io/react/docs/getting-started.html).
++[Learn how to use React in your own project](https://facebook.github.io/react/docs/getting-started.html).
+diff --git a/README.md b/README.md
+index c6d71fef1..b27fd9e9f 100644
+--- a/README.md
++++ b/README.md
+@@ -107,0 +108,3 @@ There's only so much we can cram in here. To read more about the community and g
++
++## Troubleshooting
++See the [Troubleshooting Guide](https://github.com/facebook/react/wiki/Troubleshooting) 
+diff --git a/README.md b/README.md
+index 94e1bd46f..c6d71fef1 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/react-0.13.2.js"></script>
++<script src="https://fb.me/react-0.13.3.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
++<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.13.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.13.3.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 455de0e17..94e1bd46f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](https://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
++# [React](https://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react) [![npm version](https://badge.fury.io/js/react.svg)](http://badge.fury.io/js/react)
+diff --git a/README.md b/README.md
+index 5d4e94152..455de0e17 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
++# [React](https://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
+@@ -6 +6 @@ React is a JavaScript library for building user interfaces.
+-* **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](http://facebook.github.io/react-native/).
++* **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](https://facebook.github.io/react-native/).
+@@ -11 +11 @@ React is a JavaScript library for building user interfaces.
+-[Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html).
++[Learn how to use React in your own project.](https://facebook.github.io/react/docs/getting-started.html).
+@@ -15 +15 @@ React is a JavaScript library for building user interfaces.
+-We have several examples [on the website](http://facebook.github.io/react/). Here is the first one to get you started:
++We have several examples [on the website](https://facebook.github.io/react/). Here is the first one to get you started:
+@@ -32 +32 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an HTML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
++You'll notice that we used an HTML-like syntax; [we call it JSX](https://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.13.2.js"></script>
++<script src="https://fb.me/react-0.13.2.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
++<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](https://facebook.github.io/react/downloads/react-0.13.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 8b25a26e2..5d4e94152 100644
+--- a/README.md
++++ b/README.md
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.13.1.js"></script>
++<script src="http://fb.me/react-0.13.2.js"></script>
+@@ -42 +42 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
++<script src="http://fb.me/JSXTransformer-0.13.2.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index edb30e62b..8b25a26e2 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ React is a JavaScript library for building user interfaces.
+-* **Virtual DOM:** React uses a *virtual DOM* diff implementation for ultra-high performance. It can also render on the server using Node.js — no heavy browser DOM required.
++* **Virtual DOM:** React abstracts away the DOM from you, giving a simpler programming model and better performance. React can also render on the server using Node, and it can power native apps using [React Native](http://facebook.github.io/react-native/).
+diff --git a/README.md b/README.md
+index 67fd03dc3..edb30e62b 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ React is a JavaScript library for building user interfaces.
+-**NEW**: Check out our newest project [React Native](https://github.com/facebook/react-native), which uses React and JavaScript to create native mobile applications.
++**NEW**! Check out our newest project [React Native](https://github.com/facebook/react-native), which uses React and JavaScript to create native mobile apps.
+diff --git a/README.md b/README.md
+index c248d9e4f..67fd03dc3 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9,3 @@ React is a JavaScript library for building user interfaces.
+-[Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html)
++**NEW**: Check out our newest project [React Native](https://github.com/facebook/react-native), which uses React and JavaScript to create native mobile applications.
++
++[Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html).
+diff --git a/README.md b/README.md
+index b0c37391b..c248d9e4f 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.13.0.js"></script>
++<script src="http://fb.me/react-0.13.1.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 68995dbaa..b0c37391b 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.12.2.js"></script>
++<script src="http://fb.me/react-0.13.0.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
++<script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.13.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 7c9cb8c5c..68995dbaa 100644
+--- a/README.md
++++ b/README.md
+@@ -89 +89 @@ grunt fasttest --filter=ReactIdentity
+-# Lint the code with JSHint
++# Lint the code with ESLint
+diff --git a/README.md b/README.md
+index 2ba3edffc..7c9cb8c5c 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.12.1.js"></script>
++<script src="http://fb.me/react-0.12.2.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
++<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 855b1135f..2ba3edffc 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.12.0.js"></script>
++<script src="http://fb.me/react-0.12.1.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 24bba279b..855b1135f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=0.12-stable)](https://travis-ci.org/facebook/react)
++# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
+diff --git a/README.md b/README.md
+index 597a6272f..24bba279b 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ You'll notice that we used an HTML-like syntax; [we call it JSX](http://facebook
+-The fastest way to get started is to serve JavaScript from the CDN (also available on [CDNJS](http://cdnjs.com/#react)):
++The fastest way to get started is to serve JavaScript from the CDN (also available on [cdnjs](https://cdnjs.com/libraries/react) and [jsdelivr](http://www.jsdelivr.com/#!react)):
+diff --git a/README.md b/README.md
+index efdeeffbe..597a6272f 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.11.2.js"></script>
++<script src="http://fb.me/react-0.12.0.js"></script>
+@@ -40 +40 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.11.2.js"></script>
++<script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.12.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 54f47ad34..efdeeffbe 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ var HelloMessage = React.createClass({
+-React.renderComponent(
++React.render(
+diff --git a/README.md b/README.md
+index 6bac44b53..54f47ad34 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
++# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=0.12-stable)](https://travis-ci.org/facebook/react)
+diff --git a/README.md b/README.md
+index 3f5f89b9b..6bac44b53 100644
+--- a/README.md
++++ b/README.md
+@@ -98,0 +99,4 @@ React is [BSD licensed](./LICENSE). We also provide an additional [patent grant]
++React documentation is [Creative Commons licensed](./LICENSE-docs).
++
++Examples provided in this repository and in the documentation are [separately licensed](./LICENSE-examples).
++
+diff --git a/README.md b/README.md
+index 9680cd286..3f5f89b9b 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +15,0 @@ We have several examples [on the website](http://facebook.github.io/react/). Her
+-/** @jsx React.DOM */
+diff --git a/README.md b/README.md
+index f361dee04..9680cd286 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.11.1.js"></script>
++<script src="http://fb.me/react-0.11.2.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
++<script src="http://fb.me/JSXTransformer-0.11.2.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 169423f2c..f361dee04 100644
+--- a/README.md
++++ b/README.md
+@@ -95,0 +96,4 @@ grunt clean
++### License
++
++React is [BSD licensed](./LICENSE). We also provide an additional [patent grant](./PATENTS).
++
+diff --git a/README.md b/README.md
+index 1e98d1409..169423f2c 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.11.0.js"></script>
++<script src="http://fb.me/react-0.11.1.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.11.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 004b0a686..1e98d1409 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.10.0.js"></script>
++<script src="http://fb.me/react-0.11.0.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.11.0.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.10.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.11.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 950cde4c6..004b0a686 100644
+--- a/README.md
++++ b/README.md
+@@ -11,4 +10,0 @@ React is a JavaScript library for building user interfaces.
+-## The `react` npm package has recently changed!
+-
+-If you're looking for jeffbski's [React.js](https://github.com/jeffbski/autoflow) project, it's now in `npm` as `autoflow` rather than `react`.
+-
+diff --git a/README.md b/README.md
+index 7d5d0c4ff..950cde4c6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.png?branch=master)](https://travis-ci.org/facebook/react)
++# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.svg?branch=master)](https://travis-ci.org/facebook/react)
+diff --git a/README.md b/README.md
+index d404341b8..7d5d0c4ff 100644
+--- a/README.md
++++ b/README.md
+@@ -91,0 +92,2 @@ grunt test --debug
++# For speed, you can use fasttest and add --filter to only run one test
++grunt fasttest --filter=ReactIdentity
+diff --git a/README.md b/README.md
+index 2d27e438a..d404341b8 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.9.0.js"></script>
++<script src="http://fb.me/react-0.10.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.9.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+@@ -48 +48 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.9.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.10.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 3b535d412..2d27e438a 100644
+--- a/README.md
++++ b/README.md
+@@ -89,0 +90,2 @@ grunt test
++# Build and run tests in your browser
++grunt test --debug
+diff --git a/README.md b/README.md
+index 0945d875c..3b535d412 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.8.0.js"></script>
++<script src="http://fb.me/react-0.9.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.8.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.9.0.js"></script>
+@@ -48 +48 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.8.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.9.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 4ce8e6314..0945d875c 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ React is a JavaScript library for building user interfaces.
+-If you're looking for jeffbski's [React.js](https://github.com/jeffbski/react) project, it's now in `npm` as `reactjs` rather than `react`.
++If you're looking for jeffbski's [React.js](https://github.com/jeffbski/autoflow) project, it's now in `npm` as `autoflow` rather than `react`.
+diff --git a/README.md b/README.md
+index d98b825d6..4ce8e6314 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.5.2.js"></script>
++<script src="http://fb.me/react-0.8.0.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.5.2.js"></script>
++<script src="http://fb.me/JSXTransformer-0.8.0.js"></script>
+@@ -48 +48 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.8.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 4f3d7d89d..d98b825d6 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.5.1.js"></script>
++<script src="http://fb.me/react-0.5.2.js"></script>
+@@ -45 +45 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.5.1.js"></script>
++<script src="http://fb.me/JSXTransformer-0.5.2.js"></script>
+@@ -48 +48 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 157457406..4f3d7d89d 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,4 @@ React is a JavaScript library for building user interfaces.
++## The `react` npm package has recently changed!
++
++If you're looking for jeffbski's [React.js](https://github.com/jeffbski/react) project, it's now in `npm` as `reactjs` rather than `react`.
++
+diff --git a/README.md b/README.md
+index 25d79f1e1..157457406 100644
+--- a/README.md
++++ b/README.md
+@@ -5,3 +5,3 @@ React is a JavaScript library for building user interfaces.
+-* **Declarative:** React uses a declarative paradigm that makes it easier to reason about your application.
+-* **Efficient:** React computes the minimal set of changes necessary to keep your DOM up-to-date.
+-* **Flexible:** React works with the libraries and frameworks that you already know.
++* **Just the UI:** Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it's easy to try it out on a small feature in an existing project.
++* **Virtual DOM:** React uses a *virtual DOM* diff implementation for ultra-high performance. It can also render on the server using Node.js — no heavy browser DOM required.
++* **Data flow:** React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.
+@@ -13 +13 @@ React is a JavaScript library for building user interfaces.
+-We have several examples [on the website](http://facebook.github.io/react). Here is the first one to get you started:
++We have several examples [on the website](http://facebook.github.io/react/). Here is the first one to get you started:
+@@ -19 +19 @@ var HelloMessage = React.createClass({
+-    return <div>{'Hello ' + this.props.name}</div>;
++    return <div>Hello {this.props.name}</div>;
+@@ -54 +54 @@ bower install --save react
+-The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. If you're interested in helping with that, then keep reading. If you're not interested in helping right now that's ok too :) Any feedback you have about using React would be greatly appreciated.
++The main purpose of this repository is to continue to evolve React core, making it faster and easier to use. If you're interested in helping with that, then keep reading. If you're not interested in helping right now that's ok too. :) Any feedback you have about using React would be greatly appreciated.
+@@ -84 +84 @@ We use grunt to automate many tasks. Run `grunt -h` to see a mostly complete lis
+-# Create test build & run tests with PhantomJS
++# Build and run tests with PhantomJS
+@@ -86 +86 @@ grunt test
+-# Lint the core library code with JSHint
++# Lint the code with JSHint
+@@ -88,2 +87,0 @@ grunt lint
+-# Lint package code
+-grunt lint:package
+diff --git a/README.md b/README.md
+index 82420a0f7..25d79f1e1 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
++You'll notice that we used an HTML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
+diff --git a/README.md b/README.md
+index b4912e73e..82420a0f7 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.5.0.js"></script>
++<script src="http://fb.me/react-0.5.1.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.5.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.5.1.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index b70639d4f..b4912e73e 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.4.1.js"></script>
++<script src="http://fb.me/react-0.5.0.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/JSXTransformer-0.4.1.js"></script>
++<script src="http://fb.me/JSXTransformer-0.5.0.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.4.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.5.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 46cc0d8e5..b70639d4f 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/syntax.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
++You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
+diff --git a/README.md b/README.md
+index caa7f2ece..46cc0d8e5 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN (also availab
+-<script src="http://fb.me/react-0.4.1.min.js"></script>
++<script src="http://fb.me/react-0.4.1.js"></script>
+diff --git a/README.md b/README.md
+index ccb46727d..caa7f2ece 100644
+--- a/README.md
++++ b/README.md
+@@ -35 +35 @@ You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.
+-The fastest way to get started is to serve JavaScript from the CDN:
++The fastest way to get started is to serve JavaScript from the CDN (also available on [CDNJS](http://cdnjs.com/#react)):
+diff --git a/README.md b/README.md
+index d1c23fc25..ccb46727d 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/react-0.4.0.min.js"></script>
++<script src="http://fb.me/react-0.4.1.min.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/JSXTransformer-0.4.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.4.1.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.4.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.4.1.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 472221ca0..d1c23fc25 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/react-0.3.2.min.js"></script>
++<script src="http://fb.me/react-0.4.0.min.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/JSXTransformer-0.3.2.js"></script>
++<script src="http://fb.me/JSXTransformer-0.4.0.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.3.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.4.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index e9085cfaa..472221ca0 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/react-0.3.0.min.js"></script>
++<script src="http://fb.me/react-0.3.2.min.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fb.me/JSXTransformer-0.3.0.js"></script>
++<script src="http://fb.me/JSXTransformer-0.3.2.js"></script>
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.3.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.3.2.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index aacd5f517..e9085cfaa 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +49 @@ If you'd like to use [bower](http://bower.io), it's as easy as:
+-bower install react
++bower install --save react
+diff --git a/README.md b/README.md
+index f6089049b..aacd5f517 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ React is a JavaScript library for building user interfaces.
+-* **Efficient:** React minimizes interactions with the DOM by using a mock representation of the DOM.
++* **Efficient:** React computes the minimal set of changes necessary to keep your DOM up-to-date.
+diff --git a/README.md b/README.md
+index 58f0ddd87..f6089049b 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# [React](http://facebook.github.io/react)
++# [React](http://facebook.github.io/react) [![Build Status](https://travis-ci.org/facebook/react.png?branch=master)](https://travis-ci.org/facebook/react)
+diff --git a/README.md b/README.md
+index c9ee84cd4..58f0ddd87 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ This example will render "Hello John" into a container on the page.
+-You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.github.io/docs/syntax.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
++You'll notice that we used an XML-like syntax; [we call it JSX](http://facebook.github.io/react/docs/syntax.html). JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML. A simple transform is included with React that allows converting JSX into native JavaScript for browsers to digest.
+diff --git a/README.md b/README.md
+index 9b077d661..c9ee84cd4 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ React is a JavaScript library for building user interfaces.
+-[Learn how to use React in your own project.](http://facebook.github.io/docs/getting-started.html)
++[Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html)
+@@ -44 +44 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-We've also built a [starter kit](#) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
++We've also built a [starter kit](http://facebook.github.io/react/downloads/react-0.3.0.zip) which might be useful if this is your first time using React. It includes a webpage with an example of using React with live code.
+diff --git a/README.md b/README.md
+index 6af430d39..9b077d661 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fbcdn.com/javascript/react/0.6.0/react.min.js"></script>
++<script src="http://fb.me/react-0.3.0.min.js"></script>
+@@ -41 +41 @@ The fastest way to get started is to serve JavaScript from the CDN:
+-<script src="http://fbcdn.com/javascript/react/0.6.0/JSXTransformer.js"></script>
++<script src="http://fb.me/JSXTransformer-0.3.0.js"></script>

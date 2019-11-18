@@ -1,0 +1,4020 @@
+diff --git a/README.md b/README.md
+index 8383007..4b28273 100644
+--- a/README.md
++++ b/README.md
+@@ -235,0 +236 @@ following rules are enabled by default:
++* `go_unknown_command` &ndash; fixes wrong `go` commands, for example `go bulid`;
+diff --git a/README.md b/README.md
+index d9424df..8383007 100644
+--- a/README.md
++++ b/README.md
+@@ -193,0 +194 @@ following rules are enabled by default:
++* `docker_image_being_used_by_container` &dash; removes the container that is using the image before removing the image;
+diff --git a/README.md b/README.md
+index 26cf0d0..d9424df 100644
+--- a/README.md
++++ b/README.md
+@@ -288,0 +289 @@ following rules are enabled by default:
++* `terraform_init.py` &ndash; run `terraform init` before plan or apply;
+diff --git a/README.md b/README.md
+index a678856..26cf0d0 100644
+--- a/README.md
++++ b/README.md
+@@ -318,0 +319 @@ The following rules are enabled by default on specific platforms only:
++* `nixos_cmd_not_found` &ndash; installs apps on NixOS;
+diff --git a/README.md b/README.md
+index b6e756c..a678856 100644
+--- a/README.md
++++ b/README.md
+@@ -272,0 +273 @@ following rules are enabled by default:
++* `pyenv_no_such_command` &ndash; fixes wrong pyenv commands like `pyenv isntall` or `pyenv list`;
+diff --git a/README.md b/README.md
+index c3d3e9d..b6e756c 100644
+--- a/README.md
++++ b/README.md
+@@ -318,2 +318,2 @@ The following rules are enabled by default on specific platforms only:
+-* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available);
+-* `pacman_not_found` &ndash; fixes package name with `pacman` or `yaourt`.
++* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yay` or `yaourt` if available);
++* `pacman_not_found` &ndash; fixes package name with `pacman`, `yay` or `yaourt`.
+diff --git a/README.md b/README.md
+index 55ef2b3..c3d3e9d 100644
+--- a/README.md
++++ b/README.md
+@@ -117,2 +117 @@ On FreeBSD, install *The Fuck* with the following commands:
+-sudo portsnap fetch update
+-cd /usr/ports/misc/thefuck && sudo make install clean
++pkg install thefuck
+diff --git a/README.md b/README.md
+index bb1d8df..55ef2b3 100644
+--- a/README.md
++++ b/README.md
+@@ -268,0 +269 @@ following rules are enabled by default:
++* `pip_install` &ndash; fixes permission issues with `pip install` commands by adding `--user` or prepending `sudo` if necessary;
+diff --git a/README.md b/README.md
+index 53cfeba..bb1d8df 100644
+--- a/README.md
++++ b/README.md
+@@ -192,0 +193 @@ following rules are enabled by default:
++* `docker_login` &ndash; executes a `docker login` and repeats the previous command;
+diff --git a/README.md b/README.md
+index 63c8990..53cfeba 100644
+--- a/README.md
++++ b/README.md
+@@ -206,0 +207 @@ following rules are enabled by default:
++* `git_commit_reset` &ndash; offers `git reset HEAD~` after previous commit;
+diff --git a/README.md b/README.md
+index 4027370..63c8990 100644
+--- a/README.md
++++ b/README.md
+@@ -102 +102 @@ Reading package lists... Done
+-On OS X, you can install *The Fuck* via [Homebrew][homebrew]:
++On OS X, you can install *The Fuck* via [Homebrew][homebrew] (or via [Linuxbrew][linuxbrew] on Linux):
+@@ -498 +498,2 @@ Project License can be found [here](LICENSE.md).
+-[homebrew]:        http://brew.sh/
++[homebrew]:        https://brew.sh/
++[linuxbrew]:       https://linuxbrew.sh/
+diff --git a/README.md b/README.md
+index d0fb49c..4027370 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +108 @@ brew install thefuck
+-On Ubuntu, install *The Fuck* with the following commands:
++On Ubuntu / Mint, install *The Fuck* with the following commands:
+@@ -111 +111 @@ sudo apt update
+-sudo apt install python3-dev python3-pip
++sudo apt install python3-dev python3-pip python3-setuptools
+diff --git a/README.md b/README.md
+index 0be887a..d0fb49c 100644
+--- a/README.md
++++ b/README.md
+@@ -393 +393,2 @@ Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/thefu
+-* `slow_commands` &ndash; list of slow commands.
++* `slow_commands` &ndash; list of slow commands;
++* `num_close_matches` &ndash; maximum number of close matches to suggest, by default `3`.
+@@ -407,0 +409 @@ slow_commands = ['react-native', 'gradle']
++num_close_matches = 5
+@@ -423 +425,2 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_SLOW_COMMANDS` &ndash; list of slow commands, like `lein:gradle`.
++* `THEFUCK_SLOW_COMMANDS` &ndash; list of slow commands, like `lein:gradle`;
++* `THEFUCK_NUM_CLOSE_MATCHES` &ndash; maximum number of close matches to suggest, like `5`.
+@@ -434,0 +438 @@ export THEFUCK_HISTORY_LIMIT='2000'
++export THEFUCK_NUM_CLOSE_MATCHES='5'
+diff --git a/README.md b/README.md
+index 5fa401e..0be887a 100644
+--- a/README.md
++++ b/README.md
+@@ -236 +236 @@ following rules are enabled by default:
+-* `grep_arguments_order` &ndash; fixes grep arguments order for situations like `grep -lir . test`;
++* `grep_arguments_order` &ndash; fixes `grep` arguments order for situations like `grep -lir . test`;
+diff --git a/README.md b/README.md
+index 19db1fc..5fa401e 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ following rules are enabled by default:
++* `az_cli` &ndash; fixes misspelled commands like `az providers`;
+diff --git a/README.md b/README.md
+index 861a7fa..19db1fc 100644
+--- a/README.md
++++ b/README.md
+@@ -180 +180 @@ following rules are enabled by default:
+-* `cat_dir` &ndash; replaces `cat` with `ls` when you try to `cat` a directory
++* `cat_dir` &ndash; replaces `cat` with `ls` when you try to `cat` a directory;
+diff --git a/README.md b/README.md
+index c5e9cd2..861a7fa 100644
+--- a/README.md
++++ b/README.md
+@@ -179,0 +180 @@ following rules are enabled by default:
++* `cat_dir` &ndash; replaces `cat` with `ls` when you try to `cat` a directory
+diff --git a/README.md b/README.md
+index af3b06a..c5e9cd2 100644
+--- a/README.md
++++ b/README.md
+@@ -149 +149 @@ available, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
+-To run fixed commands without confirmation, use the `-y` option:
++To run fixed commands without confirmation, use the `--yeah` option (or just `-y` for short):
+@@ -152 +152 @@ To run fixed commands without confirmation, use the `-y` option:
+-fuck -y
++fuck --yeah
+diff --git a/README.md b/README.md
+index 5bf72e0..af3b06a 100644
+--- a/README.md
++++ b/README.md
+@@ -462 +462 @@ then reading the log.
+-Currently, instant mode only supports Python 3 with bash or zsh.
++Currently, instant mode only supports Python 3 with bash or zsh. zsh's autocorrect function also needs to be disabled in order for thefuck to work properly.
+diff --git a/README.md b/README.md
+index e9c419b..5bf72e0 100644
+--- a/README.md
++++ b/README.md
+@@ -307,0 +308 @@ The following rules are enabled by default on specific platforms only:
++* `brew_reinstall` &ndash; turns `brew install <formula>` into `brew reinstall <formula>`;
+diff --git a/README.md b/README.md
+index a0c8671..e9c419b 100644
+--- a/README.md
++++ b/README.md
+@@ -246,0 +247 @@ following rules are enabled by default:
++* `long_form_help` &ndash; changes `-h` to `--help` when the short form version is not supported
+diff --git a/README.md b/README.md
+index b1b4f44..a0c8671 100644
+--- a/README.md
++++ b/README.md
+@@ -235 +235 @@ following rules are enabled by default:
+-* `grep_recursive` &ndash; adds `-r` when you trying to `grep` directory;
++* `grep_recursive` &ndash; adds `-r` when you try to `grep` directory;
+@@ -255 +255 @@ following rules are enabled by default:
+-* `mkdir_p` &ndash; adds `-p` when you trying to create directory without parent;
++* `mkdir_p` &ndash; adds `-p` when you try to create a directory without parent;
+@@ -268 +268 @@ following rules are enabled by default:
+-* `python_command` &ndash; prepends `python` when you trying to run not executable/without `./` python script;
++* `python_command` &ndash; prepends `python` when you try to run non-executable/without `./` python script;
+@@ -274 +274 @@ following rules are enabled by default:
+-* `rm_dir` &ndash; adds `-rf` when you trying to remove directory;
++* `rm_dir` &ndash; adds `-rf` when you try to remove a directory;
+diff --git a/README.md b/README.md
+index d12b67f..b1b4f44 100644
+--- a/README.md
++++ b/README.md
+@@ -120,0 +121,5 @@ cd /usr/ports/misc/thefuck && sudo make install clean
++On ChromeOS, install *The Fuck* using [chromebrew](https://github.com/skycocker/chromebrew) with the following command:
++```bash
++crew install thefuck
++```
++
+diff --git a/README.md b/README.md
+index 8b9decf..d12b67f 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3,3 @@
+-Magnificent app which corrects your previous console command,
+-inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-[tweet](https://twitter.com/liamosaur/status/506975850596536320).
++*The Fuck* is a magnificent app, inspired by a [@liamosaur](https://twitter.com/liamosaur/)
++[tweet](https://twitter.com/liamosaur/status/506975850596536320),
++that corrects errors in previous console commands.
+@@ -7 +7,2 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-The Fuck is too slow? [Try experimental instant mode!](#experimental-instant-mode)
++
++Is *The Fuck* too slow? [Try the experimental instant mode!](#experimental-instant-mode)
+@@ -11 +12 @@ The Fuck is too slow? [Try experimental instant mode!](#experimental-instant-mod
+-Few more examples:
++More examples:
+@@ -78,2 +79,2 @@ REPL-y 0.3.1
+-If you are not scared to blindly run the changed command, there is a `require_confirmation`
+-[settings](#settings) option:
++If you're not afraid of blindly running corrected commands, the
++`require_confirmation` [settings](#settings) option can be disabled:
+@@ -101 +102 @@ Reading package lists... Done
+-On OS X you can install `The Fuck` with [Homebrew][homebrew]:
++On OS X, you can install *The Fuck* via [Homebrew][homebrew]:
+@@ -107 +108 @@ brew install thefuck
+-On Ubuntu you can install `The Fuck` with:
++On Ubuntu, install *The Fuck* with the following commands:
+@@ -114 +115 @@ sudo pip3 install thefuck
+-On FreeBSD you can install `The Fuck` with:
++On FreeBSD, install *The Fuck* with the following commands:
+@@ -120 +121 @@ cd /usr/ports/misc/thefuck && sudo make install clean
+-On other systems you can install `The Fuck` with `pip`:
++On other systems, install *The Fuck*  by using `pip`:
+@@ -126 +127 @@ pip install thefuck
+-[Or using an OS package manager (OS X, Ubuntu, Arch).](https://github.com/nvbn/thefuck/wiki/Installation)
++[Alternatively, you may use an OS package manager (OS X, Ubuntu, Arch).](https://github.com/nvbn/thefuck/wiki/Installation)
+@@ -129 +130,2 @@ pip install thefuck
+-You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or other startup script:
++It is recommended that you place this command in your `.bash_profile`,
++`.bashrc`, `.zshrc` or other startup script:
+@@ -139,2 +141,2 @@ eval $(thefuck --alias FUCK)
+-Changes will be available only in a new shell session.
+-To make them available immediately, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
++Changes are only available in a new shell session. To make changes immediately
++available, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
+@@ -142 +144 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-If you want to run fixed command without confirmation you can use `-y` option:
++To run fixed commands without confirmation, use the `-y` option:
+@@ -148 +150 @@ fuck -y
+-If you want to fix commands recursively until success you can use `-r` option:
++To fix commands recursively until succeeding, use the `-r` option:
+@@ -154 +156 @@ fuck -r
+-## Update
++## Updating
+@@ -160 +162 @@ pip3 install thefuck --upgrade
+-**Aliases changed in 1.34.**
++**Note: Alias functionality was changed in v1.34 of *The Fuck***
+@@ -164,2 +166,3 @@ pip3 install thefuck --upgrade
+-The Fuck tries to match a rule for the previous command, creates a new command
+-using the matched rule and runs it. Rules enabled by default are as follows:
++*The Fuck* attempts to match the previous command with a rule. If a match is
++found, a new command is created using the matched rule and executed. The
++following rules are enabled by default:
+@@ -290 +293 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-Enabled by default only on specific platforms:
++The following rules are enabled by default on specific platforms only:
+@@ -307 +310,2 @@ Enabled by default only on specific platforms:
+-Bundled, but not enabled by default:
++The following commands are bundled with *The Fuck*, but are not enabled by
++default:
+@@ -314,2 +318,2 @@ Bundled, but not enabled by default:
+-For adding your own rule you should create `your-rule-name.py`
+-in `~/.config/thefuck/rules`. The rule should contain two functions:
++To add your own rule, create a file named `your-rule-name.py`
++in `~/.config/thefuck/rules`. The rule file must contain two functions:
+@@ -322 +326 @@ get_new_command(command: Command) -> str | list[str]
+-Also the rule can contain an optional function
++Additionally, rules can contain optional functions:
+@@ -327 +331 @@ side_effect(old_command: Command, fixed_command: str) -> None
+-and optional `enabled_by_default`, `requires_output` and `priority` variables.
++Rules can also contain the optional variables `enabled_by_default`, `requires_output` and `priority`.
+@@ -330 +334 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-Rule shouldn't change `Command`.
++Your rule should not change `Command`.
+@@ -333,2 +337,5 @@ Rule shouldn't change `Command`.
+-*Rules api changed in 3.0:* For accessing settings in rule you need to import it with `from thefuck.conf import settings`.
+-`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
++**Rules api changed in 3.0:** To access a rule's settings, import it with
++ `from thefuck.conf import settings`
++  
++`settings` is a special object assembled from `~/.config/thefuck/settings.py`, 
++and values from env ([see more below](#settings)).
+@@ -336 +343 @@ Rule shouldn't change `Command`.
+-Simple example of the rule for running script with `sudo`:
++A simple example rule for running a script with `sudo`:
+@@ -364 +371,2 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
++Several *The Fuck* parameters can be changed in the file `$XDG_CONFIG_HOME/thefuck/settings.py`
++(`$XDG_CONFIG_HOME` defaults to `~/.config`):
+@@ -378 +386 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-Example of `settings.py`:
++An example of `settings.py`:
+@@ -422,3 +430,3 @@ export THEFUCK_HISTORY_LIMIT='2000'
+-If you want to make very specific rules or rules, that you don't want to make public,
+-but share with other people.
+-You can create a special package with name `thefuck_contrib_*` with following structure:
++If you'd like to make a specific set of non-public rules, but would still like
++to share them with others, create a package named `thefuck_contrib_*` with
++the following structure:
+@@ -437 +445 @@ thefuck_contrib_foo
+-And thefuck will find all rules from `rules` module.
++*The Fuck* will find rules located in the `rules` module.
+@@ -441,3 +449,3 @@ And thefuck will find all rules from `rules` module.
+-By default The Fuck reruns a previous command and that takes time,
+-in instant mode The Fuck logs output with [script](https://en.wikipedia.org/wiki/Script_(Unix))
+-and just reads the log.
++The default behavior of *The Fuck* requires time to re-run previous commands.
++When in instant mode, *The Fuck* saves time by logging output with [script](https://en.wikipedia.org/wiki/Script_(Unix)),
++then reading the log.
+@@ -447 +455,4 @@ and just reads the log.
+-At the moment only Python 3 with bash or zsh is supported.
++Currently, instant mode only supports Python 3 with bash or zsh.
++
++To enable instant mode, add `--enable-experimental-instant-mode`
++to the alias initialization in `.bashrc`, `.bash_profile` or `.zshrc`.
+@@ -449,2 +460 @@ At the moment only Python 3 with bash or zsh is supported.
+-For enabling instant mode you need to add `--enable-experimental-instant-mode`
+-to alias initialization in your `.bashrc`, `.bash_profile` or `.zshrc` like:
++For example:
+diff --git a/README.md b/README.md
+index 27d2d4a..8b9decf 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-The Fuck is too slow? [Try experimental instant mode!](#experimental-instant-mode) 
++The Fuck is too slow? [Try experimental instant mode!](#experimental-instant-mode)
+@@ -280,0 +281 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `unsudo` &ndash; removes `sudo` from previous command if a process refuses to run on super user privilege.
+diff --git a/README.md b/README.md
+index ec6549b..27d2d4a 100644
+--- a/README.md
++++ b/README.md
+@@ -202,0 +203 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_merge_unrelated` &ndash; adds `--allow-unrelated-histories` when required
+diff --git a/README.md b/README.md
+index 7505717..ec6549b 100644
+--- a/README.md
++++ b/README.md
+@@ -113,0 +114,6 @@ sudo pip3 install thefuck
++On FreeBSD you can install `The Fuck` with:
++```bash
++sudo portsnap fetch update
++cd /usr/ports/misc/thefuck && sudo make install clean
++```
++
+diff --git a/README.md b/README.md
+index 184e20a..7505717 100644
+--- a/README.md
++++ b/README.md
+@@ -189,0 +190 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_commit_amend` &ndash; offers `git commit --amend` after previous commit;
+diff --git a/README.md b/README.md
+index c07f40f..184e20a 100644
+--- a/README.md
++++ b/README.md
+@@ -160,0 +161 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `adb_unknown_command` &ndash; fixes misspelled commands like `adb logcta`;
+diff --git a/README.md b/README.md
+index 50bf49a..c07f40f 100644
+--- a/README.md
++++ b/README.md
+@@ -285,0 +286 @@ Enabled by default only on specific platforms:
++* `apt_upgrade` &ndash; helps you run `apt upgrade` after `apt list --upgradable`;
+diff --git a/README.md b/README.md
+index e686d06..50bf49a 100644
+--- a/README.md
++++ b/README.md
+@@ -447,31 +447 @@ eval $(thefuck --alias --enable-experimental-instant-mode)
+-Install `The Fuck` for development:
+-
+-```bash
+-pip install -r requirements.txt
+-python setup.py develop
+-```
+-
+-Run code style checks:
+-
+-```bash
+-flake8
+-```
+-
+-Run unit tests:
+-
+-```bash
+-py.test
+-```
+-
+-Run unit and functional tests (requires docker):
+-
+-```bash
+-py.test --enable-functional
+-```
+-
+-For sending package to pypi:
+-
+-```bash
+-sudo apt-get install pandoc
+-./release.py
+-```
++See [CONTRIBUTING.md](CONTRIBUTING.md)
+diff --git a/README.md b/README.md
+index 26ba5ab..e686d06 100644
+--- a/README.md
++++ b/README.md
+@@ -193,0 +194 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_merge` &ndash; adds remote to branch names;
+diff --git a/README.md b/README.md
+index a389f69..26ba5ab 100644
+--- a/README.md
++++ b/README.md
+@@ -151 +151 @@ fuck -r
+-pip install thefuck --upgrade
++pip3 install thefuck --upgrade
+diff --git a/README.md b/README.md
+index 94fff46..a389f69 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ Reading package lists... Done
+-- python (3.3+)
++- python (3.4+)
+diff --git a/README.md b/README.md
+index 68daf35..94fff46 100644
+--- a/README.md
++++ b/README.md
+@@ -407,0 +408,19 @@ export THEFUCK_HISTORY_LIMIT='2000'
++## Third-party packages with rules
++
++If you want to make very specific rules or rules, that you don't want to make public,
++but share with other people.
++You can create a special package with name `thefuck_contrib_*` with following structure:
++
++```
++thefuck_contrib_foo
++  thefuck_contrib_foo
++    rules
++      __init__.py
++      *third-party rules*
++    __init__.py
++    *third-party-utils*
++  setup.py
++```
++
++And thefuck will find all rules from `rules` module.
++
+diff --git a/README.md b/README.md
+index dd8cfae..68daf35 100644
+--- a/README.md
++++ b/README.md
+@@ -283,0 +284 @@ Enabled by default only on specific platforms:
++* `apt_list_upgradable` &ndash; helps you run `apt list --upgradable` after `apt update`;
+diff --git a/README.md b/README.md
+index 4a8b5bf..dd8cfae 100644
+--- a/README.md
++++ b/README.md
+@@ -220,0 +221 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `heroku_multiple_apps` &ndash; add `--app <app>` to `heroku` commands like `heroku pg`;
+diff --git a/README.md b/README.md
+index 5f5e310..4a8b5bf 100644
+--- a/README.md
++++ b/README.md
+@@ -198,0 +199 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_push_different_branch_names` &ndash; fixes pushes when local brach name does not match remote branch name;
+diff --git a/README.md b/README.md
+index ae1d58c..5f5e310 100644
+--- a/README.md
++++ b/README.md
+@@ -281,0 +282 @@ Enabled by default only on specific platforms:
++* `brew_cask_dependency` &ndash; installs cask dependencies;
+diff --git a/README.md b/README.md
+index 1ba5b9e..ae1d58c 100644
+--- a/README.md
++++ b/README.md
+@@ -246,0 +247 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `prove_recursively` &ndash; adds `-r` when called with directory;
+diff --git a/README.md b/README.md
+index fef76ff..1ba5b9e 100644
+--- a/README.md
++++ b/README.md
+@@ -244,0 +245 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `php_s` &ndash; replaces `-s` by `-S` when trying to run a local php server;
+diff --git a/README.md b/README.md
+index 31dc152..fef76ff 100644
+--- a/README.md
++++ b/README.md
+@@ -202 +202 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_remote_delete` &ndash; replaces `git remote delete remote_name` with `git remote remove remote_name`
++* `git_remote_delete` &ndash; replaces `git remote delete remote_name` with `git remote remove remote_name`;
+diff --git a/README.md b/README.md
+index 8809b49..31dc152 100644
+--- a/README.md
++++ b/README.md
+@@ -284,0 +285 @@ Enabled by default only on specific platforms:
++* `dnf_no_such_command` &ndash; fixes mistyped DNF commands;
+diff --git a/README.md b/README.md
+index 360b198..8809b49 100644
+--- a/README.md
++++ b/README.md
+@@ -201,0 +202 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_remote_delete` &ndash; replaces `git remote delete remote_name` with `git remote remove remote_name`
+@@ -284 +284,0 @@ Enabled by default only on specific platforms:
+-* `dnf_no_such_command` &ndash; fixes mistyped DNF commands;
+diff --git a/README.md b/README.md
+index 7f0757b..360b198 100644
+--- a/README.md
++++ b/README.md
+@@ -283,0 +284 @@ Enabled by default only on specific platforms:
++* `dnf_no_such_command` &ndash; fixes mistyped DNF commands;
+diff --git a/README.md b/README.md
+index 1c144a2..7f0757b 100644
+--- a/README.md
++++ b/README.md
+@@ -122 +122 @@ pip install thefuck
+-<span name='manual-installation'></span>
++<a href='#manual-installation' name='manual-installation'>#</a>
+diff --git a/README.md b/README.md
+index 98447b4..1c144a2 100644
+--- a/README.md
++++ b/README.md
+@@ -122 +122 @@ pip install thefuck
+-<span id='manual-installation'></span>
++<span name='manual-installation'></span>
+diff --git a/README.md b/README.md
+index b7249fd..98447b4 100644
+--- a/README.md
++++ b/README.md
+@@ -121,0 +122 @@ pip install thefuck
++<span id='manual-installation'></span>
+diff --git a/README.md b/README.md
+index db28158..b7249fd 100644
+--- a/README.md
++++ b/README.md
+@@ -283 +282,0 @@ Enabled by default only on specific platforms:
+-* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour;
+diff --git a/README.md b/README.md
+index 245fcce..db28158 100644
+--- a/README.md
++++ b/README.md
+@@ -95 +95 @@ Reading package lists... Done
+-- python (2.7+ or 3.3+)
++- python (3.3+)
+diff --git a/README.md b/README.md
+index 9c00d92..245fcce 100644
+--- a/README.md
++++ b/README.md
+@@ -309 +309 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`Command` has four attributes: `script`, `stdout`, `stderr` and `script_parts`.
++`Command` has three attributes: `script`, `output` and `script_parts`.
+@@ -320,2 +320,2 @@ def match(command):
+-    return ('permission denied' in command.stderr.lower()
+-            or 'EACCES' in command.stderr)
++    return ('permission denied' in command.output.lower()
++            or 'EACCES' in command.output)
+diff --git a/README.md b/README.md
+index 9c97084..9c00d92 100644
+--- a/README.md
++++ b/README.md
+@@ -465 +465 @@ Project License can be found [here](LICENSE.md).
+-[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/682-instant-fuck-mode/example_instant_mode.gif
++[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example_instant_mode.gif
+diff --git a/README.md b/README.md
+index 9c00d92..9c97084 100644
+--- a/README.md
++++ b/README.md
+@@ -465 +465 @@ Project License can be found [here](LICENSE.md).
+-[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example_instant_mode.gif
++[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/682-instant-fuck-mode/example_instant_mode.gif
+diff --git a/README.md b/README.md
+index c90064e..9c00d92 100644
+--- a/README.md
++++ b/README.md
+@@ -405,0 +406,2 @@ and just reads the log.
++[![gif with instant mode][instant-mode-gif-link]][instant-mode-gif-link]
++
+@@ -462,0 +465 @@ Project License can be found [here](LICENSE.md).
++[instant-mode-gif-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example_instant_mode.gif
+diff --git a/README.md b/README.md
+index 12f9649..c90064e 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,2 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
++The Fuck is too slow? [Try experimental instant mode!](#experimental-instant-mode) 
++
+@@ -397,0 +400,15 @@ export THEFUCK_HISTORY_LIMIT='2000'
++## Experimental instant mode
++
++By default The Fuck reruns a previous command and that takes time,
++in instant mode The Fuck logs output with [script](https://en.wikipedia.org/wiki/Script_(Unix))
++and just reads the log.
++
++At the moment only Python 3 with bash or zsh is supported.
++
++For enabling instant mode you need to add `--enable-experimental-instant-mode`
++to alias initialization in your `.bashrc`, `.bash_profile` or `.zshrc` like:
++
++```bash
++eval $(thefuck --alias --enable-experimental-instant-mode)
++```
++
+diff --git a/README.md b/README.md
+index c986e05..12f9649 100644
+--- a/README.md
++++ b/README.md
+@@ -133 +133 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-If you want separate alias for running fixed command without confirmation you can use alias like:
++If you want to run fixed command without confirmation you can use `-y` option:
+@@ -136 +136,7 @@ If you want separate alias for running fixed command without confirmation you ca
+-alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True'
++fuck -y
++```
++
++If you want to fix commands recursively until success you can use `-r` option:
++
++```bash
++fuck -r
+diff --git a/README.md b/README.md
+index 4b3fbdb..c986e05 100644
+--- a/README.md
++++ b/README.md
+@@ -274,0 +275 @@ Enabled by default only on specific platforms:
++* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour;
+@@ -300 +301 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`Command` has three attributes: `script`, `stdout`, `stderr` and `script_parts`.
++`Command` has four attributes: `script`, `stdout`, `stderr` and `script_parts`.
+diff --git a/README.md b/README.md
+index 27e8b9e..4b3fbdb 100644
+--- a/README.md
++++ b/README.md
+@@ -275 +274,0 @@ Enabled by default only on specific platforms:
+-* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour;
+diff --git a/README.md b/README.md
+index 972a7f6..27e8b9e 100644
+--- a/README.md
++++ b/README.md
+@@ -109 +109 @@ sudo apt install python3-dev python3-pip
+-pip3 install --user thefuck
++sudo pip3 install thefuck
+@@ -115 +115 @@ On other systems you can install `The Fuck` with `pip`:
+-pip install --user thefuck
++pip install thefuck
+@@ -142 +142 @@ alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_R
+-pip install --user thefuck --upgrade
++pip install thefuck --upgrade
+diff --git a/README.md b/README.md
+index 969344b..972a7f6 100644
+--- a/README.md
++++ b/README.md
+@@ -432 +432 @@ Project License can be found [here](LICENSE.md).
+-[travis-badge]:    https://img.shields.io/travis/nvbn/thefuck.svg
++[travis-badge]:    https://travis-ci.org/nvbn/thefuck.svg?branch=master
+@@ -434 +434 @@ Project License can be found [here](LICENSE.md).
+-[appveyor-badge]:  https://img.shields.io/appveyor/ci/nvbn/thefuck.svg?label=windows%20build
++[appveyor-badge]:  https://ci.appveyor.com/api/projects/status/1sskj4imj02um0gu/branch/master?svg=true
+diff --git a/README.md b/README.md
+index 5d9a15c..969344b 100644
+--- a/README.md
++++ b/README.md
+@@ -261,0 +262 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `yarn_command_replaced` &ndash; fixes replaced `yarn` commands;
+diff --git a/README.md b/README.md
+index 1d61d74..5d9a15c 100644
+--- a/README.md
++++ b/README.md
+@@ -109 +109 @@ sudo apt install python3-dev python3-pip
+-sudo -H pip3 install thefuck
++pip3 install --user thefuck
+@@ -115 +115 @@ On other systems you can install `The Fuck` with `pip`:
+-sudo -H pip install thefuck
++pip install --user thefuck
+@@ -123 +123 @@ You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or ot
+-eval "$(thefuck --alias)"
++eval $(thefuck --alias)
+@@ -125 +125 @@ eval "$(thefuck --alias)"
+-eval "$(thefuck --alias FUCK)"
++eval $(thefuck --alias FUCK)
+@@ -132,0 +133,5 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
++If you want separate alias for running fixed command without confirmation you can use alias like:
++
++```bash
++alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True'
++```
+@@ -137 +142 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-sudo -H pip install thefuck --upgrade
++pip install --user thefuck --upgrade
+@@ -206,0 +212 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `hostscli` &ndash; tries to fix `hostscli` usage;
+@@ -217,0 +224 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `missing_space_before_subcommand` &ndash; fixes command with missing space like `npminstall`;
+@@ -231,0 +239 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `path_from_history` &ndash; replaces not found path with similar absolute path from history;
+@@ -253,0 +262 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `yarn_help` &ndash; makes it easier to open `yarn` documentation;
+@@ -390,0 +400,6 @@ python setup.py develop
++Run code style checks:
++
++```bash
++flake8
++```
++
+diff --git a/README.md b/README.md
+index 470b4d3..1d61d74 100644
+--- a/README.md
++++ b/README.md
+@@ -109 +109 @@ sudo apt install python3-dev python3-pip
+-pip3 install --user thefuck
++sudo -H pip3 install thefuck
+@@ -115 +115 @@ On other systems you can install `The Fuck` with `pip`:
+-pip install --user thefuck
++sudo -H pip install thefuck
+@@ -123 +123 @@ You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or ot
+-eval $(thefuck --alias)
++eval "$(thefuck --alias)"
+@@ -125 +125 @@ eval $(thefuck --alias)
+-eval $(thefuck --alias FUCK)
++eval "$(thefuck --alias FUCK)"
+@@ -133,5 +132,0 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-If you want separate alias for running fixed command without confirmation you can use alias like:
+-
+-```bash
+-alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True'
+-```
+@@ -142 +137 @@ alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_R
+-pip install --user thefuck --upgrade
++sudo -H pip install thefuck --upgrade
+@@ -190,0 +186 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_push_without_commits` &ndash; Creates an initial commit if you forget and only `git add .`, when setting up a new project;
+@@ -211 +206,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `hostscli` &ndash; tries to fix `hostscli` usage;
+@@ -223 +217,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `missing_space_before_subcommand` &ndash; fixes command with missing space like `npminstall`;
+@@ -238 +231,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `path_from_history` &ndash; replaces not found path with similar absolute path from history;
+@@ -261 +253,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `yarn_help` &ndash; makes it easier to open `yarn` documentation;
+@@ -399,6 +390,0 @@ python setup.py develop
+-Run code style checks:
+-
+-```bash
+-flake8
+-```
+-
+diff --git a/README.md b/README.md
+index 52e4a90..470b4d3 100644
+--- a/README.md
++++ b/README.md
+@@ -222,0 +223 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `missing_space_before_subcommand` &ndash; fixes command with missing space like `npminstall`;
+diff --git a/README.md b/README.md
+index 564435b..52e4a90 100644
+--- a/README.md
++++ b/README.md
+@@ -236,0 +237 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `path_from_history` &ndash; replaces not found path with similar absolute path from history;
+diff --git a/README.md b/README.md
+index 32357c8..564435b 100644
+--- a/README.md
++++ b/README.md
+@@ -123 +123 @@ You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or ot
+-eval "$(thefuck --alias)"
++eval $(thefuck --alias)
+@@ -125 +125 @@ eval "$(thefuck --alias)"
+-eval "$(thefuck --alias FUCK)"
++eval $(thefuck --alias FUCK)
+diff --git a/README.md b/README.md
+index a8a78d4..32357c8 100644
+--- a/README.md
++++ b/README.md
+@@ -132,0 +133,5 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
++If you want separate alias for running fixed command without confirmation you can use alias like:
++
++```bash
++alias fuck-it='export THEFUCK_REQUIRE_CONFIRMATION=False; fuck; export THEFUCK_REQUIRE_CONFIRMATION=True'
++```
+diff --git a/README.md b/README.md
+index ecf5d4e..a8a78d4 100644
+--- a/README.md
++++ b/README.md
+@@ -137 +137 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-sudo -H pip install thefuck --upgrade
++pip install --user thefuck --upgrade
+diff --git a/README.md b/README.md
+index a06e340..ecf5d4e 100644
+--- a/README.md
++++ b/README.md
+@@ -109 +109 @@ sudo apt install python3-dev python3-pip
+-sudo -H pip3 install thefuck
++pip3 install --user thefuck
+@@ -115 +115 @@ On other systems you can install `The Fuck` with `pip`:
+-sudo -H pip install thefuck
++pip install --user thefuck
+diff --git a/README.md b/README.md
+index 7eec665..a06e340 100644
+--- a/README.md
++++ b/README.md
+@@ -205,0 +206 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `hostscli` &ndash; tries to fix `hostscli` usage;
+diff --git a/README.md b/README.md
+index b4b8b5a..7eec665 100644
+--- a/README.md
++++ b/README.md
+@@ -390,0 +391,6 @@ python setup.py develop
++Run code style checks:
++
++```bash
++flake8
++```
++
+diff --git a/README.md b/README.md
+index 530e786..b4b8b5a 100644
+--- a/README.md
++++ b/README.md
+@@ -252,0 +253 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `yarn_help` &ndash; makes it easier to open `yarn` documentation;
+@@ -390,6 +390,0 @@ python setup.py develop
+-Run code style checks:
+-
+-```bash
+-flake8
+-```
+-
+diff --git a/README.md b/README.md
+index 3e84a35..530e786 100644
+--- a/README.md
++++ b/README.md
+@@ -389,0 +390,6 @@ python setup.py develop
++Run code style checks:
++
++```bash
++flake8
++```
++
+diff --git a/README.md b/README.md
+index acc222d..3e84a35 100644
+--- a/README.md
++++ b/README.md
+@@ -251,0 +252 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `yarn_command_not_found` &ndash; fixes misspelled `yarn` commands;
+diff --git a/README.md b/README.md
+index 1219929..acc222d 100644
+--- a/README.md
++++ b/README.md
+@@ -188,0 +189 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rm_staged` &ndash;  adds `-f` or `--cached` when you try to `rm` a file with staged changes
+diff --git a/README.md b/README.md
+index 2ffd899..1219929 100644
+--- a/README.md
++++ b/README.md
+@@ -189 +188,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_rm_staged` &ndash;  adds `-f` or `--cached` when you try to `rm` a file with staged changes
+@@ -250,0 +250 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `yarn_alias` &ndash; fixes aliased `yarn` commands like `yarn ls`;
+diff --git a/README.md b/README.md
+index 5498bba..2ffd899 100644
+--- a/README.md
++++ b/README.md
+@@ -188,0 +189 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rm_staged` &ndash;  adds `-f` or `--cached` when you try to `rm` a file with staged changes
+diff --git a/README.md b/README.md
+index 3fc614c..5498bba 100644
+--- a/README.md
++++ b/README.md
+@@ -205 +204,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `hostscli` &ndash; tries to fix `hostscli` usage;
+@@ -238,0 +238 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `sudo_command_from_user_path` &ndash; runs commands from users `$PATH` with `sudo`;
+diff --git a/README.md b/README.md
+index 0aeae4f..3fc614c 100644
+--- a/README.md
++++ b/README.md
+@@ -204,0 +205 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `hostscli` &ndash; tries to fix `hostscli` usage;
+diff --git a/README.md b/README.md
+index 65aa419..0aeae4f 100644
+--- a/README.md
++++ b/README.md
+@@ -168,0 +169 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_add_force` &ndash; adds `--force` to `git add <pathspec>...` when paths are .gitignore'd;
+diff --git a/README.md b/README.md
+index 4b179e8..65aa419 100644
+--- a/README.md
++++ b/README.md
+@@ -169 +168,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_add_force` &ndash; adds `--force` to `git add <pathspec>...` when paths are .gitignore'd;
+@@ -191 +190 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_stash` &ndash; stashes you local modifications before rebasing or switching branch;
++* `git_stash` &ndash; stashes your local modifications before rebasing or switching branch;
+@@ -192,0 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_tag_force` &ndash; adds `--force` to `git tag <tagname>` when the tag already exists;
+diff --git a/README.md b/README.md
+index 28c2313..4b179e8 100644
+--- a/README.md
++++ b/README.md
+@@ -168,0 +169 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_add_force` &ndash; adds `--force` to `git add <pathspec>...` when paths are .gitignore'd;
+@@ -192 +192,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_tag_force` &ndash; adds `--force` to `git tag <tagname>` when the tag already exists;
+diff --git a/README.md b/README.md
+index 8995611..28c2313 100644
+--- a/README.md
++++ b/README.md
+@@ -190 +190 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_stash` &ndash; stashes your local modifications before rebasing or switching branch;
++* `git_stash` &ndash; stashes you local modifications before rebasing or switching branch;
+@@ -191,0 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_tag_force` &ndash; adds `--force` to `git tag <tagname>` when the tag already exists;
+diff --git a/README.md b/README.md
+index 292431f..8995611 100644
+--- a/README.md
++++ b/README.md
+@@ -190 +190 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_stash` &ndash; stashes you local modifications before rebasing or switching branch;
++* `git_stash` &ndash; stashes your local modifications before rebasing or switching branch;
+diff --git a/README.md b/README.md
+index 6e48272..292431f 100644
+--- a/README.md
++++ b/README.md
+@@ -166,0 +167 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `gem_unknown_command` &ndash; fixes wrong `gem` commands;
+diff --git a/README.md b/README.md
+index db5a6f8..6e48272 100644
+--- a/README.md
++++ b/README.md
+@@ -229,0 +230 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `scm_correction` &ndash; corrects wrong scm like `hg log` to `git log`;
+diff --git a/README.md b/README.md
+index e0c42e9..db5a6f8 100644
+--- a/README.md
++++ b/README.md
+@@ -201,0 +202 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ifconfig_device_not_found` &ndash; fixes wrong device names like `wlan0` to `wlp2s0`;
+diff --git a/README.md b/README.md
+index 9c149bc..e0c42e9 100644
+--- a/README.md
++++ b/README.md
+@@ -189,0 +190 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_stash_pop` &ndash; adds your local modifications before popping stash, then resets;
+diff --git a/README.md b/README.md
+index 89dd730..9c149bc 100644
+--- a/README.md
++++ b/README.md
+@@ -175,0 +176 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_flag_after_filename` &ndash; fixes `fatal: bad flag '...' after filename`
+diff --git a/README.md b/README.md
+index 0cf6844..89dd730 100644
+--- a/README.md
++++ b/README.md
+@@ -176 +175,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_flag_after_filename` &ndash; fixes `fatal: bad flag '...' after filename`
+@@ -186,0 +186 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rebase_merge_dir` &ndash; offers `git rebase (--continue | --abort | --skip)` or removing the `.git/rebase-merge` dir when a rebase is in progress;
+@@ -204,0 +205 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ls_all` &ndash; adds `-A` to `ls` when output is empty;
+diff --git a/README.md b/README.md
+index f267607..0cf6844 100644
+--- a/README.md
++++ b/README.md
+@@ -175,0 +176 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_flag_after_filename` &ndash; fixes `fatal: bad flag '...' after filename`
+@@ -186 +186,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_rebase_merge_dir` &ndash; offers `git rebase (--continue | --abort | --skip)` or removing the `.git/rebase-merge` dir when a rebase is in progress;
+diff --git a/README.md b/README.md
+index aedaf1b..f267607 100644
+--- a/README.md
++++ b/README.md
+@@ -185,0 +186 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rebase_merge_dir` &ndash; offers `git rebase (--continue | --abort | --skip)` or removing the `.git/rebase-merge` dir when a rebase is in progress;
+diff --git a/README.md b/README.md
+index b158c80..aedaf1b 100644
+--- a/README.md
++++ b/README.md
+@@ -183,0 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rm_local_modifications` &ndash;  adds `-f` or `--cached` when you try to `rm` a locally modified file;
+diff --git a/README.md b/README.md
+index b002faf..b158c80 100644
+--- a/README.md
++++ b/README.md
+@@ -147 +147,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
++* `ag_literal` &ndash; adds `-Q` to `ag` when suggested;
++* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`;
+@@ -275 +276,3 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`Command` has three attributes: `script`, `stdout` and `stderr`.
++`Command` has three attributes: `script`, `stdout`, `stderr` and `script_parts`.
++Rule shouldn't change `Command`.
++
+@@ -373,6 +375,0 @@ python setup.py develop
+-Run code style checks:
+-
+-```bash
+-flake8
+-```
+-
+diff --git a/README.md b/README.md
+index 2604b62..b002faf 100644
+--- a/README.md
++++ b/README.md
+@@ -147,2 +147 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `ag_literal` &ndash; adds `-Q` to `ag` when suggested;
+-* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`;
++* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
+@@ -373,0 +373,6 @@ python setup.py develop
++Run code style checks:
++
++```bash
++flake8
++```
++
+diff --git a/README.md b/README.md
+index e02b781..2604b62 100644
+--- a/README.md
++++ b/README.md
+@@ -172,0 +173 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_diff_no_index` &ndash; adds `--no-index` to previous `git diff` on untracked files;
+diff --git a/README.md b/README.md
+index 77b3064..e02b781 100644
+--- a/README.md
++++ b/README.md
+@@ -148 +148 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
++* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`;
+diff --git a/README.md b/README.md
+index 07445c3..77b3064 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ag_literal` &ndash; adds `-Q` to `ag` when suggested;
+@@ -172 +172,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_diff_no_index` &ndash; adds `--no-index` to previous `git diff` on untracked files;
+diff --git a/README.md b/README.md
+index b2f169c..07445c3 100644
+--- a/README.md
++++ b/README.md
+@@ -171,0 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_diff_no_index` &ndash; adds `--no-index` to previous `git diff` on untracked files;
+diff --git a/README.md b/README.md
+index 534955d..b2f169c 100644
+--- a/README.md
++++ b/README.md
+@@ -166,0 +167 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_bisect_usage` &ndash; fixes `git bisect strt`, `git bisect goood`, `git bisect rset`, etc. when bisecting;
+diff --git a/README.md b/README.md
+index 58e6c83..534955d 100644
+--- a/README.md
++++ b/README.md
+@@ -218,0 +219 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+diff --git a/README.md b/README.md
+index 44be589..58e6c83 100644
+--- a/README.md
++++ b/README.md
+@@ -241,0 +242 @@ Enabled by default only on specific platforms:
++* `brew_link` &ndash; adds `--overwrite --dry-run` if linking fails;
+diff --git a/README.md b/README.md
+index dafc1df..44be589 100644
+--- a/README.md
++++ b/README.md
+@@ -241,0 +242 @@ Enabled by default only on specific platforms:
++* `brew_uninstall` &ndash; adds `--force` to `brew uninstall` if multiple versions were installed;
+diff --git a/README.md b/README.md
+index e92d63f..dafc1df 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
+@@ -241 +241,0 @@ Enabled by default only on specific platforms:
+-* `brew_link` &ndash; adds `--overwrite --dry-run` if linking fails
+diff --git a/README.md b/README.md
+index 162dd8d..e92d63f 100644
+--- a/README.md
++++ b/README.md
+@@ -241 +241 @@ Enabled by default only on specific platforms:
+-* `brew_uninstall` &ndash; adds `--force` to `brew uninstall` if multiple versions were installed;
++* `brew_link` &ndash; adds `--overwrite --dry-run` if linking fails
+diff --git a/README.md b/README.md
+index 536ca3c..162dd8d 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +105,0 @@ On Ubuntu you can install `The Fuck` with:
+- 
+@@ -148 +146,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
+@@ -177,0 +176 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_pull_uncommitted_changes` &ndash; stashes changes before pulling and pops them afterwards;
+@@ -241,0 +241 @@ Enabled by default only on specific platforms:
++* `brew_uninstall` &ndash; adds `--force` to `brew uninstall` if multiple versions were installed;
+diff --git a/README.md b/README.md
+index 14984fd..536ca3c 100644
+--- a/README.md
++++ b/README.md
+@@ -105,0 +106 @@ On Ubuntu you can install `The Fuck` with:
++ 
+@@ -146,0 +148 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `aws_cli` &ndash; fixes misspelled commands like `aws dynamdb scan`
+@@ -176 +177,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_pull_uncommitted_changes` &ndash; stashes changes before pulling and pops them afterwards;
+@@ -218 +218,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+diff --git a/README.md b/README.md
+index cdb0f13..14984fd 100644
+--- a/README.md
++++ b/README.md
+@@ -217,0 +218 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+@@ -234 +234,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+diff --git a/README.md b/README.md
+index a47b500..cdb0f13 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +165,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_bisect_usage` &ndash; fixes `git bisect strt`, `git bisect goood`, `git bisect rset`, etc. when bisecting;
+@@ -234,0 +234 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `remove_trailing_cedilla` &ndash; remove trailling cedillas `ç`, a common typo for european keyboard layouts;
+diff --git a/README.md b/README.md
+index 254f2b2..a47b500 100644
+--- a/README.md
++++ b/README.md
+@@ -165,0 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_bisect_usage` &ndash; fixes `git bisect strt`, `git bisect goood`, `git bisect rset`, etc. when bisecting;
+diff --git a/README.md b/README.md
+index 45e41e9..254f2b2 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +105,0 @@ On Ubuntu you can install `The Fuck` with:
+-
+diff --git a/README.md b/README.md
+index d4dbac4..45e41e9 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +106 @@ On Ubuntu you can install `The Fuck` with:
+- 
++
+@@ -176,0 +177 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_pull_uncommitted_changes` &ndash; stashes changes before pulling and pops them afterwards;
+diff --git a/README.md b/README.md
+index d96494f..d4dbac4 100644
+--- a/README.md
++++ b/README.md
+@@ -138 +138 @@ To make them available immediately, run `source ~/.bashrc` (or your shell config
+-sudo pip install thefuck --upgrade
++sudo -H pip install thefuck --upgrade
+diff --git a/README.md b/README.md
+index 2ba23d2..d96494f 100644
+--- a/README.md
++++ b/README.md
+@@ -212,0 +213 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `port_already_in_use` &ndash; kills process that bound port;
+diff --git a/README.md b/README.md
+index f0618c3..2ba23d2 100644
+--- a/README.md
++++ b/README.md
+@@ -188,0 +189 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `grunt_task_not_found` &ndash; fixes misspelled `grunt` commands;
+diff --git a/README.md b/README.md
+index 3b3f098..f0618c3 100644
+--- a/README.md
++++ b/README.md
+@@ -230 +230,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `whois` &ndash; fixes `whois` command.
++* `whois` &ndash; fixes `whois` command;
++* `workon_doesnt_exists` &ndash; fixes `virtualenvwrapper` env name os suggests to create new.
+diff --git a/README.md b/README.md
+index 05478be..3b3f098 100644
+--- a/README.md
++++ b/README.md
+@@ -184,0 +185 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `gradle_no_task` &ndash; fixes not found or ambiguous `gradle` task;
+diff --git a/README.md b/README.md
+index 44720a5..05478be 100644
+--- a/README.md
++++ b/README.md
+@@ -184,0 +185 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `gradle_wrapper` &ndash; replaces `gradle` with `./gradlew`;
+diff --git a/README.md b/README.md
+index d736c58..44720a5 100644
+--- a/README.md
++++ b/README.md
+@@ -212,0 +213 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `react_native_command_unrecognized` &ndash; fixes unrecognized `react-native` commands;
+diff --git a/README.md b/README.md
+index 75bf43f..d736c58 100644
+--- a/README.md
++++ b/README.md
+@@ -306 +306,3 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `alter_history` &ndash; push fixed command to history, by default `True`.
++* `alter_history` &ndash; push fixed command to history, by default `True`;
++* `wait_slow_command` &ndash; max amount of time in seconds for getting previous command output if it in `slow_commands` list;
++* `slow_commands` &ndash; list of slow commands.
+@@ -317,0 +320,3 @@ debug = False
++history_limit = 9999
++wait_slow_command = 20
++slow_commands = ['react-native', 'gradle']
+@@ -331 +336,3 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_ALTER_HISTORY` &ndash; push fixed command to history `true/false`.
++* `THEFUCK_ALTER_HISTORY` &ndash; push fixed command to history `true/false`;
++* `THEFUCK_WAIT_SLOW_COMMAND` &ndash; max amount of time in seconds for getting previous command output if it in `slow_commands` list;
++* `THEFUCK_SLOW_COMMANDS` &ndash; list of slow commands, like `lein:gradle`.
+diff --git a/README.md b/README.md
+index 58be467..75bf43f 100644
+--- a/README.md
++++ b/README.md
+@@ -202,0 +203 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `npm_missing_script` &ndash; fixes `npm` custom script name in `npm run-script <script>`;
+diff --git a/README.md b/README.md
+index 9d24ce2..58be467 100644
+--- a/README.md
++++ b/README.md
+@@ -202,0 +203 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `npm_run_script` &ndash; adds missing `run-script` for custom `npm` scripts;
+diff --git a/README.md b/README.md
+index 29d73ff..9d24ce2 100644
+--- a/README.md
++++ b/README.md
+@@ -162,0 +163 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `fab_command_not_found` &ndash; fix misspelled fabric commands;
+diff --git a/README.md b/README.md
+index 395253f..29d73ff 100644
+--- a/README.md
++++ b/README.md
+@@ -205 +205 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `open` &ndash; prepends `http` to address passed to `open`;
++* `open` &ndash; either prepends `http://` to address passed to `open` or create a new file or directory and passes it to `open`;
+diff --git a/README.md b/README.md
+index 5582805..395253f 100644
+--- a/README.md
++++ b/README.md
+@@ -193,0 +194 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ln_s_order` &ndash; fixes `ln -s` arguments order;
+diff --git a/README.md b/README.md
+index e2cd155..5582805 100644
+--- a/README.md
++++ b/README.md
+@@ -178 +178 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_rebase_no_changes` &ndash runs `git rebase --skip` instead of `git rebase --continue` when there are no changes;
++* `git_rebase_no_changes` &ndash; runs `git rebase --skip` instead of `git rebase --continue` when there are no changes;
+diff --git a/README.md b/README.md
+index db6eebd..e2cd155 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rebase_no_changes` &ndash runs `git rebase --skip` instead of `git rebase --continue` when there are no changes;
+diff --git a/README.md b/README.md
+index 78d11ad..db6eebd 100644
+--- a/README.md
++++ b/README.md
+@@ -99,6 +98,0 @@ Reading package lists... Done
+-On Ubuntu you can install `The Fuck` with installation script [*experimental*]:
+-
+-```bash
+-wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+-```
+-
+@@ -111 +105,7 @@ brew install thefuck
+-## Manual installation
++On Ubuntu you can install `The Fuck` with:
++ 
++```bash
++sudo apt update
++sudo apt install python3-dev python3-pip
++sudo -H pip3 install thefuck
++```
+@@ -113 +113 @@ brew install thefuck
+-Install `The Fuck` with `pip`:
++On other systems you can install `The Fuck` with `pip`:
+diff --git a/README.md b/README.md
+index 76560f1..78d11ad 100644
+--- a/README.md
++++ b/README.md
+@@ -97 +97 @@ Reading package lists... Done
+-## Installation [*experimental*]
++## Installation
+@@ -99 +99 @@ Reading package lists... Done
+-On Ubuntu and OS X you can install `The Fuck` with installation script:
++On Ubuntu you can install `The Fuck` with installation script [*experimental*]:
+@@ -104,0 +105,6 @@ wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh
++On OS X you can install `The Fuck` with [Homebrew][homebrew]:
++
++```bash
++brew install thefuck
++```
++
+@@ -375,0 +382 @@ Project License can be found [here](LICENSE.md).
++[homebrew]:        http://brew.sh/
+diff --git a/README.md b/README.md
+index d05ce4c..76560f1 100644
+--- a/README.md
++++ b/README.md
+@@ -224,0 +225 @@ Enabled by default only on specific platforms:
++* `brew_update_formula` &ndash; turns `brew update <formula>` into `brew upgrade <formula>`;
+diff --git a/README.md b/README.md
+index 1b2814c..d05ce4c 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `chmod_x` &ndash; add execution bit;
+diff --git a/README.md b/README.md
+index 2044f78..1b2814c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) [![Build status](https://ci.appveyor.com/api/projects/status/1sskj4imj02um0gu?svg=true)](https://ci.appveyor.com/project/nvbn/thefuck)
+-
++# The Fuck [![Version][version-badge]][version-link] [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
+@@ -8 +7 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-[![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
++[![gif with examples][examples-link]][examples-link]
+@@ -56 +55 @@ Did you mean this?
+-	branch
++    branch
+@@ -101 +100 @@ On Ubuntu and OS X you can install `The Fuck` with installation script:
+- 
++
+@@ -311 +310 @@ Or via environment variables:
+-* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`; 
++* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
+@@ -362,0 +362,12 @@ Project License can be found [here](LICENSE.md).
++
++
++[version-badge]:   https://img.shields.io/pypi/v/thefuck.svg?label=version
++[version-link]:    https://pypi.python.org/pypi/thefuck/
++[travis-badge]:    https://img.shields.io/travis/nvbn/thefuck.svg
++[travis-link]:     https://travis-ci.org/nvbn/thefuck
++[appveyor-badge]:  https://img.shields.io/appveyor/ci/nvbn/thefuck.svg?label=windows%20build
++[appveyor-link]:   https://ci.appveyor.com/project/nvbn/thefuck
++[coverage-badge]:  https://img.shields.io/coveralls/nvbn/thefuck.svg
++[coverage-link]:   https://coveralls.io/github/nvbn/thefuck
++[license-badge]:   https://img.shields.io/badge/license-MIT-007EC7.svg
++[examples-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif
+diff --git a/README.md b/README.md
+index d722355..2044f78 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+-# The Fuck [![Version][version-badge]][version-link] [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) [![Build status](https://ci.appveyor.com/api/projects/status/1sskj4imj02um0gu?svg=true)](https://ci.appveyor.com/project/nvbn/thefuck)
++
+@@ -7 +8 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-[![gif with examples][examples-link]][examples-link]
++[![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
+@@ -55 +56 @@ Did you mean this?
+-    branch
++	branch
+@@ -100 +101 @@ On Ubuntu and OS X you can install `The Fuck` with installation script:
+-
++ 
+@@ -159,0 +161 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_branch_exists` &ndash; offers `git branch -d foo`, `git branch -D foo` or `git checkout foo` when creating a branch that already exists;
+@@ -309 +311 @@ Or via environment variables:
+-* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
++* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`; 
+@@ -361,12 +362,0 @@ Project License can be found [here](LICENSE.md).
+-
+-
+-[version-badge]:   https://img.shields.io/pypi/v/thefuck.svg?label=version
+-[version-link]:    https://pypi.python.org/pypi/thefuck/
+-[travis-badge]:    https://img.shields.io/travis/nvbn/thefuck.svg
+-[travis-link]:     https://travis-ci.org/nvbn/thefuck
+-[appveyor-badge]:  https://img.shields.io/appveyor/ci/nvbn/thefuck.svg?label=windows%20build
+-[appveyor-link]:   https://ci.appveyor.com/project/nvbn/thefuck
+-[coverage-badge]:  https://img.shields.io/coveralls/nvbn/thefuck.svg
+-[coverage-link]:   https://coveralls.io/github/nvbn/thefuck
+-[license-badge]:   https://img.shields.io/badge/license-MIT-007EC7.svg
+-[examples-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif
+diff --git a/README.md b/README.md
+index c7c928f..d722355 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link]
++# The Fuck [![Version][version-badge]][version-link] [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link] [![Coverage][coverage-badge]][coverage-link] [![MIT License][license-badge]](LICENSE.md)
+@@ -362,0 +363,2 @@ Project License can be found [here](LICENSE.md).
++[version-badge]:   https://img.shields.io/pypi/v/thefuck.svg?label=version
++[version-link]:    https://pypi.python.org/pypi/thefuck/
+@@ -366,0 +369,3 @@ Project License can be found [here](LICENSE.md).
++[coverage-badge]:  https://img.shields.io/coveralls/nvbn/thefuck.svg
++[coverage-link]:   https://coveralls.io/github/nvbn/thefuck
++[license-badge]:   https://img.shields.io/badge/license-MIT-007EC7.svg
+diff --git a/README.md b/README.md
+index 193d130..c7c928f 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) [![Build status](https://ci.appveyor.com/api/projects/status/1sskj4imj02um0gu?svg=true)](https://ci.appveyor.com/project/nvbn/thefuck)
+-
++# The Fuck [![Build Status][travis-badge]][travis-link] [![Windows Build Status][appveyor-badge]][appveyor-link]
+@@ -8 +7 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-[![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
++[![gif with examples][examples-link]][examples-link]
+@@ -361,0 +361,7 @@ Project License can be found [here](LICENSE.md).
++
++
++[travis-badge]:    https://img.shields.io/travis/nvbn/thefuck.svg
++[travis-link]:     https://travis-ci.org/nvbn/thefuck
++[appveyor-badge]:  https://img.shields.io/appveyor/ci/nvbn/thefuck.svg?label=windows%20build
++[appveyor-link]:   https://ci.appveyor.com/project/nvbn/thefuck
++[examples-link]:   https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif
+diff --git a/README.md b/README.md
+index 12358e2..193d130 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ Did you mean this?
+-	branch
++    branch
+@@ -101 +101 @@ On Ubuntu and OS X you can install `The Fuck` with installation script:
+- 
++
+@@ -310 +310 @@ Or via environment variables:
+-* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`; 
++* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`;
+diff --git a/README.md b/README.md
+index a69cebb..12358e2 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) [![Build status](https://ci.appveyor.com/api/projects/status/1sskj4imj02um0gu?svg=true)](https://ci.appveyor.com/project/nvbn/thefuck)
++
+diff --git a/README.md b/README.md
+index e8756e1..a69cebb 100644
+--- a/README.md
++++ b/README.md
+@@ -110 +110 @@ Install `The Fuck` with `pip`:
+-sudo pip install thefuck
++sudo -H pip install thefuck
+diff --git a/README.md b/README.md
+index 7e9e19d..e8756e1 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_add` &ndash; fixes *"Did you forget to 'git add'?"*;
++* `git_add` &ndash; fixes *"pathspec 'foo' did not match any file(s) known to git."*;
+diff --git a/README.md b/README.md
+index e8e4cb1..7e9e19d 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_rm_recursive` &ndash; adds `-r` when you try to `rm` a directory;
+diff --git a/README.md b/README.md
+index 0a1eedd..e8e4cb1 100644
+--- a/README.md
++++ b/README.md
+@@ -163,0 +164 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_help_aliased` &ndash; fixes `git help <alias>` commands replacing <alias> with the aliased command;
+diff --git a/README.md b/README.md
+index 36bf881..0a1eedd 100644
+--- a/README.md
++++ b/README.md
+@@ -168,0 +169 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_remote_seturl_add` &ndash; runs `git remote add` when `git remote set_url` on nonexistant remote;
+diff --git a/README.md b/README.md
+index 2ff554f..36bf881 100644
+--- a/README.md
++++ b/README.md
+@@ -180,0 +181 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ln_no_hard_link` &ndash; catches hard link creation on directories, suggest symbolic link;
+diff --git a/README.md b/README.md
+index 8a1cae5..2ff554f 100644
+--- a/README.md
++++ b/README.md
+@@ -171 +171,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `go_run` &ndash; appends `.go` extension when compiling/running Go programs
++* `go_run` &ndash; appends `.go` extension when compiling/running Go programs;
++* `grep_arguments_order` &ndash; fixes grep arguments order for situations like `grep -lir . test`;
+diff --git a/README.md b/README.md
+index 474ff0a..8a1cae5 100644
+--- a/README.md
++++ b/README.md
+@@ -186,0 +187 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `npm_wrong_command` &ndash; fixes wrong npm commands like `npm urgrade`;
+diff --git a/README.md b/README.md
+index 155cbf2..474ff0a 100644
+--- a/README.md
++++ b/README.md
+@@ -285 +285,2 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `history_limit` &ndash; numeric value of how many history commands will be scanned, like `2000`; 
++* `history_limit` &ndash; numeric value of how many history commands will be scanned, like `2000`;
++* `alter_history` &ndash; push fixed command to history, by default `True`.
+@@ -309 +310,2 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`.
++* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`;
++* `THEFUCK_ALTER_HISTORY` &ndash; push fixed command to history `true/false`.
+diff --git a/README.md b/README.md
+index 8b5343b..155cbf2 100644
+--- a/README.md
++++ b/README.md
+@@ -213,0 +214 @@ Enabled by default only on specific platforms:
++* `apt_invalid_operation` &ndash; fixes invalid `apt` and `apt-get` calls, like `apt-get isntall vim`;
+diff --git a/README.md b/README.md
+index 054d294..8b5343b 100644
+--- a/README.md
++++ b/README.md
+@@ -284 +284 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `history_limit` &ndash numeric value of how many history commands will be scanned, like `2000`; 
++* `history_limit` &ndash; numeric value of how many history commands will be scanned, like `2000`; 
+diff --git a/README.md b/README.md
+index 5641e27..054d294 100644
+--- a/README.md
++++ b/README.md
+@@ -283 +283,2 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `debug` &ndash; enables debug output, by default `False`.
++* `debug` &ndash; enables debug output, by default `False`;
++* `history_limit` &ndash numeric value of how many history commands will be scanned, like `2000`; 
+@@ -306 +307,2 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`.
++* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`;
++* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`.
+@@ -316,0 +319 @@ export THEFUCK_PRIORITY='no_command=9999:apt_get=100'
++export THEFUCK_HISTORY_LIMIT='2000'
+diff --git a/README.md b/README.md
+index 3f0565b..5641e27 100644
+--- a/README.md
++++ b/README.md
+@@ -222 +222 @@ Bundled, but not enabled by default:
+-* `git_push_force` &ndash; adds `--force` to a `git push` (may conflict with `git_push_pull`);
++* `git_push_force` &ndash; adds `--force-with-lease` to a `git push` (may conflict with `git_push_pull`);
+@@ -283,2 +283 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `debug` &ndash; enables debug output, by default `False`;
+-* `history_limit` &ndash numeric value of how many history commands will be scanned, like `2000`; 
++* `debug` &ndash; enables debug output, by default `False`.
+@@ -307,2 +306 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`;
+-* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`.
++* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`.
+@@ -319 +316,0 @@ export THEFUCK_PRIORITY='no_command=9999:apt_get=100'
+-export THEFUCK_HISTORY_LIMIT='2000'
+diff --git a/README.md b/README.md
+index f5e9554..3f0565b 100644
+--- a/README.md
++++ b/README.md
+@@ -283 +283,2 @@ The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME
+-* `debug` &ndash; enables debug output, by default `False`.
++* `debug` &ndash; enables debug output, by default `False`;
++* `history_limit` &ndash numeric value of how many history commands will be scanned, like `2000`; 
+diff --git a/README.md b/README.md
+index 082a1f3..f5e9554 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_two_dashes` &ndash; adds a missing dash to commands like `git commit -amend` or `git rebase -continue`;
+@@ -227 +228 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.thefuck/rules`. The rule should contain two functions:
++in `~/.config/thefuck/rules`. The rule should contain two functions:
+@@ -244 +245 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
++`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -274 +275 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
+diff --git a/README.md b/README.md
+index 9f3b216..082a1f3 100644
+--- a/README.md
++++ b/README.md
+@@ -316,0 +317 @@ export THEFUCK_PRIORITY='no_command=9999:apt_get=100'
++export THEFUCK_HISTORY_LIMIT='2000'
+diff --git a/README.md b/README.md
+index f614322..9f3b216 100644
+--- a/README.md
++++ b/README.md
+@@ -170 +169,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_two_dashes` &ndash; adds a missing dash to commands like `git commit -amend` or `git rebase -continue`;
+@@ -228 +227 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.config/thefuck/rules`. The rule should contain two functions:
++in `~/.thefuck/rules`. The rule should contain two functions:
+@@ -245 +244 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
++`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -275 +274 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
++The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
+@@ -306 +305,2 @@ rule with lower `priority` will be matched first;
+-* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`.
++* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`;
++* `THEFUCK_HISTORY_LIMIT` &ndash; how many history commands will be scanned, like `2000`.
+diff --git a/README.md b/README.md
+index d3a5868..f614322 100644
+--- a/README.md
++++ b/README.md
+@@ -228 +228 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.thefuck/rules`. The rule should contain two functions:
++in `~/.config/thefuck/rules`. The rule should contain two functions:
+@@ -245 +245 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
++`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -275 +275 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
+diff --git a/README.md b/README.md
+index e06fb36..d3a5868 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_two_dashes` &ndash; adds a missing dash to commands like `git commit -amend` or `git rebase -continue`;
+@@ -227 +228 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.config/thefuck/rules`. The rule should contain two functions:
++in `~/.thefuck/rules`. The rule should contain two functions:
+@@ -244 +245 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
++`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -274 +275 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
++The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
+diff --git a/README.md b/README.md
+index 199f37b..e06fb36 100644
+--- a/README.md
++++ b/README.md
+@@ -227 +227 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.thefuck/rules`. The rule should contain two functions:
++in `~/.config/thefuck/rules`. The rule should contain two functions:
+@@ -244 +244 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
++`settings` is a special object filled with `~/.config/thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -274 +274 @@ requires_output = True
+-The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters which can be changed in `$XDG_CONFIG_HOME/thefuck/settings.py` (`$XDG_CONFIG_HOME` defaults to `~/.config`):
+diff --git a/README.md b/README.md
+index ebb12c1..199f37b 100644
+--- a/README.md
++++ b/README.md
+@@ -200,0 +201 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `touch` &ndash; creates missing directories before "touching";
+diff --git a/README.md b/README.md
+index f24018e..ebb12c1 100644
+--- a/README.md
++++ b/README.md
+@@ -248 +248 @@ Simple example of the rule for running script with `sudo`:
+-def match(command, settings):
++def match(command):
+@@ -253 +253 @@ def match(command, settings):
+-def get_new_command(command, settings):
++def get_new_command(command):
+@@ -259 +259 @@ enabled_by_default = True
+-def side_effect(command, settings):
++def side_effect(command, fixed_command):
+diff --git a/README.md b/README.md
+index 593ca5f..f24018e 100644
+--- a/README.md
++++ b/README.md
+@@ -229,2 +229,2 @@ in `~/.thefuck/rules`. The rule should contain two functions:
+-match(command: Command, settings: Settings) -> bool
+-get_new_command(command: Command, settings: Settings) -> str | list[str]
++match(command: Command) -> bool
++get_new_command(command: Command) -> str | list[str]
+@@ -236 +236 @@ Also the rule can contain an optional function
+-side_effect(old_command: Command, fixed_command: str, settings: Settings) -> None
++side_effect(old_command: Command, fixed_command: str) -> None
+@@ -242 +242,2 @@ and optional `enabled_by_default`, `requires_output` and `priority` variables.
+-`Settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
++*Rules api changed in 3.0:* For accessing settings in rule you need to import it with `from thefuck.conf import settings`.
++`settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
+@@ -267 +268,2 @@ requires_output = True
+-[utility functions for rules](https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py).
++[utility functions for rules](https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py),
++[app/os-specific helpers](https://github.com/nvbn/thefuck/tree/master/thefuck/specific/).
+diff --git a/README.md b/README.md
+index 5181ade..593ca5f 100644
+--- a/README.md
++++ b/README.md
+@@ -273,0 +274 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
++* `exclude_rules` &ndash; list of disabled rules, by default `[]`;
+@@ -283,0 +285 @@ rules = ['sudo', 'no_command']
++exclude_rules = ['git_push']
+@@ -293,0 +296 @@ Or via environment variables:
++* `THEFUCK_EXCLUDE_RULES` &ndash; list of disabled rules, like `git_pull:git_push`; 
+@@ -304,0 +308 @@ export THEFUCK_RULES='sudo:no_command'
++export THEFUCK_EXCLUDE_RULES='git_pull:git_push'
+diff --git a/README.md b/README.md
+index 75eccb3..5181ade 100644
+--- a/README.md
++++ b/README.md
+@@ -329 +329 @@ Run unit and functional tests (requires docker):
+-FUNCTIONAL=true py.test
++py.test --enable-functional
+diff --git a/README.md b/README.md
+index daa5621..75eccb3 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `gulp_not_task` &ndash; fixes misspelled gulp tasks;
++* `gulp_not_task` &ndash; fixes misspelled `gulp` tasks;
+@@ -185 +185 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `mvn_unknown_lifecycle_phase` &ndash; fixes miss spelt lifecycle phases with `mvn`;
++* `mvn_unknown_lifecycle_phase` &ndash; fixes misspelled lifecycle phases with `mvn`;
+@@ -192 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args'
++* `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args';
+@@ -204 +204 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `unknown_command` &ndash; fixes hadoop hdfs-style "unknown command" for example adds missing '-' to the command on `hdfs dfs ls`;
++* `unknown_command` &ndash; fixes hadoop hdfs-style "unknown command", for example adds missing '-' to the command on `hdfs dfs ls`;
+@@ -211 +211 @@ Enabled by default only on specific platforms:
+-* `apt_get_search` &ndash; changes trying to search using `apt-get` with searching using `apt-cache`
++* `apt_get_search` &ndash; changes trying to search using `apt-get` with searching using `apt-cache`;
+@@ -215,2 +215,2 @@ Enabled by default only on specific platforms:
+-* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available).
+-* `pacman_not_found` &ndash; fix package name with `pacman` or `yaourt`;
++* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available);
++* `pacman_not_found` &ndash; fixes package name with `pacman` or `yaourt`.
+diff --git a/README.md b/README.md
+index 93832b9..daa5621 100644
+--- a/README.md
++++ b/README.md
+@@ -210 +210 @@ Enabled by default only on specific platforms:
+-* `apt_get` &ndash; installs app from apt if it not installed;
++* `apt_get` &ndash; installs app from apt if it not installed (requires `python-commandnotfound` / `python3-commandnotfound`);
+diff --git a/README.md b/README.md
+index a78cd64..93832b9 100644
+--- a/README.md
++++ b/README.md
+@@ -184,0 +185 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `mvn_unknown_lifecycle_phase` &ndash; fixes miss spelt lifecycle phases with `mvn`;
+diff --git a/README.md b/README.md
+index 97354de..a78cd64 100644
+--- a/README.md
++++ b/README.md
+@@ -183,0 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `mvn_no_command` &ndash; adds `clean package` to `mvn`;
+diff --git a/README.md b/README.md
+index 9fef4c4..97354de 100644
+--- a/README.md
++++ b/README.md
+@@ -208,0 +209 @@ Enabled by default only on specific platforms:
++* `apt_get_search` &ndash; changes trying to search using `apt-get` with searching using `apt-cache`
+diff --git a/README.md b/README.md
+index 3d94cc2..9fef4c4 100644
+--- a/README.md
++++ b/README.md
+@@ -102 +102 @@ On Ubuntu and OS X you can install `The Fuck` with installation script:
+-wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh -
++wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+@@ -209 +208,0 @@ Enabled by default only on specific platforms:
+-* `apt_get_search` &ndash; changes trying to search using `apt-get` with searching using `apt-cache`
+diff --git a/README.md b/README.md
+index 9646e33..3d94cc2 100644
+--- a/README.md
++++ b/README.md
+@@ -208,0 +209 @@ Enabled by default only on specific platforms:
++* `apt_get_search` &ndash; changes trying to search using `apt-get` with searching using `apt-cache`
+diff --git a/README.md b/README.md
+index 71bf475..9646e33 100644
+--- a/README.md
++++ b/README.md
+@@ -97 +97 @@ Reading package lists... Done
+-## Installation *experimental*
++## Installation [*experimental*]
+diff --git a/README.md b/README.md
+index 11378a7..71bf475 100644
+--- a/README.md
++++ b/README.md
+@@ -97 +97,9 @@ Reading package lists... Done
+-## Installation
++## Installation *experimental*
++
++On Ubuntu and OS X you can install `The Fuck` with installation script:
++ 
++```bash
++wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh -
++```
++
++## Manual installation
+diff --git a/README.md b/README.md
+index 806b6dc..11378a7 100644
+--- a/README.md
++++ b/README.md
+@@ -194,0 +195 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `vagrant_up` &ndash; starts up the vagrant instance;
+diff --git a/README.md b/README.md
+index aa56e12..806b6dc 100644
+--- a/README.md
++++ b/README.md
+@@ -221 +221,5 @@ get_new_command(command: Command, settings: Settings) -> str | list[str]
+-Also the rule can contain an optional function `side_effect(command: Command, settings: Settings) -> None`
++Also the rule can contain an optional function
++
++```python
++side_effect(old_command: Command, fixed_command: str, settings: Settings) -> None
++```
+diff --git a/README.md b/README.md
+index 3b602da..aa56e12 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `heroku_no_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
++* `heroku_not_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `switch_layout` &ndash; switches command from your local layout to en;
++* `switch_lang` &ndash; switches command from your local layout to en;
+@@ -203,0 +204 @@ Enabled by default only on specific platforms:
++* `pacman_not_found` &ndash; fix package name with `pacman` or `yaourt`;
+diff --git a/README.md b/README.md
+index af770da..3b602da 100644
+--- a/README.md
++++ b/README.md
+@@ -193,0 +194 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `unknown_command` &ndash; fixes hadoop hdfs-style "unknown command" for example adds missing '-' to the command on `hdfs dfs ls`;
+@@ -219,5 +220 @@ get_new_command(command: Command, settings: Settings) -> str | list[str]
+-Also the rule can contain an optional function
+-
+-```python
+-side_effect(old_command: Command, fixed_command: str, settings: Settings) -> None
+-```
++Also the rule can contain an optional function `side_effect(command: Command, settings: Settings) -> None`
+diff --git a/README.md b/README.md
+index 58b4c58..af770da 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `heroku_not_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
++* `heroku_no_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `switch_lang` &ndash; switches command from your local layout to en;
++* `switch_layout` &ndash; switches command from your local layout to en;
+@@ -203 +202,0 @@ Enabled by default only on specific platforms:
+-* `pacman_not_found` &ndash; fix package name with `pacman` or `yaourt`;
+@@ -220 +219,5 @@ get_new_command(command: Command, settings: Settings) -> str | list[str]
+-Also the rule can contain an optional function `side_effect(command: Command, settings: Settings) -> None`
++Also the rule can contain an optional function
++
++```python
++side_effect(old_command: Command, fixed_command: str, settings: Settings) -> None
++```
+diff --git a/README.md b/README.md
+index 079b54b..58b4c58 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `heroku_no_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
++* `heroku_not_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `switch_layout` &ndash; switches command from your local layout to en;
++* `switch_lang` &ndash; switches command from your local layout to en;
+@@ -192 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `tsuru_not_command` &ndash; fixes wrong tsuru commands like `tsuru shell`;
++* `tsuru_not_command` &ndash; fixes wrong `tsuru` commands like `tsuru shell`;
+@@ -194 +193,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `unknown_command` &ndash; fixes hadoop hdfs-style "unknown command" for example adds missing '-' to the command on `hdfs dfs ls`;
+@@ -203 +202,2 @@ Enabled by default only on specific platforms:
+-* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed.
++* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available).
++* `pacman_not_found` &ndash; fix package name with `pacman` or `yaourt`;
+diff --git a/README.md b/README.md
+index e67bff9..079b54b 100644
+--- a/README.md
++++ b/README.md
+@@ -192 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `tsuru_not_command` &ndash; fixes wrong `tsuru` commands like `tsuru shell`;
++* `tsuru_not_command` &ndash; fixes wrong tsuru commands like `tsuru shell`;
+@@ -193,0 +194 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `unknown_command` &ndash; fixes hadoop hdfs-style "unknown command" for example adds missing '-' to the command on `hdfs dfs ls`;
+@@ -202 +203 @@ Enabled by default only on specific platforms:
+-* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available).
++* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed.
+diff --git a/README.md b/README.md
+index d83fbd2..e67bff9 100644
+--- a/README.md
++++ b/README.md
+@@ -165 +164,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `hadoop_dfs_missing_dash` &ndash; Add the missing dash to the command.
+@@ -193 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `tsuru_not_command` &ndash; fixes wrong tsuru commands like `tsuru shell`;
++* `tsuru_not_command` &ndash; fixes wrong `tsuru` commands like `tsuru shell`;
+@@ -203 +202 @@ Enabled by default only on specific platforms:
+-* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed.
++* `pacman` &ndash; installs app with `pacman` if it is not installed (uses `yaourt` if available).
+diff --git a/README.md b/README.md
+index 0197c1f..d83fbd2 100644
+--- a/README.md
++++ b/README.md
+@@ -164,0 +165 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `hadoop_dfs_missing_dash` &ndash; Add the missing dash to the command.
+@@ -195 +195,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `hdfs dfs` &ndash; Add the missing dash to the command.
+diff --git a/README.md b/README.md
+index 4f97417..0197c1f 100644
+--- a/README.md
++++ b/README.md
+@@ -194,0 +195 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `hdfs dfs` &ndash; Add the missing dash to the command.
+diff --git a/README.md b/README.md
+index abc0ce8..4f97417 100644
+--- a/README.md
++++ b/README.md
+@@ -110 +110 @@ You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or ot
+-eval "$(thefuck-alias)"
++eval "$(thefuck --alias)"
+@@ -112 +112 @@ eval "$(thefuck-alias)"
+-eval "$(thefuck-alias FUCK)"
++eval "$(thefuck --alias FUCK)"
+diff --git a/README.md b/README.md
+index e7ba138..abc0ce8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
+@@ -148,0 +149 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `fix_file` &ndash; opens a file with an error in your `$EDITOR`;
+diff --git a/README.md b/README.md
+index 6935314..e7ba138 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
+@@ -17 +17 @@ ➜ fuck
+-sudo apt-get install vim [enter/ctrl+c]
++sudo apt-get install vim [enter/↑/↓/ctrl+c]
+@@ -32 +32 @@ ➜ fuck
+-git push --set-upstream origin master [enter/ctrl+c]
++git push --set-upstream origin master [enter/↑/↓/ctrl+c]
+@@ -45 +45 @@ ➜ fuck
+-python [enter/ctrl+c]
++python [enter/↑/↓/ctrl+c]
+@@ -58 +58 @@ ➜ fuck
+-git branch [enter/ctrl+c]
++git branch [enter/↑/↓/ctrl+c]
+@@ -70 +70 @@ ➜ fuck
+-lein repl [enter/ctrl+c]
++lein repl [enter/↑/↓/ctrl+c]
+@@ -149 +148,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `fix_file` &ndash; opens a file with an error in your `$EDITOR`;
+@@ -216 +215 @@ match(command: Command, settings: Settings) -> bool
+-get_new_command(command: Command, settings: Settings) -> str
++get_new_command(command: Command, settings: Settings) -> str | list[str]
+diff --git a/README.md b/README.md
+index c73b12f..6935314 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
+diff --git a/README.md b/README.md
+index ecad53c..c73b12f 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
+@@ -148,0 +149 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `fix_file` &ndash; opens a file with an error in your `$EDITOR`;
+diff --git a/README.md b/README.md
+index f948e9a..ecad53c 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg?branch=master)](https://travis-ci.org/nvbn/thefuck) 
+@@ -215 +215 @@ match(command: Command, settings: Settings) -> bool
+-get_new_command(command: Command, settings: Settings) -> str | list[str]
++get_new_command(command: Command, settings: Settings) -> str
+diff --git a/README.md b/README.md
+index 8a6c8c1..f948e9a 100644
+--- a/README.md
++++ b/README.md
+@@ -215 +215 @@ match(command: Command, settings: Settings) -> bool
+-get_new_command(command: Command, settings: Settings) -> str
++get_new_command(command: Command, settings: Settings) -> str | list[str]
+diff --git a/README.md b/README.md
+index 5a453a2..8a6c8c1 100644
+--- a/README.md
++++ b/README.md
+@@ -190,0 +191 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `tsuru_not_command` &ndash; fixes wrong tsuru commands like `tsuru shell`;
+diff --git a/README.md b/README.md
+index d741331..5a453a2 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
++[![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
+@@ -210,0 +211 @@ in `~/.thefuck/rules`. The rule should contain two functions:
++
+@@ -216,3 +217,2 @@ get_new_command(command: Command, settings: Settings) -> str
+-Also the rule can contain an optional function
+-`side_effect(command: Command, settings: Settings) -> None` and
+-optional `enabled_by_default`, `requires_output` and `priority` variables.
++Also the rule can contain an optional function `side_effect(command: Command, settings: Settings) -> None`
++and optional `enabled_by_default`, `requires_output` and `priority` variables.
+diff --git a/README.md b/README.md
+index acda0ba..d741331 100644
+--- a/README.md
++++ b/README.md
+@@ -311,0 +312,7 @@ FUNCTIONAL=true py.test
++For sending package to pypi:
++
++```bash
++sudo apt-get install pandoc
++./release.py
++```
++
+diff --git a/README.md b/README.md
+index 2585d5e..acda0ba 100644
+--- a/README.md
++++ b/README.md
+@@ -217,2 +217,2 @@ Also the rule can contain an optional function
+-`side_effect(command: Command, settings: Settings) -> None` and an
+-optional boolean `enabled_by_default`.
++`side_effect(command: Command, settings: Settings) -> None` and
++optional `enabled_by_default`, `requires_output` and `priority` variables.
+@@ -241,0 +242,2 @@ priority = 1000  # Lower first, default is 1000
++
++requires_output = True
+diff --git a/README.md b/README.md
+index 271659c..2585d5e 100644
+--- a/README.md
++++ b/README.md
+@@ -141,0 +142,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `dirty_untar` &ndash; fixes `tar x` command that untarred in the current directory;
++* `dirty_unzip` &ndash; fixes `unzip` command that unzipped in the current directory;
+diff --git a/README.md b/README.md
+index fac0b1d..271659c 100644
+--- a/README.md
++++ b/README.md
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `tsuru_login.py` &ndash; runs `tsuru login` if not authenticated or session expired;
++* `tsuru_login` &ndash; runs `tsuru login` if not authenticated or session expired;
+diff --git a/README.md b/README.md
+index befdfc6..fac0b1d 100644
+--- a/README.md
++++ b/README.md
+@@ -142,2 +141,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dirty_untar` &ndash; fixes `tar x` command that untarred in the current directory;
+-* `dirty_unzip` &ndash; fixes `unzip` command that unzipped in the current directory;
+@@ -189,0 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `tsuru_login.py` &ndash; runs `tsuru login` if not authenticated or session expired;
+diff --git a/README.md b/README.md
+index 38f08a2..befdfc6 100644
+--- a/README.md
++++ b/README.md
+@@ -141,0 +142,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `dirty_untar` &ndash; fixes `tar x` command that untarred in the current directory;
++* `dirty_unzip` &ndash; fixes `unzip` command that unzipped in the current directory;
+diff --git a/README.md b/README.md
+index f44c816..38f08a2 100644
+--- a/README.md
++++ b/README.md
+@@ -295 +295 @@ python setup.py develop
+-Run tests:
++Run unit tests:
+@@ -300,0 +301,6 @@ py.test
++Run unit and functional tests (requires docker):
++
++```bash
++FUNCTIONAL=true py.test
++```
++
+diff --git a/README.md b/README.md
+index aa65af0..f44c816 100644
+--- a/README.md
++++ b/README.md
+@@ -160,0 +161 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `gulp_not_task` &ndash; fixes misspelled gulp tasks;
+diff --git a/README.md b/README.md
+index 4dfabb4..aa65af0 100644
+--- a/README.md
++++ b/README.md
+@@ -143,0 +144 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `docker_not_command` &ndash; fixes wrong docker commands like `docker tags`;
+diff --git a/README.md b/README.md
+index 853bf49..4dfabb4 100644
+--- a/README.md
++++ b/README.md
+@@ -144 +144 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dry` &ndash; fixes repetitions like "git git push";
++* `dry` &ndash; fixes repetitions like `git git push`;
+@@ -150,0 +151 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_fix_stash` &ndash; fixes `git stash` commands (misspelled subcommand and missing `save`);
+@@ -158 +159 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `grep_recursive` &ndash; adds `-r` when you trying to grep directory;
++* `grep_recursive` &ndash; adds `-r` when you trying to `grep` directory;
+@@ -160 +161 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `heroku_no_command` &ndash; fixes wrong heroku commands like `heroku log`;
++* `heroku_no_command` &ndash; fixes wrong `heroku` commands like `heroku log`;
+@@ -165 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `ls_lah` &ndash; adds -lah to ls;
++* `ls_lah` &ndash; adds `-lah` to `ls`;
+@@ -173 +174 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `pip_unknown_command` &ndash; fixes wrong pip commands, for example `pip instatl/pip install`;
++* `pip_unknown_command` &ndash; fixes wrong `pip` commands, for example `pip instatl/pip install`;
+@@ -183 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `systemctl` &ndash; correctly orders parameters of confusing systemctl;
++* `systemctl` &ndash; correctly orders parameters of confusing `systemctl`;
+@@ -185 +186 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `tmux` &ndash; fixes tmux commands;
++* `tmux` &ndash; fixes `tmux` commands;
+diff --git a/README.md b/README.md
+index ef6c01a..853bf49 100644
+--- a/README.md
++++ b/README.md
+@@ -151 +151 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_no_command` &ndash; fixes wrong git commands like `git brnch`;
++* `git_not_command` &ndash; fixes wrong git commands like `git brnch`;
+@@ -159,0 +160 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `heroku_no_command` &ndash; fixes wrong heroku commands like `heroku log`;
+diff --git a/README.md b/README.md
+index f1ba1a1..ef6c01a 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ ➜ fuck
+-sudo apt-get install vim [Enter/Ctrl+C]
++sudo apt-get install vim [enter/ctrl+c]
+@@ -32 +32 @@ ➜ fuck
+-git push --set-upstream origin master [Enter/Ctrl+C]
++git push --set-upstream origin master [enter/ctrl+c]
+@@ -45 +45 @@ ➜ fuck
+-python [Enter/Ctrl+C]
++python [enter/ctrl+c]
+@@ -58 +58 @@ ➜ fuck
+-git branch [Enter/Ctrl+C]
++git branch [enter/ctrl+c]
+@@ -70 +70 @@ ➜ fuck
+-lein repl [Enter/Ctrl+C]
++lein repl [enter/ctrl+c]
+diff --git a/README.md b/README.md
+index 3238f45..f1ba1a1 100644
+--- a/README.md
++++ b/README.md
+@@ -203,5 +203,8 @@ For adding your own rule you should create `your-rule-name.py`
+-in `~/.thefuck/rules`. Rule should contain two functions:
+-`match(command: Command, settings: Settings) -> bool`
+-and `get_new_command(command: Command, settings: Settings) -> str`.
+-Also the rule can contain optional function
+-`side_effect(command: Command, settings: Settings) -> None` and
++in `~/.thefuck/rules`. The rule should contain two functions:
++```python
++match(command: Command, settings: Settings) -> bool
++get_new_command(command: Command, settings: Settings) -> str
++```
++
++Also the rule can contain an optional function
++`side_effect(command: Command, settings: Settings) -> None` and an
+@@ -212 +215 @@ optional boolean `enabled_by_default`.
+-`Settings` is a special object filled with `~/.thefuck/settings.py` and values from env, [more](#settings).
++`Settings` is a special object filled with `~/.thefuck/settings.py` and values from env ([see more below](#settings)).
+diff --git a/README.md b/README.md
+index fbb28e4..3238f45 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +192,0 @@ Enabled by default only on specific platforms:
+-* `git_push_force` &ndash; adds `--force` to a `git push` (may conflict with `git_push_pull`);
+@@ -197,0 +197 @@ Bundled, but not enabled by default:
++* `git_push_force` &ndash; adds `--force` to a `git push` (may conflict with `git_push_pull`);
+diff --git a/README.md b/README.md
+index 2fea7ba..fbb28e4 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ ➜ fuck
+-sudo apt-get install vim
++sudo apt-get install vim [Enter/Ctrl+C]
+@@ -32 +32 @@ ➜ fuck
+-git push --set-upstream origin master
++git push --set-upstream origin master [Enter/Ctrl+C]
+@@ -45 +45 @@ ➜ fuck
+-python
++python [Enter/Ctrl+C]
+@@ -58 +58 @@ ➜ fuck
+-git branch
++git branch [Enter/Ctrl+C]
+@@ -70 +70 @@ ➜ fuck
+-lein repl
++lein repl [Enter/Ctrl+C]
+@@ -76 +76 @@ REPL-y 0.3.1
+-If you are scared to blindly run the changed command, there is a `require_confirmation`
++If you are not scared to blindly run the changed command, there is a `require_confirmation`
+@@ -85 +85 @@ ➜ fuck
+-sudo apt-get install vim [Enter/Ctrl+C]
++sudo apt-get install vim
+diff --git a/README.md b/README.md
+index bc65acd..2fea7ba 100644
+--- a/README.md
++++ b/README.md
+@@ -141 +141 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `cpp11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
++* `cpp11` &ndash; adds missing `-std=c++11` to `g++` or `clang++`;
+@@ -144 +144 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dry` &ndash; fix repetitions like "git git push";
++* `dry` &ndash; fixes repetitions like "git git push";
+@@ -146 +146 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_add` &ndash; fix *"Did you forget to 'git add'?"*;
++* `git_add` &ndash; fixes *"Did you forget to 'git add'?"*;
+@@ -165 +165 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `man` &ndash; change manual section;
++* `man` &ndash; changes manual section;
+@@ -246 +246 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
+-* `debug` &ndash; enables debug output, by default `False`;
++* `debug` &ndash; enables debug output, by default `False`.
+diff --git a/README.md b/README.md
+index 262a95c..bc65acd 100644
+--- a/README.md
++++ b/README.md
+@@ -115 +115 @@ eval "$(thefuck-alias FUCK)"
+-[Or in your shell config (Bash, Zsh, Fish, Powershell).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
++[Or in your shell config (Bash, Zsh, Fish, Powershell, tcsh).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
+diff --git a/README.md b/README.md
+index 58f6db6..262a95c 100644
+--- a/README.md
++++ b/README.md
+@@ -107 +107 @@ sudo pip install thefuck
+-You should place this command in your `.bash_profile` or other startup script:
++You should place this command in your `.bash_profile`, `.bashrc`, `.zshrc` or other startup script:
+diff --git a/README.md b/README.md
+index 565f66b..58f6db6 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +2,0 @@
+-**Aliases changed in 1.34.**
+-
+@@ -109 +107 @@ sudo pip install thefuck
+-And add to the `.bashrc` or `.bash_profile`(for OSX):
++You should place this command in your `.bash_profile` or other startup script:
+@@ -112 +110 @@ And add to the `.bashrc` or `.bash_profile`(for OSX):
+-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
++eval "$(thefuck-alias)"
+@@ -114,18 +112 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+-alias FUCK='fuck'
+-```
+-
+-Or in your `.zshrc`:
+-
+-```bash
+-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+-```
+-
+-If you are using `tcsh`:
+-```tcsh
+-alias fuck 'set fucked_cmd=`history -h 2 | head -n 1` && eval `thefuck ${fucked_cmd}`'
+-```
+-
+-Alternatively, you can redirect the output of `thefuck-alias`:
+-
+-```bash
+-thefuck-alias >> ~/.bashrc
++eval "$(thefuck-alias FUCK)"
+@@ -145,0 +127,2 @@ sudo pip install thefuck --upgrade
++**Aliases changed in 1.34.**
++
+diff --git a/README.md b/README.md
+index 5f7fb5b..565f66b 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_push_force` &ndash; adds `--force` to a `git push`;
++* `git_push_pull` &ndash; runs `git pull` when `push` was rejected;
+@@ -209 +209,2 @@ Enabled by default only on specific platforms:
+-* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour
++* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour;
++* `git_push_force` &ndash; adds `--force` to a `git push` (may conflict with `git_push_pull`);
+diff --git a/README.md b/README.md
+index fc695de..5f7fb5b 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_pull_clone` &ndash; clones instead of pulling when the repo does not exist;
+@@ -170,0 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_push_force` &ndash; adds `--force` to a `git push`;
+diff --git a/README.md b/README.md
+index 1a8d80d..fc695de 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_checkout` &ndash; creates the branch before checking-out;
++* `git_checkout` &ndash; fixes branch name or creates new branch;
+@@ -170 +169,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_pull_clone` &ndash; clones instead of pulling when the repo does not exist;
+@@ -172 +170,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_push_force` &ndash; adds `--force` to a `git push`;
+@@ -247 +245 @@ def side_effect(command, settings):
+-priority = 1000  # Lower first
++priority = 1000  # Lower first, default is 1000
+diff --git a/README.md b/README.md
+index 46df28b..1a8d80d 100644
+--- a/README.md
++++ b/README.md
+@@ -166 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_checkout` &ndash; fixes branch name or creates new branch;
++* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -169,0 +170 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_pull_clone` &ndash; clones instead of pulling when the repo does not exist;
+@@ -170,0 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_push_force` &ndash; adds `--force` to a `git push`;
+diff --git a/README.md b/README.md
+index 2355424..46df28b 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++**Aliases changed in 1.34.**
++
+@@ -107 +109 @@ sudo pip install thefuck
+-You should place this command in your `.bash_profile` or other startup script:
++And add to the `.bashrc` or `.bash_profile`(for OSX):
+@@ -110 +112 @@ You should place this command in your `.bash_profile` or other startup script:
+-eval "$(thefuck-alias)"
++alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+@@ -112 +114,18 @@ eval "$(thefuck-alias)"
+-eval "$(thefuck-alias FUCK)"
++alias FUCK='fuck'
++```
++
++Or in your `.zshrc`:
++
++```bash
++alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
++```
++
++If you are using `tcsh`:
++```tcsh
++alias fuck 'set fucked_cmd=`history -h 2 | head -n 1` && eval `thefuck ${fucked_cmd}`'
++```
++
++Alternatively, you can redirect the output of `thefuck-alias`:
++
++```bash
++thefuck-alias >> ~/.bashrc
+@@ -127,2 +145,0 @@ sudo pip install thefuck --upgrade
+-**Aliases changed in 1.34.**
+-
+@@ -149 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_checkout` &ndash; creates the branch before checking-out;
++* `git_checkout` &ndash; fixes branch name or creates new branch;
+diff --git a/README.md b/README.md
+index 950214e..2355424 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +2,0 @@
+-**Aliases changed in 1.34.**
+-
+@@ -109 +107 @@ sudo pip install thefuck
+-And add to the `.bashrc` or `.bash_profile`(for OSX):
++You should place this command in your `.bash_profile` or other startup script:
+@@ -112 +110 @@ And add to the `.bashrc` or `.bash_profile`(for OSX):
+-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
++eval "$(thefuck-alias)"
+@@ -114,18 +112 @@ alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+-alias FUCK='fuck'
+-```
+-
+-Or in your `.zshrc`:
+-
+-```bash
+-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+-```
+-
+-If you are using `tcsh`:
+-```tcsh
+-alias fuck 'set fucked_cmd=`history -h 2 | head -n 1` && eval `thefuck ${fucked_cmd}`'
+-```
+-
+-Alternatively, you can redirect the output of `thefuck-alias`:
+-
+-```bash
+-thefuck-alias >> ~/.bashrc
++eval "$(thefuck-alias FUCK)"
+@@ -145,0 +127,2 @@ sudo pip install thefuck --upgrade
++**Aliases changed in 1.34.**
++
+diff --git a/README.md b/README.md
+index 258dbac..950214e 100644
+--- a/README.md
++++ b/README.md
+@@ -260 +260 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
+-* `debug` &ndash; enabled debug output, by default `False`;
++* `debug` &ndash; enables debug output, by default `False`;
+diff --git a/README.md b/README.md
+index f5acbce..258dbac 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) [![Coverage Status](https://coveralls.io/repos/nvbn/thefuck/badge.svg?branch=master&service=github)](https://coveralls.io/github/nvbn/thefuck?branch=master)
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) 
+diff --git a/README.md b/README.md
+index 7639ca2..f5acbce 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck)
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck) [![Coverage Status](https://coveralls.io/repos/nvbn/thefuck/badge.svg?branch=master&service=github)](https://coveralls.io/github/nvbn/thefuck?branch=master)
+diff --git a/README.md b/README.md
+index 65b5f40..7639ca2 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9,3 @@ inspired by a [@liamosaur](https://twitter.com/liamosaur/)
+-Few examples:
++![gif with examples](https://raw.githubusercontent.com/nvbn/thefuck/master/example.gif)
++
++Few more examples:
+@@ -161,0 +164 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_branch_delete` &ndash; changes `git branch -d` to `git branch -D`;
+@@ -253 +256 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; requires confirmation before running new command, by default `False`;
++* `require_confirmation` &ndash; requires confirmation before running new command, by default `True`;
+diff --git a/README.md b/README.md
+index 7c94390..65b5f40 100644
+--- a/README.md
++++ b/README.md
+@@ -256 +256,2 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
+-* `priority` &ndash; dict with rules priorities, rule with lower `priority` will be matched first.
++* `priority` &ndash; dict with rules priorities, rule with lower `priority` will be matched first;
++* `debug` &ndash; enabled debug output, by default `False`;
+@@ -265,0 +267 @@ priority = {'sudo': 100, 'no_command': 9999}
++debug = False
+@@ -275 +277,2 @@ Or via environment variables:
+-rule with lower `priority` will be matched first.
++rule with lower `priority` will be matched first;
++* `THEFUCK_DEBUG` &ndash; enables debug output, `true/false`.
+diff --git a/README.md b/README.md
+index a2977da..7c94390 100644
+--- a/README.md
++++ b/README.md
+@@ -178,0 +179 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `mercurial` &ndash; fixes wrong `hg` commands;
+@@ -188 +189 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `sed` &ndash; adds missing '/' to `sed`'s `s` commands;
++* `sed_unterminated_s` &ndash; adds missing '/' to `sed`'s `s` commands;
+diff --git a/README.md b/README.md
+index d2f8084..a2977da 100644
+--- a/README.md
++++ b/README.md
+@@ -171,0 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `history` &ndash; tries to replace command with most similar command from history;
+@@ -178 +178,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `mercurial` &ndash; fixes wrong `hg` commands;
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `sed_unterminated_s` &ndash; adds missing '/' to `sed`'s `s` commands;
++* `sed` &ndash; adds missing '/' to `sed`'s `s` commands;
+diff --git a/README.md b/README.md
+index 9668a63..d2f8084 100644
+--- a/README.md
++++ b/README.md
+@@ -188 +188 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `sed` &ndash; adds missing '/' to `sed`'s `s` commands;
++* `sed_unterminated_s` &ndash; adds missing '/' to `sed`'s `s` commands;
+diff --git a/README.md b/README.md
+index 2dc629c..9668a63 100644
+--- a/README.md
++++ b/README.md
+@@ -177,0 +178 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `mercurial` &ndash; fixes wrong `hg` commands;
+diff --git a/README.md b/README.md
+index a4ce633..2dc629c 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +193,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `test.py` &ndasg; runs `py.test` instead of `test.py`;
++* `test.py` &ndash; runs `py.test` instead of `test.py`;
++* `tmux` &ndash; fixes tmux commands;
+diff --git a/README.md b/README.md
+index d911a00..a4ce633 100644
+--- a/README.md
++++ b/README.md
+@@ -186,0 +187 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `sed` &ndash; adds missing '/' to `sed`'s `s` commands;
+@@ -192,2 +193 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `test.py` &ndash; runs `py.test` instead of `test.py`;
+-* `tmux` &ndash; fixes tmux commands;
++* `test.py` &ndasg; runs `py.test` instead of `test.py`;
+diff --git a/README.md b/README.md
+index 213590b..d911a00 100644
+--- a/README.md
++++ b/README.md
+@@ -192 +192,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `test.py` &ndasg; runs `py.test` instead of `test.py`;
++* `test.py` &ndash; runs `py.test` instead of `test.py`;
++* `tmux` &ndash; fixes tmux commands;
+diff --git a/README.md b/README.md
+index a8a35e1..213590b 100644
+--- a/README.md
++++ b/README.md
+@@ -191,0 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `test.py` &ndasg; runs `py.test` instead of `test.py`;
+diff --git a/README.md b/README.md
+index cddb8f8..a8a35e1 100644
+--- a/README.md
++++ b/README.md
+@@ -157 +156,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dry` &ndash; fix repetitions like "git git push";
+@@ -159,0 +159 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `dry` &ndash; fix repetitions like "git git push";
+@@ -161,2 +160,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `javac` &ndash; appends missing `.java` when compiling Java files;
+-* `java` &ndash; removes `.java` extension when running Java programs;
+@@ -173,0 +172,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `java` &ndash; removes `.java` extension when running Java programs;
++* `javac` &ndash; appends missing `.java` when compiling Java files;
+@@ -184 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `python_compile` &ndash; appends missing `.py` when compiling and running Python files;
++* `python_execute` &ndash; appends missing `.py` when executing Python files;
+@@ -192 +191,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `test.py` &ndasg; runs `py.test` instead of `test.py`;
+@@ -215 +214 @@ Also the rule can contain optional function
+-optional boolean `enabled_by_default`
++optional boolean `enabled_by_default`.
+diff --git a/README.md b/README.md
+index 8e10d02..cddb8f8 100644
+--- a/README.md
++++ b/README.md
+@@ -156,0 +157 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `dry` &ndash; fix repetitions like "git git push";
+@@ -159 +159,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dry` &ndash; fix repetitions like "git git push";
+@@ -160,0 +161,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `javac` &ndash; appends missing `.java` when compiling Java files;
++* `java` &ndash; removes `.java` extension when running Java programs;
+@@ -172,2 +173,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `java` &ndash; removes `.java` extension when running Java programs;
+-* `javac` &ndash; appends missing `.java` when compiling Java files;
+@@ -191,0 +192 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `test.py` &ndasg; runs `py.test` instead of `test.py`;
+@@ -214 +215 @@ Also the rule can contain optional function
+-optional boolean `enabled_by_default`.
++optional boolean `enabled_by_default`
+diff --git a/README.md b/README.md
+index 4cc8ab3..8e10d02 100644
+--- a/README.md
++++ b/README.md
+@@ -214 +214 @@ Also the rule can contain optional function
+-optional boolean `enabled_by_default`
++optional boolean `enabled_by_default`.
+diff --git a/README.md b/README.md
+index cfd86e3..4cc8ab3 100644
+--- a/README.md
++++ b/README.md
+@@ -157 +156,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `dry` &ndash; fix repetitions like "git git push";
+@@ -159,0 +159 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `dry` &ndash; fix repetitions like "git git push";
+@@ -161,2 +160,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `javac` &ndash; appends missing `.java` when compiling Java files;
+-* `java` &ndash; removes `.java` extension when running Java programs;
+@@ -173,0 +172,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `java` &ndash; removes `.java` extension when running Java programs;
++* `javac` &ndash; appends missing `.java` when compiling Java files;
+diff --git a/README.md b/README.md
+index c70683b..cfd86e3 100644
+--- a/README.md
++++ b/README.md
+@@ -172 +172 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `grep_recursive` &ndash; adds `-r` when you trying to grep directory; 
++* `grep_recursive` &ndash; adds `-r` when you trying to grep directory;
+@@ -190,0 +191 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `systemctl` &ndash; correctly orders parameters of confusing systemctl;
+diff --git a/README.md b/README.md
+index 9feb5fc..c70683b 100644
+--- a/README.md
++++ b/README.md
+@@ -184 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `python_compile` &ndash; appends missing `.py` when compiling Python files;
++* `python_compile` &ndash; appends missing `.py` when compiling and running Python files;
+diff --git a/README.md b/README.md
+index 22b5c2e..9feb5fc 100644
+--- a/README.md
++++ b/README.md
+@@ -183,0 +184 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `python_compile` &ndash; appends missing `.py` when compiling Python files;
+diff --git a/README.md b/README.md
+index d85cda0..22b5c2e 100644
+--- a/README.md
++++ b/README.md
+@@ -149 +149,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `cargo` &ndash; run `cargo build` instead of `cargo`;
++* `cargo` &ndash; runs `cargo build` instead of `cargo`;
++* `cargo_no_command` &ndash; fixes wrongs commands like `cargo buid`;
+diff --git a/README.md b/README.md
+index 08ba5b7..d85cda0 100644
+--- a/README.md
++++ b/README.md
+@@ -148,0 +149 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `cargo` &ndash; run `cargo build` instead of `cargo`;
+diff --git a/README.md b/README.md
+index 27f859a..08ba5b7 100644
+--- a/README.md
++++ b/README.md
+@@ -194,0 +195 @@ Enabled by default only on specific platforms:
++* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour
+diff --git a/README.md b/README.md
+index aed9025..27f859a 100644
+--- a/README.md
++++ b/README.md
+@@ -168,0 +169 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `go_run` &ndash; appends `.go` extension when compiling/running Go programs
+@@ -180,0 +182 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args'
+@@ -193 +194,0 @@ Enabled by default only on specific platforms:
+-* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour
+diff --git a/README.md b/README.md
+index 36c4b8b..aed9025 100644
+--- a/README.md
++++ b/README.md
+@@ -193 +193 @@ Enabled by default only on specific platforms:
+-* `brew_upgrade` &ndash; appends `-all` to `brew upgrade` as per Homebrew's new behaviour
++* `brew_upgrade` &ndash; appends `--all` to `brew upgrade` as per Homebrew's new behaviour
+diff --git a/README.md b/README.md
+index bdd1e22..36c4b8b 100644
+--- a/README.md
++++ b/README.md
+@@ -181 +180,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args'
+@@ -193,0 +193 @@ Enabled by default only on specific platforms:
++* `brew_upgrade` &ndash; appends `-all` to `brew upgrade` as per Homebrew's new behaviour
+diff --git a/README.md b/README.md
+index ece6d66..bdd1e22 100644
+--- a/README.md
++++ b/README.md
+@@ -169 +168,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `go_run` &ndash; appends `.go` extension when compiling/running Go programs
+@@ -181,0 +181 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `quotation_marks` &ndash; fixes uneven usage of `'` and `"` when containing args'
+diff --git a/README.md b/README.md
+index c36aa5a..ece6d66 100644
+--- a/README.md
++++ b/README.md
+@@ -168,0 +169 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `go_run` &ndash; appends `.go` extension when compiling/running Go programs
+diff --git a/README.md b/README.md
+index 86d2dc4..c36aa5a 100644
+--- a/README.md
++++ b/README.md
+@@ -135 +135 @@ Changes will be available only in a new shell session.
+-To make them available immediately, run `source ~/.bashrc`.
++To make them available immediately, run `source ~/.bashrc` (or your shell config file like `.zshrc`).
+diff --git a/README.md b/README.md
+index 5960434..86d2dc4 100644
+--- a/README.md
++++ b/README.md
+@@ -134,0 +135 @@ Changes will be available only in a new shell session.
++To make them available immediately, run `source ~/.bashrc`.
+diff --git a/README.md b/README.md
+index e095bdb..5960434 100644
+--- a/README.md
++++ b/README.md
+@@ -135 +134,0 @@ Changes will be available only in a new shell session.
+-To make them available immediately, run `source ~/.bashrc`.
+@@ -161,0 +161 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_branch_list` &ndash; catches `git branch list` in place of `git branch` and removes created branch;
+diff --git a/README.md b/README.md
+index 06d8f18..e095bdb 100644
+--- a/README.md
++++ b/README.md
+@@ -134,0 +135 @@ Changes will be available only in a new shell session.
++To make them available immediately, run `source ~/.bashrc`.
+diff --git a/README.md b/README.md
+index 742ae9c..06d8f18 100644
+--- a/README.md
++++ b/README.md
+@@ -161,0 +162 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_diff_staged` &ndash; adds `--staged` to previous `git diff` with unexpected output;
+diff --git a/README.md b/README.md
+index eca4cf4..742ae9c 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `java` &ndash; removes `.java` extension when running Java programs
++* `javac` &ndash; appends missing `.java` when compiling Java files;
++* `java` &ndash; removes `.java` extension when running Java programs;
+diff --git a/README.md b/README.md
+index 8c7657f..eca4cf4 100644
+--- a/README.md
++++ b/README.md
+@@ -158 +158 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `javac` &ndash; appends missing `.java` when compiling Java files
++* `java` &ndash; removes `.java` extension when running Java programs
+diff --git a/README.md b/README.md
+index 43389f3..8c7657f 100644
+--- a/README.md
++++ b/README.md
+@@ -157,0 +158 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `javac` &ndash; appends missing `.java` when compiling Java files
+diff --git a/README.md b/README.md
+index 4993bae..43389f3 100644
+--- a/README.md
++++ b/README.md
+@@ -172,0 +173 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `open` &ndash; prepends `http` to address passed to `open`;
+diff --git a/README.md b/README.md
+index 3e1e413..4993bae 100644
+--- a/README.md
++++ b/README.md
+@@ -155,0 +156 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `django_south_merge` &ndash; adds `--merge` to inconsistent django south migration;
+diff --git a/README.md b/README.md
+index 7b89f10..3e1e413 100644
+--- a/README.md
++++ b/README.md
+@@ -154,0 +155 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `django_south_ghost` &ndash; adds `--delete-ghost-migrations` to failed because ghosts django south migration;
+diff --git a/README.md b/README.md
+index a1a176c..7b89f10 100644
+--- a/README.md
++++ b/README.md
+@@ -165,0 +166 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `man` &ndash; change manual section;
+diff --git a/README.md b/README.md
+index f2406b1..a1a176c 100644
+--- a/README.md
++++ b/README.md
+@@ -148,3 +148 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `brew_unknown_command` &ndash; fixes wrong brew commands, for example `brew docto/brew doctor`;
+-* `cpp11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
+-* `cd_parent` &ndash; changes `cd..` to `cd ..`;
++* `cd_correction` &ndash; spellchecks and correct failed cd commands;
+@@ -151,0 +150,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `cd_parent` &ndash; changes `cd..` to `cd ..`;
++* `composer_not_command` &ndash; fixes composer command name;
+@@ -152,0 +153 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `cpp11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
+@@ -158 +158,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
+@@ -159,0 +160 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
+@@ -160,0 +162 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `grep_recursive` &ndash; adds `-r` when you trying to grep directory; 
+@@ -162,0 +165,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `ls_lah` &ndash; adds -lah to ls;
++* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -166,2 +169,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+-* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed;
+@@ -170 +171,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `sl_ls` &ndash; changes `sl` to `ls`;
+@@ -171,0 +173 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `sl_ls` &ndash; changes `sl` to `ls`;
+@@ -175 +177,4 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `whois` &ndash; fixes `whois` command;
++* `whois` &ndash; fixes `whois` command.
++
++Enabled by default only on specific platforms:
++
+@@ -178 +183,2 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `composer_not_command` &ndash; fixes composer command name.
++* `brew_unknown_command` &ndash; fixes wrong brew commands, for example `brew docto/brew doctor`;
++* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed.
+@@ -182 +187,0 @@ Bundled, but not enabled by default:
+-* `ls_lah` &ndash; adds -lah to ls;
+diff --git a/README.md b/README.md
+index 1ac70f4..f2406b1 100644
+--- a/README.md
++++ b/README.md
+@@ -158,0 +159 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_pull` &ndash; sets upstream before executing previous `git pull`;
+diff --git a/README.md b/README.md
+index 9cf7237..1ac70f4 100644
+--- a/README.md
++++ b/README.md
+@@ -173,0 +174 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `whois` &ndash; fixes `whois` command;
+diff --git a/README.md b/README.md
+index 6b507ee..9cf7237 100644
+--- a/README.md
++++ b/README.md
+@@ -163,0 +164 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `no_such_file` &ndash; creates missing directories with `mv` and `cp` commands;
+diff --git a/README.md b/README.md
+index e548f91..6b507ee 100644
+--- a/README.md
++++ b/README.md
+@@ -123 +123 @@ If you are using `tcsh`:
+-alias fuck 'set fuckedCmd=`history -h 2 | head -n 1` && eval `thefuck ${fuckedCmd}`'
++alias fuck 'set fucked_cmd=`history -h 2 | head -n 1` && eval `thefuck ${fucked_cmd}`'
+diff --git a/README.md b/README.md
+index 6309226..e548f91 100644
+--- a/README.md
++++ b/README.md
+@@ -120,0 +121,5 @@ alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
++If you are using `tcsh`:
++```tcsh
++alias fuck 'set fuckedCmd=`history -h 2 | head -n 1` && eval `thefuck ${fuckedCmd}`'
++```
++
+diff --git a/README.md b/README.md
+index ef74cc7..6309226 100644
+--- a/README.md
++++ b/README.md
+@@ -154 +154 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_stash` &ndash; stashes you local modifications before rebase;
++* `git_stash` &ndash; stashes you local modifications before rebasing or switching branch;
+diff --git a/README.md b/README.md
+index d3016f9..ef74cc7 100644
+--- a/README.md
++++ b/README.md
+@@ -153,0 +154 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `git_stash` &ndash; stashes you local modifications before rebase;
+diff --git a/README.md b/README.md
+index 75f06d9..d3016f9 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ REPL-y 0.3.1
+-If you are scared to blindly run changed command, there's `require_confirmation`
++If you are scared to blindly run the changed command, there is a `require_confirmation`
+@@ -107 +107 @@ sudo pip install thefuck
+-And add to `.bashrc` or `.bash_profile`(for OSX):
++And add to the `.bashrc` or `.bash_profile`(for OSX):
+@@ -140,2 +140,2 @@ sudo pip install thefuck --upgrade
+-The Fuck tries to match rule for the previous command, create new command
+-using matched rule and run it. Rules enabled by default:
++The Fuck tries to match a rule for the previous command, creates a new command
++using the matched rule and runs it. Rules enabled by default are as follows:
+@@ -215 +215 @@ priority = 1000  # Lower first
+-The Fuck has a few settings parameters, they can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
+@@ -218 +218 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
++* `require_confirmation` &ndash; requires confirmation before running new command, by default `False`;
+diff --git a/README.md b/README.md
+index 24d9e76..75f06d9 100644
+--- a/README.md
++++ b/README.md
+@@ -144 +144 @@ using matched rule and run it. Rules enabled by default:
+-* `c++11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
++* `cpp11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
+diff --git a/README.md b/README.md
+index f173283..24d9e76 100644
+--- a/README.md
++++ b/README.md
+@@ -150,0 +151 @@ using matched rule and run it. Rules enabled by default:
++* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -156,0 +158 @@ using matched rule and run it. Rules enabled by default:
++* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -198 +200 @@ def get_new_command(command, settings):
+-    
++
+@@ -204 +206 @@ def side_effect(command, settings):
+-    
++
+diff --git a/README.md b/README.md
+index 13fec69..f173283 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ REPL-y 0.3.1
+-If you are scared to blindly run the changed command, there is a `require_confirmation`
++If you are scared to blindly run changed command, there's `require_confirmation`
+@@ -107 +107 @@ sudo pip install thefuck
+-And add to the `.bashrc` or `.bash_profile`(for OSX):
++And add to `.bashrc` or `.bash_profile`(for OSX):
+@@ -140,2 +140,2 @@ sudo pip install thefuck --upgrade
+-The Fuck tries to match a rule for the previous command, creates a new command
+-using the matched rule and runs it. Rules enabled by default are as follows:
++The Fuck tries to match rule for the previous command, create new command
++using matched rule and run it. Rules enabled by default:
+@@ -143,0 +144 @@ using the matched rule and runs it. Rules enabled by default are as follows:
++* `c++11` &ndash; add missing `-std=c++11` to `g++` or `clang++`;
+@@ -150 +150,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -157 +156,0 @@ using the matched rule and runs it. Rules enabled by default are as follows:
+-* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -199 +198 @@ def get_new_command(command, settings):
+-
++    
+@@ -205 +204 @@ def side_effect(command, settings):
+-
++    
+@@ -214 +213 @@ priority = 1000  # Lower first
+-The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters, they can be changed in `~/.thefuck/settings.py`:
+@@ -217 +216 @@ The Fuck has a few settings parameters which can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; requires confirmation before running new command, by default `False`;
++* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
+diff --git a/README.md b/README.md
+index 73509ca..13fec69 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ REPL-y 0.3.1
+-If you are scared to blindly run changed command, there's `require_confirmation`
++If you are scared to blindly run the changed command, there is a `require_confirmation`
+@@ -107 +107 @@ sudo pip install thefuck
+-And add to `.bashrc` or `.bash_profile`(for OSX):
++And add to the `.bashrc` or `.bash_profile`(for OSX):
+@@ -140,2 +140,2 @@ sudo pip install thefuck --upgrade
+-The Fuck tries to match rule for the previous command, create new command
+-using matched rule and run it. Rules enabled by default:
++The Fuck tries to match a rule for the previous command, creates a new command
++using the matched rule and runs it. Rules enabled by default are as follows:
+@@ -214 +214 @@ priority = 1000  # Lower first
+-The Fuck has a few settings parameters, they can be changed in `~/.thefuck/settings.py`:
++The Fuck has a few settings parameters which can be changed in `~/.thefuck/settings.py`:
+@@ -217 +217 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
++* `require_confirmation` &ndash; requires confirmation before running new command, by default `False`;
+diff --git a/README.md b/README.md
+index e903d76..73509ca 100644
+--- a/README.md
++++ b/README.md
+@@ -149,0 +150 @@ using matched rule and run it. Rules enabled by default:
++* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -155,0 +157 @@ using matched rule and run it. Rules enabled by default:
++* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -197 +199 @@ def get_new_command(command, settings):
+-    
++
+@@ -203 +205 @@ def side_effect(command, settings):
+-    
++
+diff --git a/README.md b/README.md
+index 7a507a8..e903d76 100644
+--- a/README.md
++++ b/README.md
+@@ -146,0 +147 @@ using matched rule and run it. Rules enabled by default:
++* `dry` &ndash; fix repetitions like "git git push";
+@@ -149 +149,0 @@ using matched rule and run it. Rules enabled by default:
+-* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -156 +155,0 @@ using matched rule and run it. Rules enabled by default:
+-* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -198 +197 @@ def get_new_command(command, settings):
+-
++    
+@@ -204 +203 @@ def side_effect(command, settings):
+-
++    
+diff --git a/README.md b/README.md
+index 4fb1bad..7a507a8 100644
+--- a/README.md
++++ b/README.md
+@@ -148,0 +149 @@ using matched rule and run it. Rules enabled by default:
++* `git_checkout` &ndash; creates the branch before checking-out;
+diff --git a/README.md b/README.md
+index 252ff7b..4fb1bad 100644
+--- a/README.md
++++ b/README.md
+@@ -149 +148,0 @@ using matched rule and run it. Rules enabled by default:
+-* `git_checkout` &ndash; creates the branch before checking-out;
+@@ -155,0 +155 @@ using matched rule and run it. Rules enabled by default:
++* `man_no_space` &ndash; fixes man commands without spaces, for example `mandiff`;
+@@ -197 +197 @@ def get_new_command(command, settings):
+-    
++
+@@ -203 +203 @@ def side_effect(command, settings):
+-    
++
+diff --git a/README.md b/README.md
+index ee52858..252ff7b 100644
+--- a/README.md
++++ b/README.md
+@@ -148,0 +149 @@ using matched rule and run it. Rules enabled by default:
++* `git_checkout` &ndash; creates the branch before checking-out;
+diff --git a/README.md b/README.md
+index 07ec8bb..ee52858 100644
+--- a/README.md
++++ b/README.md
+@@ -216 +216,2 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `no_colors` &ndash; disable colored output.
++* `no_colors` &ndash; disable colored output;
++* `priority` &ndash; dict with rules priorities, rule with lower `priority` will be matched first.
+@@ -224,0 +226 @@ no_colors = False
++priority = {'sudo': 100, 'no_command': 9999}
+@@ -232 +234,3 @@ Or via environment variables:
+-* `THEFUCK_NO_COLORS` &ndash; disable colored output, `true/false`.
++* `THEFUCK_NO_COLORS` &ndash; disable colored output, `true/false`;
++* `THEFUCK_PRIORITY` &ndash; priority of the rules, like `no_command=9999:apt_get=100`,
++rule with lower `priority` will be matched first.
+@@ -240,0 +245 @@ export THEFUCK_NO_COLORS='false'
++export THEFUCK_PRIORITY='no_command=9999:apt_get=100'
+diff --git a/README.md b/README.md
+index d7ed591..07ec8bb 100644
+--- a/README.md
++++ b/README.md
+@@ -201,0 +202,2 @@ def side_effect(command, settings):
++    
++priority = 1000  # Lower first
+diff --git a/README.md b/README.md
+index 54dd882..d7ed591 100644
+--- a/README.md
++++ b/README.md
+@@ -147,0 +148 @@ using matched rule and run it. Rules enabled by default:
++* `git_add` &ndash; fix *"Did you forget to 'git add'?"*;
+diff --git a/README.md b/README.md
+index b0830ff..54dd882 100644
+--- a/README.md
++++ b/README.md
+@@ -153,0 +154 @@ using matched rule and run it. Rules enabled by default:
++* `pacman` &ndash; installs app with `pacman` or `yaourt` if it is not installed;
+diff --git a/README.md b/README.md
+index a2630bf..b0830ff 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++**Aliases changed in 1.34.**
++
+diff --git a/README.md b/README.md
+index 63abba4..a2630bf 100644
+--- a/README.md
++++ b/README.md
+@@ -105 +105 @@ sudo pip install thefuck
+-And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
++And add to `.bashrc` or `.bash_profile`(for OSX):
+@@ -108 +108 @@ And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+-alias fuck='eval $(thefuck $(fc -ln -1))'
++alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+@@ -112,0 +113,6 @@ alias FUCK='fuck'
++Or in your `.zshrc`:
++
++```bash
++alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
++```
++
+diff --git a/README.md b/README.md
+index a25d601..63abba4 100644
+--- a/README.md
++++ b/README.md
+@@ -152 +152,4 @@ using matched rule and run it. Rules enabled by default:
+-* `switch_layout` &ndash; switches command from your local layout to en.
++* `switch_layout` &ndash; switches command from your local layout to en;
++* `apt_get` &ndash; installs app from apt if it not installed;
++* `brew_install` &ndash; fixes formula name for `brew install`;
++* `composer_not_command` &ndash; fixes composer command name.
+diff --git a/README.md b/README.md
+index 9a13e72..a25d601 100644
+--- a/README.md
++++ b/README.md
+@@ -164,0 +165,3 @@ and `get_new_command(command: Command, settings: Settings) -> str`.
++Also the rule can contain optional function
++`side_effect(command: Command, settings: Settings) -> None` and
++optional boolean `enabled_by_default`
+@@ -179,0 +183,6 @@ def get_new_command(command, settings):
++    
++# Optional:
++enabled_by_default = True
++
++def side_effect(command, settings):
++    subprocess.call('chmod 777 .', shell=True)
+diff --git a/README.md b/README.md
+index 502a6be..9a13e72 100644
+--- a/README.md
++++ b/README.md
+@@ -112,0 +113,6 @@ alias FUCK='fuck'
++Alternatively, you can redirect the output of `thefuck-alias`:
++
++```bash
++thefuck-alias >> ~/.bashrc
++```
++
+@@ -203 +209 @@ Or via environment variables:
+- 
++
+diff --git a/README.md b/README.md
+index 1843ef4..502a6be 100644
+--- a/README.md
++++ b/README.md
+@@ -113 +113 @@ alias FUCK='fuck'
+-[On in your shell config (Bash, Zsh, Fish, Powershell).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
++[Or in your shell config (Bash, Zsh, Fish, Powershell).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
+diff --git a/README.md b/README.md
+index 8f7b254..1843ef4 100644
+--- a/README.md
++++ b/README.md
+@@ -90,0 +91 @@ Reading package lists... Done
++- python (2.7+ or 3.3+)
+@@ -92 +92,0 @@ Reading package lists... Done
+-- python
+diff --git a/README.md b/README.md
+index 2e7be32..8f7b254 100644
+--- a/README.md
++++ b/README.md
+@@ -91 +90,0 @@ Reading package lists... Done
+-- python (2.7+ or 3.3+)
+@@ -92,0 +92 @@ Reading package lists... Done
++- python
+@@ -187,0 +188,9 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
++Example of `settings.py`:
++
++```python
++rules = ['sudo', 'no_command']
++require_confirmation = True
++wait_command = 10
++no_colors = False
++```
++
+@@ -193,0 +203,9 @@ Or via environment variables:
++ 
++For example:
++
++```bash
++export THEFUCK_RULES='sudo:no_command'
++export THEFUCK_REQUIRE_CONFIRMATION='true'
++export THEFUCK_WAIT_COMMAND=10
++export THEFUCK_NO_COLORS='false'
++```
+diff --git a/README.md b/README.md
+index 5cf2097..2e7be32 100644
+--- a/README.md
++++ b/README.md
+@@ -90,0 +91 @@ Reading package lists... Done
++- python (2.7+ or 3.3+)
+@@ -92 +92,0 @@ Reading package lists... Done
+-- python
+diff --git a/README.md b/README.md
+index a100c2e..5cf2097 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ sudo pip install thefuck
+-[Or using an OS package manager (OS X, Ubuntu, Arch).](/wiki/Installation)
++[Or using an OS package manager (OS X, Ubuntu, Arch).](https://github.com/nvbn/thefuck/wiki/Installation)
+@@ -113 +113 @@ alias FUCK='fuck'
+-[On in your shell config (Bash, Zsh, Fish, Powershell).](/wiki/Shell-aliases)
++[On in your shell config (Bash, Zsh, Fish, Powershell).](https://github.com/nvbn/thefuck/wiki/Shell-aliases)
+diff --git a/README.md b/README.md
+index 1b3fe9a..a100c2e 100644
+--- a/README.md
++++ b/README.md
+@@ -113,19 +113 @@ alias FUCK='fuck'
+-Or in `config.fish`:
+-
+-```fish
+-function fuck
+-    eval (thefuck $history[1])
+-end
+-```
+-
+-Or in your Powershell `$PROFILE` on Windows:
+-
+-```powershell
+-function fuck {
+-    $fuck = $(thefuck (get-history -count 1).commandline)
+-    if($fuck.startswith("echo")) {
+-        $fuck.substring(5)
+-    }
+-    else { iex "$fuck" }
+-}
+-```
++[On in your shell config (Bash, Zsh, Fish, Powershell).](/wiki/Shell-aliases)
+diff --git a/README.md b/README.md
+index 1c01c8b..1b3fe9a 100644
+--- a/README.md
++++ b/README.md
+@@ -103,5 +103 @@ sudo pip install thefuck
+-**Unofficial**: Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
+-
+-```bash
+-brew install thefuck
+-```
++[Or using an OS package manager (OS X, Ubuntu, Arch).](/wiki/Installation)
+diff --git a/README.md b/README.md
+index 9f55b53..1c01c8b 100644
+--- a/README.md
++++ b/README.md
+@@ -103 +103 @@ sudo pip install thefuck
+-**Unoffical**: Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
++**Unofficial**: Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
+diff --git a/README.md b/README.md
+index 85cbdbb..9f55b53 100644
+--- a/README.md
++++ b/README.md
+@@ -159 +158,0 @@ using matched rule and run it. Rules enabled by default:
+-* `ls_lah` &ndash; adds -lah to ls;
+@@ -172,0 +172 @@ Bundled, but not enabled by default:
++* `ls_lah` &ndash; adds -lah to ls;
+diff --git a/README.md b/README.md
+index df98303..85cbdbb 100644
+--- a/README.md
++++ b/README.md
+@@ -158,0 +159 @@ using matched rule and run it. Rules enabled by default:
++* `ls_lah` &ndash; adds -lah to ls;
+diff --git a/README.md b/README.md
+index fa45de8..df98303 100644
+--- a/README.md
++++ b/README.md
+@@ -103,7 +103 @@ sudo pip install thefuck
+-If it fails try to use `easy_install`:
+-
+-```bash
+-sudo easy_install thefuck
+-```
+-
+-Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
++**Unoffical**: Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
+diff --git a/README.md b/README.md
+index d644b0c..fa45de8 100644
+--- a/README.md
++++ b/README.md
+@@ -127 +127 @@ function fuck
+-    eval (thefuck $history[2])
++    eval (thefuck $history[1])
+diff --git a/README.md b/README.md
+index a8d65a6..d644b0c 100644
+--- a/README.md
++++ b/README.md
+@@ -127 +127 @@ function fuck
+-    eval (thefuck $history[1])
++    eval (thefuck $history[2])
+@@ -158,0 +159 @@ using matched rule and run it. Rules enabled by default:
++* `cd_mkdir` &ndash; creates directories before cd'ing into them;
+@@ -164 +164,0 @@ using matched rule and run it. Rules enabled by default:
+-* `ls_lah` &ndash; adds -lah to ls;
+diff --git a/README.md b/README.md
+index da503ab..a8d65a6 100644
+--- a/README.md
++++ b/README.md
+@@ -127 +127 @@ function fuck
+-    eval (thefuck $history[2])
++    eval (thefuck $history[1])
+@@ -163,0 +164 @@ using matched rule and run it. Rules enabled by default:
++* `ls_lah` &ndash; adds -lah to ls;
+diff --git a/README.md b/README.md
+index 2a63b7d..da503ab 100644
+--- a/README.md
++++ b/README.md
+@@ -127 +127 @@ function fuck
+-    eval (thefuck $history[1])
++    eval (thefuck $history[2])
+diff --git a/README.md b/README.md
+index b492538..2a63b7d 100644
+--- a/README.md
++++ b/README.md
+@@ -159,0 +160 @@ using matched rule and run it. Rules enabled by default:
++* `fix_alt_space` &ndash; replaces Alt+Space with Space character;
+diff --git a/README.md b/README.md
+index 05d44dd..b492538 100644
+--- a/README.md
++++ b/README.md
+@@ -118,2 +118,2 @@ And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+-alias fuck='$(thefuck $(fc -ln -1))'
+-# You can use whatever you want as an alias, like for mondays:
++alias fuck='eval $(thefuck $(fc -ln -1))'
++# You can use whatever you want as an alias, like for Mondays:
+diff --git a/README.md b/README.md
+index 5ac6691..05d44dd 100644
+--- a/README.md
++++ b/README.md
+@@ -156,0 +157 @@ using matched rule and run it. Rules enabled by default:
++* `brew_unknown_command` &ndash; fixes wrong brew commands, for example `brew docto/brew doctor`;
+diff --git a/README.md b/README.md
+index f2137f8..5ac6691 100644
+--- a/README.md
++++ b/README.md
+@@ -118,2 +118,2 @@ And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+-alias fuck='eval $(thefuck $(fc -ln -1))'
+-# You can use whatever you want as an alias, like for Mondays:
++alias fuck='$(thefuck $(fc -ln -1))'
++# You can use whatever you want as an alias, like for mondays:
+@@ -134 +134 @@ Or in your Powershell `$PROFILE` on Windows:
+-function fuck { 
++function fuck {
+@@ -136,4 +136,4 @@ function fuck {
+-    if($fuck.startswith("echo")) { 
+-        $fuck.substring(5) 
+-    } 
+-    else { iex "$fuck" } 
++    if($fuck.startswith("echo")) {
++        $fuck.substring(5)
++    }
++    else { iex "$fuck" }
+@@ -164,0 +165 @@ using matched rule and run it. Rules enabled by default:
++* `pip_unknown_command` &ndash; fixes wrong pip commands, for example `pip instatl/pip install`;
+@@ -165,0 +167 @@ using matched rule and run it. Rules enabled by default:
++* `sl_ls` &ndash; changes `sl` to `ls`;
+@@ -206 +208 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; require confirmation before running new command, by default `False`; 
++* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
+diff --git a/README.md b/README.md
+index e822cc7..f2137f8 100644
+--- a/README.md
++++ b/README.md
+@@ -118,2 +118,2 @@ And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+-alias fuck='$(thefuck $(fc -ln -1))'
+-# You can use whatever you want as an alias, like for mondays:
++alias fuck='eval $(thefuck $(fc -ln -1))'
++# You can use whatever you want as an alias, like for Mondays:
+@@ -157 +156,0 @@ using matched rule and run it. Rules enabled by default:
+-* `brew_unknown_command` &ndash; fixes wrong brew commands, for example `brew docto/brew doctor`;
+diff --git a/README.md b/README.md
+index 372bafe..e822cc7 100644
+--- a/README.md
++++ b/README.md
+@@ -134 +134 @@ Or in your Powershell `$PROFILE` on Windows:
+-function fuck {
++function fuck { 
+@@ -136,4 +136,4 @@ function fuck {
+-    if($fuck.startswith("echo")) {
+-        $fuck.substring(5)
+-    }
+-    else { iex "$fuck" }
++    if($fuck.startswith("echo")) { 
++        $fuck.substring(5) 
++    } 
++    else { iex "$fuck" } 
+@@ -156,0 +157 @@ using matched rule and run it. Rules enabled by default:
++* `brew_unknown_command` &ndash; fixes wrong brew commands, for example `brew docto/brew doctor`;
+@@ -165 +165,0 @@ using matched rule and run it. Rules enabled by default:
+-* `pip_unknown_command` &ndash; fixes wrong pip commands, for example `pip instatl/pip install`;
+@@ -207 +207 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
++* `require_confirmation` &ndash; require confirmation before running new command, by default `False`; 
+diff --git a/README.md b/README.md
+index ec680ef..372bafe 100644
+--- a/README.md
++++ b/README.md
+@@ -134 +134 @@ Or in your Powershell `$PROFILE` on Windows:
+-function fuck { 
++function fuck {
+@@ -136,4 +136,4 @@ function fuck {
+-    if($fuck.startswith("echo")) { 
+-        $fuck.substring(5) 
+-    } 
+-    else { iex "$fuck" } 
++    if($fuck.startswith("echo")) {
++        $fuck.substring(5)
++    }
++    else { iex "$fuck" }
+@@ -164,0 +165 @@ using matched rule and run it. Rules enabled by default:
++* `pip_unknown_command` &ndash; fixes wrong pip commands, for example `pip instatl/pip install`;
+@@ -166 +166,0 @@ using matched rule and run it. Rules enabled by default:
+-* `sl_ls` &ndash; changes `sl` to `ls`;
+@@ -207 +207 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `require_confirmation` &ndash; require confirmation before running new command, by default `False`; 
++* `require_confirmation` &ndash; require confirmation before running new command, by default `False`;
+diff --git a/README.md b/README.md
+index 6d584ed..ec680ef 100644
+--- a/README.md
++++ b/README.md
+@@ -165,0 +166 @@ using matched rule and run it. Rules enabled by default:
++* `sl_ls` &ndash; changes `sl` to `ls`;
+diff --git a/README.md b/README.md
+index ce66738..6d584ed 100644
+--- a/README.md
++++ b/README.md
+@@ -205 +205 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT`;
++* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT_RULES`;
+@@ -212 +212 @@ Or via environment variables:
+-* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT:rm_root` or `sudo:no_command`;
++* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
+diff --git a/README.md b/README.md
+index 975bf1d..ce66738 100644
+--- a/README.md
++++ b/README.md
+@@ -184 +184 @@ and `get_new_command(command: Command, settings: Settings) -> str`.
+-`Settings` is `~/.thefuck/settings.py`.
++`Settings` is a special object filled with `~/.thefuck/settings.py` and values from env, [more](#settings).
+diff --git a/README.md b/README.md
+index 8b98fec..975bf1d 100644
+--- a/README.md
++++ b/README.md
+@@ -108,0 +109,6 @@ sudo easy_install thefuck
++Or using an OS package manager (currently supported in OSX via [brew](http://brew.sh)):
++
++```bash
++brew install thefuck
++```
++
+@@ -199 +205 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT_RULES`;
++* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT`;
+@@ -206 +212 @@ Or via environment variables:
+-* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
++* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT:rm_root` or `sudo:no_command`;
+diff --git a/README.md b/README.md
+index 650ea8d..8b98fec 100644
+--- a/README.md
++++ b/README.md
+@@ -199 +199 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT`;
++* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT_RULES`;
+@@ -206 +206 @@ Or via environment variables:
+-* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT:rm_root` or `sudo:no_command`;
++* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT_RULES:rm_root` or `sudo:no_command`;
+diff --git a/README.md b/README.md
+index aaaa46a..650ea8d 100644
+--- a/README.md
++++ b/README.md
+@@ -199 +199 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `rules` &ndash; list of enabled rules, by default all;
++* `rules` &ndash; list of enabled rules, by default `thefuck.conf.DEFAULT`;
+@@ -203,0 +204,7 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
++Or via environment variables:
++
++* `THEFUCK_RULES` &ndash; list of enabled rules, like `DEFAULT:rm_root` or `sudo:no_command`;
++* `THEFUCK_REQUIRE_CONFIRMATION` &ndash; require confirmation before running new command, `true/false`;
++* `THEFUCK_WAIT_COMMAND` &ndash; max amount of time in seconds for getting previous command output;
++* `THEFUCK_NO_COLORS` &ndash; disable colored output, `true/false`.
++
+diff --git a/README.md b/README.md
+index 620d236..aaaa46a 100644
+--- a/README.md
++++ b/README.md
+@@ -160,0 +161 @@ using matched rule and run it. Rules enabled by default:
++* `ssh_known_hosts` &ndash; removes host from `known_hosts` on warning;
+diff --git a/README.md b/README.md
+index f18fafb..620d236 100644
+--- a/README.md
++++ b/README.md
+@@ -163,0 +164,4 @@ using matched rule and run it. Rules enabled by default:
++Bundled, but not enabled by default:
++
++* `rm_root` &ndash; adds `--no-preserve-root` to `rm -rf /` command.
++
+diff --git a/README.md b/README.md
+index a512855..f18fafb 100644
+--- a/README.md
++++ b/README.md
+@@ -196 +196,2 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `wait_command` &ndash; max amount of time in seconds for getting previous command output.
++* `wait_command` &ndash; max amount of time in seconds for getting previous command output;
++* `no_colors` &ndash; disable colored output.
+diff --git a/README.md b/README.md
+index 2c0109f..a512855 100644
+--- a/README.md
++++ b/README.md
+@@ -74 +74 @@ REPL-y 0.3.1
+-If you are scary to blindly run changed command, there's `require_confirmation`
++If you are scared to blindly run changed command, there's `require_confirmation`
+diff --git a/README.md b/README.md
+index 56e7bb8..2c0109f 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75 @@ If you are scary to blindly run changed command, there's `require_confirmation`
+-[settings](#Settings) option:
++[settings](#settings) option:
+diff --git a/README.md b/README.md
+index 60efa2a..56e7bb8 100644
+--- a/README.md
++++ b/README.md
+@@ -196,3 +196 @@ The Fuck has a few settings parameters, they can be changed in `~/.thefuck/setti
+-* `wait_command` &ndash; max amount of time in seconds for getting previous command output;
+-* `command_not_found` &ndash; path to `command_not_found` binary,
+-by default `/usr/lib/command-not-found`.
++* `wait_command` &ndash; max amount of time in seconds for getting previous command output.
+diff --git a/README.md b/README.md
+index 6bfafd6..60efa2a 100644
+--- a/README.md
++++ b/README.md
+@@ -161 +161,2 @@ using matched rule and run it. Rules enabled by default:
+-* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.
++* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions;
++* `switch_layout` &ndash; switches command from your local layout to en.
+diff --git a/README.md b/README.md
+index 0749d7e..6bfafd6 100644
+--- a/README.md
++++ b/README.md
+@@ -151,0 +152 @@ using matched rule and run it. Rules enabled by default:
++* `cp_omitting_directory` &ndash; adds `-a` when you `cp` directory;
+@@ -153,0 +155,3 @@ using matched rule and run it. Rules enabled by default:
++* `has_exists_script` &ndash; prepends `./` when script/binary exists;
++* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`;
++* `mkdir_p` &ndash; adds `-p` when you trying to create directory without parent;
+@@ -155,2 +159,3 @@ using matched rule and run it. Rules enabled by default:
+-* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions;
+-* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.
++* `python_command` &ndash; prepends `python` when you trying to run not executable/without `./` python script;
++* `rm_dir` &ndash; adds `-rf` when you trying to remove directory;
++* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.
+diff --git a/README.md b/README.md
+index 8f4be82..0749d7e 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68 @@ ➜ fuck
++lein repl
+@@ -72,0 +74,15 @@ REPL-y 0.3.1
++If you are scary to blindly run changed command, there's `require_confirmation`
++[settings](#Settings) option:
++
++```bash
++➜ apt-get install vim
++E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
++E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
++
++➜ fuck
++sudo apt-get install vim [Enter/Ctrl+C]
++[sudo] password for nvbn:
++Reading package lists... Done
++...
++```
++
+@@ -170 +186 @@ def get_new_command(command, settings):
+-The Fuck has a few settings parameters:
++The Fuck has a few settings parameters, they can be changed in `~/.thefuck/settings.py`:
+@@ -172,0 +189 @@ The Fuck has a few settings parameters:
++* `require_confirmation` &ndash; require confirmation before running new command, by default `False`; 
+diff --git a/README.md b/README.md
+index ab55b2d..8f4be82 100644
+--- a/README.md
++++ b/README.md
+@@ -192,0 +193 @@ py.test
++Project License can be found [here](LICENSE.md).
+diff --git a/README.md b/README.md
+index ccbfab0..ab55b2d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,2 +4,2 @@ Magnificent app which corrects your previous console command,
+-inspired by [@liamosaur](https://twitter.com/liamosaur/status/506975850596536320)
+-twit.
++inspired by a [@liamosaur](https://twitter.com/liamosaur/)
++[tweet](https://twitter.com/liamosaur/status/506975850596536320).
+@@ -193 +192,0 @@ py.test
+-Project License can be found [here](LICENSE.md).
+diff --git a/README.md b/README.md
+index d32d682..ccbfab0 100644
+--- a/README.md
++++ b/README.md
+@@ -192,0 +193 @@ py.test
++Project License can be found [here](LICENSE.md).
+diff --git a/README.md b/README.md
+index 10e0cfa..d32d682 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ function fuck {
+-Changes will available only in a new shell session.
++Changes will be available only in a new shell session.
+@@ -149 +149 @@ and `get_new_command(command: Command, settings: Settings) -> str`.
+-`Command` have three attributes: `script`, `stdout` and `stderr`.
++`Command` has three attributes: `script`, `stdout` and `stderr`.
+@@ -170 +170 @@ def get_new_command(command, settings):
+-The Fuck have a few settings parameters:
++The Fuck has a few settings parameters:
+diff --git a/README.md b/README.md
+index 14047d0..10e0cfa 100644
+--- a/README.md
++++ b/README.md
+@@ -93 +93 @@ sudo easy_install thefuck
+-And add to `.bashrc` or `.zshrc`:
++And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+@@ -109 +109,13 @@ end
+-Changes will be available only in a new shell session.
++Or in your Powershell `$PROFILE` on Windows:
++
++```powershell
++function fuck { 
++    $fuck = $(thefuck (get-history -count 1).commandline)
++    if($fuck.startswith("echo")) { 
++        $fuck.substring(5) 
++    } 
++    else { iex "$fuck" } 
++}
++```
++
++Changes will available only in a new shell session.
+@@ -137 +149 @@ and `get_new_command(command: Command, settings: Settings) -> str`.
+-`Command` has three attributes: `script`, `stdout` and `stderr`.
++`Command` have three attributes: `script`, `stdout` and `stderr`.
+@@ -158 +170 @@ def get_new_command(command, settings):
+-The Fuck has a few settings parameters:
++The Fuck have a few settings parameters:
+diff --git a/README.md b/README.md
+index b775db5..14047d0 100644
+--- a/README.md
++++ b/README.md
+@@ -93 +93 @@ sudo easy_install thefuck
+-And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
++And add to `.bashrc` or `.zshrc`:
+@@ -109 +109 @@ end
+-Changes will available only in a new shell session.
++Changes will be available only in a new shell session.
+@@ -137 +137 @@ and `get_new_command(command: Command, settings: Settings) -> str`.
+-`Command` have three attributes: `script`, `stdout` and `stderr`.
++`Command` has three attributes: `script`, `stdout` and `stderr`.
+@@ -158 +158 @@ def get_new_command(command, settings):
+-The Fuck have a few settings parameters:
++The Fuck has a few settings parameters:
+diff --git a/README.md b/README.md
+index c4a22dc..b775db5 100644
+--- a/README.md
++++ b/README.md
+@@ -93 +93 @@ sudo easy_install thefuck
+-And add to `.bashrc` or `.zshrc`:
++And add to `.bashrc` or `.zshrc` or `.bash_profile`(for OSX):
+@@ -109,12 +108,0 @@ end
+-Or in your Powershell `$PROFILE` on Windows:
+-
+-```powershell
+-function fuck { 
+-    $fuck = $(thefuck (get-history -count 1).commandline)
+-    if($fuck.startswith("echo")) { 
+-        $fuck.substring(5) 
+-    } 
+-    else { iex "$fuck" } 
+-}
+-```
+-
+diff --git a/README.md b/README.md
+index d073ced..c4a22dc 100644
+--- a/README.md
++++ b/README.md
+@@ -108,0 +109,12 @@ end
++Or in your Powershell `$PROFILE` on Windows:
++
++```powershell
++function fuck { 
++    $fuck = $(thefuck (get-history -count 1).commandline)
++    if($fuck.startswith("echo")) { 
++        $fuck.substring(5) 
++    } 
++    else { iex "$fuck" } 
++}
++```
++
+diff --git a/README.md b/README.md
+index 4af975e..d073ced 100644
+--- a/README.md
++++ b/README.md
+@@ -72,0 +73,6 @@ REPL-y 0.3.1
++## Requirements
++
++- pip
++- python
++- python-dev
++
+@@ -104,0 +111,7 @@ Changes will available only in a new shell session.
++
++## Update
++
++```bash
++sudo pip install thefuck --upgrade
++```
++
+diff --git a/README.md b/README.md
+index caff1ed..4af975e 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ Reading package lists... Done
++```
+@@ -19,0 +21 @@ Reading package lists... Done
++```bash
+@@ -30,0 +33 @@ Counting objects: 9, done.
++```
+@@ -31,0 +35 @@ Counting objects: 9, done.
++```bash
+@@ -41,0 +46 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++```
+@@ -42,0 +48 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++```bash
+@@ -51,0 +58 @@ git branch
++```
+@@ -52,0 +60 @@ git branch
++```bash
+@@ -65,6 +72,0 @@ REPL-y 0.3.1
+-## Requirements
+-
+-- pip
+-- python
+-- python-dev
+-
+@@ -103,7 +104,0 @@ Changes will available only in a new shell session.
+-
+-## Update
+-
+-```bash
+-sudo pip install thefuck --upgrade
+-```
+-
+@@ -114,0 +110 @@ using matched rule and run it. Rules enabled by default:
++* `cd_parent` &ndash; changes `cd..` to `cd ..`;
+@@ -119 +115 @@ using matched rule and run it. Rules enabled by default:
+-* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.  
++* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.
+diff --git a/README.md b/README.md
+index 6bcf4a8..caff1ed 100644
+--- a/README.md
++++ b/README.md
+@@ -64,0 +65,6 @@ REPL-y 0.3.1
++## Requirements
++
++- pip
++- python
++- python-dev
++
+@@ -96,0 +103,7 @@ Changes will available only in a new shell session.
++
++## Update
++
++```bash
++sudo pip install thefuck --upgrade
++```
++
+@@ -102 +114,0 @@ using matched rule and run it. Rules enabled by default:
+-* `cd_parent` &ndash; changes `cd..` to `cd ..`;
+@@ -107 +119 @@ using matched rule and run it. Rules enabled by default:
+-* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.
++* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.  
+diff --git a/README.md b/README.md
+index f6608f1..6bcf4a8 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +18,0 @@ Reading package lists... Done
+-```
+@@ -21 +19,0 @@ Reading package lists... Done
+-```bash
+@@ -33 +30,0 @@ Counting objects: 9, done.
+-```
+@@ -35 +31,0 @@ Counting objects: 9, done.
+-```bash
+@@ -46 +41,0 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
+-```
+@@ -48 +42,0 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
+-```bash
+@@ -58 +51,0 @@ git branch
+-```
+@@ -60 +52,0 @@ git branch
+-```bash
+@@ -109,0 +102 @@ using matched rule and run it. Rules enabled by default:
++* `cd_parent` &ndash; changes `cd..` to `cd ..`;
+@@ -114 +107 @@ using matched rule and run it. Rules enabled by default:
+-* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.  
++* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.
+diff --git a/README.md b/README.md
+index d9071a2..f6608f1 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ Reading package lists... Done
++```
+@@ -19,0 +21 @@ Reading package lists... Done
++```bash
+@@ -30,0 +33 @@ Counting objects: 9, done.
++```
+@@ -31,0 +35 @@ Counting objects: 9, done.
++```bash
+@@ -41,0 +46 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++```
+@@ -42,0 +48 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++```bash
+@@ -51,0 +58 @@ git branch
++```
+@@ -52,0 +60 @@ git branch
++```bash
+diff --git a/README.md b/README.md
+index 870897d..d9071a2 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ If it fails try to use `easy_install`:
+-sudo easy_intall thefuck
++sudo easy_install thefuck
+diff --git a/README.md b/README.md
+index 656de2b..870897d 100644
+--- a/README.md
++++ b/README.md
+@@ -105 +105,2 @@ using matched rule and run it. Rules enabled by default:
+-* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.  
++* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions;
++* `lein_not_task` &ndash; fixes wrong `lein` tasks like `lein rpl`.  
+diff --git a/README.md b/README.md
+index b4673ce..656de2b 100644
+--- a/README.md
++++ b/README.md
+@@ -94,0 +95,2 @@ end
++Changes will available only in a new shell session.
++
+diff --git a/README.md b/README.md
+index 340dcea..b4673ce 100644
+--- a/README.md
++++ b/README.md
+@@ -51,0 +52,11 @@ git branch
++
++➜ lein rpl
++'rpl' is not a task. See 'lein help'.
++
++Did you mean this?
++         repl
++
++➜ fuck
++nREPL server started on port 54848 on host 127.0.0.1 - nrepl://127.0.0.1:54848
++REPL-y 0.3.1
++...
+@@ -84,2 +94,0 @@ end
+-Changes will available only in a new shell session.
+-
+diff --git a/README.md b/README.md
+index 8815a69..340dcea 100644
+--- a/README.md
++++ b/README.md
+@@ -83,0 +84,2 @@ end
++Changes will available only in a new shell session.
++
+diff --git a/README.md b/README.md
+index e799f60..8815a69 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-# You can use wahtever you want for as an alias, like for mondays:
++# You can use whatever you want as an alias, like for mondays:
+diff --git a/README.md b/README.md
+index ebfaa7b..e799f60 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-# You can use whatever you want as an alias, like for mondays:
++# You can use wahtever you want for as an alias, like for mondays:
+@@ -124,0 +125 @@ The Fuck have a few settings parameters:
++* `wait_command` &ndash; max amount of time in seconds for getting previous command output;
+diff --git a/README.md b/README.md
+index 9cdbfb6..ebfaa7b 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-# You can use wahtever you want for as an alias, like for mondays:
++# You can use whatever you want as an alias, like for mondays:
+diff --git a/README.md b/README.md
+index a0c87da..9cdbfb6 100644
+--- a/README.md
++++ b/README.md
+@@ -80 +80 @@ function fuck
+-    thefuck $history[2] | source
++    eval (thefuck $history[1])
+diff --git a/README.md b/README.md
+index 1b1740e..a0c87da 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-# When you really need it
++# You can use wahtever you want for as an alias, like for mondays:
+diff --git a/README.md b/README.md
+index 0a4af7f..1b1740e 100644
+--- a/README.md
++++ b/README.md
+@@ -71,0 +72,2 @@ alias fuck='$(thefuck $(fc -ln -1))'
++# When you really need it
++alias FUCK='fuck'
+diff --git a/README.md b/README.md
+index 8845cf7..0a4af7f 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ git branch
+-Install `The Fuck`:
++Install `The Fuck` with `pip`:
+@@ -61,0 +62,6 @@ sudo pip install thefuck
++If it fails try to use `easy_install`:
++
++```bash
++sudo easy_intall thefuck
++```
++
+@@ -66,2 +71,0 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-# When you really need it
+-alias FUCK='fuck'
+diff --git a/README.md b/README.md
+index 29f4093..8845cf7 100644
+--- a/README.md
++++ b/README.md
+@@ -65,0 +66,2 @@ alias fuck='$(thefuck $(fc -ln -1))'
++# When you really need it
++alias FUCK='fuck'
+diff --git a/README.md b/README.md
+index 0004bc7..29f4093 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ function fuck
+-    eval (thefuck (history | head -n1))
++    thefuck $history[2] | source
+diff --git a/README.md b/README.md
+index dbab195..0004bc7 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68,18 @@ alias fuck='$(thefuck $(fc -ln -1))'
++Or in `config.fish`:
++
++```fish
++function fuck
++    eval (thefuck (history | head -n1))
++end
++```
++
++## How it works
++
++The Fuck tries to match rule for the previous command, create new command
++using matched rule and run it. Rules enabled by default:
++
++* `git_no_command` &ndash; fixes wrong git commands like `git brnch`;
++* `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
++* `no_command` &ndash; fixes wrong console commands, for example `vom/vim`;
++* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.  
++
+@@ -115,0 +134,2 @@ py.test
++
++## License MIT
+diff --git a/README.md b/README.md
+index f87a1bb..dbab195 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15,2 @@ ➜ fuck
+-[sudo] password for nvbn: 
++sudo apt-get install vim
++[sudo] password for nvbn:
+@@ -26,0 +28 @@ ➜ fuck
++git push --set-upstream origin master
+@@ -36,0 +39 @@ ➜ fuck
++python
+@@ -46,0 +50 @@ ➜ fuck
++git branch
+@@ -64,18 +67,0 @@ alias fuck='$(thefuck $(fc -ln -1))'
+-Or in `config.fish`:
+-
+-```fish
+-function fuck
+-    eval (thefuck (history | head -n1))
+-end
+-```
+-
+-## How it works
+-
+-The Fuck tries to match rule for the previous command, create new command
+-using matched rule and run it. Rules enabled by default:
+-
+-* `git_no_command` &ndash; fixes wrong git commands like `git brnch`;
+-* `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
+-* `no_command` &ndash; fixes wrong console commands, for example `vom/vim`;
+-* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.  
+-
+@@ -130,2 +115,0 @@ py.test
+-
+-## License MIT
+diff --git a/README.md b/README.md
+index ad2e76e..f87a1bb 100644
+--- a/README.md
++++ b/README.md
+@@ -63,0 +64,8 @@ alias fuck='$(thefuck $(fc -ln -1))'
++Or in `config.fish`:
++
++```fish
++function fuck
++    eval (thefuck (history | head -n1))
++end
++```
++
+diff --git a/README.md b/README.md
+index 2877114..ad2e76e 100644
+--- a/README.md
++++ b/README.md
+@@ -63,0 +64,10 @@ alias fuck='$(thefuck $(fc -ln -1))'
++## How it works
++
++The Fuck tries to match rule for the previous command, create new command
++using matched rule and run it. Rules enabled by default:
++
++* `git_no_command` &ndash; fixes wrong git commands like `git brnch`;
++* `git_push` &ndash; adds `--set-upstream origin $branch` to previous failed `git push`;
++* `no_command` &ndash; fixes wrong console commands, for example `vom/vim`;
++* `sudo` &ndash; prepends `sudo` to previous command if it failed because of permissions.  
++
+@@ -111,0 +122,2 @@ py.test
++
++## License MIT
+diff --git a/README.md b/README.md
+index 8b9a6af..2877114 100644
+--- a/README.md
++++ b/README.md
+@@ -88 +88 @@ def get_new_command(command, settings):
+-[utility functions for rules]((https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py)).
++[utility functions for rules](https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py).
+diff --git a/README.md b/README.md
+index 9858b3c..8b9a6af 100644
+--- a/README.md
++++ b/README.md
+@@ -63,0 +64,34 @@ alias fuck='$(thefuck $(fc -ln -1))'
++## Creating your own rules
++
++For adding your own rule you should create `your-rule-name.py`
++in `~/.thefuck/rules`. Rule should contain two functions:
++`match(command: Command, settings: Settings) -> bool`
++and `get_new_command(command: Command, settings: Settings) -> str`.
++
++`Command` have three attributes: `script`, `stdout` and `stderr`.
++
++`Settings` is `~/.thefuck/settings.py`.
++
++Simple example of the rule for running script with `sudo`:
++
++```python
++def match(command, settings):
++    return ('permission denied' in command.stderr.lower()
++            or 'EACCES' in command.stderr)
++
++
++def get_new_command(command, settings):
++    return 'sudo {}'.format(command.script)
++```
++
++[More examples of rules](https://github.com/nvbn/thefuck/tree/master/thefuck/rules),
++[utility functions for rules]((https://github.com/nvbn/thefuck/tree/master/thefuck/utils.py)).
++
++## Settings
++
++The Fuck have a few settings parameters:
++
++* `rules` &ndash; list of enabled rules, by default all;
++* `command_not_found` &ndash; path to `command_not_found` binary,
++by default `/usr/lib/command-not-found`.
++
+diff --git a/README.md b/README.md
+index b597ad3..9858b3c 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Install `The Fuck`:
+-sudo pip3 install thefuck
++sudo pip install thefuck
+@@ -69,2 +69,2 @@ Install `The Fuck` for development:
+-pip3 install -r requirements.txt
+-python3 setup.py develop
++pip install -r requirements.txt
++python setup.py develop
+diff --git a/README.md b/README.md
+index 9112090..b597ad3 100644
+--- a/README.md
++++ b/README.md
+@@ -38,0 +39,9 @@ Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++
++➜ git brnch
++git: 'brnch' is not a git command. See 'git --help'.
++
++Did you mean this?
++	branch
++
++➜ fuck
++* master
+diff --git a/README.md b/README.md
+index 069e0d6..9112090 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# The Fuck
++# The Fuck [![Build Status](https://travis-ci.org/nvbn/thefuck.svg)](https://travis-ci.org/nvbn/thefuck)
+diff --git a/README.md b/README.md
+index 39bfa74..069e0d6 100644
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,10 @@ Counting objects: 9, done.
++
++➜ puthon
++No command 'puthon' found, did you mean:
++ Command 'python' from package 'python-minimal' (main)
++ Command 'python' from package 'python3' (main)
++zsh: command not found: puthon
++
++➜ fuck
++Python 3.4.2 (default, Oct  8 2014, 13:08:17)
++...
+diff --git a/README.md b/README.md
+index 21a6f2b..39bfa74 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,3 @@
+-Magnificent app which corrects your previous console command.
++Magnificent app which corrects your previous console command,
++inspired by [@liamosaur](https://twitter.com/liamosaur/status/506975850596536320)
++twit.

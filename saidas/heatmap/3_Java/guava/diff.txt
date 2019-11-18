@@ -1,0 +1,1104 @@
+diff --git a/README.md b/README.md
+index 54c95805b..3762e2131 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ either of those. These flavors are specified in the Maven version field as
+-either `28.0-jre` or `28.0-android`. For more about depending on
++either `28.1-jre` or `28.1-android`. For more about depending on
+@@ -33 +33 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>28.0-jre</version>
++  <version>28.1-jre</version>
+@@ -35 +35 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>28.0-android</version>
++  <version>28.1-android</version>
+@@ -43 +43 @@ dependencies {
+-  compile 'com.google.guava:guava:28.0-jre'
++  compile 'com.google.guava:guava:28.1-jre'
+@@ -45 +45 @@ dependencies {
+-  api 'com.google.guava:guava:28.0-android'
++  api 'com.google.guava:guava:28.1-android'
+diff --git a/README.md b/README.md
+index c4d122e56..54c95805b 100644
+--- a/README.md
++++ b/README.md
+@@ -67,0 +68 @@ flavor.
++- [guava-announce: Announcements of releases and upcoming significant changes](http://groups.google.com/group/guava-announce)
+diff --git a/README.md b/README.md
+index 6cf6e0ca3..c4d122e56 100644
+--- a/README.md
++++ b/README.md
+@@ -7,3 +7,2 @@ Guava is a set of core libraries that includes new collection types (such as
+-multimap and multiset), immutable collections, a graph library, functional
+-types, an in-memory cache, and APIs/utilities for concurrency, I/O, hashing,
+-primitives, reflection, string processing, and much more!
++multimap and multiset), immutable collections, a graph library, and utilities
++for concurrency, I/O, hashing, primitives, strings, and more!
+diff --git a/README.md b/README.md
+index c063aec5f..6cf6e0ca3 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ either of those. These flavors are specified in the Maven version field as
+-either `27.1-jre` or `27.1-android`. For more about depending on
++either `28.0-jre` or `28.0-android`. For more about depending on
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.1-jre</version>
++  <version>28.0-jre</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.1-android</version>
++  <version>28.0-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:27.1-jre'
++  compile 'com.google.guava:guava:28.0-jre'
+@@ -46 +46 @@ dependencies {
+-  api 'com.google.guava:guava:27.1-android'
++  api 'com.google.guava:guava:28.0-android'
+diff --git a/README.md b/README.md
+index 8434b0a60..c063aec5f 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ either of those. These flavors are specified in the Maven version field as
+-either `27.0.1-jre` or `27.0.1-android`. For more about depending on
++either `27.1-jre` or `27.1-android`. For more about depending on
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.0.1-jre</version>
++  <version>27.1-jre</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.0.1-android</version>
++  <version>27.1-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:27.0.1-jre'
++  compile 'com.google.guava:guava:27.1-jre'
+@@ -46 +46 @@ dependencies {
+-  api 'com.google.guava:guava:27.0.1-android'
++  api 'com.google.guava:guava:27.1-android'
+diff --git a/README.md b/README.md
+index dea66d815..8434b0a60 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ either of those. These flavors are specified in the Maven version field as
+-either `27.0-jre` or `27.0-android`. For more about depending on
++either `27.0.1-jre` or `27.0.1-android`. For more about depending on
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.0-jre</version>
++  <version>27.0.1-jre</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>27.0-android</version>
++  <version>27.0.1-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:27.0-jre'
++  compile 'com.google.guava:guava:27.0.1-jre'
+@@ -46 +46 @@ dependencies {
+-  api 'com.google.guava:guava:27.0-android'
++  api 'com.google.guava:guava:27.0.1-android'
+diff --git a/README.md b/README.md
+index f7a94e5f4..dea66d815 100644
+--- a/README.md
++++ b/README.md
+@@ -88 +88,4 @@ of surprises (like, say, a serious security problem).
+-3. Serialized forms of ALL objects are subject to change unless noted
++3. Guava has one dependency that is needed at runtime:
++`com.google.guava:failureaccess:1.0`
++
++4. Serialized forms of ALL objects are subject to change unless noted
+@@ -92 +95 @@ future version of the library.
+-4. Our classes are not designed to protect against a malicious caller.
++5. Our classes are not designed to protect against a malicious caller.
+@@ -96 +99 @@ untrusted code.
+-5. For the mainline flavor, we unit-test the libraries using only OpenJDK 1.8 on
++6. For the mainline flavor, we unit-test the libraries using only OpenJDK 1.8 on
+diff --git a/README.md b/README.md
+index dfd9eb518..f7a94e5f4 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ either of those. These flavors are specified in the Maven version field as
+-either `26.0-jre` or `26.0-android`. For more about depending on
++either `27.0-jre` or `27.0-android`. For more about depending on
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>26.0-jre</version>
++  <version>27.0-jre</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>26.0-android</version>
++  <version>27.0-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:26.0-jre'
++  compile 'com.google.guava:guava:27.0-jre'
+@@ -46 +46 @@ dependencies {
+-  api 'com.google.guava:guava:26.0-android'
++  api 'com.google.guava:guava:27.0-android'
+diff --git a/README.md b/README.md
+index f2b723b67..dfd9eb518 100644
+--- a/README.md
++++ b/README.md
+@@ -42 +42 @@ To add a dependency using Gradle:
+-```
++```gradle
+diff --git a/README.md b/README.md
+index 549a23960..f2b723b67 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ either of those. These flavors are specified in the Maven version field as
+-either `25.1-jre` or `25.1-android`. For more about depending on
++either `26.0-jre` or `26.0-android`. For more about depending on
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>25.1-jre</version>
++  <version>26.0-jre</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>25.1-android</version>
++  <version>26.0-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:25.1-jre'
++  compile 'com.google.guava:guava:26.0-jre'
+@@ -46 +46 @@ dependencies {
+-  api 'com.google.guava:guava:25.1-android'
++  api 'com.google.guava:guava:26.0-android'
+diff --git a/README.md b/README.md
+index dbbcf6e02..549a23960 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3 @@
++[![Latest release](https://img.shields.io/github/release/google/guava.svg)](https://github.com/google/guava/releases/latest)
+@@ -4 +4,0 @@
+-[![Maven Central](https://img.shields.io/maven-central/v/com.google.guava/guava.svg)](https://mvnrepository.com/artifact/com.google.guava/guava/latest)
+@@ -19 +19 @@ Guava comes in two flavors.
+-## Latest release
++## Adding Guava to your build
+@@ -21,4 +21,6 @@ Guava comes in two flavors.
+-The most recent release is [Guava 25.1][current release], released 2018-05-23.
+-
+-The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `25.1-jre` for the JRE flavor, or `25.1-android` for the Android flavor.
++Guava's Maven group ID is `com.google.guava` and its artifact ID is `guava`.
++Guava provides two different "flavors": one for use on a (Java 8+) JRE and one
++for use on Android or Java 7 or by any library that wants to be compatible with
++either of those. These flavors are specified in the Maven version field as
++either `25.1-jre` or `25.1-android`. For more about depending on
++Guava, see [using Guava in your build].
+@@ -48,2 +49,0 @@ dependencies {
+-For more about depending on Guava, see [Using Guava in your build].
+-
+@@ -101 +100,0 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v25.1
+@@ -109 +108 @@ API level 15 (Ice Cream Sandwich).
+-[Using Guava in your build]: https://github.com/google/guava/wiki/UseGuavaInYourBuild
++[using Guava in your build]: https://github.com/google/guava/wiki/UseGuavaInYourBuild
+diff --git a/README.md b/README.md
+index 3d119821c..dbbcf6e02 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:25.1-android'
++  api 'com.google.guava:guava:25.1-android'
+diff --git a/README.md b/README.md
+index c7eb4b0be..3d119821c 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 25.0][current release], released 2018-04-25.
++The most recent release is [Guava 25.1][current release], released 2018-05-23.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `25.0-jre` for the JRE flavor, or `25.0-android` for the Android flavor.
++version `25.1-jre` for the JRE flavor, or `25.1-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>25.0-jre</version>
++  <version>25.1-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>25.0-android</version>
++  <version>25.1-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:25.0-jre'
++  compile 'com.google.guava:guava:25.1-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:25.0-android'
++  compile 'com.google.guava:guava:25.1-android'
+@@ -101 +101 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v25.0
++[current release]: https://github.com/google/guava/releases/tag/v25.1
+diff --git a/README.md b/README.md
+index fd2b16380..c7eb4b0be 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 24.1][current release], released 2018-03-14.
++The most recent release is [Guava 25.0][current release], released 2018-04-25.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `24.1-jre` for the JRE flavor, or `24.1-android` for the Android flavor.
++version `25.0-jre` for the JRE flavor, or `25.0-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>24.1-jre</version>
++  <version>25.0-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>24.1-android</version>
++  <version>25.0-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:24.1-jre'
++  compile 'com.google.guava:guava:25.0-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:24.1-android'
++  compile 'com.google.guava:guava:25.0-android'
+@@ -101 +101 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v24.1
++[current release]: https://github.com/google/guava/releases/tag/v25.0
+diff --git a/README.md b/README.md
+index ab051c0b5..fd2b16380 100644
+--- a/README.md
++++ b/README.md
+@@ -102,2 +102,2 @@ API level 15 (Ice Cream Sandwich).
+-[guava-snapshot-api-docs]: http://google.github.io/guava/releases/snapshot-jre/api/docs/
+-[guava-snapshot-api-diffs]: http://google.github.io/guava/releases/snapshot-jre/api/diffs/
++[guava-snapshot-api-docs]: https://google.github.io/guava/releases/snapshot-jre/api/docs/
++[guava-snapshot-api-diffs]: https://google.github.io/guava/releases/snapshot-jre/api/diffs/
+diff --git a/README.md b/README.md
+index ae7ab89b2..ab051c0b5 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
++[![Maven Central](https://img.shields.io/maven-central/v/com.google.guava/guava.svg)](https://mvnrepository.com/artifact/com.google.guava/guava/latest)
+diff --git a/README.md b/README.md
+index 84663c378..ae7ab89b2 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 24.0][current release], released 2018-01-31.
++The most recent release is [Guava 24.1][current release], released 2018-03-14.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `24.0-jre` for the JRE flavor, or `24.0-android` for the Android flavor.
++version `24.1-jre` for the JRE flavor, or `24.1-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>24.0-jre</version>
++  <version>24.1-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>24.0-android</version>
++  <version>24.1-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:24.0-jre'
++  compile 'com.google.guava:guava:24.1-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:24.0-android'
++  compile 'com.google.guava:guava:24.1-android'
+@@ -101 +101 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v24.0
++[current release]: https://github.com/google/guava/releases/tag/v24.1
+diff --git a/README.md b/README.md
+index feaf3f723..84663c378 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.6][current release], released 2017-12-20.
++The most recent release is [Guava 24.0][current release], released 2018-01-31.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.6-jre` for the JRE flavor, or `23.6-android` for the Android flavor.
++version `24.0-jre` for the JRE flavor, or `24.0-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.6-jre</version>
++  <version>24.0-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.6-android</version>
++  <version>24.0-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:23.6-jre'
++  compile 'com.google.guava:guava:24.0-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:23.6-android'
++  compile 'com.google.guava:guava:24.0-android'
+@@ -101 +101 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.6
++[current release]: https://github.com/google/guava/releases/tag/v24.0
+diff --git a/README.md b/README.md
+index 4fa94f324..feaf3f723 100644
+--- a/README.md
++++ b/README.md
+@@ -110 +110 @@ API level 15 (Ice Cream Sandwich).
+-[repackage]: https://github.com/google/guava/wiki/UseGuavaInYourBuild#repackaging
++[repackage]: https://github.com/google/guava/wiki/UseGuavaInYourBuild#what-if-i-want-to-use-beta-apis-from-a-library-that-people-use-as-a-dependency
+diff --git a/README.md b/README.md
+index bbd386d80..4fa94f324 100644
+--- a/README.md
++++ b/README.md
+@@ -77 +77 @@ used on the CLASSPATH of users outside your own control), you should
+-not use beta APIs, unless you repackage them (e.g. using ProGuard). **If your
++not use beta APIs, unless you [repackage] them. **If your
+@@ -109,0 +110 @@ API level 15 (Ice Cream Sandwich).
++[repackage]: https://github.com/google/guava/wiki/UseGuavaInYourBuild#repackaging
+diff --git a/README.md b/README.md
+index 114fee862..bbd386d80 100644
+--- a/README.md
++++ b/README.md
+@@ -77 +77,3 @@ used on the CLASSPATH of users outside your own control), you should
+-not use beta APIs, unless you repackage them (e.g. using ProGuard).
++not use beta APIs, unless you repackage them (e.g. using ProGuard). **If your
++code is a library, we strongly recommend using the [Guava Beta Checker] to
++ensure that you do not use any `@Beta` APIs!**
+@@ -102,0 +105 @@ API level 15 (Ice Cream Sandwich).
++[Guava Beta Checker]: https://github.com/google/guava-beta-checker
+diff --git a/README.md b/README.md
+index a6981c3e8..114fee862 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.5][current release], released 2017-11-22.
++The most recent release is [Guava 23.6][current release], released 2017-12-20.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.5-jre` for the JRE flavor, or `23.5-android` for the Android flavor.
++version `23.6-jre` for the JRE flavor, or `23.6-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.5-jre</version>
++  <version>23.6-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.5-android</version>
++  <version>23.6-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:23.5-jre'
++  compile 'com.google.guava:guava:23.6-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:23.5-android'
++  compile 'com.google.guava:guava:23.6-android'
+@@ -99 +99 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.5
++[current release]: https://github.com/google/guava/releases/tag/v23.6
+diff --git a/README.md b/README.md
+index 93b5b4542..a6981c3e8 100644
+--- a/README.md
++++ b/README.md
+@@ -47,0 +48,2 @@ dependencies {
++For more about depending on Guava, see [Using Guava in your build].
++
+@@ -100,0 +103,5 @@ API level 15 (Ice Cream Sandwich).
++
++<!-- References -->
++
++[Using Guava in your build]: https://github.com/google/guava/wiki/UseGuavaInYourBuild
++
+diff --git a/README.md b/README.md
+index 53a6c8b8f..93b5b4542 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.4][current release], released 2017-11-08.
++The most recent release is [Guava 23.5][current release], released 2017-11-22.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.4-jre` for the JRE flavor, or `23.4-android` for the Android flavor.
++version `23.5-jre` for the JRE flavor, or `23.5-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.4-jre</version>
++  <version>23.5-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.4-android</version>
++  <version>23.5-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:23.4-jre'
++  compile 'com.google.guava:guava:23.5-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:23.4-android'
++  compile 'com.google.guava:guava:23.5-android'
+@@ -97 +97 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.4
++[current release]: https://github.com/google/guava/releases/tag/v23.5
+diff --git a/README.md b/README.md
+index 860386981..53a6c8b8f 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.3][current release], released 2017-10-26.
++The most recent release is [Guava 23.4][current release], released 2017-11-08.
+@@ -24 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.3-jre` for the JRE flavor, or `23.3-android` for the Android flavor.
++version `23.4-jre` for the JRE flavor, or `23.4-android` for the Android flavor.
+@@ -32 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.3-jre</version>
++  <version>23.4-jre</version>
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.3-android</version>
++  <version>23.4-android</version>
+@@ -42 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:23.3-jre'
++  compile 'com.google.guava:guava:23.4-jre'
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:23.3-android'
++  compile 'com.google.guava:guava:23.4-android'
+@@ -97 +97 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.3
++[current release]: https://github.com/google/guava/releases/tag/v23.4
+diff --git a/README.md b/README.md
+index e1d3356c2..860386981 100644
+--- a/README.md
++++ b/README.md
+@@ -21,2 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.3][current release], released October 26,
+-2017.
++The most recent release is [Guava 23.3][current release], released 2017-10-26.
+diff --git a/README.md b/README.md
+index 570b1624d..e1d3356c2 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.2][current release], released October 11,
++The most recent release is [Guava 23.3][current release], released October 26,
+@@ -25 +25 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.2-jre` for the JRE flavor, or `23.2-android` for the Android flavor.
++version `23.3-jre` for the JRE flavor, or `23.3-android` for the Android flavor.
+@@ -33 +33 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.2-jre</version>
++  <version>23.3-jre</version>
+@@ -35 +35 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.2-android</version>
++  <version>23.3-android</version>
+@@ -43 +43 @@ dependencies {
+-  compile 'com.google.guava:guava:23.2-jre'
++  compile 'com.google.guava:guava:23.3-jre'
+@@ -45 +45 @@ dependencies {
+-  compile 'com.google.guava:guava:23.2-android'
++  compile 'com.google.guava:guava:23.3-android'
+@@ -60 +60 @@ flavor.
+-- Our users' guide, [Guava Explained][]
++- Our users' guide, [Guava Explained]
+@@ -98 +98 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.2
++[current release]: https://github.com/google/guava/releases/tag/v23.3
+diff --git a/README.md b/README.md
+index 04c4e3790..570b1624d 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.1][current release], released September 27,
++The most recent release is [Guava 23.2][current release], released October 11,
+@@ -25 +25 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.1-jre` for the JRE flavor, or `23.1-android` for the Android flavor.
++version `23.2-jre` for the JRE flavor, or `23.2-android` for the Android flavor.
+@@ -33 +33 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.1-jre</version>
++  <version>23.2-jre</version>
+@@ -35 +35 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.1-android</version>
++  <version>23.2-android</version>
+@@ -43 +43 @@ dependencies {
+-  compile 'com.google.guava:guava:23.1-jre'
++  compile 'com.google.guava:guava:23.2-jre'
+@@ -45 +45 @@ dependencies {
+-  compile 'com.google.guava:guava:23.1-android'
++  compile 'com.google.guava:guava:23.2-android'
+@@ -98 +98 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/releases/tag/v23.1
++[current release]: https://github.com/google/guava/releases/tag/v23.2
+diff --git a/README.md b/README.md
+index 09cc6a79d..04c4e3790 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4 @@
++[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
+diff --git a/README.md b/README.md
+index c207eb0e2..09cc6a79d 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `24.0-SNAPSHOT`, or `24.0-android-SNAPSHOT` for the Android
++using version `HEAD-jre-SNAPSHOT`, or `HEAD-android-SNAPSHOT` for the Android
+@@ -98,2 +98,2 @@ API level 15 (Ice Cream Sandwich).
+-[guava-snapshot-api-docs]: http://google.github.io/guava/releases/snapshot/api/docs/
+-[guava-snapshot-api-diffs]: http://google.github.io/guava/releases/snapshot/api/diffs/
++[guava-snapshot-api-docs]: http://google.github.io/guava/releases/snapshot-jre/api/docs/
++[guava-snapshot-api-diffs]: http://google.github.io/guava/releases/snapshot-jre/api/diffs/
+diff --git a/README.md b/README.md
+index 29fc0577f..c207eb0e2 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Guava comes in two flavors.
+-*   The main flavor requires JDK 1.8 or higher.
++*   The JRE flavor requires JDK 1.8 or higher.
+@@ -20,4 +20,2 @@ Guava comes in two flavors.
+-The most recent release is [Guava 23.0][current release], released August 4, 2017.
+-
+-- 23.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 23.0 API Diffs from 22.0: [guava][guava-release-api-diffs]
++The most recent release is [Guava 23.1][current release], released September 27,
++2017.
+@@ -26 +24 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `23.0` for the main flavor, or `23.0-android` for the Android flavor.
++version `23.1-jre` for the JRE flavor, or `23.1-android` for the Android flavor.
+@@ -34 +32 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.0</version>
++  <version>23.1-jre</version>
+@@ -36 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>23.0-android</version>
++  <version>23.1-android</version>
+@@ -44 +42 @@ dependencies {
+-  compile 'com.google.guava:guava:23.0'
++  compile 'com.google.guava:guava:23.1-jre'
+@@ -46 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:23.0-android'
++  compile 'com.google.guava:guava:23.1-android'
+@@ -99,4 +97 @@ API level 15 (Ice Cream Sandwich).
+-[current release]: https://github.com/google/guava/wiki/Release23
+-[guava-release-api-docs]: http://google.github.io/guava/releases/23.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/23.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/23.0/api/diffs/
++[current release]: https://github.com/google/guava/releases/tag/v23.1
+diff --git a/README.md b/README.md
+index 749971361..29fc0577f 100644
+--- a/README.md
++++ b/README.md
+@@ -79,4 +79,6 @@ not use beta APIs, unless you repackage them (e.g. using ProGuard).
+-2. Deprecated non-beta APIs will be removed two years after the
+-release in which they are first deprecated. You must fix your
+-references before this time. If you don't, any manner of breakage
+-could result (you are not guaranteed a compilation error).
++2. APIs without `@Beta` will remain binary-compatible for the indefinite
++future. (Previously, we sometimes removed such APIs after a deprecation period.
++The last release to remove non-`@Beta` APIs was Guava 21.0.) Even `@Deprecated`
++APIs will remain (again, unless they are `@Beta`). We have no plans to start
++removing things again, but officially, we're leaving our options open in case
++of surprises (like, say, a serious security problem).
+diff --git a/README.md b/README.md
+index 999cd6cae..749971361 100644
+--- a/README.md
++++ b/README.md
+@@ -94,3 +94,2 @@ Linux. Some features, especially in `com.google.common.io`, may not work
+-correctly in other environments.
+-
+-  For the Android flavor, our unit tests run on API level 10 (Gingerbread).
++correctly in other environments. For the Android flavor, our unit tests run on
++API level 15 (Ice Cream Sandwich).
+diff --git a/README.md b/README.md
+index 984db42f4..999cd6cae 100644
+--- a/README.md
++++ b/README.md
+@@ -57 +57 @@ flavor.
+-- Snapshot API Diffs from 22.0: [guava][guava-snapshot-api-diffs]
++- Snapshot API Diffs: [guava][guava-snapshot-api-diffs]
+diff --git a/README.md b/README.md
+index fbc1f638c..984db42f4 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ Guava comes in two flavors.
+-The most recent release is [Guava 22.0][current release], released May 22, 2017.
++The most recent release is [Guava 23.0][current release], released August 4, 2017.
+@@ -22,2 +22,2 @@ The most recent release is [Guava 22.0][current release], released May 22, 2017.
+-- 22.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 22.0 API Diffs from 21.0: [guava][guava-release-api-diffs]
++- 23.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 23.0 API Diffs from 22.0: [guava][guava-release-api-diffs]
+@@ -26 +26 @@ The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
+-version `22.0` for the main flavor, or `22.0-android` for the Android flavor.
++version `23.0` for the main flavor, or `23.0-android` for the Android flavor.
+@@ -34 +34 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>22.0</version>
++  <version>23.0</version>
+@@ -36 +36 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>22.0-android</version>
++  <version>23.0-android</version>
+@@ -44 +44 @@ dependencies {
+-  compile 'com.google.guava:guava:22.0'
++  compile 'com.google.guava:guava:23.0'
+@@ -46 +46 @@ dependencies {
+-  compile 'com.google.guava:guava:22.0-android'
++  compile 'com.google.guava:guava:23.0-android'
+@@ -49,4 +48,0 @@ dependencies {
+-## Upcoming release
+-
+-The next release of Guava is [23.0][upcoming release]. 23.0-rc1 is available through Maven using
+-version numbers `23.0-rc1` or `23.0-rc1-android`.
+@@ -57 +53 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `23.0-SNAPSHOT`, or `23.0-android-SNAPSHOT` for the Android
++using version `24.0-SNAPSHOT`, or `24.0-android-SNAPSHOT` for the Android
+@@ -102,5 +98,4 @@ correctly in other environments.
+-[current release]: https://github.com/google/guava/wiki/Release22
+-[upcoming release]: https://github.com/google/guava/wiki/Release23
+-[guava-release-api-docs]: http://google.github.io/guava/releases/22.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/22.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/22.0/api/diffs/
++[current release]: https://github.com/google/guava/wiki/Release23
++[guava-release-api-docs]: http://google.github.io/guava/releases/23.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/23.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/23.0/api/diffs/
+diff --git a/README.md b/README.md
+index 6a68f27af..fbc1f638c 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +3,0 @@
+-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
+diff --git a/README.md b/README.md
+index 1407cee13..6a68f27af 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Guava comes in two flavors.
+-The most recent release is [Guava 22.0][], released May 22, 2017.
++The most recent release is [Guava 22.0][current release], released May 22, 2017.
+@@ -49,0 +50 @@ dependencies {
++## Upcoming release
+@@ -50,0 +52,2 @@ dependencies {
++The next release of Guava is [23.0][upcoming release]. 23.0-rc1 is available through Maven using
++version numbers `23.0-rc1` or `23.0-rc1-android`.
+@@ -100 +103,2 @@ correctly in other environments.
+-[Guava 22.0]: https://github.com/google/guava/wiki/Release22
++[current release]: https://github.com/google/guava/wiki/Release22
++[upcoming release]: https://github.com/google/guava/wiki/Release23
+diff --git a/README.md b/README.md
+index c997846fc..1407cee13 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `22.0-SNAPSHOT`, or `22.0-android-SNAPSHOT` for the Android
++using version `23.0-SNAPSHOT`, or `23.0-android-SNAPSHOT` for the Android
+diff --git a/README.md b/README.md
+index 3ccf2c699..c997846fc 100644
+--- a/README.md
++++ b/README.md
+@@ -11,3 +11,7 @@ primitives, reflection, string processing, and much more!
+-Requires JDK 1.8 or higher. If you need support for JDK 1.6 or Android, use
+-20.0 for now. In the next release (22.0) we will begin providing a backport
+-for use on Android and lower JDK versions.
++Guava comes in two flavors.
++
++*   The main flavor requires JDK 1.8 or higher.
++*   If you need support for JDK 1.7 or Android, use the Android flavor. You can
++    find the Android Guava source in the [`android` directory].
++
++[`android` directory]: https://github.com/google/guava/tree/master/android
+@@ -17 +21,4 @@ for use on Android and lower JDK versions.
+-The most recent release is [Guava 21.0][], released January 12, 2017.
++The most recent release is [Guava 22.0][], released May 22, 2017.
++
++- 22.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 22.0 API Diffs from 21.0: [guava][guava-release-api-diffs]
+@@ -19,2 +26,2 @@ The most recent release is [Guava 21.0][], released January 12, 2017.
+-- 21.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 21.0 API Diffs from 20.0: [guava][guava-release-api-diffs]
++The Maven group ID is `com.google.guava`, and the artifact ID is `guava`. Use
++version `22.0` for the main flavor, or `22.0-android` for the Android flavor.
+@@ -28 +35,3 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>21.0</version>
++  <version>22.0</version>
++  <!-- or, for Android: -->
++  <version>22.0-android</version>
+@@ -36 +45,3 @@ dependencies {
+-  compile 'com.google.guava:guava:21.0'
++  compile 'com.google.guava:guava:22.0'
++  // or, for Android:
++  compile 'com.google.guava:guava:22.0-android'
+@@ -39,0 +51 @@ dependencies {
++
+@@ -43 +55,2 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `22.0-SNAPSHOT`.
++using version `22.0-SNAPSHOT`, or `22.0-android-SNAPSHOT` for the Android
++flavor.
+@@ -46 +59 @@ using version `22.0-SNAPSHOT`.
+-- Snapshot API Diffs from 21.0: [guava][guava-snapshot-api-diffs]
++- Snapshot API Diffs from 22.0: [guava][guava-snapshot-api-diffs]
+@@ -81 +94 @@ untrusted code.
+-5. We unit-test and benchmark the libraries using only OpenJDK 1.8 on
++5. For the mainline flavor, we unit-test the libraries using only OpenJDK 1.8 on
+@@ -85,4 +98,6 @@ correctly in other environments.
+-[Guava 21.0]: https://github.com/google/guava/wiki/Release21
+-[guava-release-api-docs]: http://google.github.io/guava/releases/21.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/21.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/21.0/api/diffs/
++  For the Android flavor, our unit tests run on API level 10 (Gingerbread).
++
++[Guava 22.0]: https://github.com/google/guava/wiki/Release22
++[guava-release-api-docs]: http://google.github.io/guava/releases/22.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/22.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/22.0/api/diffs/
+diff --git a/README.md b/README.md
+index ea0a67dbb..3ccf2c699 100644
+--- a/README.md
++++ b/README.md
+@@ -81 +81 @@ untrusted code.
+-5. We unit-test and benchmark the libraries using only OpenJDK 1.7 on
++5. We unit-test and benchmark the libraries using only OpenJDK 1.8 on
+diff --git a/README.md b/README.md
+index 959a4c690..ea0a67dbb 100644
+--- a/README.md
++++ b/README.md
+@@ -11,2 +11,3 @@ primitives, reflection, string processing, and much more!
+-Requires JDK 1.6 or higher. The coming release (21.0) will require JDK 1.8, but
+-we will begin providing a backport soon thereafter.
++Requires JDK 1.8 or higher. If you need support for JDK 1.6 or Android, use
++20.0 for now. In the next release (22.0) we will begin providing a backport
++for use on Android and lower JDK versions.
+@@ -16 +17 @@ we will begin providing a backport soon thereafter.
+-The most recent release is [Guava 20.0][], released October 28, 2016.
++The most recent release is [Guava 21.0][], released January 12, 2017.
+@@ -18,2 +19,2 @@ The most recent release is [Guava 20.0][], released October 28, 2016.
+-- 20.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 20.0 API Diffs from 19.0: [guava][guava-release-api-diffs]
++- 21.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 21.0 API Diffs from 20.0: [guava][guava-release-api-diffs]
+@@ -27 +28 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>20.0</version>
++  <version>21.0</version>
+@@ -35 +36 @@ dependencies {
+-  compile 'com.google.guava:guava:20.0'
++  compile 'com.google.guava:guava:21.0'
+@@ -39,4 +39,0 @@ dependencies {
+-## Upcoming release
+-
+-[Guava 21.0-rc2][] was released January 3, 2017. This release requires Java 8.
+-
+@@ -46,2 +43 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `21.0-SNAPSHOT`. API documentation and diffs from version 20.0
+-are available here:
++using version `22.0-SNAPSHOT`.
+@@ -50 +46 @@ are available here:
+-- Snapshot API Diffs from 20.0: [guava][guava-snapshot-api-diffs]
++- Snapshot API Diffs from 21.0: [guava][guava-snapshot-api-diffs]
+@@ -89,5 +85,4 @@ correctly in other environments.
+-[Guava 20.0]: https://github.com/google/guava/wiki/Release20
+-[Guava 21.0-rc2]: https://github.com/google/guava/wiki/Release21
+-[guava-release-api-docs]: http://google.github.io/guava/releases/20.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/20.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/20.0/api/diffs/
++[Guava 21.0]: https://github.com/google/guava/wiki/Release21
++[guava-release-api-docs]: http://google.github.io/guava/releases/21.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/21.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/21.0/api/diffs/
+diff --git a/README.md b/README.md
+index 773725a76..959a4c690 100644
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ dependencies {
+-[Guava 21.0-rc1][] was released December 19, 2016. This release requires Java 8.
++[Guava 21.0-rc2][] was released January 3, 2017. This release requires Java 8.
+@@ -90 +90 @@ correctly in other environments.
+-[Guava 21.0-rc1]: https://github.com/google/guava/wiki/Release21
++[Guava 21.0-rc2]: https://github.com/google/guava/wiki/Release21
+diff --git a/README.md b/README.md
+index 0f856ecde..773725a76 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-Guava: Google Core Libraries for Java
+-=====================================
++# Guava: Google Core Libraries for Java
+@@ -15,2 +14 @@ we will begin providing a backport soon thereafter.
+-Latest release
+---------------
++## Latest release
+@@ -41,2 +39,5 @@ dependencies {
+-Snapshots
+----------
++## Upcoming release
++
++[Guava 21.0-rc1][] was released December 19, 2016. This release requires Java 8.
++
++## Snapshots
+@@ -51,2 +52 @@ are available here:
+-Learn about Guava
+-------------------
++## Learn about Guava
+@@ -57,2 +57 @@ Learn about Guava
+-Links
+------
++## Links
+@@ -65,2 +64 @@ Links
+-IMPORTANT WARNINGS
+-------------------
++## IMPORTANT WARNINGS
+@@ -91,0 +90 @@ correctly in other environments.
++[Guava 21.0-rc1]: https://github.com/google/guava/wiki/Release21
+diff --git a/README.md b/README.md
+index cb1651a9d..0f856ecde 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12,2 @@ primitives, reflection, string processing, and much more!
+-Requires JDK 1.6 or higher (as of 12.0).
++Requires JDK 1.6 or higher. The coming release (21.0) will require JDK 1.8, but
++we will begin providing a backport soon thereafter.
+diff --git a/README.md b/README.md
+index 0a1d414fb..cb1651a9d 100644
+--- a/README.md
++++ b/README.md
+@@ -44 +44 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `20.0-SNAPSHOT`. API documentation and diffs from version 20.0
++using version `21.0-SNAPSHOT`. API documentation and diffs from version 20.0
+diff --git a/README.md b/README.md
+index e74c354dc..0a1d414fb 100644
+--- a/README.md
++++ b/README.md
+@@ -90,2 +90 @@ correctly in other environments.
+-[Guava 20.0]: https://github.com/google/guava/wiki/Release19
+-[Guava 20.0-rc1]: https://github.com/google/guava/wiki/Release20
++[Guava 20.0]: https://github.com/google/guava/wiki/Release20
+diff --git a/README.md b/README.md
+index 7ec7153b8..e74c354dc 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Latest release
+-The most recent release is [Guava 19.0][], released December 9, 2015.
++The most recent release is [Guava 20.0][], released October 28, 2016.
+@@ -19,2 +19,2 @@ The most recent release is [Guava 19.0][], released December 9, 2015.
+-- 19.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 19.0 API Diffs from 18.0: [guava][guava-release-api-diffs]
++- 20.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 20.0 API Diffs from 19.0: [guava][guava-release-api-diffs]
+@@ -28 +28 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>19.0</version>
++  <version>20.0</version>
+@@ -36 +36 @@ dependencies {
+-  compile 'com.google.guava:guava:19.0'
++  compile 'com.google.guava:guava:20.0'
+@@ -40,5 +39,0 @@ dependencies {
+-Upcoming release
+-----------------
+-
+-[Guava 20.0-rc1][] was released October 6, 2016.
+-
+@@ -49 +44 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `20.0-SNAPSHOT`. API documentation and diffs from version 19.0
++using version `20.0-SNAPSHOT`. API documentation and diffs from version 20.0
+@@ -53 +48 @@ are available here:
+-- Snapshot API Diffs from 19.0: [guava][guava-snapshot-api-diffs]
++- Snapshot API Diffs from 20.0: [guava][guava-snapshot-api-diffs]
+@@ -95 +90 @@ correctly in other environments.
+-[Guava 19.0]: https://github.com/google/guava/wiki/Release19
++[Guava 20.0]: https://github.com/google/guava/wiki/Release19
+@@ -97,3 +92,3 @@ correctly in other environments.
+-[guava-release-api-docs]: http://google.github.io/guava/releases/19.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/19.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/19.0/api/diffs/
++[guava-release-api-docs]: http://google.github.io/guava/releases/20.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/20.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/20.0/api/diffs/
+diff --git a/README.md b/README.md
+index 83ebe8004..7ec7153b8 100644
+--- a/README.md
++++ b/README.md
+@@ -7,3 +7,4 @@ Guava: Google Core Libraries for Java
+-The Guava project contains several of Google's core libraries that we rely on
+-in our Java-based projects: collections, caching, primitives support,
+-concurrency libraries, common annotations, string processing, I/O, and so forth.
++Guava is a set of core libraries that includes new collection types (such as
++multimap and multiset), immutable collections, a graph library, functional
++types, an in-memory cache, and APIs/utilities for concurrency, I/O, hashing,
++primitives, reflection, string processing, and much more!
+diff --git a/README.md b/README.md
+index b48e24967..83ebe8004 100644
+--- a/README.md
++++ b/README.md
+@@ -38,0 +39,5 @@ dependencies {
++Upcoming release
++----------------
++
++[Guava 20.0-rc1][] was released October 6, 2016.
++
+@@ -89,0 +95 @@ correctly in other environments.
++[Guava 20.0-rc1]: https://github.com/google/guava/wiki/Release20
+diff --git a/README.md b/README.md
+index b68894e1a..b48e24967 100644
+--- a/README.md
++++ b/README.md
+@@ -53,3 +52,0 @@ Learn about Guava
+-- [Presentation slides focusing on base, primitives, and io](http://guava-libraries.googlecode.com/files/Guava_for_Netflix_.pdf)
+-- [Presentation slides focusing on cache]( http://guava-libraries.googlecode.com/files/JavaCachingwithGuava.pdf)
+-- [Presentation slides focusing on util.concurrent](http://guava-libraries.googlecode.com/files/guava-concurrent-slides.pdf)
+diff --git a/README.md b/README.md
+index e00bb5f5d..b68894e1a 100644
+--- a/README.md
++++ b/README.md
+@@ -62 +62 @@ Links
+-- [Issue tracker: report a defect or feature request](https://github.com/google/guava/issues/new)
++- [Issue tracker: Report a defect or feature request](https://github.com/google/guava/issues/new)
+diff --git a/README.md b/README.md
+index 396cb204f..e00bb5f5d 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Latest release
+-The most recent release is [Guava 18.0][], released August 25, 2014.
++The most recent release is [Guava 19.0][], released December 9, 2015.
+@@ -18,2 +18,2 @@ The most recent release is [Guava 18.0][], released August 25, 2014.
+-- 18.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
+-- 18.0 API Diffs from 17.0: [guava][guava-release-api-diffs]
++- 19.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 19.0 API Diffs from 18.0: [guava][guava-release-api-diffs]
+@@ -27 +27 @@ To add a dependency on Guava using Maven, use the following:
+-  <version>18.0</version>
++  <version>19.0</version>
+@@ -35 +35 @@ dependencies {
+-  compile 'com.google.guava:guava:18.0'
++  compile 'com.google.guava:guava:19.0'
+@@ -39,6 +38,0 @@ dependencies {
+-Upcoming release
+-----------------
+-
+-[Guava 19.0][] is the next release. A release candidate is currently available
+-on Maven Central as version `19.0-rc3`, released December 1, 2015.
+-
+@@ -49 +43 @@ Snapshots of Guava built from the `master` branch are available through Maven
+-using version `19.0-SNAPSHOT`. API documentation and diffs from version 18.0
++using version `20.0-SNAPSHOT`. API documentation and diffs from version 19.0
+@@ -53 +47 @@ are available here:
+-- Snapshot API Diffs from 18.0: [guava][guava-snapshot-api-diffs]
++- Snapshot API Diffs from 19.0: [guava][guava-snapshot-api-diffs]
+@@ -98 +91,0 @@ correctly in other environments.
+-[Guava 18.0]: https://github.com/google/guava/wiki/Release18
+@@ -100,3 +93,3 @@ correctly in other environments.
+-[guava-release-api-docs]: http://google.github.io/guava/releases/18.0/api/docs/
+-[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/18.0
+-[guava-release-api-diffs]: http://google.github.io/guava/releases/18.0/api/diffs/
++[guava-release-api-docs]: http://google.github.io/guava/releases/19.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/19.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/19.0/api/diffs/
+diff --git a/README.md b/README.md
+index 5e07094b2..396cb204f 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ Upcoming release
+-on Maven Central as version `19.0-rc2`, released September 17, 2015.
++on Maven Central as version `19.0-rc3`, released December 1, 2015.
+diff --git a/README.md b/README.md
+index 2f239757a..5e07094b2 100644
+--- a/README.md
++++ b/README.md
+@@ -18,2 +18,2 @@ The most recent release is [Guava 18.0][], released August 25, 2014.
+-- [18.0 API Docs][Release API Docs]
+-- [18.0 API Diffs from 17.0][Release API Diffs]
++- 18.0 API Docs: [guava][guava-release-api-docs], [guava-testlib][testlib-release-api-docs]
++- 18.0 API Diffs from 17.0: [guava][guava-release-api-diffs]
+@@ -43 +43 @@ Upcoming release
+-on Maven Central as version `19.0-rc1`, release July 23, 2015.
++on Maven Central as version `19.0-rc2`, released September 17, 2015.
+@@ -52,2 +52,2 @@ are available here:
+-- [Snapshot API Docs][]
+-- [Snapshot API Diffs from 18.0][Snapshot API Diffs]
++- Snapshot API Docs: [guava][guava-snapshot-api-docs]
++- Snapshot API Diffs from 18.0: [guava][guava-snapshot-api-diffs]
+@@ -100,4 +100,5 @@ correctly in other environments.
+-[Release API Docs]: http://google.github.io/guava/releases/18.0/api/docs/
+-[Release API Diffs]: http://google.github.io/guava/releases/18.0/api/diffs/
+-[Snapshot API Docs]: http://google.github.io/guava/releases/snapshot/api/docs/
+-[Snapshot API Diffs]: http://google.github.io/guava/releases/snapshot/api/diffs/
++[guava-release-api-docs]: http://google.github.io/guava/releases/18.0/api/docs/
++[testlib-release-api-docs]: http://www.javadoc.io/doc/com.google.guava/guava-testlib/18.0
++[guava-release-api-diffs]: http://google.github.io/guava/releases/18.0/api/diffs/
++[guava-snapshot-api-docs]: http://google.github.io/guava/releases/snapshot/api/docs/
++[guava-snapshot-api-diffs]: http://google.github.io/guava/releases/snapshot/api/diffs/
+diff --git a/README.md b/README.md
+index fb57053a1..2f239757a 100644
+--- a/README.md
++++ b/README.md
+@@ -30,0 +31,8 @@ To add a dependency on Guava using Maven, use the following:
++To add a dependency using Gradle:
++
++```
++dependencies {
++  compile 'com.google.guava:guava:18.0'
++}
++```
++
+diff --git a/README.md b/README.md
+index ff30a8a34..fb57053a1 100644
+--- a/README.md
++++ b/README.md
+@@ -30,0 +31,6 @@ To add a dependency on Guava using Maven, use the following:
++Upcoming release
++----------------
++
++[Guava 19.0][] is the next release. A release candidate is currently available
++on Maven Central as version `19.0-rc1`, release July 23, 2015.
++
+@@ -84,0 +91 @@ correctly in other environments.
++[Guava 19.0]: https://github.com/google/guava/wiki/Release19
+diff --git a/README.md b/README.md
+index 38125c4be..ff30a8a34 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@ Guava: Google Core Libraries for Java
++[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.google.guava/guava)
+diff --git a/README.md b/README.md
+index 4cc77858a..38125c4be 100644
+--- a/README.md
++++ b/README.md
+@@ -11,0 +12,28 @@ Requires JDK 1.6 or higher (as of 12.0).
++Latest release
++--------------
++
++The most recent release is [Guava 18.0][], released August 25, 2014.
++
++- [18.0 API Docs][Release API Docs]
++- [18.0 API Diffs from 17.0][Release API Diffs]
++
++To add a dependency on Guava using Maven, use the following:
++
++```xml
++<dependency>
++  <groupId>com.google.guava</groupId>
++  <artifactId>guava</artifactId>
++  <version>18.0</version>
++</dependency>
++```
++
++Snapshots
++---------
++
++Snapshots of Guava built from the `master` branch are available through Maven
++using version `19.0-SNAPSHOT`. API documentation and diffs from version 18.0
++are available here:
++
++- [Snapshot API Docs][]
++- [Snapshot API Diffs from 18.0][Snapshot API Diffs]
++
+@@ -15,3 +43 @@ Learn about Guava
+-- Our users' guide, [Guava Explained](https://github.com/google/guava/wiki/Home)
+-- Browse [API docs for the most recent release](http://google.github.io/guava/releases/18.0/api/docs/)
+-- Browse [API diffs for the most recent release](http://google.github.io/guava/releases/18.0/api/diffs/)
++- Our users' guide, [Guava Explained][]
+@@ -55,0 +82,7 @@ correctly in other environments.
++
++[Guava 18.0]: https://github.com/google/guava/wiki/Release18
++[Release API Docs]: http://google.github.io/guava/releases/18.0/api/docs/
++[Release API Diffs]: http://google.github.io/guava/releases/18.0/api/diffs/
++[Snapshot API Docs]: http://google.github.io/guava/releases/snapshot/api/docs/
++[Snapshot API Diffs]: http://google.github.io/guava/releases/snapshot/api/diffs/
++[Guava Explained]: https://github.com/google/guava/wiki/Home
+diff --git a/README.md b/README.md
+index 46f42d75b..4cc77858a 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +16,2 @@ Learn about Guava
+-- Browse [API docs for the most recent release](http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html)
+-- Browse [API diffs for the most recent release](http://docs.guava-libraries.googlecode.com/git-history/release/jdiff/changes.html)
++- Browse [API docs for the most recent release](http://google.github.io/guava/releases/18.0/api/docs/)
++- Browse [API diffs for the most recent release](http://google.github.io/guava/releases/18.0/api/diffs/)
+diff --git a/README.md b/README.md
+index a1349b581..46f42d75b 100644
+--- a/README.md
++++ b/README.md
+@@ -15,4 +15,4 @@ Learn about Guava
+-- Our users' guide, [GuavaExplained]( https://code.google.com/p/guava-libraries/wiki/GuavaExplained)
+-- Browse [API docs for the most recent release]( http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html)
+-- Browse [API diffs for the most recent release]( http://docs.guava-libraries.googlecode.com/git-history/release/jdiff/changes.html)
+-- [Presentation slides focusing on base, primitives, and io]( http://guava-libraries.googlecode.com/files/Guava_for_Netflix_.pdf)
++- Our users' guide, [Guava Explained](https://github.com/google/guava/wiki/Home)
++- Browse [API docs for the most recent release](http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html)
++- Browse [API diffs for the most recent release](http://docs.guava-libraries.googlecode.com/git-history/release/jdiff/changes.html)
++- [Presentation slides focusing on base, primitives, and io](http://guava-libraries.googlecode.com/files/Guava_for_Netflix_.pdf)
+@@ -21 +21 @@ Learn about Guava
+-- [A nice collection]( http://www.tfnico.com/presentations/google-guava) of other helpful links
++- [A nice collection](http://www.tfnico.com/presentations/google-guava) of other helpful links
+diff --git a/README.md b/README.md
+index f47e15f68..a1349b581 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,4 @@ Guava: Google Core Libraries for Java
++The Guava project contains several of Google's core libraries that we rely on
++in our Java-based projects: collections, caching, primitives support,
++concurrency libraries, common annotations, string processing, I/O, and so forth.
++
+@@ -7,0 +12,11 @@ Requires JDK 1.6 or higher (as of 12.0).
++Learn about Guava
++------------------
++
++- Our users' guide, [GuavaExplained]( https://code.google.com/p/guava-libraries/wiki/GuavaExplained)
++- Browse [API docs for the most recent release]( http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/index.html)
++- Browse [API diffs for the most recent release]( http://docs.guava-libraries.googlecode.com/git-history/release/jdiff/changes.html)
++- [Presentation slides focusing on base, primitives, and io]( http://guava-libraries.googlecode.com/files/Guava_for_Netflix_.pdf)
++- [Presentation slides focusing on cache]( http://guava-libraries.googlecode.com/files/JavaCachingwithGuava.pdf)
++- [Presentation slides focusing on util.concurrent](http://guava-libraries.googlecode.com/files/guava-concurrent-slides.pdf)
++- [A nice collection]( http://www.tfnico.com/presentations/google-guava) of other helpful links
++
+diff --git a/README.md b/README.md
+index 2a74d563d..f47e15f68 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4,2 @@ Guava: Google Core Libraries for Java
++[![Build Status](https://travis-ci.org/google/guava.svg?branch=master)](https://travis-ci.org/google/guava)
++

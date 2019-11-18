@@ -1,0 +1,118 @@
+diff --git a/README.md b/README.md
+index a3933c740..ee5ba680d 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@
+-* Homepage: <http://opencv.org>
+-* Docs: <http://docs.opencv.org/master/>
++* Homepage: <https://opencv.org>
++* Docs: <https://docs.opencv.org/master/>
+diff --git a/README.md b/README.md
+index 37543b6e5..a3933c740 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-### OpenCV: Open Source Computer Vision Library
++## OpenCV: Open Source Computer Vision Library
+@@ -3 +3 @@
+-#### Resources
++### Resources
+@@ -10 +10 @@
+-#### Contributing
++### Contributing
+@@ -12 +12 @@
+-Please read before starting work on a pull request: <https://github.com/opencv/opencv/wiki/How_to_contribute>
++Please read the [contribution guidelines](https://github.com/opencv/opencv/wiki/How_to_contribute) before starting work on a pull request.
+@@ -14 +14 @@ Please read before starting work on a pull request: <https://github.com/opencv/o
+-Summary of guidelines:
++#### Summary of the guidelines:
+@@ -20 +20 @@ Summary of guidelines:
+-* Follow the coding style guide.
++* Follow the [coding style guide](https://github.com/opencv/opencv/wiki/Coding_Style_Guide).
+diff --git a/README.md b/README.md
+index 7dbc82320..37543b6e5 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-* Issue tracking: <https://github.com/Itseez/opencv/issues>
++* Issue tracking: <https://github.com/opencv/opencv/issues>
+@@ -12 +12 @@
+-Please read before starting work on a pull request: <https://github.com/Itseez/opencv/wiki/How_to_contribute>
++Please read before starting work on a pull request: <https://github.com/opencv/opencv/wiki/How_to_contribute>
+diff --git a/README.md b/README.md
+index da3c9613c..7dbc82320 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +2,0 @@
+-[![Gittip](http://img.shields.io/gittip/OpenCV.png)](https://www.gittip.com/OpenCV/)
+-
+diff --git a/README.md b/README.md
+index 3a26ad855..da3c9613c 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@
+-* Docs: <http://docs.opencv.org>
++* Docs: <http://docs.opencv.org/master/>
+@@ -10 +10 @@
+-* Issue tracking: <http://code.opencv.org>
++* Issue tracking: <https://github.com/Itseez/opencv/issues>
+@@ -14 +14 @@
+-Please read before starting work on a pull request: <http://code.opencv.org/projects/opencv/wiki/How_to_contribute>
++Please read before starting work on a pull request: <https://github.com/Itseez/opencv/wiki/How_to_contribute>
+diff --git a/README.md b/README.md
+index 403f118ee..3a26ad855 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++[![Gittip](http://img.shields.io/gittip/OpenCV.png)](https://www.gittip.com/OpenCV/)
++
+@@ -21,3 +22,0 @@ Summary of guidelines:
+-
+-[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/gittip1.png)](https://www.gittip.com/OpenCV/)
+-[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/paypal-donate-button.png)](https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+OpenCV&cmd=_donations&business=accountant%40opencv.org)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 681ce02b0..403f118ee 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-OpenCV: Open Source Computer Vision Library
++### OpenCV: Open Source Computer Vision Library
+@@ -3,4 +3 @@ OpenCV: Open Source Computer Vision Library
+-Homepage:    http://opencv.org
+-Online docs: http://docs.opencv.org
+-Q&A forum:   http://answers.opencv.org
+-Dev zone:    http://code.opencv.org
++#### Resources
+@@ -8,2 +5,8 @@ Dev zone:    http://code.opencv.org
+-Please read before starting work on a pull request:
+-  http://code.opencv.org/projects/opencv/wiki/How_to_contribute
++* Homepage: <http://opencv.org>
++* Docs: <http://docs.opencv.org>
++* Q&A forum: <http://answers.opencv.org>
++* Issue tracking: <http://code.opencv.org>
++
++#### Contributing
++
++Please read before starting work on a pull request: <http://code.opencv.org/projects/opencv/wiki/How_to_contribute>
+@@ -19,3 +22,2 @@ Summary of guidelines:
+-[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/gittip1.png)](https://www.gittip.com/OpenCV/) 
+-[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/paypal-donate-button.png)](https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+OpenCV&cmd=_donations&business=accountant%40opencv.org) 
+-
++[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/gittip1.png)](https://www.gittip.com/OpenCV/)
++[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/paypal-donate-button.png)](https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+OpenCV&cmd=_donations&business=accountant%40opencv.org)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 66ee47f30..681ce02b0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-OpenCV: open source computer vision library
++OpenCV: Open Source Computer Vision Library
+diff --git a/README.md b/README.md
+index 0ac9569b6..66ee47f30 100644
+--- a/README.md
++++ b/README.md
+@@ -19,0 +20,2 @@ Summary of guidelines:
++[![Donate OpenCV project](http://opencv.org/wp-content/uploads/2013/07/paypal-donate-button.png)](https://www.paypal.com/cgi-bin/webscr?item_name=Donation+to+OpenCV&cmd=_donations&business=accountant%40opencv.org) 
++
