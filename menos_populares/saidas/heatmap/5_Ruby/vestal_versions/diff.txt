@@ -1,0 +1,956 @@
+diff --git a/README.rdoc b/README.rdoc
+index 27e884b..426ea6b 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -1 +1,7 @@
+-= Vestal Versions {<img src="https://secure.travis-ci.org/laserlemon/vestal_versions.png?branch=rails_3" alt="Build Status" />}[https://travis-ci.org/laserlemon/vestal_versions]
++= Vestal Versions
++
++{<img src="https://badge.fury.io/rb/vestal_versions.png" alt="Gem Version" />}[http://badge.fury.io/rb/vestal_versions]
++{<img src="https://travis-ci.org/laserlemon/vestal_versions.png?branch=master" alt="Build Status" />}[https://travis-ci.org/laserlemon/vestal_versions]
++{<img src="https://codeclimate.com/github/laserlemon/vestal_versions.png" alt="Code Climate" />}[https://codeclimate.com/github/laserlemon/vestal_versions]
++{<img src="https://coveralls.io/repos/laserlemon/vestal_versions/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/laserlemon/vestal_versions]
++{<img src="https://gemnasium.com/laserlemon/vestal_versions.png" alt="Dependency Status" />}[https://gemnasium.com/laserlemon/vestal_versions]
+diff --git a/README.rdoc b/README.rdoc
+index 095575c..27e884b 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-Tested with Active Record 3.2.8 with Ruby 1.9.3 and 1.9.2.
++Tested with Active Record 3.2.16 with Ruby 1.9.3 and 1.9.2.
+@@ -200 +200 @@ Thank you to all those who post {issues and suggestions}[http://github.com/laser
+-To contribute to <tt>vestal_versions</tt>, please fork, hack away in the integration[http://github.com/laserlemon/vestal_versions/tree/integration] branch and send me a pull request. Remember your tests!
+\ No newline at end of file
++To contribute to <tt>vestal_versions</tt>, please fork, hack away in the integration[http://github.com/laserlemon/vestal_versions/tree/integration] branch and send me a pull request. Remember your tests!
+diff --git a/README.rdoc b/README.rdoc
+index 1f53959..095575c 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -1 +1 @@
+-= vestal_versions for Rails 3
++= Vestal Versions {<img src="https://secure.travis-ci.org/laserlemon/vestal_versions.png?branch=rails_3" alt="Build Status" />}[https://travis-ci.org/laserlemon/vestal_versions]
+diff --git a/README.rdoc b/README.rdoc
+index 667d20a..1f53959 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -19 +19,2 @@ In the Gemfile:
+-  ** Note: I am giving this project some much needed love to keep her relevant in a post Rails 3 world. I will be finalizing a version to support 1.9.2+ and Rails 3.2+ soon and pushing the gem, till then, use the git repo:
++** Note: I am giving this project some much needed love to keep her relevant in a post Rails 3 world. I will be finalizing a version to support 1.9.2+ and Rails 3.2+ soon and pushing the gem, till then, use the git repo:
++~dreamr
+@@ -23 +23,0 @@ In the Gemfile:
+-  ~dreamr
+diff --git a/README.rdoc b/README.rdoc
+index 81873aa..667d20a 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-Tested with Active Record 3.0.3 with Ruby 1.8.7 and 1.9.2.
++Tested with Active Record 3.2.8 with Ruby 1.9.3 and 1.9.2.
+@@ -19 +19,5 @@ In the Gemfile:
+-  gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'
++  ** Note: I am giving this project some much needed love to keep her relevant in a post Rails 3 world. I will be finalizing a version to support 1.9.2+ and Rails 3.2+ soon and pushing the gem, till then, use the git repo:
++  
++  gem 'vestal_versions', :git => 'git://github.com/laserlemon/vestal_versions'
++  
++  ~dreamr
+diff --git a/README.rdoc b/README.rdoc
+index 9fc7848..81873aa 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -1 +1,196 @@
+-= vestal_versions {<img src="http://stillmaintained.com/laserlemon/vestal_versions.png" alt="Still Maintained" />}[http://stillmaintained.com/laserlemon/vestal_versions]
++= vestal_versions for Rails 3
++
++Finally, DRY ActiveRecord versioning!
++
++<tt>acts_as_versioned</tt>[http://github.com/technoweenie/acts_as_versioned] by technoweenie[http://github.com/technoweenie] was a great start, but it failed to keep up with ActiveRecord's introduction of dirty objects in version 2.1. Additionally, each versioned model needs its own versions table that duplicates most of the original table's columns. The versions table is then populated with records that often duplicate most of the original record's attributes. All in all, not very DRY.
++
++<tt>vestal_versions</tt>[http://github.com/laserlemon/vestal_versions] requires only one versions table (polymorphically associated with its parent models) and no changes whatsoever to existing tables. But it goes one step DRYer by storing a serialized hash of _only_ the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
++
++And that's just what <tt>vestal_versions</tt> does. Not only can a model be reverted to a previous version number but also to a date or time!
++
++== Compatibility
++
++Tested with Active Record 3.0.3 with Ruby 1.8.7 and 1.9.2.
++
++== Installation
++
++In the Gemfile:
++
++  gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'
++
++Next, generate and run the first and last versioning migration you'll ever need:
++
++  $ rails generate vestal_versions:migration
++  $ rake db:migrate
++
++== Example
++
++To version an ActiveRecord model, simply add <tt>versioned</tt> to your class like so:
++
++  class User < ActiveRecord::Base
++    versioned
++
++    validates_presence_of :first_name, :last_name
++
++    def name
++      "#{first_name} #{last_name}"
++    end
++  end
++
++It's that easy! Now watch it in action...
++
++  >> u = User.create(:first_name => "Steve", :last_name => "Richert")
++  => #<User first_name: "Steve", last_name: "Richert">
++  >> u.version
++  => 1
++  >> u.update_attribute(:first_name, "Stephen")
++  => true
++  >> u.name
++  => "Stephen Richert"
++  >> u.version
++  => 2
++  >> u.revert_to(10.seconds.ago)
++  => 1
++  >> u.name
++  => "Steve Richert"
++  >> u.version
++  => 1
++  >> u.save
++  => true
++  >> u.version
++  => 3
++  >> u.update_attribute(:last_name, "Jobs")
++  => true
++  >> u.name
++  => "Steve Jobs"
++  >> u.version
++  => 4
++  >> u.revert_to!(2)
++  => true
++  >> u.name
++  => "Stephen Richert"
++  >> u.version
++  => 5
++
++== Upgrading to 1.0
++
++For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatible, with just a few notable changes:
++
++* The versions table has been beefed up. You'll need to add the following columns (and indexes, if you feel so inclined):
++
++    change_table :versions do |t|
++      t.belongs_to :user, :polymorphic => true
++      t.string :user_name
++      t.string :tag
++    end
++
++    change_table :versions do |t|
++      t.index [:user_id, :user_type]
++      t.index :user_name
++      t.index :tag
++    end
++
++* When a model is created (or updated the first time after being versioned), an initial version record with a number of 1 is no longer created. These aren't used during reversion and so they end up just being dead weight. Feel free to scrap all your versions where <tt>number == 1</tt> after the upgrade if you'd like to free up some room in your database (but you don't have to).
++
++* Models that have no version records in the database will return a <tt>@user.version</tt> of 1. In the past, this would have returned <tt>nil</tt> instead.
++
++* <tt>Version</tt> has moved to <tt>VestalVersions::Version</tt> to make way for custom version classes.
++
++* <tt>Version#version</tt> did not survive the move to <tt>VestalVersions::Version#version</tt>. That alias was dropped (too confusing). Use <tt>VestalVersions::Version#number</tt>.
++
++== New to 1.0
++
++There are a handful of exciting new additions in version 1.0 of <tt>vestal_versions</tt>. A lot has changed in the code: much better documentation, more modular organization of features, and a more exhaustive test suite. But there are also a number of new features that are available in this release of <tt>vestal_versions</tt>:
++
++* The ability to completely skip versioning within a new <tt>skip_version</tt> block:
++
++    @user.version # => 1
++    @user.skip_version do
++      @user.update_attribute(:first_name, "Stephen")
++      @user.first_name = "Steve"
++      @user.save
++      @user.update_attributes(:last_name => "Jobs")
++    end
++    @user.version # => 1
++
++  Also available, are <tt>merge_version</tt> and <tt>append_version</tt> blocks. The <tt>merge_version</tt> block will compile the possibly multiple versions that would result from the updates inside the block into one summary version. The single resulting version is then tacked onto the version history as usual. The <tt>append_version</tt> block works similarly except that the resulting single version is combined with the most recent version in the history and saved.
++
++* Version tagging. Any version can have a tag attached to it (must be unique within the scope of the versioned parent) and that tag can be used for reversion.
++
++    @user.name # => "Steve Richert"
++    @user.update_attribute(:last_name, "Jobs")
++    @user.name # => "Steve Jobs"
++    @user.tag_version("apple")
++    @user.update_attribute(:last_name, "Richert")
++    @user.name # => "Steve Richert"
++    @user.revert_to("apple")
++    @user.name # => "Steve Jobs"
++
++  So if you're not big on version numbers, you could just tag your versions and avoid the numbers altogether.
++
++* Resetting. This is basically a hard revert. The new <tt>reset_to!</tt> instance method behaves just like the <tt>revert_to!</tt> method except that after the reversion, it will also scrap all the versions that came after that target version.
++
++    @user.name # => "Steve Richert"
++    @user.version # => 1
++    @user.versions.count # => 0
++    @user.update_attribute(:last_name, "Jobs")
++    @user.name # => "Steve Jobs"
++    @user.version # => 2
++    @user.versions.count # => 1
++    @user.reset_to!(1)
++    @user.name # => "Steve Richert"
++    @user.version # => 1
++    @user.versions.count # => 0
++
++* Storing which user is responsible for a revision. Rather than introduce a lot of controller magic to guess what to store, you can simply update an additional attribute on your versioned model: <tt>updated_by</tt>.
++
++    @user.update_attributes(:last_name => "Jobs", :updated_by => "Tyler")
++    @user.versions.last.user # => "Tyler"
++
++  Instead of passing a simple string to the <tt>updated_by</tt> setter, you can pass a model instance, such as an ActiveRecord user or administrator. The association will be saved polymorphically alongside the version.
++
++    @user.update_attributes(:last_name => "Jobs", :updated_by => current_user)
++    @user.versions.last.user # => #<User first_name: "Steven", last_name: "Tyler">
++
++* Global configuration. The new <tt>vestal_versions</tt> Rails generator also writes an initializer with instructions on how to set application-wide options for the <tt>versioned</tt> method.
++
++* Conditional version creation. The <tt>versioned</tt> method now accepts <tt>:if</tt> and <tt>:unless</tt> options. Each expects a symbol representing an instance method or a proc that will be evaluated to determine whether or not to create a new version after an update. An array containing any combination of symbols and procs can also be given.
++
++    class User < ActiveRecord::Base
++      versioned :if => :really_create_a_version?
++    end
++
++* Custom version classes. By passing a <tt>:class_name</tt> option to the <tt>versioned</tt> method, you can specify your own ActiveRecord version model. <tt>VestalVersions::Version</tt> is the default, but feel free to stray from that. I recommend that your custom model inherit from <tt>VestalVersions::Version</tt>, but that's up to you!
++
++* A <tt>versioned?</tt> convenience class method. If your user model is versioned, <tt>User.versioned?</tt> will let you know.
++
++* Soft Deletes & Restoration.  By setting <tt>:dependent</tt> to <tt>:tracking</tt> destroys will be tracked.  On destroy a new version will be created storing the complete details of the object with a tag of 'deleted'.  The object can later be restored using the <tt>restore!</tt> method on the VestalVersions::Version record.  The attributes of the restored object will be set using the attribute writer methods.  After a restore! is performed the version record with the 'deleted' tag is removed from the history.
++
++    class User < ActiveRecord::Base
++      versioned :dependent => :tracking
++    end
++
++    >> @user.version
++    => 2
++    >> @user.destroy
++    => <User id: 2, first_name: "Steve", last_name: "Jobs", ... >
++    >> User.find(2)
++    => ActiveRecord::RecordNotFound: Couldn't find User with ID=2
++    >> VestalVersions::Version.last
++    => <VestalVersions::Version id: 4, versioned_id: 2, versioned_type: "User", user_id: nil, user_type: nil, user_name: nil, modifications: {"created_at"=>Sun Aug 01 18:39:57 UTC 2010, "updated_at"=>Sun Aug 01 18:42:28 UTC 2010, "id"=>2, "last_name"=>"Jobs", "first_name"=>"Stephen"}, number: 3, tag: "deleted", created_at: "2010-08-01 18:42:43", updated_at: "2010-08-01 18:42:43">
++    >> VestalVersions::Version.last.restore!
++    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
++    >> @user = User.find(2)
++    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
++    >> @user.version
++    => 2
++
++== Thanks!
++
++Thank you to all those who post {issues and suggestions}[http://github.com/laserlemon/vestal_versions/issues]. And special thanks to:
++
++* splattael[http://github.com/splattael], who first bugged (and helped) me to write some tests for this thing
++* snaury[http://github.com/snaury], who helped out early on with the <tt>between</tt> association method, the <tt>:dependent</tt> option and a conflict from using a method called <tt>changes</tt>
++* sthapit[http://github.com/sthapit], who was responsible for the <tt>:only</tt> and <tt>:except</tt> options as well as showing me that I'm a dummy for storing a useless first version
++
++To contribute to <tt>vestal_versions</tt>, please fork, hack away in the integration[http://github.com/laserlemon/vestal_versions/tree/integration] branch and send me a pull request. Remember your tests!
+\ No newline at end of file
+diff --git a/README.rdoc b/README.rdoc
+index 1a1c331..9fc7848 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -1,196 +1 @@
+-= vestal_versions for Rails 3
+-
+-Finally, DRY ActiveRecord versioning!
+-
+-<tt>acts_as_versioned</tt>[http://github.com/technoweenie/acts_as_versioned] by technoweenie[http://github.com/technoweenie] was a great start, but it failed to keep up with ActiveRecord's introduction of dirty objects in version 2.1. Additionally, each versioned model needs its own versions table that duplicates most of the original table's columns. The versions table is then populated with records that often duplicate most of the original record's attributes. All in all, not very DRY.
+-
+-<tt>vestal_versions</tt>[http://github.com/laserlemon/vestal_versions] requires only one versions table (polymorphically associated with its parent models) and no changes whatsoever to existing tables. But it goes one step DRYer by storing a serialized hash of _only_ the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
+-
+-And that's just what <tt>vestal_versions</tt> does. Not only can a model be reverted to a previous version number but also to a date or time!
+-
+-== Compatibility
+-
+-Tested with Active Record 3.0.3 with Ruby 1.8.7 and 1.9.2.
+-
+-== Installation
+-
+-In the Gemfile:
+-
+-  gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'
+-
+-Next, generate and run the first and last versioning migration you'll ever need:
+-
+-  $ rails generate vestal_versions:migration
+-  $ rake db:migrate
+-
+-== Example
+-
+-To version an ActiveRecord model, simply add <tt>versioned</tt> to your class like so:
+-
+-  class User < ActiveRecord::Base
+-    versioned
+-
+-    validates_presence_of :first_name, :last_name
+-
+-    def name
+-      "#{first_name} #{last_name}"
+-    end
+-  end
+-
+-It's that easy! Now watch it in action...
+-
+-  >> u = User.create(:first_name => "Steve", :last_name => "Richert")
+-  => #<User first_name: "Steve", last_name: "Richert">
+-  >> u.version
+-  => 1
+-  >> u.update_attribute(:first_name, "Stephen")
+-  => true
+-  >> u.name
+-  => "Stephen Richert"
+-  >> u.version
+-  => 2
+-  >> u.revert_to(10.seconds.ago)
+-  => 1
+-  >> u.name
+-  => "Steve Richert"
+-  >> u.version
+-  => 1
+-  >> u.save
+-  => true
+-  >> u.version
+-  => 3
+-  >> u.update_attribute(:last_name, "Jobs")
+-  => true
+-  >> u.name
+-  => "Steve Jobs"
+-  >> u.version
+-  => 4
+-  >> u.revert_to!(2)
+-  => true
+-  >> u.name
+-  => "Stephen Richert"
+-  >> u.version
+-  => 5
+-
+-== Upgrading to 1.0
+-
+-For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatible, with just a few notable changes:
+-
+-* The versions table has been beefed up. You'll need to add the following columns (and indexes, if you feel so inclined):
+-
+-    change_table :versions do |t|
+-      t.belongs_to :user, :polymorphic => true
+-      t.string :user_name
+-      t.string :tag
+-    end
+-
+-    change_table :versions do |t|
+-      t.index [:user_id, :user_type]
+-      t.index :user_name
+-      t.index :tag
+-    end
+-
+-* When a model is created (or updated the first time after being versioned), an initial version record with a number of 1 is no longer created. These aren't used during reversion and so they end up just being dead weight. Feel free to scrap all your versions where <tt>number == 1</tt> after the upgrade if you'd like to free up some room in your database (but you don't have to).
+-
+-* Models that have no version records in the database will return a <tt>@user.version</tt> of 1. In the past, this would have returned <tt>nil</tt> instead.
+-
+-* <tt>Version</tt> has moved to <tt>VestalVersions::Version</tt> to make way for custom version classes.
+-
+-* <tt>Version#version</tt> did not survive the move to <tt>VestalVersions::Version#version</tt>. That alias was dropped (too confusing). Use <tt>VestalVersions::Version#number</tt>.
+-
+-== New to 1.0
+-
+-There are a handful of exciting new additions in version 1.0 of <tt>vestal_versions</tt>. A lot has changed in the code: much better documentation, more modular organization of features, and a more exhaustive test suite. But there are also a number of new features that are available in this release of <tt>vestal_versions</tt>:
+-
+-* The ability to completely skip versioning within a new <tt>skip_version</tt> block:
+-
+-    @user.version # => 1
+-    @user.skip_version do
+-      @user.update_attribute(:first_name, "Stephen")
+-      @user.first_name = "Steve"
+-      @user.save
+-      @user.update_attributes(:last_name => "Jobs")
+-    end
+-    @user.version # => 1
+-
+-  Also available, are <tt>merge_version</tt> and <tt>append_version</tt> blocks. The <tt>merge_version</tt> block will compile the possibly multiple versions that would result from the updates inside the block into one summary version. The single resulting version is then tacked onto the version history as usual. The <tt>append_version</tt> block works similarly except that the resulting single version is combined with the most recent version in the history and saved.
+-
+-* Version tagging. Any version can have a tag attached to it (must be unique within the scope of the versioned parent) and that tag can be used for reversion.
+-
+-    @user.name # => "Steve Richert"
+-    @user.update_attribute(:last_name, "Jobs")
+-    @user.name # => "Steve Jobs"
+-    @user.tag_version("apple")
+-    @user.update_attribute(:last_name, "Richert")
+-    @user.name # => "Steve Richert"
+-    @user.revert_to("apple")
+-    @user.name # => "Steve Jobs"
+-
+-  So if you're not big on version numbers, you could just tag your versions and avoid the numbers altogether.
+-
+-* Resetting. This is basically a hard revert. The new <tt>reset_to!</tt> instance method behaves just like the <tt>revert_to!</tt> method except that after the reversion, it will also scrap all the versions that came after that target version.
+-
+-    @user.name # => "Steve Richert"
+-    @user.version # => 1
+-    @user.versions.count # => 0
+-    @user.update_attribute(:last_name, "Jobs")
+-    @user.name # => "Steve Jobs"
+-    @user.version # => 2
+-    @user.versions.count # => 1
+-    @user.reset_to!(1)
+-    @user.name # => "Steve Richert"
+-    @user.version # => 1
+-    @user.versions.count # => 0
+-
+-* Storing which user is responsible for a revision. Rather than introduce a lot of controller magic to guess what to store, you can simply update an additional attribute on your versioned model: <tt>updated_by</tt>.
+-
+-    @user.update_attributes(:last_name => "Jobs", :updated_by => "Tyler")
+-    @user.versions.last.user # => "Tyler"
+-
+-  Instead of passing a simple string to the <tt>updated_by</tt> setter, you can pass a model instance, such as an ActiveRecord user or administrator. The association will be saved polymorphically alongside the version.
+-
+-    @user.update_attributes(:last_name => "Jobs", :updated_by => current_user)
+-    @user.versions.last.user # => #<User first_name: "Steven", last_name: "Tyler">
+-
+-* Global configuration. The new <tt>vestal_versions</tt> Rails generator also writes an initializer with instructions on how to set application-wide options for the <tt>versioned</tt> method.
+-
+-* Conditional version creation. The <tt>versioned</tt> method now accepts <tt>:if</tt> and <tt>:unless</tt> options. Each expects a symbol representing an instance method or a proc that will be evaluated to determine whether or not to create a new version after an update. An array containing any combination of symbols and procs can also be given.
+-
+-    class User < ActiveRecord::Base
+-      versioned :if => :really_create_a_version?
+-    end
+-
+-* Custom version classes. By passing a <tt>:class_name</tt> option to the <tt>versioned</tt> method, you can specify your own ActiveRecord version model. <tt>VestalVersions::Version</tt> is the default, but feel free to stray from that. I recommend that your custom model inherit from <tt>VestalVersions::Version</tt>, but that's up to you!
+-
+-* A <tt>versioned?</tt> convenience class method. If your user model is versioned, <tt>User.versioned?</tt> will let you know.
+-
+-* Soft Deletes & Restoration.  By setting <tt>:dependent</tt> to <tt>:tracking</tt> destroys will be tracked.  On destroy a new version will be created storing the complete details of the object with a tag of 'deleted'.  The object can later be restored using the <tt>restore!</tt> method on the VestalVersions::Version record.  The attributes of the restored object will be set using the attribute writer methods.  After a restore! is performed the version record with the 'deleted' tag is removed from the history.
+-
+-    class User < ActiveRecord::Base
+-      versioned :dependent => :tracking
+-    end
+-
+-    >> @user.version
+-    => 2
+-    >> @user.destroy
+-    => <User id: 2, first_name: "Steve", last_name: "Jobs", ... >
+-    >> User.find(2)
+-    => ActiveRecord::RecordNotFound: Couldn't find User with ID=2
+-    >> VestalVersions::Version.last
+-    => <VestalVersions::Version id: 4, versioned_id: 2, versioned_type: "User", user_id: nil, user_type: nil, user_name: nil, modifications: {"created_at"=>Sun Aug 01 18:39:57 UTC 2010, "updated_at"=>Sun Aug 01 18:42:28 UTC 2010, "id"=>2, "last_name"=>"Jobs", "first_name"=>"Stephen"}, number: 3, tag: "deleted", created_at: "2010-08-01 18:42:43", updated_at: "2010-08-01 18:42:43">
+-    >> VestalVersions::Version.last.restore!
+-    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
+-    >> @user = User.find(2)
+-    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
+-    >> @user.version
+-    => 2
+-
+-== Thanks!
+-
+-Thank you to all those who post {issues and suggestions}[http://github.com/laserlemon/vestal_versions/issues]. And special thanks to:
+-
+-* splattael[http://github.com/splattael], who first bugged (and helped) me to write some tests for this thing
+-* snaury[http://github.com/snaury], who helped out early on with the <tt>between</tt> association method, the <tt>:dependent</tt> option and a conflict from using a method called <tt>changes</tt>
+-* sthapit[http://github.com/sthapit], who was responsible for the <tt>:only</tt> and <tt>:except</tt> options as well as showing me that I'm a dummy for storing a useless first version
+-
+-To contribute to <tt>vestal_versions</tt>, please fork, hack away in the integration[http://github.com/laserlemon/vestal_versions/tree/integration] branch and send me a pull request. Remember your tests!
++= vestal_versions {<img src="http://stillmaintained.com/laserlemon/vestal_versions.png" alt="Still Maintained" />}[http://stillmaintained.com/laserlemon/vestal_versions]
+diff --git a/README.rdoc b/README.rdoc
+index 8e1ad2a..1a1c331 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -12 +12 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-  
++
+@@ -32 +32 @@ To version an ActiveRecord model, simply add <tt>versioned</tt> to your class li
+-  
++
+@@ -34 +34 @@ To version an ActiveRecord model, simply add <tt>versioned</tt> to your class li
+-  
++
+@@ -80 +80 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-  
++
+@@ -86 +86 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-    
++
+@@ -92 +92 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-  
++
+@@ -94 +94 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-  
++
+@@ -96 +96 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-  
++
+@@ -98 +98 @@ For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatib
+-  
++
+@@ -106 +106 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -115 +115 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -117 +117 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -119 +119 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -128 +128 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -130 +130 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -132 +132 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -144 +144 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -146 +146 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -149 +149 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -151 +151 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -154 +154 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -156 +156 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -158 +158 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -162 +162 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -164 +164 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
+@@ -176 +176 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-    => <User id: 2, first_name: "Steve", last_name: "Jobs", ... > 
++    => <User id: 2, first_name: "Steve", last_name: "Jobs", ... >
+@@ -180 +180 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-    => <VestalVersions::Version id: 4, versioned_id: 2, versioned_type: "User", user_id: nil, user_type: nil, user_name: nil, modifications: {"created_at"=>Sun Aug 01 18:39:57 UTC 2010, "updated_at"=>Sun Aug 01 18:42:28 UTC 2010, "id"=>2, "last_name"=>"Jobs", "first_name"=>"Stephen"}, number: 3, tag: "deleted", created_at: "2010-08-01 18:42:43", updated_at: "2010-08-01 18:42:43"> 
++    => <VestalVersions::Version id: 4, versioned_id: 2, versioned_type: "User", user_id: nil, user_type: nil, user_name: nil, modifications: {"created_at"=>Sun Aug 01 18:39:57 UTC 2010, "updated_at"=>Sun Aug 01 18:42:28 UTC 2010, "id"=>2, "last_name"=>"Jobs", "first_name"=>"Stephen"}, number: 3, tag: "deleted", created_at: "2010-08-01 18:42:43", updated_at: "2010-08-01 18:42:43">
+diff --git a/README.rdoc b/README.rdoc
+index 1d301e3..8e1ad2a 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-Tested with Active Record 3.0.0 with Ruby 1.8.7 and 1.9.2-preview3.
++Tested with Active Record 3.0.3 with Ruby 1.8.7 and 1.9.2.
+@@ -23 +23 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-  $ rails generate vestal_versions
++  $ rails generate vestal_versions:migration
+diff --git a/README.rdoc b/README.rdoc
+index 765a766..1d301e3 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -19 +19 @@ In the Gemfile:
+-  gem 'vestal_versions', :git => 'git://github.com/lailsonbm/vestal_versions', :branch => 'rails3'
++  gem 'vestal_versions', :git => 'git://github.com/adamcooper/vestal_versions'
+diff --git a/README.rdoc b/README.rdoc
+index 7b935f9..765a766 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
++Tested with Active Record 3.0.0 with Ruby 1.8.7 and 1.9.2-preview3.
+diff --git a/README.rdoc b/README.rdoc
+index 20d9f18..7b935f9 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -166 +166,22 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  
++
++* Soft Deletes & Restoration.  By setting <tt>:dependent</tt> to <tt>:tracking</tt> destroys will be tracked.  On destroy a new version will be created storing the complete details of the object with a tag of 'deleted'.  The object can later be restored using the <tt>restore!</tt> method on the VestalVersions::Version record.  The attributes of the restored object will be set using the attribute writer methods.  After a restore! is performed the version record with the 'deleted' tag is removed from the history.
++
++    class User < ActiveRecord::Base
++      versioned :dependent => :tracking
++    end
++
++    >> @user.version
++    => 2
++    >> @user.destroy
++    => <User id: 2, first_name: "Steve", last_name: "Jobs", ... > 
++    >> User.find(2)
++    => ActiveRecord::RecordNotFound: Couldn't find User with ID=2
++    >> VestalVersions::Version.last
++    => <VestalVersions::Version id: 4, versioned_id: 2, versioned_type: "User", user_id: nil, user_type: nil, user_name: nil, modifications: {"created_at"=>Sun Aug 01 18:39:57 UTC 2010, "updated_at"=>Sun Aug 01 18:42:28 UTC 2010, "id"=>2, "last_name"=>"Jobs", "first_name"=>"Stephen"}, number: 3, tag: "deleted", created_at: "2010-08-01 18:42:43", updated_at: "2010-08-01 18:42:43"> 
++    >> VestalVersions::Version.last.restore!
++    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
++    >> @user = User.find(2)
++    => <User id: 2, first_name => "Steven", last_name: "Jobs", ... >
++    >> @user.version
++    => 2
++
+diff --git a/README.rdoc b/README.rdoc
+index 0f390ee..20d9f18 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -1 +1 @@
+-= vestal_versions
++= vestal_versions for Rails 3
+@@ -10,0 +11,4 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
++== Compatibility
++  
++Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
++
+@@ -21,4 +24,0 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-  
+-== Compatibility
+-  
+-Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
+diff --git a/README.rdoc b/README.rdoc
+index e3b0fc3..0f390ee 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-In <tt>Gemfile</tt>:
++In the Gemfile:
+@@ -24 +24 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-  Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
++Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
+diff --git a/README.rdoc b/README.rdoc
+index aaba912..e3b0fc3 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -13 +13 @@ And that's just what <tt>vestal_versions</tt> does. Not only can a model be reve
+-In <tt>environment.rb</tt>:
++In <tt>Gemfile</tt>:
+@@ -15,9 +15 @@ In <tt>environment.rb</tt>:
+-  Rails::Initializer.run do |config|
+-    ...
+-    config.gem 'vestal_versions'
+-    ...
+-  end
+-
+-At your application root, run:
+-
+-  $ sudo rake gems:install
++  gem 'vestal_versions', :git => 'git://github.com/lailsonbm/vestal_versions', :branch => 'rails3'
+@@ -27 +19 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-  $ script/generate vestal_versions
++  $ rails generate vestal_versions
+@@ -28,0 +21,4 @@ Next, generate and run the first and last versioning migration you'll ever need:
++  
++== Compatibility
++  
++  Tested with Active Record 3.0.0.beta4 with Ruby 1.8.7 and 1.9.2-preview3.
+diff --git a/README.rdoc b/README.rdoc
+index fd18c59..aaba912 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -137,11 +137,11 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  @user.name # => "Steve Richert"
+-  @user.version # => 1
+-  @user.versions.count # => 0
+-  @user.update_attribute(:last_name, "Jobs")
+-  @user.name # => "Steve Jobs"
+-  @user.version # => 2
+-  @user.versions.count # => 1
+-  @user.reset_to!(1)
+-  @user.name # => "Steve Richert"
+-  @user.version # => 1
+-  @user.versions.count # => 0
++    @user.name # => "Steve Richert"
++    @user.version # => 1
++    @user.versions.count # => 0
++    @user.update_attribute(:last_name, "Jobs")
++    @user.name # => "Steve Jobs"
++    @user.version # => 2
++    @user.versions.count # => 1
++    @user.reset_to!(1)
++    @user.name # => "Steve Richert"
++    @user.version # => 1
++    @user.versions.count # => 0
+@@ -151,2 +151,2 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  @user.update_attributes(:last_name => "Jobs", :updated_by => "Tyler")
+-  @user.versions.last.user # => "Tyler"
++    @user.update_attributes(:last_name => "Jobs", :updated_by => "Tyler")
++    @user.versions.last.user # => "Tyler"
+@@ -156,2 +156,2 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  @user.update_attributes(:last_name => "Jobs", :updated_by => current_user)
+-  @user.versions.last.user # => #<User first_name: "Steven", last_name: "Tyler">
++    @user.update_attributes(:last_name => "Jobs", :updated_by => current_user)
++    @user.versions.last.user # => #<User first_name: "Steven", last_name: "Tyler">
+@@ -163,3 +163,3 @@ There are a handful of exciting new additions in version 1.0 of <tt>vestal_versi
+-  class User < ActiveRecord::Base
+-    versioned :if => :really_create_a_version?
+-  end
++    class User < ActiveRecord::Base
++      versioned :if => :really_create_a_version?
++    end
+diff --git a/README.rdoc b/README.rdoc
+index d202fbb..fd18c59 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -177,0 +178,2 @@ Thank you to all those who post {issues and suggestions}[http://github.com/laser
++
++To contribute to <tt>vestal_versions</tt>, please fork, hack away in the integration[http://github.com/laserlemon/vestal_versions/tree/integration] branch and send me a pull request. Remember your tests!
+diff --git a/README.rdoc b/README.rdoc
+index 63a498b..d202fbb 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -7,3 +7 @@ Finally, DRY ActiveRecord versioning!
+-<tt>simply_versioned</tt>[http://github.com/mmower/simply_versioned] by mmower[http://github.com/mmower] started to move in the right direction by removing a great deal of the duplication of acts_as_versioned. It requires only one versions table and no changes whatsoever to existing models. Its versions table stores all of the model attributes as a YAML hash in a single text column. But we could be DRYer!
+-
+-<tt>vestal_versions</tt>[http://github.com/laserlemon/vestal_versions] keeps in the spirit of consolidating to one versions table, polymorphically associated with its parent models. But it goes one step further by storing a serialized hash of _only_ the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
++<tt>vestal_versions</tt>[http://github.com/laserlemon/vestal_versions] requires only one versions table (polymorphically associated with its parent models) and no changes whatsoever to existing tables. But it goes one step DRYer by storing a serialized hash of _only_ the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
+@@ -17,0 +16 @@ In <tt>environment.rb</tt>:
++    ...
+@@ -18,0 +18 @@ In <tt>environment.rb</tt>:
++    ...
+@@ -27 +27 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-  $ script/generate vestal_versions_migration
++  $ script/generate vestal_versions
+@@ -46 +46 @@ It's that easy! Now watch it in action...
+-  >> u = User.create(:first_name => 'Steve', :last_name => 'Richert')
++  >> u = User.create(:first_name => "Steve", :last_name => "Richert")
+@@ -50 +50 @@ It's that easy! Now watch it in action...
+-  >> u.update_attribute(:first_name, 'Stephen')
++  >> u.update_attribute(:first_name, "Stephen")
+@@ -56 +56 @@ It's that easy! Now watch it in action...
+-  >> u.revert_to(:first)
++  >> u.revert_to(10.seconds.ago)
+@@ -66 +66 @@ It's that easy! Now watch it in action...
+-  >> u.update_attribute(:last_name, 'Jobs')
++  >> u.update_attribute(:last_name, "Jobs")
+@@ -77,0 +78,100 @@ It's that easy! Now watch it in action...
++
++== Upgrading to 1.0
++
++For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatible, with just a few notable changes:
++
++* The versions table has been beefed up. You'll need to add the following columns (and indexes, if you feel so inclined):
++  
++    change_table :versions do |t|
++      t.belongs_to :user, :polymorphic => true
++      t.string :user_name
++      t.string :tag
++    end
++    
++    change_table :versions do |t|
++      t.index [:user_id, :user_type]
++      t.index :user_name
++      t.index :tag
++    end
++  
++* When a model is created (or updated the first time after being versioned), an initial version record with a number of 1 is no longer created. These aren't used during reversion and so they end up just being dead weight. Feel free to scrap all your versions where <tt>number == 1</tt> after the upgrade if you'd like to free up some room in your database (but you don't have to).
++  
++* Models that have no version records in the database will return a <tt>@user.version</tt> of 1. In the past, this would have returned <tt>nil</tt> instead.
++  
++* <tt>Version</tt> has moved to <tt>VestalVersions::Version</tt> to make way for custom version classes.
++  
++* <tt>Version#version</tt> did not survive the move to <tt>VestalVersions::Version#version</tt>. That alias was dropped (too confusing). Use <tt>VestalVersions::Version#number</tt>.
++
++== New to 1.0
++
++There are a handful of exciting new additions in version 1.0 of <tt>vestal_versions</tt>. A lot has changed in the code: much better documentation, more modular organization of features, and a more exhaustive test suite. But there are also a number of new features that are available in this release of <tt>vestal_versions</tt>:
++
++* The ability to completely skip versioning within a new <tt>skip_version</tt> block:
++  
++    @user.version # => 1
++    @user.skip_version do
++      @user.update_attribute(:first_name, "Stephen")
++      @user.first_name = "Steve"
++      @user.save
++      @user.update_attributes(:last_name => "Jobs")
++    end
++    @user.version # => 1
++  
++  Also available, are <tt>merge_version</tt> and <tt>append_version</tt> blocks. The <tt>merge_version</tt> block will compile the possibly multiple versions that would result from the updates inside the block into one summary version. The single resulting version is then tacked onto the version history as usual. The <tt>append_version</tt> block works similarly except that the resulting single version is combined with the most recent version in the history and saved.
++  
++* Version tagging. Any version can have a tag attached to it (must be unique within the scope of the versioned parent) and that tag can be used for reversion.
++  
++    @user.name # => "Steve Richert"
++    @user.update_attribute(:last_name, "Jobs")
++    @user.name # => "Steve Jobs"
++    @user.tag_version("apple")
++    @user.update_attribute(:last_name, "Richert")
++    @user.name # => "Steve Richert"
++    @user.revert_to("apple")
++    @user.name # => "Steve Jobs"
++  
++  So if you're not big on version numbers, you could just tag your versions and avoid the numbers altogether.
++  
++* Resetting. This is basically a hard revert. The new <tt>reset_to!</tt> instance method behaves just like the <tt>revert_to!</tt> method except that after the reversion, it will also scrap all the versions that came after that target version.
++  
++  @user.name # => "Steve Richert"
++  @user.version # => 1
++  @user.versions.count # => 0
++  @user.update_attribute(:last_name, "Jobs")
++  @user.name # => "Steve Jobs"
++  @user.version # => 2
++  @user.versions.count # => 1
++  @user.reset_to!(1)
++  @user.name # => "Steve Richert"
++  @user.version # => 1
++  @user.versions.count # => 0
++  
++* Storing which user is responsible for a revision. Rather than introduce a lot of controller magic to guess what to store, you can simply update an additional attribute on your versioned model: <tt>updated_by</tt>.
++  
++  @user.update_attributes(:last_name => "Jobs", :updated_by => "Tyler")
++  @user.versions.last.user # => "Tyler"
++  
++  Instead of passing a simple string to the <tt>updated_by</tt> setter, you can pass a model instance, such as an ActiveRecord user or administrator. The association will be saved polymorphically alongside the version.
++  
++  @user.update_attributes(:last_name => "Jobs", :updated_by => current_user)
++  @user.versions.last.user # => #<User first_name: "Steven", last_name: "Tyler">
++  
++* Global configuration. The new <tt>vestal_versions</tt> Rails generator also writes an initializer with instructions on how to set application-wide options for the <tt>versioned</tt> method.
++  
++* Conditional version creation. The <tt>versioned</tt> method now accepts <tt>:if</tt> and <tt>:unless</tt> options. Each expects a symbol representing an instance method or a proc that will be evaluated to determine whether or not to create a new version after an update. An array containing any combination of symbols and procs can also be given.
++  
++  class User < ActiveRecord::Base
++    versioned :if => :really_create_a_version?
++  end
++  
++* Custom version classes. By passing a <tt>:class_name</tt> option to the <tt>versioned</tt> method, you can specify your own ActiveRecord version model. <tt>VestalVersions::Version</tt> is the default, but feel free to stray from that. I recommend that your custom model inherit from <tt>VestalVersions::Version</tt>, but that's up to you!
++  
++* A <tt>versioned?</tt> convenience class method. If your user model is versioned, <tt>User.versioned?</tt> will let you know.
++  
++== Thanks!
++
++Thank you to all those who post {issues and suggestions}[http://github.com/laserlemon/vestal_versions/issues]. And special thanks to:
++
++* splattael[http://github.com/splattael], who first bugged (and helped) me to write some tests for this thing
++* snaury[http://github.com/snaury], who helped out early on with the <tt>between</tt> association method, the <tt>:dependent</tt> option and a conflict from using a method called <tt>changes</tt>
++* sthapit[http://github.com/sthapit], who was responsible for the <tt>:only</tt> and <tt>:except</tt> options as well as showing me that I'm a dummy for storing a useless first version
+diff --git a/README.rdoc b/README.rdoc
+index 170a96a..63a498b 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -9 +9 @@ Finally, DRY ActiveRecord versioning!
+-<tt>vestal_versions</tt> keeps in the spirit of consolidating to one versions table, polymorphically associated with its parent models. But it goes one step further by storing a serialized hash of only the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
++<tt>vestal_versions</tt>[http://github.com/laserlemon/vestal_versions] keeps in the spirit of consolidating to one versions table, polymorphically associated with its parent models. But it goes one step further by storing a serialized hash of _only_ the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
+diff --git a/README.rdoc b/README.rdoc
+index 2132d8e..170a96a 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -24 +24 @@ At your application root, run:
+-  
++
+@@ -36 +36 @@ To version an ActiveRecord model, simply add <tt>versioned</tt> to your class li
+-    
++  
+@@ -38 +38 @@ To version an ActiveRecord model, simply add <tt>versioned</tt> to your class li
+-    
++  
+diff --git a/README.rdoc b/README.rdoc
+index 2efd482..2132d8e 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -18 +18 @@ In <tt>environment.rb</tt>:
+-    config.gem 'laserlemon-vestal_versions', :lib => 'vestal_versions', :source => 'http://gems.github.com'
++    config.gem 'vestal_versions'
+diff --git a/README.rdoc b/README.rdoc
+index 7ef5cbe..2efd482 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -32 +32 @@ Next, generate and run the first and last versioning migration you'll ever need:
+-To version an ActiveRecord model, simply add <tt>versioned</tt> to you class like so:
++To version an ActiveRecord model, simply add <tt>versioned</tt> to your class like so:
+diff --git a/README.rdoc b/README.rdoc
+index 130a89e..7ef5cbe 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -5 +5 @@ Finally, DRY ActiveRecord versioning!
+-technoweenie[http://github.com/technoweenie]'s <tt>acts_as_versioned</tt>[http://github.com/technoweenie/acts_as_versioned] was a great start, but it failed to keep up with ActiveRecord's introduction of dirty objects in version 2.1. Additionally, each versioned model needs its own versions table that duplicates most of the original table's columns. The versions table is then populated with records that often duplicate most of the original record's attributes. All in all, not very DRY at all.
++<tt>acts_as_versioned</tt>[http://github.com/technoweenie/acts_as_versioned] by technoweenie[http://github.com/technoweenie] was a great start, but it failed to keep up with ActiveRecord's introduction of dirty objects in version 2.1. Additionally, each versioned model needs its own versions table that duplicates most of the original table's columns. The versions table is then populated with records that often duplicate most of the original record's attributes. All in all, not very DRY.
+@@ -11 +11 @@ technoweenie[http://github.com/technoweenie]'s <tt>acts_as_versioned</tt>[http:/
+-And that's just what <tt>vestal_versions</tt> does. Not only can a model be reverted to a previous version number but it can be reverted to a date or time!
++And that's just what <tt>vestal_versions</tt> does. Not only can a model be reverted to a previous version number but also to a date or time!
+diff --git a/README.rdoc b/README.rdoc
+index 000dcf3..130a89e 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -2,0 +3,10 @@
++Finally, DRY ActiveRecord versioning!
++
++technoweenie[http://github.com/technoweenie]'s <tt>acts_as_versioned</tt>[http://github.com/technoweenie/acts_as_versioned] was a great start, but it failed to keep up with ActiveRecord's introduction of dirty objects in version 2.1. Additionally, each versioned model needs its own versions table that duplicates most of the original table's columns. The versions table is then populated with records that often duplicate most of the original record's attributes. All in all, not very DRY at all.
++
++<tt>simply_versioned</tt>[http://github.com/mmower/simply_versioned] by mmower[http://github.com/mmower] started to move in the right direction by removing a great deal of the duplication of acts_as_versioned. It requires only one versions table and no changes whatsoever to existing models. Its versions table stores all of the model attributes as a YAML hash in a single text column. But we could be DRYer!
++
++<tt>vestal_versions</tt> keeps in the spirit of consolidating to one versions table, polymorphically associated with its parent models. But it goes one step further by storing a serialized hash of only the models' changes. Think modern version control systems. By traversing the record of changes, the models can be reverted to any point in time.
++
++And that's just what <tt>vestal_versions</tt> does. Not only can a model be reverted to a previous version number but it can be reverted to a date or time!
++
+@@ -5 +15,14 @@
+-  script/plugin install git://github.com/laserlemon/vestal_versions.git
++In <tt>environment.rb</tt>:
++
++  Rails::Initializer.run do |config|
++    config.gem 'laserlemon-vestal_versions', :lib => 'vestal_versions', :source => 'http://gems.github.com'
++  end
++
++At your application root, run:
++
++  $ sudo rake gems:install
++  
++Next, generate and run the first and last versioning migration you'll ever need:
++
++  $ script/generate vestal_versions_migration
++  $ rake db:migrate
+@@ -9 +32,11 @@
+-Coming soon...
++To version an ActiveRecord model, simply add <tt>versioned</tt> to you class like so:
++
++  class User < ActiveRecord::Base
++    versioned
++    
++    validates_presence_of :first_name, :last_name
++    
++    def name
++      "#{first_name} #{last_name}"
++    end
++  end
+@@ -11 +44 @@ Coming soon...
+-== Tips
++It's that easy! Now watch it in action...
+@@ -13 +46,32 @@ Coming soon...
+-Coming soon...
+\ No newline at end of file
++  >> u = User.create(:first_name => 'Steve', :last_name => 'Richert')
++  => #<User first_name: "Steve", last_name: "Richert">
++  >> u.version
++  => 1
++  >> u.update_attribute(:first_name, 'Stephen')
++  => true
++  >> u.name
++  => "Stephen Richert"
++  >> u.version
++  => 2
++  >> u.revert_to(:first)
++  => 1
++  >> u.name
++  => "Steve Richert"
++  >> u.version
++  => 1
++  >> u.save
++  => true
++  >> u.version
++  => 3
++  >> u.update_attribute(:last_name, 'Jobs')
++  => true
++  >> u.name
++  => "Steve Jobs"
++  >> u.version
++  => 4
++  >> u.revert_to!(2)
++  => true
++  >> u.name
++  => "Stephen Richert"
++  >> u.version
++  => 5

@@ -1,0 +1,166 @@
+diff --git a/README.md b/README.md
+index 7494b74..bcfab24 100644
+--- a/README.md
++++ b/README.md
+@@ -32 +32 @@ sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-deb
+-**NOTE** You can do the same for other OS, just change the page for the chrome (e.g `chrome.exe` in Windows)
++**NOTE** You can do the same for other OS, just change the path to chrome (e.g `chrome.exe` in Windows)
+diff --git a/README.md b/README.md
+index c373918..7494b74 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ RWDPerf
+-WIP; testing RWD Perf
++Performance testing for Responsive web design websites.
+@@ -31,0 +32,2 @@ sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-deb
++**NOTE** You can do the same for other OS, just change the page for the chrome (e.g `chrome.exe` in Windows)
++
+@@ -99,0 +102,4 @@ Roadmap
++- Run chrome through the tool itself [#6](https://github.com/lafikl/RWDPerf/issues/6)
++
++
++
+diff --git a/README.md b/README.md
+index 661f134..c373918 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ npm install rwdperf -g
+-Usage
++CLI Usage
+@@ -56,0 +57 @@ Options:
++  -j, --json                     Return results as JSON
+@@ -59,0 +61,33 @@ Options:
++API Usage
++========
++First you need to start chrome with these flags (Mac)
++
++```
++sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 ----disable-cache
++```
++
++then you can consume that directly from your code.
++
++```javascript
++var Rwdperf = require('rwdperf');
++
++new Rwdperf({
++  link: "http://google.com",
++  mobile: true,
++  emulateViewport: true,
++  deviceScaleFactor: 1,
++  scale: 1,
++  width: 400,
++  height: 500,
++  userAgent: null,
++  cb: handler
++}).init();
++
++function handler(err, data) {
++  if ( err ) return console.log(err);
++
++  // all worked out! do amazing stuff with the data...
++  console.log(JSON.stringify(data));
++}
++```
++
+diff --git a/README.md b/README.md
+index 2ec10b9..661f134 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ Features
+-
++## Sample
+diff --git a/README.md b/README.md
+index 44094a0..2ec10b9 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9,4 @@ Features
+-- Simulate mobile devices, desktop, tablets.
+-- Find unused/hidden elements and highlight it
++- Emulate mobile devices, desktop, tablets.
++- Find unused/hidden elements
++- Find unused images
++- Calculate page weight
+@@ -13,0 +16,3 @@ Features
++![Sample](https://raw.githubusercontent.com/lafikl/RWDPerf/master/screenshot.png)
++
++
+diff --git a/README.md b/README.md
+index 320c90b..44094a0 100644
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23 @@ First you need to start chrome with these flags (Mac)
++
+@@ -27,0 +29 @@ then start another session and enter this command
++
+@@ -32 +34,2 @@ rwdperf -l http://hirondelleusa.org/ --width 400 --height 300 -m true -d 2 -s 2
+-For help enter 
++## List of all options 
++
+@@ -34 +37,15 @@ For help enter
+-rwdperf --help
++Usage: rwdperf [options]
++
++Options:
++
++  --help                         output usage information
++  -V, --version                  output the version number
++  -l, --link <val>               Link to be tested
++  -p, --port [val]               set a port, defaults to 3000
++  -m, --mobile                   Emulate mobile
++  -e, --emulateViewport          Emulate viewport, defaults to true
++  -d, --deviceScaleFactor [val]  Device scale factor, defaults to 1
++  -s, --scale [val]              scale, defaults to 1
++  -w, --width <val>              Viewport width
++  -h, --height <val>             Viewport height
++  -u, --userAgent <val>          Override user-agent
+diff --git a/README.md b/README.md
+index c930716..320c90b 100644
+--- a/README.md
++++ b/README.md
+@@ -13,0 +14,24 @@ Features
++Install
++========
++```
++npm install rwdperf -g
++```
++
++Usage
++========
++First you need to start chrome with these flags (Mac)
++```
++sudo /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 ----disable-cache
++```
++
++then start another session and enter this command
++```
++rwdperf -l http://hirondelleusa.org/ --width 400 --height 300 -m true -d 2 -s 2 -u "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53"
++```
++
++For help enter 
++```
++rwdperf --help
++```
++
++
+@@ -17,0 +42,2 @@ Roadmap
++- Test multiple urls
++- Add pre-configured device metrics (e.g iPhone 6)
+diff --git a/README.md b/README.md
+index 4d63266..c930716 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,13 @@ WIP; testing RWD Perf
++
++
++Features
++========
++- Simulate mobile devices, desktop, tablets.
++- Find unused/hidden elements and highlight it
++- Track requests 
++
++
++Roadmap
++=======
++- Find downscaled images
++- unused CSS

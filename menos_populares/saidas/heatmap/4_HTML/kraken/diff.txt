@@ -1,0 +1,1196 @@
+diff --git a/README.md b/README.md
+index 5b79a86..513a78a 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a lightweight, mobile-first boilerplate for front-end web developers. [View the demo and get started](https://cferdinandi.github.io/kraken/index.html).
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers. [View the demo and get started](https://cferdinandi.github.io/kraken).
+diff --git a/README.md b/README.md
+index 4b7215d..5b79a86 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a lightweight, mobile-first boilerplate for front-end web developers. [View the demo and get started](http://cferdinandi.github.com/kraken/).
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers. [View the demo and get started](https://cferdinandi.github.io/kraken/index.html).
+diff --git a/README.md b/README.md
+index 98c90c3..4b7215d 100755
+--- a/README.md
++++ b/README.md
+@@ -5,5 +4,0 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-## How to Contribute
+-
+-Please review the [contributing guidelines](CONTRIBUTING.md).
+-
+-
+diff --git a/README.md b/README.md
+index 88d9fdb..98c90c3 100755
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-In lieu of a formal style guide, take care to maintain the existing coding style. Please apply fixes to both the development and production code. Don't forget to update the version number, and when applicable, the documentation.
++Please review the [contributing guidelines](CONTRIBUTING.md).
+diff --git a/README.md b/README.md
+index 6e03f36..88d9fdb 100755
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-In lieu of a formal style guide, take care to maintain the existing coding style. Don't forget to update the version number, the changelog (in the `readme.md` file), and when applicable, the documentation.
++In lieu of a formal style guide, take care to maintain the existing coding style. Please apply fixes to both the development and production code. Don't forget to update the version number, and when applicable, the documentation.
+@@ -12,153 +12 @@ In lieu of a formal style guide, take care to maintain the existing coding style
+-Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
+-
+-
+-## Changelog
+-
+-Kraken uses [semantic versioning](http://semver.org/).
+-
+-* v6.0.0 - March 6, 2015
+-	* Removed icon font support.
+-* v5.6.1 - March 6, 2015
+-	* Fixed false positive from Opera Mini in SVG detection.
+-* v5.6.0 - January 31, 2014
+-	* Remove opacity `filter` from `a:hover img` property. IE9+ support `opacity` so it's been deprecated.
+-	* Changed the `display` property on `.list-inline > li` from `inline-block` to `inline`.
+-* v5.5.0 - January 7, 2014
+-	* Removed `:visited` and `:active` link styling to prevent specificity issues.
+-* v5.4.0 - January 7, 2014
+-	* Added `$color-info` variable.
+-* v5.3.0 - January 7, 2014
+-	* Added Sass line numbers.
+-* v5.2.0 - December 16, 2014
+-	* Added styling for the `abbr` tag.
+-* v5.1.1 - November 20, 2014
+-	* Fixed watch task.
+-* v5.1.0 - November 12, 2014
+-	* Removed commented out list styles.
+-	* Moved `.text-small`, `.text-large`, and `.text-muted` to `_overrides.scss` for better cascade inheritance.
+-	* Updated SVG process to allow for multiple SVG files.
+-	* Increased `h4`, `h5`, and `h6` font size to `1em`.
+-	* Adjusted styling of `.icon` class in `_svg.scss` for less specificity and easier overriding.
+-	* Renamed `_svgs.scss` to `_svg.scss`.
+-* v5.0.1 - October 24, 2014
+-	* Fixed bug with SVG feature detection and conditional displaying.
+-* v5.0.0 - October 23, 2014
+-	* Updated grid pattern that adds dynamic grids for more design flexibility.
+-	* Renamed `.grid-img` to `.grid-dynamic`.
+-	* Renamed several Sass variables for better semantics.
+-	* Deprecated Slider and removed from add-ons. Linked directly to HTML5 Boilerplate version of `.htaccess` file.
+-	* Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation. Added `.screen-reader-focusable` class.
+-	* Removed general `*-space-*` classes in favor of `*-margin-*` and `*-padding-*` specific ones.
+-	* Added `.list-inline` class.
+-	* Removed `list-style` attribute from `ul` and `ol`. Let's browser defaults do their thing.
+-	* Renamed `.group` to `.clearfix`.
+-	* Added default `display: none` state to SVGs to prevent blank space from showing in unsupported browsers.
+-* v4.2.0 - October 16, 2014
+-	* Updated Gulp task naming convention for better readability (action:object).
+-	* Added `gulp watch` and `gulp reload` task runners (regular and docs flavored).
+-	* Reorganized `package.json` and `gulpfile.js` packages.
+-* v4.1.2 - October 15, 2014
+-	* Updated `gulp-svgstore` to version `2.x`.
+-	* Replaced `gulp-clean` with native Node `del` method.
+-* v4.1.1 - October 15, 2014
+-	* Issued temporary fix for forced sourcemap generation in Sass 3.4.
+-* v4.1.0 - October 15, 2014
+-	* Replaced `gulp-headerfooter` with `gulp-header` and `gulp-footer` respectively.
+-* v4.0.3 - October 15, 2014
+-	* Switched to inline SVG.
+-	* Updated `paths` variables in  `gulpfile.js`.
+-* v4.0.2 - October 15, 2014
+-	* Fixed Gulp script task bug.
+-* v4.0.1 - October 10, 2014
+-	* Removed placeholder language from SVG section.
+-	* Fixed moz-specific styling being duplicated by auto-prefixer.
+-* v4.0.0 - October 7, 2014
+-	* Updated `icons.scss` to use `@each` loops.
+-	* Changed name of CSS output from `kraken.css` to `main.css`.
+-	* Changed `.text-tall` to `.text-large` for semantic consistency.
+-	* Added support for `.sass` file type to Sass processing.
+-	* Added SVG sprite generation to build process.
+-	* Added SVG styling and feature detection.
+-	* Added documentation generator to build process.
+-	* Removed HTML5 shim (time to drop IE8 and lower optimization).
+-	* Wrapped JS detects in IIFEs for better variable scoping.
+-	* Added documentation on working with Travis CI.
+-	* Added Tarpit to add-ons.
+-* v3.8.2 - September 28, 2014
+-	* Fixed JS concatenation bug.
+-* v3.8.1 - August 24, 2014
+-	* Fixed unit tests path.
+-	* Added feature testing and main JS files to their own subfolders for concatenation.
+-* v3.8.0 - August 12, 2014
+-	* Added `@each` loop for icons and the grid for easier maintenance.
+-	* Switched from sasslib to Ruby Sass for compiling (more compatible with Sass 3.x features).
+-	* Added variable for container width property.
+-	* Added variable to bump font-size on xlarge screens.
+-* v3.7.0 - July 21, 2014
+-	* Added `[hidden]` attribute polyfill.
+-	* Converted to CSSDoc inline documentation.
+-	* Added nested media queries for better readability.
+-	* Added `:focus` and `:visited` styles for links and buttons.
+-* v3.6.1 - June 24, 2014
+-	* Removed italics from h4, h5, and h6 elements.
+-* v3.6.0 - June 23, 2014
+-	* Converted to gulp.js workflow.
+-	* Added unit testing.
+-	* Updated naming conventions.
+-	* Removed unused `_mixins.scss` function.
+-	* Added minified versions of files.
+-	* Converted to three number versioning.
+-	* [Replaced Google-hosted HTML5 shim with local version](https://github.com/cferdinandi/kraken/issues/60).
+-	* [Updated icon recommendations](https://github.com/cferdinandi/kraken/issues/59).
+-	* [Updated Google Analytics placeholder](https://github.com/cferdinandi/kraken/issues/66).
+-* v3.5 - March 26, 2014
+-	* Added `@font-face` feature test.
+-	* Added fallback text for icons.
+-* v3.4 - February 16, 2014
+-	* [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
+-* v3.3 - February 4, 2014
+-	* [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
+-	* Redesigned grid with simple percentages (made possible with universal box-sizing).
+-	* Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
+-* v3.2 - January 13, 2014
+-	* [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
+-* v3.1 - December 2, 2013
+-	* [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
+-* v3.0 - November 29, 2013
+-	* Added Sass integration.
+-	* Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
+-	* Updated typographic scale to a 16px base.
+-	* Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
+-	* Added `.active` and `.disabled` classes to buttons.
+-	* Dropped rounded corners from buttons, forms, etc.
+-* v2.6 - November 13, 2013
+-	* [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
+-* v2.5 - October 21, 2013
+-	* [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
+-	* [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
+-	* [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
+-	* [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
+-	* [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
+-	* [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
+-	* [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
+-* v2.4 - October 18, 2013
+-	* Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
+-* v2.3 - August 24,2013
+-	* Minor styling update for Code section
+-* v2.2 - July 29, 2013
+-	* Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
+-* v2.1 - June 7, 2013
+-	* Switched to MIT license.
+-* v2.1 - June 2, 2013
+-	* Added version numbering.
+-* v2.1 - March 19,2013
+-	* Changed `.screen-reader` class to ems.
+-* v2.0 - March 18, 2013
+-	* Removed gradients on buttons.
+-	* Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
+-* v2.0 - March 15, 2013
+-	* Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
+-* v1.1 - March 14, 2013
+-	* Added print styling.
+-* v1.0 - May 7, 2013
+-	* Initial release.
+\ No newline at end of file
++The code is available under the [MIT License](LICENSE.md).
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index dd9bd46..6e03f36 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v6.0.0 - March 6, 2015
++	* Removed icon font support.
+diff --git a/README.md b/README.md
+index 597883b..dd9bd46 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.6.1 - March 6, 2015
++	* Fixed false positive from Opera Mini in SVG detection.
+diff --git a/README.md b/README.md
+index 86f10cc..597883b 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.6.0 - January 31, 2014
++	* Remove opacity `filter` from `a:hover img` property. IE9+ support `opacity` so it's been deprecated.
++	* Changed the `display` property on `.list-inline > li` from `inline-block` to `inline`.
+diff --git a/README.md b/README.md
+index 997d50e..86f10cc 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.5.0 - January 7, 2014
++	* Removed `:visited` and `:active` link styling to prevent specificity issues.
+diff --git a/README.md b/README.md
+index 80d4646..997d50e 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.4.0 - January 7, 2014
++	* Added `$color-info` variable.
+diff --git a/README.md b/README.md
+index 6dc783f..80d4646 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.3.0 - January 7, 2014
++	* Added Sass line numbers.
+diff --git a/README.md b/README.md
+index e136607..6dc783f 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.2.0 - December 16, 2014
++	* Added styling for the `abbr` tag.
+diff --git a/README.md b/README.md
+index 4ac44ac..e136607 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.1.1 - November 20, 2014
++	* Fixed watch task.
+diff --git a/README.md b/README.md
+index 7f90830..4ac44ac 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,7 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.1.0 - November 12, 2014
++	* Removed commented out list styles.
++	* Moved `.text-small`, `.text-large`, and `.text-muted` to `_overrides.scss` for better cascade inheritance.
++	* Updated SVG process to allow for multiple SVG files.
++	* Increased `h4`, `h5`, and `h6` font size to `1em`.
++	* Adjusted styling of `.icon` class in `_svg.scss` for less specificity and easier overriding.
++	* Renamed `_svgs.scss` to `_svg.scss`.
+diff --git a/README.md b/README.md
+index 18cf970..7f90830 100755
+--- a/README.md
++++ b/README.md
+@@ -19 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
+-* v5.0.0 - TBD
++* v5.0.1 - October 24, 2014
++	* Fixed bug with SVG feature detection and conditional displaying.
++* v5.0.0 - October 23, 2014
+diff --git a/README.md b/README.md
+index fdf09dc..18cf970 100755
+--- a/README.md
++++ b/README.md
+@@ -20,0 +21 @@ Kraken uses [semantic versioning](http://semver.org/).
++	* Renamed `.grid-img` to `.grid-dynamic`.
+@@ -23,2 +24 @@ Kraken uses [semantic versioning](http://semver.org/).
+-	* Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation.
+-	* Added new `.bg-*` helper class.
++	* Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation. Added `.screen-reader-focusable` class.
+@@ -27 +27,3 @@ Kraken uses [semantic versioning](http://semver.org/).
+-	* Removed `list-style` attributes from `ul` and `ol`. Let's browser defaults do their thing.
++	* Removed `list-style` attribute from `ul` and `ol`. Let's browser defaults do their thing.
++	* Renamed `.group` to `.clearfix`.
++	* Added default `display: none` state to SVGs to prevent blank space from showing in unsupported browsers.
+diff --git a/README.md b/README.md
+index 7c0dec6..fdf09dc 100755
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27 @@ Kraken uses [semantic versioning](http://semver.org/).
++	* Removed `list-style` attributes from `ul` and `ol`. Let's browser defaults do their thing.
+diff --git a/README.md b/README.md
+index ad141e1..7c0dec6 100755
+--- a/README.md
++++ b/README.md
+@@ -20,6 +20,7 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Updated grid pattern that adds dynamic grids for more design flexibility.
+-    * Renamed several Sass variables for better semantics.
+-    * Deprecated Slider and removed from add-ons. Linked directly to HTML5 Boilerplate version of `.htaccess` file.
+-    * Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation.
+-    * Added new `.bg-*` helper class.
+-    * Removed general `*-space-*` classes in favor of `*-margin-*` and `*-padding-*` specific ones.
++	* Updated grid pattern that adds dynamic grids for more design flexibility.
++	* Renamed several Sass variables for better semantics.
++	* Deprecated Slider and removed from add-ons. Linked directly to HTML5 Boilerplate version of `.htaccess` file.
++	* Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation.
++	* Added new `.bg-*` helper class.
++	* Removed general `*-space-*` classes in favor of `*-margin-*` and `*-padding-*` specific ones.
++	* Added `.list-inline` class.
+@@ -27,3 +28,3 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Updated Gulp task naming convention for better readability (action:object).
+-    * Added `gulp watch` and `gulp reload` task runners (regular and docs flavored).
+-    * Reorganized `package.json` and `gulpfile.js` packages.
++	* Updated Gulp task naming convention for better readability (action:object).
++	* Added `gulp watch` and `gulp reload` task runners (regular and docs flavored).
++	* Reorganized `package.json` and `gulpfile.js` packages.
+@@ -31,2 +32,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Updated `gulp-svgstore` to version `2.x`.
+-    * Replaced `gulp-clean` with native Node `del` method.
++	* Updated `gulp-svgstore` to version `2.x`.
++	* Replaced `gulp-clean` with native Node `del` method.
+@@ -34 +35 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Issued temporary fix for forced sourcemap generation in Sass 3.4.
++	* Issued temporary fix for forced sourcemap generation in Sass 3.4.
+@@ -36 +37 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Replaced `gulp-headerfooter` with `gulp-header` and `gulp-footer` respectively.
++	* Replaced `gulp-headerfooter` with `gulp-header` and `gulp-footer` respectively.
+@@ -38,2 +39,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Switched to inline SVG.
+-    * Updated `paths` variables in  `gulpfile.js`.
++	* Switched to inline SVG.
++	* Updated `paths` variables in  `gulpfile.js`.
+@@ -41 +42 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Fixed Gulp script task bug.
++	* Fixed Gulp script task bug.
+@@ -43,2 +44,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Removed placeholder language from SVG section.
+-    * Fixed moz-specific styling being duplicated by auto-prefixer.
++	* Removed placeholder language from SVG section.
++	* Fixed moz-specific styling being duplicated by auto-prefixer.
+@@ -46,11 +47,11 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Updated `icons.scss` to use `@each` loops.
+-    * Changed name of CSS output from `kraken.css` to `main.css`.
+-    * Changed `.text-tall` to `.text-large` for semantic consistency.
+-    * Added support for `.sass` file type to Sass processing.
+-    * Added SVG sprite generation to build process.
+-    * Added SVG styling and feature detection.
+-    * Added documentation generator to build process.
+-    * Removed HTML5 shim (time to drop IE8 and lower optimization).
+-    * Wrapped JS detects in IIFEs for better variable scoping.
+-    * Added documentation on working with Travis CI.
+-    * Added Tarpit to add-ons.
++	* Updated `icons.scss` to use `@each` loops.
++	* Changed name of CSS output from `kraken.css` to `main.css`.
++	* Changed `.text-tall` to `.text-large` for semantic consistency.
++	* Added support for `.sass` file type to Sass processing.
++	* Added SVG sprite generation to build process.
++	* Added SVG styling and feature detection.
++	* Added documentation generator to build process.
++	* Removed HTML5 shim (time to drop IE8 and lower optimization).
++	* Wrapped JS detects in IIFEs for better variable scoping.
++	* Added documentation on working with Travis CI.
++	* Added Tarpit to add-ons.
+@@ -58 +59 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Fixed JS concatenation bug.
++	* Fixed JS concatenation bug.
+@@ -60,2 +61,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Fixed unit tests path.
+-    * Added feature testing and main JS files to their own subfolders for concatenation.
++	* Fixed unit tests path.
++	* Added feature testing and main JS files to their own subfolders for concatenation.
+@@ -63,4 +64,4 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added `@each` loop for icons and the grid for easier maintenance.
+-    * Switched from sasslib to Ruby Sass for compiling (more compatible with Sass 3.x features).
+-    * Added variable for container width property.
+-    * Added variable to bump font-size on xlarge screens.
++	* Added `@each` loop for icons and the grid for easier maintenance.
++	* Switched from sasslib to Ruby Sass for compiling (more compatible with Sass 3.x features).
++	* Added variable for container width property.
++	* Added variable to bump font-size on xlarge screens.
+@@ -68,4 +69,4 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added `[hidden]` attribute polyfill.
+-    * Converted to CSSDoc inline documentation.
+-    * Added nested media queries for better readability.
+-    * Added `:focus` and `:visited` styles for links and buttons.
++	* Added `[hidden]` attribute polyfill.
++	* Converted to CSSDoc inline documentation.
++	* Added nested media queries for better readability.
++	* Added `:focus` and `:visited` styles for links and buttons.
+@@ -73 +74 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Removed italics from h4, h5, and h6 elements.
++	* Removed italics from h4, h5, and h6 elements.
+@@ -75,9 +76,9 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Converted to gulp.js workflow.
+-    * Added unit testing.
+-    * Updated naming conventions.
+-    * Removed unused `_mixins.scss` function.
+-    * Added minified versions of files.
+-    * Converted to three number versioning.
+-    * [Replaced Google-hosted HTML5 shim with local version](https://github.com/cferdinandi/kraken/issues/60).
+-    * [Updated icon recommendations](https://github.com/cferdinandi/kraken/issues/59).
+-    * [Updated Google Analytics placeholder](https://github.com/cferdinandi/kraken/issues/66).
++	* Converted to gulp.js workflow.
++	* Added unit testing.
++	* Updated naming conventions.
++	* Removed unused `_mixins.scss` function.
++	* Added minified versions of files.
++	* Converted to three number versioning.
++	* [Replaced Google-hosted HTML5 shim with local version](https://github.com/cferdinandi/kraken/issues/60).
++	* [Updated icon recommendations](https://github.com/cferdinandi/kraken/issues/59).
++	* [Updated Google Analytics placeholder](https://github.com/cferdinandi/kraken/issues/66).
+@@ -85,2 +86,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added `@font-face` feature test.
+-    * Added fallback text for icons.
++	* Added `@font-face` feature test.
++	* Added fallback text for icons.
+@@ -88 +89 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
++	* [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
+@@ -90,3 +91,3 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
+-    * Redesigned grid with simple percentages (made possible with universal box-sizing).
+-    * Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
++	* [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
++	* Redesigned grid with simple percentages (made possible with universal box-sizing).
++	* Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
+@@ -94 +95 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
++	* [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
+@@ -96 +97 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
++	* [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
+@@ -98,6 +99,6 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added Sass integration.
+-    * Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
+-    * Updated typographic scale to a 16px base.
+-    * Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
+-    * Added `.active` and `.disabled` classes to buttons.
+-    * Dropped rounded corners from buttons, forms, etc.
++	* Added Sass integration.
++	* Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
++	* Updated typographic scale to a 16px base.
++	* Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
++	* Added `.active` and `.disabled` classes to buttons.
++	* Dropped rounded corners from buttons, forms, etc.
+@@ -105 +106 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
++	* [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
+@@ -107,7 +108,7 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
+-    * [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
+-    * [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
+-    * [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
+-    * [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
+-    * [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
+-    * [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
++	* [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
++	* [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
++	* [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
++	* [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
++	* [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
++	* [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
++	* [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
+@@ -115 +116 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
++	* Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
+@@ -117 +118 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Minor styling update for Code section
++	* Minor styling update for Code section
+@@ -119 +120 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
++	* Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
+@@ -121 +122 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Switched to MIT license.
++	* Switched to MIT license.
+@@ -123 +124 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added version numbering.
++	* Added version numbering.
+@@ -125 +126 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Changed `.screen-reader` class to ems.
++	* Changed `.screen-reader` class to ems.
+@@ -127,2 +128,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Removed gradients on buttons.
+-    * Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
++	* Removed gradients on buttons.
++	* Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
+@@ -130 +131 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
++	* Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
+@@ -132 +133 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added print styling.
++	* Added print styling.
+@@ -134 +135 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Initial release.
+\ No newline at end of file
++	* Initial release.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index c95c3d5..ad141e1 100755
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Added new `.bg-*` helper class.
++    * Removed general `*-space-*` classes in favor of `*-margin-*` and `*-padding-*` specific ones.
+diff --git a/README.md b/README.md
+index 66ad634..c95c3d5 100755
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Updated `.screen-reader` class with more accessible HTML5 Boilerplate implementation.
+diff --git a/README.md b/README.md
+index 9c6f022..66ad634 100755
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Deprecated Slider and removed from add-ons. Linked directly to HTML5 Boilerplate version of `.htaccess` file.
+diff --git a/README.md b/README.md
+index 303dcf5..9c6f022 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v5.0.0 - TBD
++    * Updated grid pattern that adds dynamic grids for more design flexibility.
++    * Renamed several Sass variables for better semantics.
+diff --git a/README.md b/README.md
+index 156c9d4..303dcf5 100755
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Kraken uses [semantic versioning](http://semver.org/).
+-* v4.2.0 - October 15, 2014
++* v4.2.0 - October 16, 2014
+@@ -20,0 +21,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Added `gulp watch` and `gulp reload` task runners (regular and docs flavored).
++    * Reorganized `package.json` and `gulpfile.js` packages.
+diff --git a/README.md b/README.md
+index 3c7dd03..156c9d4 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.2.0 - October 15, 2014
++    * Updated Gulp task naming convention for better readability (action:object).
+diff --git a/README.md b/README.md
+index 8f1c67d..3c7dd03 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.1.2 - October 15, 2014
++    * Updated `gulp-svgstore` to version `2.x`.
++    * Replaced `gulp-clean` with native Node `del` method.
+diff --git a/README.md b/README.md
+index f524be4..8f1c67d 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.1.1 - October 15, 2014
++    * Issued temporary fix for forced sourcemap generation in Sass 3.4.
+diff --git a/README.md b/README.md
+index a803598..f524be4 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.1.0 - October 15, 2014
++    * Replaced `gulp-headerfooter` with `gulp-header` and `gulp-footer` respectively.
+diff --git a/README.md b/README.md
+index ee278cb..a803598 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.0.3 - October 15, 2014
++    * Switched to inline SVG.
++    * Updated `paths` variables in  `gulpfile.js`.
+diff --git a/README.md b/README.md
+index cec01d3..ee278cb 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.0.2 - October 15, 2014
++    * Fixed Gulp script task bug.
+diff --git a/README.md b/README.md
+index f8c6df5..cec01d3 100755
+--- a/README.md
++++ b/README.md
+@@ -19 +18,0 @@ Kraken uses [semantic versioning](http://semver.org/).
+-
+diff --git a/README.md b/README.md
+index cec01d3..f8c6df5 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ Kraken uses [semantic versioning](http://semver.org/).
++
+diff --git a/README.md b/README.md
+index 1e2a6bd..cec01d3 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.0.1 - October 10, 2014
++    * Removed placeholder language from SVG section.
++    * Fixed moz-specific styling being duplicated by auto-prefixer.
+diff --git a/README.md b/README.md
+index 3359c8d..1e2a6bd 100755
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Added documentation on working with Travis CI.
++    * Added Tarpit to add-ons.
+diff --git a/README.md b/README.md
+index 54f0a3e..3359c8d 100755
+--- a/README.md
++++ b/README.md
+@@ -24 +24,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Added SVG sprite generator to build process.
++    * Added SVG sprite generation to build process.
++    * Added SVG styling and feature detection.
+@@ -26 +27,2 @@ Kraken uses [semantic versioning](http://semver.org/).
+-    * Removed HTML5 shim.
++    * Removed HTML5 shim (time to drop IE8 and lower optimization).
++    * Wrapped JS detects in IIFEs for better variable scoping.
+diff --git a/README.md b/README.md
+index f7db5de..54f0a3e 100755
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Removed HTML5 shim.
+diff --git a/README.md b/README.md
+index 4f30adb..f7db5de 100755
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Kraken uses [semantic versioning](http://semver.org/).
+-* v4.0.0 - September 30, 2014
++* v4.0.0 - October 7, 2014
+@@ -22,0 +23,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Added support for `.sass` file type to Sass processing.
++    * Added SVG sprite generator to build process.
++    * Added documentation generator to build process.
+diff --git a/README.md b/README.md
+index 6be8519..4f30adb 100755
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ Kraken uses [semantic versioning](http://semver.org/).
++    * Changed `.text-tall` to `.text-large` for semantic consistency.
+diff --git a/README.md b/README.md
+index 9657a24..6be8519 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v4.0.0 - September 30, 2014
++    * Updated `icons.scss` to use `@each` loops.
++    * Changed name of CSS output from `kraken.css` to `main.css`.
+diff --git a/README.md b/README.md
+index 1dd1d16..9657a24 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v3.8.2 - September 28, 2014
++    * Fixed JS concatenation bug.
+diff --git a/README.md b/README.md
+index bcc89ae..1dd1d16 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ Kraken uses [semantic versioning](http://semver.org/).
++* v3.8.1 - August 24, 2014
++    * Fixed unit tests path.
++    * Added feature testing and main JS files to their own subfolders for concatenation.
+diff --git a/README.md b/README.md
+index 5315bc0..bcc89ae 100755
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,2 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++Kraken uses [semantic versioning](http://semver.org/).
++
+diff --git a/README.md b/README.md
+index 6d18d82..5315bc0 100755
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
+-* v4.0.0 - August 12, 2014
++* v3.8.0 - August 12, 2014
+diff --git a/README.md b/README.md
+index 71b445f..6d18d82 100755
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,5 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++* v4.0.0 - August 12, 2014
++    * Added `@each` loop for icons and the grid for easier maintenance.
++    * Switched from sasslib to Ruby Sass for compiling (more compatible with Sass 3.x features).
++    * Added variable for container width property.
++    * Added variable to bump font-size on xlarge screens.
+diff --git a/README.md b/README.md
+index 7b47bd7..71b445f 100755
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22,2 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++* v3.6.1 - June 24, 2014
++    * Removed italics from h4, h5, and h6 elements.
+diff --git a/README.md b/README.md
+index 5b646fd..7b47bd7 100755
+--- a/README.md
++++ b/README.md
+@@ -17,2 +17,5 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
+-* v3.6.1 - June 24, 2014
+-    * Removed italics from h4, h5, and h6 elements.
++* v3.7.0 - July 21, 2014
++    * Added `[hidden]` attribute polyfill.
++    * Converted to CSSDoc inline documentation.
++    * Added nested media queries for better readability.
++    * Added `:focus` and `:visited` styles for links and buttons.
+diff --git a/README.md b/README.md
+index a26a168..5b646fd 100755
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,2 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++* v3.6.1 - June 24, 2014
++    * Removed italics from h4, h5, and h6 elements.
+diff --git a/README.md b/README.md
+index 6114b77..a26a168 100755
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Kraken
++# Kraken [![Build Status](https://travis-ci.org/cferdinandi/kraken.svg)](https://travis-ci.org/cferdinandi/kraken)
+diff --git a/README.md b/README.md
+index a6e5a84..6114b77 100755
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17,10 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++* v3.6.0 - June 23, 2014
++    * Converted to gulp.js workflow.
++    * Added unit testing.
++    * Updated naming conventions.
++    * Removed unused `_mixins.scss` function.
++    * Added minified versions of files.
++    * Converted to three number versioning.
++    * [Replaced Google-hosted HTML5 shim with local version](https://github.com/cferdinandi/kraken/issues/60).
++    * [Updated icon recommendations](https://github.com/cferdinandi/kraken/issues/59).
++    * [Updated Google Analytics placeholder](https://github.com/cferdinandi/kraken/issues/66).
+diff --git a/README.md b/README.md
+index 7765e23..a6e5a84 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++    * Added fallback text for icons.
+diff --git a/README.md b/README.md
+index c50872e..7765e23 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a lightweight, mobile-first boilerplate for front-end web developers. It includes just the essentials:
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers. [View the demo and get started](http://cferdinandi.github.com/kraken/).
+@@ -4,6 +3,0 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-* A CSS reset to ensure cross-browser compatibility.
+-* A responsive, mobile-first grid.
+-* A well-designed, fluid typographic scale.
+-* CSS3 buttons.
+-* Basic form styling.
+-* Optional add-ons for more functionality.
+@@ -11,2 +5 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-## How It Works
+-Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/).
++## How to Contribute
+@@ -14,2 +7 @@ Getting started with Kraken is really easy. [View the online tutorial](http://cf
+-## Get Involved
+-Kraken is an open-source project. [Learn how you can get involved.](http://cferdinandi.github.io/kraken/get-involved.html)
++In lieu of a formal style guide, take care to maintain the existing coding style. Don't forget to update the version number, the changelog (in the `readme.md` file), and when applicable, the documentation.
+@@ -17,49 +8,0 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-## Changelog
+-* v3.4 (February 16, 2014)
+-  * [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
+-* v3.3 (February 4, 2014)
+-  * [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
+-  * Redesigned grid with simple percentages (made possible with universal box-sizing).
+-  * Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
+-* v3.2 (January 13, 2014)
+-  * [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
+-* v3.1 (December 2, 2013)
+-  * [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
+-* v3.0 (November 29, 2013)
+-  * Added Sass integration.
+-  * Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
+-  * Updated typographic scale to a 16px base.
+-  * Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
+-  * Added `.active` and `.disabled` classes to buttons.
+-  * Dropped rounded corners from buttons, forms, etc.
+-* v2.6 (November 13, 2013)
+-  * [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
+-* v2.5 (October 21, 2013)
+-  * [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
+-  * [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
+-  * [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
+-  * [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
+-  * [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
+-  * [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
+-  * [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
+-* v2.4 (October 18, 2013)
+-  * Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
+-* v2.3 (August 24,2013)
+-  * Minor styling update for Code section
+-* v2.2 (July 29, 2013)
+-  * Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
+-* v2.1 (June 7, 2013)
+-  * Switched to MIT license.
+-* v2.1 (June 2, 2013)
+-  * Added version numbering.
+-* v2.1 (March 19,2013)
+-  * Changed `.screen-reader` class to ems.
+-* v2.0 (March 18, 2013)
+-  * Removed gradients on buttons.
+-  * Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
+-* v2.0 (March 15, 2013)
+-  * Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
+-* v1.1 (March 14, 2013)
+-  * Added print styling.
+-* v1.0 (May 7, 2013)
+-  * Initial release.
+@@ -67,0 +11 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++
+@@ -68,0 +13,54 @@ Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
++
++
++## Changelog
++
++* v3.5 - March 26, 2014
++    * Added `@font-face` feature test.
++* v3.4 - February 16, 2014
++    * [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
++* v3.3 - February 4, 2014
++    * [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
++    * Redesigned grid with simple percentages (made possible with universal box-sizing).
++    * Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
++* v3.2 - January 13, 2014
++    * [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
++* v3.1 - December 2, 2013
++    * [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
++* v3.0 - November 29, 2013
++    * Added Sass integration.
++    * Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
++    * Updated typographic scale to a 16px base.
++    * Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
++    * Added `.active` and `.disabled` classes to buttons.
++    * Dropped rounded corners from buttons, forms, etc.
++* v2.6 - November 13, 2013
++    * [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
++* v2.5 - October 21, 2013
++    * [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
++    * [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
++    * [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
++    * [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
++    * [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
++    * [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
++    * [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
++* v2.4 - October 18, 2013
++    * Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
++* v2.3 - August 24,2013
++    * Minor styling update for Code section
++* v2.2 - July 29, 2013
++    * Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
++* v2.1 - June 7, 2013
++    * Switched to MIT license.
++* v2.1 - June 2, 2013
++    * Added version numbering.
++* v2.1 - March 19,2013
++    * Changed `.screen-reader` class to ems.
++* v2.0 - March 18, 2013
++    * Removed gradients on buttons.
++    * Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
++* v2.0 - March 15, 2013
++    * Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
++* v1.1 - March 14, 2013
++    * Added print styling.
++* v1.0 - May 7, 2013
++    * Initial release.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index d5650ea..c50872e 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v3.4 (February 16, 2014)
++  * [Added fix for Firefox on Android button styling quirk.](https://github.com/cferdinandi/kraken/pull/36)
+diff --git a/README.md b/README.md
+index 4af6bae..d5650ea 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,4 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v3.3 (February 4, 2014)
++  * [Added universal box-sizing.](https://github.com/cferdinandi/kraken/issues/32)
++  * Redesigned grid with simple percentages (made possible with universal box-sizing).
++  * Added `grid-margins` variable that let's users change the grid margins in the `config.scss` file.
+diff --git a/README.md b/README.md
+index dd71e11..4af6bae 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v3.2 (January 13, 2014)
++  * [Added word-break to long headings for better usability.](https://github.com/cferdinandi/kraken/issues/27)
+diff --git a/README.md b/README.md
+index 459b932..dd71e11 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v3.1 (December 2, 2013)
++  * [Reorganized package structure for easier usability.](https://github.com/cferdinandi/kraken/issues/21)
+diff --git a/README.md b/README.md
+index d0a4717..459b932 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,7 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v3.0 (November 29, 2013)
++  * Added Sass integration.
++  * Changed naming conventions from `*-blue` to `*-secondary` for better abstraction.
++  * Updated typographic scale to a 16px base.
++  * Redesigned grid uses fraction-based naming (`.grid-third` instead of  `.grid-2`).
++  * Added `.active` and `.disabled` classes to buttons.
++  * Dropped rounded corners from buttons, forms, etc.
+diff --git a/README.md b/README.md
+index 0760223..d0a4717 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.6 (November 13, 2013)
++  * [Added definition list styling](https://github.com/cferdinandi/kraken/issues/14).
+diff --git a/README.md b/README.md
+index 329f0c7..0760223 100755
+--- a/README.md
++++ b/README.md
+@@ -41 +41 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* v2.0 March 15, 2013)
++* v2.0 (March 15, 2013)
+@@ -43 +43 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* v1.1 March 14, 2013)
++* v1.1 (March 14, 2013)
+@@ -45 +45 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* v1.0 (Mary 7, 2013)
++* v1.0 (May 7, 2013)
+diff --git a/README.md b/README.md
+index 410b976..329f0c7 100755
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++  * [Fixed `vertical-align` and `display: block` conflict for forms](https://github.com/cferdinandi/kraken/issues/13).
+diff --git a/README.md b/README.md
+index 111fbfc..410b976 100755
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++  * [Converted from spaces to tabs](https://github.com/cferdinandi/kraken/issues/11).
+diff --git a/README.md b/README.md
+index 9e1b791..111fbfc 100755
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++  * [Updated grid for better performance](https://github.com/cferdinandi/kraken/issues/9).
+diff --git a/README.md b/README.md
+index 9683400..9e1b791 100755
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++  * [Removed IE7- hacks](https://github.com/cferdinandi/kraken/issues/7).
+diff --git a/README.md b/README.md
+index 7c01a27..9683400 100755
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-  *
++  * [Updated CSS Reset](https://github.com/cferdinandi/kraken/issues/8) to incorporate some improvements to Normalize.css.
+diff --git a/README.md b/README.md
+index 31393a2..7c01a27 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,4 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.5 (October 21, 2013)
++  * [Added `tab-size` property to the `pre` element](https://github.com/cferdinandi/kraken/issues/12).
++  * [Added `word-break` property to links](https://github.com/cferdinandi/kraken/issues/5) to fix convert overflow issues.
++  *
+diff --git a/README.md b/README.md
+index aed2533..31393a2 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.4 (October 18, 2013)
++  * Fixed [`input-inline`](https://github.com/cferdinandi/kraken/issues/6).
+diff --git a/README.md b/README.md
+index 454aa6f..aed2533 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.3 (August 24,2013)
++  * Minor styling update for Code section
+diff --git a/README.md b/README.md
+index faffe24..454aa6f 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.2 (July 29, 2013)
++  * Removed iOS Rotation Zoom Bug Fix JS (bug fixed from iOS6 on).
+diff --git a/README.md b/README.md
+index 808f38e..faffe24 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
++* v2.1 (June 7, 2013)
++  * Switched to MIT license.
+@@ -33 +35 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-Kraken is licensed under [WTFPL](http://www.wtfpl.net/).
++Kraken is free to use under the [MIT License](http://gomakethings.com/mit/).
+diff --git a/README.md b/README.md
+index 2199a1f..808f38e 100755
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 6/2/2013
++* v2.1 (June 2, 2013)
+@@ -20 +20 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 3/19/2013
++* v2.1 (March 19,2013)
+@@ -22 +22 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 3/18/2013
++* v2.0 (March 18, 2013)
+@@ -25 +25 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 3/15/2013
++* v2.0 March 15, 2013)
+@@ -27 +27 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 3/14/2013
++* v1.1 March 14, 2013)
+@@ -29 +29 @@ Kraken is an open-source project. [Learn how you can get involved.](http://cferd
+-* 3/7/2013
++* v1.0 (Mary 7, 2013)
+diff --git a/README.md b/README.md
+index 15194c9..2199a1f 100755
+--- a/README.md
++++ b/README.md
+@@ -15 +15 @@ Getting started with Kraken is really easy. [View the online tutorial](http://cf
+-Kraken is an open-source project. If you build an add-on, fix a bug, or figure out a better way to do something, let me know!
++Kraken is an open-source project. [Learn how you can get involved.](http://cferdinandi.github.io/kraken/get-involved.html)
+diff --git a/README.md b/README.md
+index 9f08d90..15194c9 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,2 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
++* 6/2/2013
++  * Added version numbering.
+diff --git a/README.md b/README.md
+index 64c5a1e..9f08d90 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a modular, mobile-first boilerplate for front-end web developers. It includes just the essentials:
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers. It includes just the essentials:
+diff --git a/README.md b/README.md
+index 9f08d90..64c5a1e 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a lightweight, mobile-first boilerplate for front-end web developers. It includes just the essentials:
++Kraken is a modular, mobile-first boilerplate for front-end web developers. It includes just the essentials:
+diff --git a/README.md b/README.md
+index d6a7e89..9f08d90 100755
+--- a/README.md
++++ b/README.md
+@@ -18 +18 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 2.1 (March 19, 2013)
++* 3/19/2013
+@@ -20 +20 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 2.0 (March 18, 2013)
++* 3/18/2013
+@@ -23 +23 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 1.2 (March 14, 2013)
++* 3/15/2013
+@@ -25 +25 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 1.1 (March 15, 2013)
++* 3/14/2013
+@@ -27 +27 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 1.0 (March 7, 2013)
++* 3/7/2013
+diff --git a/README.md b/README.md
+index a12dd1f..d6a7e89 100755
+--- a/README.md
++++ b/README.md
+@@ -18 +18,3 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 3/18/2013
++* 2.1 (March 19, 2013)
++  * Changed `.screen-reader` class to ems.
++* 2.0 (March 18, 2013)
+@@ -21 +23 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 3/14/2013
++* 1.2 (March 14, 2013)
+@@ -23 +25 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 2/15/2013
++* 1.1 (March 15, 2013)
+@@ -25 +27 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
+-* 2/7/2013
++* 1.0 (March 7, 2013)
+diff --git a/README.md b/README.md
+index 523d3df..a12dd1f 100755
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18,3 @@ Kraken is an open-source project. If you build an add-on, fix a bug, or figure o
++* 3/18/2013
++  * Removed gradients on buttons.
++  * Changed `.btn-color` to `.btn-blue`, breaking previous pattern.
+diff --git a/README.md b/README.md
+index 5379f9c..523d3df 100755
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/), or dig through the `example.html` file.
++Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/).
+diff --git a/README.md b/README.md
+index f448c97..5379f9c 100755
+--- a/README.md
++++ b/README.md
+@@ -2,3 +2 @@
+-Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+-
+-It includes just the essentials:
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers. It includes just the essentials:
+@@ -10,4 +8,2 @@ It includes just the essentials:
+-* Basic form styling
+-
+-### Designed to Expand
+-Kraken was built to be lightweight but expandable. It includes links to a variety of tools that were designed to work together - icon-fonts, navigation menus, dropdowns, toggle tabs and more.
++* Basic form styling.
++* Optional add-ons for more functionality.
+@@ -17,0 +14,3 @@ Getting started with Kraken is really easy. [View the online tutorial](http://cf
++## Get Involved
++Kraken is an open-source project. If you build an add-on, fix a bug, or figure out a better way to do something, let me know!
++
+diff --git a/README.md b/README.md
+index 9870b06..f448c97 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Getting started with Kraken is really easy. [View the online tutorial](http://cf
++* 3/14/2013
++  * Changed `.unstyled` to `.list-unstyled`, breaking previous pattern.
+diff --git a/README.md b/README.md
+index e490743..9870b06 100755
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@ Kraken was built to be lightweight but expandable. It includes links to a variet
+-Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/), or dig through the example.html file.
++Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/), or dig through the `example.html` file.
+diff --git a/README.md b/README.md
+index 092b23c..e490743 100755
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Getting started with Kraken is really easy. [View the online tutorial](http://cf
++* 2/15/2013
++  * Added print styling.
+diff --git a/README.md b/README.md
+index 7413b32..092b23c 100755
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Kraken is a lightweight front-end boilerplate to help you start your responsive web projects.
++Kraken is a lightweight, mobile-first boilerplate for front-end web developers.
+@@ -13,3 +12,0 @@ It includes just the essentials:
+-
+-CSS frameworks often include a lot more stuff than you need, and a lot of boilerplates are missing a lot of stuff you want.
+-
+@@ -19 +16 @@ Kraken was built to be lightweight but expandable. It includes links to a variet
+-Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/origami/) or dig through the example.html file.
++Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/kraken/), or dig through the example.html file.
+diff --git a/README.md b/README.md
+index 24f695a..7413b32 100755
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,16 @@
+-# TITLE - SUBTITLE
+-DESCRIPTION
++# Kraken
++Kraken is a lightweight front-end boilerplate to help you start your responsive web projects.
++
++It includes just the essentials:
++
++* A CSS reset to ensure cross-browser compatibility.
++* A responsive, mobile-first grid.
++* A well-designed, fluid typographic scale.
++* CSS3 buttons.
++* Basic form styling
++
++### Designed to Expand
++
++CSS frameworks often include a lot more stuff than you need, and a lot of boilerplates are missing a lot of stuff you want.
++
++Kraken was built to be lightweight but expandable. It includes links to a variety of tools that were designed to work together - icon-fonts, navigation menus, dropdowns, toggle tabs and more.
+@@ -5 +19 @@ DESCRIPTION
+-Getting started with TITLE is really easy. [View the online tutorial](#) or dig through the example.html file.
++Getting started with Kraken is really easy. [View the online tutorial](http://cferdinandi.github.com/origami/) or dig through the example.html file.
+@@ -8 +22 @@ Getting started with TITLE is really easy. [View the online tutorial](#) or dig
+-* DATE
++* 2/7/2013
+@@ -12 +26 @@ Getting started with TITLE is really easy. [View the online tutorial](#) or dig
+-TITLE is licensed under [WTFPL](http://www.wtfpl.net/).
++Kraken is licensed under [WTFPL](http://www.wtfpl.net/).

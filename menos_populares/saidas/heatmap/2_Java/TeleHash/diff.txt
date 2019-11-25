@@ -1,0 +1,22 @@
+diff --git a/README.md b/README.md
+index b8288ba..555d896 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,4 @@
++This is the old/depreicated v1 repo, all of the work since 2013 is now located at [https://github.com/telehash/](https://github.com/telehash/).
++
++***
++
+diff --git a/README.md b/README.md
+index 951dac0..b8288ba 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ What does a switch need to do?
+-	- send something to an initial seed to discover it's public IP:PORT
++	- send something to an initial seed to discover its public IP:PORT
+diff --git a/README.md b/README.md
+index 115d36b..951dac0 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@ TeleHash - Distributed JSON - http://telehash.org/
++* erlang/		basic announcer in erlang

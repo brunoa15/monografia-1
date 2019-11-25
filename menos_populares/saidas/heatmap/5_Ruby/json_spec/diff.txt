@@ -1,0 +1,759 @@
+diff --git a/README.md b/README.md
+index 70f4da3..5a09c63 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1 @@
+-json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec) [![Code Climate](https://codeclimate.com/github/collectiveidea/json_spec.png)](https://codeclimate.com/github/collectiveidea/json_spec)
+-=========
++# json_spec
+@@ -6,2 +5,6 @@ Easily handle JSON in RSpec and Cucumber
+-RSpec
+---------------
++[![Gem Version](https://img.shields.io/gem/v/json_spec.svg?style=flat)](http://rubygems.org/gems/json_spec)
++[![Build Status](https://img.shields.io/travis/collectiveidea/json_spec/master.svg?style=flat)](https://travis-ci.org/collectiveidea/json_spec)
++[![Code Climate](https://img.shields.io/codeclimate/github/collectiveidea/json_spec.svg?style=flat)](https://codeclimate.com/github/collectiveidea/json_spec)
++[![Dependency Status](https://img.shields.io/gemnasium/collectiveidea/json_spec.svg?style=flat)](https://gemnasium.com/collectiveidea/json_spec)
++
++## RSpec
+@@ -104,2 +107 @@ We could access the first friend's first name with the path `"friends/0/first_na
+-Cucumber
+---------
++## Cucumber
+@@ -319,2 +321 @@ various ways you can use json_spec.
+-Contributing
+-------------
++## Contributing
+@@ -336,2 +337 @@ If you report a bug and don't include a fix, please include a failing test.
+-Copyright
+----------
++## Copyright
+diff --git a/README.md b/README.md
+index 952a98d..70f4da3 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/collectiveidea/json_spec)
++json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec) [![Code Climate](https://codeclimate.com/github/collectiveidea/json_spec.png)](https://codeclimate.com/github/collectiveidea/json_spec)
+diff --git a/README.md b/README.md
+index d82fd8d..952a98d 100644
+--- a/README.md
++++ b/README.md
+@@ -316 +316 @@ Check out the [specs](https://github.com/collectiveidea/json_spec/blob/master/sp
+-and [features](https://github.com/collectiveidea/json_spec/blob/master/features) too see all the
++and [features](https://github.com/collectiveidea/json_spec/blob/master/features) to see all the
+diff --git a/README.md b/README.md
+index b630d76..d82fd8d 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec)
++json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/collectiveidea/json_spec)
+diff --git a/README.md b/README.md
+index 3144af5..b630d76 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@ json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec
+-========
++=========
+@@ -6,14 +5,0 @@ Easily handle JSON in RSpec and Cucumber
+-Installation
+-------------
+-    gem install json_spec
+-
+-or with Bundler:
+-
+-    gem "json_spec"
+-
+-Documentation
+--------------
+-Please help write documentation!
+-
+-[http://rdoc.info/gems/json_spec](http://rdoc.info/gems/json_spec)
+-
+@@ -21,0 +8 @@ RSpec
++
+@@ -32,2 +19,9 @@ The new matchers could be used in RSpec as follows:
+-    describe User do
+-      let(:user){ User.create!(:first_name => "Steve", :last_name => "Richert") }
++```ruby
++describe User do
++  let(:user){ User.create!(first_name: "Steve", last_name: "Richert") }
++
++  context "#to_json" do
++    it "includes names" do
++      names = %({"first_name":"Steve","last_name":"Richert"})
++      user.to_json.should be_json_eql(names).excluding("friends")
++    end
+@@ -35,2 +29,4 @@ The new matchers could be used in RSpec as follows:
+-      context "#to_json" do
+-        let(:json){ user.to_json }
++    it "includes the ID" do
++      user.to_json.should have_json_path("id")
++      user.to_json.should have_json_type(Integer).at_path("id")
++    end
+@@ -38,3 +34,2 @@ The new matchers could be used in RSpec as follows:
+-        it "includes the name" do
+-          json.should be_json_eql(%({"first_name":"Steve","last_name":"Richert"})).excluding("friends")
+-        end
++    it "includes friends" do
++      user.to_json.should have_json_size(0).at_path("friends")
+@@ -42,4 +37,2 @@ The new matchers could be used in RSpec as follows:
+-        it "includes the ID" do
+-          json.should have_json_path("id")
+-          json.should have_json_type(Integer).at_path("id")
+-        end
++      friend = User.create!(first_name: "Catie", last_name: "Richert")
++      user.friends << friend
+@@ -47,7 +40,2 @@ The new matchers could be used in RSpec as follows:
+-        it "includes friends" do
+-          json.should have_json_size(0).at_path("friends")
+-          user.friends << User.create!(:first_name => "Catie", :last_name => "Richert")
+-          json.should have_json_size(1).at_path("friends")
+-          json.should include_json(%({"first_name":"Catie","last_name":"Richert"}))
+-        end
+-      end
++      user.to_json.should have_json_size(1).at_path("friends")
++      user.to_json.should include_json(friend.to_json)
+@@ -54,0 +43,3 @@ The new matchers could be used in RSpec as follows:
++  end
++end
++```
+@@ -56 +47 @@ The new matchers could be used in RSpec as follows:
+-Also json_spec provides some useful helpers for RSpec tests:
++json_spec also provides some useful helpers for RSpec tests:
+@@ -60,0 +52 @@ Also json_spec provides some useful helpers for RSpec tests:
++* `load_json`
+@@ -62 +54 @@ Also json_spec provides some useful helpers for RSpec tests:
+-To start using them add include statement in your Rspec.configure at spec_helper.rb file:
++To start using them add an include them in your RSpec configuration:
+@@ -64,3 +56,5 @@ To start using them add include statement in your Rspec.configure at spec_helper
+-    RSpec.configure do |config|
+-      config.include JsonSpec::Helpers
+-    end
++```ruby
++RSpec.configure do |config|
++  config.include JsonSpec::Helpers
++end
++```
+@@ -68 +62 @@ To start using them add include statement in your Rspec.configure at spec_helper
+-Examples of usage this methods you can find in spec/json_spec/helpers_spec.rb
++You can find usage examples for the helpers in [`spec/json_spec/helpers_spec.rb`](https://github.com/collectiveidea/json_spec/blob/master/spec/json_spec/helpers_spec.rb)
+@@ -82,3 +76,5 @@ customizeable:
+-    JsonSpec.configure do
+-      exclude_keys "created_at", "updated_at"
+-    end
++```ruby
++JsonSpec.configure do
++  exclude_keys "created_at", "updated_at"
++end
++```
+@@ -87,2 +83,2 @@ Now, the `id` key will be included in json_spec's comparisons. Keys can also be
+-per matcher by chaining the `excluding` or `including` methods (as shown above) which will add or subtract from
+-the globally excluded keys, respectively.
++per matcher by chaining the `excluding` or `including` methods (as shown above) which will add or
++subtract from the globally excluded keys, respectively.
+@@ -109,0 +106 @@ Cucumber
++
+@@ -115 +112,3 @@ In order to use the Cucumber steps, in your `env.rb` you must:
+-    require "json_spec/cucumber"
++```ruby
++require "json_spec/cucumber"
++```
+@@ -119,3 +118,5 @@ You also need to define a `last_json` method. If you're using Capybara, it could
+-    def last_json
+-      page.source
+-    end
++```ruby
++def last_json
++  page.source
++end
++```
+@@ -125,42 +126,22 @@ Now, you can use the json_spec steps in your features:
+-    Feature: User API
+-      Background:
+-        Given the following users exist:
+-          | id | first_name | last_name |
+-          | 1  | Steve      | Richert   |
+-          | 2  | Catie      | Richert   |
+-        And "Steve Richert" is friends with "Catie Richert"
+-
+-      Scenario: Index action
+-        When I visit "/users.json"
+-        Then the JSON response should have 2 users
+-        And the JSON response at "0/id" should be 1
+-        And the JSON response at "1/id" should be 2
+-
+-      Scenario: Show action
+-        When I visit "/users/1.json"
+-        Then the JSON response at "first_name" should be "Steve"
+-        And the JSON response at "last_name" should be "Richert"
+-        And the JSON response should have "created_at"
+-        And the JSON response at "created_at" should be a string
+-        And the JSON response at "friends" should be:
+-          """
+-          [
+-            {
+-              "id": 2,
+-              "first_name": "Catie",
+-              "last_name": "Richert"
+-            }
+-          ]
+-          """
+-
+-The background steps above aren't provided by json_spec and the "visit" steps are provided by
+-Capybara. The remaining steps, json_spec provides. They're versatile and can be used in plenty of
+-different formats:
+-
+-    Then the JSON should be:
+-      """
+-      {
+-        "key": "value"
+-      }
+-      """
+-    Then the JSON at "path" should be:
++```cucumber
++Feature: User API
++  Background:
++    Given the following users exist:
++      | id | first_name | last_name |
++      | 1  | Steve      | Richert   |
++      | 2  | Catie      | Richert   |
++    And "Steve Richert" is friends with "Catie Richert"
++
++  Scenario: Index action
++    When I visit "/users.json"
++    Then the JSON response should have 2 users
++    And the JSON response at "0/id" should be 1
++    And the JSON response at "1/id" should be 2
++
++  Scenario: Show action
++    When I visit "/users/1.json"
++    Then the JSON response at "first_name" should be "Steve"
++    And the JSON response at "last_name" should be "Richert"
++    And the JSON response should have "created_at"
++    And the JSON response at "created_at" should be a string
++    And the JSON response at "friends" should be:
+@@ -169,2 +150,5 @@ different formats:
+-        "entry",
+-        "entry"
++        {
++          "id": 2,
++          "first_name": "Catie",
++          "last_name": "Richert"
++        }
+@@ -172,0 +157 @@ different formats:
++```
+@@ -174,25 +159,3 @@ different formats:
+-    Then the JSON should be {"key":"value"}
+-    Then the JSON at "path" should be {"key":"value"}
+-    Then the JSON should be ["entry","entry"]
+-    Then the JSON at "path" should be ["entry","entry"]
+-    Then the JSON at "path" should be "string"
+-    Then the JSON at "path" should be 10
+-    Then the JSON at "path" should be 10.0
+-    Then the JSON at "path" should be 1e+1
+-    Then the JSON at "path" should be true
+-    Then the JSON at "path" should be false
+-    Then the JSON at "path" should be null
+-
+-    Then the JSON should include:
+-      """
+-      {
+-        "key": "value"
+-      }
+-      """
+-    Then the JSON at "path" should include:
+-      """
+-      [
+-        "entry",
+-        "entry"
+-      ]
+-      """
++The background steps above aren't provided by json_spec and the "visit" steps are provided by
++Capybara. The remaining steps, json_spec provides. They're versatile and can be used in plenty of
++different formats:
+@@ -200,29 +163,71 @@ different formats:
+-    Then the JSON should include {"key":"value"}
+-    Then the JSON at "path" should include {"key":"value"}
+-    Then the JSON should include ["entry","entry"]
+-    Then the JSON at "path" should include ["entry","entry"]
+-    Then the JSON should include "string"
+-    Then the JSON at "path" should include "string"
+-    Then the JSON should include 10
+-    Then the JSON at "path" should include 10
+-    Then the JSON should include 10.0
+-    Then the JSON at "path" should include 10.0
+-    Then the JSON should include 1e+1
+-    Then the JSON at "path" should include 1e+1
+-    Then the JSON should include true
+-    Then the JSON at "path" should include true
+-    Then the JSON should include false
+-    Then the JSON at "path" should include false
+-    Then the JSON should include null
+-    Then the JSON at "path" should include null
+-
+-    Then the JSON should have "path"
+-
+-    Then the JSON should be a hash
+-    Then the JSON at "path" should be an array
+-    Then the JSON at "path" should be a float
+-
+-    Then the JSON should have 1 entry
+-    Then the JSON at "path" should have 2 entries
+-    Then the JSON should have 3 keys
+-    Then the JSON should have 4 whatevers
++```cucumber
++Then the JSON should be:
++  """
++  {
++    "key": "value"
++  }
++  """
++Then the JSON at "path" should be:
++  """
++  [
++    "entry",
++    "entry"
++  ]
++  """
++
++Then the JSON should be {"key":"value"}
++Then the JSON at "path" should be {"key":"value"}
++Then the JSON should be ["entry","entry"]
++Then the JSON at "path" should be ["entry","entry"]
++Then the JSON at "path" should be "string"
++Then the JSON at "path" should be 10
++Then the JSON at "path" should be 10.0
++Then the JSON at "path" should be 1e+1
++Then the JSON at "path" should be true
++Then the JSON at "path" should be false
++Then the JSON at "path" should be null
++
++Then the JSON should include:
++  """
++  {
++    "key": "value"
++  }
++  """
++Then the JSON at "path" should include:
++  """
++  [
++    "entry",
++    "entry"
++  ]
++  """
++
++Then the JSON should include {"key":"value"}
++Then the JSON at "path" should include {"key":"value"}
++Then the JSON should include ["entry","entry"]
++Then the JSON at "path" should include ["entry","entry"]
++Then the JSON should include "string"
++Then the JSON at "path" should include "string"
++Then the JSON should include 10
++Then the JSON at "path" should include 10
++Then the JSON should include 10.0
++Then the JSON at "path" should include 10.0
++Then the JSON should include 1e+1
++Then the JSON at "path" should include 1e+1
++Then the JSON should include true
++Then the JSON at "path" should include true
++Then the JSON should include false
++Then the JSON at "path" should include false
++Then the JSON should include null
++Then the JSON at "path" should include null
++
++Then the JSON should have "path"
++
++Then the JSON should be a hash
++Then the JSON at "path" should be an array
++Then the JSON at "path" should be a float
++
++Then the JSON should have 1 entry
++Then the JSON at "path" should have 2 entries
++Then the JSON should have 3 keys
++Then the JSON should have 4 whatevers
++```
+@@ -232 +237 @@ _All instances of "should" above could be followed by "not" and all instances of
+-### Table format
++### Table Format
+@@ -236,3 +241,5 @@ Another step exists that uses Cucumber's table formatting and wraps two of the a
+-    Then the JSON should have the following:
+-      | path/0 | {"key":"value"}   |
+-      | path/1 | ["entry","entry"] |
++```cucumber
++Then the JSON should have the following:
++  | path/0 | {"key":"value"}   |
++  | path/1 | ["entry","entry"] |
++```
+@@ -242,2 +249,4 @@ Any number of rows can be given. The step above is equivalent to:
+-    Then the JSON at "path/0" should be {"key":"value"}
+-    And the JSON at "path/1" should be ["entry","entry"]
++```cucumber
++Then the JSON at "path/0" should be {"key":"value"}
++And the JSON at "path/1" should be ["entry","entry"]
++```
+@@ -247,3 +256,5 @@ If only one column is given:
+-    Then the JSON should have the following:
+-      | path/0 |
+-      | path/1 |
++```cucumber
++Then the JSON should have the following:
++  | path/0 |
++  | path/1 |
++```
+@@ -253,2 +264,4 @@ This is equivalent to:
+-    Then the JSON should have "path/0"
+-    And the JSON should have "path/1"
++```cucumber
++Then the JSON should have "path/0"
++And the JSON should have "path/1"
++```
+@@ -262,14 +275,16 @@ name by which to remember it.
+-    Feature: User API
+-      Scenario: Index action includes full user JSON
+-        Given the following user exists:
+-          | id | first_name | last_name |
+-          | 1  | Steve      | Richert   |
+-        And I visit "/users/1.json"
+-        And I keep the JSON response as "USER_1"
+-        When I visit "/users.json"
+-        Then the JSON response should be:
+-          """
+-          [
+-            %{USER_1}
+-          ]
+-          """
++```cucumber
++Feature: User API
++  Scenario: Index action includes full user JSON
++    Given the following user exists:
++      | id | first_name | last_name |
++      | 1  | Steve      | Richert   |
++    And I visit "/users/1.json"
++    And I keep the JSON response as "USER_1"
++    When I visit "/users.json"
++    Then the JSON response should be:
++      """
++      [
++        %{USER_1}
++      ]
++      """
++```
+@@ -279 +294,3 @@ You can memorize JSON at a path:
+-    Given I keep the JSON response at "first_name" as "FIRST_NAME"
++```cucumber
++Given I keep the JSON response at "first_name" as "FIRST_NAME"
++```
+@@ -283,4 +300,6 @@ You can remember JSON at a path:
+-    Then the JSON response at "0/first_name" should be:
+-      """
+-      %{FIRST_NAME}
+-      """
++```cucumber
++Then the JSON response at "0/first_name" should be:
++  """
++  %{FIRST_NAME}
++  """
++```
+@@ -290 +309,9 @@ You can also remember JSON inline:
+-    Then the JSON response at "0/first_name" should be %{FIRST_NAME}
++```cucumber
++Then the JSON response at "0/first_name" should be %{FIRST_NAME}
++```
++
++### More
++
++Check out the [specs](https://github.com/collectiveidea/json_spec/blob/master/spec)
++and [features](https://github.com/collectiveidea/json_spec/blob/master/features) too see all the
++various ways you can use json_spec.
+@@ -294,32 +321,14 @@ Contributing
+-In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
+-
+-Here are some ways *you* can contribute:
+-
+-* using alpha, beta, and prerelease versions
+-* reporting bugs
+-* suggesting new features
+-* writing or editing documentation
+-* writing specifications
+-* writing code (**no patch is too small**: fix typos, add comments, clean up inconsistent whitespace)
+-* refactoring code
+-* closing [issues](https://github.com/collectiveidea/json_spec/issues)
+-* reviewing patches
+-
+-Submitting an Issue
+--------------------
+-We use the [GitHub issue tracker](https://github.com/collectiveidea/json_spec/issues) to track bugs
+-and features. Before submitting a bug report or feature request, check to make sure it hasn't already
+-been submitted. You can indicate support for an existing issuse by voting it up. When submitting a
+-bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any
+-details that may be necessary to reproduce the bug, including your gem version, Ruby version, and
+-operating system. Ideally, a bug report should include a pull request with failing specs.
+-
+-Submitting a Pull Request
+--------------------------
+-1. Fork the project.
+-2. Create a topic branch.
+-3. Implement your feature or bug fix.
+-4. Add specs for your feature or bug fix.
+-5. Run `bundle exec rake`. If your changes are not 100% covered and passing, go back to step 4.
+-6. Commit and push your changes.
+-7. Submit a pull request. Please do not include changes to the gemspec, version, or history file. (If you want to create your own version for some reason, please do so in a separate commit.)
++
++If you come across any issues, please [tell us](https://github.com/collectiveidea/json_spec/issues).
++Pull requests (with tests) are appreciated. No pull request is too small. Please help with:
++
++* Reporting bugs
++* Suggesting features
++* Writing or improving documentation
++* Fixing typos
++* Cleaning whitespace
++* Refactoring code
++* Adding tests
++* Closing [issues](https://github.com/collectiveidea/json_spec/issues)
++
++If you report a bug and don't include a fix, please include a failing test.
+@@ -328,0 +338 @@ Copyright
++
+@@ -330 +340,2 @@ Copyright © 2011 Steve Richert
+-See [LICENSE](https://github.com/collectiveidea/json_spec/blob/master/LICENSE.md) for details.
++
++See [LICENSE](https://github.com/collectiveidea/json_spec/blob/master/LICENSE) for details.
+diff --git a/README.md b/README.md
+index 711cfc5..3144af5 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-json_spec
++json_spec [![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec) [![Dependency Status](https://gemnasium.com/collectiveidea/json_spec.png)](https://gemnasium.com/collectiveidea/json_spec)
+@@ -2,0 +3 @@ json_spec
++
+@@ -19,4 +19,0 @@ Please help write documentation!
+-Continuous Integration
+-----------------------
+-[![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
+-
+diff --git a/README.md b/README.md
+index 3414171..711cfc5 100644
+--- a/README.md
++++ b/README.md
+@@ -65,0 +66 @@ To start using them add include statement in your Rspec.configure at spec_helper
++
+@@ -67 +68 @@ To start using them add include statement in your Rspec.configure at spec_helper
+-      include JsonSpec::Helpers
++      config.include JsonSpec::Helpers
+diff --git a/README.md b/README.md
+index 705ea48..3414171 100644
+--- a/README.md
++++ b/README.md
+@@ -59,0 +60 @@ Also json_spec provides some useful helpers for RSpec tests:
++
+diff --git a/README.md b/README.md
+index 56128e4..705ea48 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,12 @@ The new matchers could be used in RSpec as follows:
++Also json_spec provides some useful helpers for RSpec tests:
++* `parse_json`
++* `normalize_json`
++* `generate_normalized_json`
++
++To start using them add include statement in your Rspec.configure at spec_helper.rb file:
++    RSpec.configure do |config|
++      include JsonSpec::Helpers
++    end
++
++Examples of usage this methods you can find in spec/json_spec/helpers_spec.rb
++
+diff --git a/README.md b/README.md
+index 03145b4..56128e4 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ RSpec
+-json_spec defines four new RSpec matchers:
++json_spec defines five new RSpec matchers:
+@@ -27,0 +28 @@ json_spec defines four new RSpec matchers:
++* `include_json`
+@@ -52,0 +54 @@ The new matchers could be used in RSpec as follows:
++          json.should include_json(%({"first_name":"Catie","last_name":"Richert"}))
+@@ -172,0 +175,33 @@ different formats:
++    Then the JSON should include:
++      """
++      {
++        "key": "value"
++      }
++      """
++    Then the JSON at "path" should include:
++      """
++      [
++        "entry",
++        "entry"
++      ]
++      """
++
++    Then the JSON should include {"key":"value"}
++    Then the JSON at "path" should include {"key":"value"}
++    Then the JSON should include ["entry","entry"]
++    Then the JSON at "path" should include ["entry","entry"]
++    Then the JSON should include "string"
++    Then the JSON at "path" should include "string"
++    Then the JSON should include 10
++    Then the JSON at "path" should include 10
++    Then the JSON should include 10.0
++    Then the JSON at "path" should include 10.0
++    Then the JSON should include 1e+1
++    Then the JSON at "path" should include 1e+1
++    Then the JSON should include true
++    Then the JSON at "path" should include true
++    Then the JSON should include false
++    Then the JSON at "path" should include false
++    Then the JSON should include null
++    Then the JSON at "path" should include null
++
+diff --git a/README.md b/README.md
+index af06461..03145b4 100644
+--- a/README.md
++++ b/README.md
+@@ -144,2 +144,2 @@ The background steps above aren't provided by json_spec and the "visit" steps ar
+-Capybara. The remaining steps all stem from the five steps that json_spec provides. They're
+-versatile and can be used in plenty of different formats:
++Capybara. The remaining steps, json_spec provides. They're versatile and can be used in plenty of
++different formats:
+@@ -185,0 +186,24 @@ _All instances of "should" above could be followed by "not" and all instances of
++### Table format
++
++Another step exists that uses Cucumber's table formatting and wraps two of the above steps:
++
++    Then the JSON should have the following:
++      | path/0 | {"key":"value"}   |
++      | path/1 | ["entry","entry"] |
++
++Any number of rows can be given. The step above is equivalent to:
++
++    Then the JSON at "path/0" should be {"key":"value"}
++    And the JSON at "path/1" should be ["entry","entry"]
++
++If only one column is given:
++
++    Then the JSON should have the following:
++      | path/0 |
++      | path/1 |
++
++This is equivalent to:
++
++    Then the JSON should have "path/0"
++    And the JSON should have "path/1"
++
+diff --git a/README.md b/README.md
+index f35fb1d..af06461 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Continuous Integration
+-[![Build Status](https://travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
++[![Build Status](https://secure.travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
+diff --git a/README.md b/README.md
+index c8edcd7..f35fb1d 100644
+--- a/README.md
++++ b/README.md
+@@ -185,0 +186,36 @@ _All instances of "should" above could be followed by "not" and all instances of
++### JSON Memory
++
++There's one more Cucumber step that json_spec provides which hasn't been used above. It's used to
++memorize JSON for reuse in later steps. You can "keep" all or a portion of the JSON by giving a
++name by which to remember it.
++
++    Feature: User API
++      Scenario: Index action includes full user JSON
++        Given the following user exists:
++          | id | first_name | last_name |
++          | 1  | Steve      | Richert   |
++        And I visit "/users/1.json"
++        And I keep the JSON response as "USER_1"
++        When I visit "/users.json"
++        Then the JSON response should be:
++          """
++          [
++            %{USER_1}
++          ]
++          """
++
++You can memorize JSON at a path:
++
++    Given I keep the JSON response at "first_name" as "FIRST_NAME"
++
++You can remember JSON at a path:
++
++    Then the JSON response at "0/first_name" should be:
++      """
++      %{FIRST_NAME}
++      """
++
++You can also remember JSON inline:
++
++    Then the JSON response at "0/first_name" should be %{FIRST_NAME}
++
+diff --git a/README.md b/README.md
+index f937835..c8edcd7 100644
+--- a/README.md
++++ b/README.md
+@@ -184 +184 @@ versatile and can be used in plenty of different formats:
+-_All instances of "JSON" above could also be downcased and/or followed by "response."_
++_All instances of "should" above could be followed by "not" and all instances of "JSON" could be downcased and/or followed by "response."_
+diff --git a/README.md b/README.md
+index 18756ba..f937835 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Continuous Integration
+-[![Build Status](http://travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
++[![Build Status](https://travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
+diff --git a/README.md b/README.md
+index 5a484f9..18756ba 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-JsonSpec
++json_spec
+@@ -25 +25 @@ RSpec
+-JsonSpec defines four new RSpec matchers:
++json_spec defines four new RSpec matchers:
+@@ -59 +59 @@ The new matchers could be used in RSpec as follows:
+-JsonSpec ignores certain hash keys by default when comparing JSON:
++json_spec ignores certain hash keys by default when comparing JSON:
+@@ -73 +73 @@ customizeable:
+-Now, the `id` key will be included in JsonSpec's comparisons. Keys can also be excluded/included
++Now, the `id` key will be included in json_spec's comparisons. Keys can also be excluded/included
+@@ -79 +79 @@ the globally excluded keys, respectively.
+-Each of JsonSpec's matchers deal with JSON "paths." These are simple strings of "/" separated
++Each of json_spec's matchers deal with JSON "paths." These are simple strings of "/" separated
+@@ -97 +97 @@ Cucumber
+-JsonSpec provides Cucumber steps that utilize its RSpec matchers and that's where JsonSpec really
++json_spec provides Cucumber steps that utilize its RSpec matchers and that's where json_spec really
+@@ -110 +110 @@ You also need to define a `last_json` method. If you're using Capybara, it could
+-Now, you can use the JsonSpec steps in your features:
++Now, you can use the json_spec steps in your features:
+@@ -143,2 +143,2 @@ Now, you can use the JsonSpec steps in your features:
+-The background steps above aren't provided by JsonSpec and the "visit" steps are provided by
+-Capybara. The remaining steps all stem from the five steps that JsonSpec provides. They're
++The background steps above aren't provided by json_spec and the "visit" steps are provided by
++Capybara. The remaining steps all stem from the five steps that json_spec provides. They're
+diff --git a/README.md b/README.md
+index 0581368..5a484f9 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ Please help write documentation!
+-[http://rdoc.info/github/collectiveidea/json_spec](http://rdoc.info/github/collectiveidea/json_spec)
++[http://rdoc.info/gems/json_spec](http://rdoc.info/gems/json_spec)
+diff --git a/README.md b/README.md
+index c77b4b2..0581368 100644
+--- a/README.md
++++ b/README.md
+@@ -21 +21 @@ Continuous Integration
+-Coming soon…
++[![Build Status](http://travis-ci.org/collectiveidea/json_spec.png)](http://travis-ci.org/collectiveidea/json_spec)
+diff --git a/README.md b/README.md
+index 11c21c2..c77b4b2 100644
+--- a/README.md
++++ b/README.md
+@@ -217 +217 @@ Submitting a Pull Request
+-5. Run <tt>bundle exec rake</tt>. If your changes are not 100% covered and passing, go back to step 4.
++5. Run `bundle exec rake`. If your changes are not 100% covered and passing, go back to step 4.

@@ -1,0 +1,38 @@
+diff --git a/README.md b/README.md
+index 3bc38db..2c27ec7 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9,3 @@ Gaskit a git-backed issue tracker. It uses a branch in your local git database t
+-Gaskit was created as a proof of concept for using Git as a database for an application. It currently only runs against itself. To see what else needs done, clone the repo and run the app.
++Gaskit was created as a proof of concept for using Git as a database for an application. It currently only runs against itself.
++
++There is a lot more work to do before it is really useful. If you'd like to help out, clone the repo and run the app to see what needs done.
+@@ -14,0 +17,5 @@ Gaskit was created as a proof of concept for using Git as a database for an appl
++
++## Contributors
++
++* [Brandon Keepers](http://github.com/bkeepers)
++* [Jonathan Hoyt](http://github.com/jonmagic)
+diff --git a/README.md b/README.md
+index 3dad00d..3bc38db 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ Gaskit a git-backed issue tracker. It uses a branch in your local git database t
+-![Screenshot of Gaskit](http://f.cl.ly/items/270D3l0p1Q1Y1e0h1w1I/Screen%20Shot%202012-04-21%20at%209.26.15%20AM.png)!
++![Screenshot of Gaskit](http://f.cl.ly/items/270D3l0p1Q1Y1e0h1w1I/Screen%20Shot%202012-04-21%20at%209.26.15%20AM.png)
+diff --git a/README.md b/README.md
+index 877d859..3dad00d 100644
+--- a/README.md
++++ b/README.md
+@@ -13,2 +13,2 @@ Gaskit was created as a proof of concept for using Git as a database for an appl
+-$ bundle install
+-$ bundle exec rackup
++    $ bundle install
++    $ bundle exec rackup
+diff --git a/README.md b/README.md
+index 67c44c6..877d859 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,2 @@ Gaskit a git-backed issue tracker. It uses a branch in your local git database t
++![Screenshot of Gaskit](http://f.cl.ly/items/270D3l0p1Q1Y1e0h1w1I/Screen%20Shot%202012-04-21%20at%209.26.15%20AM.png)!
++

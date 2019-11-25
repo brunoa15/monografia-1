@@ -1,0 +1,935 @@
+diff --git a/README.md b/README.md
+index ec34b60..dedc552 100644
+--- a/README.md
++++ b/README.md
+@@ -49,0 +50,14 @@ lim[x->0](1/x)
++### Basic algebra
++```
++f(x,y)=xy
++f(3,2)
++#=> 6
++
++f(s,t)
++#=> st
++
++g(s)=f(s,2)
++g(u)
++#=> 2u
++```
++
+diff --git a/README.md b/README.md
+index 788a3b1..ec34b60 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120,3 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
++#### Run test
++    pip install ply sympy
++    python lib/hilbert/test_main.py
+@@ -121,3 +124,2 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
+-    cd src
+-    pip3 install ply sympy
+-    python3 test_main.py
++#### Try
++    ./bin/hilbert
+diff --git a/README.md b/README.md
+index 20a720f..788a3b1 100644
+--- a/README.md
++++ b/README.md
+@@ -32,2 +31,0 @@ Hilbert lets you have a sense of mathematics using a keyboard, the same as you w
+-The code below is input and output for the Hilbert interpreter. (You can try it with typing `hilbert`.)
+-
+@@ -36,0 +35,13 @@ xxxxyyyxxzz
++
++f(x)=xxxxxxxx
++f(2)
++=> 256
++
++df/dx
++=>8(x^7)
++
++S(f dx)
++=>x^8/8
++
++lim[x->0](1/x)
++=> oo
+@@ -62 +73 @@ S(sin(x)dx)
+-<!-- ### Limit
++### Limit
+@@ -65,4 +76 @@ S(sin(x)dx)
+-lim[x->oo] (1 + 1/x)^x
+-=> 2.7182682371744895
+-
+-lim[x->0] 1/x
++lim[x->0](1/x)
+@@ -72 +80 @@ lim[x->0] 1/x
+-### Sigma
++<!-- ### Sigma
+diff --git a/README.md b/README.md
+index a442467..20a720f 100644
+--- a/README.md
++++ b/README.md
+@@ -111 +111 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
+-## Interpreter
++## Develop
+@@ -113,5 +113,3 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
+-    $ hilbert
+-    Enjoy! ->
+-
+-
+-## Contributing
++    cd src
++    pip3 install ply sympy
++    python3 test_main.py
+diff --git a/README.md b/README.md
+index a8922cb..a442467 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/hilbert.svg?branch=master)](https://travis-ci.org/gogotanaka/hilbert) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Hilbert/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Hilbert?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Hilbert/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Hilbert) [![Dependency Status](https://gemnasium.com/gogotanaka/Hilbert.svg)](https://gemnasium.com/gogotanaka/Hilbert)
++[![Build Status](https://travis-ci.org/gogotanaka/hilbert.svg?branch=master)](https://travis-ci.org/gogotanaka/hilbert) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Hilbert/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Hilbert?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Hilbert/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Hilbert) [![Dependency Status](https://gemnasium.com/gogotanaka/Hilbert.svg)](https://gemnasium.com/gogotanaka/Hilbert)
+diff --git a/README.md b/README.md
+index 80dd57e..a8922cb 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/Hilbert.svg?branch=master)](https://travis-ci.org/gogotanaka/Hilbert) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Hilbert/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Hilbert?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Hilbert/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Hilbert) [![Dependency Status](https://gemnasium.com/gogotanaka/Hilbert.svg)](https://gemnasium.com/gogotanaka/Hilbert)
++[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/hilbert.svg?branch=master)](https://travis-ci.org/gogotanaka/hilbert) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Hilbert/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Hilbert?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Hilbert/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Hilbert) [![Dependency Status](https://gemnasium.com/gogotanaka/Hilbert.svg)](https://gemnasium.com/gogotanaka/Hilbert)
+@@ -33,0 +34,5 @@ The code below is input and output for the Hilbert interpreter. (You can try it
++```
++xxxxyyyxxzz
++=> (x^6)(y^3)(z^2)
++```
++
+@@ -38 +43 @@ d/dx(cos(x))
+-=> ( - sin( x ) )
++=> -sin(x)
+@@ -40,2 +45,2 @@ d/dx(cos(x))
+-d/dy xy
+-=> ( x )
++d/dy(xy)
++=> x
+@@ -43,2 +48,2 @@ d/dy xy
+-d/dx e^x
+-=> e ^ x
++d/dx(e^x)
++=> e^x
+@@ -50,2 +55,2 @@ d/dx e^x
+-S(log(x)dx)[0..1]
+-=> - oo
++S(log(x)dx)
++=> x*log(x) - x
+@@ -53,5 +58,2 @@ S(log(x)dx)[0..1]
+-S(sin(x)dx)[0..pi]
+-=> 2.0
+-
+-S(cos(x)dx)[0..pi]
+-=> 0.0
++S(sin(x)dx)
++=> -cos(x)
+@@ -60 +62 @@ S(cos(x)dx)[0..pi]
+-### Limit
++<!-- ### Limit
+@@ -87 +89 @@ ∑[x=0,10] x
+-```
++``` -->
+diff --git a/README.md b/README.md
+index 4c3a665..80dd57e 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-有限の有機物の固まりである人間の脳みそが非可算無限を取り扱う時の機構を実装する.
++Hilbert lets you have a sense of mathematics using a keyboard, the same as you would with a pen.
+@@ -7 +7 @@ 有限の有機物の固まりである人間の脳みそが非可算無限を
+-### Do you know the one best language in this world?
++#philosophy
+@@ -9 +9 @@ 有限の有機物の固まりである人間の脳みそが非可算無限を
+-#### I believe mathematics (logic) is absolutely that language.
++* Enjoy mathematics with keyboard like with pen and paper.
+@@ -11 +11 @@ 有限の有機物の固まりである人間の脳みそが非可算無限を
+-### How can we deal something as great as mathematics in a discrete world?
++* Implement 'mathematics'
+@@ -13 +12,0 @@ 有限の有機物の固まりである人間の脳みそが非可算無限を
+-#### Hilbert is the answer.
+@@ -15 +14 @@ 有限の有機物の固まりである人間の脳みそが非可算無限を
+-Hilbert lets you have a sense of mathematics using a keyboard, the same as you would with a pen.
++### with Pen and paper
+@@ -18,5 +17,3 @@ Hilbert lets you have a sense of mathematics using a keyboard, the same as you w
+-+---Discrete world---+                    +------Mathematics-------+
+-|        Ruby        |                    |        axiom           |
+-|        TeX         |<----  Hilbert ---->|    Uncountable noun    |
+-|       Python       |                    |  real number topology  |
+-+--------------------+                    +------------------------+
+++-------------+       +--------------+       +---------------+
++| Mathematics | <-->  | Human brains | <-->  | Pen and paper |
+++-------------+       +--------------+       +---------------+
+@@ -25,3 +22,7 @@ Hilbert lets you have a sense of mathematics using a keyboard, the same as you w
+-## Demo
+-
+-The code below is input and output for the Hilbert interpreter. (You can try it with `hilbert -i`.)
++### with Hilbert
++```
+++-------------+       +--------------+       +---------+
++| Mathematics | <-->  | Human brains | <-->  | Hilbert |
+++-------------+       | or computer  |       +---------+
++                      +--------------+
++```
+@@ -29,6 +30 @@ The code below is input and output for the Hilbert interpreter. (You can try it
+-### Logic
+-```coffeescript
+-P -> Q 
+-Q -> R
+-(P -> R)?
+-=> TRUE
++## Demo
+@@ -36,5 +32 @@ Q -> R
+-P | Q # P or Q
+-~P    # not P
+-Q?    # Q is TRUE?
+-=> TRUE
+-```
++The code below is input and output for the Hilbert interpreter. (You can try it with typing `hilbert`.)
+@@ -48,5 +39,0 @@ d/dx(cos(x))
+-# You can omit parentheses
+-
+-d/dx log(x)
+-=> ( 1 / x )
+-
+@@ -110 +97,5 @@ f(1, 2)
+-## How to use
++<!-- ## How to use(WIP)
++
++    $ git clone https://github.com/gogotanaka/hilbert
++    $ cd hilbert
++    $ ./
+@@ -116 +107 @@ Install the `hilbert` gem.
+-Note to OS X Users: If the above `gem` command does not work with the stock version of Ruby (due to not being able to build a target indicated in the Makefile), then you will need to install a version of Ruby that includes the appropriate header files. Using [homebrew](http://brew.sh/) (`brew install ruby`) will suffice.
++Note to OS X Users: If the above `gem` command does not work with the stock version of Ruby (due to not being able to build a target indicated in the Makefile), then you will need to install a version of Ruby that includes the appropriate header files. Using [homebrew](http://brew.sh/) (`brew install ruby`) will suffice. -->
+@@ -120 +111 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
+-    $ hilbert -i
++    $ hilbert
+@@ -123,47 +113,0 @@ Note to OS X Users: If the above `gem` command does not work with the stock vers
+-## Use as native language
+-
+-### Compile into R
+-
+-    $ hilbert -r foo.hr
+-
+-### Compile into Ruby
+-
+-    $ hilbert -rb foo.hr
+-
+-### Compile into Python
+-
+-    $ hilbert -py foo.hr
+-
+-
+-## Use as math template within other langs
+-
+-
+-```rb
+-class ExampleClass
+-  def example_method
+-    #your Ruby codes
+-    ......
+-
+-I love mathematics.
+-  a = (1 3 4)
+-  # your Hilbert codes
+-Q.E.D
+-
+-  end
+-end
+-```
+-
+-    $ hilbert -rb example.rb
+-
+-
+-```rb
+-class ExampleClass
+-  def example_method
+-    #your Ruby codes
+-    ......
+-
+-    a = Vector[1, 3, 4]
+-
+-  end
+-end
+-```
+diff --git a/README.md b/README.md
+index ba00cb7..4c3a665 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-有限の有機物の固まりである人間の脳みそが不加算無限を取り扱う時の機構を実装する.
++有限の有機物の固まりである人間の脳みそが非可算無限を取り扱う時の機構を実装する.
+diff --git a/README.md b/README.md
+index 3c35534..ba00cb7 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,2 @@
++有限の有機物の固まりである人間の脳みそが不加算無限を取り扱う時の機構を実装する.
++
+diff --git a/README.md b/README.md
+index 93b5ad3..3c35534 100644
+--- a/README.md
++++ b/README.md
+@@ -114 +114 @@ Install the `hilbert` gem.
+-### Note to OS X Users: If the above `gem` command does not work with the stock version of Ruby (due to not being able to build a target indicated in the Makefile), then you will need to install a version of Ruby that includes the appropriate header files. Using [homebrew](http://brew.sh/) (`brew install ruby`) will suffice.
++Note to OS X Users: If the above `gem` command does not work with the stock version of Ruby (due to not being able to build a target indicated in the Makefile), then you will need to install a version of Ruby that includes the appropriate header files. Using [homebrew](http://brew.sh/) (`brew install ruby`) will suffice.
+diff --git a/README.md b/README.md
+index b485393..93b5ad3 100644
+--- a/README.md
++++ b/README.md
+@@ -113,0 +114,2 @@ Install the `hilbert` gem.
++### Note to OS X Users: If the above `gem` command does not work with the stock version of Ruby (due to not being able to build a target indicated in the Makefile), then you will need to install a version of Ruby that includes the appropriate header files. Using [homebrew](http://brew.sh/) (`brew install ruby`) will suffice.
++
+diff --git a/README.md b/README.md
+index 5237563..b485393 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-## Do you know the one best language in this world?
++### Do you know the one best language in this world?
+@@ -7 +7 @@
+-#### I believe mathematics(logic) is absolutely that one.
++#### I believe mathematics (logic) is absolutely that language.
+@@ -9 +9 @@
+-## How can we deal something as great as mathematics in a discrete world?
++### How can we deal something as great as mathematics in a discrete world?
+@@ -25,3 +25 @@ Hilbert lets you have a sense of mathematics using a keyboard, the same as you w
+-The code below is input and output for the Hilbert interpreter
+-
+-(you can try it by `hilbert -i`)
++The code below is input and output for the Hilbert interpreter. (You can try it with `hilbert -i`.)
+@@ -38,2 +36,2 @@ P | Q # P or Q
+-Q?    # Q is TURE?
+-=> TURE
++Q?    # Q is TRUE?
++=> TRUE
+@@ -112 +110 @@ f(1, 2)
+-Install hilbert gem.
++Install the `hilbert` gem.
+@@ -171 +169 @@ end
+-Any PRs or issues are welcome. (Please make to `develop` branch)
++Any PRs or issues are welcome. (Please make them to [the `develop` branch](https://github.com/gogotanaka/Hilbert/tree/develop).)
+@@ -173 +171 @@ Any PRs or issues are welcome. (Please make to `develop` branch)
+-You can become a commiter, even if you only commit once.
++You can become a committer, even if you only commit once.
+diff --git a/README.md b/README.md
+index e439d71..5237563 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-#### I believe mathematics is absolutely that one.
++#### I believe mathematics(logic) is absolutely that one.
+@@ -28,0 +29,13 @@ The code below is input and output for the Hilbert interpreter
++### Logic
++```coffeescript
++P -> Q 
++Q -> R
++(P -> R)?
++=> TRUE
++
++P | Q # P or Q
++~P    # not P
++Q?    # Q is TURE?
++=> TURE
++```
++
+@@ -158 +171,2 @@ end
+-Any PRs or issues are welcome.
++Any PRs or issues are welcome. (Please make to `develop` branch)
++
+diff --git a/README.md b/README.md
+index 99749f6..e439d71 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Q/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Q?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Q/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Q) [![Dependency Status](https://gemnasium.com/gogotanaka/Q.svg)](https://gemnasium.com/gogotanaka/Q)
++[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/Hilbert.svg?branch=master)](https://travis-ci.org/gogotanaka/Hilbert) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Hilbert/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Hilbert?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Hilbert/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Hilbert) [![Dependency Status](https://gemnasium.com/gogotanaka/Hilbert.svg)](https://gemnasium.com/gogotanaka/Hilbert)
+diff --git a/README.md b/README.md
+index b1ac430..99749f6 100644
+--- a/README.md
++++ b/README.md
+@@ -106 +106 @@ Install hilbert gem.
+-    Hilbert:->
++    Enjoy! ->
+diff --git a/README.md b/README.md
+index 9fcb8d5..b1ac430 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@
+-#### Q-language is the answer.
++#### Hilbert is the answer.
+@@ -13 +13 @@
+-Q lets you have a sense of mathematics using a keyboard, the same as you would with a pen.
++Hilbert lets you have a sense of mathematics using a keyboard, the same as you would with a pen.
+@@ -18 +18 @@ Q lets you have a sense of mathematics using a keyboard, the same as you would w
+-|        TeX         |<------   Q  ------>|    Uncountable noun    |
++|        TeX         |<----  Hilbert ---->|    Uncountable noun    |
+@@ -25 +25 @@ Q lets you have a sense of mathematics using a keyboard, the same as you would w
+-The code below is input and output for the q-lang interpreter
++The code below is input and output for the Hilbert interpreter
+@@ -106 +106 @@ Install hilbert gem.
+-    Q:->
++    Hilbert:->
+@@ -112 +112 @@ Install hilbert gem.
+-    $ hilbert -r foo.q
++    $ hilbert -r foo.hr
+@@ -116 +116 @@ Install hilbert gem.
+-    $ hilbert -rb foo.q
++    $ hilbert -rb foo.hr
+@@ -120 +120 @@ Install hilbert gem.
+-    $ hilbert -py foo.q
++    $ hilbert -py foo.hr
+@@ -134 +134 @@ I love mathematics.
+-  # your Q codes
++  # your Hilbert codes
+diff --git a/README.md b/README.md
+index a21c660..9fcb8d5 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Qlang
++# Hilbert
+diff --git a/README.md b/README.md
+index c03a7e9..a21c660 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Gem Version](https://badge.fury.io/rb/qlang.svg)](http://badge.fury.io/rb/qlang) [![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Q/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Q?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Q/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Q) [![Dependency Status](https://gemnasium.com/gogotanaka/Q.svg)](https://gemnasium.com/gogotanaka/Q)
++[![Gem Version](https://badge.fury.io/rb/hilbert.svg)](http://badge.fury.io/rb/hilbert) [![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Q/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Q?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Q/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Q) [![Dependency Status](https://gemnasium.com/gogotanaka/Q.svg)](https://gemnasium.com/gogotanaka/Q)
+@@ -27 +27 @@ The code below is input and output for the q-lang interpreter
+-(you can try it by `qlang -i`)
++(you can try it by `hilbert -i`)
+@@ -99 +99 @@ f(1, 2)
+-Install qlang gem.
++Install hilbert gem.
+@@ -101 +101 @@ Install qlang gem.
+-    $ gem install qlang
++    $ gem install hilbert
+@@ -105 +105 @@ Install qlang gem.
+-    $ qlang -i
++    $ hilbert -i
+@@ -112 +112 @@ Install qlang gem.
+-    $ qlang -r foo.q
++    $ hilbert -r foo.q
+@@ -116 +116 @@ Install qlang gem.
+-    $ qlang -rb foo.q
++    $ hilbert -rb foo.q
+@@ -120 +120 @@ Install qlang gem.
+-    $ qlang -py foo.q
++    $ hilbert -py foo.q
+@@ -141 +141 @@ end
+-    $ qlang -rb example.rb
++    $ hilbert -rb example.rb
+diff --git a/README.md b/README.md
+index f6e1151..c03a7e9 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-## How can we deal such a great mathematics in a discrete world?
++## How can we deal something as great as mathematics in a discrete world?
+@@ -13 +13 @@
+-Q lets you have a sense of mathematics with a keyboard, the same as you would with a pen.
++Q lets you have a sense of mathematics using a keyboard, the same as you would with a pen.
+@@ -25 +25 @@ Q lets you have a sense of mathematics with a keyboard, the same as you would wi
+-The code below is input and output for interpreter of q-lang
++The code below is input and output for the q-lang interpreter
+@@ -159 +159 @@ Any PRs or issues are welcome.
+-You can become a commiter, if you commit even once.
++You can become a commiter, even if you only commit once.
+diff --git a/README.md b/README.md
+index a4e0da0..f6e1151 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-## Do you know one of the best language in this world?
++## Do you know the one best language in this world?
+@@ -7 +7 @@
+-#### I belive mathematics is that one absolutely.
++#### I believe mathematics is absolutely that one.
+@@ -9 +9 @@
+-## How can we deal such a great mathematics in discret world?
++## How can we deal such a great mathematics in a discrete world?
+@@ -11 +11 @@
+-#### Q-language can be.
++#### Q-language is the answer.
+@@ -13 +13 @@
+-Q let you know the sense of mathematics with Keyboard same as with a pen.
++Q lets you have a sense of mathematics with a keyboard, the same as you would with a pen.
+@@ -16,5 +16,5 @@ Q let you know the sense of mathematics with Keyboard same as with a pen.
+-+---Discret world---+                    +------mathematics-----+
+-|        Ruby       |                    |        axiom         |
+-|        TeX        |<------   Q  ------>|    Uncountable noun  |
+-|       Python      |                    |  real number topology|
+-+-------------------+                    +----------------------+
+++---Discrete world---+                    +------Mathematics-------+
++|        Ruby        |                    |        axiom           |
++|        TeX         |<------   Q  ------>|    Uncountable noun    |
++|       Python       |                    |  real number topology  |
+++--------------------+                    +------------------------+
+@@ -25 +25 @@ Q let you know the sense of mathematics with Keyboard same as with a pen.
+-Below codes is input and output for interpreter of q-lang
++The code below is input and output for interpreter of q-lang
+@@ -40 +40 @@ d/dx log(x)
+-d/dy xy                       
++d/dy xy
+@@ -56 +56 @@ S(sin(x)dx)[0..pi]
+-S(cos(x)dx)[0..pi]                       
++S(cos(x)dx)[0..pi]
+@@ -106 +106 @@ Install qlang gem.
+-    Q:-> 
++    Q:->
+@@ -113 +113 @@ Install qlang gem.
+-    
++
+@@ -117 +117 @@ Install qlang gem.
+-    
++
+@@ -142 +142 @@ end
+-    
++
+@@ -158,2 +158,2 @@ end
+-Welcome any your PR or issue.
+-You can become commiter, if you commit even once.
++Any PRs or issues are welcome.
++You can become a commiter, if you commit even once.
+diff --git a/README.md b/README.md
+index cc78051..a4e0da0 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ Q let you know the sense of mathematics with Keyboard same as with a pen.
+-|       Pyhthon     |                    |  real number topology|
++|       Python      |                    |  real number topology|
+diff --git a/README.md b/README.md
+index 2ea1327..cc78051 100644
+--- a/README.md
++++ b/README.md
+@@ -99 +99 @@ f(1, 2)
+-Install qlang gme.
++Install qlang gem.
+@@ -102,2 +102,6 @@ Install qlang gme.
+-    
+-    
++
++## Interpreter
++
++    $ qlang -i
++    Q:-> 
++
+@@ -152,5 +155,0 @@ end
+-## Interpreter
+-
+-    $ qlang -i
+-    Q:-> 
+-
+diff --git a/README.md b/README.md
+index 10f50cd..2ea1327 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ Q let you know the sense of mathematics with Keyboard same as with a pen.
+-Below code is input and output for interpreter of q-lang
++Below codes is input and output for interpreter of q-lang
+@@ -35,3 +34,0 @@ d/dx(cos(x))
+-d/dx(log(x))
+-=> ( 1 / x )
+-
+@@ -40,2 +37,2 @@ d/dx(log(x))
+-d/dy y^2                        
+-=> ( 2 * y )
++d/dx log(x)
++=> ( 1 / x )
+@@ -45 +41,0 @@ d/dy xy
+-```
+@@ -46,0 +43,3 @@ d/dy xy
++d/dx e^x
++=> e ^ x
++```
+@@ -60,0 +60,15 @@ S(cos(x)dx)[0..pi]
++### Limit
++
++```
++lim[x->oo] (1 + 1/x)^x
++=> 2.7182682371744895
++
++lim[x->0] 1/x
++=> oo
++```
++
++### Sigma
++```
++∑[x=0,10] x
++=> 55.0
++```
+diff --git a/README.md b/README.md
+index 3d283dc..10f50cd 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13 @@
++Q let you know the sense of mathematics with Keyboard same as with a pen.
+diff --git a/README.md b/README.md
+index 12fdde0..3d283dc 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22,5 @@
++## Demo
++
++Below code is input and output for interpreter of q-lang
++
++(you can try it by `qlang -i`)
+@@ -88 +93 @@ Install qlang gme.
+-    $ qlang -R foo.q
++    $ qlang -r foo.q
+@@ -92 +97 @@ Install qlang gme.
+-    $ qlang -Ruby foo.q
++    $ qlang -rb foo.q
+@@ -96 +101 @@ Install qlang gme.
+-    $ qlang -Python foo.q
++    $ qlang -py foo.q
+@@ -117 +122 @@ end
+-    $ qlang -Ruby example.rb
++    $ qlang -rb example.rb
+@@ -131,0 +137,5 @@ end
++## Interpreter
++
++    $ qlang -i
++    Q:-> 
++
+diff --git a/README.md b/README.md
+index cf28526..12fdde0 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-## How can we deal such a nice mathematics in discret world?
++## How can we deal such a great mathematics in discret world?
+diff --git a/README.md b/README.md
+index c35edb5..cf28526 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5,17 @@
+-Enjoy MATH with Keyboard.
++## Do you know one of the best language in this world?
++
++#### I belive mathematics is that one absolutely.
++
++## How can we deal such a nice mathematics in discret world?
++
++#### Q-language can be.
++
++
++```
+++---Discret world---+                    +------mathematics-----+
++|        Ruby       |                    |        axiom         |
++|        TeX        |<------   Q  ------>|    Uncountable noun  |
++|       Pyhthon     |                    |  real number topology|
+++-------------------+                    +----------------------+
++```
++
+diff --git a/README.md b/README.md
+index 3f2744b..c35edb5 100644
+--- a/README.md
++++ b/README.md
+@@ -118,5 +118,2 @@ end
+-1. Fork it ( https://github.com/gogotanaka/Q/fork )
+-2. Create your feature branch (`git checkout -b my-new-feature`)
+-3. Commit your changes (`git commit -am 'Add some feature'`)
+-4. Push to the branch (`git push origin my-new-feature`)
+-5. Create a new Pull Request
++Welcome any your PR or issue.
++You can become commiter, if you commit even once.
+diff --git a/README.md b/README.md
+index f2b8c55..3f2744b 100644
+--- a/README.md
++++ b/README.md
+@@ -63 +63 @@ f(1, 2)
+-Install it yourself as:
++Install qlang gme.
+@@ -65,0 +66,3 @@ Install it yourself as:
++    
++    
++## Use as native language
+@@ -67 +70,5 @@ Install it yourself as:
+-### Compiler into R
++### Compile into R
++
++    $ qlang -R foo.q
++    
++### Compile into Ruby
+@@ -69 +76 @@ Install it yourself as:
+-    $ qlang -c -R foo.q
++    $ qlang -Ruby foo.q
+@@ -71 +78,6 @@ Install it yourself as:
+-### Compiler into Ruby
++### Compile into Python
++
++    $ qlang -Python foo.q
++
++
++## Use as math template within other langs
+@@ -73 +84,0 @@ Install it yourself as:
+-    $ qlang -c -Ruby foo.q
+@@ -75 +86,5 @@ Install it yourself as:
+-### Interpreter
++```rb
++class ExampleClass
++  def example_method
++    #your Ruby codes
++    ......
+@@ -77 +92,4 @@ Install it yourself as:
+-    $ qlang -i
++I love mathematics.
++  a = (1 3 4)
++  # your Q codes
++Q.E.D
+@@ -78,0 +97,18 @@ Install it yourself as:
++  end
++end
++```
++
++    $ qlang -Ruby example.rb
++    
++
++```rb
++class ExampleClass
++  def example_method
++    #your Ruby codes
++    ......
++
++    a = Vector[1, 3, 4]
++
++  end
++end
++```
+diff --git a/README.md b/README.md
+index b3c6d8c..f2b8c55 100644
+--- a/README.md
++++ b/README.md
+@@ -82 +82 @@ Install it yourself as:
+-1. Fork it ( https://github.com/[my-github-username]/qlang/fork )
++1. Fork it ( https://github.com/gogotanaka/Q/fork )
+diff --git a/README.md b/README.md
+index 91eb9ff..b3c6d8c 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,3 @@ d/dx(log(x))
+-d/dy(y ** 2)                        
++# You can omit parentheses
++
++d/dy y^2                        
+@@ -17,0 +20,3 @@ d/dy(y ** 2)
++
++d/dy xy                       
++=> ( x )
+@@ -50 +55,3 @@ S(cos(x)dx)[0..pi]
+-f(x, y) = x + y
++f(x, y) = xy
++f(1, 2)
++=> 2
+diff --git a/README.md b/README.md
+index f375875..91eb9ff 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q)   [![Gem Version](https://badge.fury.io/rb/qlang.svg)](http://badge.fury.io/rb/qlang)
++[![Gem Version](https://badge.fury.io/rb/qlang.svg)](http://badge.fury.io/rb/qlang) [![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q) [![Coverage Status](https://coveralls.io/repos/gogotanaka/Q/badge.png?branch=master)](https://coveralls.io/r/gogotanaka/Q?branch=master) [![Code Climate](https://codeclimate.com/github/gogotanaka/Q/badges/gpa.svg)](https://codeclimate.com/github/gogotanaka/Q) [![Dependency Status](https://gemnasium.com/gogotanaka/Q.svg)](https://gemnasium.com/gogotanaka/Q)
+diff --git a/README.md b/README.md
+index daf6701..f375875 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++[![Build Status](https://travis-ci.org/gogotanaka/Q.svg?branch=master)](https://travis-ci.org/gogotanaka/Q)   [![Gem Version](https://badge.fury.io/rb/qlang.svg)](http://badge.fury.io/rb/qlang)
++
+diff --git a/README.md b/README.md
+index 13aec8e..daf6701 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ S(log(x)dx)[0..1]
+-S( sin(x)dx )[0..pi]
++S(sin(x)dx)[0..pi]
+@@ -28 +28 @@ S( sin(x)dx )[0..pi]
+-S( cos(x)dx )[0..pi]                       
++S(cos(x)dx)[0..pi]                       
+diff --git a/README.md b/README.md
+index 1b91366..13aec8e 100644
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,5 @@ S( cos(x)dx )[0..pi]
++### Function
++```
++f(x, y) = x + y
++```
++
+diff --git a/README.md b/README.md
+index 90df079..1b91366 100644
+--- a/README.md
++++ b/README.md
+@@ -8,2 +8,2 @@ Enjoy MATH with Keyboard.
+-Q:-> d/dx(cos(x))
+-( - sin( x ) )
++d/dx(cos(x))
++=> ( - sin( x ) )
+@@ -11,2 +11,2 @@ Q:-> d/dx(cos(x))
+-Q:-> d/dx(log(x))
+-( 1 / x )
++d/dx(log(x))
++=> ( 1 / x )
+@@ -14,2 +14,2 @@ Q:-> d/dx(log(x))
+-Q:-> d/dy(y ** 2)                        
+-( 2 * y )
++d/dy(y ** 2)                        
++=> ( 2 * y )
+@@ -22,2 +22,2 @@ Q:-> d/dy(y ** 2)
+-Q:-> S(log(x)dx)[0..1]
+-( - sin( x ) )
++S(log(x)dx)[0..1]
++=> - oo
+@@ -25,2 +25,2 @@ Q:-> S(log(x)dx)[0..1]
+-Q:-> d/dx(log(x))
+-( 1 / x )
++S( sin(x)dx )[0..pi]
++=> 2.0
+@@ -28,2 +28,2 @@ Q:-> d/dx(log(x))
+-Q:-> d/dy(y ** 2)                        
+-( 2 * y )
++S( cos(x)dx )[0..pi]                       
++=> 0.0
+@@ -36 +35,0 @@ Q:-> d/dy(y ** 2)
+-Q:->(1 2 3; 4 5 6)
+@@ -37,0 +37 @@ Q:->(1 2 3; 4 5 6)
++=> (1 2 3; 4 5 6)
+@@ -39,2 +39,2 @@ Q:->(1 2 3; 4 5 6)
+-Q:-> (1 2 3; 4 5 6) + (1 2 3; 4 5 6)
+-(2 4 6; 8 10 12)
++(1 2 3; 4 5 6) + (1 2 3; 4 5 6)
++=> (2 4 6; 8 10 12)
+@@ -42,2 +42,2 @@ Q:-> (1 2 3; 4 5 6) + (1 2 3; 4 5 6)
+-Q:-> (1 2 3; 4 5 6) * (1 2 3)
+-(14 32)
++(1 2 3; 4 5 6) * (1 2 3)
++=> (14 32)
+diff --git a/README.md b/README.md
+index d89f987..90df079 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +7,0 @@ Enjoy MATH with Keyboard.
+-
+@@ -17 +15,0 @@ Q:-> d/dy(y ** 2)
+-
+@@ -22 +19,0 @@ Q:-> d/dy(y ** 2)
+-```
+@@ -23,0 +21 @@ Q:-> d/dy(y ** 2)
++```
+@@ -46 +43,0 @@ Q:-> (1 2 3; 4 5 6) * (1 2 3)
+-
+diff --git a/README.md b/README.md
+index a5e087a..d89f987 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5 @@ Enjoy MATH with Keyboard.
++### Differentiate
+@@ -7 +7,0 @@ Enjoy MATH with Keyboard.
+-# Differentiate
+@@ -17,0 +18,2 @@ Q:-> d/dy(y ** 2)
++```
++
+@@ -19 +21,2 @@ Q:-> d/dy(y ** 2)
+-# Integrate
++### Integrate
++```
+@@ -28,0 +32,2 @@ Q:-> d/dy(y ** 2)
++```
++
+@@ -30,0 +36,2 @@ Q:-> d/dy(y ** 2)
++
++```
+diff --git a/README.md b/README.md
+index 9205088..a5e087a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-TODO: Write a gem description
++Enjoy MATH with Keyboard.
+@@ -5 +4,0 @@ TODO: Write a gem description
+-## Installation
+@@ -7 +6,2 @@ TODO: Write a gem description
+-Add this line to your application's Gemfile:
++```
++# Differentiate
+@@ -9 +9,2 @@ Add this line to your application's Gemfile:
+-    gem 'qlang'
++Q:-> d/dx(cos(x))
++( - sin( x ) )
+@@ -11 +12,2 @@ Add this line to your application's Gemfile:
+-And then execute:
++Q:-> d/dx(log(x))
++( 1 / x )
+@@ -13 +15,2 @@ And then execute:
+-    $ bundle
++Q:-> d/dy(y ** 2)                        
++( 2 * y )
+@@ -15 +18,28 @@ And then execute:
+-Or install it yourself as:
++
++# Integrate
++
++Q:-> S(log(x)dx)[0..1]
++( - sin( x ) )
++
++Q:-> d/dx(log(x))
++( 1 / x )
++
++Q:-> d/dy(y ** 2)                        
++( 2 * y )
++
++### Matrix
++Q:->(1 2 3; 4 5 6)
++(1 2 3; 4 5 6)
++
++Q:-> (1 2 3; 4 5 6) + (1 2 3; 4 5 6)
++(2 4 6; 8 10 12)
++
++Q:-> (1 2 3; 4 5 6) * (1 2 3)
++(14 32)
++
++```
++
++
++## How to use
++
++Install it yourself as:
+@@ -19 +49,11 @@ Or install it yourself as:
+-## Usage
++### Compiler into R
++
++    $ qlang -c -R foo.q
++    
++### Compiler into Ruby
++
++    $ qlang -c -Ruby foo.q
++
++### Interpreter
++
++    $ qlang -i
+@@ -21 +60,0 @@ Or install it yourself as:
+-TODO: Write usage instructions here
+diff --git a/README.md b/README.md
+index 56bb013..9205088 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Add this line to your application's Gemfile:
+-    gem 'q_lang'
++    gem 'qlang'
+@@ -17 +17 @@ Or install it yourself as:
+-    $ gem install q_lang
++    $ gem install qlang
+@@ -25 +25 @@ TODO: Write usage instructions here
+-1. Fork it ( https://github.com/[my-github-username]/q_lang/fork )
++1. Fork it ( https://github.com/[my-github-username]/qlang/fork )
+diff --git a/README.md b/README.md
+index 1367b3d..56bb013 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# QLang
++# Qlang

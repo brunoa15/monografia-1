@@ -1,0 +1,111 @@
+diff --git a/README.txt b/README.txt
+index d652c7c..ae03bf9 100644
+--- a/README.txt
++++ b/README.txt
+@@ -71,0 +72 @@ Contributors
++* Eric Mika <https://github.com/kitschpatrol>
+diff --git a/README.txt b/README.txt
+index 50d0fb7..d652c7c 100644
+--- a/README.txt
++++ b/README.txt
+@@ -31,0 +32,5 @@ made possible with the ``--fuzzy`` flag::
++If you don't want to be prompted for your password, you can use the
++``--no-prompt`` flag and provide the password via standard input instead::
++
++    emit_master_password | 1pass --no-prompt mail.google.com
++
+@@ -52,0 +58,7 @@ and not my Gmail password.
++The ``--no-prompt`` flag is very useful when configuring ``mutt`` and PGP.
++``mutt`` passes the PGP passphrase via standard in, so by inserting ``1pass``
++into this pipline I can use my 1Password master password when prompted for my
++PGP keyphrase::
++
++    set pgp_decrypt_command="1pass --no-prompt pgp-passphrase | gpg --passphrase-fd 0 ..."
++
+diff --git a/README.txt b/README.txt
+index e4f56c8..50d0fb7 100644
+--- a/README.txt
++++ b/README.txt
+@@ -58,0 +59 @@ Contributors
++* Zach Allaun <https://github.com/zachallaun>
+diff --git a/README.txt b/README.txt
+index b2b7d92..e4f56c8 100644
+--- a/README.txt
++++ b/README.txt
+@@ -26,3 +26,3 @@ Or, you can set your keychain path as an enviornment variable::
+-By default, the name you pass on the command line will be fuzzily matched
+-against the item in your 1Password keychain. For instance, the following
+-will work::
++By default, the name you pass on the command line must match the name of an
++item in your 1Password keychain exactly. To avoid this, fuzzy matching is
++made possible with the ``--fuzzy`` flag::
+@@ -30,7 +30 @@ will work::
+-    1pass mail.goog
+-
+-To avoid this behavior and match the names exactly, use the ``--no-fuzz``
+-flag::
+-
+-    1pass --no-fuzz mail.goog
+-    Could not find a item named 'mail.goog'
++    1pass --fuzzy mail.goog
+diff --git a/README.txt b/README.txt
+index 6381669..b2b7d92 100644
+--- a/README.txt
++++ b/README.txt
+@@ -26,2 +26,11 @@ Or, you can set your keychain path as an enviornment variable::
+-The name you pass on the command line must exactly match the name of an item in
+-your 1Password keychain.
++By default, the name you pass on the command line will be fuzzily matched
++against the item in your 1Password keychain. For instance, the following
++will work::
++
++    1pass mail.goog
++
++To avoid this behavior and match the names exactly, use the ``--no-fuzz``
++flag::
++
++    1pass --no-fuzz mail.goog
++    Could not find a item named 'mail.goog'
+diff --git a/README.txt b/README.txt
+index 30974ed..6381669 100644
+--- a/README.txt
++++ b/README.txt
+@@ -53 +53 @@ Contributors
+-* Pip Taylor <http://github.com/pipt>
++* Pip Taylor <https://github.com/pipt>
+@@ -54,0 +55 @@ Contributors
++* Ash Berlin <https://github.com/ashb>
+diff --git a/README.txt b/README.txt
+index 155c72e..30974ed 100644
+--- a/README.txt
++++ b/README.txt
+@@ -53,0 +54 @@ Contributors
++* Adam Coddington <https://github.com/latestrevision>
+diff --git a/README.txt b/README.txt
+index 065187e..155c72e 100644
+--- a/README.txt
++++ b/README.txt
+@@ -18,0 +19,6 @@ not where you keep your keychain::
++
++Or, you can set your keychain path as an enviornment variable::
++
++    export ONEPASSWORD_KEYCHAIN=/path/to/keychain
++
++    1pass mail.google.com
+diff --git a/README.txt b/README.txt
+index 5bcbe0f..065187e 100644
+--- a/README.txt
++++ b/README.txt
+@@ -43,0 +44,5 @@ and not my Gmail password.
++Contributors
++============
++
++* Pip Taylor <http://github.com/pipt>
++
+diff --git a/README.txt b/README.txt
+index b4ab1a6..5bcbe0f 100644
+--- a/README.txt
++++ b/README.txt
+@@ -39 +39 @@ I wrote this so I could add the following line to my ``.muttrc`` file::
+-    set imap_pass = "`~/code/1pass/bin/1pass 'Gooogle: personal'`"
++    set imap_pass = "`1pass 'Google: personal'`"

@@ -1,0 +1,57 @@
+diff --git a/readme.txt b/readme.txt
+index c484410..c23474c 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -15,0 +16,20 @@ it also incorporates customisable deployment, resource management, and integrate
++Copyright (C) 2013-2015 NaturalMotion Limited. Used under licence. 
++
++Code written by Justin Webb. 
++
++Licence granted by Justin Webb with the permission of NaturalMotion Limited. 
++
++No rights are granted by NaturalMotion Limited under this licence.
++
++NaturalMotion Limited is not a party to this licence and has no obligations or liability under this licence.
++
++This software is provided 'as-is', without any express or implied warranty.  In no event will the author(s) or copyright owner(s) be held liable for any damages arising from the use of this software or otherwise in connection with this software.
++
++Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
++
++1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
++2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
++3. This notice may not be removed or altered from any source distribution.
++
++--------------------------------------------------------------------------------------------------------------------------------
++
+diff --git a/readme.txt b/readme.txt
+index 6c42876..c484410 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -10 +10 @@ it also incorporates customisable deployment, resource management, and integrate
+- - For versioning and change-list info, please refer to 'docs/changes.txt'.
++ - For versioning and change-list info, refer to 'docs/changes.txt'.
+@@ -18 +18,2 @@ Thank you for your support.
+--- Justin Webb (webbju@android-plus-plus.com)
+\ No newline at end of file
++Justin Webb 
++webbju@android-plus-plus.com
+diff --git a/readme.txt b/readme.txt
+index 7de3623..6c42876 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -10 +10 @@ it also incorporates customisable deployment, resource management, and integrate
+- - For versioning and change-list info, please refer to 'version.txt' and './docs/changes.txt' respectively.
++ - For versioning and change-list info, please refer to 'docs/changes.txt'.
+@@ -12 +12 @@ it also incorporates customisable deployment, resource management, and integrate
+- - If you're new to Android++, or need help installing, please read './docs/getting_started.txt'.
++ - If you're new to Android++, or need help installing, please read 'docs/getting_started.txt'.
+diff --git a/readme.txt b/readme.txt
+index 54c6b09..7de3623 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -10 +10 @@ it also incorporates customisable deployment, resource management, and integrate
+- - For versioning and change-list info, please refer to 'version.txt' and 'docs/changes.txt' respectively.
++ - For versioning and change-list info, please refer to 'version.txt' and './docs/changes.txt' respectively.
+@@ -12 +12 @@ it also incorporates customisable deployment, resource management, and integrate
+- - If you're new to Android++, or need help installing, please read 'docs/getting_started.txt'.
++ - If you're new to Android++, or need help installing, please read './docs/getting_started.txt'.

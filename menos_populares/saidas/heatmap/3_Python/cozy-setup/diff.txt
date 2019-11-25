@@ -1,0 +1,1259 @@
+diff --git a/README.md b/README.md
+index b7f700b..8d7f8e8 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-Cozy Cloud, it's explained on [our website](https://docs.cozy.io/en/host/install/).
++Cozy Cloud, it's explained on [our website](https://docs.cozy.io/en/install/).
+@@ -32 +32 @@ So, this project contains what you need to achieve that goal
+-You will find all the steps to install Cozy on your platform on the [project site](https://docs.cozy.io/en/host/install/).
++You will find all the steps to install Cozy on your platform on the [project site](https://docs.cozy.io/en/install/).
+@@ -167 +167 @@ If you want to know more about how Cozy works you can check our [architecture
+-page](https://docs.cozy.io/en/hack/getting-started/architecture-overview.html).
++page](https://docs.cozy.io/en/dev/intro/).
+diff --git a/README.md b/README.md
+index 52d04b0..b7f700b 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,5 @@
++# Deprecated repository
++
++**Important**: this repository is no longer maintained. If you want to install
++Cozy Cloud, it's explained on [our website](https://docs.cozy.io/en/host/install/).
++
+@@ -13,3 +17,0 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
+-**Important**: this repository is no longer maintained. If you want to install
+-cozy-cloud, it's explained on [our website](https://docs.cozy.io/en/host/install/).
+-
+diff --git a/README.md b/README.md
+index 3fbb6c5..52d04b0 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13,4 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
+-# Project Tickets
++**Important**: this repository is no longer maintained. If you want to install
++cozy-cloud, it's explained on [our website](https://docs.cozy.io/en/host/install/).
++
++## Project Tickets
+@@ -21 +24 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
+-# Install Cozy
++## Install Cozy
+@@ -27 +30,14 @@ So, this project contains what you need to achieve that goal
+-You will find all the steps to install Cozy on your platform on the [project site](http://cozy.io/en/host/install/).
++You will find all the steps to install Cozy on your platform on the [project site](https://docs.cozy.io/en/host/install/).
++
++## Community
++
++You can reach the Cozy community by:
++
++* chatting with us on IRC #cozycloud on irc.freenode.net
++* Posting on our [Forum](https://forum.cozy.io)
++* Posting issues on the [Github repos](https://github.com/cozy/)
++* Mentioning us on [Twitter](http://twitter.com/mycozycloud)
++
++----
++
++# Initial README.md
+@@ -32 +48 @@ Ubuntu 12.04 and Ubuntu 14.04.
+-# How to install Cozy on your server?
++## How to install Cozy on your server?
+@@ -160,9 +175,0 @@ machine).
+-## Community
+-
+-You can reach the Cozy community by:
+-
+-* chatting with us on IRC #cozycloud on irc.freenode.net
+-* Posting on our [Forum](https://forum.cozy.io)
+-* Posting issues on the [Github repos](https://github.com/cozy/)
+-* Mentioning us on [Twitter](http://twitter.com/mycozycloud)
+-
+diff --git a/README.md b/README.md
+index ef9b702..3fbb6c5 100644
+--- a/README.md
++++ b/README.md
+@@ -149 +149 @@ If you want to know more about how Cozy works you can check our [architecture
+-page](http://cozy.io/hack/getting-started/architecture-overview.html).
++page](https://docs.cozy.io/en/hack/getting-started/architecture-overview.html).
+diff --git a/README.md b/README.md
+index 9b8e733..ef9b702 100644
+--- a/README.md
++++ b/README.md
+@@ -27 +27 @@ So, this project contains what you need to achieve that goal
+-You will find all the steps to install Cozy on your platform on the [project site](http://cozy.io/host/install.html).
++You will find all the steps to install Cozy on your platform on the [project site](http://cozy.io/en/host/install/).
+diff --git a/README.md b/README.md
+index 53fc368..9b8e733 100644
+--- a/README.md
++++ b/README.md
+@@ -72,0 +73,23 @@ into your environment.
++*Fabric authentifications issues*
++
++Allow root login, put in ```/etc/ssh/sshd_config```:
++```
++PermitRootLogin yes
++# Or prefer
++PermitRootLogin without-password
++```
++
++Check Fabric connection:
++```fab -u root -H cozy.domain.tld check_fab```
++
++Use a user with right sudo config ```visudo```:
++```
++pi ALL=(ALL) NOPASSWD: ALL
++```
++
++Check Fabric connection:
++```fab -u pi -H cozy.domain.tld check_fab```
++
++Use sudo password:
++```fab -u pi --password=raspberry -H cozy.domain.tld check_fab```
++
+diff --git a/README.md b/README.md
+index 7aeaccb..53fc368 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
++* [Good tickets for a first contribution](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Acozy+label%3A%22Good+For+First+Contribution%22+-repo%3Acozy%2Ftodos+-repo%3Acozy%2Fnotes+-repo%3Acozy%2Fcozy-editor+)
+@@ -72,23 +72,0 @@ into your environment.
+-*Fabric authentifications issues*
+-
+-Allow root login, put in ```/etc/ssh/sshd_config```:
+-```
+-PermitRootLogin yes
+-# Or prefer
+-PermitRootLogin without-password
+-```
+-
+-Check Fabric connection:
+-```fab -u root -H cozy.domain.tld check_fab```
+-
+-Use a user with right sudo config ```visudo```:
+-```
+-pi ALL=(ALL) NOPASSWD: ALL
+-```
+-
+-Check Fabric connection:
+-```fab -u pi -H cozy.domain.tld check_fab```
+-
+-Use sudo password:
+-```fab -u pi --password=raspberry -H cozy.domain.tld check_fab```
+-
+diff --git a/README.md b/README.md
+index 906e540..7aeaccb 100644
+--- a/README.md
++++ b/README.md
+@@ -82 +82 @@ Check Fabric connection:
+-```fab -u root -H cozy.winch.my check_fab```
++```fab -u root -H cozy.domain.tld check_fab```
+@@ -90 +90 @@ Check Fabric connection:
+-```fab -u pi -H cozy.winch.my check_fab```
++```fab -u pi -H cozy.domain.tld check_fab```
+@@ -93 +93 @@ Use sudo password:
+-```fab -u pi --password=raspberry -H cozy.winch.my check_fab```
++```fab -u pi --password=raspberry -H cozy.domain.tld check_fab```
+diff --git a/README.md b/README.md
+index 8a93b27..906e540 100644
+--- a/README.md
++++ b/README.md
+@@ -71,0 +72,23 @@ into your environment.
++*Fabric authentifications issues*
++
++Allow root login, put in ```/etc/ssh/sshd_config```:
++```
++PermitRootLogin yes
++# Or prefer
++PermitRootLogin without-password
++```
++
++Check Fabric connection:
++```fab -u root -H cozy.winch.my check_fab```
++
++Use a user with right sudo config ```visudo```:
++```
++pi ALL=(ALL) NOPASSWD: ALL
++```
++
++Check Fabric connection:
++```fab -u pi -H cozy.winch.my check_fab```
++
++Use sudo password:
++```fab -u pi --password=raspberry -H cozy.winch.my check_fab```
++
+diff --git a/README.md b/README.md
+index 969d75a..8a93b27 100644
+--- a/README.md
++++ b/README.md
+@@ -17,0 +18 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
++* [Waiting tickets](https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Acozy+no%3Alabel+-repo%3Acozy%2Fcozy-guidelines)
+diff --git a/README.md b/README.md
+index 7229c5f..969d75a 100644
+--- a/README.md
++++ b/README.md
+@@ -59,5 +59 @@ you downloaded before):
+-Enter your settings (such as domain name) when prompted by the installer.
+-
+-Set domain name by running
+-
+-    fab -H user@ip init_domain
++Enter your settings when prompted by the installer.
+diff --git a/README.md b/README.md
+index 0d9a96b..7229c5f 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ with a new experience. You can install Cozy on your own hardware where no one
+-profiles you. 
++profiles you.
+@@ -24,0 +25,2 @@ So, this project contains what you need to achieve that goal
++You will find all the steps to install Cozy on your platform on the [project site](http://cozy.io/host/install.html).
++
+@@ -60 +62 @@ Set domain name by running
+-    
++
+@@ -104 +106 @@ Disk space: a lot of space to store all your files.
+-## Test 
++## Test
+@@ -137 +139 @@ machine).
+-## Community 
++## Community
+diff --git a/README.md b/README.md
+index ff9d303..0d9a96b 100644
+--- a/README.md
++++ b/README.md
+@@ -16,0 +17 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
++* [Opened Pull Requests](https://github.com/pulls?user=cozy)
+diff --git a/README.md b/README.md
+index 810d3ae..ff9d303 100644
+--- a/README.md
++++ b/README.md
+@@ -12,0 +13,5 @@ See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
++# Project Tickets
++
++* [Bug List](https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Acozy+label%3Abug+-repo%3Acozy%2Ftodos+-repo%3Acozy%2Fnotes+-repo%3Acozy%2Fcozy-editor+)
++* [Feature Request List](https://github.com/issues?q=is%3Aopen+is%3Aissue+user%3Acozy+label%3Aenhancement+-repo%3Acozy%2Ftodos+-repo%3Acozy%2Fnotes+-repo%3Acozy%2Fcozy-editor+)
++
+diff --git a/README.md b/README.md
+index ea345fc..810d3ae 100644
+--- a/README.md
++++ b/README.md
+@@ -19,2 +19,2 @@ So, this project contains what you need to achieve that goal
+-[See there for the install script status for Debian 6, Debian 7, Ubuntu 12.04,
+-Ubuntu 14.04](https://ci.cozycloud.cc/)
++[Install script status](https://ci.cozycloud.cc/) for Debian 6, Debian 7,
++Ubuntu 12.04 and Ubuntu 14.04.
+diff --git a/README.md b/README.md
+index 356ad1d..ea345fc 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,4 @@ Enter your settings (such as domain name) when prompted by the installer.
++Set domain name by running
++    
++    fab -H user@ip init_domain
++
+@@ -132 +136 @@ You can reach the Cozy community by:
+-* Posting on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
++* Posting on our [Forum](https://forum.cozy.io)
+diff --git a/README.md b/README.md
+index f4b7b41..356ad1d 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,3 @@ So, this project contains what you need to achieve that goal
++[See there for the install script status for Debian 6, Debian 7, Ubuntu 12.04,
++Ubuntu 14.04](https://ci.cozycloud.cc/)
++
+@@ -50,4 +52,0 @@ Enter your settings (such as domain name) when prompted by the installer.
+-Set domain name by running
+-    
+-    fab -H user@ip init_domain
+-
+@@ -133 +132 @@ You can reach the Cozy community by:
+-* Posting on our [Forum](https://forum.cozy.io)
++* Posting on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
+diff --git a/README.md b/README.md
+index c9cb176..f4b7b41 100644
+--- a/README.md
++++ b/README.md
+@@ -49,0 +50,4 @@ Enter your settings (such as domain name) when prompted by the installer.
++Set domain name by running
++    
++    fab -H user@ip init_domain
++
+diff --git a/README.md b/README.md
+index 4d79f18..c9cb176 100644
+--- a/README.md
++++ b/README.md
+@@ -129 +129 @@ You can reach the Cozy community by:
+-* Posting on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
++* Posting on our [Forum](https://forum.cozy.io)
+diff --git a/README.md b/README.md
+index b638ac7..4d79f18 100644
+--- a/README.md
++++ b/README.md
+@@ -21,2 +21,3 @@ So, this project contains what you need to achieve that goal
+-On your local machine install Fabric and fabtools. For that purpose, be sure to have
+-python and the pip tools on your machine. For instance, if you're on a Debian based
++On your local machine install Fabric and fabtools. For that purpose, be sure to
++have python and the pip tools on your machine. For instance, if you're on a
++Debian based
+@@ -27,2 +28,2 @@ distribution:
+-If you're on an Apple computer (MacBook and so on), you should already have python and
+-easy install tools, so you can just do:
++If you're on an Apple computer (MacBook and so on), you should already have
++python and easy install tools, so you can just do:
+@@ -41,2 +42,2 @@ server):
+-Once your system is prepared, use the Fabric script from your local
+-machine to launch the Cozy installation (run it in the same directory as the fabfile
++Once your system is prepared, use the Fabric script from your local machine to
++launch the Cozy installation (run it in the same directory as the fabfile
+@@ -62,2 +63,3 @@ If you want to use Vagrant to run Cozy Cloud Setup in a virtual machine
+-we recommend you use the Ubuntu 12.04 box. Be careful as the update will require that
+-you configure your boot sequence. Choose the first filesystem that is offered, then click ok.
++we recommend you use the Ubuntu 12.04 box. Be careful as the update will
++require that you configure your boot sequence. Choose the first filesystem that
++is offered, then click ok.
+@@ -86 +88 @@ SD Class 10 for mini boards.
+-RAM: 1024 MB (it allows to have 10 apps simultaneously).
++RAM: 2048 MB (it allows to have 15 apps simultaneously).
+@@ -91,3 +93,3 @@ Disk space: a lot of space to store all your files.
+-Once the installation is done, you can access https://IP:443 to create your Cozy
+-main account. Be sure that you used the HTTPS protocol if you just see the nginx
+-welcome page.
++Once the installation is done, you can access https://IP:443 to create your
++Cozy main account. Be sure that you used the HTTPS protocol if you just see the
++nginx welcome page.
+diff --git a/README.md b/README.md
+index 5fe01b0..b638ac7 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-![Cozy Logo](https://raw.github.com/mycozycloud/cozy-setup/gh-pages/assets/images/happycloud.png)
++![Cozy Logo](https://raw.githubusercontent.com/cozy/cozy-setup/gh-pages/assets/images/happycloud.png)
+@@ -39 +39 @@ server):
+-    wget https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
++    wget https://raw.githubusercontent.com/cozy/cozy-setup/master/fabfile.py
+@@ -70,3 +70,3 @@ You can either read our [Trouble
+-Shootings](https://github.com/mycozycloud/cozy-setup/wiki/Trouble-shootings) section or contact us via email
+-contact@cozycloud.cc or join our IRC channel and ask for assistance (#cozycloud
+-on freenode.net).
++Shootings](http://cozy.io/host/trouble-shootings.html) section or contact us
++via email contact@cozycloud.cc or join our IRC channel and ask for assistance
++(#cozycloud on freenode.net).
+@@ -111 +111 @@ If you want to know more about how Cozy works you can check our [architecture
+-page](https://github.com/mycozycloud/cozy-setup/wiki/Cozy-architecture).
++page](http://cozy.io/hack/getting-started/architecture-overview.html).
+@@ -128 +128 @@ You can reach the Cozy community by:
+-* Posting issues on the [Github repos](https://github.com/mycozycloud/)
++* Posting issues on the [Github repos](https://github.com/cozy/)
+diff --git a/README.md b/README.md
+index 021bc09..5fe01b0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# We Cannot Do Evil
++# Cozy Makes Your Web Apps Smarter
+diff --git a/README.md b/README.md
+index 5fe01b0..021bc09 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Cozy Makes Your Web Apps Smarter
++# We Cannot Do Evil
+diff --git a/README.md b/README.md
+index e65e9f6..5fe01b0 100644
+--- a/README.md
++++ b/README.md
+@@ -9,2 +9 @@ with a new experience. You can install Cozy on your own hardware where no one
+-profiles you. You install only the applications you want. You can build your
+-own one too.
++profiles you. 
+@@ -125 +124 @@ machine).
+-You can reach the Cozy community on various support:
++You can reach the Cozy community by:
+@@ -127,4 +126,4 @@ You can reach the Cozy community on various support:
+-* IRC #cozycloud on irc.freenode.net
+-* Post on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
+-* Post issues on the [Github repos](https://github.com/mycozycloud/)
+-* Via [Twitter](http://twitter.com/mycozycloud)
++* chatting with us on IRC #cozycloud on irc.freenode.net
++* Posting on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
++* Posting issues on the [Github repos](https://github.com/mycozycloud/)
++* Mentioning us on [Twitter](http://twitter.com/mycozycloud)
+diff --git a/README.md b/README.md
+index fadda69..e65e9f6 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22,3 @@ So, this project contains what you need to achieve that goal
+-On your local machine install Fabric and fabtools:
++On your local machine install Fabric and fabtools. For that purpose, be sure to have
++python and the pip tools on your machine. For instance, if you're on a Debian based
++distribution:
+@@ -24,0 +27,8 @@ On your local machine install Fabric and fabtools:
++
++If you're on an Apple computer (MacBook and so on), you should already have python and
++easy install tools, so you can just do:
++
++    sudo easy_install pip
++
++Once you have the pip tools installed on your machine:
++
+@@ -32 +41,0 @@ server):
+-
+diff --git a/README.md b/README.md
+index f1c65da..fadda69 100644
+--- a/README.md
++++ b/README.md
+@@ -17,2 +17,2 @@ Cozy Cloud is designed to be used remotely on your own server.
+-So, this project contains what you need to achieve that goal 
+-(it only works for Debian/Ubuntu systems). 
++So, this project contains what you need to achieve that goal
++(it only works for Debian/Ubuntu systems).
+@@ -41 +41 @@ Enter your settings (such as domain name) when prompted by the installer.
+-Be patient; some commands or app deployments can take some time. It 
++Be patient; some commands or app deployments can take some time. It
+@@ -46 +46 @@ depends on your network and hardware capabilities.
+-To install Cozy locally, we recommend you to create a virtual machine, 
++To install Cozy locally, we recommend you to create a virtual machine,
+@@ -97 +97 @@ The Cozy install script installs the following tools:
+-* Cozy Data System 
++* Cozy Data System
+diff --git a/README.md b/README.md
+index 9ccea02..f1c65da 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Cozy Makes Your Webapps Smarter
++# Cozy Makes Your Web Apps Smarter
+diff --git a/README.md b/README.md
+index f23c525..9ccea02 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Cozy: a Personal Cloud You Can Hack, Host and Delete
++# Cozy Makes Your Webapps Smarter
+diff --git a/README.md b/README.md
+index 87140c9..f23c525 100644
+--- a/README.md
++++ b/README.md
+@@ -114 +114 @@ machine).
+-# Community 
++## Community 
+@@ -123 +123 @@ You can reach the Cozy community on various support:
+-# License
++## License
+diff --git a/README.md b/README.md
+index c9b44d0..87140c9 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++![Cozy Logo](https://raw.github.com/mycozycloud/cozy-setup/gh-pages/assets/images/happycloud.png)
++
+@@ -9,0 +12,2 @@ own one too.
++See our [online demo](https://demo.cozycloud.cc/) to discover our applications.
++
+@@ -69,0 +74 @@ Disk space: 5GB
++SD Class 10 for mini boards.
+@@ -89 +94 @@ The Cozy install script installs the following tools:
+-* Node tools: cozy-controller, cozy-monitor, coffee-script, compound, brunch
++* Node tools: cozy-controller, cozy-monitor, coffee-script, brunch
+@@ -91,4 +96,4 @@ The Cozy install script installs the following tools:
+-* Cozy data indexer
+-* Cozy data layer 
+-* Cozy proxy
+-* Cozy Home (web app)
++* Cozy Data Indexer
++* Cozy Data System 
++* Cozy Proxy
++* Cozy Home
+@@ -109,3 +114,13 @@ machine).
+-# Cozy on IRC
+-Feel free to check out our IRC channel (#cozycloud at freenode.net) if you have
+-any technical issues/inquiries or simply to speak about Cozy Cloud in general.
++# Community 
++
++You can reach the Cozy community on various support:
++
++* IRC #cozycloud on irc.freenode.net
++* Post on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
++* Post issues on the [Github repos](https://github.com/mycozycloud/)
++* Via [Twitter](http://twitter.com/mycozycloud)
++
++# License
++
++Cozy is developed by Cozy Cloud under the AGPL v3 license (see each module for
++exceptions).
+diff --git a/README.md b/README.md
+index 8912096..c9b44d0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,10 @@
+-# Cozy Setup
++# Cozy: a Personal Cloud You Can Hack, Host and Delete
++
++[Cozy](http://cozy.io) is a platform that brings all your web services in the
++same private space.  With it, your web apps and your devices can share data
++easily, providing you
++with a new experience. You can install Cozy on your own hardware where no one
++profiles you. You install only the applications you want. You can build your
++own one too.
++
++# Install Cozy
+@@ -100,9 +108,0 @@ machine).
+-
+-# About Cozy
+-
+-Cozy is a private personal cloud solution that allows you to host all your 
+-personal applications in a single place that you control.
+-This way, you can manage your data from anywhere while protecting your privacy.
+-
+-https://cozycloud.cc
+-
+diff --git a/README.md b/README.md
+index c3d1f43..8912096 100644
+--- a/README.md
++++ b/README.md
+@@ -59,2 +59,2 @@ The CPU is not a limitation, Cozy can even run on RaspberryPi.
+-RAM: 512Mo (it allows to have 4 apps running simultaneously)
+-Disk space: 5Go
++RAM: 512MB (it allows to have 4 apps running simultaneously)
++Disk space: 5GB
+@@ -64 +64 @@ Disk space: 5Go
+-RAM: 1024 Mo (it allows to have 10 apps simultaneously).
++RAM: 1024 MB (it allows to have 10 apps simultaneously).
+diff --git a/README.md b/README.md
+index 311bcdd..c3d1f43 100644
+--- a/README.md
++++ b/README.md
+@@ -52,0 +53,14 @@ on freenode.net).
++## Recommended Hardware
++
++The CPU is not a limitation, Cozy can even run on RaspberryPi.
++
++### Mininum
++
++RAM: 512Mo (it allows to have 4 apps running simultaneously)
++Disk space: 5Go
++
++### Recommended
++
++RAM: 1024 Mo (it allows to have 10 apps simultaneously).
++Disk space: a lot of space to store all your files.
++
+diff --git a/README.md b/README.md
+index a4566bf..311bcdd 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ server):
+-    wget https://raw.github.com/mycozycloud/cozy-setup/arm/fabfile.py
++    wget https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
+diff --git a/README.md b/README.md
+index 311bcdd..a4566bf 100644
+--- a/README.md
++++ b/README.md
+@@ -17 +17 @@ server):
+-    wget https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
++    wget https://raw.github.com/mycozycloud/cozy-setup/arm/fabfile.py
+diff --git a/README.md b/README.md
+index 1b56bea..311bcdd 100644
+--- a/README.md
++++ b/README.md
+@@ -55 +55 @@ on freenode.net).
+-Once the installation is done, you can access https://IP:80 to create your Cozy
++Once the installation is done, you can access https://IP:443 to create your Cozy
+diff --git a/README.md b/README.md
+index 57cf369..1b56bea 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ you downloaded before):
+-    fab -H user@ip:port install
++    fab -H user@ip install
+diff --git a/README.md b/README.md
+index 9048363..57cf369 100644
+--- a/README.md
++++ b/README.md
+@@ -50,2 +50,2 @@ Shootings](https://github.com/mycozycloud/cozy-setup/wiki/Trouble-shootings) sec
+-contact@cozycloud.cc or join our IRC channel and ask for assistance #cozycloud
+-on freenode.net.
++contact@cozycloud.cc or join our IRC channel and ask for assistance (#cozycloud
++on freenode.net).
+diff --git a/README.md b/README.md
+index 8b2ae55..9048363 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ http://files.vagrantup.com/precise64.box
+-You can either read ou [Trouble
++You can either read our [Trouble
+diff --git a/README.md b/README.md
+index 4b52b8b..8b2ae55 100644
+--- a/README.md
++++ b/README.md
+@@ -36 +36 @@ This allows you to experiment with Cozy without installing numerous packages
+-into your development environment.
++into your environment.
+diff --git a/README.md b/README.md
+index 1bf3445..4b52b8b 100644
+--- a/README.md
++++ b/README.md
+@@ -66 +66 @@ The Cozy install script installs the following tools:
+-* Node tools: cozy-controller, cozy-monitor, coffee-script, compound
++* Node tools: cozy-controller, cozy-monitor, coffee-script, compound, brunch
+diff --git a/README.md b/README.md
+index 7daa0a6..1bf3445 100644
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,7 @@ http://files.vagrantup.com/precise64.box
++*Assistance*
++
++You can either read ou [Trouble
++Shootings](https://github.com/mycozycloud/cozy-setup/wiki/Trouble-shootings) section or contact us via email
++contact@cozycloud.cc or join our IRC channel and ask for assistance #cozycloud
++on freenode.net.
++
+diff --git a/README.md b/README.md
+index 23403b5..7daa0a6 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +57,0 @@ The Cozy install script installs the following tools:
+-* Redis key-value store
+diff --git a/README.md b/README.md
+index 19a7f3b..23403b5 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ On your local machine install Fabric and fabtools:
+-    apt-get install python python-pip
++    apt-get install python python-pip python-dev software-properties-common
+diff --git a/README.md b/README.md
+index 1ce94d7..19a7f3b 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3,3 @@
+-Cozy Cloud aims to be used remotely on your own server.
+-So this project contains what you need to achieve that goal 
+-(it works only for debian/ubuntu systems). 
++Cozy Cloud is designed to be used remotely on your own server.
++So, this project contains what you need to achieve that goal 
++(it only works for Debian/Ubuntu systems). 
+@@ -7 +7 @@ So this project contains what you need to achieve that goal
+-# How to install cozy on your server ?
++# How to install Cozy on your server?
+@@ -9 +9 @@ So this project contains what you need to achieve that goal
+-On your local machine install fabric and fabtools:
++On your local machine install Fabric and fabtools:
+@@ -20,3 +20,3 @@ server):
+-Once your system is prepared, then use the Fabric script from your local
+-machine to launch the cozy installation (run it in the same direction where is
+-located the fabfile you downloaded):
++Once your system is prepared, use the Fabric script from your local
++machine to launch the Cozy installation (run it in the same directory as the fabfile
++you downloaded before):
+@@ -26 +26 @@ located the fabfile you downloaded):
+-Fill what you want when installer will ask you for informations. 
++Enter your settings (such as domain name) when prompted by the installer.
+@@ -28,2 +28,2 @@ Fill what you want when installer will ask you for informations.
+-Be patient some commands or app deployements could take a lot of time. It 
+-depends about your network and your hardware capabilities.
++Be patient; some commands or app deployments can take some time. It 
++depends on your network and hardware capabilities.
+@@ -33,4 +33,4 @@ depends about your network and your hardware capabilities.
+-To make a local installation, we recommend you to create a
+-virtual machine, and then to run the fabfile script with your virtual machine as
+-target.
+-
++To install Cozy locally, we recommend you to create a virtual machine, 
++and then to run the fabfile script with your virtual machine as target.
++This allows you to experiment with Cozy without installing numerous packages
++into your development environment.
+@@ -40,4 +40,3 @@ target.
+-If you want to use vagrant to run Cozy Cloud Setup in a virtual machine
+-we recommend you the Ubuntu 12.04 box. Be careful update will require that
+-you configure your boot sequence. Chose the first filesystem they will propose
+-you, then click ok.
++If you want to use Vagrant to run Cozy Cloud Setup in a virtual machine
++we recommend you use the Ubuntu 12.04 box. Be careful as the update will require that
++you configure your boot sequence. Choose the first filesystem that is offered, then click ok.
+@@ -49,2 +48,2 @@ http://files.vagrantup.com/precise64.box
+-Once installation done, you can access to https://IP:80 to create your cozy
+-main account. Be sure that you use the https protocol if you just see the Nginx
++Once the installation is done, you can access https://IP:80 to create your Cozy
++main account. Be sure that you used the HTTPS protocol if you just see the nginx
+@@ -53 +52 @@ welcome page.
+-## What this script installs on your server ?
++## What will this script install on your server?
+@@ -55 +54 @@ welcome page.
+-The Cozy install script install the following tools :
++The Cozy install script installs the following tools:
+@@ -69 +68 @@ The Cozy install script install the following tools :
+-If you want to know more about how works Cozy you can check our [architecture
++If you want to know more about how Cozy works you can check our [architecture
+@@ -75 +74 @@ page](https://github.com/mycozycloud/cozy-setup/wiki/Cozy-architecture).
+-Because of the numerous technologies involved, we recommend you to run Cozy
++Because of the numerous technologies involved, we recommend you to run the Cozy
+@@ -77 +76 @@ stack in an isolated virtual machine or in a container (OpenVz or LXC). But
+-it's not mandatory, you can set up directly Cozy Cloud on your server (that's
++it's not mandatory, you can install Cozy Cloud on your server (that's
+@@ -84,2 +83,2 @@ machine).
+-Cozy is private pesronal cloud solution that allows you to host all your 
+-personnal application in a single place you control. 
++Cozy is a private personal cloud solution that allows you to host all your 
++personal applications in a single place that you control.
+@@ -91 +90,2 @@ https://cozycloud.cc
+-Feel free to check out our IRC channel (#cozycloud at freenode.net) if you have any technical issues/inquiries or simply to speak about Cozy cloud in general.
++Feel free to check out our IRC channel (#cozycloud at freenode.net) if you have
++any technical issues/inquiries or simply to speak about Cozy Cloud in general.
+diff --git a/README.md b/README.md
+index 74dafb7..1ce94d7 100644
+--- a/README.md
++++ b/README.md
+@@ -61 +60,0 @@ The Cozy install script install the following tools :
+-* Haibu node.js application manager
+@@ -62,0 +62 @@ The Cozy install script install the following tools :
++* Cozy Controller Daemon
+@@ -67,2 +66,0 @@ The Cozy install script install the following tools :
+-* Cozy Notes (web app)
+-* Cozy Todos (web app)
+diff --git a/README.md b/README.md
+index f01d0bb..74dafb7 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ On your local machine install fabric and fabtools:
+-    apt-get install python python-pip git
++    apt-get install python python-pip
+diff --git a/README.md b/README.md
+index 08ea16e..f01d0bb 100644
+--- a/README.md
++++ b/README.md
+@@ -4,4 +4,2 @@ Cozy Cloud aims to be used remotely on your own server.
+-So this project contains what you need to deploy it on a remote server 
+-(debian/ubuntu). 
+-To make a local installation, we recommend you to create a
+-virtual machine, and then to run the scripts as you would in a remote server.
++So this project contains what you need to achieve that goal 
++(it works only for debian/ubuntu systems). 
+@@ -32,0 +31,7 @@ depends about your network and your hardware capabilities.
++*About local installation*
++
++To make a local installation, we recommend you to create a
++virtual machine, and then to run the fabfile script with your virtual machine as
++target.
++
++
+diff --git a/README.md b/README.md
+index 11ffa1a..08ea16e 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ server):
+-https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
++    wget https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
+@@ -23 +23,2 @@ Once your system is prepared, then use the Fabric script from your local
+-machine to launch the cozy installation:
++machine to launch the cozy installation (run it in the same direction where is
++located the fabfile you downloaded):
+diff --git a/README.md b/README.md
+index 532e868..11ffa1a 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +3,3 @@
+-Cozy Cloud aims to be used remotely. We provide here only stuff to deploy
+-it on a remote server (debian/ubuntu). 
++Cozy Cloud aims to be used remotely on your own server.
++So this project contains what you need to deploy it on a remote server 
++(debian/ubuntu). 
+@@ -10,2 +11 @@ virtual machine, and then to run the scripts as you would in a remote server.
+-The installation requires a system up to date with upstart as daemon manager.
+-You can do it by running following commands on your target server:
++On your local machine install fabric and fabtools:
+@@ -13,4 +13,2 @@ You can do it by running following commands on your target server:
+-    sudo apt-get update  
+-    sudo apt-get upgrade  
+-    sudo apt-get install upstart  
+-    sudo reboot now  
++    apt-get install python python-pip git
++    sudo pip install fabric fabtools
+@@ -18,2 +16,4 @@ You can do it by running following commands on your target server:
+-On your local machine clone this repository and install Fabric. Fabric is a tool to run scripts on a 
+-remote server:
++Download our Fabric file (a script that will run commands on your remote
++server):
++
++https://raw.github.com/mycozycloud/cozy-setup/master/fabfile.py
+@@ -21,5 +20,0 @@ remote server:
+-    apt-get install python python-pip git
+-    git clone git://github.com/mycozycloud/cozy-setup.git
+-    cd cozy-setup
+-    sudo pip install fabric 
+-    sudo pip install git+https://github.com/frankrousseau/fabtools.git
+@@ -32,2 +27 @@ machine to launch the cozy installation:
+-Fill what you want when installer will ask you for informations about the
+-certificate. 
++Fill what you want when installer will ask you for informations. 
+@@ -35 +29 @@ certificate.
+-Be patient some commands or app deployements could take a few minutes. It 
++Be patient some commands or app deployements could take a lot of time. It 
+@@ -50 +44,2 @@ Once installation done, you can access to https://IP:80 to create your cozy
+-main account.
++main account. Be sure that you use the https protocol if you just see the Nginx
++welcome page.
+@@ -60,0 +56 @@ The Cozy install script install the following tools :
++* Node tools: cozy-controller, cozy-monitor, coffee-script, compound
+diff --git a/README.md b/README.md
+index 224edfd..532e868 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ it on a remote server (debian/ubuntu).
+-To make a local installation, we recommend you to start a
+-virtual machine, then run script with this vm as your remote server.
++To make a local installation, we recommend you to create a
++virtual machine, and then to run the scripts as you would in a remote server.
+diff --git a/README.md b/README.md
+index b3508a5..224edfd 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ it on a remote server (debian/ubuntu).
+-To make a local installation, we recommend you to create a
+-virtual machine, and then to run the scripts as you would in a remote server.
++To make a local installation, we recommend you to start a
++virtual machine, then run script with this vm as your remote server.
+@@ -91 +91 @@ https://cozycloud.cc
+-Feel free to check out our IRC channel (#cozycloud on irc.freenode.org) if you have any technical issues/inquiries or simply to speak about Cozy cloud in general.
++Feel free to check out our IRC channel (#cozycloud at freenode.net) if you have any technical issues/inquiries or simply to speak about Cozy cloud in general.
+diff --git a/README.md b/README.md
+index 11c539a..b3508a5 100644
+--- a/README.md
++++ b/README.md
+@@ -5,2 +5,2 @@ it on a remote server (debian/ubuntu).
+-To make a local installation, we recommend you to start a
+-virtual machine, then run script with this vm as your remote server.
++To make a local installation, we recommend you to create a
++virtual machine, and then to run the scripts as you would in a remote server.
+diff --git a/README.md b/README.md
+index 92216c2..11c539a 100644
+--- a/README.md
++++ b/README.md
+@@ -52 +52 @@ main account.
+-## What install Cozy on your server ?
++## What this script installs on your server ?
+@@ -73 +73 @@ page](https://github.com/mycozycloud/cozy-setup/wiki/Cozy-architecture).
+-# About virtual machines and containers
++## About virtual machines and containers
+diff --git a/README.md b/README.md
+index e4178df..92216c2 100644
+--- a/README.md
++++ b/README.md
+@@ -74,0 +75,5 @@ page](https://github.com/mycozycloud/cozy-setup/wiki/Cozy-architecture).
++Because of the numerous technologies involved, we recommend you to run Cozy
++stack in an isolated virtual machine or in a container (OpenVz or LXC). But
++it's not mandatory, you can set up directly Cozy Cloud on your server (that's
++what you should do if you have a small server like a Sheeva Plug or an old
++machine).
+diff --git a/README.md b/README.md
+index b92745c..e4178df 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ depends about your network and your hardware capabilities.
+-*Vagrant*
++*Try Cozy with Vagrant*
+@@ -47 +47 @@ http://files.vagrantup.com/precise64.box
+-# Test 
++## Test 
+@@ -52 +52,24 @@ main account.
+-You can launch automatic test too (see README file located in test directory).
++## What install Cozy on your server ?
++
++The Cozy install script install the following tools :
++
++* Python runtime
++* Node.js runtime
++* Redis key-value store
++* CouchDB document database
++* Haibu node.js application manager
++* Cozy data indexer
++* Cozy data layer 
++* Cozy proxy
++* Cozy Home (web app)
++* Cozy Notes (web app)
++* Cozy Todos (web app)
++
++
++If you want to know more about how works Cozy you can check our [architecture
++page](https://github.com/mycozycloud/cozy-setup/wiki/Cozy-architecture).
++
++
++# About virtual machines and containers
++
++
+diff --git a/README.md b/README.md
+index 663e13d..b92745c 100644
+--- a/README.md
++++ b/README.md
+@@ -60,0 +61,3 @@ https://cozycloud.cc
++
++# Cozy on IRC
++Feel free to check out our IRC channel (#cozycloud on irc.freenode.org) if you have any technical issues/inquiries or simply to speak about Cozy cloud in general.
+diff --git a/README.md b/README.md
+index 4521960..663e13d 100644
+--- a/README.md
++++ b/README.md
+@@ -37,0 +38,9 @@ depends about your network and your hardware capabilities.
++*Vagrant*
++
++If you want to use vagrant to run Cozy Cloud Setup in a virtual machine
++we recommend you the Ubuntu 12.04 box. Be careful update will require that
++you configure your boot sequence. Chose the first filesystem they will propose
++you, then click ok.
++
++http://files.vagrantup.com/precise64.box
++
+diff --git a/README.md b/README.md
+index d87b763..4521960 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ remote server:
+-    sudo pip install git+https://github.com/ronnix/fabtools.git
++    sudo pip install git+https://github.com/frankrousseau/fabtools.git
+diff --git a/README.md b/README.md
+index 19557dd..d87b763 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ virtual machine, then run script with this vm as your remote server.
+-# How To Install Cozy on your server ?
++# How to install cozy on your server ?
+diff --git a/README.md b/README.md
+index a9f3a4a..19557dd 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ virtual machine, then run script with this vm as your remote server.
+-# How To Install Cozy Environnement
++# How To Install Cozy on your server ?
+diff --git a/README.md b/README.md
+index 03fb727..a9f3a4a 100644
+--- a/README.md
++++ b/README.md
+@@ -3,2 +2,0 @@
+-Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
+-
+@@ -6 +4,2 @@ Cozy Cloud aims to be used remotely. We provide here only stuff to deploy
+-it on a remote server. To make a local installation, we recommend you to start a
++it on a remote server (debian/ubuntu). 
++To make a local installation, we recommend you to start a
+diff --git a/README.md b/README.md
+index 170e580..03fb727 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ remote server:
++    apt-get install python python-pip git
+@@ -24,2 +25,2 @@ remote server:
+-    apt-get install python python-pip
+-    pip install fabric git+https://github.com/ronnix/fabtools.git
++    sudo pip install fabric 
++    sudo pip install git+https://github.com/ronnix/fabtools.git
+diff --git a/README.md b/README.md
+index 534efd8..170e580 100644
+--- a/README.md
++++ b/README.md
+@@ -25 +25 @@ remote server:
+-    pip install fabric fabtools
++    pip install fabric git+https://github.com/ronnix/fabtools.git
+diff --git a/README.md b/README.md
+index 1c92b52..534efd8 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ You can do it by running following commands on your target server:
+-On your local machine install Fabric. Fabric is a tool to run scripts on a 
++On your local machine clone this repository and install Fabric. Fabric is a tool to run scripts on a 
+@@ -21,0 +22,2 @@ remote server:
++    git clone git://github.com/mycozycloud/cozy-setup.git
++    cd cozy-setup
+diff --git a/README.md b/README.md
+index c0e9412..1c92b52 100644
+--- a/README.md
++++ b/README.md
+@@ -12,2 +12 @@ The installation requires a system up to date with upstart as daemon manager.
+-
+-You can by running following commands on your target server:
++You can do it by running following commands on your target server:
+diff --git a/README.md b/README.md
+index f0b6fd7..c0e9412 100644
+--- a/README.md
++++ b/README.md
+@@ -19,0 +20,6 @@ You can by running following commands on your target server:
++On your local machine install Fabric. Fabric is a tool to run scripts on a 
++remote server:
++
++    apt-get install python python-pip
++    pip install fabric fabtools
++
+diff --git a/README.md b/README.md
+index 0cc82d3..f0b6fd7 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,4 @@ Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
++Cozy Cloud aims to be used remotely. We provide here only stuff to deploy
++it on a remote server. To make a local installation, we recommend you to start a
++virtual machine, then run script with this vm as your remote server.
++
+@@ -9 +13 @@ The installation requires a system up to date with upstart as daemon manager.
+-You can do it with following commands.
++You can by running following commands on your target server:
+@@ -11,4 +15,4 @@ You can do it with following commands.
+-> guest$ sudo apt-get update  
+-> guest$ sudo apt-get upgrade  
+-> guest$ sudo apt-get install upstart  
+-> guest$ sudo reboot now  
++    sudo apt-get update  
++    sudo apt-get upgrade  
++    sudo apt-get install upstart  
++    sudo reboot now  
+@@ -16,2 +20,2 @@ You can do it with following commands.
+-Once your system is prepared, then use the Fabric script to launch the cozy 
+-install:
++Once your system is prepared, then use the Fabric script from your local
++machine to launch the cozy installation:
+@@ -19 +23 @@ install:
+-> host$ fab -H user@ip:port install
++    fab -H user@ip:port install
+@@ -22 +26 @@ Fill what you want when installer will ask you for informations about the
+-certificate. If you want use password on the server, use '-ak' Option in fab command.
++certificate. 
+@@ -32,17 +36 @@ main account.
+-For Vagrant user, uncomment this line in the Vagrantfile and reload the vm.
+-
+-> config.vm.network :hostonly, "192.168.33.10"
+-
+-> vagrant reload
+-
+-You can launch functional test too (see README file located in test directory).
+-
+-# Issues on 20 june.
+-
+-The Postfix (mail server) configuration is set to mycozycloud.com . 
+-Right now Cozy has just mail sending capabilities. So you don't need a perfect
+-configuration. Mails are only required to notify you what to do when you need
+-to reset your password.
+-
+-Redis conf is the default one.
+-
++You can launch automatic test too (see README file located in test directory).
+@@ -56 +44 @@ This way, you can manage your data from anywhere while protecting your privacy.
+-http://www.cozycloud.cc
++https://cozycloud.cc
+diff --git a/README.md b/README.md
+index 1fff451..0cc82d3 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ Fill what you want when installer will ask you for informations about the
+-certificate. 
++certificate. If you want use password on the server, use '-ak' Option in fab command.
+@@ -56 +56 @@ This way, you can manage your data from anywhere while protecting your privacy.
+-http://www.mycozycloud.com
++http://www.cozycloud.cc
+diff --git a/README.md b/README.md
+index 14372c8..1fff451 100644
+--- a/README.md
++++ b/README.md
+@@ -37,0 +38 @@ For Vagrant user, uncomment this line in the Vagrantfile and reload the vm.
++You can launch functional test too (see README file located in test directory).
+diff --git a/README.md b/README.md
+index bcc062e..14372c8 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16,2 @@ You can do it with following commands.
+-Then use the Fabric script to launch the cozy install
++Once your system is prepared, then use the Fabric script to launch the cozy 
++install:
+@@ -20 +21 @@ Then use the Fabric script to launch the cozy install
+-Fill what you want when installer will ask you information about the
++Fill what you want when installer will ask you for informations about the
+@@ -23 +24,2 @@ certificate.
+-Be patient some commands or app deployements could take few minutes. It depends about your network and your hardware capabilities.
++Be patient some commands or app deployements could take a few minutes. It 
++depends about your network and your hardware capabilities.
+@@ -27 +29 @@ Be patient some commands or app deployements could take few minutes. It depends
+-If nothing goes wrong, you can access to https://IP:80 to create your cozy
++Once installation done, you can access to https://IP:80 to create your cozy
+@@ -30,2 +31,0 @@ main account.
+-The port 80 must be open on the (virtual) machine. 
+-
+@@ -46,2 +46 @@ to reset your password.
+-Redis is set to default conf.
+-
++Redis conf is the default one.
+@@ -54 +53 @@ personnal application in a single place you control.
+-This way, you can manage your data efficiently while protecting your privacy.
++This way, you can manage your data from anywhere while protecting your privacy.
+diff --git a/README.md b/README.md
+index 7ce73f7..bcc062e 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@ Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
+-The installation requires system up to date with upstart as daemon manager.
++The installation requires a system up to date with upstart as daemon manager.
+diff --git a/README.md b/README.md
+index 0929df5..7ce73f7 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +3,0 @@ Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
+-Validate on a debian squeeze 32 bits
+@@ -8 +7 @@ Validate on a debian squeeze 32 bits
+-Get a system up to date and install the daemon manager upstart.  
++The installation requires system up to date with upstart as daemon manager.
+@@ -10 +9 @@ Get a system up to date and install the daemon manager upstart.
+-You should use this kind of command
++You can do it with following commands.
+@@ -17 +16 @@ You should use this kind of command
+-Launch the Fabric script to launch the cozy install
++Then use the Fabric script to launch the cozy install
+@@ -21 +20,2 @@ Launch the Fabric script to launch the cozy install
+-You should answer about wired questions to construct your SSL certificat. Don't care about that.
++Fill what you want when installer will ask you information about the
++certificate. 
+@@ -27 +27,2 @@ Be patient some commands or app deployements could take few minutes. It depends
+-You would access to https://IP:80 to create your login and access your instance.
++If nothing goes wrong, you can access to https://IP:80 to create your cozy
++main account.
+@@ -29 +30,3 @@ You would access to https://IP:80 to create your login and access your instance.
+-The port 80 must be open on the (virtual) machine. In extenso with Vagrant, uncomment this line in the Vagrantfile and reload the vm.
++The port 80 must be open on the (virtual) machine. 
++
++For Vagrant user, uncomment this line in the Vagrantfile and reload the vm.
+@@ -38,3 +41,4 @@ The port 80 must be open on the (virtual) machine. In extenso with Vagrant, unco
+-The Postfix (mail server) configuration is set to BidonCozy.com . It use for cozy password recovery. 
+-
+-The data initialisation crash. (Must work on it)
++The Postfix (mail server) configuration is set to mycozycloud.com . 
++Right now Cozy has just mail sending capabilities. So you don't need a perfect
++configuration. Mails are only required to notify you what to do when you need
++to reset your password.
+@@ -46 +49,0 @@ Redis is set to default conf.
+-
+@@ -49,4 +52,5 @@ Redis is set to default conf.
+-Cozy allow you to host all your personnal application in a single place you 
+-control. 
+-You can manage your data efficiently while protecting your privacy.
+-You will find more on our website : http://www.mycozycloud.com
++Cozy is private pesronal cloud solution that allows you to host all your 
++personnal application in a single place you control. 
++This way, you can manage your data efficiently while protecting your privacy.
++
++http://www.mycozycloud.com
+diff --git a/README.md b/README.md
+index 59dd8ee..0929df5 100644
+--- a/README.md
++++ b/README.md
+@@ -24,0 +25,9 @@ Be patient some commands or app deployements could take few minutes. It depends
++# Test 
++
++You would access to https://IP:80 to create your login and access your instance.
++
++The port 80 must be open on the (virtual) machine. In extenso with Vagrant, uncomment this line in the Vagrantfile and reload the vm.
++
++> config.vm.network :hostonly, "192.168.33.10"
++
++> vagrant reload
+diff --git a/README.md b/README.md
+index 1472cfa..59dd8ee 100644
+--- a/README.md
++++ b/README.md
+@@ -12,4 +12,4 @@ You should use this kind of command
+-> guest$ sudo apt-get update
+-> guest$ sudo apt-get upgrade
+-> guest$ sudo apt-get install upstart
+-> guest$ sudo reboot now
++> guest$ sudo apt-get update  
++> guest$ sudo apt-get upgrade  
++> guest$ sudo apt-get install upstart  
++> guest$ sudo reboot now  
+diff --git a/README.md b/README.md
+index 1161d45..1472cfa 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Validate on a debian squeeze 32 bits
+-# How To Install
++# How To Install Cozy Environnement
+@@ -8 +8,3 @@ Validate on a debian squeeze 32 bits
+-Get a system up to date and install the daemon manager upstart.
++Get a system up to date and install the daemon manager upstart.  
++
++You should use this kind of command
+@@ -19 +21,13 @@ Launch the Fabric script to launch the cozy install
+-Be patient some commands could take a few minutes.
++You should answer about wired questions to construct your SSL certificat. Don't care about that.
++
++Be patient some commands or app deployements could take few minutes. It depends about your network and your hardware capabilities.
++
++
++
++# Issues on 20 june.
++
++The Postfix (mail server) configuration is set to BidonCozy.com . It use for cozy password recovery. 
++
++The data initialisation crash. (Must work on it)
++
++Redis is set to default conf.
+@@ -21 +34,0 @@ Be patient some commands could take a few minutes.
+-You should say 'Y' to the questions asking for memory on your hard disk 
+@@ -23 +35,0 @@ You should say 'Y' to the questions asking for memory on your hard disk
+-The Postfix configuration could be (N)o configuration. Then Space. It use for cozy password recovery. 
+diff --git a/README.md b/README.md
+index fcabae3..1161d45 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +1,0 @@
+-test
+@@ -5 +4 @@ Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
+-Validate on a debian squeeze 32
++Validate on a debian squeeze 32 bits
+@@ -6,0 +6 @@ Validate on a debian squeeze 32
++# How To Install
+@@ -8,4 +8 @@ Validate on a debian squeeze 32
+-Lancement du script  
+-Si le port 22 est bien routé sur le port 2200
+-Possibilité de rerouter sur le port de votre choix manuellement sinon cf shell de pendant le lancement de la VM
+-> $ fab -H vagrant@localhost:2200 install  
++Get a system up to date and install the daemon manager upstart.
+@@ -13 +10,4 @@ Possibilité de rerouter sur le port de votre choix manuellement sinon cf shell
+-mot de passe : vagrant
++> guest$ sudo apt-get update
++> guest$ sudo apt-get upgrade
++> guest$ sudo apt-get install upstart
++> guest$ sudo reboot now
+@@ -15 +15 @@ mot de passe : vagrant
+-Attention une mise à jour Grub est possible. Utiliser les touches tab et espace.
++Launch the Fabric script to launch the cozy install
+@@ -16,0 +17,7 @@ Attention une mise à jour Grub est possible. Utiliser les touches tab et espace
++> host$ fab -H user@ip:port install
++
++Be patient some commands could take a few minutes.
++
++You should say 'Y' to the questions asking for memory on your hard disk 
++
++The Postfix configuration could be (N)o configuration. Then Space. It use for cozy password recovery. 
+diff --git a/README.md b/README.md
+index 500fe7f..fcabae3 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,11 @@ Validate on a debian squeeze 32
++Lancement du script  
++Si le port 22 est bien routé sur le port 2200
++Possibilité de rerouter sur le port de votre choix manuellement sinon cf shell de pendant le lancement de la VM
++> $ fab -H vagrant@localhost:2200 install  
++
++mot de passe : vagrant
++
++Attention une mise à jour Grub est possible. Utiliser les touches tab et espace.
++
++
++
+diff --git a/README.md b/README.md
+index 9a9a988..500fe7f 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-
++test
+diff --git a/README.md b/README.md
+index a860584..9a9a988 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3 @@
++
+@@ -3,0 +5 @@ Cozy Setup contains all stuff needed to install cozy on a fresh debian server.
++Validate on a debian squeeze 32

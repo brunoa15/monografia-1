@@ -1,0 +1,50 @@
+diff --git a/README.md b/README.md
+index 96bdf6d..80c2895 100644
+--- a/README.md
++++ b/README.md
+@@ -28 +28,3 @@ ___
+-[Coffeescript version](https://github.com/davidrekow/t.coffee) maintained by [@davidrekow](https://github.com/davidrekow)
+\ No newline at end of file
++[Coffeescript version](https://github.com/davidrekow/t.coffee) maintained by [@davidrekow](https://github.com/davidrekow)
++
++[PHP version](https://github.com/ramon82/t.php) maintained by [@ramon82](https://github.com/ramon82)
+diff --git a/README.md b/README.md
+index b32472e..96bdf6d 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@
+- * If not blocks: `{{!value}} <<markup>> {{/value}}`
++ * If not blocks: `{{!value}} <<markup>> {{/!value}}`
+diff --git a/README.md b/README.md
+index e7ecd6a..b32472e 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@
+-For more advanced usage check the [`t_test.html`](http://www.github.com/jasonmoo/t_test.html).
++For more advanced usage check the [`t_test.html`](https://github.com/jasonmoo/t.js/blob/master/t_test.html).
+@@ -28 +28 @@ ___
+-Coffeescript version maintained by @davidrekow at [https://github.com/davidrekow/t.coffee]()
+\ No newline at end of file
++[Coffeescript version](https://github.com/davidrekow/t.coffee) maintained by [@davidrekow](https://github.com/davidrekow)
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 769138b..e7ecd6a 100644
+--- a/README.md
++++ b/README.md
+@@ -16 +16 @@
+- 
++
+@@ -21,2 +20,0 @@
+-	
+-For more advanced usage check the `t_test.html`.
+@@ -24 +22,7 @@ For more advanced usage check the `t_test.html`.
+-This software is released under the MIT license.  
+\ No newline at end of file
++For more advanced usage check the [`t_test.html`](http://www.github.com/jasonmoo/t_test.html).
++
++This software is released under the MIT license.
++
++___
++
++Coffeescript version maintained by @davidrekow at [https://github.com/davidrekow/t.coffee]()
+\ No newline at end of file

@@ -1,0 +1,253 @@
+diff --git a/README.rst b/README.rst
+index 13c7a96..ec25711 100644
+--- a/README.rst
++++ b/README.rst
+@@ -27,0 +28,2 @@ In particular it allows logging in via
++#. Github
++#. Foursquare
+@@ -40,0 +43,2 @@ The API Keys are available from
++* https://github.com/settings/applications/new
++* https://developer.foursquare.com/overview/auth.html
+@@ -53,0 +58,3 @@ How it works.
++* **Github**:We use Github Oauth for authentication. As like Twitter, it works
++  pretty well.
++* **Foursquare**:We use Oauth2.0 for authenticating via foursquare.
+@@ -62,0 +70,2 @@ References
++#. http://develop.github.com/p/oauth.html
++#. https://developer.foursquare.com/overview/auth.html
+@@ -67 +76 @@ Limitations
+-As with all APIs, we are limited by the amout of data which the API provider
++As with all APIs, we are limited by the amount of data which the API provider
+@@ -97,0 +107,2 @@ Urls
++* /github_login/ AND /github_login/done/
++* /foursquare_login/ AND /foursquare_login/done/
+@@ -104 +115 @@ Implementation
+-#. Set the token callback urls correctly at Twitter and Facebook.
++#. Set the token callback urls correctly at Twitter, Facebook, Github and Foursquare.
+diff --git a/README.rst b/README.rst
+index b4cc327..13c7a96 100644
+--- a/README.rst
++++ b/README.rst
+@@ -0,0 +1,9 @@
++WARNING: This app is not maintained anymore
++-------------------------------------------------
++This repo is here for archive purposes, but unmaintained. There are much better social auth libraries.
++
++* https://github.com/omab/django-social-auth/ 
++* https://github.com/pennersr/django-allauth
++
++
++
+@@ -19,2 +27,0 @@ In particular it allows logging in via
+-#. Github
+-#. Foursquare
+@@ -34,2 +40,0 @@ The API Keys are available from
+-* https://github.com/settings/applications/new
+-* https://developer.foursquare.com/overview/auth.html
+@@ -49,3 +53,0 @@ How it works.
+-* **Github**:We use Github Oauth for authentication. As like Twitter, it works
+-  pretty well.
+-* **Foursquare**:We use Oauth2.0 for authenticating via foursquare.
+@@ -61,2 +62,0 @@ References
+-#. http://develop.github.com/p/oauth.html
+-#. https://developer.foursquare.com/overview/auth.html
+@@ -67 +67 @@ Limitations
+-As with all APIs, we are limited by the amount of data which the API provider
++As with all APIs, we are limited by the amout of data which the API provider
+@@ -98,2 +97,0 @@ Urls
+-* /github_login/ AND /github_login/done/
+-* /foursquare_login/ AND /foursquare_login/done/
+@@ -106 +104 @@ Implementation
+-#. Set the token callback urls correctly at Twitter, Facebook, Github and Foursquare.
++#. Set the token callback urls correctly at Twitter and Facebook.
+diff --git a/README.rst b/README.rst
+index e6b57f7..b4cc327 100644
+--- a/README.rst
++++ b/README.rst
+@@ -19,0 +20 @@ In particular it allows logging in via
++#. Foursquare
+@@ -33,0 +35 @@ The API Keys are available from
++* https://developer.foursquare.com/overview/auth.html
+@@ -48,0 +51 @@ How it works.
++* **Foursquare**:We use Oauth2.0 for authenticating via foursquare.
+@@ -58,0 +62 @@ References
++#. https://developer.foursquare.com/overview/auth.html
+@@ -94,0 +99 @@ Urls
++* /foursquare_login/ AND /foursquare_login/done/
+@@ -101 +106 @@ Implementation
+-#. Set the token callback urls correctly at Twitter, Facebook and Github.
++#. Set the token callback urls correctly at Twitter, Facebook, Github and Foursquare.
+diff --git a/README.rst b/README.rst
+index 2998517..e6b57f7 100644
+--- a/README.rst
++++ b/README.rst
+@@ -18,0 +19 @@ In particular it allows logging in via
++#. Github
+@@ -31,0 +33 @@ The API Keys are available from
++* https://github.com/settings/applications/new
+@@ -44,0 +47,2 @@ How it works.
++* **Github**:We use Github Oauth for authentication. As like Twitter, it works
++  pretty well.
+@@ -53,0 +58 @@ References
++#. http://develop.github.com/p/oauth.html
+@@ -58 +63 @@ Limitations
+-As with all APIs, we are limited by the amout of data which the API provider
++As with all APIs, we are limited by the amount of data which the API provider
+@@ -88,0 +94 @@ Urls
++* /github_login/ AND /github_login/done/
+@@ -95 +101 @@ Implementation
+-#. Set the token callback urls correctly at Twitter and Facebook.
++#. Set the token callback urls correctly at Twitter, Facebook and Github.
+diff --git a/README.rst b/README.rst
+index dc0b42b..2998517 100644
+--- a/README.rst
++++ b/README.rst
+@@ -6 +6 @@ What it does.
+-friends already use our service.
++   friends already use our service.
+@@ -12,0 +13 @@ In particular it allows logging in via
++
+@@ -35,9 +36,9 @@ How it works.
+-* Openid: Users need to provide their openid providers. Talk to the providers and
+-login.
+-* Yahoo: Yahoo is an openid provider. Talk to Yahoo endpoints. (Endpoint: http://yahoo.com)
+-* Google: Google is a provider. Talk to them. (Endpoint: https://www.google.com/accounts/o8/id)
+-* Facebook: Facebook connect provides authentication framework.
+-* Twitter: We use Twitter Oauth for authentication. In theory, Oauth shouldn't be
+-used for authentication. (It is an autorisation framework, not an authentication one),
+-In practice it works pretty well. Once you have an access_token, and a name, essentially
+-authenticated.
++* **Openid**: Users need to provide their openid providers. Talk to the providers and
++  login.
++* **Yahoo**: Yahoo is an openid provider. Talk to Yahoo endpoints. (Endpoint: http://yahoo.com)
++* **Google**: Google is a provider. Talk to them. (Endpoint: https://www.google.com/accounts/o8/id)
++* **Facebook**: Facebook connect provides authentication framework.
++* **Twitter**: We use Twitter Oauth for authentication. In theory, Oauth shouldn't be
++  used for authentication. (It is an autorisation framework, not an authentication one),
++  In practice it works pretty well. Once you have an access_token, and a name, essentially
++  authenticated.
+@@ -45,0 +47,2 @@ References
++----------
++
+@@ -66 +69 @@ How it works.
+-provider.
++   provider.
+@@ -68 +71 @@ provider.
+-authorization tokens.
++   authorization tokens.
+@@ -70 +73 @@ authorization tokens.
+-log them in. Otherwise we create a new user, and log them in.
++   log them in. Otherwise we create a new user, and log them in.
+@@ -85 +88 @@ Urls
+-set in a popup.
++  set in a popup.
+@@ -94 +96,0 @@ Implementation
+-
+diff --git a/README.rst b/README.rst
+index a4028be..dc0b42b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -2,3 +2,4 @@ What it does.
+------------------
+-1. Allow logging in via various providers.
+-2. Import contacts from various third party sites, to find out which of your
++--------------
++
++#. Allow logging in via various providers.
++#. Import contacts from various third party sites, to find out which of your
+@@ -8,2 +9 @@ Logging In
+-================
+-
++----------
+@@ -13,5 +13,5 @@ In particular it allows logging in via
+-1. Twitter
+-2. Gmail
+-3. Facebook
+-4. Yahoo(Essentially openid)
+-4. OpenId
++#. Twitter
++#. Gmail
++#. Facebook
++#. Yahoo(Essentially openid)
++#. OpenId
+@@ -27,4 +27,4 @@ The API Keys are available from
+-http://www.facebook.com/developers/createapp.php 
+-https://developer.yahoo.com/dashboard/createKey.html
+-https://www.google.com/accounts/ManageDomains
+-http://twitter.com/oauth_clients 
++* http://www.facebook.com/developers/createapp.php 
++* https://developer.yahoo.com/dashboard/createKey.html
++* https://www.google.com/accounts/ManageDomains
++* http://twitter.com/oauth_clients 
+@@ -33,2 +33,3 @@ How it works.
+--------------------
+-Openid: Users need to provide their openid providers. Talk to the providers and
++--------------
++
++* Openid: Users need to provide their openid providers. Talk to the providers and
+@@ -36,4 +37,4 @@ login.
+-Yahoo: Yahoo is an openid provider. Talk to Yahoo endpoints. (Endpoint: http://yahoo.com)
+-Google: Google is a provider. Talk to them. (Endpoint: https://www.google.com/accounts/o8/id)
+-Facebook: Facebook connect provides authentication framework.
+-Twitter: We use Twitter Oauth for authentication. In theory, Oauth shouldn't be
++* Yahoo: Yahoo is an openid provider. Talk to Yahoo endpoints. (Endpoint: http://yahoo.com)
++* Google: Google is a provider. Talk to them. (Endpoint: https://www.google.com/accounts/o8/id)
++* Facebook: Facebook connect provides authentication framework.
++* Twitter: We use Twitter Oauth for authentication. In theory, Oauth shouldn't be
+@@ -45,5 +46,5 @@ References
+-1. http://openid.net/developers/
+-2. http://developer.yahoo.com/openid/
+-3. http://code.google.com/apis/accounts/docs/OpenID.html
+-4. http://apiwiki.twitter.com/OAuth-FAQ
+-5. http://developers.facebook.com/connect.php
++#. http://openid.net/developers/
++#. http://developer.yahoo.com/openid/
++#. http://code.google.com/apis/accounts/docs/OpenID.html
++#. http://apiwiki.twitter.com/OAuth-FAQ
++#. http://developers.facebook.com/connect.php
+@@ -52 +53 @@ Limitations
+---------------
++------------
+@@ -61,3 +62,4 @@ How it works.
+------------------
+-1. For all providers(except Facebook) there are two urls and views. (start and done)
+-2. Start sets up the required tokens, and redirects and hands off to the correct
++--------------
++
++#. For all providers(except Facebook) there are two urls and views. (start and done)
++#. Start sets up the required tokens, and redirects and hands off to the correct
+@@ -65 +67 @@ provider.
+-3. Provider handles authentication on their ends, and hands off to Us, providing
++#. Provider handles authentication on their ends, and hands off to Us, providing
+@@ -67 +69 @@ authorization tokens.
+-4. In done, we check if the user with these details already exists, if yes, we
++#. In done, we check if the user with these details already exists, if yes, we
+@@ -75,8 +77,8 @@ Urls
+----------
+-
+-/login/ Login page. Has all the login options
+-/openid_login/ AND /openid_login/done/
+-/yahoo_login/ AND /yahoo_login/done/
+-/gmail_login/ AND /gmail_login/done/
+-/twitter_login/ AND /twitter_login/done/
+-/facebook_login/done/ We dont have a start url here, as the starting tokens are
++-----
++
++* /login/ Login page. Has all the login options
++* /openid_login/ AND /openid_login/done/
++* /yahoo_login/ AND /yahoo_login/done/
++* /gmail_login/ AND /gmail_login/done/
++* /twitter_login/ AND /twitter_login/done/
++* /facebook_login/done/ We dont have a start url here, as the starting tokens are
+@@ -86,5 +88,6 @@ Implementation
+-----------------
+-0. Install required libraries.
+-1. Get tokens and populate in localsettings.py
+-2. Set the token callback urls correctly at Twitter and Facebook.
+-4. Set the authentication_backends to the providers you are using.
++---------------
++
++#. Install required libraries.
++#. Get tokens and populate in localsettings.py
++#. Set the token callback urls correctly at Twitter and Facebook.
++#. Set the authentication_backends to the providers you are using.

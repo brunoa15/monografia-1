@@ -1,0 +1,243 @@
+diff --git a/README.rst b/README.rst
+index 2ec3762..dbe3ee7 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3,0 +4,2 @@ LINE
++|Join the chat at https://gitter.im/carpedm20/LINE|
++
+@@ -69,0 +72,3 @@ Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
++
++.. |Join the chat at https://gitter.im/carpedm20/LINE| image:: https://badges.gitter.im/Join%20Chat.svg
++   :target: https://gitter.im/carpedm20/LINE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+diff --git a/README.rst b/README.rst
+index 81f646d..2ec3762 100644
+--- a/README.rst
++++ b/README.rst
+@@ -12,0 +13,18 @@ Update
++**2015.05.28**
++
++``sendImage`` and ``sendImageWithURL`` is fixed.
++
++To send an Image:
++
++::
++
++    >>> contact = client.contacts[0]
++    >>> contact.sendImage('./image.jpg')
++
++Or use:
++
++::
++
++    >>> contact = client.contacts[0]
++    >>> contact.sendImageWithURL('https://avatars3.githubusercontent.com/u/3346407?v=3&s=460')
++
+diff --git a/README.rst b/README.rst
+index 429b04d..81f646d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -4,2 +3,0 @@ LINE
+-|PyPi version| |PyPi downloads| |PyPi status| |PyPi license|
+-
+@@ -17,4 +14,0 @@ Update
+-Sending multiple image with ``sendImage`` is solved.
+-
+-**2015.03.31**
+-
+@@ -58,9 +51,0 @@ Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
+-
+-.. |PyPi version| image:: https://pypip.in/v/line/badge.png?style=flat
+-   :target: https://pypi.python.org/pypi/line
+-.. |PyPi downloads| image:: https://pypip.in/d/line/badge.png?style=flat
+-   :target: https://pypi.python.org/pypi/line
+-.. |PyPi status| image:: https://pypip.in/status/line/badge.svg?style=flat
+-   :target: https://pypi.python.org/pypi/line
+-.. |PyPi license| image:: https://pypip.in/license/line/badge.svg?style=flat
+-   :target: https://pypi.python.org/pypi/line
+diff --git a/README.rst b/README.rst
+index 26508da..429b04d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -16,0 +17,4 @@ Update
++Sending multiple image with ``sendImage`` is solved.
++
++**2015.03.31**
++
+diff --git a/README.rst b/README.rst
+index 41f197d..26508da 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3,0 +4 @@ LINE
++|PyPi version| |PyPi downloads| |PyPi status| |PyPi license|
+@@ -5,6 +6,3 @@ LINE
+-**2014.08.08** Announcement: some codes are removed because of the
+-request of LINE corporation. You can use library only with ``authToken``
+-login.
+-
+-The documentation is available at
+-`here <http://carpedm20.github.io/line/>`__
++-  Documentation : http://carpedm20.github.io/line/
++-  Developer Mailing List: `Google
++   Group <https://groups.google.com/forum/#!forum/line-python-developer>`__
+@@ -14 +11,0 @@ The documentation is available at
+-
+@@ -20 +17,2 @@ Update
+-authToken expiration `issue`_ solved.
++authToken expiration
++`issue <https://github.com/carpedm20/LINE/issues/9>`__ solved.
+@@ -46,3 +43,0 @@ can use library only with ``authToken`` login.
+-.. _issue: https://github.com/carpedm20/LINE/issues/9
+-
+-
+@@ -68 +62,0 @@ Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
+-
+diff --git a/README.rst b/README.rst
+index b8f4761..41f197d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22 +22 @@ authToken expiration `issue`_ solved.
+-1. update authToken automatically:
++update authToken **automatically**:
+@@ -24 +24 @@ authToken expiration `issue`_ solved.
+-   $ pip install line –upgrade
++::
+@@ -26 +26 @@ authToken expiration `issue`_ solved.
+-2. update authToken manually:
++    $ pip install line --upgrade
+@@ -28,3 +28,12 @@ authToken expiration `issue`_ solved.
+-   $ pip install line –upgrade and >>> from line import LineClient,
+-   LineGroup, LineContact >>> client = LineClient(“ID”, “PASSWORD”) >>>
+-   client.updateAuthToken() # manual update True
++There is nothing to change in your original code.
++
++update authToken **manually**:
++
++::
++
++    $ pip install line --upgrade
++    $ python
++    >>> from line import LineClient, LineGroup, LineContact
++    >>> client = LineClient("ID", "PASSWORD")
++    >>> client.updateAuthToken() # manual update
++    True
+diff --git a/README.rst b/README.rst
+index 015d0cc..b8f4761 100644
+--- a/README.rst
++++ b/README.rst
+@@ -20,2 +20 @@ Update
+-A well-known problem (`issue`_)of 2 hours authToken expiration that
+-shows ``code= 8 reason='EXPIRED'`` error is finally SOLVED!
++authToken expiration `issue`_ solved.
+@@ -23,2 +22 @@ shows ``code= 8 reason='EXPIRED'`` error is finally SOLVED!
+-You don’t have to change your code because the new code automatically
+-catch the expiration and update the authToken.
++1. update authToken automatically:
+@@ -26 +24 @@ catch the expiration and update the authToken.
+-But, you can manually update your authToken by:
++   $ pip install line –upgrade
+@@ -28 +26 @@ But, you can manually update your authToken by:
+-::
++2. update authToken manually:
+@@ -30,3 +28,3 @@ But, you can manually update your authToken by:
+-    from line import LineClient, LineGroup, LineContact
+-    client = LineClient("ID", "PASSWORD")
+-    client.updateAuthToken() # manual update
++   $ pip install line –upgrade and >>> from line import LineClient,
++   LineGroup, LineContact >>> client = LineClient(“ID”, “PASSWORD”) >>>
++   client.updateAuthToken() # manual update True
+@@ -40,0 +39 @@ can use library only with ``authToken`` login.
++
+diff --git a/README.rst b/README.rst
+index 50fc01b..015d0cc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -13,0 +14,27 @@ The documentation is available at
++
++Update
++------
++
++**2015.03.31**
++
++A well-known problem (`issue`_)of 2 hours authToken expiration that
++shows ``code= 8 reason='EXPIRED'`` error is finally SOLVED!
++
++You don’t have to change your code because the new code automatically
++catch the expiration and update the authToken.
++
++But, you can manually update your authToken by:
++
++::
++
++    from line import LineClient, LineGroup, LineContact
++    client = LineClient("ID", "PASSWORD")
++    client.updateAuthToken() # manual update
++
++**2014.08.08**
++
++Some codes are removed because of the request of LINE corporation. You
++can use library only with ``authToken`` login.
++
++.. _issue: https://github.com/carpedm20/LINE/issues/9
++
+@@ -32,0 +60 @@ Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
++
+diff --git a/README.rst b/README.rst
+index ce47532..50fc01b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -3,0 +4 @@ LINE
++
+@@ -9 +10 @@ The documentation is available at
+-`here <http://carpedm20.github.io/line/>`_
++`here <http://carpedm20.github.io/line/>`__
+@@ -17 +17,0 @@ Screenshot
+-   :align: center
+@@ -23 +23 @@ Author
+-Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`_
++Taehoon Kim / [@carpedm20](http://carpedm20.github.io/about/)
+@@ -25,2 +25,8 @@ Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`_
+-.. |PyPi version| image:: https://badge.fury.io/py/line.png
+-.. |PyPi downloads| image:: https://pypip.in/d/line/badge.png
++.. |PyPi version| image:: https://pypip.in/v/line/badge.png?style=flat
++   :target: https://pypi.python.org/pypi/line
++.. |PyPi downloads| image:: https://pypip.in/d/line/badge.png?style=flat
++   :target: https://pypi.python.org/pypi/line
++.. |PyPi status| image:: https://pypip.in/status/line/badge.svg?style=flat
++   :target: https://pypi.python.org/pypi/line
++.. |PyPi license| image:: https://pypip.in/license/line/badge.svg?style=flat
++   :target: https://pypi.python.org/pypi/line
+diff --git a/README.rst b/README.rst
+index 83b72df..ce47532 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5 +5,2 @@ LINE
+-request of LINE corporation
++request of LINE corporation. You can use library only with ``authToken``
++login.
+@@ -24 +25 @@ Taehoon Kim / `@carpedm20 <http://carpedm20.github.io/about/>`_
+-.. |PyPi version| image:: https://pypip.in/v/line/badge.png
++.. |PyPi version| image:: https://badge.fury.io/py/line.png
+diff --git a/README.rst b/README.rst
+index 5a1661d..83b72df 100644
+--- a/README.rst
++++ b/README.rst
+@@ -0,0 +1,2 @@
++LINE
++----
+@@ -2 +4,2 @@
+-LINE, May the LINE be with you...
++**2014.08.08** Announcement: some codes are removed because of the
++request of LINE corporation
+@@ -6,0 +10,12 @@ The documentation is available at
++*May the LINE be with you...*
++
++Screenshot
++----------
++
++.. figure:: http://3.bp.blogspot.com/-FX3ONLEKBBY/U9xJD8JkJbI/AAAAAAAAF2Q/1E7VXOkvYAI/s1600/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA+2014-08-02+%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB+10.47.15.png
++   :align: center
++   :alt: alt\_tag
++
++Author
++------
++

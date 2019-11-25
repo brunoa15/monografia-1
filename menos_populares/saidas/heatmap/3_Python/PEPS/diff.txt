@@ -1,0 +1,420 @@
+diff --git a/README.md b/README.md
+index 88ccdd8..0c111eb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+-**Warning: This version is not maintained! However, we are working on a next version that will be released in 2017**
++**Warning: This product is not maintained!**
++**Following the acquisition of MLstate by WALLIX, the core technology of PEPS has become [DataPeps](https://datapeps.com), a generic E2EE framework that can be integrated in any application.**
+diff --git a/README.md b/README.md
+index 37a1e52..88ccdd8 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,3 @@
+-**Warning: This version is not maintained! However, we are working on a next version that will be released in June 2017**
++**Warning: This version is not maintained! However, we are working on a next version that will be released in 2017**
++
++The content below is kept as a reference, please do not use the following code and project.
+@@ -6 +8 @@ PEPS
+-Innovative open source email and collaboration server with transparent end-to-end encryption.
++PEPS was an innovative open source email and collaboration server.
+@@ -21,0 +24 @@ Open Source |
++<!--
+@@ -26,0 +30 @@ Open Source |
++-->
+@@ -29 +33 @@ This open source portal enables you to download and install PEPS on your own ser
+-To get generic information on PEPS, go to [PEPS website](http://peps.in).
++<!--To get generic information on PEPS, go to [PEPS website](http://peps.in).
+@@ -31,0 +36 @@ The project is active as of November 2015 and our goal is to stabilize Peps as a
++-->
+diff --git a/README.md b/README.md
+index 1d5ba27..37a1e52 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++**Warning: This version is not maintained! However, we are working on a next version that will be released in June 2017**
++
+@@ -4 +6 @@ PEPS
+-Innovative open source email and collaboration server with transparent **end-to-end encryption**.
++Innovative open source email and collaboration server with transparent end-to-end encryption.
+diff --git a/README.md b/README.md
+index 9aec313..1d5ba27 100644
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,2 @@ To get generic information on PEPS, go to [PEPS website](http://peps.in).
++The project is active as of November 2015 and our goal is to stabilize Peps as a priority.
++
+diff --git a/README.md b/README.md
+index a9b5833..9aec313 100644
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26,3 @@ Open Source |
++This open source portal enables you to download and install PEPS on your own server.
++To get generic information on PEPS, go to [PEPS website](http://peps.in).
++
+diff --git a/README.md b/README.md
+index 21eb529..a9b5833 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ PEPS uses technologies that can scale up, but this will require some more work o
+-First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-your-own-mail-server-and-file-storage-with-peps-on-ubuntu-14-04) or similar services. We recommend to have at least 2 Gb RAM in your PEPS instance.
++First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-your-own-mail-server-and-file-storage-with-peps-on-ubuntu-14-04) or similar services. **You must have at least 2 Gb RAM for your PEPS instance**.
+diff --git a/README.md b/README.md
+index 27040b4..21eb529 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +45 @@ PEPS uses technologies that can scale up, but this will require some more work o
+-First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](http://digitalocean.com) or similar services. We recommend to have at least 2 Gb RAM in your PEPS instance.
++First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-run-your-own-mail-server-and-file-storage-with-peps-on-ubuntu-14-04) or similar services. We recommend to have at least 2 Gb RAM in your PEPS instance.
+diff --git a/README.md b/README.md
+index ecf057d..27040b4 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +20 @@ Open Source |
+-![Messages View](https://cloud.githubusercontent.com/assets/817369/5923743/09105572-a656-11e4-9305-eb2a2bc578ce.png)
++![Messages View](https://cloud.githubusercontent.com/assets/817369/7520629/53915714-f4e8-11e4-8ad5-26065cdd9675.png)
+@@ -22 +22 @@ Open Source |
+-![Dashboard View](https://cloud.githubusercontent.com/assets/817369/7347671/36c0ef0a-eceb-11e4-8b61-97653f1897eb.png)
++![Dashboard View](https://cloud.githubusercontent.com/assets/817369/7517481/948ebf94-f4d5-11e4-98eb-06db45335a19.png)
+@@ -24 +24 @@ Open Source |
+-![Files View](https://cloud.githubusercontent.com/assets/817369/5923759/2596cc3a-a656-11e4-8397-b9296a39001c.png)
++![Files View](https://cloud.githubusercontent.com/assets/817369/7517512/c5f4153e-f4d5-11e4-8dd1-8e5c8e78f47a.png)
+diff --git a/README.md b/README.md
+index 3920fca..ecf057d 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ PEPS
+-Innovative open source email and collaboration server with unique social features.
++Innovative open source email and collaboration server with transparent **end-to-end encryption**.
+diff --git a/README.md b/README.md
+index 1e9cdcb..3920fca 100644
+--- a/README.md
++++ b/README.md
+@@ -22 +22 @@ Open Source |
+-![Dashboard View](https://cloud.githubusercontent.com/assets/817369/5923753/1a5dfd20-a656-11e4-959f-f19d9df12c0e.png)
++![Dashboard View](https://cloud.githubusercontent.com/assets/817369/7347671/36c0ef0a-eceb-11e4-8b61-97653f1897eb.png)
+diff --git a/README.md b/README.md
+index 8a854ae..1e9cdcb 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-PEPS = open source email for teams
++PEPS
+@@ -28 +28 @@ Open Source |
+-PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox, and innovate with new features.
++PEPS is an open source email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox, and innovate with new features.
+@@ -34 +34,2 @@ Please read more [about PEPS](http://github.com/MLstate/PEPS/wiki/About) and its
+-PEPS source is available from a [separate repository](https://github.com/MLstate/PEPS-source) under the Affero GPL License.
++This repository contains the source of the PEPS containers.
++[PEPS application source](https://github.com/MLstate/PEPS-source) is available from a [separate repository](https://github.com/MLstate/PEPS-source) under the Affero GPL License.
+diff --git a/README.md b/README.md
+index 838540b..8a854ae 100644
+--- a/README.md
++++ b/README.md
+@@ -38,2 +38,3 @@ PEPS source is available from a [separate repository](https://github.com/MLstate
+-The deployment of PEPS is using [Docker](http://docker.io) to simplify the installation process.
+-This quick guide covers the deployment of a single server, which you should have up and running in 30 minutes.
++The deployment of a single PEPS server is made easy with [Docker](http://docker.io).
++You should have your server up and running in 30 minutes.
++PEPS uses technologies that can scale up, but this will require some more work or you can [contact our company](mailto:contact@mlstate.com). 
+diff --git a/README.md b/README.md
+index ea45298..838540b 100644
+--- a/README.md
++++ b/README.md
+@@ -97 +97 @@ You should now be able to run the PEPS server at `https://YOUR_DOMAIN_NAME` and
+-2. Go to the "Users" tab in the topbar
++2. Head to the "Users" tab in the topbar
+@@ -105 +105 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-- [Admin/Operator Manual](http://github.com/MLstate/PEPS/wiki/Admin-Manual)
++- [Admin Manual](http://github.com/MLstate/PEPS/wiki/Admin-Manual)
+@@ -106,0 +107 @@ Manuals for both users and admins are available in form of the PEPS wiki:
++- [Operator Manual](https://github.com/MLstate/PEPS/wiki/Operator-Manual)
+@@ -111 +112 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-- Design/UX: [@tweetfr](https://twitter.com/tweetfr)
++- Design/UX by [@tweetfr](https://twitter.com/tweetfr)
+diff --git a/README.md b/README.md
+index 2b361b3..ea45298 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-PEPS = Email for Teams
++PEPS = open source email for teams
+diff --git a/README.md b/README.md
+index e3089f8..2b361b3 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ Please read more [about PEPS](http://github.com/MLstate/PEPS/wiki/About) and its
+-PEPS source code will be available from a [separate repository](https://github.com/MLstate/PEPS-source) under the Affero GPL License.
++PEPS source is available from a [separate repository](https://github.com/MLstate/PEPS-source) under the Affero GPL License.
+diff --git a/README.md b/README.md
+index 6d74f86..e3089f8 100644
+--- a/README.md
++++ b/README.md
+@@ -13,0 +14 @@ New internal message protocol |
++Extensible |
+diff --git a/README.md b/README.md
+index 0f08af0..6d74f86 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,13 @@ Innovative open source email and collaboration server with unique social feature
++Main Features  | 
++------------- | 
++Clean UX/UI |
++Messages  | 
++File sharing |
++Newsfeed |
++Client-side encryption |
++New internal message protocol |
++RESTful APIs |
++Powered by Node.js |
++Data in MongoDB |
++Open Source |
++
+diff --git a/README.md b/README.md
+index 21a001f..0f08af0 100644
+--- a/README.md
++++ b/README.md
+@@ -98 +98 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-- Lead developer: [@hchataing](https://twitter.com/hchataing)
++- Main developers: [henrichataing](https://github.com/henrichataing), [Aqua-Ye](https://github.com/Aqua-Ye), [cedricss](https://github.com/cedricss), [matbd](https://github.com/matbd), [nrs135](https://github.com/nrs135)
+diff --git a/README.md b/README.md
+index 6fd1bd7..21a001f 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@ PEPS = Email for Teams
+-Innovative email and collaboration server with unique social features.
++Innovative open source email and collaboration server with unique social features.
+@@ -19,0 +20,2 @@ Please read more [about PEPS](http://github.com/MLstate/PEPS/wiki/About) and its
++PEPS source code will be available from a [separate repository](https://github.com/MLstate/PEPS-source) under the Affero GPL License.
++
+diff --git a/README.md b/README.md
+index 4c90ef7..6fd1bd7 100644
+--- a/README.md
++++ b/README.md
+@@ -81,2 +81,2 @@ You should now be able to run the PEPS server at `https://YOUR_DOMAIN_NAME` and
+-2. Go to the administration tab (wheels icon)
+-3. Create users, teams, and you're set!
++2. Go to the "Users" tab in the topbar
++3. Create users, teams, and go!
+diff --git a/README.md b/README.md
+index a35d819..4c90ef7 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +64,0 @@ make certificate
+-make install_cert
+@@ -68 +67,3 @@ make install_cert
+-or copy your domain certificates to `$(PEPS_DATA)` manually before running the containers with `make run`.
++before running `make run`.
++
++Note that the same certificates are used for the HTTPS server and the SMTPS services.
+diff --git a/README.md b/README.md
+index 3d806cd..a35d819 100644
+--- a/README.md
++++ b/README.md
+@@ -60 +60 @@ The only major pre-requisites are that you should have installed
+-server.crt and server.key in the `$(PEPS_DATA)` directory (by default `/data/peps`).
++server.crt and server.key in the `$(PEPS_ETC)` directory (by default `/etc/peps`) which is shared by several containers.
+diff --git a/README.md b/README.md
+index 51d89ea..3d806cd 100644
+--- a/README.md
++++ b/README.md
+@@ -15,0 +16,2 @@ PEPS is an email, file sharing and collaboration server that intends to fullfil
++PEPS is built to be extensible thanks to complete APIs and we aim at creating an ecosystem of compatible apps and services.
++
+diff --git a/README.md b/README.md
+index 8e81492..51d89ea 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75 @@ with the exim configuration files.
+-You should now be able to run the PEPS server and connect to it, you then need to:
++You should now be able to run the PEPS server at `https://YOUR_DOMAIN_NAME` and connect to it, you then need to:
+@@ -77 +77 @@ You should now be able to run the PEPS server and connect to it, you then need t
+-1. Log in as "admin" user with the "admin" password
++1. Set up the 'admin' password at first launch and accept the license
+@@ -79,2 +79 @@ You should now be able to run the PEPS server and connect to it, you then need t
+-3. Change domain name, and activate license by clicking on "Activate"
+-4. Create users, teams, etc.
++3. Create users, teams, and you're set!
+@@ -87 +86 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-- [Admin Manual](http://github.com/MLstate/PEPS/wiki/Admin-Manual)
++- [Admin/Operator Manual](http://github.com/MLstate/PEPS/wiki/Admin-Manual)
+diff --git a/README.md b/README.md
+index a80aef0..8e81492 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,6 @@ Innovative email and collaboration server with unique social features.
++![Messages View](https://cloud.githubusercontent.com/assets/817369/5923743/09105572-a656-11e4-9305-eb2a2bc578ce.png)
++
++![Dashboard View](https://cloud.githubusercontent.com/assets/817369/5923753/1a5dfd20-a656-11e4-959f-f19d9df12c0e.png)
++
++![Files View](https://cloud.githubusercontent.com/assets/817369/5923759/2596cc3a-a656-11e4-8397-b9296a39001c.png)
++
+diff --git a/README.md b/README.md
+index 021b2bf..a80aef0 100644
+--- a/README.md
++++ b/README.md
+@@ -23,0 +24,3 @@ To build the Docker containers and run on a Docker instance, just type:
++# Just in case, install make
++apt-get install make
++# Clone the repository
+@@ -25,0 +29,5 @@ cd PEPS
++
++# Configure your domain name
++echo YOUR_DOMAIN_NAME > domain
++
++# Build the containers
+@@ -27 +35,2 @@ make build
+-make certificate # or install existing certificates
++make certificate # or install existing certificates server.key and server.crt
++# Run the containers
+diff --git a/README.md b/README.md
+index 9cf5e47..021b2bf 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-PEPS
++PEPS = Email for Teams
+@@ -4 +4 @@ PEPS
+-Innovative email and collaboration server.
++Innovative email and collaboration server with unique social features.
+@@ -8 +8 @@ Innovative email and collaboration server.
+-PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox.
++PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox, and innovate with new features.
+@@ -72,0 +73 @@ Manuals for both users and admins are available in form of the PEPS wiki:
++- [Developer Manual](http://github.com/MLstate/PEPS/wiki/Developer-Manual)
+@@ -73,0 +75,5 @@ Manuals for both users and admins are available in form of the PEPS wiki:
++# Twitter contacts
++
++- Project created by [@henri_opa](https://twitter.com/henri_opa) at [MLstate](http://mlstate.com)
++- Design/UX: [@tweetfr](https://twitter.com/tweetfr)
++- Lead developer: [@hchataing](https://twitter.com/hchataing)
+diff --git a/README.md b/README.md
+index a19a461..9cf5e47 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-PEPS = Email for Teams
++PEPS
+@@ -4 +4 @@ PEPS = Email for Teams
+-Innovative email and collaboration server with unique social features.
++Innovative email and collaboration server.
+@@ -8 +8 @@ Innovative email and collaboration server with unique social features.
+-PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox, and innovate with new features.
++PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox.
+@@ -73 +72,0 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-- [Developer Manual](http://github.com/MLstate/PEPS/wiki/Developer-Manual)
+@@ -75,3 +73,0 @@ Manuals for both users and admins are available in form of the PEPS wiki:
+-# Contact
+-
+-You can reach out directly to [henri at opalang dot org](mailto:henri_at_opalang_org) for any questions.
+diff --git a/README.md b/README.md
+index 02dce86..a19a461 100644
+--- a/README.md
++++ b/README.md
+@@ -72,0 +73 @@ Manuals for both users and admins are available in form of the PEPS wiki:
++- [Developer Manual](http://github.com/MLstate/PEPS/wiki/Developer-Manual)
+diff --git a/README.md b/README.md
+index 9cf5e47..02dce86 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-PEPS
++PEPS = Email for Teams
+@@ -4 +4 @@ PEPS
+-Innovative email and collaboration server.
++Innovative email and collaboration server with unique social features.
+@@ -8 +8 @@ Innovative email and collaboration server.
+-PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox.
++PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox, and innovate with new features.
+@@ -73,0 +74,3 @@ Manuals for both users and admins are available in form of the PEPS wiki:
++# Contact
++
++You can reach out directly to [henri at opalang dot org](mailto:henri_at_opalang_org) for any questions.
+diff --git a/README.md b/README.md
+index 0d3c1fe..9cf5e47 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19 @@ This quick guide covers the deployment of a single server, which you should have
+-First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](http://digitalocean.com) or similar services.
++First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](http://digitalocean.com) or similar services. We recommend to have at least 2 Gb RAM in your PEPS instance.
+@@ -26,0 +27 @@ make build
++make certificate # or install existing certificates
+@@ -30 +31 @@ make run
+-To stop and remove them, you can use:
++To later stop, start and remove containers, you can use:
+@@ -33,0 +35 @@ make stop
++make start
+diff --git a/README.md b/README.md
+index 601dbe4..0d3c1fe 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,68 @@ PEPS
+-Modern Webmail Server
++Innovative email and collaboration server.
++
++# Why PEPS?
++
++PEPS is an email, file sharing and collaboration server that intends to fullfil the need for high-quality on-premises software that could rival with top-notch SaaS products such as Gmail or Dropbox.
++
++Please read more [about PEPS](http://github.com/MLstate/PEPS/wiki/About) and its [roadmap](http://github.com/MLstate/PEPS/wiki/Roadmap). We also have a [FAQ](http://github.com/MLstate/PEPS/wiki/FAQ).
++
++# Installation guide
++
++The deployment of PEPS is using [Docker](http://docker.io) to simplify the installation process.
++This quick guide covers the deployment of a single server, which you should have up and running in 30 minutes.
++
++## Docker containers
++
++First install Docker on your server. If you are new to Docker, you can use Docker-ready linux instances at [DigitalOcean](http://digitalocean.com) or similar services.
++
++To build the Docker containers and run on a Docker instance, just type:
++
++```sh
++git clone https://github.com/MLstate/PEPS
++cd PEPS
++make build
++make run
++```
++
++To stop and remove them, you can use:
++
++```sh
++make stop
++make rm
++```
++
++## System Configuration
++
++PEPS runs by default using HTTPS.
++The only major pre-requisites are that you should have installed
++server.crt and server.key in the `$(PEPS_DATA)` directory (by default `/data/peps`).
++If you want to start quickly with a self-signed certificate, type:
++
++```sh
++make certificate
++make install_cert
++```
++
++or copy your domain certificates to `$(PEPS_DATA)` manually before running the containers with `make run`.
++
++<!--  and you
++should initialise the $(EXIMIN_DATA) and $(EXIMOUT_DATA) directories
++with the exim configuration files.
++ -->
++
++## PEPS Configuration
++
++You should now be able to run the PEPS server and connect to it, you then need to:
++
++1. Log in as "admin" user with the "admin" password
++2. Go to the administration tab (wheels icon)
++3. Change domain name, and activate license by clicking on "Activate"
++4. Create users, teams, etc.
++
++# Documentation
++
++Manuals for both users and admins are available in form of the PEPS wiki:
++
++- [User Manual](http://github.com/MLstate/PEPS/wiki/User-Manual)
++- [Admin Manual](http://github.com/MLstate/PEPS/wiki/Admin-Manual)
++

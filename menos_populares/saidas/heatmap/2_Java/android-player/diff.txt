@@ -1,0 +1,343 @@
+diff --git a/README.md b/README.md
+index 01f4df5..beaff0a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Join the chat at https://gitter.im/geftimov/android-player](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--player-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1760) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player)
++[![Join the chat at https://gitter.im/geftimov/android-player](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--player-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1760) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/androidplayer/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/androidplayer)
+diff --git a/README.md b/README.md
+index 0492ab4..01f4df5 100644
+--- a/README.md
++++ b/README.md
+@@ -70,6 +70,6 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-
+-	dependencies {
+-		compile 'com.eftimoff:androidplayer:1.0.3@aar'
+-		compile 'com.nineoldandroids:library:2.4.0'
+-	}
+-
++```groovy
++dependencies {
++	compile 'com.eftimoff:androidplayer:1.0.3@aar'
++	compile 'com.nineoldandroids:library:2.4.0'
++}
++```
+@@ -83 +83 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-    Copyright 2015 Georgi Eftimov
++    Copyright 2016 Georgi Eftimov
+diff --git a/README.md b/README.md
+index 37ac8ed..0492ab4 100644
+--- a/README.md
++++ b/README.md
+@@ -72,0 +73 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
++		compile 'com.nineoldandroids:library:2.4.0'
+diff --git a/README.md b/README.md
+index 9f17645..37ac8ed 100644
+--- a/README.md
++++ b/README.md
+@@ -72 +72 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-		compile 'com.eftimoff:androidplayer:1.0.2@aar'
++		compile 'com.eftimoff:androidplayer:1.0.3@aar'
+diff --git a/README.md b/README.md
+index dce0d81..9f17645 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-#### CHANGELOG
++#### Changelog
+diff --git a/README.md b/README.md
+index cfb1412..dce0d81 100644
+--- a/README.md
++++ b/README.md
+@@ -64,0 +65,4 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
++#### CHANGELOG
++
++- June 6th. Add animation loop support.
++
+diff --git a/README.md b/README.md
+index 923e64f..cfb1412 100644
+--- a/README.md
++++ b/README.md
+@@ -3,3 +3 @@
+-[![Join the chat at https://gitter.im/geftimov/android-player](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+-
+-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--player-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1760) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player)
++[![Join the chat at https://gitter.im/geftimov/android-player](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--player-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1760) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player)
+diff --git a/README.md b/README.md
+index 202303c..923e64f 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++[![Join the chat at https://gitter.im/geftimov/android-player](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
++
+diff --git a/README.md b/README.md
+index 7d7bf63..202303c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,0 +2,3 @@
++
++[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/geftimov/android-player?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--player-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1760) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.eftimoff/android-player)
++
+diff --git a/README.md b/README.md
+index 9337d37..7d7bf63 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-		compile 'com.eftimoff:androidplayer:1.0.1@aar'
++		compile 'com.eftimoff:androidplayer:1.0.2@aar'
+diff --git a/README.md b/README.md
+index 73a084f..9337d37 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@ Animations when entering Actvity or Fragment made easy.</br>
+-Backward compatibility API 12.
++Backward compatibility API 1.
+@@ -65 +65 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-		compile 'com.eftimoff:androidplayer:1.0.0@aar'
++		compile 'com.eftimoff:androidplayer:1.0.1@aar'
+diff --git a/README.md b/README.md
+index 621ed8d..73a084f 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Backward compatibility API 12.
+-#### Run the player and you will can create beautiful transitions for your views when entering Activity / Fragment.</br>Put in your onCreate() for Activity or onViewCreated() for Fragment.
++###### Run the player and you will can create beautiful transitions </br>for your views when entering Activity / Fragment.</br>Put in your onCreate() for Activity or onViewCreated() for Fragment.
+diff --git a/README.md b/README.md
+index e0f3e27..621ed8d 100644
+--- a/README.md
++++ b/README.md
+@@ -65 +65 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-		compile 'com.eftimoff:android-player:1.0.0@aar'
++		compile 'com.eftimoff:androidplayer:1.0.0@aar'
+diff --git a/README.md b/README.md
+index 86d73cc..e0f3e27 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Backward compatibility API 12.
+-#### Run the player and you will can create beautiful transitions for your views when entering Activity / Fragment.
++#### Run the player and you will can create beautiful transitions for your views when entering Activity / Fragment.</br>Put in your onCreate() for Activity or onViewCreated() for Fragment.
+diff --git a/README.md b/README.md
+index 7c1860f..86d73cc 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Animations when entering actvity or fragment made easy.</br>
++Animations when entering Actvity or Fragment made easy.</br>
+@@ -9 +9 @@ Backward compatibility API 12.
+-#### Run the player and you will can create beautiful transitions for your views.
++#### Run the player and you will can create beautiful transitions for your views when entering Activity / Fragment.
+@@ -12 +12 @@ Backward compatibility API 12.
+-Player.with(toolbar).
++Player.init().
+diff --git a/README.md b/README.md
+index 75bca68..7c1860f 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-Animations when entering actvity or fragment made easy.
++Animations when entering actvity or fragment made easy.</br>
+diff --git a/README.md b/README.md
+index f1de46a..75bca68 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3 @@ Animations when entering actvity or fragment made easy.
++Backward compatibility API 12.
+diff --git a/README.md b/README.md
+index 2f2926c..f1de46a 100644
+--- a/README.md
++++ b/README.md
+@@ -33,11 +33,11 @@ Player.with(toolbar).
+-        final PropertyAction headerAction = PropertyAction.newPropertyAction(activityMainheaderLayout).
+-        		interpolator(new DecelerateInterpolator()).
+-        		translationY(-200).
+-        		duration(550).
+-        		alpha(0.4f).
+-        		build();
+-        final PropertyAction bottomAction = PropertyAction.newPropertyAction(activityMainMobileNumberLayout).
+-        		translationY(500).
+-        		duration(550).
+-        		alpha(0f).
+-        		build();
++	final PropertyAction headerAction = PropertyAction.newPropertyAction(activityMainheaderLayout).
++			interpolator(new DecelerateInterpolator()).
++			translationY(-200).
++			duration(550).
++			alpha(0.4f).
++			build();
++	final PropertyAction bottomAction = PropertyAction.newPropertyAction(activityMainMobileNumberLayout).
++			translationY(500).
++			duration(550).
++			alpha(0f).
++			build();
+diff --git a/README.md b/README.md
+index 60a8417..2f2926c 100644
+--- a/README.md
++++ b/README.md
+@@ -11,7 +11,7 @@ Animations when entering actvity or fragment made easy.
+-        Player.with(toolbar).
+-                animate(headerAction).
+-                then().
+-                animate(fabAction).
+-                then().
+-                animate(bottomAction).
+-                play();
++Player.with(toolbar).
++	animate(headerAction).
++	then().
++	animate(fabAction).
++	then().
++	animate(bottomAction).
++	play();
+diff --git a/README.md b/README.md
+index 55381f2..60a8417 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10,16 @@ Animations when entering actvity or fragment made easy.
++```java
++        Player.with(toolbar).
++                animate(headerAction).
++                then().
++                animate(fabAction).
++                then().
++                animate(bottomAction).
++                play();
++```
++
++#### Result
++
++![svg](https://github.com/geftimov/android-player/blob/master/art/sample_one.gif)
++
++#### Actions
++
+@@ -28,8 +43,0 @@ Animations when entering actvity or fragment made easy.
+-        
+-        Player.with(toolbar).
+-                animate(headerAction).
+-                then().
+-                animate(fabAction).
+-                then().
+-                animate(bottomAction).
+-                play();
+@@ -38,4 +45,0 @@ Animations when entering actvity or fragment made easy.
+-#### Result
+-
+-![svg](https://github.com/geftimov/android-player/blob/master/art/sample_one.gif)
+-
+diff --git a/README.md b/README.md
+index 8be1b83..55381f2 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ Animations when entering actvity or fragment made easy.
+-![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) 
++![svg](https://github.com/geftimov/android-player/blob/master/art/playerPhoto.png) 
+@@ -11,9 +11,25 @@ Animations when entering actvity or fragment made easy.
+-    final Path path = new Path();
+-        path.moveTo(0.0f, 0.0f);
+-        path.lineTo(length / 4f, 0.0f);
+-        path.lineTo(length, height / 2.0f);
+-        path.lineTo(length / 4f, height);
+-        path.lineTo(0.0f, height);
+-	    path.lineTo(length * 3f / 4f, height / 2f);
+-	    path.lineTo(0.0f, 0.0f);
+-	    path.close();
++	final PropertyAction fabAction = PropertyAction.newPropertyAction(activityMainPinkFab).
++			scaleX(0).
++			scaleY(0).
++			duration(750).
++			interpolator(new AccelerateDecelerateInterpolator()).
++			build();
++        final PropertyAction headerAction = PropertyAction.newPropertyAction(activityMainheaderLayout).
++        		interpolator(new DecelerateInterpolator()).
++        		translationY(-200).
++        		duration(550).
++        		alpha(0.4f).
++        		build();
++        final PropertyAction bottomAction = PropertyAction.newPropertyAction(activityMainMobileNumberLayout).
++        		translationY(500).
++        		duration(550).
++        		alpha(0f).
++        		build();
++        
++        Player.with(toolbar).
++                animate(headerAction).
++                then().
++                animate(fabAction).
++                then().
++                animate(bottomAction).
++                play();
+@@ -24 +40 @@ Animations when entering actvity or fragment made easy.
+-![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
++![svg](https://github.com/geftimov/android-player/blob/master/art/sample_one.gif)
+@@ -49 +65 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) ![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) ![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
++![svg](https://github.com/geftimov/android-player/blob/master/art/sample_two.gif) ![svg](https://github.com/geftimov/android-player/blob/master/art/sample_three.gif) ![svg](https://github.com/geftimov/android-player/blob/master/art/sample_four.gif)
+diff --git a/README.md b/README.md
+index d0fcac3..8be1b83 100644
+--- a/README.md
++++ b/README.md
+@@ -49 +49 @@ To make custom Action , just extend the BaseAction and implement the two abstrac
+-![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
++![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) ![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) ![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
+diff --git a/README.md b/README.md
+index efff436..d0fcac3 100644
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26,10 @@ Animations when entering actvity or fragment made easy.
++#### Costumization
++
++To make custom Action , just extend the BaseAction and implement the two abstract methods.
++
++```java
++    void init(final View view);
++
++    void animate(final View view);
++```
++
+@@ -36,0 +47,4 @@ Animations when entering actvity or fragment made easy.
++##### Make your animations how ever you want	
++	
++![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
++
+diff --git a/README.md b/README.md
+index 27a3f09..efff436 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,36 @@
+-## android-empty-project
+-This is empty project to start open source library.
++## android-player
++Animations when entering actvity or fragment made easy.
++
++#### You have created beautiful UI , but it is boring
++
++![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif) 
++
++#### Run the player and you will can create beautiful transitions for your views.
++
++```java
++    final Path path = new Path();
++        path.moveTo(0.0f, 0.0f);
++        path.lineTo(length / 4f, 0.0f);
++        path.lineTo(length, height / 2.0f);
++        path.lineTo(length / 4f, height);
++        path.lineTo(0.0f, height);
++	    path.lineTo(length * 3f / 4f, height / 2f);
++	    path.lineTo(0.0f, 0.0f);
++	    path.close();
++```
++
++#### Result
++
++![svg](https://github.com/geftimov/android-pathview/blob/master/art/settings.gif)
++
++#### Contributors
++
++[Martin Vitanov](https://github.com/martinVitanov "Martin Vitanov") <br />
++[Georgi Eftimov](https://github.com/geftimov "Georgi Eftimov")
++
++##### Download
++
++	dependencies {
++		compile 'com.eftimoff:android-player:1.0.0@aar'
++	}
++

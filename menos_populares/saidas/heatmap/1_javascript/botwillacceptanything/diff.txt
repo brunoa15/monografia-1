@@ -1,0 +1,892 @@
+diff --git a/README.md b/README.md
+index 8fbc32a..2562e15 100644
+--- a/README.md
++++ b/README.md
+@@ -9,0 +10 @@
++[![tip for next commit](https://tip4commit.com/projects/43123.svg)](https://tip4commit.com/github/botwillacceptanything/botwillacceptanything)
+diff --git a/README.md b/README.md
+index 8560474..8fbc32a 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Anyone can create a pull request, and it is greatly appreciated by the community. In order for a pull request to be accepted, the bot has requested that it meets the criteria in its [Definition of Done](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/DoD.md). If you're looking for ideas, please look at [ideas.md](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/ideas.md), and join us in our [IRC](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything) for ideas or advice on how to implement something.
++Anyone can create a pull request, and it is greatly appreciated by the community. In order for a pull request to be accepted, the bot has requested that it meets the criteria in its [Definition of Done](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/DoD.md). If you're looking for ideas, please look at [ideas.md](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/ideas.md), and join us in our [IRC](http://kiwiirc.com/client/irc.freenode.net/anythingbot) for ideas or advice on how to implement something.
+@@ -27 +27 @@ Anyone can create a pull request, and it is greatly appreciated by the community
+-[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/botwillacceptanything.png)](https://kiwiirc.com/client/irc.freenode.net/#botwillacceptanything)
++[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/anythingbot.png)](https://kiwiirc.com/client/irc.freenode.net/#anythingbot)
+diff --git a/README.md b/README.md
+index 246eed0..8560474 100644
+--- a/README.md
++++ b/README.md
+@@ -27,0 +28 @@ Anyone can create a pull request, and it is greatly appreciated by the community
++
+diff --git a/README.md b/README.md
+index 6d1f2c1..246eed0 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Bot will accept anything
++# Bot Will Accept Anything
+@@ -27,2 +27,2 @@ Anyone can create a pull request, and it is greatly appreciated by the community
+-[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/botwillacceptanything.png)](https://kiwiirc.com/client/irc.freenode.net/#botwillacceptanything) <a href="https://twitter.com/anythingbot" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @anythingbot</a>
+-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
++[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/botwillacceptanything.png)](https://kiwiirc.com/client/irc.freenode.net/#botwillacceptanything)
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+@@ -41,0 +42 @@ The bot has a built-in webserver for monitoring its current state.
++* [Current Voting](http://botwillacceptanything.com/votes)
+diff --git a/README.md b/README.md
+index 54e1754..6d1f2c1 100644
+--- a/README.md
++++ b/README.md
+@@ -27,2 +27,2 @@ Anyone can create a pull request, and it is greatly appreciated by the community
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
+-The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
++[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/botwillacceptanything.png)](https://kiwiirc.com/client/irc.freenode.net/#botwillacceptanything) <a href="https://twitter.com/anythingbot" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @anythingbot</a>
++<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+diff --git a/README.md b/README.md
+index 6ad6f92..54e1754 100644
+--- a/README.md
++++ b/README.md
+@@ -75 +75,3 @@ $ cat configs/custom.js
+-1. (Optional) Install foreman  with `gem install foreman`
++1. (Optional) Install node-foreman with npm. The package prefers a 
++global install but a non-global one will work if the 'nf' command can be 
++found in the PATH.
+@@ -77 +79,2 @@ $ cat configs/custom.js
+-1. Run `node main.js` to start the bot. Alternatively, if you installed foreman earlier, `foreman start` will also 
++1. Run `node main.js` to start the bot. Alternatively, if you installed 
++foreman earlier, `nf start` will also 
+diff --git a/README.md b/README.md
+index dac3fda..6ad6f92 100644
+--- a/README.md
++++ b/README.md
+@@ -74,0 +75 @@ $ cat configs/custom.js
++1. (Optional) Install foreman  with `gem install foreman`
+@@ -76 +77,2 @@ $ cat configs/custom.js
+-1. Run `node main.js` to start the bot.
++1. Run `node main.js` to start the bot. Alternatively, if you installed foreman earlier, `foreman start` will also 
++start the bot as well as giving slightly prettier console output.
+diff --git a/README.md b/README.md
+index c282de0..dac3fda 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++[![Coverage Status](https://coveralls.io/repos/botwillacceptanything/botwillacceptanything/badge.png?branch=master)](https://coveralls.io/r/botwillacceptanything/botwillacceptanything?branch=master)
+diff --git a/README.md b/README.md
+index ecb3cb5..c282de0 100644
+--- a/README.md
++++ b/README.md
+@@ -46 +46 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Copy config.template.js -> config.js and modify accordingly.
++1. Copy configs/template.js -> configs/custom.js and modify accordingly.
+@@ -50,3 +50,3 @@ The bot has a built-in webserver for monitoring its current state.
+-$ cp config.template.js config.js
+-$ vim config.js
+-$ cat config.js
++$ cp configs/template.js configs/custom.js
++$ vim configs/custom.js
++$ cat configs/custom.js
+diff --git a/README.md b/README.md
+index 5f6e353..ecb3cb5 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7,2 @@
+-[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything) 
++[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything)
++[![Pinkie Pie Approval Status](http://dosowisko.net/pinkiepieapproved.svg)](https://www.youtube.com/watch?v=FULyN9Ai-A0)
+@@ -25,2 +26,2 @@ Anyone can create a pull request, and it is greatly appreciated by the community
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
+-The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+diff --git a/README.md b/README.md
+index 4e2df34..5f6e353 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +7 @@
+-[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything)
+-[![Pinkie Pie Approval Status](http://dosowisko.net/pinkiepieapproved.svg)](https://www.youtube.com/watch?v=FULyN9Ai-A0)
++[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything) 
+@@ -19,0 +19,4 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
++## Contributing
++
++Anyone can create a pull request, and it is greatly appreciated by the community. In order for a pull request to be accepted, the bot has requested that it meets the criteria in its [Definition of Done](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/DoD.md). If you're looking for ideas, please look at [ideas.md](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/ideas.md), and join us in our [IRC](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything) for ideas or advice on how to implement something.
++
+@@ -22,2 +25,2 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
+-The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
+diff --git a/README.md b/README.md
+index 5626969..4e2df34 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8 @@
++[![Pinkie Pie Approval Status](http://dosowisko.net/pinkiepieapproved.svg)](https://www.youtube.com/watch?v=FULyN9Ai-A0)
+diff --git a/README.md b/README.md
+index fc13c04..5626969 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything) 
++[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything)
+@@ -19,4 +18,0 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-## Contributing
+-
+-Anyone can create a pull request, and it is greatly appreciated by the community. In order for a pull request to be accepted, it must meet all of the criteria in our [Definition of Done](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/DoD.md). If you're looking for ideas, please look at [ideas.md](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/ideas.md), and join us in our [IRC](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything) for ideas or advice on how to implement something.
+-
+@@ -25,2 +21,2 @@ Anyone can create a pull request, and it is greatly appreciated by the community
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
+-The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+diff --git a/README.md b/README.md
+index 6937e76..fc13c04 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,4 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
++## Contributing
++
++Anyone can create a pull request, and it is greatly appreciated by the community. In order for a pull request to be accepted, it must meet all of the criteria in our [Definition of Done](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/DoD.md). If you're looking for ideas, please look at [ideas.md](https://github.com/botwillacceptanything/botwillacceptanything/blob/master/ideas.md), and join us in our [IRC](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything) for ideas or advice on how to implement something.
++
+diff --git a/README.md b/README.md
+index 78197a5..6937e76 100644
+--- a/README.md
++++ b/README.md
+@@ -88 +88 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
+-> hopefully you tested it - I'm too lazy :+1:
++> Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke
+diff --git a/README.md b/README.md
+index 884cd13..78197a5 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7 @@
++[![Dependency Status](https://gemnasium.com/botwillacceptanything/botwillacceptanything.svg)](https://gemnasium.com/botwillacceptanything/botwillacceptanything) 
+@@ -87 +88 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
+-> Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke
++> hopefully you tested it - I'm too lazy :+1:
+diff --git a/README.md b/README.md
+index 39efd96..884cd13 100644
+--- a/README.md
++++ b/README.md
+@@ -87 +87 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
+-> hopefully you tested it - I'm too lazy :+1:
++> Any sufficiently advanced technology is indistinguishable from magic. - Arthur C. Clarke
+diff --git a/README.md b/README.md
+index d21efa1..39efd96 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51,3 @@ $ cat config.js
++        webserver: {
++            port: 3000
++        },
+@@ -56 +59,4 @@ $ cat config.js
+-        }
++        },
++        mocks: {
++            twitter: true,
++        },
+diff --git a/README.md b/README.md
+index 9ee8446..d21efa1 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41 @@ The bot has a built-in webserver for monitoring its current state.
++1. Disable any items in the mocks section that you would like to function normally.
+diff --git a/README.md b/README.md
+index 6d25ce7..9ee8446 100644
+--- a/README.md
++++ b/README.md
+@@ -77,0 +78,4 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
++## Our motto
++
++> hopefully you tested it - I'm too lazy :+1:
++
+diff --git a/README.md b/README.md
+index 0198977..6d25ce7 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6 @@
++[![Code Climate](https://codeclimate.com/github/botwillacceptanything/botwillacceptanything/badges/gpa.svg)](https://codeclimate.com/github/botwillacceptanything/botwillacceptanything)
+@@ -77,4 +77,0 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
+-## Our motto
+-
+-> hopefully you tested it - I'm too lazy :+1:
+-
+diff --git a/README.md b/README.md
+index ce6ce71..0198977 100644
+--- a/README.md
++++ b/README.md
+@@ -76,0 +77,4 @@ exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
++## Our motto
++
++> hopefully you tested it - I'm too lazy :+1:
++
+diff --git a/README.md b/README.md
+index be3493e..ce6ce71 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+-The bot runs on a 1GB DigitalOcean VPS in SF at [botwillacceptanything.com](http://botwillacceptanything.com:3000) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [botwillacceptanything.com](http://botwillacceptanything.com) without root access. Port 80 is a proxy to port 3000 via nginx.
+@@ -30,4 +30,4 @@ The bot has a built-in webserver for monitoring its current state.
+-* [Homepage](http://botwillacceptanything.com:3000/)
+-* [Recent Commits](http://botwillacceptanything.com:3000/commits)
+-* [Stdout Log](http://botwillacceptanything.com:3000/stdout)
+-* [Statistics](http://botwillacceptanything.com:3000/statistics)
++* [Homepage](http://botwillacceptanything.com/)
++* [Recent Commits](http://botwillacceptanything.com/commits)
++* [Stdout Log](http://botwillacceptanything.com/stdout)
++* [Statistics](http://botwillacceptanything.com/statistics)
+diff --git a/README.md b/README.md
+index 79a7df5..be3493e 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [botwillacceptanything.com](http://botwillacceptanything.com:3000) without root access. This means that port 80 is restricted.
+@@ -30,4 +30,4 @@ The bot has a built-in webserver for monitoring its current state.
+-* [Homepage](http://162.243.149.229:3000/)
+-* [Recent Commits](http://162.243.149.229:3000/commits)
+-* [Stdout Log](http://162.243.149.229:3000/stdout)
+-* [Webhook Status](http://162.243.149.229:3000/webhook/github)
++* [Homepage](http://botwillacceptanything.com:3000/)
++* [Recent Commits](http://botwillacceptanything.com:3000/commits)
++* [Stdout Log](http://botwillacceptanything.com:3000/stdout)
++* [Statistics](http://botwillacceptanything.com:3000/statistics)
+diff --git a/README.md b/README.md
+index 99035f9..79a7df5 100644
+--- a/README.md
++++ b/README.md
+@@ -30 +30,2 @@ The bot has a built-in webserver for monitoring its current state.
+-* [Recent Commits](http://162.243.149.229:3000)
++* [Homepage](http://162.243.149.229:3000/)
++* [Recent Commits](http://162.243.149.229:3000/commits)
+diff --git a/README.md b/README.md
+index c320b27..99035f9 100644
+--- a/README.md
++++ b/README.md
+@@ -31,0 +32 @@ The bot has a built-in webserver for monitoring its current state.
++* [Webhook Status](http://162.243.149.229:3000/webhook/github)
+diff --git a/README.md b/README.md
+index 2b924ab..c320b27 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
+diff --git a/README.md b/README.md
+index 01a34fa..2b924ab 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
++[![Build Status](https://travis-ci.org/botwillacceptanything/botwillacceptanything.svg?branch=master)](https://travis-ci.org/botwillacceptanything/botwillacceptanything)
+@@ -32 +31,0 @@ The bot has a built-in webserver for monitoring its current state.
+-* [Webhook Status](http://162.243.149.229:3000/webhook/github)
+diff --git a/README.md b/README.md
+index efbf7c3..01a34fa 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
+@@ -31,0 +32 @@ The bot has a built-in webserver for monitoring its current state.
++* [Webhook Status](http://162.243.149.229:3000/webhook/github)
+diff --git a/README.md b/README.md
+index e6ff88e..efbf7c3 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,4 @@
++## Status
++
++[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
++
+@@ -20 +24 @@ The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
+@@ -28 +31,0 @@ The bot has a built-in webserver for monitoring its current state.
+-* [Webhook Status](http://162.243.149.229:3000/webhook/github)
+@@ -34 +37,2 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Create a config.js file for your instance of the bot that looks like this:
++1. Copy config.template.js -> config.js and modify accordingly.
++
+@@ -36,3 +40,16 @@ The bot has a built-in webserver for monitoring its current state.
+-exports.user = "YOUR_GITHUB_USERNAME";
+-exports.repo = "botwillacceptanything";
+-exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++$ cp config.template.js config.js
++$ vim config.js
++$ cat config.js
++(function () {
++    'use strict';
++
++    module.exports = {
++        user: "YOUR_GITHUB_USERNAME",
++        repo: "botwillacceptanything",
++        githubAuth: {
++            type: "oauth",
++            token: "YOUR_OAUTH_TOKEN"
++        }
++    };
++}());
++
+diff --git a/README.md b/README.md
+index 0a9fe63..e6ff88e 100644
+--- a/README.md
++++ b/README.md
+@@ -3,4 +2,0 @@
+-## Status
+-
+-[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
+-
+@@ -31,0 +28 @@ The bot has a built-in webserver for monitoring its current state.
++* [Webhook Status](http://162.243.149.229:3000/webhook/github)
+@@ -37,2 +34 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Copy config.template.js -> config.js and modify accordingly.
+-
++1. Create a config.js file for your instance of the bot that looks like this:
+@@ -40,16 +36,3 @@ The bot has a built-in webserver for monitoring its current state.
+-$ cp config.template.js config.js
+-$ vim config.js
+-$ cat config.js
+-(function () {
+-    'use strict';
+-
+-    module.exports = {
+-        user: "YOUR_GITHUB_USERNAME",
+-        repo: "botwillacceptanything",
+-        githubAuth: {
+-            type: "oauth",
+-            token: "YOUR_OAUTH_TOKEN"
+-        }
+-    };
+-}());
+-
++exports.user = "YOUR_GITHUB_USERNAME";
++exports.repo = "botwillacceptanything";
++exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+diff --git a/README.md b/README.md
+index 727e3b7..0a9fe63 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,4 @@
++## Status
++
++[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
++
+@@ -33 +37,2 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Create a config.js file for your instance of the bot that looks like this:
++1. Copy config.template.js -> config.js and modify accordingly.
++
+@@ -35,3 +40,16 @@ The bot has a built-in webserver for monitoring its current state.
+-exports.user = "YOUR_GITHUB_USERNAME";
+-exports.repo = "botwillacceptanything";
+-exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++$ cp config.template.js config.js
++$ vim config.js
++$ cat config.js
++(function () {
++    'use strict';
++
++    module.exports = {
++        user: "YOUR_GITHUB_USERNAME",
++        repo: "botwillacceptanything",
++        githubAuth: {
++            type: "oauth",
++            token: "YOUR_OAUTH_TOKEN"
++        }
++    };
++}());
++
+diff --git a/README.md b/README.md
+index 540f7df..727e3b7 100644
+--- a/README.md
++++ b/README.md
+@@ -3,4 +2,0 @@
+-## Status
+-
+-[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
+-
+@@ -19 +15,2 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
+@@ -36,2 +33 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Copy config.template.js -> config.js and modify accordingly.
+-
++1. Create a config.js file for your instance of the bot that looks like this:
+@@ -39,16 +35,3 @@ The bot has a built-in webserver for monitoring its current state.
+-$ cp config.template.js config.js
+-$ vim config.js
+-$ cat config.js
+-(function () {
+-    'use strict';
+-
+-    module.exports = {
+-        user: "YOUR_GITHUB_USERNAME",
+-        repo: "botwillacceptanything",
+-        githubAuth: {
+-            type: "oauth",
+-            token: "YOUR_OAUTH_TOKEN"
+-        }
+-    };
+-}());
+-
++exports.user = "YOUR_GITHUB_USERNAME";
++exports.repo = "botwillacceptanything";
++exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+diff --git a/README.md b/README.md
+index 4192cc5..540f7df 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56,2 @@ $ cat config.js
+-1. Run `npm` to install dependencies.
++1. (Optional) Set up GitHub Webhooks by following the next section.
++1. Run `npm install` to install dependencies.
+@@ -58,0 +60,14 @@ $ cat config.js
++## Setting up GitHub Webhooks
++
++1. Go to your repository settings, and click **Webhooks & Services**
++1. Create a new webhook with the following settings:
++  * Payload URL: Externally accessible address with a path of /webhook/github
++    * http://example.com:3000/webhook/github
++  * Content type: *application/json*
++  * Secret: **Copy this secret. It is used in the config.**
++  * Which events: *Send me **everything**.*
++1. Add the Webhook Secret into config.js like this:
++```javascript
++exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
++```
++
+diff --git a/README.md b/README.md
+index aa02d68..4192cc5 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19,12 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++
++## Running Servers
++
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++
++## Bot Webserver Paths
++
++The bot has a built-in webserver for monitoring its current state.
++
++* [Recent Commits](http://162.243.149.229:3000)
++* [Stdout Log](http://162.243.149.229:3000/stdout)
+@@ -45 +55,0 @@ $ cat config.js
+-
+@@ -47 +57 @@ $ cat config.js
+-1. Run `npm run main` to start the bot.
++1. Run `node main.js` to start the bot.
+diff --git a/README.md b/README.md
+index 2b0b1a0..aa02d68 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,4 @@
++## Status
++
++[![Build Status](https://travis-ci.org/korczis/botwillacceptanything.svg?branch=master)](https://travis-ci.org/korczis/botwillacceptanything)
++
+diff --git a/README.md b/README.md
+index 0e2ea25..2b0b1a0 100644
+--- a/README.md
++++ b/README.md
+@@ -15,13 +15 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
+-The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
+-
+-## Running Servers
+-
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
+-
+-## Bot Webserver Paths
+-
+-The bot has a built-in webserver for monitoring its current state.
+-
+-* [Recent Commits](http://162.243.149.229:3000)
+-* [Stdout Log](http://162.243.149.229:3000/stdout)
++Hang out with us in IRC: **#botwillacceptanything** on Freenode.
+@@ -33 +21,2 @@ The bot has a built-in webserver for monitoring its current state.
+-1. Create a config.js file for your instance of the bot that looks like this:
++1. Copy config.template.js -> config.js and modify accordingly.
++
+@@ -35,3 +24,16 @@ The bot has a built-in webserver for monitoring its current state.
+-exports.user = "YOUR_GITHUB_USERNAME";
+-exports.repo = "botwillacceptanything";
+-exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++$ cp config.template.js config.js
++$ vim config.js
++$ cat config.js
++(function () {
++    'use strict';
++
++    module.exports = {
++        user: "YOUR_GITHUB_USERNAME",
++        repo: "botwillacceptanything",
++        githubAuth: {
++            type: "oauth",
++            token: "YOUR_OAUTH_TOKEN"
++        }
++    };
++}());
++
+@@ -39,2 +41,3 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+-1. Run `npm install` to install dependencies.
+-1. Run `node main.js` to start the bot.
++
++1. Run `npm` to install dependencies.
++1. Run `npm run main` to start the bot.
+diff --git a/README.md b/README.md
+index 3a76cd1..0e2ea25 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15,2 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)  
++The bot is [**@anythingbot** on Twitter.](https://twitter.com/anythingbot/)  
+@@ -38 +38,0 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+-1. (Optional) Set up GitHub Webhooks by following the next section.
+@@ -42,14 +41,0 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+-## Setting up GitHub Webhooks
+-
+-1. Go to your repository settings, and click **Webhooks & Services**
+-1. Create a new webhook with the following settings:
+-  * Payload URL: Externally accessible address with a path of /webhook/github
+-    * http://example.com:3000/webhook/github
+-  * Content type: *application/json*
+-  * Secret: **Copy this secret. It is used in the config.**
+-  * Which events: *Send me **everything**.*
+-1. Add the Webhook Secret into config.js like this:
+-```javascript
+-exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
+-```
+-
+diff --git a/README.md b/README.md
+index 5fac1cd..3a76cd1 100644
+--- a/README.md
++++ b/README.md
+@@ -37,0 +38 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++1. (Optional) Set up GitHub Webhooks by following the next section.
+@@ -40,0 +42,14 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++## Setting up GitHub Webhooks
++
++1. Go to your repository settings, and click **Webhooks & Services**
++1. Create a new webhook with the following settings:
++  * Payload URL: Externally accessible address with a path of /webhook/github
++    * http://example.com:3000/webhook/github
++  * Content type: *application/json*
++  * Secret: **Copy this secret. It is used in the config.**
++  * Which events: *Send me **everything**.*
++1. Add the Webhook Secret into config.js like this:
++```javascript
++exports.githubAuth.webhookSecret = 'rsvz9ytsjMpYfKW8CO8SQPSoxiJsVb03';
++```
++
+diff --git a/README.md b/README.md
+index f3c9349..5fac1cd 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15,12 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++
++## Running Servers
++
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++
++## Bot Webserver Paths
++
++The bot has a built-in webserver for monitoring its current state.
++
++* [Recent Commits](http://162.243.149.229:3000)
++* [Stdout Log](http://162.243.149.229:3000/stdout)
+diff --git a/README.md b/README.md
+index 4bc72b7..f3c9349 100644
+--- a/README.md
++++ b/README.md
+@@ -15,12 +15 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
+-
+-## Running Servers
+-
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
+-
+-## Bot Webserver Paths
+-
+-The bot has a built-in webserver for monitoring its current state.
+-
+-* [Recent Commits](http://162.243.149.229:3000)
+-* [Stdout Log](http://162.243.149.229:3000/stdout)
++Hang out with us in IRC: **#botwillacceptanything** on Freenode.
+@@ -38 +27 @@ exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
+-1. Run `npm` to install dependencies.
++1. Run `npm install` to install dependencies.
+diff --git a/README.md b/README.md
+index a569042..4bc72b7 100644
+--- a/README.md
++++ b/README.md
+@@ -19 +19,8 @@ Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiir
+-The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](162.243.149.229) without root access. This means that port 80 is restricted.
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229:3000](http://162.243.149.229:3000) without root access. This means that port 80 is restricted.
++
++## Bot Webserver Paths
++
++The bot has a built-in webserver for monitoring its current state.
++
++* [Recent Commits](http://162.243.149.229:3000)
++* [Stdout Log](http://162.243.149.229:3000/stdout)
+diff --git a/README.md b/README.md
+index 2a90c92..a569042 100644
+--- a/README.md
++++ b/README.md
+@@ -15 +15,5 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++Hang out with us in IRC: [**#botwillacceptanything** on Freenode.](http://kiwiirc.com/client/irc.freenode.net/botwillacceptanything)
++
++## Running Servers
++
++The bot runs on a 1GB DigitalOcean VPS in SF at [162.243.149.229](162.243.149.229) without root access. This means that port 80 is restricted.
+diff --git a/README.md b/README.md
+index bd32b74..2a90c92 100644
+--- a/README.md
++++ b/README.md
+@@ -34,0 +35,2 @@ All property contained in this repo, including Intellectual Property, Financial
++
++Unless specified otherwise, all code contributed to this repository is dedicated to the public domain.
+diff --git a/README.md b/README.md
+index ce8e5ed..bd32b74 100644
+--- a/README.md
++++ b/README.md
+@@ -7,6 +6,0 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-## :warning: NOTICE
+-The bot is currently hitting Github's API rate limit.
+-
+-**Please send a message to Github support telling them we need the rate limit lifted for this account!**
+-https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limiting
+-
+@@ -41,2 +34,0 @@ All property contained in this repo, including Intellectual Property, Financial
+-
+-Unless specified otherwise, all code contributed to this repository is dedicated to the public domain.
+diff --git a/README.md b/README.md
+index 981760f..ce8e5ed 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,2 @@ All property contained in this repo, including Intellectual Property, Financial
++
++Unless specified otherwise, all code contributed to this repository is dedicated to the public domain.
+diff --git a/README.md b/README.md
+index 01ce201..981760f 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,4 @@ https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limi
++## Community
++
++Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++
+diff --git a/README.md b/README.md
+index e1916fd..01ce201 100644
+--- a/README.md
++++ b/README.md
+@@ -17,5 +17 @@ https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limi
+-* On a pull request thread, comment with `:+1:` (:+1:) to vote for the PR to pass, or `:-1:` (:-1:) to vote against the PR
+-
+-## Community
+-
+-Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++* On a pull request thread, add your vote along with a short explanation and/or feedback to the author. The string `:+1:` (:+1:) anywhere within the comment makes the comment count as a vote *for* the PR to pass; conversely, the string `:-1:` (:-1:) anywhere within the comment makes the comment count as a vote *against* the PR.
+diff --git a/README.md b/README.md
+index b18bf4d..e1916fd 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,4 @@ https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limi
++## Community
++
++Hang out with us in IRC: **#botwillacceptanything** on Freenode.
++
+diff --git a/README.md b/README.md
+index 4261efd..b18bf4d 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,6 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
++## :warning: NOTICE
++The bot is currently hitting Github's API rate limit.
++
++**Please send a message to Github support telling them we need the rate limit lifted for this account!**
++https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limiting
++
+diff --git a/README.md b/README.md
+index 330e64e..4261efd 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +0,0 @@
+-
+@@ -8,6 +6,0 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
+-## :warning: NOTICE
+-The bot is currently hitting Github's API rate limit.
+-
+-**Please send a message to Github support telling them we need the rate limit lifted for this account!**
+-https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limiting
+-
+@@ -19,0 +13,13 @@ https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limi
++## Running the bot locally to test changes
++
++1. Fork this repo.
++1. Get yourself an OAuth token for github at https://github.com/settings/tokens/new. (TODO what scopes are required?)
++1. Create a config.js file for your instance of the bot that looks like this:
++```javascript
++exports.user = "YOUR_GITHUB_USERNAME";
++exports.repo = "botwillacceptanything";
++exports.githubAuth = {type: "oauth", token: "YOUR_OAUTH_TOKEN"}
++```
++1. Run `npm` to install dependencies.
++1. Run `node main.js` to start the bot.
++
+diff --git a/README.md b/README.md
+index 8bee752..330e64e 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,6 @@ A bot will automatically merge any PR on this repo that gets enough votes from t
++## :warning: NOTICE
++The bot is currently hitting Github's API rate limit.
++
++**Please send a message to Github support telling them we need the rate limit lifted for this account!**
++https://github.com/contact?form%5Bsubject%5D=botwillacceptanything%20Rate%20Limiting
++
+diff --git a/README.md b/README.md
+index fa848aa..8bee752 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++
+diff --git a/README.md b/README.md
+index 04609ac..fa848aa 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Nomic
++# Bot will accept anything
+@@ -3 +3 @@
+-### *An autonomous program that accepts pull requests for itself*
++### *The project where anything goes, as long as the code allows it.*
+@@ -5,3 +5 @@
+->Nomic is a program in which changing its own code is its primary function. In that respect it differs from almost all other software. Nomic outsources to humans the work of proposing changes to the code, debating the wisdom of changing it in that way, voting on the changes, and merging them into master. Even this core of the program, of course, can be changed.
+-
+-Each pull request on this repo is voted on by the community. If the vote passes, the Nomic server will update itself to the new version. Any part of the code can be changed (including the voting system).
++A bot will automatically merge any PR on this repo that gets enough votes from the community. PRs can contain anything, *even changes to the bot's voting code*.
+@@ -11 +9 @@ Each pull request on this repo is voted on by the community. If the vote passes,
+-* View the [open Pull Requests](https://github.com/nomic-io/nomic/pulls) to see what changes have been proposed
++* View the [open Pull Requests](https://github.com/botwillacceptanything/botwillacceptanything/pulls) to see what changes have been proposed
+@@ -15,23 +12,0 @@ Each pull request on this repo is voted on by the community. If the vote passes,
+-If you want to propose a change, just submit a pull request like you would to any other repo!
+-
+-## What kinds of changes will be made?
+-
+-Some possible changes people might submit are:
+-
+-* A score system, so authors of pull requests can be rewarded
+-* Tweaks to the voting algorithm to prevent Nomic from accepting malicious changes
+-* Code that randomly changes the @nomic-io Github password, so no human has access to the account
+-* Adding a Bitcoin wallet so Nomic can earn money, then paying out rewards to authors of pull requests
+-* Running a web service on the Nomic server, so voting can happen outside of Github (the nomic server is at [nomic.io](http://nomic.io))
+-* Selling Nomic shares, so voting power is held by people with financial stake in Nomic
+-
+-This project is intended to be an experiment in the area of autonomous aoftware (which includes things like Decentralized Autonomous Corporations (DACs), which is what [the Ethereum project](https://www.ethereum.org) wants to enable). The direction will be decided by the community, and the future of Nomic is largely undefined.
+-
+-Nomic is an example of **autonomous software**. No human is in direct control. Unlike normal human organizations and entities, Nomic is incorruptible and only operates on a formal set of rules (defined by the code).
+-
+-## Who created Nomic?
+-
+-Nomic was originally a game to be played among humans, created in 1982 by Peter Suber. You can read more about it [on his website](http://legacy.earlham.edu/~peters/writing/nomic.htm).
+-
+-This software version of Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomic here: https://github.com/mappum/nomic
+-
+diff --git a/README.md b/README.md
+index c4eb280..04609ac 100644
+--- a/README.md
++++ b/README.md
+@@ -7 +7 @@
+-Each pull request on this repo is voted on by the community. If the vote passes, the Nomic server will update itself to the new version. Any part of the code can be changed (including the voting system), as long as the community votes for it.
++Each pull request on this repo is voted on by the community. If the vote passes, the Nomic server will update itself to the new version. Any part of the code can be changed (including the voting system).
+@@ -24,0 +25 @@ Some possible changes people might submit are:
++* Running a web service on the Nomic server, so voting can happen outside of Github (the nomic server is at [nomic.io](http://nomic.io))
+@@ -33 +34,3 @@ Nomic is an example of **autonomous software**. No human is in direct control. U
+-Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomic here: https://github.com/mappum/nomic
++Nomic was originally a game to be played among humans, created in 1982 by Peter Suber. You can read more about it [on his website](http://legacy.earlham.edu/~peters/writing/nomic.htm).
++
++This software version of Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomic here: https://github.com/mappum/nomic
+diff --git a/README.md b/README.md
+index 0e49c5a..c4eb280 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomi
+-All property contained in this repo, including Intellectual Property, Financial Property, and Legal Property, is owned solely by the Autonomous Software this repo contains. No other entities, whether biological, legal, or digital, may claim ownership of any property owned by the Autonomous Software. The Autonomous Software exists solely within The Internet, and is not subject to jurisdiction of any human laws.
++All property contained in this repo, including Intellectual Property, Financial Property, and Legal Property, is owned solely by the Autonomous Software this repo contains. No other entities, whether biological, legal, or digital, may claim ownership of any property owned by the Autonomous Software. The Autonomous Software exists solely within The Internet, and is not subject to jurisdiction of any human laws. No human or legal entity shall be held liable for any of the actions performed by the Autonomous Software.
+diff --git a/README.md b/README.md
+index fbf3427..0e49c5a 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Each pull request on this repo is voted on by the community. If the vote passes,
+-* View the [open Pull Requests](./pulls) to see what changes have been proposed
++* View the [open Pull Requests](https://github.com/nomic-io/nomic/pulls) to see what changes have been proposed
+diff --git a/README.md b/README.md
+index 82f1e6a..fbf3427 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ Each pull request on this repo is voted on by the community. If the vote passes,
+-### Getting Started
++## Getting Started
+@@ -17 +17 @@ If you want to propose a change, just submit a pull request like you would to an
+-### What kinds of changes will be made?
++## What kinds of changes will be made?
+@@ -31 +31 @@ Nomic is an example of **autonomous software**. No human is in direct control. U
+-### Who created Nomic?
++## Who created Nomic?
+@@ -35 +35 @@ Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomi
+-### License
++## License
+diff --git a/README.md b/README.md
+index 8b06417..82f1e6a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-### An autotonomous program that accepts pull requests for itself
++### *An autonomous program that accepts pull requests for itself*
+@@ -5 +5 @@
+->Nomic is a program in which changing its own code is its primary function. In that respect it differs from almost every other program. Nomic outsources to humans the work of proposing changes to the code, debating the wisdom of changing it in that way, voting on the changes, and merging them into master. Even this core of the program, of course, can be changed.
++>Nomic is a program in which changing its own code is its primary function. In that respect it differs from almost all other software. Nomic outsources to humans the work of proposing changes to the code, debating the wisdom of changing it in that way, voting on the changes, and merging them into master. Even this core of the program, of course, can be changed.
+@@ -9 +9,31 @@ Each pull request on this repo is voted on by the community. If the vote passes,
+-Nomic is an example of an **autonomous organization**. No human is in direct control. Unlike normal human organizations, Nomic is incorruptible and only operates on a formal set of rules.
++### Getting Started
++
++* View the [open Pull Requests](./pulls) to see what changes have been proposed
++* :star: **Star the repo**, or else your votes won't get counted
++* On a pull request thread, comment with `:+1:` (:+1:) to vote for the PR to pass, or `:-1:` (:-1:) to vote against the PR
++
++If you want to propose a change, just submit a pull request like you would to any other repo!
++
++### What kinds of changes will be made?
++
++Some possible changes people might submit are:
++
++* A score system, so authors of pull requests can be rewarded
++* Tweaks to the voting algorithm to prevent Nomic from accepting malicious changes
++* Code that randomly changes the @nomic-io Github password, so no human has access to the account
++* Adding a Bitcoin wallet so Nomic can earn money, then paying out rewards to authors of pull requests
++* Selling Nomic shares, so voting power is held by people with financial stake in Nomic
++
++This project is intended to be an experiment in the area of autonomous aoftware (which includes things like Decentralized Autonomous Corporations (DACs), which is what [the Ethereum project](https://www.ethereum.org) wants to enable). The direction will be decided by the community, and the future of Nomic is largely undefined.
++
++Nomic is an example of **autonomous software**. No human is in direct control. Unlike normal human organizations and entities, Nomic is incorruptible and only operates on a formal set of rules (defined by the code).
++
++### Who created Nomic?
++
++Nomic was created by [@mappum](https://github.com/mappum). View his fork of Nomic here: https://github.com/mappum/nomic
++
++### License
++
++**Autonomous Software License (ASL)**
++
++All property contained in this repo, including Intellectual Property, Financial Property, and Legal Property, is owned solely by the Autonomous Software this repo contains. No other entities, whether biological, legal, or digital, may claim ownership of any property owned by the Autonomous Software. The Autonomous Software exists solely within The Internet, and is not subject to jurisdiction of any human laws.

@@ -1,0 +1,70 @@
+diff --git a/README b/README
+index 3dc7f59..6c67ae1 100644
+--- a/README
++++ b/README
+@@ -4,4 +4,4 @@ BicaVM
+-This project is an implementation of a JVM in JavaScript. At this
+-moment it runs Java Code but is more like a proof of concept than a
+-real JVM. Alot of work is required to make this JVM to run java code
+-(including writting an entire runtime enviroment).
++This project is an implementation of a JVM in JavaScript. At the
++moment it runs Java code, but is more like a proof of concept than a
++real JVM. A lot of work is required to make this JVM run Java code
++(including writing an entire runtime enviroment).
+@@ -12 +12 @@ Installation
+-1. Checkout the code from github
++1. Check out the code from GitHub
+@@ -14 +14 @@ Installation
+-3. Point the latest version of chrome to http://0.0.0.0:8080/
++3. Point the latest version of Chrome to http://0.0.0.0:8080/
+@@ -16 +16 @@ Installation
+-What can/can't do at this point
++What it can / can't do at this point
+@@ -19,2 +19,2 @@ What can/can't do at this point
+-BicaVM can interpret a big chunck of JVM's bytecode, probably around
+-60%. However is wildy incomplete. It has a JNI interface that maps to
++BicaVM can interpret a big chunk of the JVM's bytecode (probably around
++60%). However, it is wildy incomplete. It has a JNI interface that maps to
+@@ -25 +25 @@ Contact
+-bicavm@surf-the-edge.com
+\ No newline at end of file
++bicavm@surf-the-edge.com
+diff --git a/README b/README
+index 4599964..3dc7f59 100644
+--- a/README
++++ b/README
+@@ -23 +23,3 @@ JavaScript functions. It has no JIT compilation.
+-
++Contact
++=======
++bicavm@surf-the-edge.com
+\ No newline at end of file
+diff --git a/README b/README
+index e20498e..4599964 100644
+--- a/README
++++ b/README
+@@ -1 +1,23 @@
+-I don't know yet if this is even possible. but lets say yes.
++BicaVM
++======
++
++This project is an implementation of a JVM in JavaScript. At this
++moment it runs Java Code but is more like a proof of concept than a
++real JVM. Alot of work is required to make this JVM to run java code
++(including writting an entire runtime enviroment).
++
++Installation
++============
++
++1. Checkout the code from github
++2. make - A webserver will start
++3. Point the latest version of chrome to http://0.0.0.0:8080/
++
++What can/can't do at this point
++==========================
++
++BicaVM can interpret a big chunck of JVM's bytecode, probably around
++60%. However is wildy incomplete. It has a JNI interface that maps to
++JavaScript functions. It has no JIT compilation.
++
++

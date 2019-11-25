@@ -1,0 +1,269 @@
+diff --git a/README.md b/README.md
+index fdb53d9..167cc4b 100644
+--- a/README.md
++++ b/README.md
+@@ -39,3 +39,2 @@ Adding the package to your app
+-Although the Meteor package API is deliberately undocumented and remains
+-in flux before v1.0, here is how I currently recommend adding this package
+-to your Meteor app:
++The officially recommended way to add this package to your app is simply
++to execute the following commands:
+@@ -44,2 +43 @@ cd path/to/my-app/
+-echo react >> .meteor/packages
+-git clone https://github.com/reactjs/react-meteor.git packages/react
++meteor add reactjs:react
+@@ -48,3 +45,0 @@ git clone https://github.com/reactjs/react-meteor.git packages/react
+-If you want to share the package between multiple apps, you can clone it
+-to a common location and make `packages/react` a symbolic link.
+-
+diff --git a/README.md b/README.md
+index a9c278e..fdb53d9 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Clone this repository:
+-git clone https://github.com/benjamn/react-meteor.git
++git clone https://github.com/reactjs/react-meteor.git
+@@ -45 +45 @@ echo react >> .meteor/packages
+-git clone https://github.com/benjamn/react-meteor.git packages/react
++git clone https://github.com/reactjs/react-meteor.git packages/react
+diff --git a/README.md b/README.md
+index e33c610..a9c278e 100644
+--- a/README.md
++++ b/README.md
+@@ -62,0 +63,4 @@ var MyComponent = React.createClass({
++  startMeteorSubscriptions: function() {
++    Meteor.subscribe("players");
++  },
++
+@@ -66 +70 @@ var MyComponent = React.createClass({
+-      foo: Session.get("foo"),
++      playerCount: Players.find().count(),
+@@ -71,0 +76,7 @@ var MyComponent = React.createClass({
++
++The `startMeteorSubscriptions` method is optional, and should be
++implemented when the component needs to subscribe to specific query sets
++using [`Meteor.subscribe`](http://docs.meteor.com/#/full/meteor_subscribe)
++It will be called in a `Tracker.autorun` callback, so the subscriptions
++will be canceled automatically when the component is unmounted.
++
+@@ -73,3 +84,3 @@ The `getMeteorState` method should return an object of properties that
+-will be accessed via `this.state` in the component's `render` method or
+-elsewhere.  Dependencies will be registered for any data accesses
+-performed by `getMeteorState` so that the component can be automatically
++will be merged into `this.state`, for easy access in the component's
++`render` method or elsewhere.  Dependencies will be tracked for any data
++accessed by `getMeteorState` so that the component can be automatically
+@@ -81,0 +93,4 @@ var MyComponent = ReactMeteor.createClass({
++  startMeteorSubscriptions: function() {
++    Meteor.subscribe("players");
++  },
++
+@@ -85 +100 @@ var MyComponent = ReactMeteor.createClass({
+-      foo: Session.get("foo"),
++      playerCount: Players.find().count(),
+@@ -90 +105 @@ var MyComponent = ReactMeteor.createClass({
+-```
+\ No newline at end of file
++```
+diff --git a/README.md b/README.md
+index bcf5308..e33c610 100644
+--- a/README.md
++++ b/README.md
+@@ -24 +24 @@ Clone this repository:
+-git clone https://github.com/benjamn/meteor-react.git
++git clone https://github.com/benjamn/react-meteor.git
+@@ -29 +29 @@ Fire up one of the examples:
+-cd meteor-react/examples/leaderboard
++cd react-meteor/examples/leaderboard
+@@ -45 +45 @@ echo react >> .meteor/packages
+-git clone https://github.com/benjamn/meteor-react.git packages/react
++git clone https://github.com/benjamn/react-meteor.git packages/react
+diff --git a/README.md b/README.md
+index 2dd9179..bcf5308 100644
+--- a/README.md
++++ b/README.md
+@@ -76,0 +77,14 @@ re-rendered whenever the data changes.
++
++Alternatively, if you prefer not to declare `mixins` explicitly, you can
++create the class with `ReactMeteor.createClass`:
++```js
++var MyComponent = ReactMeteor.createClass({
++  // Make sure your component implements this method.
++  getMeteorState: function() {
++    return {
++      foo: Session.get("foo"),
++      ...
++    };
++  }
++});
++```
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index c8c8a7a..2dd9179 100644
+--- a/README.md
++++ b/README.md
+@@ -54,12 +54,2 @@ How it works
+-The package exposes a special `MeteorMixin` object that can be used to
+-enable reactive data fetching for your React components. There's no magic
+-involved; in fact, anyone who knows the basics of the component lifecycle
+-could have written this mixin:
+-```js
+-MeteorMixin = {
+-  componentWillMount: function() {
+-    var component = this;
+-    component._meteorComputation = Deps.autorun(function() {
+-      component.setState(component.getMeteorState());
+-    });
+-  },
++The package exposes a special `ReactMeteor.Mixin` object that can be used
++to enable reactive data fetching for your React components.
+@@ -67,9 +57,2 @@ MeteorMixin = {
+-  componentWillUnmount: function() {
+-    this._meteorComputation.stop();
+-    delete this._meteorComputation;
+-  }
+-};
+-```
+-
+-To add the `MeteorMixin` to a React component, simply include it in the
+-`mixins` class property:
++To add the `ReactMeteor.Mixin` to a React component, simply include it in
++the `mixins` class property:
+@@ -78 +61 @@ var MyComponent = React.createClass({
+-  mixins: [MeteorMixin],
++  mixins: [ReactMeteor.Mixin],
+@@ -89 +71,0 @@ var MyComponent = React.createClass({
+-
+diff --git a/README.md b/README.md
+index 3db2f89..c8c8a7a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-meteor-react
++react-meteor
+diff --git a/README.md b/README.md
+index 7ba9d60..3db2f89 100644
+--- a/README.md
++++ b/README.md
+@@ -7,2 +7 @@ client and the server, to complement or replace the default Handlebars
+-templating system. React components have access to a special `MeteorMixin`
+-that enables reactive data fetching.
++templating system.
+@@ -50,0 +50,45 @@ to a common location and make `packages/react` a symbolic link.
++
++How it works
++------------
++
++The package exposes a special `MeteorMixin` object that can be used to
++enable reactive data fetching for your React components. There's no magic
++involved; in fact, anyone who knows the basics of the component lifecycle
++could have written this mixin:
++```js
++MeteorMixin = {
++  componentWillMount: function() {
++    var component = this;
++    component._meteorComputation = Deps.autorun(function() {
++      component.setState(component.getMeteorState());
++    });
++  },
++
++  componentWillUnmount: function() {
++    this._meteorComputation.stop();
++    delete this._meteorComputation;
++  }
++};
++```
++
++To add the `MeteorMixin` to a React component, simply include it in the
++`mixins` class property:
++```js
++var MyComponent = React.createClass({
++  mixins: [MeteorMixin],
++
++  // Make sure your component implements this method.
++  getMeteorState: function() {
++    return {
++      foo: Session.get("foo"),
++      ...
++    };
++  }
++});
++```
++
++The `getMeteorState` method should return an object of properties that
++will be accessed via `this.state` in the component's `render` method or
++elsewhere.  Dependencies will be registered for any data accesses
++performed by `getMeteorState` so that the component can be automatically
++re-rendered whenever the data changes.
+diff --git a/README.md b/README.md
+index a31f062..7ba9d60 100644
+--- a/README.md
++++ b/README.md
+@@ -34,0 +35 @@ Finally, visit [localhost:3000](http://localhost:3000) in your browser.
++For extra fun, try using the example in multiple browser windows!
+diff --git a/README.md b/README.md
+index f30bc3b..a31f062 100644
+--- a/README.md
++++ b/README.md
+@@ -45 +44,0 @@ echo react >> .meteor/packages
+-mkdir -p packages
+diff --git a/README.md b/README.md
+index 2ef754a..f30bc3b 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34 @@ meteor
+-Finally, visit http://localhost:3000 in your browser.
++Finally, visit [localhost:3000](http://localhost:3000) in your browser.
+diff --git a/README.md b/README.md
+index 04bcd9a..2ef754a 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,47 @@ meteor-react
+-React rendering for Meteor apps
++This repository defines a Meteor package that automatically integrates the
++[React](http://facebook.github.io/react/) rendering framework on both the
++client and the server, to complement or replace the default Handlebars
++templating system. React components have access to a special `MeteorMixin`
++that enables reactive data fetching.
++
++The React core is officially agnostic about how you fetch and update your
++data, so it is far from obvious which approach is the best. This package
++provides one answer to that question (use Meteor!), and I hope you will
++find it a compelling combination.
++
++Quick start
++-----------
++
++If you have not yet installed Meteor, do that:
++```
++curl https://install.meteor.com | /bin/sh
++```
++
++Clone this repository:
++```
++git clone https://github.com/benjamn/meteor-react.git
++```
++
++Fire up one of the examples:
++```
++cd meteor-react/examples/leaderboard
++meteor
++```
++
++Finally, visit http://localhost:3000 in your browser.
++
++Adding the package to your app
++------------------------------
++
++Although the Meteor package API is deliberately undocumented and remains
++in flux before v1.0, here is how I currently recommend adding this package
++to your Meteor app:
++```
++cd path/to/my-app/
++echo react >> .meteor/packages
++mkdir -p packages
++git clone https://github.com/benjamn/meteor-react.git packages/react
++```
++
++If you want to share the package between multiple apps, you can clone it
++to a common location and make `packages/react` a symbolic link.

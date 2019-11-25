@@ -1,0 +1,2658 @@
+diff --git a/README.rst b/README.rst
+index 56287ab..ed89ca0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.3.0#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.3.1#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.3.0
++    pip install beaver==36.3.1
+diff --git a/README.rst b/README.rst
+index 60157ff..56287ab 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.2.1#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.3.0#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.2.1
++    pip install beaver==36.3.0
+diff --git a/README.rst b/README.rst
+index 1975d52..60157ff 100644
+--- a/README.rst
++++ b/README.rst
+@@ -54 +54 @@ Contributing
+-When contributing to Beaver, please review the full guidelines here: https://github.com/python-beaver/python-beaver/blob/master/CONTRIBUTING.rst.
++When contributing to Beaver, please review the full guidelines here: https://github.com/python-beaver/python-beaver/blob/master/CONTRIBUTING.md.
+diff --git a/README.rst b/README.rst
+index 240f49d..1975d52 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.2.0#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.2.1#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.2.0
++    pip install beaver==36.2.1
+diff --git a/README.rst b/README.rst
+index fd2ce43..240f49d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.1.0#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.2.0#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.1.0
++    pip install beaver==36.2.0
+diff --git a/README.rst b/README.rst
+index a01bfac..fd2ce43 100644
+--- a/README.rst
++++ b/README.rst
+@@ -35 +35 @@ Documentation
+-Full documentation is available online at http://beaver.readthedocs.org/
++Full documentation is available online at http://python-beaver.readthedocs.org/
+diff --git a/README.rst b/README.rst
+index e63de5c..a01bfac 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.0.1#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.1.0#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.0.1
++    pip install beaver==36.1.0
+diff --git a/README.rst b/README.rst
+index 18b6b54..e63de5c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/python-beaver/python-beaver.git@36.0.0#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.0.1#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==36.0.0
++    pip install beaver==36.0.1
+diff --git a/README.rst b/README.rst
+index 9b0219f..18b6b54 100644
+--- a/README.rst
++++ b/README.rst
+@@ -52 +52 @@ Contributing
+-=======
++============
+diff --git a/README.rst b/README.rst
+index 1c18d67..9b0219f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -5,2 +5,2 @@ Beaver
+-.. image:: https://travis-ci.org/josegonzalez/python-beaver.svg?branch=master
+-    :target: https://travis-ci.org/josegonzalez/python-beaver
++.. image:: https://travis-ci.org/python-beaver/python-beaver.svg?branch=master
++    :target: https://travis-ci.org/python-beaver/python-beaver
+@@ -8,2 +8,2 @@ Beaver
+-.. image:: https://coveralls.io/repos/josegonzalez/python-beaver/badge.svg?branch=master&service=github
+-    :target: https://coveralls.io/github/josegonzalez/python-beaver?branch=master
++.. image:: https://coveralls.io/repos/python-beaver/python-beaver/badge.svg?branch=master&service=github
++    :target: https://coveralls.io/github/python-beaver/python-beaver?branch=master
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@36.0.0#egg=beaver
++    pip install git+git://github.com/python-beaver/python-beaver.git@36.0.0#egg=beaver
+@@ -43 +43 @@ You can also build the docs locally::
+-    git clone git://github.com/josegonzalez/beaver.git
++    git clone git://github.com/python-beaver/beaver.git
+@@ -54 +54 @@ Contributing
+-When contributing to Beaver, please review the full guidelines here: https://github.com/josegonzalez/python-beaver/blob/master/CONTRIBUTING.rst.
++When contributing to Beaver, please review the full guidelines here: https://github.com/python-beaver/python-beaver/blob/master/CONTRIBUTING.rst.
+diff --git a/README.rst b/README.rst
+index ae0e83e..1c18d67 100644
+--- a/README.rst
++++ b/README.rst
+@@ -50,0 +51,6 @@ HTML docs will be available in `beaver/docs/_build/html`.
++Contributing
++=======
++
++When contributing to Beaver, please review the full guidelines here: https://github.com/josegonzalez/python-beaver/blob/master/CONTRIBUTING.rst.
++If you would like, you can open an issue to let others know about your work in progress. Documentation must be included and tests must pass on Python 2.6 and 2.7 for pull requests to be accepted.
++
+diff --git a/README.rst b/README.rst
+index c7eb455..ae0e83e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.2#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@36.0.0#egg=beaver
+@@ -30 +30 @@ From PyPI::
+-    pip install beaver==35.0.2
++    pip install beaver==36.0.0
+diff --git a/README.rst b/README.rst
+index 3f4146e..c7eb455 100644
+--- a/README.rst
++++ b/README.rst
+@@ -8,2 +8,2 @@ Beaver
+-.. image:: https://coveralls.io/repos/josegonzalez/python-beaver/badge.svg?branch=coverage_tests&service=github
+-    :target: https://coveralls.io/github/josegonzalez/python-beaver?branch=coverage_tests
++.. image:: https://coveralls.io/repos/josegonzalez/python-beaver/badge.svg?branch=master&service=github
++    :target: https://coveralls.io/github/josegonzalez/python-beaver?branch=master
+diff --git a/README.rst b/README.rst
+index d15192e..3f4146e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -7,0 +8,3 @@ Beaver
++.. image:: https://coveralls.io/repos/josegonzalez/python-beaver/badge.svg?branch=coverage_tests&service=github
++    :target: https://coveralls.io/github/josegonzalez/python-beaver?branch=coverage_tests
++
+diff --git a/README.rst b/README.rst
+index 5cad38c..d15192e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.1#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.2#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==35.0.1
++    pip install beaver==35.0.2
+diff --git a/README.rst b/README.rst
+index 771535d..5cad38c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.1#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==35.0.0
++    pip install beaver==35.0.1
+diff --git a/README.rst b/README.rst
+index 720acdc..771535d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@34.1.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@35.0.0#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==34.1.0
++    pip install beaver==35.0.0
+diff --git a/README.rst b/README.rst
+index 5bb547b..720acdc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@34.0.1#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@34.1.0#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==34.0.1
++    pip install beaver==34.1.0
+diff --git a/README.rst b/README.rst
+index c017f77..5bb547b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@34.0.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@34.0.1#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==34.0.0
++    pip install beaver==34.0.1
+diff --git a/README.rst b/README.rst
+index 79305a1..c017f77 100644
+--- a/README.rst
++++ b/README.rst
+@@ -34 +34 @@ Full documentation is available online at http://beaver.readthedocs.org/
+-You can also build the docs locally:
++You can also build the docs locally::
+diff --git a/README.rst b/README.rst
+index 891cab2..79305a1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -23 +23 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@33.3.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@34.0.0#egg=beaver
+@@ -27 +27 @@ From PyPI::
+-    pip install beaver==33.3.0
++    pip install beaver==34.0.0
+diff --git a/README.rst b/README.rst
+index 97681f4..891cab2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,2 +0,0 @@
+-.. image:: https://travis-ci.org/josegonzalez/python-beaver.svg?branch=master
+-    :target: https://travis-ci.org/josegonzalez/python-beaver
+@@ -6,0 +5,3 @@ Beaver
++.. image:: https://travis-ci.org/josegonzalez/python-beaver.svg?branch=master
++    :target: https://travis-ci.org/josegonzalez/python-beaver
++
+diff --git a/README.rst b/README.rst
+index 3216662..97681f4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22 +22 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@33.2.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@33.3.0#egg=beaver
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==33.2.0
++    pip install beaver==33.3.0
+diff --git a/README.rst b/README.rst
+index 1afec9e..3216662 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22 +22 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@33.1.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@33.2.0#egg=beaver
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==33.1.0
++    pip install beaver==33.2.0
+diff --git a/README.rst b/README.rst
+index 15367d9..1afec9e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22 +22 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/python-beaver.git@33.0.0#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@33.1.0#egg=beaver
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==33.0.0
++    pip install beaver==33.1.0
+diff --git a/README.rst b/README.rst
+index f9220bd..15367d9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,2 +1,2 @@
+-.. image:: https://travis-ci.org/josegonzalez/beaver.svg?branch=master
+-    :target: https://travis-ci.org/josegonzalez/beaver
++.. image:: https://travis-ci.org/josegonzalez/python-beaver.svg?branch=master
++    :target: https://travis-ci.org/josegonzalez/python-beaver
+diff --git a/README.rst b/README.rst
+index d6a05f0..f9220bd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -22 +22 @@ From Github::
+-    pip install git+git://github.com/josegonzalez/beaver.git#egg=beaver
++    pip install git+git://github.com/josegonzalez/python-beaver.git@33.0.0#egg=beaver
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==32
++    pip install beaver==33.0.0
+diff --git a/README.rst b/README.rst
+index 87040b4..d6a05f0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==31
++    pip install beaver==32
+diff --git a/README.rst b/README.rst
+index 9a7540f..87040b4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,2 +1,2 @@
+-.. image:: https://travis-ci.org/josegonzalez/beaver.png?branch=master   :target: https://travis-ci.org/josegonzalez/beaver
+-
++.. image:: https://travis-ci.org/josegonzalez/beaver.svg?branch=master
++    :target: https://travis-ci.org/josegonzalez/beaver
+diff --git a/README.rst b/README.rst
+index 3c46b02..9a7540f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1 +1 @@
+-.. image:: https://secure.travis-ci.org/josegonzalez/beaver.png
++.. image:: https://travis-ci.org/josegonzalez/beaver.png?branch=master   :target: https://travis-ci.org/josegonzalez/beaver
+diff --git a/README.rst b/README.rst
+index 1eff623..3c46b02 100644
+--- a/README.rst
++++ b/README.rst
+@@ -26 +26 @@ From PyPI::
+-    pip install beaver==30
++    pip install beaver==31
+diff --git a/README.rst b/README.rst
+index 05c29ff..1eff623 100644
+--- a/README.rst
++++ b/README.rst
+@@ -1,0 +2 @@
++
+diff --git a/README.rst b/README.rst
+index 3bbe696..05c29ff 100644
+--- a/README.rst
++++ b/README.rst
+@@ -27,2 +27,2 @@ From PyPI::
+-Usage
+-=====
++Documentation
++=============
+@@ -30 +30 @@ Usage
+-usage::
++Full documentation is available online at http://beaver.readthedocs.org/
+@@ -32,4 +32 @@ usage::
+-    beaver [-h] [-c CONFIG] [-C CONFD_PATH] [-d] [-D] [-f FILES [FILES ...]]
+-           [-F {json,msgpack,raw,rawjson,string}] [-H HOSTNAME] [-m {bind,connect}]
+-           [-l OUTPUT] [-p PATH] [-P PID]
+-           [-t {mqtt,rabbitmq,redis,sqs,stdout,tcp,udp,zmq}] [-v] [--fqdn]
++You can also build the docs locally:
+@@ -37 +34,2 @@ usage::
+-optional arguments::
++    # get sphinx installed
++    pip install sphinx
+@@ -39,23 +37,2 @@ optional arguments::
+-    -h, --help            show this help message and exit
+-    -c CONFIG, --configfile CONFIG
+-                          main beaver ini config file path
+-    -C CONFD_PATH         ini config directory path
+-    -d, --debug           enable debug mode
+-    -D, --daemonize       daemonize in the background
+-    -f FILES [FILES ...], --files FILES [FILES ...]
+-                          space-separated filelist to watch, can include globs
+-                          (*.log). Overrides --path argument
+-    -F {json,msgpack,raw,rawjson,string}, --format {json,msgpack,raw,rawjson,string}
+-                          format to use when sending to transport
+-    -H HOSTNAME, --hostname HOSTNAME
+-                          manual hostname override for source_host
+-    -m {bind,connect}, --mode {bind,connect}
+-                          bind or connect mode
+-    -l OUTPUT, --logfile OUTPUT, -o OUTPUT, --output OUTPUT
+-                          file to pipe output to (in addition to stdout)
+-    -p PATH, --path PATH  path to log files
+-    -P PID, --pid PID     path to pid file
+-    -t {mqtt,rabbitmq,redis,stdout,tcp,udp,zmq}, --transport {mqtt,rabbitmq,redis,sqs,stdout,tcp,udp,zmq}
+-                          log transport method
+-    -v, --version         output version and quit
+-    --fqdn                use the machine's FQDN for source_host
++    # retrieve the repository
++    git clone git://github.com/josegonzalez/beaver.git
+@@ -63,2 +40,3 @@ optional arguments::
+-Background
+-==========
++    # build the html output
++    cd beaver/docs
++    make html
+@@ -66,459 +44 @@ Background
+-Beaver provides an lightweight method for shipping local log files to Logstash. It does this using redis, zeromq, tcp, udp, rabbit or stdout as the transport. This means you'll need a redis, zeromq, tcp, udp, amqp or stdin input somewhere down the road to get the events.
+-
+-Events are sent in logstash's ``json_event`` format. Options can also be set as environment variables.
+-
+-Configuration File Options
+---------------------------
+-
+-Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This file is in ``ini`` format. Global configuration will be under the ``beaver`` stanza. The following are global beaver configuration keys with their respective meanings:
+-
+-* mqtt_host: Default ``localhost``. Host for mosquitto
+-* mqtt_port: Default ``1883``. Port for mosquitto
+-* mqtt_clientid: Default ``mosquitto``. Mosquitto client id
+-* mqtt_keepalive: Default ``60``. mqtt keepalive ping
+-* mqtt_topic: Default ``/logstash``. Topic to publish to
+-* rabbitmq_host: Defaults ``localhost``. Host for RabbitMQ
+-* rabbitmq_port: Defaults ``5672``. Port for RabbitMQ
+-* rabbitmq_vhost: Default ``/``
+-* rabbitmq_username: Default ``guest``
+-* rabbitmq_password: Default ``guest``
+-* rabbitmq_queue: Default ``logstash-queue``.
+-* rabbitmq_exchange_type: Default ``direct``.
+-* rabbitmq_exchange_durable: Default ``0``.
+-* rabbitmq_key: Default ``logstash-key``.
+-* rabbitmq_exchange: Default ``logstash-exchange``.
+-* redis_url: Default ``redis://localhost:6379/0``. Redis URL
+-* redis_namespace: Default ``logstash:beaver``. Redis key namespace
+-* sqs_aws_access_key: Can be left blank to use IAM Roles or AWS_ACCESS_KEY_ID environment variable (see: https://github.com/boto/boto#getting-started-with-boto)
+-* sqs_aws_secret_key: Can be left blank to use IAM Roles or AWS_SECRET_ACCESS_KEY environment variable (see: https://github.com/boto/boto#getting-started-with-boto)
+-* sqs_aws_region: Default ``us-east-1``. AWS Region
+-* sqs_aws_queue: SQS queue (must exist)
+-* tcp_host: Default ``127.0.0.1``. TCP Host
+-* tcp_port: Default ``9999``. TCP Port
+-* udp_host: Default ``127.0.0.1``. UDP Host
+-* udp_port: Default ``9999``. UDP Port
+-* zeromq_address: Default ``tcp://localhost:2120``. Zeromq URL
+-* zeromq_hwm: Default None. Zeromq HighWaterMark socket option
+-* zeromq_bind: Default ``bind``. Whether to bind to zeromq host or simply connect
+-
+-The following are used for instances when a TransportException is thrown - Transport dependent
+-
+-* respawn_delay: Default ``3``. Initial respawn delay for exponential backoff
+-* max_failure: Default ``7``. Max failures before exponential backoff terminates
+-
+-The following configuration keys are for SinceDB support. Specifying these will enable saving the current line number in an sqlite database. This is useful for cases where you may be restarting the beaver process, such as during a logrotate.
+-
+-* sincedb_path: Default ``None``. Full path to an ``sqlite3`` database. Will be created at this path if it does not exist. Beaver process must have read and write access
+-
+-The following configuration keys are for building an SSH Tunnel that can be used to proxy from the current host to a desired server. This proxy is torn down when Beaver halts in all cases.
+-
+-* ssh_key_file: Default ``None``. Full path to ``id_rsa`` key file
+-* ssh_tunnel: Default ``None``. SSH Tunnel in the format ``user@host:port``
+-* ssh_tunnel_port: Default ``None``. Local port for SSH Tunnel
+-* ssh_remote_host: Default ``None``. Remote host to connect to within SSH Tunnel
+-* ssh_remote_port: Default ``None``. Remote port to connect to within SSH Tunnel
+-* ssh_options: Default ``None``. Comma separated list of SSH options to Pass through to the SSH Tunnel. See ``ssh_config(5)`` for more options
+-
+-The following configuration keys are for multi-line events support and are per file.
+-
+-* multiline_regex_after: Default ``None``. If a line match this regular expression, it will be merged with next line(s).
+-* multiline_regex_before: Default ``None``. If a line match this regular expression, it will be merged with previous line(s).
+-
+-The following can also be passed via argparse. Argparse will override all options in the configfile, when specified.
+-
+-* format: Default ``json``. Options ``[ json, msgpack, string ]``. Format to use when sending to transport
+-* files: Default ``files``. Space-separated list of files to tail. (Comma separated if specified in the config file)
+-* path: Default ``/var/log``. Path glob to tail.
+-* transport: Default ``stdout``. Transport to use when log changes are detected
+-* fqdn: Default ``False``. Whether to use the machine's FQDN in transport output
+-* hostname: Default ``None``. Manually specified hostname
+-
+-The following configuration key allows cleaning up the worker and transport sub-processes on an interval respawning
+-
+-* refresh_worker_process: Default ``None``. Interval between sub-process cleanup
+-
+-Examples
+---------
+-
+-As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production:
+-
+-
+-Default Usage
+-*************
+-
+-Listen to all files in the default path of /var/log on standard out as json::
+-
+-    beaver
+-
+-Alternative output formats
+-**************************
+-
+-Listen to all files in the default path of /var/log on standard out with json::
+-
+-    # adds data to a json object before shipping
+-    beaver --format json
+-
+-Listen to all files in the default path of /var/log on standard out with msgpack::
+-
+-    beaver --format msgpack
+-
+-Listen to all files in the default path of /var/log on standard out as a raw::
+-
+-    # ships with no formatting
+-    beaver --format raw
+-
+-Listen to all files in the default path of /var/log on standard out as a raw::
+-
+-    # ships with no formatting
+-    beaver --format raw
+-
+-Listen to all files in the default path of /var/log on standard out as a [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/)::
+-
+-    # also adds any extra data specified in config
+-    beaver --format raw
+-
+-Listen to all files in the default path of /var/log on standard out as a string::
+-
+-    # Useful for stdout debugging
+-    # Output format is:
+-    #
+-    #   '[{host}] [{timestamp}] {message}'
+-    beaver --format string
+-
+-Configuration files
+-*******************
+-
+-Read config from config.ini and put to stdout::
+-
+-    # /etc/beaver/conf:
+-    ; follow a single file, add a type, some tags and fields
+-    [/tmp/somefile]
+-    type: mytype
+-    tags: tag1,tag2
+-    add_field: fieldname1,fieldvalue1[,fieldname2,fieldvalue2, ...]
+-
+-    ; follow all logs in /var/log except those with `messages` or `secure` in the name.
+-    ; The exclude tag must be a valid python regular expression.
+-    [/var/log/*log]
+-    type: syslog
+-    tags: sys
+-    exclude: (messages|secure)
+-
+-    ; follow /var/log/messages.log and /var/log/secure.log using file globbing
+-    [/var/log/{messages,secure}.log]
+-    type: syslog
+-    tags: sys
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t stdout
+-
+-
+-Loading stanzas from /etc/beaver/conf.d/* support::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    format: json
+-
+-    # /etc/beaver/conf.d/syslog
+-    [/var/log/syslog]
+-    type: syslog
+-    tags: sys,main
+-
+-    # /etc/beaver/conf.d/nginx
+-    [/var/log/nginx]
+-    format: rawjson
+-    type: nginx
+-    tags: nginx,server
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
+-
+-Shipping to a broker
+-********************
+-
+-Sending logs from /var/log files to a redis list::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    redis_url: redis://localhost:6379/0
+-
+-    # From the commandline
+-    beaver  -c /etc/beaver/conf -t redis
+-
+-Zeromq listening on port 5556 (all interfaces)::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    zeromq_address: tcp://*:5556
+-
+-    # logstash indexer config:
+-    input {
+-      zeromq {
+-        type => 'shipper-input'
+-        mode => 'client'
+-        topology => 'pushpull'
+-        address => 'tcp://shipperhost:5556'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver  -c /etc/beaver/conf -m bind -t zmq
+-
+-
+-Zeromq connecting to remote port 5556 on indexer::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    zeromq_address: tcp://indexer:5556
+-
+-    # logstash indexer config:
+-    input {
+-      zeromq {
+-        type => 'shipper-input'
+-        mode => 'server'
+-        topology => 'pushpull'
+-        address => 'tcp://*:5556'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # on the commandline
+-    beaver -c /etc/beaver/conf -m connect -t zmq
+-
+-Real-world usage of Redis as a transport::
+-
+-    # in /etc/hosts
+-    192.168.0.10 redis-internal
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    redis_url: redis://redis-internal:6379/0
+-    redis_namespace: app:unmappable
+-
+-    # logstash indexer config:
+-    input {
+-      redis {
+-        host => 'redis-internal'
+-        data_type => 'list'
+-        key => 'app:unmappable'
+-        type => 'app:unmappable'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -f /var/log/unmappable.log -t redis
+-
+-RabbitMQ connecting to defaults on remote broker::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    rabbitmq_host: 10.0.0.1
+-
+-    # logstash indexer config:
+-    input { amqp {
+-        name => 'logstash-queue'
+-        type => 'direct'
+-        host => '10.0.0.1'
+-        exchange => 'logstash-exchange'
+-        key => 'logstash-key'
+-        exclusive => false
+-        durable => false
+-        auto_delete => false
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t rabbitmq
+-
+-TCP transport::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    tcp_host: 127.0.0.1
+-    tcp_port: 9999
+-    format: raw
+-
+-    # logstash indexer config:
+-    input {
+-      tcp {
+-        host => '127.0.0.1'
+-        port => '9999'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t tcp
+-
+-UDP transport::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    udp_host: 127.0.0.1
+-    udp_port: 9999
+-
+-    # logstash indexer config:
+-    input {
+-      udp {
+-        type => 'shipper-input'
+-        host => '127.0.0.1'
+-        port => '9999'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t udp
+-
+-SQS Transport::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    sqs_aws_region: us-east-1
+-    sqs_aws_queue: logstash-input
+-    sqs_aws_access_key: <access_key>
+-    sqs_aws_secret_key: <secret_key>
+-
+-    # logstash indexer config:
+-    input {
+-      sqs {
+-        queue => "logstash-input"
+-        type => "shipper-input"
+-        format => "json_event"
+-        access_key => "<access_key>"
+-        secret_key => "<secret_key>"
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t sqs
+-
+-Mqtt transport using Mosquitto::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    mqtt_client_id: 'beaver_client'
+-    mqtt_topic: '/logstash'
+-    mqtt_host: '127.0.0.1'
+-    mqtt_port: '1318'
+-    mqtt_keepalive: '60'
+-
+-    # logstash indexer config:
+-    input {
+-      mqtt {
+-        host => '127.0.0.1'
+-        data_type => 'list'
+-        key => 'app:unmappable'
+-        type => 'app:unmappable'
+-      }
+-    }
+-    output { stdout { debug => true } }
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -f /var/log/unmappable.log -t mqtt
+-
+-Sincedb support using Sqlite3
+-*****************************
+-
+-Note that this will require R/W permissions on the file at sincedb path, as Beaver will store the current line for a given filename/file id.::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    sincedb_path: /etc/beaver/since.db
+-
+-    [/var/log/syslog]
+-    type: syslog
+-    tags: sys,main
+-    sincedb_write_interval: 3 ; time in seconds
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf
+-
+-Multi-line Parsing
+-*******************
+-
+-Simple multi-line event: if line is indented it is the continuation of an event::
+-
+-    # /etc/beaver/conf
+-    [/tmp/somefile]
+-    multiline_regex_before = ^\s+
+-
+-
+-Multi-line event for Python traceback::
+-
+-    # /etc/beaver/conf
+-    [/tmp/python.log]
+-    multiline_regex_after = (^\s+File.*, line \d+, in)
+-    multiline_regex_before = (^Traceback \(most recent call last\):)|(^\s+File.*, line \d+, in)|(^\w+Error: )
+-
+-    # /tmp/python.log
+-    DEBUG:root:Calling faulty_function
+-    WARNING:root:An error occured
+-    Traceback (most recent call last):
+-      File "doerr.py", line 12, in <module>
+-        faulty_function()
+-      File "doerr.py", line 7, in faulty_function
+-        0 / 0
+-    ZeroDivisionError: integer division or modulo by zero
+-
+-SSH Tunneling Support
+-*********************
+-
+-Use SSH options for redis transport through SSH Tunnel::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    transport: redis
+-    redis_url: redis://localhost:6379/0
+-    redis_namespace: logstash:beaver
+-    ssh_options: StrictHostKeyChecking=no, Compression=yes, CompressionLevel=9
+-    ssh_key_file: /etc/beaver/remote_key
+-    ssh_tunnel: remote-logger@logs.example.net
+-    ssh_tunnel_port: 6379
+-    ssh_remote_host: 127.0.0.1
+-    ssh_remote_port: 6379
+-
+-Caveats
+-=======
+-
+-File tailing and shipping has a number of important issues that you should be aware of. These issues may affect just Beaver, or may affect other tools as well.
+-
+-Copytruncate
+-------------
+-
+-When using ``copytruncate`` style log rotation, two race conditions can occur:
+-
+-1. Any log data written prior to truncation which Beaver has not yet
+-   read and processed is lost. Nothing we can do about that.
+-
+-2. Should the file be truncated, rewritten, and end up being larger than
+-   the original file during the sleep interval, Beaver won't detect
+-   this. After some experimentation, this behavior also exists in GNU
+-   tail, so I'm going to call this a "don't do that then" bug :)
+-
+-   Additionally, the files Beaver will most likely be called upon to
+-   watch which may be truncated are generally going to be large enough
+-   and slow-filling enough that this won't crop up in the wild.
+-
+-FreeBSD
+--------
+-
+-When you get an error similar to ``ImportError: No module named
+-_sqlite3`` your python seems to miss the sqlite3-module. This can be the
+-case on FreeBSD and probably other systems. If so, use the local package
+-manager or port system to build that module. On FreeBSD::
+-
+-    cd /usr/ports/databases/py-sqlite3
+-    sudo make install clean
+-
+-Binary Log Data
+----------------
+-
+-Binary data in your logs will be converted to escape sequences or ?'s depending on the encoding settings to prevent decoding exceptions from crashing Beaver.
+-
+-   | http://docs.python.org/2/library/codecs.html#codecs.replace_errors
+-   | malformed data is replaced with a suitable replacement character such as '?' in bytestrings and '\ufffd' in Unicode  strings.
++HTML docs will be available in `beaver/docs/_build/html`.
+diff --git a/README.rst b/README.rst
+index 6c3ec2b..3bbe696 100644
+--- a/README.rst
++++ b/README.rst
+@@ -70,2 +69,0 @@ Events are sent in logstash's ``json_event`` format. Options can also be set as
+-NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this, or you may configure beaver to do otherwise.
+-
+@@ -144,0 +143,2 @@ Examples
++As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production:
++
+@@ -146 +146,4 @@ Examples
+-Example 1: Listen to all files in the default path of /var/log on standard out as json::
++Default Usage
++*************
++
++Listen to all files in the default path of /var/log on standard out as json::
+@@ -150 +153,9 @@ Example 1: Listen to all files in the default path of /var/log on standard out a
+-Example 2: Listen to all files in the default path of /var/log on standard out with msgpack::
++Alternative output formats
++**************************
++
++Listen to all files in the default path of /var/log on standard out with json::
++
++    # adds data to a json object before shipping
++    beaver --format json
++
++Listen to all files in the default path of /var/log on standard out with msgpack::
+@@ -154 +165,4 @@ Example 2: Listen to all files in the default path of /var/log on standard out w
+-Example 3: Listen to all files in the default path of /var/log on standard out as a string::
++Listen to all files in the default path of /var/log on standard out as a raw::
++
++    # ships with no formatting
++    beaver --format raw
+@@ -155,0 +170,16 @@ Example 3: Listen to all files in the default path of /var/log on standard out a
++Listen to all files in the default path of /var/log on standard out as a raw::
++
++    # ships with no formatting
++    beaver --format raw
++
++Listen to all files in the default path of /var/log on standard out as a [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/)::
++
++    # also adds any extra data specified in config
++    beaver --format raw
++
++Listen to all files in the default path of /var/log on standard out as a string::
++
++    # Useful for stdout debugging
++    # Output format is:
++    #
++    #   '[{host}] [{timestamp}] {message}'
+@@ -158 +188,52 @@ Example 3: Listen to all files in the default path of /var/log on standard out a
+-Example 4: Sending logs from /var/log files to a redis list::
++Configuration files
++*******************
++
++Read config from config.ini and put to stdout::
++
++    # /etc/beaver/conf:
++    ; follow a single file, add a type, some tags and fields
++    [/tmp/somefile]
++    type: mytype
++    tags: tag1,tag2
++    add_field: fieldname1,fieldvalue1[,fieldname2,fieldvalue2, ...]
++
++    ; follow all logs in /var/log except those with `messages` or `secure` in the name.
++    ; The exclude tag must be a valid python regular expression.
++    [/var/log/*log]
++    type: syslog
++    tags: sys
++    exclude: (messages|secure)
++
++    ; follow /var/log/messages.log and /var/log/secure.log using file globbing
++    [/var/log/{messages,secure}.log]
++    type: syslog
++    tags: sys
++
++    # From the commandline
++    beaver -c /etc/beaver/conf -t stdout
++
++
++Loading stanzas from /etc/beaver/conf.d/* support::
++
++    # /etc/beaver/conf
++    [beaver]
++    format: json
++
++    # /etc/beaver/conf.d/syslog
++    [/var/log/syslog]
++    type: syslog
++    tags: sys,main
++
++    # /etc/beaver/conf.d/nginx
++    [/var/log/nginx]
++    format: rawjson
++    type: nginx
++    tags: nginx,server
++
++    # From the commandline
++    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
++
++Shipping to a broker
++********************
++
++Sending logs from /var/log files to a redis list::
+@@ -167 +248 @@ Example 4: Sending logs from /var/log files to a redis list::
+-Example 5: Zeromq listening on port 5556 (all interfaces)::
++Zeromq listening on port 5556 (all interfaces)::
+@@ -188 +269 @@ Example 5: Zeromq listening on port 5556 (all interfaces)::
+-Example 6: Zeromq connecting to remote port 5556 on indexer::
++Zeromq connecting to remote port 5556 on indexer::
+@@ -208 +289 @@ Example 6: Zeromq connecting to remote port 5556 on indexer::
+-Example 7: Real-world usage of Redis as a transport::
++Real-world usage of Redis as a transport::
+@@ -232 +313 @@ Example 7: Real-world usage of Redis as a transport::
+-Example 8: RabbitMQ connecting to defaults on remote broker::
++RabbitMQ connecting to defaults on remote broker::
+@@ -255,25 +336 @@ Example 8: RabbitMQ connecting to defaults on remote broker::
+-Example 9: Read config from config.ini and put to stdout::
+-
+-    # /etc/beaver/conf:
+-    ; follow a single file, add a type, some tags and fields
+-    [/tmp/somefile]
+-    type: mytype
+-    tags: tag1,tag2
+-    add_field: fieldname1,fieldvalue1[,fieldname2,fieldvalue2, ...]
+-
+-    ; follow all logs in /var/log except those with `messages` or `secure` in the name.
+-    ; The exclude tag must be a valid python regular expression.
+-    [/var/log/*log]
+-    type: syslog
+-    tags: sys
+-    exclude: (messages|secure)
+-
+-    ; follow /var/log/messages.log and /var/log/secure.log using file globbing
+-    [/var/log/{messages,secure}.log]
+-    type: syslog
+-    tags: sys
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -t stdout
+-
+-Example 10: TCP transport::
++TCP transport::
+@@ -299 +356 @@ Example 10: TCP transport::
+-Example 11: UDP transport::
++UDP transport::
+@@ -319 +376 @@ Example 11: UDP transport::
+-Example 12: SQS Transport::
++SQS Transport::
+@@ -343,5 +400 @@ Example 12: SQS Transport::
+-Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
+-
+-    beaver --format rawjson
+-
+-Example 14: Mqtt transport using Mosquitto::
++Mqtt transport using Mosquitto::
+@@ -371 +424,2 @@ Example 14: Mqtt transport using Mosquitto::
+-Example 15: Sincedb support using and sqlite3 db
++Sincedb support using Sqlite3
++*****************************
+@@ -387,19 +441,2 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
+-Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
+-
+-    # /etc/beaver/conf
+-    [beaver]
+-    format: json
+-
+-    # /etc/beaver/conf.d/syslog
+-    [/var/log/syslog]
+-    type: syslog
+-    tags: sys,main
+-
+-    # /etc/beaver/conf.d/nginx
+-    [/var/log/nginx]
+-    format: rawjson
+-    type: nginx
+-    tags: nginx,server
+-
+-    # From the commandline
+-    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
++Multi-line Parsing
++*******************
+@@ -407 +444 @@ Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
+-Example 17: Simple multi-line event: if line is indented it is the continuation of an event::
++Simple multi-line event: if line is indented it is the continuation of an event::
+@@ -414 +451 @@ Example 17: Simple multi-line event: if line is indented it is the continuation
+-Example 18: Multi-line event for Python traceback::
++Multi-line event for Python traceback::
+@@ -431 +468,4 @@ Example 18: Multi-line event for Python traceback::
+-Example 16: Use SSH options for redis transport through SSH Tunnel::
++SSH Tunneling Support
++*********************
++
++Use SSH options for redis transport through SSH Tunnel::
+@@ -445,11 +484,0 @@ Example 16: Use SSH options for redis transport through SSH Tunnel::
+-As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
+-
+-Todo
+-====
+-
+-* More documentation
+-* <del>Use python threading + subprocess in order to support usage of ``yield`` across all operating systems</del>
+-* <del>Fix usage on non-linux platforms - file.readline() does not work as expected on OS X. See above for potential solution</del>
+-* More transports
+-* <del>Ability to specify files, tags, and other metadata within a configuration file</del>
+-
+@@ -458,0 +488,5 @@ Caveats
++File tailing and shipping has a number of important issues that you should be aware of. These issues may affect just Beaver, or may affect other tools as well.
++
++Copytruncate
++------------
++
+@@ -461 +495 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
+-1. Any log data written prior to truncation which beaver has not yet
++1. Any log data written prior to truncation which Beaver has not yet
+@@ -465 +499 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
+-   the original file during the sleep interval, beaver won't detect
++   the original file during the sleep interval, Beaver won't detect
+@@ -469 +503 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
+-   Additionally, the files beaver will most likely be called upon to
++   Additionally, the files Beaver will most likely be called upon to
+@@ -473 +507,2 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
+-----
++FreeBSD
++-------
+@@ -483 +518,2 @@ manager or port system to build that module. On FreeBSD::
+-----
++Binary Log Data
++---------------
+@@ -485 +521 @@ manager or port system to build that module. On FreeBSD::
+-Binary data in your logs will be converted to escape sequences or ?'s depending on the encoding settings to prevent decoding exceptions from crashing beaver.
++Binary data in your logs will be converted to escape sequences or ?'s depending on the encoding settings to prevent decoding exceptions from crashing Beaver.
+diff --git a/README.rst b/README.rst
+index 6a17852..6c3ec2b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -137,0 +138,4 @@ The following can also be passed via argparse. Argparse will override all option
++The following configuration key allows cleaning up the worker and transport sub-processes on an interval respawning
++
++* refresh_worker_process: Default ``None``. Interval between sub-process cleanup
++
+diff --git a/README.rst b/README.rst
+index 035c71f..6a17852 100644
+--- a/README.rst
++++ b/README.rst
+@@ -468,0 +469,2 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
++----
++
+@@ -476,0 +479,7 @@ manager or port system to build that module. On FreeBSD::
++----
++
++Binary data in your logs will be converted to escape sequences or ?'s depending on the encoding settings to prevent decoding exceptions from crashing beaver.
++
++   | http://docs.python.org/2/library/codecs.html#codecs.replace_errors
++   | malformed data is replaced with a suitable replacement character such as '?' in bytestrings and '\ufffd' in Unicode  strings.
++
+diff --git a/README.rst b/README.rst
+index c11d5f2..035c71f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -121,0 +122 @@ The following configuration keys are for building an SSH Tunnel that can be used
++* ssh_options: Default ``None``. Comma separated list of SSH options to Pass through to the SSH Tunnel. See ``ssh_config(5)`` for more options
+@@ -425,0 +427,13 @@ Example 18: Multi-line event for Python traceback::
++Example 16: Use SSH options for redis transport through SSH Tunnel::
++
++    # /etc/beaver/conf
++    [beaver]
++    transport: redis
++    redis_url: redis://localhost:6379/0
++    redis_namespace: logstash:beaver
++    ssh_options: StrictHostKeyChecking=no, Compression=yes, CompressionLevel=9
++    ssh_key_file: /etc/beaver/remote_key
++    ssh_tunnel: remote-logger@logs.example.net
++    ssh_tunnel_port: 6379
++    ssh_remote_host: 127.0.0.1
++    ssh_remote_port: 6379
+diff --git a/README.rst b/README.rst
+index fd435a2..c11d5f2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -122,0 +123,5 @@ The following configuration keys are for building an SSH Tunnel that can be used
++The following configuration keys are for multi-line events support and are per file.
++
++* multiline_regex_after: Default ``None``. If a line match this regular expression, it will be merged with next line(s).
++* multiline_regex_before: Default ``None``. If a line match this regular expression, it will be merged with previous line(s).
++
+@@ -396,0 +402,24 @@ Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
++Example 17: Simple multi-line event: if line is indented it is the continuation of an event::
++
++    # /etc/beaver/conf
++    [/tmp/somefile]
++    multiline_regex_before = ^\s+
++
++
++Example 18: Multi-line event for Python traceback::
++
++    # /etc/beaver/conf
++    [/tmp/python.log]
++    multiline_regex_after = (^\s+File.*, line \d+, in)
++    multiline_regex_before = (^Traceback \(most recent call last\):)|(^\s+File.*, line \d+, in)|(^\w+Error: )
++
++    # /tmp/python.log
++    DEBUG:root:Calling faulty_function
++    WARNING:root:An error occured
++    Traceback (most recent call last):
++      File "doerr.py", line 12, in <module>
++        faulty_function()
++      File "doerr.py", line 7, in faulty_function
++        0 / 0
++    ZeroDivisionError: integer division or modulo by zero
++
+diff --git a/README.rst b/README.rst
+index 30c4940..fd435a2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -274,0 +275 @@ Example 10: TCP transport::
++    format: raw
+@@ -279 +279,0 @@ Example 10: TCP transport::
+-        type => 'shipper-input'
+diff --git a/README.rst b/README.rst
+index b818678..30c4940 100644
+--- a/README.rst
++++ b/README.rst
+@@ -25 +25 @@ From PyPI::
+-    pip install beaver==29
++    pip install beaver==30
+diff --git a/README.rst b/README.rst
+index 5298fd6..b818678 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32 +32 @@ usage::
+-    beaver [-h] [-c CONFIG] [-d] [-D] [-f FILES [FILES ...]]
++    beaver [-h] [-c CONFIG] [-C CONFD_PATH] [-d] [-D] [-f FILES [FILES ...]]
+@@ -41 +41,2 @@ optional arguments::
+-                          ini config file path
++                          main beaver ini config file path
++    -C CONFD_PATH         ini config directory path
+@@ -394 +395 @@ Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
+-    beaver -c /etc/beaver/conf
++    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
+diff --git a/README.rst b/README.rst
+index 8fe0af4..5298fd6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -315 +315 @@ Example 12: SQS Transport::
+-    sqs_aws_secret_access_key: <secret_key>
++    sqs_aws_secret_key: <secret_key>
+diff --git a/README.rst b/README.rst
+index 681ca01..8fe0af4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -35 +35 @@ usage::
+-           [-t {mqtt,rabbitmq,redis,sqs,stdout,udp,zmq}] [-v] [--fqdn]
++           [-t {mqtt,rabbitmq,redis,sqs,stdout,tcp,udp,zmq}] [-v] [--fqdn]
+@@ -57 +57 @@ optional arguments::
+-    -t {mqtt,rabbitmq,redis,stdout,udp,zmq}, --transport {mqtt,rabbitmq,redis,sqs,stdout,udp,zmq}
++    -t {mqtt,rabbitmq,redis,stdout,tcp,udp,zmq}, --transport {mqtt,rabbitmq,redis,sqs,stdout,tcp,udp,zmq}
+@@ -65 +65 @@ Background
+-Beaver provides an lightweight method for shipping local log files to Logstash. It does this using redis, zeromq, udp, rabbit or stdout as the transport. This means you'll need a redis, zeromq, udp, amqp or stdin input somewhere down the road to get the events.
++Beaver provides an lightweight method for shipping local log files to Logstash. It does this using redis, zeromq, tcp, udp, rabbit or stdout as the transport. This means you'll need a redis, zeromq, tcp, udp, amqp or stdin input somewhere down the road to get the events.
+@@ -96,0 +97,2 @@ Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This
++* tcp_host: Default ``127.0.0.1``. TCP Host
++* tcp_port: Default ``9999``. TCP Port
+@@ -266 +268,21 @@ Example 9: Read config from config.ini and put to stdout::
+-Example 10: UDP transport::
++Example 10: TCP transport::
++
++    # /etc/beaver/conf
++    [beaver]
++    tcp_host: 127.0.0.1
++    tcp_port: 9999
++
++    # logstash indexer config:
++    input {
++      tcp {
++        type => 'shipper-input'
++        host => '127.0.0.1'
++        port => '9999'
++      }
++    }
++    output { stdout { debug => true } }
++
++    # From the commandline
++    beaver -c /etc/beaver/conf -t tcp
++
++Example 11: UDP transport::
+@@ -286 +308 @@ Example 10: UDP transport::
+-Example 11: SQS Transport::
++Example 12: SQS Transport::
+@@ -310 +332 @@ Example 11: SQS Transport::
+-Example 12: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
++Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
+@@ -314 +336 @@ Example 12: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-log
+-Example 13: Mqtt transport using Mosquitto::
++Example 14: Mqtt transport using Mosquitto::
+@@ -338 +360 @@ Example 13: Mqtt transport using Mosquitto::
+-Example 14: Sincedb support using and sqlite3 db
++Example 15: Sincedb support using and sqlite3 db
+@@ -354 +376 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
+-Example 15: Loading stanzas from /etc/beaver/conf.d/* support::
++Example 16: Loading stanzas from /etc/beaver/conf.d/* support::
+diff --git a/README.rst b/README.rst
+index 42847b9..681ca01 100644
+--- a/README.rst
++++ b/README.rst
+@@ -251 +251,2 @@ Example 9: Read config from config.ini and put to stdout::
+-    ; follow all logs in /var/log except those with `messages` or `secure` in the name
++    ; follow all logs in /var/log except those with `messages` or `secure` in the name.
++    ; The exclude tag must be a valid python regular expression.
+@@ -255 +256 @@ Example 9: Read config from config.ini and put to stdout::
+-    exclude: (messages,secure)
++    exclude: (messages|secure)
+diff --git a/README.rst b/README.rst
+index 70e6d28..42847b9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -401,0 +402,7 @@ When using ``copytruncate`` style log rotation, two race conditions can occur:
++When you get an error similar to ``ImportError: No module named
++_sqlite3`` your python seems to miss the sqlite3-module. This can be the
++case on FreeBSD and probably other systems. If so, use the local package
++manager or port system to build that module. On FreeBSD::
++
++    cd /usr/ports/databases/py-sqlite3
++    sudo make install clean
+diff --git a/README.rst b/README.rst
+index 29991b1..70e6d28 100644
+--- a/README.rst
++++ b/README.rst
+@@ -0,0 +1 @@
++.. image:: https://secure.travis-ci.org/josegonzalez/beaver.png
+@@ -31 +32 @@ usage::
+-    beaver [-h] [-c CONFIG] [-C CONFD_PATH] [-d] [-D] [-f FILES [FILES ...]]
++    beaver [-h] [-c CONFIG] [-d] [-D] [-f FILES [FILES ...]]
+@@ -40,2 +41 @@ optional arguments::
+-                          main beaver ini config file path
+-    -C CONFD_PATH         ini config directory path
++                          ini config file path
+@@ -371 +371 @@ Example 15: Loading stanzas from /etc/beaver/conf.d/* support::
+-    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
++    beaver -c /etc/beaver/conf
+diff --git a/README.rst b/README.rst
+index c1a538f..29991b1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31 +31 @@ usage::
+-    beaver [-h] [-c CONFIG] [-C CONFIG_DIR] [-d] [-D] [-f FILES [FILES ...]]
++    beaver [-h] [-c CONFIG] [-C CONFD_PATH] [-d] [-D] [-f FILES [FILES ...]]
+@@ -41 +41 @@ optional arguments::
+-    -C CONFIG_DIR         ini config directory path
++    -C CONFD_PATH         ini config directory path
+diff --git a/README.rst b/README.rst
+index 85e96fe..c1a538f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31 +31 @@ usage::
+-    beaver [-h] [-c CONFIG] [-d] [-D] [-f FILES [FILES ...]]
++    beaver [-h] [-c CONFIG] [-C CONFIG_DIR] [-d] [-D] [-f FILES [FILES ...]]
+@@ -40 +40,2 @@ optional arguments::
+-                          ini config file path
++                          main beaver ini config file path
++    -C CONFIG_DIR         ini config directory path
+@@ -370 +371 @@ Example 15: Loading stanzas from /etc/beaver/conf.d/* support::
+-    beaver -c /etc/beaver/conf
++    beaver -c /etc/beaver/conf -C /etc/beaver/conf.d
+diff --git a/README.rst b/README.rst
+index c810855..85e96fe 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==28
++    pip install beaver==29
+diff --git a/README.rst b/README.rst
+index 23dbc04..c810855 100644
+--- a/README.rst
++++ b/README.rst
+@@ -146 +146 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -151 +151 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    beaver  -c /etc/beaver.conf -t redis
++    beaver  -c /etc/beaver/conf -t redis
+@@ -155 +155 @@ Example 5: Zeromq listening on port 5556 (all interfaces)::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -171 +171 @@ Example 5: Zeromq listening on port 5556 (all interfaces)::
+-    beaver  -c /etc/beaver.conf -m bind -t zmq
++    beaver  -c /etc/beaver/conf -m bind -t zmq
+@@ -176 +176 @@ Example 6: Zeromq connecting to remote port 5556 on indexer::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -192 +192 @@ Example 6: Zeromq connecting to remote port 5556 on indexer::
+-    beaver -c /etc/beaver.conf -m connect -t zmq
++    beaver -c /etc/beaver/conf -m connect -t zmq
+@@ -199 +199 @@ Example 7: Real-world usage of Redis as a transport::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -216 +216 @@ Example 7: Real-world usage of Redis as a transport::
+-    beaver -c /etc/beaver.conf -f /var/log/unmappable.log -t redis
++    beaver -c /etc/beaver/conf -f /var/log/unmappable.log -t redis
+@@ -220 +220 @@ Example 8: RabbitMQ connecting to defaults on remote broker::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -239 +239 @@ Example 8: RabbitMQ connecting to defaults on remote broker::
+-    beaver -c /etc/beaver.conf -t rabbitmq
++    beaver -c /etc/beaver/conf -t rabbitmq
+@@ -243 +243 @@ Example 9: Read config from config.ini and put to stdout::
+-    # /etc/beaver.conf:
++    # /etc/beaver/conf:
+@@ -262 +262 @@ Example 9: Read config from config.ini and put to stdout::
+-    beaver -c /etc/beaver.conf -t stdout
++    beaver -c /etc/beaver/conf -t stdout
+@@ -266 +266 @@ Example 10: UDP transport::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -282 +282 @@ Example 10: UDP transport::
+-    beaver -c /etc/beaver.conf -t udp
++    beaver -c /etc/beaver/conf -t udp
+@@ -286 +286 @@ Example 11: SQS Transport::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -306 +306 @@ Example 11: SQS Transport::
+-    beaver -c /etc/beaver.conf -t sqs
++    beaver -c /etc/beaver/conf -t sqs
+@@ -314 +314 @@ Example 13: Mqtt transport using Mosquitto::
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -334 +334 @@ Example 13: Mqtt transport using Mosquitto::
+-    beaver -c /etc/beaver.conf -f /var/log/unmappable.log -t redis
++    beaver -c /etc/beaver/conf -f /var/log/unmappable.log -t mqtt
+@@ -340 +340 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
+-    # /etc/beaver.conf
++    # /etc/beaver/conf
+@@ -350 +350 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
+-    beaver -c /etc/beaver.conf -t redis
++    beaver -c /etc/beaver/conf
+@@ -351,0 +352 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
++Example 15: Loading stanzas from /etc/beaver/conf.d/* support::
+@@ -353 +354,8 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
+-As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
++    # /etc/beaver/conf
++    [beaver]
++    format: json
++
++    # /etc/beaver/conf.d/syslog
++    [/var/log/syslog]
++    type: syslog
++    tags: sys,main
+@@ -354,0 +363,11 @@ As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in
++    # /etc/beaver/conf.d/nginx
++    [/var/log/nginx]
++    format: rawjson
++    type: nginx
++    tags: nginx,server
++
++    # From the commandline
++    beaver -c /etc/beaver/conf
++
++
++As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
+diff --git a/README.rst b/README.rst
+index 0ac0a2c..23dbc04 100644
+--- a/README.rst
++++ b/README.rst
+@@ -295 +295 @@ Example 11: SQS Transport::
+-      sqs_fillz {
++      sqs {
+diff --git a/README.rst b/README.rst
+index 862ba84..0ac0a2c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -153,10 +153 @@ Example 4: Sending logs from /var/log files to a redis list::
+-Example 5: Use environment variables to send logs from /var/log files to a redis list::
+-
+-    # /etc/beaver.conf
+-    [beaver]
+-    redis_url: redis://localhost:6379/0
+-
+-    # From the commandline
+-    beaver  -c /etc/beaver.conf -p '/var/log' -t redis
+-
+-Example 6: Zeromq listening on port 5556 (all interfaces)::
++Example 5: Zeromq listening on port 5556 (all interfaces)::
+@@ -183 +174 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-Example 7: Zeromq connecting to remote port 5556 on indexer::
++Example 6: Zeromq connecting to remote port 5556 on indexer::
+@@ -203 +194 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-Example 8: Real-world usage of Redis as a transport::
++Example 7: Real-world usage of Redis as a transport::
+@@ -227,3 +218 @@ Example 8: Real-world usage of Redis as a transport::
+-As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
+-
+-Example 9: RabbitMQ connecting to defaults on remote broker::
++Example 8: RabbitMQ connecting to defaults on remote broker::
+@@ -252 +241 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-Example 10: Read config from config.ini and put to stdout::
++Example 9: Read config from config.ini and put to stdout::
+@@ -254,0 +244 @@ Example 10: Read config from config.ini and put to stdout::
++    ; follow a single file, add a type, some tags and fields
+@@ -259,0 +250 @@ Example 10: Read config from config.ini and put to stdout::
++    ; follow all logs in /var/log except those with `messages` or `secure` in the name
+@@ -262,0 +254 @@ Example 10: Read config from config.ini and put to stdout::
++    exclude: (messages,secure)
+@@ -264 +256,2 @@ Example 10: Read config from config.ini and put to stdout::
+-    [/var/log/{secure,messages}.log]
++    ; follow /var/log/messages.log and /var/log/secure.log using file globbing
++    [/var/log/{messages,secure}.log]
+@@ -271 +264 @@ Example 10: Read config from config.ini and put to stdout::
+-Example 11: UDP transport::
++Example 10: UDP transport::
+@@ -291 +284 @@ Example 11: UDP transport::
+-Example 12: SQS Transport::
++Example 11: SQS Transport::
+@@ -315 +308 @@ Example 12: SQS Transport::
+-Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
++Example 12: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
+@@ -319 +312 @@ Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-log
+-Example 14: Mqtt transport using Mosquitto::
++Example 13: Mqtt transport using Mosquitto::
+@@ -343 +336 @@ Example 14: Mqtt transport using Mosquitto::
+-Example 15: Sincedb support using and sqlite3 db
++Example 14: Sincedb support using and sqlite3 db
+@@ -359,0 +353,3 @@ Note that this will require R/W permissions on the file at sincedb path, as Beav
++As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
++
++
+diff --git a/README.rst b/README.rst
+index 1725e13..862ba84 100644
+--- a/README.rst
++++ b/README.rst
+@@ -106,0 +107,4 @@ The following are used for instances when a TransportException is thrown - Trans
++The following configuration keys are for SinceDB support. Specifying these will enable saving the current line number in an sqlite database. This is useful for cases where you may be restarting the beaver process, such as during a logrotate.
++
++* sincedb_path: Default ``None``. Full path to an ``sqlite3`` database. Will be created at this path if it does not exist. Beaver process must have read and write access
++
+@@ -338,0 +343,17 @@ Example 14: Mqtt transport using Mosquitto::
++Example 15: Sincedb support using and sqlite3 db
++
++Note that this will require R/W permissions on the file at sincedb path, as Beaver will store the current line for a given filename/file id.::
++
++    # /etc/beaver.conf
++    [beaver]
++    sincedb_path: /etc/beaver/since.db
++
++    [/var/log/syslog]
++    type: syslog
++    tags: sys,main
++    sincedb_write_interval: 3 ; time in seconds
++
++    # From the commandline
++    beaver -c /etc/beaver.conf -t redis
++
++
+diff --git a/README.rst b/README.rst
+index 78a4c13..1725e13 100644
+--- a/README.rst
++++ b/README.rst
+@@ -34 +34 @@ usage::
+-           [-t {rabbitmq,redis,sqs,stdout,udp,zmq}] [-v] [--fqdn]
++           [-t {mqtt,rabbitmq,redis,sqs,stdout,udp,zmq}] [-v] [--fqdn]
+@@ -56 +56 @@ optional arguments::
+-    -t {rabbitmq,redis,stdout,zmq,udp,sqs}, --transport {rabbitmq,redis,stdout,zmq,udp,sqs}
++    -t {mqtt,rabbitmq,redis,stdout,udp,zmq}, --transport {mqtt,rabbitmq,redis,sqs,stdout,udp,zmq}
+@@ -75,2 +75,7 @@ Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This
+-* rabbitmq_host: Defaults ``localhost``. Host for RabbitMQ.
+-* rabbitmq_port: Defaults ``5672``. Port for RabbitMQ.
++* mqtt_host: Default ``localhost``. Host for mosquitto
++* mqtt_port: Default ``1883``. Port for mosquitto
++* mqtt_clientid: Default ``mosquitto``. Mosquitto client id
++* mqtt_keepalive: Default ``60``. mqtt keepalive ping
++* mqtt_topic: Default ``/logstash``. Topic to publish to
++* rabbitmq_host: Defaults ``localhost``. Host for RabbitMQ
++* rabbitmq_port: Defaults ``5672``. Port for RabbitMQ
+@@ -309,0 +315,24 @@ Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-log
++Example 14: Mqtt transport using Mosquitto::
++
++    # /etc/beaver.conf
++    [beaver]
++    mqtt_client_id: 'beaver_client'
++    mqtt_topic: '/logstash'
++    mqtt_host: '127.0.0.1'
++    mqtt_port: '1318'
++    mqtt_keepalive: '60'
++
++    # logstash indexer config:
++    input {
++      mqtt {
++        host => '127.0.0.1'
++        data_type => 'list'
++        key => 'app:unmappable'
++        type => 'app:unmappable'
++      }
++    }
++    output { stdout { debug => true } }
++
++    # From the commandline
++    beaver -c /etc/beaver.conf -f /var/log/unmappable.log -t redis
++
+diff --git a/README.rst b/README.rst
+index a46ec94..78a4c13 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32 +32 @@ usage::
+-           [-F {json,msgpack,string,raw}] [-H HOSTNAME] [-m {bind,connect}]
++           [-F {json,msgpack,raw,rawjson,string}] [-H HOSTNAME] [-m {bind,connect}]
+@@ -46 +46 @@ optional arguments::
+-    -F {json,msgpack,string,raw}, --format {json,msgpack,string,raw}
++    -F {json,msgpack,raw,rawjson,string}, --format {json,msgpack,raw,rawjson,string}
+@@ -305,0 +306,4 @@ Example 12: SQS Transport::
++Example 13: [Raw Json Support](http://blog.pkhamre.com/2012/08/23/logging-to-logstash-json-format-in-nginx/::
++
++    beaver --format rawjson
++
+@@ -310,2 +314,2 @@ Todo
+-* Use python threading + subprocess in order to support usage of ``yield`` across all operating systems
+-* ~~Fix usage on non-linux platforms - file.readline() does not work as expected on OS X. See above for potential solution~~
++* <del>Use python threading + subprocess in order to support usage of ``yield`` across all operating systems</del>
++* <del>Fix usage on non-linux platforms - file.readline() does not work as expected on OS X. See above for potential solution</del>
+@@ -313 +317 @@ Todo
+-* ~~Ability to specify files, tags, and other metadata within a configuration file~~
++* <del>Ability to specify files, tags, and other metadata within a configuration file</del>
+diff --git a/README.rst b/README.rst
+index 1b8ac12..a46ec94 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32,3 +32,3 @@ usage::
+-            [-F {json,msgpack,string,raw}] [-H HOSTNAME] [-m {bind,connect}]
+-            [-l OUTPUT] [-p PATH] [-P PID]
+-            [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
++           [-F {json,msgpack,string,raw}] [-H HOSTNAME] [-m {bind,connect}]
++           [-l OUTPUT] [-p PATH] [-P PID]
++           [-t {rabbitmq,redis,sqs,stdout,udp,zmq}] [-v] [--fqdn]
+@@ -56 +56 @@ optional arguments::
+-    -t {rabbitmq,redis,stdout,zmq,udp}, --transport {rabbitmq,redis,stdout,zmq,udp}
++    -t {rabbitmq,redis,stdout,zmq,udp,sqs}, --transport {rabbitmq,redis,stdout,zmq,udp,sqs}
+@@ -86,0 +87,4 @@ Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This
++* sqs_aws_access_key: Can be left blank to use IAM Roles or AWS_ACCESS_KEY_ID environment variable (see: https://github.com/boto/boto#getting-started-with-boto)
++* sqs_aws_secret_key: Can be left blank to use IAM Roles or AWS_SECRET_ACCESS_KEY environment variable (see: https://github.com/boto/boto#getting-started-with-boto)
++* sqs_aws_region: Default ``us-east-1``. AWS Region
++* sqs_aws_queue: SQS queue (must exist)
+@@ -277,0 +282,24 @@ Example 11: UDP transport::
++Example 12: SQS Transport::
++
++    # /etc/beaver.conf
++    [beaver]
++    sqs_aws_region: us-east-1
++    sqs_aws_queue: logstash-input
++    sqs_aws_access_key: <access_key>
++    sqs_aws_secret_access_key: <secret_key>
++
++    # logstash indexer config:
++    input {
++      sqs_fillz {
++        queue => "logstash-input"
++        type => "shipper-input"
++        format => "json_event"
++        access_key => "<access_key>"
++        secret_key => "<secret_key>"
++      }
++    }
++    output { stdout { debug => true } }
++
++    # From the commandline
++    beaver -c /etc/beaver.conf -t sqs
++
+diff --git a/README.rst b/README.rst
+index 1199154..1b8ac12 100644
+--- a/README.rst
++++ b/README.rst
+@@ -64 +64 @@ Background
+-Beaver provides an lightweight method for shipping local log files to Logstash. It does this using either redis, stdin, zeromq as the transport. This means you'll need a redis, stdin, zeromq input somewhere down the road to get the events.
++Beaver provides an lightweight method for shipping local log files to Logstash. It does this using redis, zeromq, udp, rabbit or stdout as the transport. This means you'll need a redis, zeromq, udp, amqp or stdin input somewhere down the road to get the events.
+diff --git a/README.rst b/README.rst
+index fdaac7b..1199154 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==27
++    pip install beaver==28
+diff --git a/README.rst b/README.rst
+index cac9225..fdaac7b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==26
++    pip install beaver==27
+diff --git a/README.rst b/README.rst
+index 72ea685..cac9225 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==25
++    pip install beaver==26
+diff --git a/README.rst b/README.rst
+index 2957478..72ea685 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==24
++    pip install beaver==25
+diff --git a/README.rst b/README.rst
+index f59b7d8..2957478 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==23
++    pip install beaver==24
+diff --git a/README.rst b/README.rst
+index 6c651a9..f59b7d8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -109 +109 @@ The following can also be passed via argparse. Argparse will override all option
+-* files: Default ``files``. Space-separated list of files to tail.
++* files: Default ``files``. Space-separated list of files to tail. (Comma separated if specified in the config file)
+diff --git a/README.rst b/README.rst
+index a038f4e..6c651a9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==22
++    pip install beaver==23
+diff --git a/README.rst b/README.rst
+index 8ee30d0..a038f4e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32,3 +32,3 @@ usage::
+-           [-F {json,msgpack,string}] [-H HOSTNAME] [-m {bind,connect}]
+-           [-o OUTPUT] [-p PATH] [-P PID]
+-           [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
++            [-F {json,msgpack,string,raw}] [-H HOSTNAME] [-m {bind,connect}]
++            [-l OUTPUT] [-p PATH] [-P PID]
++            [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
+@@ -46 +46 @@ optional arguments::
+-    -F {json,msgpack,string}, --format {json,msgpack,string}
++    -F {json,msgpack,string,raw}, --format {json,msgpack,string,raw}
+@@ -52 +52 @@ optional arguments::
+-    -o OUTPUT, --output OUTPUT
++    -l OUTPUT, --logfile OUTPUT, -o OUTPUT, --output OUTPUT
+diff --git a/README.rst b/README.rst
+index 0f34a35..8ee30d0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -89,0 +90 @@ Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This
++* zeromq_hwm: Default None. Zeromq HighWaterMark socket option
+diff --git a/README.rst b/README.rst
+index 776b4c2..0f34a35 100644
+--- a/README.rst
++++ b/README.rst
+@@ -81 +81 @@ Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This
+-* rabbitmq_exchange: Default ``direct``.
++* rabbitmq_exchange_type: Default ``direct``.
+diff --git a/README.rst b/README.rst
+index c7ba969..776b4c2 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==21
++    pip install beaver==22
+diff --git a/README.rst b/README.rst
+index 4cbcaa6..c7ba969 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==20
++    pip install beaver==21
+diff --git a/README.rst b/README.rst
+index d481438..4cbcaa6 100644
+--- a/README.rst
++++ b/README.rst
+@@ -10 +10 @@ Requirements
+-* Python 2.7 (untested on other versions)
++* Python 2.6+
+diff --git a/README.rst b/README.rst
+index 1b8f7a1..d481438 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==19
++    pip install beaver==20
+diff --git a/README.rst b/README.rst
+index b3e5612..1b8f7a1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==18
++    pip install beaver==19
+diff --git a/README.rst b/README.rst
+index 5bafbb4..b3e5612 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==17
++    pip install beaver==18
+diff --git a/README.rst b/README.rst
+index c69431d..5bafbb4 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==16
++    pip install beaver==17
+diff --git a/README.rst b/README.rst
+index bb052ee..c69431d 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==15
++    pip install beaver==16
+diff --git a/README.rst b/README.rst
+index c64265c..bb052ee 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31,4 +31,4 @@ usage::
+-    beaver [-h] [-c CONFIG] [-d] [-f FILES [FILES ...]]
+-              [--format {json,msgpack,string}] [--hostname HOSTNAME]
+-              [-m {bind,connect}] [-p PATH]
+-              [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
++    beaver [-h] [-c CONFIG] [-d] [-D] [-f FILES [FILES ...]]
++           [-F {json,msgpack,string}] [-H HOSTNAME] [-m {bind,connect}]
++           [-o OUTPUT] [-p PATH] [-P PID]
++           [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
+@@ -41,0 +42 @@ optional arguments::
++    -D, --daemonize       daemonize in the background
+@@ -45 +46 @@ optional arguments::
+-    --format {json,msgpack,string}
++    -F {json,msgpack,string}, --format {json,msgpack,string}
+@@ -47 +48,2 @@ optional arguments::
+-    --hostname HOSTNAME   manual hostname override for source_host
++    -H HOSTNAME, --hostname HOSTNAME
++                          manual hostname override for source_host
+@@ -49,0 +52,2 @@ optional arguments::
++    -o OUTPUT, --output OUTPUT
++                          file to pipe output to (in addition to stdout)
+@@ -50,0 +55 @@ optional arguments::
++    -P PID, --pid PID     path to pid file
+diff --git a/README.rst b/README.rst
+index dfbc45e..c64265c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==14
++    pip install beaver==15
+diff --git a/README.rst b/README.rst
+index 00fdcfa..dfbc45e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31,2 +31,4 @@ usage::
+-    beaver [-h] [-m {bind,connect}] [-p PATH] [-f FILES [FILES ...]]
+-              [-t {rabbitmq,redis,stdout,zmq,udp}] [-c CONFIG] [-d DEBUG] [--fqdn]
++    beaver [-h] [-c CONFIG] [-d] [-f FILES [FILES ...]]
++              [--format {json,msgpack,string}] [--hostname HOSTNAME]
++              [-m {bind,connect}] [-p PATH]
++              [-t {rabbitmq,redis,stdout,zmq,udp}] [-v] [--fqdn]
+@@ -52 +54 @@ optional arguments::
+-    --fqdn                use the machine's FQDN
++    --fqdn                use the machine's FQDN for source_host
+@@ -61 +63 @@ Events are sent in logstash's ``json_event`` format. Options can also be set as
+-NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this.
++NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this, or you may configure beaver to do otherwise.
+@@ -272,0 +275 @@ Todo
++* More documentation
+@@ -274 +277 @@ Todo
+-* Fix usage on non-linux platforms - file.readline() does not work as expected on OS X. See above for potential solution
++* ~~Fix usage on non-linux platforms - file.readline() does not work as expected on OS X. See above for potential solution~~
+@@ -276 +279 @@ Todo
+-* ~Ability to specify files, tags, and other metadata within a configuration file~
++* ~~Ability to specify files, tags, and other metadata within a configuration file~~
+diff --git a/README.rst b/README.rst
+index 6b2a837..00fdcfa 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==13
++    pip install beaver==14
+diff --git a/README.rst b/README.rst
+index 8c24676..6b2a837 100644
+--- a/README.rst
++++ b/README.rst
+@@ -111,2 +110,0 @@ Examples
+-All of the following examples, except where specified, use the following config file living at ``/etc/beaver.conf``. This is by no means an exhaustive list, and you can mix/match different configurations to best suit your needs::
+-
+@@ -115 +113 @@ Example 1: Listen to all files in the default path of /var/log on standard out a
+-    beaver  -c /etc/beaver.conf
++    beaver
+@@ -119 +117 @@ Example 2: Listen to all files in the default path of /var/log on standard out w
+-    beaver  -c /etc/beaver.conf --format msgpack
++    beaver --format msgpack
+@@ -123 +121 @@ Example 3: Listen to all files in the default path of /var/log on standard out a
+-    beaver  -c /etc/beaver.conf --format string
++    beaver --format string
+diff --git a/README.rst b/README.rst
+index c586c07..8c24676 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==12
++    pip install beaver==13
+diff --git a/README.rst b/README.rst
+index 171c1cd..c586c07 100644
+--- a/README.rst
++++ b/README.rst
+@@ -62,0 +63,44 @@ NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  Y
++Configuration File Options
++--------------------------
++
++Beaver can optionally get data from a ``configfile`` using the ``-c`` flag. This file is in ``ini`` format. Global configuration will be under the ``beaver`` stanza. The following are global beaver configuration keys with their respective meanings:
++
++* rabbitmq_host: Defaults ``localhost``. Host for RabbitMQ.
++* rabbitmq_port: Defaults ``5672``. Port for RabbitMQ.
++* rabbitmq_vhost: Default ``/``
++* rabbitmq_username: Default ``guest``
++* rabbitmq_password: Default ``guest``
++* rabbitmq_queue: Default ``logstash-queue``.
++* rabbitmq_exchange: Default ``direct``.
++* rabbitmq_exchange_durable: Default ``0``.
++* rabbitmq_key: Default ``logstash-key``.
++* rabbitmq_exchange: Default ``logstash-exchange``.
++* redis_url: Default ``redis://localhost:6379/0``. Redis URL
++* redis_namespace: Default ``logstash:beaver``. Redis key namespace
++* udp_host: Default ``127.0.0.1``. UDP Host
++* udp_port: Default ``9999``. UDP Port
++* zeromq_address: Default ``tcp://localhost:2120``. Zeromq URL
++* zeromq_bind: Default ``bind``. Whether to bind to zeromq host or simply connect
++
++The following are used for instances when a TransportException is thrown - Transport dependent
++
++* respawn_delay: Default ``3``. Initial respawn delay for exponential backoff
++* max_failure: Default ``7``. Max failures before exponential backoff terminates
++
++The following configuration keys are for building an SSH Tunnel that can be used to proxy from the current host to a desired server. This proxy is torn down when Beaver halts in all cases.
++
++* ssh_key_file: Default ``None``. Full path to ``id_rsa`` key file
++* ssh_tunnel: Default ``None``. SSH Tunnel in the format ``user@host:port``
++* ssh_tunnel_port: Default ``None``. Local port for SSH Tunnel
++* ssh_remote_host: Default ``None``. Remote host to connect to within SSH Tunnel
++* ssh_remote_port: Default ``None``. Remote port to connect to within SSH Tunnel
++
++The following can also be passed via argparse. Argparse will override all options in the configfile, when specified.
++
++* format: Default ``json``. Options ``[ json, msgpack, string ]``. Format to use when sending to transport
++* files: Default ``files``. Space-separated list of files to tail.
++* path: Default ``/var/log``. Path glob to tail.
++* transport: Default ``stdout``. Transport to use when log changes are detected
++* fqdn: Default ``False``. Whether to use the machine's FQDN in transport output
++* hostname: Default ``None``. Manually specified hostname
++
+diff --git a/README.rst b/README.rst
+index 9e6a4af..171c1cd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -36,0 +37,9 @@ optional arguments::
++    -c CONFIG, --configfile CONFIG
++                          ini config file path
++    -d, --debug           enable debug mode
++    -f FILES [FILES ...], --files FILES [FILES ...]
++                          space-separated filelist to watch, can include globs
++                          (*.log). Overrides --path argument
++    --format {json,msgpack,string}
++                          format to use when sending to transport
++    --hostname HOSTNAME   manual hostname override for source_host
+@@ -38 +47 @@ optional arguments::
+-                        bind or connect mode
++                          bind or connect mode
+@@ -40,11 +49,4 @@ optional arguments::
+-    -f FILES [FILES ...], --files FILES [FILES ...]
+-                        space-separated filelist to watch, can include globs
+-                        (*.log). Overrides --path argument
+-    -t {rabbitmq,redis,stdout,zmq}, --transport {rabbitmq,redis,stdout,zmq}
+-                        log transport method
+-    -c CONFIG, --configfile CONFIG
+-                        ini config file path
+-    -d DEBUG, --debug DEBUG
+-                        enable debug mode
+-    --fqdn
+-                        use the machine's FQDN for source_host
++    -t {rabbitmq,redis,stdout,zmq,udp}, --transport {rabbitmq,redis,stdout,zmq,udp}
++                          log transport method
++    -v, --version         output version and quit
++    --fqdn                use the machine's FQDN
+diff --git a/README.rst b/README.rst
+index 07c09f1..9e6a4af 100644
+--- a/README.rst
++++ b/README.rst
+@@ -63,0 +64,3 @@ Examples
++
++All of the following examples, except where specified, use the following config file living at ``/etc/beaver.conf``. This is by no means an exhaustive list, and you can mix/match different configurations to best suit your needs::
++
+@@ -66 +69 @@ Example 1: Listen to all files in the default path of /var/log on standard out a
+-    beaver
++    beaver  -c /etc/beaver.conf
+@@ -70 +73 @@ Example 2: Listen to all files in the default path of /var/log on standard out w
+-    BEAVER_FORMAT='msgpack' beaver
++    beaver  -c /etc/beaver.conf --format msgpack
+@@ -74 +77 @@ Example 3: Listen to all files in the default path of /var/log on standard out a
+-    BEAVER_FORMAT='string' beaver
++    beaver  -c /etc/beaver.conf --format string
+@@ -78 +81,6 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    REDIS_URL='redis://localhost:6379/0' beaver -t redis
++    # /etc/beaver.conf
++    [beaver]
++    redis_url: redis://localhost:6379/0
++
++    # From the commandline
++    beaver  -c /etc/beaver.conf -t redis
+@@ -82 +90,6 @@ Example 5: Use environment variables to send logs from /var/log files to a redis
+-    REDIS_URL='redis://localhost:6379/0' BEAVER_PATH='/var/log' BEAVER_TRANSPORT=redis beaver
++    # /etc/beaver.conf
++    [beaver]
++    redis_url: redis://localhost:6379/0
++
++    # From the commandline
++    beaver  -c /etc/beaver.conf -p '/var/log' -t redis
+@@ -86 +99,3 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    ZEROMQ_ADDRESS='tcp://*:5556' beaver -m bind -t zmq
++    # /etc/beaver.conf
++    [beaver]
++    zeromq_address: tcp://*:5556
+@@ -88 +103 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    # logstash config:
++    # logstash indexer config:
+@@ -98,0 +114,4 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
++    # From the commandline
++    beaver  -c /etc/beaver.conf -m bind -t zmq
++
++
+@@ -101 +120,3 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    ZEROMQ_ADDRESS='tcp://indexer:5556' beaver -m connect -t zmq
++    # /etc/beaver.conf
++    [beaver]
++    zeromq_address: tcp://indexer:5556
+@@ -103 +124 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    # logstash config:
++    # logstash indexer config:
+@@ -113,0 +135,3 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
++    # on the commandline
++    beaver -c /etc/beaver.conf -m connect -t zmq
++
+@@ -119,2 +143,4 @@ Example 8: Real-world usage of Redis as a transport::
+-    # From the commandline
+-    REDIS_NAMESPACE='app:unmappable' REDIS_URL='redis://redis-internal:6379/0' beaver -f /var/log/unmappable.log -t redis
++    # /etc/beaver.conf
++    [beaver]
++    redis_url: redis://redis-internal:6379/0
++    redis_namespace: app:unmappable
+@@ -132,0 +159,3 @@ Example 8: Real-world usage of Redis as a transport::
++    # From the commandline
++    beaver -c /etc/beaver.conf -f /var/log/unmappable.log -t redis
++
+@@ -137,2 +166,3 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-    # From the commandline
+-    RABBITMQ_HOST='10.0.0.1' beaver -t rabbitmq
++    # /etc/beaver.conf
++    [beaver]
++    rabbitmq_host: 10.0.0.1
+@@ -140 +170 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-    # logstash config:
++    # logstash indexer config:
+@@ -154,2 +183,0 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-Example 10: Read config from config.ini and put to stdout::
+-
+@@ -157 +185,3 @@ Example 10: Read config from config.ini and put to stdout::
+-    beaver -c config.ini -t stdout
++    beaver -c /etc/beaver.conf -t rabbitmq
++
++Example 10: Read config from config.ini and put to stdout::
+@@ -159 +189 @@ Example 10: Read config from config.ini and put to stdout::
+-    # config.ini content:
++    # /etc/beaver.conf:
+@@ -172,0 +203,3 @@ Example 10: Read config from config.ini and put to stdout::
++    # From the commandline
++    beaver -c /etc/beaver.conf -t stdout
++
+@@ -175,2 +208,4 @@ Example 11: UDP transport::
+-    # From the commandline
+-    UDP_HOST='127.0.0.1' UDP_PORT='9999' beaver -t udp
++    # /etc/beaver.conf
++    [beaver]
++    udp_host: 127.0.0.1
++    udp_port: 9999
+@@ -178 +213 @@ Example 11: UDP transport::
+-    # logstash config:
++    # logstash indexer config:
+@@ -187,0 +223,3 @@ Example 11: UDP transport::
++    # From the commandline
++    beaver -c /etc/beaver.conf -t udp
++
+diff --git a/README.rst b/README.rst
+index 3154c99..07c09f1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==11
++    pip install beaver==12
+diff --git a/README.rst b/README.rst
+index b162b6b..3154c99 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==10
++    pip install beaver==11
+diff --git a/README.rst b/README.rst
+index cfd329e..b162b6b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32 +32 @@ usage::
+-              [-t {rabbitmq,redis,stdout,zmq,udp}] [-c CONFIG] [-d DEBUG]
++              [-t {rabbitmq,redis,stdout,zmq,udp}] [-c CONFIG] [-d DEBUG] [--fqdn]
+@@ -48,0 +49,2 @@ optional arguments::
++    --fqdn
++                        use the machine's FQDN for source_host
+diff --git a/README.rst b/README.rst
+index 2dc0e84..cfd329e 100644
+--- a/README.rst
++++ b/README.rst
+@@ -193,0 +194,18 @@ Todo
++Caveats
++=======
++
++When using ``copytruncate`` style log rotation, two race conditions can occur:
++
++1. Any log data written prior to truncation which beaver has not yet
++   read and processed is lost. Nothing we can do about that.
++
++2. Should the file be truncated, rewritten, and end up being larger than
++   the original file during the sleep interval, beaver won't detect
++   this. After some experimentation, this behavior also exists in GNU
++   tail, so I'm going to call this a "don't do that then" bug :)
++
++   Additionally, the files beaver will most likely be called upon to
++   watch which may be truncated are generally going to be large enough
++   and slow-filling enough that this won't crop up in the wild.
++
++
+diff --git a/README.rst b/README.rst
+index a7e31be..2dc0e84 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==9
++    pip install beaver==10
+diff --git a/README.rst b/README.rst
+index e2b5501..a7e31be 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56,0 +57,2 @@ Events are sent in logstash's ``json_event`` format. Options can also be set as
++NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this.
++
+@@ -74 +76 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    REDIS_URL="redis://localhost:6379/0" beaver -t redis
++    REDIS_URL='redis://localhost:6379/0' beaver -t redis
+@@ -78 +80 @@ Example 5: Use environment variables to send logs from /var/log files to a redis
+-    REDIS_URL="redis://localhost:6379/0" BEAVER_PATH="/var/log" BEAVER_TRANSPORT=redis beaver
++    REDIS_URL='redis://localhost:6379/0' BEAVER_PATH='/var/log' BEAVER_TRANSPORT=redis beaver
+@@ -82 +84 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    ZEROMQ_ADDRESS="tcp://*:5556" beaver -m bind -t zmq
++    ZEROMQ_ADDRESS='tcp://*:5556' beaver -m bind -t zmq
+@@ -85 +87,2 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    input { zeromq {
++    input {
++      zeromq {
+@@ -90 +93,2 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-      } }
++      }
++    }
+@@ -95 +99 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    ZEROMQ_ADDRESS="tcp://indexer:5556" beaver -m connect -t zmq
++    ZEROMQ_ADDRESS='tcp://indexer:5556' beaver -m connect -t zmq
+@@ -98 +102,2 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    input { zeromq {
++    input {
++      zeromq {
+@@ -103 +108,2 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-      }}
++      }
++    }
+@@ -115,2 +121,3 @@ Example 8: Real-world usage of Redis as a transport::
+-    input { redis {
+-        host => 'redis-internal' # this is in dns for work
++    input {
++      redis {
++        host => 'redis-internal'
+@@ -120,2 +127,3 @@ Example 8: Real-world usage of Redis as a transport::
+-    }}
+-    output { stdout { debug => "true" }}
++      }
++    }
++    output { stdout { debug => true } }
+@@ -128 +136 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-    RABBITMQ_HOST="10.0.0.1" beaver -t rabbitmq
++    RABBITMQ_HOST='10.0.0.1' beaver -t rabbitmq
+@@ -132,5 +140,5 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-        name => "logstash-queue"
+-        type => "direct"
+-        host => "10.0.0.1"
+-        exchange => "logstash-exchange"
+-        key => "logstash-key"
++        name => 'logstash-queue'
++        type => 'direct'
++        host => '10.0.0.1'
++        exchange => 'logstash-exchange'
++        key => 'logstash-key'
+@@ -140,3 +148,3 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-      }}
+-    output { stdout { debug => "true" }}
+-
++      }
++    }
++    output { stdout { debug => true } }
+@@ -166 +174 @@ Example 11: UDP transport::
+-    UDP_HOST="127.0.0.1" UDP_PORT="9999" beaver -t udp
++    UDP_HOST='127.0.0.1' UDP_PORT='9999' beaver -t udp
+@@ -171,3 +179,3 @@ Example 11: UDP transport::
+-        type => "shipper-input"
+-        host => "127.0.0.1"
+-        port => "9999"
++        type => 'shipper-input'
++        host => '127.0.0.1'
++        port => '9999'
+@@ -176 +184 @@ Example 11: UDP transport::
+-    output { stdout { debug => "true" }}
++    output { stdout { debug => true } }
+@@ -184,2 +192 @@ Todo
+-* ~Create a python package~
+-* ~Ability to specify files, tags, and other  metadata within a configuration file~
++* ~Ability to specify files, tags, and other metadata within a configuration file~
+diff --git a/README.rst b/README.rst
+index 3f33dfc..e2b5501 100644
+--- a/README.rst
++++ b/README.rst
+@@ -57,2 +56,0 @@ Events are sent in logstash's ``json_event`` format. Options can also be set as
+-NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this.
+-
+@@ -76 +74 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    REDIS_URL='redis://localhost:6379/0' beaver -t redis
++    REDIS_URL="redis://localhost:6379/0" beaver -t redis
+@@ -80 +78 @@ Example 5: Use environment variables to send logs from /var/log files to a redis
+-    REDIS_URL='redis://localhost:6379/0' BEAVER_PATH='/var/log' BEAVER_TRANSPORT=redis beaver
++    REDIS_URL="redis://localhost:6379/0" BEAVER_PATH="/var/log" BEAVER_TRANSPORT=redis beaver
+@@ -84 +82 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    ZEROMQ_ADDRESS='tcp://*:5556' beaver -m bind -t zmq
++    ZEROMQ_ADDRESS="tcp://*:5556" beaver -m bind -t zmq
+@@ -87,2 +85 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    input {
+-      zeromq {
++    input { zeromq {
+@@ -93,2 +90 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-      }
+-    }
++      } }
+@@ -99 +95 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    ZEROMQ_ADDRESS='tcp://indexer:5556' beaver -m connect -t zmq
++    ZEROMQ_ADDRESS="tcp://indexer:5556" beaver -m connect -t zmq
+@@ -102,2 +98 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    input {
+-      zeromq {
++    input { zeromq {
+@@ -108,2 +103 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-      }
+-    }
++      }}
+@@ -121,3 +115,2 @@ Example 8: Real-world usage of Redis as a transport::
+-    input {
+-      redis {
+-        host => 'redis-internal'
++    input { redis {
++        host => 'redis-internal' # this is in dns for work
+@@ -127,3 +120,2 @@ Example 8: Real-world usage of Redis as a transport::
+-      }
+-    }
+-    output { stdout { debug => true } }
++    }}
++    output { stdout { debug => "true" }}
+@@ -136 +128 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-    RABBITMQ_HOST='10.0.0.1' beaver -t rabbitmq
++    RABBITMQ_HOST="10.0.0.1" beaver -t rabbitmq
+@@ -140,5 +132,5 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-        name => 'logstash-queue'
+-        type => 'direct'
+-        host => '10.0.0.1'
+-        exchange => 'logstash-exchange'
+-        key => 'logstash-key'
++        name => "logstash-queue"
++        type => "direct"
++        host => "10.0.0.1"
++        exchange => "logstash-exchange"
++        key => "logstash-key"
+@@ -148,3 +140,3 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-      }
+-    }
+-    output { stdout { debug => true } }
++      }}
++    output { stdout { debug => "true" }}
++
+@@ -166,0 +159,4 @@ Example 10: Read config from config.ini and put to stdout::
++    [/var/log/{secure,messages}.log]
++    type: syslog
++    tags: sys
++
+@@ -170 +166 @@ Example 11: UDP transport::
+-    UDP_HOST='127.0.0.1' UDP_PORT='9999' beaver -t udp
++    UDP_HOST="127.0.0.1" UDP_PORT="9999" beaver -t udp
+@@ -175,3 +171,3 @@ Example 11: UDP transport::
+-        type => 'shipper-input'
+-        host => '127.0.0.1'
+-        port => '9999'
++        type => "shipper-input"
++        host => "127.0.0.1"
++        port => "9999"
+@@ -180 +176 @@ Example 11: UDP transport::
+-    output { stdout { debug => true } }
++    output { stdout { debug => "true" }}
+@@ -188 +184,2 @@ Todo
+-* ~Ability to specify files, tags, and other metadata within a configuration file~
++* ~Create a python package~
++* ~Ability to specify files, tags, and other  metadata within a configuration file~
+diff --git a/README.rst b/README.rst
+index 3992337..3f33dfc 100644
+--- a/README.rst
++++ b/README.rst
+@@ -76 +76 @@ Example 4: Sending logs from /var/log files to a redis list::
+-    REDIS_URL="redis://localhost:6379/0" beaver -t redis
++    REDIS_URL='redis://localhost:6379/0' beaver -t redis
+@@ -80 +80 @@ Example 5: Use environment variables to send logs from /var/log files to a redis
+-    REDIS_URL="redis://localhost:6379/0" BEAVER_PATH="/var/log" BEAVER_TRANSPORT=redis beaver
++    REDIS_URL='redis://localhost:6379/0' BEAVER_PATH='/var/log' BEAVER_TRANSPORT=redis beaver
+@@ -84 +84 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    ZEROMQ_ADDRESS="tcp://*:5556" beaver -m bind -t zmq
++    ZEROMQ_ADDRESS='tcp://*:5556' beaver -m bind -t zmq
+@@ -87 +87,2 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    input { zeromq {
++    input {
++      zeromq {
+@@ -92 +93,2 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-      } }
++      }
++    }
+@@ -97 +99 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    ZEROMQ_ADDRESS="tcp://indexer:5556" beaver -m connect -t zmq
++    ZEROMQ_ADDRESS='tcp://indexer:5556' beaver -m connect -t zmq
+@@ -100 +102,2 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    input { zeromq {
++    input {
++      zeromq {
+@@ -105 +108,2 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-      }}
++      }
++    }
+@@ -117 +121,2 @@ Example 8: Real-world usage of Redis as a transport::
+-    input { redis {
++    input {
++      redis {
+@@ -122,2 +127,3 @@ Example 8: Real-world usage of Redis as a transport::
+-    }}
+-    output { stdout { debug => "true" }}
++      }
++    }
++    output { stdout { debug => true } }
+@@ -130 +136 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-    RABBITMQ_HOST="10.0.0.1" beaver -t rabbitmq
++    RABBITMQ_HOST='10.0.0.1' beaver -t rabbitmq
+@@ -134,5 +140,5 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-        name => "logstash-queue"
+-        type => "direct"
+-        host => "10.0.0.1"
+-        exchange => "logstash-exchange"
+-        key => "logstash-key"
++        name => 'logstash-queue'
++        type => 'direct'
++        host => '10.0.0.1'
++        exchange => 'logstash-exchange'
++        key => 'logstash-key'
+@@ -142,3 +148,3 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
+-      }}
+-    output { stdout { debug => "true" }}
+-
++      }
++    }
++    output { stdout { debug => true } }
+@@ -164 +170 @@ Example 11: UDP transport::
+-    UDP_HOST="127.0.0.1" UDP_PORT="9999" beaver -t udp
++    UDP_HOST='127.0.0.1' UDP_PORT='9999' beaver -t udp
+@@ -169,3 +175,3 @@ Example 11: UDP transport::
+-        type => "shipper-input"
+-        host => "127.0.0.1"
+-        port => "9999"
++        type => 'shipper-input'
++        host => '127.0.0.1'
++        port => '9999'
+@@ -174 +180 @@ Example 11: UDP transport::
+-    output { stdout { debug => "true" }}
++    output { stdout { debug => true } }
+@@ -182 +188 @@ Todo
+-* ~Ability to specify files, tags, and other  metadata within a configuration file~
++* ~Ability to specify files, tags, and other metadata within a configuration file~
+diff --git a/README.rst b/README.rst
+index 45e875c..3992337 100644
+--- a/README.rst
++++ b/README.rst
+@@ -118 +118 @@ Example 8: Real-world usage of Redis as a transport::
+-        host => 'redis-internal' # this is in dns for work
++        host => 'redis-internal'
+diff --git a/README.rst b/README.rst
+index d006e3a..45e875c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56,0 +57,2 @@ Events are sent in logstash's ``json_event`` format. Options can also be set as
++NOTE: the redis transport uses a namespace of ``logstash:beaver`` by default.  You will need to update your logstash indexer to match this.
++
+@@ -180 +181,0 @@ Todo
+-* ~Create a python package~
+diff --git a/README.rst b/README.rst
+index 33c7174..d006e3a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==8
++    pip install beaver==9
+diff --git a/README.rst b/README.rst
+index 8d75faf..33c7174 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==7
++    pip install beaver==8
+diff --git a/README.rst b/README.rst
+index 2795e27..8d75faf 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==6
++    pip install beaver==7
+diff --git a/README.rst b/README.rst
+index 079bbbb..2795e27 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==5
++    pip install beaver==6
+diff --git a/README.rst b/README.rst
+index 450afbb..079bbbb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==4
++    pip install beaver==5
+diff --git a/README.rst b/README.rst
+index 27e7c41..450afbb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==3
++    pip install beaver==4
+diff --git a/README.rst b/README.rst
+index 130c15a..27e7c41 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==2
++    pip install beaver==3
+diff --git a/README.rst b/README.rst
+index 14d5ce1..130c15a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -11 +11 @@ Requirements
+-* libzmq (``brew install zmq`` or ``apt-get install libzmq-dev``)
++* Optional zeromq support: install libzmq (``brew install zmq`` or ``apt-get install libzmq-dev``) and pyzmq (``pip install pyzmq==2.1.11``)
+@@ -180 +179,0 @@ Todo
+-* ~Separate tranports into different files so that individual transport requirements are not required on all installations (libzmq)~
+diff --git a/README.rst b/README.rst
+index 33a60ec..14d5ce1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -165 +165 @@ Example 11: UDP transport::
+-    input { 
++    input {
+diff --git a/README.rst b/README.rst
+index 2a6615a..33a60ec 100644
+--- a/README.rst
++++ b/README.rst
+@@ -32 +32 @@ usage::
+-              [-t {rabbitmq,redis,stdout,zmq}] [-c CONFIG] [-d DEBUG]
++              [-t {rabbitmq,redis,stdout,zmq,udp}] [-c CONFIG] [-d DEBUG]
+@@ -158,0 +159,15 @@ Example 10: Read config from config.ini and put to stdout::
++Example 11: UDP transport::
++
++    # From the commandline
++    UDP_HOST="127.0.0.1" UDP_PORT="9999" beaver -t udp
++
++    # logstash config:
++    input { 
++      udp {
++        type => "shipper-input"
++        host => "127.0.0.1"
++        port => "9999"
++      }
++    }
++    output { stdout { debug => "true" }}
++
+diff --git a/README.rst b/README.rst
+index 6ffd8c1..2a6615a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -24 +24 @@ From PyPI::
+-    pip install beaver==1
++    pip install beaver==2
+@@ -31,2 +31,2 @@ usage::
+-    beaver [-h] [-r {worker,interactive}] [-m {bind,connect}] [-p PATH]
+-                     [-f FILES [FILES ...]] [-t TRANSPORT]
++    beaver [-h] [-m {bind,connect}] [-p PATH] [-f FILES [FILES ...]]
++              [-t {rabbitmq,redis,stdout,zmq}] [-c CONFIG] [-d DEBUG]
+@@ -38 +38 @@ optional arguments::
+-                          bind or connect mode
++                        bind or connect mode
+@@ -41,5 +41,4 @@ optional arguments::
+-                          space-separated filelist to watch. Overrides --path
+-                          argument
+-    -t/--transport {rabbitmq,redis,stdout,zmq}
+-                      log transport method
+-                      default is stdout
++                        space-separated filelist to watch, can include globs
++                        (*.log). Overrides --path argument
++    -t {rabbitmq,redis,stdout,zmq}, --transport {rabbitmq,redis,stdout,zmq}
++                        log transport method
+@@ -47 +46,3 @@ optional arguments::
+-                          ini config file path
++                        ini config file path
++    -d DEBUG, --debug DEBUG
++                        enable debug mode
+@@ -166 +167 @@ Todo
+-* Ability to specify files, tags, and other  metadata within a configuration file
++* ~Ability to specify files, tags, and other  metadata within a configuration file~
+diff --git a/README.rst b/README.rst
+index 77561e9..6ffd8c1 100644
+--- a/README.rst
++++ b/README.rst
+@@ -151,0 +152 @@ Example 10: Read config from config.ini and put to stdout::
++    add_field: fieldname1,fieldvalue1[,fieldname2,fieldvalue2, ...]
+diff --git a/README.rst b/README.rst
+index ee44796..77561e9 100644
+--- a/README.rst
++++ b/README.rst
+@@ -47,0 +48 @@ optional arguments::
++
+diff --git a/README.rst b/README.rst
+index 748723f..ee44796 100644
+--- a/README.rst
++++ b/README.rst
+@@ -46 +46,2 @@ optional arguments::
+-
++    -c CONFIG, --configfile CONFIG
++                          ini config file path
+@@ -139,0 +141,15 @@ Example 9: RabbitMQ connecting to defaults on remote broker::
++
++Example 10: Read config from config.ini and put to stdout::
++
++    # From the commandline
++    beaver -c config.ini -t stdout
++
++    # config.ini content:
++    [/tmp/somefile]
++    type: mytype
++    tags: tag1,tag2
++
++    [/var/log/*log]
++    type: syslog
++    tags: sys
++
+diff --git a/README.rst b/README.rst
+index c67b2c5..748723f 100644
+--- a/README.rst
++++ b/README.rst
+@@ -43 +43 @@ optional arguments::
+-    -t {amqp,redis,stdout}, --transport {amqp,redis,stdout}
++    -t/--transport {rabbitmq,redis,stdout,zmq}
+@@ -44,0 +45 @@ optional arguments::
++                      default is stdout
+@@ -78 +79 @@ Example 6: Zeromq listening on port 5556 (all interfaces)::
+-    ZEROMQ_ADDRESS="tcp://*:5556" beaver -m bind
++    ZEROMQ_ADDRESS="tcp://*:5556" beaver -m bind -t zmq
+@@ -91 +92 @@ Example 7: Zeromq connecting to remote port 5556 on indexer::
+-    ZEROMQ_ADDRESS="tcp://indexer:5556" beaver -m connect
++    ZEROMQ_ADDRESS="tcp://indexer:5556" beaver -m connect -t zmq
+diff --git a/README.rst b/README.rst
+index 6a2a0ce..c67b2c5 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56 +56 @@ Examples
+-Example 1: Listen to all files in the default path of /var/log on standard out::
++Example 1: Listen to all files in the default path of /var/log on standard out as json::
+@@ -60 +60,9 @@ Example 1: Listen to all files in the default path of /var/log on standard out::
+-Example 2: Sending logs from /var/log files to a redis list::
++Example 2: Listen to all files in the default path of /var/log on standard out with msgpack::
++
++    BEAVER_FORMAT='msgpack' beaver
++
++Example 3: Listen to all files in the default path of /var/log on standard out as a string::
++
++    BEAVER_FORMAT='string' beaver
++
++Example 4: Sending logs from /var/log files to a redis list::
+@@ -64 +72 @@ Example 2: Sending logs from /var/log files to a redis list::
+-Example 3: Use environment variables to send logs from /var/log files to a redis list::
++Example 5: Use environment variables to send logs from /var/log files to a redis list::
+@@ -68 +76 @@ Example 3: Use environment variables to send logs from /var/log files to a redis
+-Example 4: Zeromq listening on port 5556 (all interfaces)::
++Example 6: Zeromq listening on port 5556 (all interfaces)::
+@@ -81 +89 @@ Example 4: Zeromq listening on port 5556 (all interfaces)::
+-Example 5: Zeromq connecting to remote port 5556 on indexer::
++Example 7: Zeromq connecting to remote port 5556 on indexer::
+@@ -94 +102 @@ Example 5: Zeromq connecting to remote port 5556 on indexer::
+-Example 6: Real-world usage of Redis as a transport::
++Example 8: Real-world usage of Redis as a transport::
+@@ -103 +111 @@ Example 6: Real-world usage of Redis as a transport::
+-    redis {
++    input { redis {
+@@ -108 +116,2 @@ Example 6: Real-world usage of Redis as a transport::
+-    }
++    }}
++    output { stdout { debug => "true" }}
+@@ -112 +121 @@ As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in
+-Example 7: RabbitMQ connecting to defaults on remote broker::
++Example 9: RabbitMQ connecting to defaults on remote broker::
+diff --git a/README.rst b/README.rst
+index 176f1e8..6a2a0ce 100644
+--- a/README.rst
++++ b/README.rst
+@@ -115 +115 @@ Example 7: RabbitMQ connecting to defaults on remote broker::
+-    RABBITMQ_ADDRESS="10.0.0.1" beaver -t rabbitmq
++    RABBITMQ_HOST="10.0.0.1" beaver -t rabbitmq
+diff --git a/README.rst b/README.rst
+index 03d315c..176f1e8 100644
+--- a/README.rst
++++ b/README.rst
+@@ -112 +112 @@ As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in
+-Example 7: RabbitMQ connecting to defaults on remote broker
++Example 7: RabbitMQ connecting to defaults on remote broker::
+@@ -113,0 +114 @@ Example 7: RabbitMQ connecting to defaults on remote broker
++    # From the commandline
+@@ -129 +129,0 @@ Example 7: RabbitMQ connecting to defaults on remote broker
+-
+diff --git a/README.rst b/README.rst
+index a2f94cd..03d315c 100644
+--- a/README.rst
++++ b/README.rst
+@@ -111,0 +112,18 @@ As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in
++Example 7: RabbitMQ connecting to defaults on remote broker
++
++    RABBITMQ_ADDRESS="10.0.0.1" beaver -t rabbitmq
++
++    # logstash config:
++    input { amqp {
++        name => "logstash-queue"
++        type => "direct"
++        host => "10.0.0.1"
++        exchange => "logstash-exchange"
++        key => "logstash-key"
++        exclusive => false
++        durable => false
++        auto_delete => false
++      }}
++    output { stdout { debug => "true" }}
++
++
+diff --git a/README.rst b/README.rst
+index e80dedb..a2f94cd 100644
+--- a/README.rst
++++ b/README.rst
+@@ -93,0 +94,18 @@ Example 5: Zeromq connecting to remote port 5556 on indexer::
++Example 6: Real-world usage of Redis as a transport::
++
++    # in /etc/hosts
++    192.168.0.10 redis-internal
++
++    # From the commandline
++    REDIS_NAMESPACE='app:unmappable' REDIS_URL='redis://redis-internal:6379/0' beaver -f /var/log/unmappable.log -t redis
++
++    # logstash indexer config:
++    redis {
++        host => 'redis-internal' # this is in dns for work
++        data_type => 'list'
++        key => 'app:unmappable'
++        type => 'app:unmappable'
++    }
++
++As you can see, ``beaver`` is pretty flexible as to how you can use/abuse it in production.
++
+diff --git a/README.rst b/README.rst
+index 9254eba..e80dedb 100644
+--- a/README.rst
++++ b/README.rst
+@@ -6,0 +7,6 @@ python daemon that munches on logs and sends their contents to logstash
++Requirements
++============
++
++* Python 2.7 (untested on other versions)
++* libzmq (``brew install zmq`` or ``apt-get install libzmq-dev``)
++
+diff --git a/README.rst b/README.rst
+index 48d0e05..9254eba 100644
+--- a/README.rst
++++ b/README.rst
+@@ -31,2 +30,0 @@ optional arguments::
+-    -r {worker,interactive}, --run {worker,interactive}
+-                          run worker or interactive mode
+diff --git a/README.rst b/README.rst
+index b822e8b..48d0e05 100644
+--- a/README.rst
++++ b/README.rst
+@@ -10 +10,3 @@ Installation
+-Using PIP::
++Using PIP:
++
++From Github::
+@@ -14 +16,3 @@ Using PIP::
+-PyPI package forthcoming.
++From PyPI::
++
++    pip install beaver==1
+diff --git a/README.rst b/README.rst
+index bc5465a..b822e8b 100644
+--- a/README.rst
++++ b/README.rst
+@@ -92 +92,2 @@ Todo
+-* Separate tranports into different files so that individual transport requirements are not required on all installations (libzmq)
++* ~Separate tranports into different files so that individual transport requirements are not required on all installations (libzmq)~
++* ~Create a python package~
+diff --git a/README.rst b/README.rst
+index 7c30383..bc5465a 100644
+--- a/README.rst
++++ b/README.rst
+@@ -6,0 +7,9 @@ python daemon that munches on logs and sends their contents to logstash
++Installation
++============
++
++Using PIP::
++
++    pip install git+git://github.com/josegonzalez/beaver.git#egg=beaver
++
++PyPI package forthcoming.
++

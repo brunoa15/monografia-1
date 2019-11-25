@@ -1,0 +1,591 @@
+diff --git a/README.md b/README.md
+index 59d0401..1680d86 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++# This repository is no longer maintained.
++
+diff --git a/README.md b/README.md
+index 04b2c5e..59d0401 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ MIT
+-* Merge: [#36](https://github.com/mohayonao/timbre.js/pull/36) use latest Web Audio API intergace
++* Merge: [#36](https://github.com/mohayonao/timbre.js/pull/36) use latest Web Audio API interfaces
+diff --git a/README.md b/README.md
+index 3f4a7a8..04b2c5e 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,4 @@ MIT
++**14.11.25** (356.27KB)
++* Merge: [#33](https://github.com/mohayonao/timbre.js/pull/33) update of the note duration formula to handle more 3 dots
++* Merge: [#36](https://github.com/mohayonao/timbre.js/pull/36) use latest Web Audio API intergace
++
+diff --git a/README.md b/README.md
+index 112f64c..3f4a7a8 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,4 @@ MIT
++**14.10.12** (356.28KB)
++* Fixed: Decoding wav file
++* Fixed: Envelope release
++
+diff --git a/README.md b/README.md
+index 331d2e9..112f64c 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,3 @@ MIT
++**14.08.07** (356.19KB)
++* Fixed: Export for CommonJS env [#19](https://github.com/mohayonao/timbre.js/issues/19)
++
+diff --git a/README.md b/README.md
+index 224fa18..331d2e9 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Timbre.js provides a functional processing and synthesizing audio in your web ap
+-[BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html) | [Chords Work](http://mohayonao.github.com/timbre.js/chord.html) | [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html) | [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html) | [Reich](http://mohayonao.github.com/timbre.js/reich.html)
++[BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html) | [Chords Work](http://mohayonao.github.com/timbre.js/chord.html) | [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html) | [Khoomii](http://mohayonao.github.com/timbre.js/khoomii.html) | [Reich](http://mohayonao.github.com/timbre.js/reich.html)
+diff --git a/README.md b/README.md
+index 51927ad..224fa18 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ JavaScript library for objective sound programming
+-Timbre.js provides a functional processing and synthesizing audio in your web apps with modern JavaScript's way like jQuery or node.js. It has many **T-Object** (Timbre-Object) that connected together to define the graph-based routing for overall audio rendering. It is a goal of this project to approach the next generation audio processing for web. 
++Timbre.js provides a functional processing and synthesizing audio in your web apps with modern JavaScript's way like jQuery or node.js. It has many **T-Object** (Timbre-Object) that connected together to define the graph-based routing for overall audio rendering. It is a goal of this project to approach the next generation audio processing for web.
+@@ -54,2 +54,3 @@ MIT
+-**14.05.29** (355.96KB)
+-* Fixed: Export for CommonJS env [#19](https://github.com/mohayonao/timbre.js/issues/19)
++**14.06.23** (356.14KB)
++* Fixed: [#23](https://github.com/mohayonao/timbre.js/issues/23) fix to work on an iOS device
++* Fixed: fix to work on node.js
+diff --git a/README.md b/README.md
+index 70dcd2b..51927ad 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,3 @@ MIT
++**14.05.29** (355.96KB)
++* Fixed: Export for CommonJS env [#19](https://github.com/mohayonao/timbre.js/issues/19)
++
+diff --git a/README.md b/README.md
+index 1e5e724..70dcd2b 100644
+--- a/README.md
++++ b/README.md
+@@ -53,0 +54,3 @@ MIT
++**14.05.28** (355.91KB)
++* Fixed: [#19](https://github.com/mohayonao/timbre.js/issues/19)
++
+diff --git a/README.md b/README.md
+index 9bbb63b..1e5e724 100644
+--- a/README.md
++++ b/README.md
+@@ -20 +19,0 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
+-![IE9](http://mohayonao.github.com/timbre.js/misc/img/ie.png)
+@@ -23,4 +21,0 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
+-*IE support is only Internet Exploler 9.*  
+-*iOS support is only later iOS6.0*  
+-*Android support is only [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox) app.*
+-
+@@ -38 +33 @@ Include the `timbre.js` file. It will install itself as `timbre`, `T` under the
+-### Flash fallback (for Opera and IE9)
++### Flash fallback (for Opera and IE10)
+@@ -58,0 +54,4 @@ MIT
++**14.05.15** (355.95KB)
++* Fixed: [#15](https://github.com/mohayonao/timbre.js/issues/15)
++* Excluded support of Audio Data API. use Web Audio API instead.
++
+diff --git a/README.md b/README.md
+index 1206561..9bbb63b 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,4 @@ MIT
++**13.08.03** (361.93KB)
++* Adding Extra: mp3_decode. See [mp3_decode](http://mohayonao.github.io/timbre.js/mp3_decode.html)
++* Adding Extra: soundfont. See [soundfont](http://mohayonao.github.io/timbre.js/soundfont.html)
++
+diff --git a/README.md b/README.md
+index 9833b76..1206561 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ MIT
+-**13.05.03** (361.97KB)
++**13.05.03** (361.93KB)
+diff --git a/README.md b/README.md
+index b8b9fb3..9833b76 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,3 @@ MIT
++**13.05.03** (361.97KB)
++* Bugfix: wav decoder. See [#3](https://github.com/mohayonao/timbre.js/issues/3)
++
+diff --git a/README.md b/README.md
+index dcdb3d0..b8b9fb3 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59,5 @@ MIT
+-** WORKING **
++**13.05.01** (361.75KB)
++* Added: `T("task")`
++* Added: `TimbreObject.to()`
++* Added: `TimbreObject.splice()`
++* Added: `TimbreObject.postMessage()`
+diff --git a/README.md b/README.md
+index 0494ce7..dcdb3d0 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,5 @@ MIT
++** WORKING **
++* Updated: `T("mml")` support multi tracks, command token
++* Updated: `TimbreObject` support buddies interface
++* Bugfix: `T("mouse.x")`, `T("mouse.y")`
++
+diff --git a/README.md b/README.md
+index 7fff081..0494ce7 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,3 @@ MIT
++**13.04.19** (346.63KB)
++* Bugfix: end process of `T("params")`
++
+diff --git a/README.md b/README.md
+index 761b1fa..7fff081 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,3 @@ MIT
++**13.04.17** (344.94KB)
++* Updated: readable stream api (node.js)
++
+diff --git a/README.md b/README.md
+index 429f735..761b1fa 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,3 @@ MIT
++**13.04.06** (344.94KB)
++* Fixed: `T("pluck)` buffer size
++
+diff --git a/README.md b/README.md
+index 3f357e4..429f735 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ MIT
+-**WORKING** (344.96KB)
++**13.04.01** (344.95KB)
+diff --git a/README.md b/README.md
+index 28e20fb..3f357e4 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,5 @@ MIT
++**WORKING** (344.96KB)
++* Bugfix: `T("buffer").slice()`
++* Bugfix: `fn.pointer()` for Opera
++* Fixed: Flash fallback
++
+diff --git a/README.md b/README.md
+index c909e68..28e20fb 100644
+--- a/README.md
++++ b/README.md
+@@ -58,0 +59,5 @@ MIT
++**13.03.10** (345.41KB)
++* Fixed: Checking Float64Array support. See [#2](https://github.com/mohayonao/timbre.js/pull/2)
++* Changed: `lame` support (default -> optional)
++* updated dependencies in package.json
++
+diff --git a/README.md b/README.md
+index 32c6de6..c909e68 100644
+--- a/README.md
++++ b/README.md
+@@ -59 +59 @@ MIT
+-**13.03.01** (355.73KB)
++**13.03.01** (355.72KB)
+diff --git a/README.md b/README.md
+index f2604c4..32c6de6 100644
+--- a/README.md
++++ b/README.md
+@@ -19,2 +19,2 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
+-![Opera](/timbre.js/misc/img/opera.png)
+-![IE9](/timbre.js/misc/img/ie.png)
++![Opera](http://mohayonao.github.com/timbre.js/misc/img/opera.png)
++![IE9](http://mohayonao.github.com/timbre.js/misc/img/ie.png)
+diff --git a/README.md b/README.md
+index 38933b7..f2604c4 100644
+--- a/README.md
++++ b/README.md
+@@ -18,0 +19,2 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
++![Opera](/timbre.js/misc/img/opera.png)
++![IE9](/timbre.js/misc/img/ie.png)
+@@ -20,0 +23 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
++*IE support is only Internet Exploler 9.*  
+@@ -24,8 +26,0 @@ Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
+-## Optional Supports ##
+-Timbre.js is able to run via Flash Player 10.
+-
+-![Opera](http://mohayonao.github.com/timbre.js/misc/img/opera.png)
+-![IE9](http://mohayonao.github.com/timbre.js/misc/img/ie.png)
+-
+-*IE support is only Internet Exploler 9.*
+-
+@@ -42,0 +38,7 @@ Include the `timbre.js` file. It will install itself as `timbre`, `T` under the
++### Flash fallback (for Opera and IE9)
++Download an additional file (Right-click and use "Save As")
++
++- [timbre.swf](/timbre.js/timbre.swf)
++
++`timbre.swf` must be set in the same folder as `timbre.js`.
++
+@@ -56 +57,0 @@ MIT
+-
+@@ -58 +59 @@ MIT
+-**WORKING** (342.92KB)
++**13.03.01** (355.73KB)
+@@ -61,0 +63 @@ MIT
++* Added: `T("mono")`
+diff --git a/README.md b/README.md
+index 96a4e6b..38933b7 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@ JavaScript library for objective sound programming
+-Timbre.js provides a functional processing and synthesizing audio in your web apps with modern JavaScript's way like jQuery or node.js. It has many **T-Object** (formally: Timbre Object) that connected together to define the graph-based routing for overall audio rendering. It is a goal of this project to approach the next generation audio processing for web. 
++Timbre.js provides a functional processing and synthesizing audio in your web apps with modern JavaScript's way like jQuery or node.js. It has many **T-Object** (Timbre-Object) that connected together to define the graph-based routing for overall audio rendering. It is a goal of this project to approach the next generation audio processing for web. 
+@@ -14 +14 @@ Timbre.js provides a functional processing and synthesizing audio in your web ap
+-Timbre.js runs on a modern browser for Windows/Mac/Linux/iOS/Android or node.js.
++Timbre.js runs on modern browsers for Windows/Mac/Linux/iOS/Android or node.js.
+@@ -58 +58 @@ MIT
+-**WORKING** (339.81KB)
++**WORKING** (342.92KB)
+diff --git a/README.md b/README.md
+index 835cbff..96a4e6b 100644
+--- a/README.md
++++ b/README.md
+@@ -62,0 +63 @@ MIT
++* Added: `T("audio.jsonp")` to extras
+@@ -65,0 +67 @@ MIT
++* Renamed: `T("mml")`: `mml` event listener -> `data` event listener
+diff --git a/README.md b/README.md
+index 7da6ca6..835cbff 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ MIT
+-**WORKING** (332.71KB)
++**WORKING** (339.81KB)
+@@ -65,0 +66 @@ MIT
++* Fixed: Flash fallback support for Opera, IE9 (changing the installation)
+@@ -71 +72 @@ MIT
+-* Added flash support for Opera, IE9
++* Added Flash fallback support for Opera, IE9
+diff --git a/README.md b/README.md
+index 3a84c4d..7da6ca6 100644
+--- a/README.md
++++ b/README.md
+@@ -58,3 +58,8 @@ MIT
+-**WORKING** (341.90KB)
+-* Added `T("lag")`
+-* Added `T("delay").cross`
++**WORKING** (332.71KB)
++* Added: `T("script")`
++* Added: `T("waveshaper")`
++* Added: `T("lag")`
++* Added: `T("delay").cross`
++* Moved: `T("keyboard")` to extras
++* Moved: `T("mouse")` to extras
++* Moved: `T("cosc)` to extras
+@@ -70 +75 @@ MIT
+-* Workadound for iOS6.1 bug (failure to start processing in a callback of XMLHttpRequest)
++* workadound for iOS6.1 bug (failure to start processing in a callback of XMLHttpRequest)
+diff --git a/README.md b/README.md
+index 53f9f1b..3a84c4d 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58,3 @@ MIT
+-**WORKING** (335.26KB)
++**WORKING** (341.90KB)
++* Added `T("lag")`
++* Added `T("delay").cross`
+diff --git a/README.md b/README.md
+index 710c0d9..53f9f1b 100644
+--- a/README.md
++++ b/README.md
+@@ -57,0 +58,3 @@ MIT
++**WORKING** (335.26KB)
++* make it easier to make a stereo object
++
+diff --git a/README.md b/README.md
+index 881e278..710c0d9 100644
+--- a/README.md
++++ b/README.md
+@@ -27,2 +27,2 @@ Timbre.js is able to run via Flash Player 10.
+-![Opera](/timbre.js/misc/img/opera.png)
+-![IE9](/timbre.js/misc/img/ie.png)
++![Opera](http://mohayonao.github.com/timbre.js/misc/img/opera.png)
++![IE9](http://mohayonao.github.com/timbre.js/misc/img/ie.png)
+diff --git a/README.md b/README.md
+index 7e60089..881e278 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ Timbre.js provides a functional processing and synthesizing audio in your web ap
+-Timbre.js runs on a modern browser or node.js.
++Timbre.js runs on a modern browser for Windows/Mac/Linux/iOS/Android or node.js.
+@@ -20,0 +21,11 @@ Timbre.js runs on a modern browser or node.js.
++*iOS support is only later iOS6.0*  
++*Android support is only [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox) app.*
++
++## Optional Supports ##
++Timbre.js is able to run via Flash Player 10.
++
++![Opera](/timbre.js/misc/img/opera.png)
++![IE9](/timbre.js/misc/img/ie.png)
++
++*IE support is only Internet Exploler 9.*
++
+@@ -47 +58 @@ MIT
+-**WORKING**
++**13.02.07** (334.61KB)
+diff --git a/README.md b/README.md
+index c68749b..7e60089 100644
+--- a/README.md
++++ b/README.md
+@@ -47,3 +47,5 @@ MIT
+-**WORKING** (335.49KB)
+-* Added: using Float64Array mode, `T.setup({f64:true})`
+-* Fixed: performance improvement
++**WORKING**
++* Added `T.setup({f64:true})` to use Float64Array instead of Float32Array
++* Added Android/Firefox support
++* Added flash support for Opera, IE9
++* performance improvements
+@@ -52 +54 @@ MIT
+-* Fixed: support iOS6.1
++* Workadound for iOS6.1 bug (failure to start processing in a callback of XMLHttpRequest)
+diff --git a/README.md b/README.md
+index 7820cb3..c68749b 100644
+--- a/README.md
++++ b/README.md
+@@ -46,0 +47,4 @@ MIT
++**WORKING** (335.49KB)
++* Added: using Float64Array mode, `T.setup({f64:true})`
++* Fixed: performance improvement
++
+diff --git a/README.md b/README.md
+index f94c1b7..7820cb3 100644
+--- a/README.md
++++ b/README.md
+@@ -48 +48 @@ MIT
+-* Fixed: support iOS6.1, Android(Firefox)
++* Fixed: support iOS6.1
+diff --git a/README.md b/README.md
+index f4a6acb..f94c1b7 100644
+--- a/README.md
++++ b/README.md
+@@ -47 +47 @@ MIT
+-**13.02.06** (337.44KB)
++**13.02.06** (337.50KB)
+diff --git a/README.md b/README.md
+index 0690491..f4a6acb 100644
+--- a/README.md
++++ b/README.md
+@@ -46,0 +47,3 @@ MIT
++**13.02.06** (337.44KB)
++* Fixed: support iOS6.1, Android(Firefox)
++
+diff --git a/README.md b/README.md
+index bf3ea2e..0690491 100644
+--- a/README.md
++++ b/README.md
+@@ -46,0 +47,3 @@ MIT
++**13.02.02** (335.97KB)
++* Fixed: decoder for webkit
++
+diff --git a/README.md b/README.md
+index 7a77995..bf3ea2e 100644
+--- a/README.md
++++ b/README.md
+@@ -44,0 +45 @@ MIT
++
+@@ -46 +47 @@ MIT
+-**13.02.01**
++**13.02.01** (335.96KB)
+@@ -69,0 +71 @@ MIT
++* [Overview of what's new and changed from old timbre.js v12.XX](https://github.com/mohayonao/timbre.js/wiki/Overview-of-what's-new-and-changed-from-old-timbre.js-v12.XX)
+diff --git a/README.md b/README.md
+index e6068b1..7a77995 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +2,0 @@ timbre.js
+-
+@@ -5,0 +5 @@ JavaScript library for objective sound programming
++Timbre.js provides a functional processing and synthesizing audio in your web apps with modern JavaScript's way like jQuery or node.js. It has many **T-Object** (formally: Timbre Object) that connected together to define the graph-based routing for overall audio rendering. It is a goal of this project to approach the next generation audio processing for web. 
+@@ -7,4 +7 @@ JavaScript library for objective sound programming
+-_new version, now under development_
+-
+-
+-### Project Page ###
++## Project Page ##
+@@ -13 +10 @@ _new version, now under development_
+-### Examples ###
++## Examples ##
+@@ -16 +13,2 @@ _new version, now under development_
+-### System Requirements ###
++## Supports ##
++Timbre.js runs on a modern browser or node.js.
+@@ -18,4 +16,4 @@ _new version, now under development_
+-* Chrome 14.0- (Web Audio API)
+-* Safari 6.0- (Web Audio API)
+-* Firefox 4.0- (Audio Data API)
+-* node.js 0.8-
++![Chrome 14.0-](http://mohayonao.github.com/timbre.js/misc/img/chrome.png)
++![Safari 6.0-](http://mohayonao.github.com/timbre.js/misc/img/safari.png)
++![Firefox 4.0-](http://mohayonao.github.com/timbre.js/misc/img/firefox.png)
++![node.js 0.8-](http://mohayonao.github.com/timbre.js/misc/img/nodejs.png)
+@@ -23,3 +21,3 @@ _new version, now under development_
+-### Installation ###
+-
+-Download the [minified library](http://mohayonao.github.com/timbre.js/timbre.js) and include it in your html.
++## Installation ##
++### browser
++Include the `timbre.js` file. It will install itself as `timbre`, `T` under the global namespace.
+@@ -28,0 +27,3 @@ Download the [minified library](http://mohayonao.github.com/timbre.js/timbre.js)
++<script>
++  T("sin", {freq:880, mul:0.5}).play();
++</script>
+@@ -31 +32,5 @@ Download the [minified library](http://mohayonao.github.com/timbre.js/timbre.js)
+-If you want to use node.js, simply compile and install `timbre` using `npm`:
++### node.js
++Install via npm: `npm install timbre`, you can require it as a standard node module.
++
++```js
++var T = require("timbre");
+@@ -33,2 +38 @@ If you want to use node.js, simply compile and install `timbre` using `npm`:
+-```bash
+-$ npm install timbre
++T("sin", {freq:880, mul:0.5}).play();
+@@ -37 +41 @@ $ npm install timbre
+-### License ###
++## License ##
+@@ -41 +45,15 @@ MIT
+-### ChangeLog ###
++## ChangeLog ##
++**13.02.01**
++* Added: `T("reverb")`
++* Added: `T("chorus")`
++* Added: `T("eq")`
++* Added: `T("mediastream")`
++* Added: `T("-")`, `T("/")`, `T("min")`, `T("max")`
++* Added: `T("WebAudioAPI:recv")`, `T("WebAudioAPI:send")` at extras
++* Added: `T("MoogFF")` at extras
++* Renamed: `T("phaseshift")` to `T("phaser")`
++* Renamed: event names `scope`, `fft` to `data` (`T("scope")`, `T("spectrum")`)
++* Fixed: `T("osc").phase`, `T("osc").fb`
++* Fixed: `T("biquad").plot()`
++* Fixed: `T("mml").isEnded`
++
+@@ -43 +61 @@ MIT
+-* rename a propery name: `T("comp").postGain` to `T("comp").gain`
++* Renamed: `T("comp").postGain` to `T("comp").gain`
+@@ -46,3 +64,3 @@ MIT
+-* add `T("adshr")`, `T("ahdsfr")`
+-* add `T("comp")`
+-* add `T("phaseshift")`
++* Added: `T("adshr")`, `T("ahdsfr")`
++* Added: `T("comp")`
++* Added: `T("phaseshift")`
+diff --git a/README.md b/README.md
+index 04d4fdc..e6068b1 100644
+--- a/README.md
++++ b/README.md
+@@ -41,0 +42,3 @@ MIT
++**13.01.20a** (294.82KB)
++* rename a propery name: `T("comp").postGain` to `T("comp").gain`
++
+diff --git a/README.md b/README.md
+index 5b56540..04d4fdc 100644
+--- a/README.md
++++ b/README.md
+@@ -41,0 +42,4 @@ MIT
++**13.01.20** (294.83KB)
++* add `T("adshr")`, `T("ahdsfr")`
++* add `T("comp")`
++* add `T("phaseshift")`
+diff --git a/README.md b/README.md
+index 6690fc7..5b56540 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4,4 @@ timbre.js
+-new version, now under development
++JavaScript library for objective sound programming
++
++
++_new version, now under development_
+@@ -11,5 +14 @@ new version, now under development
+-* [BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html)
+-* [Chords Work](http://mohayonao.github.com/timbre.js/chord.html)
+-* [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html)
+-* [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html)
+-* [Reich](http://mohayonao.github.com/timbre.js/reich.html)
++[BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html) | [Chords Work](http://mohayonao.github.com/timbre.js/chord.html) | [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html) | [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html) | [Reich](http://mohayonao.github.com/timbre.js/reich.html)
+@@ -22 +21 @@ new version, now under development
+-* node.js (0.8-)
++* node.js 0.8-
+diff --git a/README.md b/README.md
+index 8138e8d..6690fc7 100644
+--- a/README.md
++++ b/README.md
+@@ -11,5 +11,5 @@ new version, now under development
+-- [BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html)
+-- [Chords Work](http://mohayonao.github.com/timbre.js/chord.html)
+-- [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html)
+-- [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html)
+-- [Reich](http://mohayonao.github.com/timbre.js/reich.html)
++* [BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html)
++* [Chords Work](http://mohayonao.github.com/timbre.js/chord.html)
++* [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html)
++* [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html)
++* [Reich](http://mohayonao.github.com/timbre.js/reich.html)
+@@ -44,2 +44,2 @@ MIT
+-- **13.01.18a** (268.71KB)
+-new version (beta)
++**13.01.18a** (268.71KB)
++* new version (beta)
+diff --git a/README.md b/README.md
+index c7ac76c..8138e8d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,0 +5,41 @@ new version, now under development
++
++
++### Project Page ###
++[English](http://mohayonao.github.com/timbre.js/) | [日本語](http://mohayonao.github.com/timbre.js/ja/)
++
++### Examples ###
++- [BeatBox](http://mohayonao.github.com/timbre.js/beatbox.html)
++- [Chords Work](http://mohayonao.github.com/timbre.js/chord.html)
++- [Gymnopedie](http://mohayonao.github.com/timbre.js/satie.html)
++- [Khoomii](http://mohayonao.github.com/timbre.js/koomii.html)
++- [Reich](http://mohayonao.github.com/timbre.js/reich.html)
++
++### System Requirements ###
++
++* Chrome 14.0- (Web Audio API)
++* Safari 6.0- (Web Audio API)
++* Firefox 4.0- (Audio Data API)
++* node.js (0.8-)
++
++### Installation ###
++
++Download the [minified library](http://mohayonao.github.com/timbre.js/timbre.js) and include it in your html.
++
++```html
++<script src="timbre.js"></script>
++```
++
++If you want to use node.js, simply compile and install `timbre` using `npm`:
++
++```bash
++$ npm install timbre
++```
++
++### License ###
++
++MIT
++
++### ChangeLog ###
++
++- **13.01.18a** (268.71KB)
++new version (beta)

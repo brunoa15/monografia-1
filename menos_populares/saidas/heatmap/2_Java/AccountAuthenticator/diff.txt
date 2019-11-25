@@ -1,0 +1,39 @@
+diff --git a/README.md b/README.md
+index 110562e..bc8e8ab 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ A sample app to demonstrate some of Android Authenticator's abilities.
+-![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png) &nbsp;&nbsp; ![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
++![screenshots](screenshots/sampleapp.png) &nbsp;&nbsp; ![screenshots](screenshots/accounts.png)
+diff --git a/README.md b/README.md
+index cc761a9..110562e 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@ A sample app to demonstrate some of Android Authenticator's abilities.
+-This subject and source code is explained in my blog post at http://www.udinic.com
++This subject and source code is explained in my blog post at http://udinic.wordpress.com/2013/04/24/write-your-own-android-authenticator/
+diff --git a/README.md b/README.md
+index 90e1306..cc761a9 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ A sample app to demonstrate some of Android Authenticator's abilities.
+-![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png) ![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
++![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png) &nbsp;&nbsp; ![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
+diff --git a/README.md b/README.md
+index df295a6..90e1306 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@ A sample app to demonstrate some of Android Authenticator's abilities.
+-![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
++![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png) ![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
+@@ -8 +7,0 @@ A sample app to demonstrate some of Android Authenticator's abilities.
+-![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png)
+diff --git a/README.md b/README.md
+index e11ff26..df295a6 100644
+--- a/README.md
++++ b/README.md
+@@ -5,0 +6,4 @@ A sample app to demonstrate some of Android Authenticator's abilities.
++![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/accounts.png)
++
++![screenshots](https://raw.github.com/Udinic/AccountAuthenticator/master/screenshots/sampleapp.png)
++

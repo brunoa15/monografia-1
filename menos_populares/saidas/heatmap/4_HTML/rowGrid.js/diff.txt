@@ -1,0 +1,327 @@
+diff --git a/README.md b/README.md
+index e6b2634..8b96d52 100644
+--- a/README.md
++++ b/README.md
+@@ -34 +34,3 @@ RowGrid.js requires jQuery 1.7 or above.
+-You can install it also with Bower or npm:
++Alternativlly, if you don't want to host rowGrid.js yourself, you can use cdnjs: https://cdnjs.com/libraries/rowgrid.js
++
++You can also install it with Bower or npm:
+diff --git a/README.md b/README.md
+index 7de0ea6..e6b2634 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (~900 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
++**rowGrid.js is a small, lightweight (~1000 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
+@@ -25 +25 @@ Examples with explanation: http://brunjo.github.io/rowGrid.js/
+-Real world example: http://www.pexels.com/
++Real world example: https://www.pexels.com/
+@@ -107,0 +108,5 @@ The first item in every row gets this class.
++#### lastItemClass
++* **value:** ```string``` or ```null```
++* **default value:** ```null```
++
++The last item in every row gets this class.
+diff --git a/README.md b/README.md
+index 0cc78ef..7de0ea6 100644
+--- a/README.md
++++ b/README.md
+@@ -32,0 +33,5 @@ RowGrid.js requires jQuery 1.7 or above.
++
++You can install it also with Bower or npm:
++* Install with [Bower](http://bower.io): `bower install rowGrid.js`.
++* Install with [npm](https://www.npmjs.com): `npm install rowgrid.js`.
++
+diff --git a/README.md b/README.md
+index a1be15a..0cc78ef 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ Features:
+-Check out the vanilla-js branch to use the version that doesn't require jQuery: https://github.com/brunjo/rowGrid.js/tree/vanilla-js
++**A vanilla JavaScript version is available that doesn't require jQuery: https://github.com/brunjo/rowGrid**
+diff --git a/README.md b/README.md
+index 45c99ba..a1be15a 100644
+--- a/README.md
++++ b/README.md
+@@ -8 +8 @@ Features:
+- * responisve
++ * responsive
+@@ -17 +17 @@ Do you like this project? Follow me on Twitter [@3runjo][1].
+- 
++
+@@ -21 +21 @@ At first rowGrid.js adjusts the margin between the items. If this is not enough
+- 
++
+@@ -26 +26 @@ Real world example: http://www.pexels.com/
+- 
++
+@@ -67 +67 @@ $(".container").rowGrid({
+-    minMargin: 10, 
++    minMargin: 10,
+diff --git a/README.md b/README.md
+index 019f712..45c99ba 100644
+--- a/README.md
++++ b/README.md
+@@ -11,0 +12,2 @@ Features:
++Check out the vanilla-js branch to use the version that doesn't require jQuery: https://github.com/brunjo/rowGrid.js/tree/vanilla-js
++
+diff --git a/README.md b/README.md
+index 873a75a..019f712 100644
+--- a/README.md
++++ b/README.md
+@@ -27,3 +27,3 @@ RowGrid.js requires jQuery 1.7 or above.
+-```
+-<script src="path/to/jquery.min.js" >
+-<script src="path/to/jquery.row-grid.min.js" >
++```HTML
++<script src="path/to/jquery.min.js"></script>
++<script src="path/to/jquery.row-grid.min.js"></script>
+@@ -35 +35 @@ HTML:
+-```
++```HTML
+@@ -47 +47 @@ JS:
+-```
++```JS
+@@ -54 +54 @@ JS:
+-```
++```JS
+@@ -62 +62 @@ $(".container").rowGrid("appended");
+-```
++```JS
+diff --git a/README.md b/README.md
+index 4ad9908..873a75a 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ JS:
+-$(".container").append("<div class='item'><img src='http://placehold.it/310x200' />");
++$(".container").append("<div class='item'><img src='http://placehold.it/310x200' /></div>");
+diff --git a/README.md b/README.md
+index 9a833ad..4ad9908 100644
+--- a/README.md
++++ b/README.md
+@@ -10 +10 @@ Features:
+- * support for all modern browsers and IE >= 9
++ * support for all modern browsers and IE >= 8
+diff --git a/README.md b/README.md
+index 169686b..9a833ad 100644
+--- a/README.md
++++ b/README.md
+@@ -21,0 +22 @@ Examples with explanation: http://brunjo.github.io/rowGrid.js/
++
+diff --git a/README.md b/README.md
+index 6807e4a..169686b 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (~800 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
++**rowGrid.js is a small, lightweight (~900 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
+@@ -9,0 +10 @@ Features:
++ * support for all modern browsers and IE >= 9
+@@ -20 +21,2 @@ At first rowGrid.js adjusts the margin between the items. If this is not enough
+-http://brunjo.github.io/rowGrid.js/
++Examples with explanation: http://brunjo.github.io/rowGrid.js/
++Real world example: http://www.pexels.com/
+diff --git a/README.md b/README.md
+index 94351fb..6807e4a 100644
+--- a/README.md
++++ b/README.md
+@@ -4 +4 @@
+-The grid similar to grids on Google Image Search, flickr, shutterstock and Google+ images.
++The grid is similar to grids on Google Image Search, flickr, shutterstock and Google+ images.
+@@ -22,0 +23 @@ http://brunjo.github.io/rowGrid.js/
++RowGrid.js requires jQuery 1.7 or above.
+diff --git a/README.md b/README.md
+index efc3d7a..94351fb 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (~700 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
++**rowGrid.js is a small, lightweight (~800 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
+diff --git a/README.md b/README.md
+index c5b29a4..efc3d7a 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Features:
+-![Example Grid](http://brunjo.github.io/rowGrid.js/example.png)
++[![Example Grid](http://brunjo.github.io/rowGrid.js/example.png)][2]
+@@ -99,0 +100 @@ The first item in every row gets this class.
++  [2]: http://brunjo.github.io/rowGrid.js/ "Demos"
+diff --git a/README.md b/README.md
+index e38a9a1..c5b29a4 100644
+--- a/README.md
++++ b/README.md
+@@ -10,0 +11,2 @@ Features:
++![Example Grid](http://brunjo.github.io/rowGrid.js/example.png)
++
+diff --git a/README.md b/README.md
+index 6c6925c..e38a9a1 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (~700 bytes gzipped) jQuery plugin for placing items in rows.**
++**rowGrid.js is a small, lightweight (~700 bytes gzipped) jQuery plugin for placing images (or other items) in  straight rows.**
+diff --git a/README.md b/README.md
+index fe41d45..6c6925c 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (~650 bytes gzipped) jQuery plugin for placing items in rows.**
++**rowGrid.js is a small, lightweight (~700 bytes gzipped) jQuery plugin for placing items in rows.**
+@@ -4 +4 @@
+-The grid is similar to the result page of the Google Image Search, the Google+ images or the shutterstock result page.
++The grid similar to grids on Google Image Search, flickr, shutterstock and Google+ images.
+@@ -14 +14 @@ Do you like this project? Follow me on Twitter [@3runjo][1].
+-All items must have the **same height** but the **width can be variable**. RowGrid.js arranges the items in rows so that the width of the rows equals the width of the container/parent element.
++All items must have the **same height** but the **width can be variable**. RowGrid.js justifies the items in straight rows so that the width of the rows equals the width of the container/parent element.
+diff --git a/README.md b/README.md
+index 83f667f..fe41d45 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**rowGrid.js is a small, lightweight (1.24kb minfied) jQuery plugin for arranging items in rows.**
++**rowGrid.js is a small, lightweight (~650 bytes gzipped) jQuery plugin for placing items in rows.**
+@@ -4 +4 @@
+-The grid is similar to the result page of the Google Image Search or the Google+ images.
++The grid is similar to the result page of the Google Image Search, the Google+ images or the shutterstock result page.
+@@ -5,0 +6,14 @@ The grid is similar to the result page of the Google Image Search or the Google+
++Features:
++
++ * responisve
++ * infinite scrolling
++
++Do you like this project? Follow me on Twitter [@3runjo][1].
++ 
++## How does it work?
++All items must have the **same height** but the **width can be variable**. RowGrid.js arranges the items in rows so that the width of the rows equals the width of the container/parent element.
++At first rowGrid.js adjusts the margin between the items. If this is not enough rowGrid.js scales down the items.
++ 
++## Demos & Examples
++http://brunjo.github.io/rowGrid.js/
++ 
+@@ -11,0 +26,2 @@ The grid is similar to the result page of the Google Image Search or the Google+
++It is important that you either **declare the width and height as attributes** on the img tag or that you wait until the images are loaded before you start rowGrid.js.
++
+@@ -16 +32 @@ HTML:
+-    <img src="http://placehold.it/340x200" />
++    <img src="path/to/image" width="320" height="200" />
+@@ -19 +35 @@ HTML:
+-    <img src="http://placehold.it/320x200" />
++    <img src="path/to/image" width="290" height="200" />
+@@ -30 +46 @@ $(".container").rowGrid(options);
+-### Endless Scroll
++### Endless Scrolling
+@@ -39 +55,11 @@ $(".container").rowGrid("appended");
+-### Options
++## Options
++```
++$(".container").rowGrid({
++    itemSelector: ".item"
++    minMargin: 10, 
++    maxMargin: 35,
++    resize: true,
++    lastRowClass: "last-row",
++    firstItemClass: "first-item"
++});
++```
+@@ -40,0 +67,3 @@ $(".container").rowGrid("appended");
++* **value:** ```string``` (CSS Selector)
++
++You have to set this option. The selector have to reference to all grid items.
+@@ -41,0 +71,4 @@ $(".container").rowGrid("appended");
++* **value:** ```number``` or ```null```
++* **default value:** ```null```
++
++This is the minimal horizontal margin between the items. The margin is only between the items not between the first/last item and the container.
+@@ -42,0 +76,4 @@ $(".container").rowGrid("appended");
++* **value:** ```number``` or ```null```
++* **default value:** ```null```
++
++This is the maximal horizontal margin between the items.
+@@ -43,0 +81,4 @@ $(".container").rowGrid("appended");
++* **value:** ```boolean```
++* **default value:** ```true```
++
++If ```resize``` is set to true the layout updates on resize events. This is useful for responsive websites.
+@@ -44,0 +86,4 @@ $(".container").rowGrid("appended");
++* **value:** ```string```
++* **default value:** ```last-row```
++
++The first item in the last row gets this class.
+@@ -45,0 +91,7 @@ $(".container").rowGrid("appended");
++* **value:** ```string``` or ```null```
++* **default value:** ```null```
++
++The first item in every row gets this class.
++
++
++  [1]: https://twitter.com/3runjo "@3runjo"
+diff --git a/README.md b/README.md
+index b1abcf5..83f667f 100644
+--- a/README.md
++++ b/README.md
+@@ -14 +14 @@ HTML:
+-<div class="items">
++<div class="container">
+@@ -27 +27,10 @@ var options = {minMargin: 10, maxMargin: 35, itemSelector: ".item"};
+-$(".items").rowGrid(options);
++$(".container").rowGrid(options);
++```
++
++### Endless Scroll
++JS:
++```
++// append new items
++$(".container").append("<div class='item'><img src='http://placehold.it/310x200' />");
++// arrange appended items
++$(".container").rowGrid("appended");
+diff --git a/README.md b/README.md
+index 1d052d9..b1abcf5 100644
+--- a/README.md
++++ b/README.md
+@@ -2 +2 @@
+-**roWgrid.js is a small, lightweight jQuery plugin for arranging items in rows.**
++**rowGrid.js is a small, lightweight (1.24kb minfied) jQuery plugin for arranging items in rows.**
+diff --git a/README.md b/README.md
+index 41c5d92..1d052d9 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,36 @@
+-rowGrid.js
+-==========
++# rowGrid.js
++**roWgrid.js is a small, lightweight jQuery plugin for arranging items in rows.**
++
++The grid is similar to the result page of the Google Image Search or the Google+ images.
++
++## Installation
++```
++<script src="path/to/jquery.min.js" >
++<script src="path/to/jquery.row-grid.min.js" >
++```
++## Usage
++HTML:
++```
++<div class="items">
++  <div class="item">
++    <img src="http://placehold.it/340x200" />
++  </div>
++  <div class="item">
++    <img src="http://placehold.it/320x200" />
++  </div>
++  ...
++</div>
++```
++JS:
++```
++var options = {minMargin: 10, maxMargin: 35, itemSelector: ".item"};
++$(".items").rowGrid(options);
++```
++
++### Options
++#### itemSelector (required)
++#### minMargin
++#### maxMargin
++#### resize
++#### lastRowClass
++#### firstItemClass

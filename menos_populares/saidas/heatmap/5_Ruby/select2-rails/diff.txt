@@ -1,0 +1,402 @@
+diff --git a/README.md b/README.md
+index 3d26e71..22eadc2 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51,6 @@ Add the following to your `app/assets/javascripts/application.js`:
++To apply the language, pass whatever language you'd like to use to the [`language`](https://select2.github.io/examples.html#language) option when initializing Select2:
++
++    $( "#dropdown" ).select2({
++        language: "zh-TW"
++    });
++
+diff --git a/README.md b/README.md
+index b98d2ff..3d26e71 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-#Select2 for rails asset pipeline
++# Select2 for rails asset pipeline
+@@ -51,6 +50,0 @@ Add the following to your `app/assets/javascripts/application.js`:
+-To apply the language, pass whatever language you'd like to use to the [`language`](https://select2.github.io/examples.html#language) option when initializing Select2:
+-
+-    $( "#dropdown" ).select2({
+-        language: "zh-TW"
+-    });
+-
+diff --git a/README.md b/README.md
+index 40cf526..b98d2ff 100644
+--- a/README.md
++++ b/README.md
+@@ -50,0 +51,6 @@ Add the following to your `app/assets/javascripts/application.js`:
++To apply the language, pass whatever language you'd like to use to the [`language`](https://select2.github.io/examples.html#language) option when initializing Select2:
++
++    $( "#dropdown" ).select2({
++        language: "zh-TW"
++    });
++
+diff --git a/README.md b/README.md
+index 1a3ad68..40cf526 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ Possible languages:
+-	ar, az, bg, ca, cs, da, de, en, es, et, eu, fa, fi, fr, gl, he, hi, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nb, nl, pl, pt, pt-BR, ro, ru, sk, sr, sr-Cyrl, sv, th, tr, uk, vi, zh-CN, zh-TW
++	ar, az, bg, ca, cs, da, de, el, en, es, et, eu, fa, fi, fr, gl, he, hi, hr, hu, id, is, it, ja, km, ko, lt, lv, mk, ms, nb, nl, pl, pt, pt-BR, ro, ru, sk, sr, sr-Cyrl, sv, th, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index cf478ad..1a3ad68 100644
+--- a/README.md
++++ b/README.md
+@@ -53 +53 @@ Possible languages:
+-	az, bg, ca, cs, da, de, en, es, et, eu, fi, fr, gl, hi, hr, hu, id, is, it, lt, lv, mk, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, th, tr, uk, vi, zh-CN, zh-TW
++	ar, az, bg, ca, cs, da, de, en, es, et, eu, fa, fi, fr, gl, he, hi, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nb, nl, pl, pt, pt-BR, ro, ru, sk, sr, sr-Cyrl, sv, th, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 6a3cddc..cf478ad 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ Add the following to your `app/assets/javascripts/application.js`:
+-To add `select.full.js` instead of `select2.js`, add the following instead :
++To add `select2-full.js` instead of `select2.js`, add the following instead :
+@@ -25 +25 @@ To add `select.full.js` instead of `select2.js`, add the following instead :
+-	//= require select2.full
++	//= require select2-full
+diff --git a/README.md b/README.md
+index 4822355..6a3cddc 100644
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23,4 @@ Add the following to your `app/assets/javascripts/application.js`:
++To add `select.full.js` instead of `select2.js`, add the following instead :
++
++	//= require select2.full
++
+diff --git a/README.md b/README.md
+index df6cfde..4822355 100644
+--- a/README.md
++++ b/README.md
+@@ -32,0 +33,6 @@ If you are using Twitter Boostrap you need to also require the bootstrap theme C
++To apply the theme, tell Select2 to do so by passing `bootstrap` to the [`theme`](https://select2.github.io/examples.html#themes) option when initializing Select2:
++
++    $( "#dropdown" ).select2({
++        theme: "bootstrap"
++    });
++
+diff --git a/README.md b/README.md
+index c9523b0..df6cfde 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ka, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
++	az, bg, ca, cs, da, de, en, es, et, eu, fi, fr, gl, hi, hr, hu, id, is, it, lt, lv, mk, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, th, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index b4c61ab..c9523b0 100644
+--- a/README.md
++++ b/README.md
+@@ -68,3 +68,3 @@ If you want to contribute, please:
+-	* Fork the project.
+-	* Make your feature addition or bug fix.
+-	* Send me a pull request on Github.
++* Fork the project.
++* Make your feature addition or bug fix.
++* Send me a pull request on Github.
+diff --git a/README.md b/README.md
+index 6670271..b4c61ab 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[Select2](https://github.com/ivaynberg/select2) is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
++[Select2](https://github.com/select2/select2) is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
+diff --git a/README.md b/README.md
+index 185d34b..6670271 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ka, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 0ac8f79..185d34b 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 609d6dd..0ac8f79 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-If you are using Twitter Boostrap you can require ethe bootstrap theme CSS
++If you are using Twitter Boostrap you need to also require the bootstrap theme CSS in addition to the above require.
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 62bbaa7..609d6dd 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-If you are using Twitter Boostrap you can require the bootstrap theme CSS
++If you are using Twitter Boostrap you can require ethe bootstrap theme CSS
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, rs, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 4471ebd..62bbaa7 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-If you are using Twitter Boostrap you can require ethe bootstrap theme CSS
++If you are using Twitter Boostrap you can require the bootstrap theme CSS
+diff --git a/README.md b/README.md
+index 6a94ca4..4471ebd 100644
+--- a/README.md
++++ b/README.md
+@@ -43 +43 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, uk, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 3fcffbf..6a94ca4 100644
+--- a/README.md
++++ b/README.md
+@@ -31 +31 @@ If you are using Twitter Boostrap you can require ethe bootstrap theme CSS
+-  *= require select2-bootstrap
++	*= require select2-bootstrap
+diff --git a/README.md b/README.md
+index 342daca..3fcffbf 100644
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,4 @@ Add to your `app/assets/stylesheets/application.css`:
++If you are using Twitter Boostrap you can require ethe bootstrap theme CSS
++
++  *= require select2-bootstrap
++
+diff --git a/README.md b/README.md
+index ef52036..342daca 100644
+--- a/README.md
++++ b/README.md
+@@ -45,0 +46,9 @@ Heroku app [here](http://select-2-example.herokuapp.com/)
++## Fix
++### IE8 Invalid Character
++IE8 doesn't support some unescaped Unicode character and need to quote keys in object literals
++You need some configurations for [Uglifier](https://github.com/lautis/uglifier) to do the work.
++Add to your `config/environments/production.rb`
++
++       require 'uglifier'
++       config.assets.js_compressor = Uglifier.new(output: {ascii_only: true, quote_keys: true})
++
+diff --git a/README.md b/README.md
+index 3df7c53..ef52036 100644
+--- a/README.md
++++ b/README.md
+@@ -39 +39 @@ Possible languages:
+-	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, ms, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
+@@ -61 +61 @@ If you want to contribute, please:
+-Selec2-Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+\ No newline at end of file
++Selec2-Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+diff --git a/README.md b/README.md
+index 46d0fbc..3df7c53 100644
+--- a/README.md
++++ b/README.md
+@@ -42,2 +42,3 @@ Possible languages:
+-[Code](https://github.com/argerim/select_2_example)
+-[Heroku app](http://select-2-example.herokuapp.com/)
++Code [here](https://github.com/argerim/select_2_example)
++
++Heroku app [here](http://select-2-example.herokuapp.com/)
+diff --git a/README.md b/README.md
+index 2651909..46d0fbc 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,4 @@ Possible languages:
++## Example
++[Code](https://github.com/argerim/select_2_example)
++[Heroku app](http://select-2-example.herokuapp.com/)
++
+diff --git a/README.md b/README.md
+index 8076c4f..2651909 100644
+--- a/README.md
++++ b/README.md
+@@ -54 +54 @@ If you want to contribute, please:
+-## Copyright
++## License
+@@ -56 +56 @@ If you want to contribute, please:
+-Copyright (c) 2012 Rogerio Medeiros. See [LICENSE](https://github.com/argerim/select2-rails/blob/master/LICENSE) for details.
++Selec2-Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 0b39c1d..8076c4f 100644
+--- a/README.md
++++ b/README.md
+@@ -35 +35 @@ Add the following to your `app/assets/javascripts/application.js`:
+-  //= require select2_locale_any_possible_language
++	//= require select2_locale_"any possible language"
+@@ -39 +39 @@ Possible languages:
+-  ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
++	ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index e7c08dc..0b39c1d 100644
+--- a/README.md
++++ b/README.md
+@@ -35 +35 @@ Add the following to your `app/assets/javascripts/application.js`:
+-  //= require select2_locale_"any possible language"
++  //= require select2_locale_any_possible_language
+@@ -39,5 +39 @@ Possible languages:
+-  ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, 
+-
+-  hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, 
+-
+-  pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
++  ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
+diff --git a/README.md b/README.md
+index 34abd70..e7c08dc 100644
+--- a/README.md
++++ b/README.md
+@@ -31,0 +32 @@ The `select2-rails` now supports multiple languages.
++
+@@ -32,0 +34 @@ Add the following to your `app/assets/javascripts/application.js`:
++
+@@ -35,0 +38 @@ Possible languages:
++
+@@ -36,0 +40 @@ Possible languages:
++
+@@ -37,0 +42 @@ Possible languages:
++
+diff --git a/README.md b/README.md
+index 65441bc..34abd70 100644
+--- a/README.md
++++ b/README.md
+@@ -28,0 +29,11 @@ Add to your `app/assets/stylesheets/application.css`:
++## Internationalization (i18n)
++
++The `select2-rails` now supports multiple languages.
++Add the following to your `app/assets/javascripts/application.js`:
++  //= require select2_locale_"any possible language"
++
++Possible languages:
++  ar, ca, cs, da, de, el, es, et, eu, fi, fr, gl, he, hr, 
++  hu, id, is, it, ja, ko, lt, lv, mk, nl, no, pl, pt-BR, 
++  pt-PT, ro, ru, sk, sv, tr, ua, vi, zh-CN, zh-TW
++
+diff --git a/README.md b/README.md
+index b9b85ba..65441bc 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +4,0 @@
+-
+@@ -7,0 +7,2 @@ The `select2-rails` gem integrates the `Select2` jQuery plugin with the Rails as
++[![Gem Version](https://badge.fury.io/rb/select2-rails.png)](http://badge.fury.io/rb/select2-rails)
++
+diff --git a/README.md b/README.md
+index 9eae132..b9b85ba 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v3.2`.
++From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses.
+diff --git a/README.md b/README.md
+index c35fec2..9eae132 100644
+--- a/README.md
++++ b/README.md
+@@ -35 +35 @@ The last number of the version is the patch version specific to the gem. For exa
+-If you wont to contribute, please:
++If you want to contribute, please:
+diff --git a/README.md b/README.md
+index 364c2ae..c35fec2 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v3.1`.
++From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v3.2`.
+@@ -43 +43 @@ If you wont to contribute, please:
+-Copyright (c) 2012 Rogerio Medeiros. See [LICENSE](https://github.com/argerim/select2-rails/blob/master/LICENSE) for details.
+\ No newline at end of file
++Copyright (c) 2012 Rogerio Medeiros. See [LICENSE](https://github.com/argerim/select2-rails/blob/master/LICENSE) for details.
+diff --git a/README.md b/README.md
+index 3045b53..364c2ae 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`:
+-From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v2.1`.
++From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v3.1`.
+diff --git a/README.md b/README.md
+index be76f97..3045b53 100644
+--- a/README.md
++++ b/README.md
+@@ -6 +6 @@
+-The `select2-rails` gem integrates the `Select2` with the Rails asset pipeline.
++The `select2-rails` gem integrates the `Select2` jQuery plugin with the Rails asset pipeline.
+@@ -12 +12 @@ The `select2-rails` gem integrates the `Select2` with the Rails asset pipeline.
+-Add `select2-rails` in Gemfile and run `bundle install`.
++Add `select2-rails` to your Gemfile and run `bundle install`:
+@@ -18 +18 @@ Add `select2-rails` in Gemfile and run `bundle install`.
+-Add to your `app/assets/javascripts/application.js`.
++Add the following to your `app/assets/javascripts/application.js`:
+@@ -24 +24 @@ Add to your `app/assets/javascripts/application.js`.
+-Add to your `app/assets/stylesheets/application.css`.
++Add to your `app/assets/stylesheets/application.css`:
+@@ -27 +27 @@ Add to your `app/assets/stylesheets/application.css`.
+-	
++
+@@ -29 +29,3 @@ Add to your `app/assets/stylesheets/application.css`.
+-The most current release of `select2-rails` uses `Select2 v2.1`.
++From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses. Currently, `select2-rails` uses `Select2 v2.1`.
++
++The last number of the version is the patch version specific to the gem. For example, for a version of the form `2.x.y`, `2.x` is the release of `Select2` we should be compatible with, and y is the patch version specific to the gem (ie. to resolve any gem-specific issues that crop up).
+@@ -36 +38 @@ If you wont to contribute, please:
+-	* Make your feature addition or bug fix.	
++	* Make your feature addition or bug fix.
+diff --git a/README.md b/README.md
+index 7028626..be76f97 100644
+--- a/README.md
++++ b/README.md
+@@ -29 +29 @@ Add to your `app/assets/stylesheets/application.css`.
+-The most current release of select2-rails uses select2 v2.1.
++The most current release of `select2-rails` uses `Select2 v2.1`.
+diff --git a/README.md b/README.md
+index 63da25c..7028626 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27,3 @@ Add to your `app/assets/stylesheets/application.css`.
++	
++## Version
++The most current release of select2-rails uses select2 v2.1.
+diff --git a/README.md b/README.md
+index 5427105..63da25c 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38 @@ If you wont to contribute, please:
+-Copyright (c) 2012 Rogerio Medeiros. See LICENSE for details.
+\ No newline at end of file
++Copyright (c) 2012 Rogerio Medeiros. See [LICENSE](https://github.com/argerim/select2-rails/blob/master/LICENSE) for details.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 9f2b244..5427105 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ The `select2-rails` gem integrates the `Select2` with the Rails asset pipeline.
+-Add `select2-rails` in Gemfile
++Add `select2-rails` in Gemfile and run `bundle install`.
+@@ -16,2 +15,0 @@ Add `select2-rails` in Gemfile
+-Run `bundle install`
+-
+@@ -20 +18 @@ Run `bundle install`
+-Add to your `app/assets/javascripts/application.js`
++Add to your `app/assets/javascripts/application.js`.
+@@ -26 +24 @@ Add to your `app/assets/javascripts/application.js`
+-Add to your `app/assets/stylesheets/application.css`
++Add to your `app/assets/stylesheets/application.css`.
+@@ -30 +28,9 @@ Add to your `app/assets/stylesheets/application.css`
+-## License
++## Contributions
++
++If you wont to contribute, please:
++
++	* Fork the project.
++	* Make your feature addition or bug fix.	
++	* Send me a pull request on Github.
++
++## Copyright
+@@ -32 +38 @@ Add to your `app/assets/stylesheets/application.css`
+-use MIT license.
+\ No newline at end of file
++Copyright (c) 2012 Rogerio Medeiros. See LICENSE for details.
+\ No newline at end of file

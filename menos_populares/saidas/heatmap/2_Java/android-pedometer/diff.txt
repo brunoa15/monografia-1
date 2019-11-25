@@ -1,0 +1,53 @@
+diff --git a/README.textile b/README.textile
+index 652178f..787df1d 100644
+--- a/README.textile
++++ b/README.textile
+@@ -0,0 +1,4 @@
++h1. android-pedometer
++
++!http://unmaintained.tech/badge.svg(No Maintenance Intended)!:http://unmaintained.tech/
++
+diff --git a/README.textile b/README.textile
+index 0afb0a5..652178f 100644
+--- a/README.textile
++++ b/README.textile
+@@ -47,0 +48,3 @@ Answer: Basically, it aggregates the sensor values, finds the maximum and minimu
++Question: In some other place, it says it's licensed under GPL, but here it says "No restrictions"; which one is true?
++Answer: The one attached to the source code applies, so for this version "No restrictions". Previously it was under GPL, so some forks may still be under GPL.
++
+diff --git a/README.textile b/README.textile
+index e58eea8..0afb0a5 100644
+--- a/README.textile
++++ b/README.textile
+@@ -39,0 +40,8 @@ h2. Installation
++h2. FAQ
++
++Question: How did you arrived at the formula for the step detection?
++Answer: It's completely a result of experimentation. I know this is lame, but this was a weekend hack I made just for myself.
++
++Question: How does the step detection algorithm work?
++Answer: Basically, it aggregates the sensor values, finds the maximum and minimum, and if the difference is bigger than a value (which depends on the sensitivity setting) then it counts it as a step. There's is some additional optimization, which I arrived to through experimentation.
++
+@@ -42 +50 @@ h2. License
+-"GNU General Public License, version 3":http://www.gnu.org/licenses/gpl.html
++No restrictions. You are free to do anything with the source code.
+diff --git a/README.textile b/README.textile
+index db54096..e58eea8 100644
+--- a/README.textile
++++ b/README.textile
+@@ -9,3 +9 @@ It counts your steps by using the sensors in the phone.
+-It calculates the pace (steps per minute), and can help you maintain a desired pace by speaking to you. It will ask you to install the Text-to-Speach library if you enable this option.
+-
+-It runs as a service, so it keeps counting when the display is off.
++It calculates the pace (steps per minute), and can help you maintain a desired pace by speaking to you.
+@@ -14,0 +13,7 @@ h2. Changelog
++New in v1.4 (2010-12-25):
++* Using built-in TTS
++* Fix binding to the service
++* Layout extends to the screen, supports various screen sizes
++* Adjust default sensitivity, add more options
++* Fix division by 0 bug
++
+@@ -33 +38 @@ h2. Installation
+-* by downloading the "Pedometer.apk":http://pedometer.googlecode.com/files/Pedometer-1.3.apk file and issuing @adb install Pedometer.apk@
++* by downloading the "Pedometer.apk":http://pedometer.googlecode.com/files/Pedometer-1.4.apk file and issuing @adb install Pedometer.apk@

@@ -1,0 +1,1143 @@
+diff --git a/readme.md b/readme.md
+index a324f34..2f2073b 100644
+--- a/readme.md
++++ b/readme.md
+@@ -7,2 +6,0 @@ A good way to interact with other CLI tools. For example, get the current Git br
+-**Use [Stack Overflow](https://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
+-
+@@ -16,4 +13,0 @@ $ npm install --save-dev grunt-shell
+-<a href="https://www.patreon.com/sindresorhus">
+-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+-</a>
+-
+@@ -184 +178 @@ grunt.initConfig({
+-Type: `string` `Function`
++Type: `string | Function`
+@@ -251 +245 @@ Execute local binaries by name like [`$ npm run-script`](https://www.keithcirkel
+-Type: `Object`
++Type: `object`
+@@ -262,5 +255,0 @@ Specify some options to be passed to the [.exec()](https://nodejs.org/api/child_
+-
+-
+-## License
+-
+-MIT © [Sindre Sorhus](https://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index f060480..a324f34 100644
+--- a/readme.md
++++ b/readme.md
+@@ -5 +5 @@
+-A good way to interact with other CLI tools. E.g. compiling Compass `compass compile` or get the current git branch `git branch`.
++A good way to interact with other CLI tools. For example, get the current Git branch with `git branch`.
+@@ -9,6 +8,0 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+----
+-
+-<p align="center"><b>🔥 Want to strengthen your core JavaScript skills and master ES6?</b><br>I would personally recommend this awesome <a href="https://ES6.io/friend/AWESOME">ES6 course</a> by Wes Bos.</p>
+-
+----
+-
+@@ -21,0 +16,4 @@ $ npm install --save-dev grunt-shell
++<a href="https://www.patreon.com/sindresorhus">
++	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
++</a>
++
+@@ -26 +24 @@ $ npm install --save-dev grunt-shell
+-require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
++require('load-grunt-tasks')(grunt);
+@@ -36 +34 @@ grunt.initConfig({
+-		another: 'ls ./src' // shorthand
++		another: 'ls ./src' // Shorthand
+@@ -93 +91 @@ module.exports = grunt => {
+-				command: greeting => 'echo ' + greeting
++				command: greeting => `echo ${greeting}`
+@@ -120,3 +118,3 @@ Do whatever you want with the output.
+-function log(err, stdout, stderr, cb) {
+-	if (err) {
+-		cb(err);
++function log(error, stdout, stderr, callback) {
++	if (error) {
++		callback(error);
+@@ -127 +125 @@ function log(err, stdout, stderr, cb) {
+-	cb();
++	callback();
+@@ -144 +142 @@ grunt.initConfig({
+-Run a command in another directory. In this example we run it in a subfolder using the `cwd` (current working directory) option.
++Run a command in another directory. In this example, we run it in a subfolder using the `cwd` (current working directory) option.
+@@ -236 +234 @@ Set `stdin` to [act as a raw device](https://nodejs.org/api/tty.html#tty_readstr
+-### callback(err, stdout, stderr, cb)
++### callback(error, stdout, stderr, callback)
+@@ -242 +240 @@ Lets you override the default callback with your own.
+-**Make sure to call the `cb` method when you're done.** Supply an error as the first argument to `cb` to print a warning and cause the task to fail.
++**Make sure to call the `callback` method when you're done.** Supply an error as the first argument to `callback` to print a warning and cause the task to fail.
+diff --git a/readme.md b/readme.md
+index b4fa5e1..f060480 100644
+--- a/readme.md
++++ b/readme.md
+@@ -191,0 +192,7 @@ Command to run or a function which returns the command. Supports underscore temp
++### cwd
++
++Type: `string`
++
++Shortcut. Same as `options.execOptions.cwd` (see below).
++
++
+diff --git a/readme.md b/readme.md
+index ca575b0..b4fa5e1 100644
+--- a/readme.md
++++ b/readme.md
+@@ -7 +7 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+-**Use [Stack Overflow](http://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
++**Use [Stack Overflow](https://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
+@@ -227 +227 @@ Default: `false`
+-Set `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs_setrawmode_mode).
++Set `stdin` to [act as a raw device](https://nodejs.org/api/tty.html#tty_readstream_setrawmode_mode).
+@@ -242 +242 @@ Default: `true`
+-Execute local binaries by name like [`$ npm run-script`](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
++Execute local binaries by name like [`$ npm run-script`](https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+diff --git a/readme.md b/readme.md
+index a0acabf..ca575b0 100644
+--- a/readme.md
++++ b/readme.md
+@@ -255 +255 @@ Specify some options to be passed to the [.exec()](https://nodejs.org/api/child_
+-- `maxBuffer` number *(Default: `200 * 1024`)*
++- `maxBuffer` number *(Default: `1000 * 1000 * 10` → 10 MB)*
+diff --git a/readme.md b/readme.md
+index 7999ea6..a0acabf 100644
+--- a/readme.md
++++ b/readme.md
+@@ -240 +240 @@ Type: `boolean`<br>
+-Default: `false`
++Default: `true`
+diff --git a/readme.md b/readme.md
+index 7565b03..7999ea6 100644
+--- a/readme.md
++++ b/readme.md
+@@ -186 +186 @@ grunt.initConfig({
+-Type: `String` `Function`
++Type: `string` `Function`
+@@ -196 +196 @@ Command to run or a function which returns the command. Supports underscore temp
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -203 +203 @@ Show stdout in the terminal.
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -210 +210 @@ Show stderr in the terminal.
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -217 +217 @@ Forward the terminal's stdin to the command.
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -224 +224 @@ Fail task if it encounters an error. Doesn't apply if you specify a `callback`.
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -239 +239 @@ Lets you override the default callback with your own.
+-Type: `Boolean`<br>
++Type: `boolean`<br>
+@@ -242 +242 @@ Default: `false`
+-Execute local binaries by name like [npm run-script](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
++Execute local binaries by name like [`$ npm run-script`](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+@@ -248 +248 @@ Type: `Object`
+-Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) method:
++Specify some options to be passed to the [.exec()](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback) method:
+@@ -250 +250 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-- `cwd` String *Current working directory of the child process*
++- `cwd` string *Current working directory of the child process*
+@@ -252,5 +252,5 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-- `setsid` Boolean
+-- `encoding` String *(Default: 'utf8')*
+-- `timeout` Number *(Default: 0)*
+-- `maxBuffer` Number *(Default: 200\*1024)*
+-- `killSignal` String *(Default: 'SIGTERM')*
++- `setsid` boolean
++- `encoding` string *(Default: `'utf8'`)*
++- `timeout` number *(Default: `0`)*
++- `maxBuffer` number *(Default: `200 * 1024`)*
++- `killSignal` string *(Default: `'SIGTERM'`)*
+diff --git a/readme.md b/readme.md
+index 312fa67..7565b03 100644
+--- a/readme.md
++++ b/readme.md
+@@ -8,0 +9,6 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
++---
++
++<p align="center"><b>🔥 Want to strengthen your core JavaScript skills and master ES6?</b><br>I would personally recommend this awesome <a href="https://ES6.io/friend/AWESOME">ES6 course</a> by Wes Bos.</p>
++
++---
++
+diff --git a/readme.md b/readme.md
+index fb54579..312fa67 100644
+--- a/readme.md
++++ b/readme.md
+@@ -114,0 +115,5 @@ function log(err, stdout, stderr, cb) {
++	if (err) {
++		cb(err);
++		return;
++	}
++
+@@ -224 +229 @@ Lets you override the default callback with your own.
+-**Make sure to call the `cb` method when you're done.**
++**Make sure to call the `cb` method when you're done.** Supply an error as the first argument to `cb` to print a warning and cause the task to fail.
+diff --git a/readme.md b/readme.md
+index 235ab16..fb54579 100644
+--- a/readme.md
++++ b/readme.md
+@@ -7 +7 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+-**Use [StackOverflow](http://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
++**Use [Stack Overflow](http://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
+@@ -73,3 +73 @@ grunt.initConfig({
+-			command: function () {
+-				return 'echo hello';
+-			}
++			command: () => 'echo hello'
+@@ -84 +82 @@ Which can also take arguments:
+-module.exports = function(grunt) {
++module.exports = grunt => {
+@@ -89,3 +87 @@ module.exports = function(grunt) {
+-				command: function (greeting) {
+-					return 'echo ' + greeting;
+-				}
++				command: greeting => 'echo ' + greeting
+@@ -179 +175 @@ grunt.initConfig({
+-Type: `string`, `function`
++Type: `String` `Function`
+@@ -181 +177 @@ Type: `string`, `function`
+-The command you want to run or a function which returns it. Supports underscore templates.
++Command to run or a function which returns the command. Supports underscore templates.
+@@ -183 +179 @@ The command you want to run or a function which returns it. Supports underscore
+-*command can be omitted by directly setting the target with the command.*
++*Command can be omitted by directly setting the target with the command.*
+@@ -189 +185 @@ The command you want to run or a function which returns it. Supports underscore
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -192 +188 @@ Default: `true`
+-Show stdout in the Terminal.
++Show stdout in the terminal.
+@@ -196 +192 @@ Show stdout in the Terminal.
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -199 +195 @@ Default: `true`
+-Show stderr in the Terminal.
++Show stderr in the terminal.
+@@ -203 +199 @@ Show stderr in the Terminal.
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -210 +206 @@ Forward the terminal's stdin to the command.
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -213 +209 @@ Default: `true`
+-Fail task if it encounters an error. Does not apply if you specify a `callback`.
++Fail task if it encounters an error. Doesn't apply if you specify a `callback`.
+@@ -217 +213 @@ Fail task if it encounters an error. Does not apply if you specify a `callback`.
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -220 +216 @@ Default: `false`
+-This sets `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs_setrawmode_mode).
++Set `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs_setrawmode_mode).
+@@ -224 +220 @@ This sets `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs
+-Type: `function`
++Type: `Function`
+@@ -232 +228 @@ Lets you override the default callback with your own.
+-Type: `boolean`<br>
++Type: `Boolean`<br>
+@@ -239 +235 @@ Execute local binaries by name like [npm run-script](http://blog.keithcirkel.co.
+-Type: `object`
++Type: `Object`
+diff --git a/readme.md b/readme.md
+index f4cff15..235ab16 100644
+--- a/readme.md
++++ b/readme.md
+@@ -235 +235 @@ Default: `false`
+-When set to `true` will execute local binaries by name like npm run script
++Execute local binaries by name like [npm run-script](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/).
+diff --git a/readme.md b/readme.md
+index a2a98b4..f4cff15 100644
+--- a/readme.md
++++ b/readme.md
+@@ -229,0 +230,7 @@ Lets you override the default callback with your own.
++### preferLocal
++
++Type: `boolean`<br>
++Default: `false`
++
++When set to `true` will execute local binaries by name like npm run script
++
+diff --git a/readme.md b/readme.md
+index fdad6de..a2a98b4 100644
+--- a/readme.md
++++ b/readme.md
+@@ -12 +12 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+-```sh
++```
+@@ -30,2 +30 @@ grunt.initConfig({
+-		// or directly with a string when no extra options are required
+-		another: 'ls ./src'
++		another: 'ls ./src' // shorthand
+@@ -179 +178 @@ grunt.initConfig({
+-*Required*  
++*Required*<br>
+@@ -190 +189 @@ The command you want to run or a function which returns it. Supports underscore
+-Type: `boolean`  
++Type: `boolean`<br>
+@@ -197 +196 @@ Show stdout in the Terminal.
+-Type: `boolean`  
++Type: `boolean`<br>
+@@ -204 +203 @@ Show stderr in the Terminal.
+-Type: `boolean`  
++Type: `boolean`<br>
+@@ -211 +210 @@ Forward the terminal's stdin to the command.
+-Type: `boolean`  
++Type: `boolean`<br>
+@@ -218 +217 @@ Fail task if it encounters an error. Does not apply if you specify a `callback`.
+-Type: `boolean`  
++Type: `boolean`<br>
+@@ -248 +247 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-MIT © [Sindre Sorhus](http://sindresorhus.com)
++MIT © [Sindre Sorhus](https://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index e3ae250..fdad6de 100644
+--- a/readme.md
++++ b/readme.md
+@@ -29 +29,3 @@ grunt.initConfig({
+-		}
++		},
++		// or directly with a string when no extra options are required
++		another: 'ls ./src'
+@@ -181,0 +184,2 @@ The command you want to run or a function which returns it. Supports underscore
++*command can be omitted by directly setting the target with the command.*
++
+diff --git a/readme.md b/readme.md
+index 83d3e50..e3ae250 100644
+--- a/readme.md
++++ b/readme.md
+@@ -221,2 +221 @@ This sets `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs
+-Type: `function`  
+-Default: `function () {}`
++Type: `function`
+diff --git a/readme.md b/readme.md
+index 1bb25dd..83d3e50 100644
+--- a/readme.md
++++ b/readme.md
+@@ -13 +13 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+-$ npm install --save-dev grunt-sass
++$ npm install --save-dev grunt-shell
+diff --git a/readme.md b/readme.md
+index 1e083b1..1bb25dd 100644
+--- a/readme.md
++++ b/readme.md
+@@ -211,0 +212,7 @@ Fail task if it encounters an error. Does not apply if you specify a `callback`.
++### stdinRawMode
++
++Type: `boolean`  
++Default: `false`
++
++This sets `stdin` to [act as a raw device](http://nodejs.org/api/tty.html#tty_rs_setrawmode_mode).
++
+diff --git a/readme.md b/readme.md
+index 941d249..1e083b1 100644
+--- a/readme.md
++++ b/readme.md
+@@ -10,3 +10 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
+-## Getting Started
+-
+-If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
++## Install
+@@ -15 +13 @@ If you haven't used [grunt][] before, be sure to check out the [Getting Started]
+-$ npm install --save-dev grunt-shell
++$ npm install --save-dev grunt-sass
+@@ -18,11 +15,0 @@ $ npm install --save-dev grunt-shell
+-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+-
+-```js
+-grunt.loadNpmTasks('grunt-shell');
+-```
+-
+-*Tip: the [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks) module makes it easier to load multiple grunt tasks.*
+-
+-[grunt]: http://gruntjs.com
+-[Getting Started]: https://github.com/gruntjs/grunt/wiki/Getting-started
+-
+@@ -30,4 +17 @@ grunt.loadNpmTasks('grunt-shell');
+-## Documentation
+-
+-
+-### Example config
++## Usage
+@@ -35,0 +20,2 @@ grunt.loadNpmTasks('grunt-shell');
++require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
++
+@@ -37,5 +23,5 @@ grunt.initConfig({
+-	shell: {								// Task
+-		listFolders: {						// Target
+-			options: {						// Options
+-				stderr: false
+-			},
++	shell: {
++		options: {
++			stderr: false
++		},
++		target: {
+@@ -47 +32,0 @@ grunt.initConfig({
+-grunt.loadNpmTasks('grunt-shell');
+@@ -52,2 +37 @@ grunt.registerTask('default', ['shell']);
+-### Example usage
+-
++## Examples
+@@ -55 +39 @@ grunt.registerTask('default', ['shell']);
+-#### Run command
++### Run command
+@@ -94,0 +79 @@ grunt.initConfig({
++
+@@ -113,2 +98 @@ module.exports = function(grunt) {
+-
+-#### Run command and display the output
++### Run command and display the output
+@@ -128,2 +112 @@ grunt.initConfig({
+-
+-#### Custom callback
++### Custom callback
+@@ -151,2 +134 @@ grunt.initConfig({
+-
+-#### Option passed to the .exec() method
++### Option passed to the .exec() method
+@@ -172,2 +154 @@ grunt.initConfig({
+-
+-#### Multiple commands
++### Multiple commands
+@@ -192,2 +173 @@ grunt.initConfig({
+-### Config
+-
++## Config
+@@ -195 +175 @@ grunt.initConfig({
+-#### command
++### command
+@@ -197 +177 @@ grunt.initConfig({
+-**Required**  
++*Required*  
+@@ -201,0 +182 @@ The command you want to run or a function which returns it. Supports underscore
++## Options
+@@ -203,4 +184 @@ The command you want to run or a function which returns it. Supports underscore
+-### Options
+-
+-
+-#### stdout
++### stdout
+@@ -213,2 +191 @@ Show stdout in the Terminal.
+-
+-#### stderr
++### stderr
+@@ -221,2 +198 @@ Show stderr in the Terminal.
+-
+-#### stdin
++### stdin
+@@ -229,2 +205 @@ Forward the terminal's stdin to the command.
+-
+-#### failOnError
++### failOnError
+@@ -237,2 +212 @@ Fail task if it encounters an error. Does not apply if you specify a `callback`.
+-
+-#### callback(err, stdout, stderr, cb)
++### callback(err, stdout, stderr, cb)
+@@ -247,2 +221 @@ Lets you override the default callback with your own.
+-
+-#### execOptions
++### execOptions
+diff --git a/readme.md b/readme.md
+index a0aebd6..941d249 100644
+--- a/readme.md
++++ b/readme.md
+@@ -14 +14 @@ If you haven't used [grunt][] before, be sure to check out the [Getting Started]
+-```bash
++```sh
+diff --git a/readme.md b/readme.md
+index 456bf59..a0aebd6 100644
+--- a/readme.md
++++ b/readme.md
+@@ -6,0 +7,2 @@ A good way to interact with other CLI tools. E.g. compiling Compass `compass com
++**Use [StackOverflow](http://stackoverflow.com/questions/tagged/gruntjs) for support questions.**
++
+diff --git a/readme.md b/readme.md
+index 822679a..456bf59 100644
+--- a/readme.md
++++ b/readme.md
+@@ -96,4 +96,9 @@ Which can also take arguments:
+-shell: {
+-	hello: {
+-		command: function (greeting) {
+-			return 'echo ' + greeting;
++module.exports = function(grunt) {
++	grunt.loadNpmTasks('grunt-shell');
++	grunt.initConfig({
++		shell: {
++			greet: {
++				command: function (greeting) {
++					return 'echo ' + greeting;
++				}
++			}
+@@ -101 +106,2 @@ shell: {
+-	}
++	});
++	grunt.registerTask('default', ['shell:greet:hello']);
+@@ -103,3 +108,0 @@ shell: {
+-
+-grunt.loadNpmTasks('grunt-shell');
+-grunt.registerTask('default', ['shell:hello']);
+diff --git a/readme.md b/readme.md
+index f787e72..822679a 100644
+--- a/readme.md
++++ b/readme.md
+@@ -193 +193 @@ grunt.initConfig({
+-Type: `String|Function`
++Type: `string`, `function`
+@@ -202,0 +203 @@ The command you want to run or a function which returns it. Supports underscore
++Type: `boolean`  
+@@ -204 +204,0 @@ Default: `true`
+-Type: `Boolean`
+@@ -210,0 +211 @@ Show stdout in the Terminal.
++Type: `boolean`  
+@@ -212 +212,0 @@ Default: `true`
+-Type: `Boolean`
+@@ -219,2 +219,2 @@ Show stderr in the Terminal.
+-Default: `true`  
+-Type: `Boolean`
++Type: `boolean`  
++Default: `true`
+@@ -226,0 +227 @@ Forward the terminal's stdin to the command.
++Type: `boolean`  
+@@ -228 +228,0 @@ Default: `true`
+-Type: `Boolean`
+@@ -235,2 +235,2 @@ Fail task if it encounters an error. Does not apply if you specify a `callback`.
+-Default: `function () {}`  
+-Type: `Function`
++Type: `function`  
++Default: `function () {}`
+@@ -245,2 +245 @@ Lets you override the default callback with your own.
+-Default: `undefined`  
+-Accepts: Object
++Type: `object`
+diff --git a/readme.md b/readme.md
+index 2c06676..f787e72 100644
+--- a/readme.md
++++ b/readme.md
+@@ -117,4 +117 @@ grunt.initConfig({
+-			command: 'ls',
+-			options: {
+-				stderr: false
+-			}
++			command: 'ls'
+@@ -264 +261 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
++MIT © [Sindre Sorhus](http://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index ed6dbcb..2c06676 100644
+--- a/readme.md
++++ b/readme.md
+@@ -38 +38 @@ grunt.initConfig({
+-				stdout: true
++				stderr: false
+@@ -119 +119 @@ grunt.initConfig({
+-				stdout: true
++				stderr: false
+@@ -160 +160 @@ grunt.initConfig({
+-				stdout: true,
++				stderr: false,
+@@ -206 +206 @@ The command you want to run or a function which returns it. Supports underscore
+-Default: `false`  
++Default: `true`
+@@ -214 +214 @@ Show stdout in the Terminal.
+-Default: `false`  
++Default: `true`
+@@ -230 +230 @@ Forward the terminal's stdin to the command.
+-Default: `false`  
++Default: `true`
+diff --git a/readme.md b/readme.md
+index 0b3c879..ed6dbcb 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1 +1 @@
+-# grunt-shell [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-shell.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-shell) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
++# grunt-shell [![Build Status](https://travis-ci.org/sindresorhus/grunt-shell.svg?branch=master)](https://travis-ci.org/sindresorhus/grunt-shell)
+@@ -12,2 +12,2 @@ If you haven't used [grunt][] before, be sure to check out the [Getting Started]
+-```shell
+-npm install --save-dev grunt-shell
++```bash
++$ npm install --save-dev grunt-shell
+@@ -264 +264 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-MIT © [Sindre Sorhus](http://sindresorhus.com)
++[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index 83f3ee6..0b3c879 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1 +1 @@
+-# grunt-shell [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-shell.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-shell)
++# grunt-shell [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-shell.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-shell) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+diff --git a/readme.md b/readme.md
+index 1bd0106..83f3ee6 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1 +1 @@
+-# grunt-shell
++# grunt-shell [![Build Status](https://secure.travis-ci.org/sindresorhus/grunt-shell.png?branch=master)](http://travis-ci.org/sindresorhus/grunt-shell)
+diff --git a/readme.md b/readme.md
+index 323a311..1bd0106 100644
+--- a/readme.md
++++ b/readme.md
+@@ -219,0 +220,8 @@ Show stderr in the Terminal.
++#### stdin
++
++Default: `true`  
++Type: `Boolean`
++
++Forward the terminal's stdin to the command.
++
++
+diff --git a/readme.md b/readme.md
+index 6ba2bef..323a311 100644
+--- a/readme.md
++++ b/readme.md
+@@ -3 +3 @@
+-> [Grunt][grunt] task to run shell commands.
++> Run shell commands
+@@ -173 +173 @@ grunt.initConfig({
+-Run multiple commands by placing them in an array which is joined using `&&` or `;`. `&&` means run this only if the previous command succeded. You can also use `&` to have the commands run concurrently (by executing all commands except the last one in a subshell).
++Run multiple commands by placing them in an array which is joined using `&&` or `;`. `&&` means run this only if the previous command succeeded. You can also use `&` to have the commands run concurrently (by executing all commands except the last one in a subshell).
+@@ -254,10 +253,0 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-## Upgrade from 0.1.4 to 0.2.0
+-
+-Because of the transition to grunt 0.4 there are some changes. To conform to new grunt standards, all options are now to be specified in an `options` object. I also took the opportunity to improve the task. The `stdout` and `stderr` options now only supports a boolean. If you want to do something with the result use the `callback` option. The `callback` option also changed.
+-
+-
+-## Tests
+-
+-Grunt currently doesn't have a way to test tasks directly. You can test this task by running `grunt` and manually verify that it works.
+-
+-
+@@ -266 +256 @@ Grunt currently doesn't have a way to test tasks directly. You can test this tas
+-MIT License • © [Sindre Sorhus](http://sindresorhus.com)
++MIT © [Sindre Sorhus](http://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index d049370..6ba2bef 100644
+--- a/readme.md
++++ b/readme.md
+@@ -19 +19 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
+-grunt.loadNpmTasks('grunt-eslint');
++grunt.loadNpmTasks('grunt-shell');
+diff --git a/readme.md b/readme.md
+index 47a4719..d049370 100644
+--- a/readme.md
++++ b/readme.md
+@@ -3,3 +3 @@
+-*Requires grunt 0.4. Use version 0.1.4 for grunt 0.3 compatibility*
+-
+-[Grunt][grunt] task to run shell commands.
++> [Grunt][grunt] task to run shell commands.
+@@ -21 +19 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
+-grunt.loadNpmTasks('grunt-shell');
++grunt.loadNpmTasks('grunt-eslint');
+@@ -23,0 +22,2 @@ grunt.loadNpmTasks('grunt-shell');
++*Tip: the [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks) module makes it easier to load multiple grunt tasks.*
++
+diff --git a/readme.md b/readme.md
+index 76bba9d..47a4719 100644
+--- a/readme.md
++++ b/readme.md
+@@ -85 +85 @@ grunt.initConfig({
+-		makeDir: {
++		hello: {
+@@ -97 +97 @@ shell: {
+-	makeDir: {
++	hello: {
+diff --git a/readme.md b/readme.md
+index 345d282..76bba9d 100644
+--- a/readme.md
++++ b/readme.md
+@@ -92,0 +93,14 @@ grunt.initConfig({
++Which can also take arguments:
++
++```js
++shell: {
++	makeDir: {
++		command: function (greeting) {
++			return 'echo ' + greeting;
++		}
++	}
++}
++
++grunt.loadNpmTasks('grunt-shell');
++grunt.registerTask('default', ['shell:hello']);
++```
+diff --git a/readme.md b/readme.md
+index a56462a..345d282 100644
+--- a/readme.md
++++ b/readme.md
+@@ -30,0 +31,19 @@ grunt.loadNpmTasks('grunt-shell');
++### Example config
++
++```js
++grunt.initConfig({
++	shell: {								// Task
++		listFolders: {						// Target
++			options: {						// Options
++				stdout: true
++			},
++			command: 'ls'
++		}
++	}
++});
++
++grunt.loadNpmTasks('grunt-shell');
++grunt.registerTask('default', ['shell']);
++```
++
++
+@@ -38,4 +57,6 @@ Create a folder named `test`.
+-```javascript
+-shell: {
+-	makeDir: {
+-		command: 'mkdir test'
++```js
++grunt.initConfig({
++	shell: {
++		makeDir: {
++			command: 'mkdir test'
++		}
+@@ -43 +64 @@ shell: {
+-}
++});
+@@ -48,5 +69,7 @@ The `command` property supports templates:
+-```javascript
+-testDir: 'test',
+-shell: {
+-	makeDir: {
+-		command: 'mkdir <%= testDir %>'
++```js
++grunt.initConfig({
++	testDir: 'test',
++	shell: {
++		makeDir: {
++			command: 'mkdir <%= testDir %>'
++		}
+@@ -54 +77 @@ shell: {
+-}
++});
+@@ -59,5 +82,7 @@ You can also supply a function that returns the command:
+-```javascript
+-shell: {
+-	makeDir: {
+-		command: function () {
+-			return 'echo hello';
++```js
++grunt.initConfig({
++	shell: {
++		makeDir: {
++			command: function () {
++				return 'echo hello';
++			}
+@@ -66 +91 @@ shell: {
+-}
++});
+@@ -74,6 +99,8 @@ Output a directory listing in your Terminal.
+-```javascript
+-shell: {
+-	dirListing: {
+-		command: 'ls',
+-		options: {
+-			stdout: true
++```js
++grunt.initConfig({
++	shell: {
++		dirListing: {
++			command: 'ls',
++			options: {
++				stdout: true
++			}
+@@ -82 +109 @@ shell: {
+-}
++});
+@@ -90 +117 @@ Do whatever you want with the output.
+-```javascript
++```js
+@@ -96,7 +123,7 @@ function log(err, stdout, stderr, cb) {
+-...
+-
+-shell: {
+-	dirListing: {
+-		command: 'ls',
+-		options: {
+-			callback: log
++grunt.initConfig({
++	shell: {
++		dirListing: {
++			command: 'ls',
++			options: {
++				callback: log
++			}
+@@ -105 +132 @@ shell: {
+-}
++});
+@@ -113,8 +140,10 @@ Run a command in another directory. In this example we run it in a subfolder usi
+-```javascript
+-shell: {
+-	subfolderLs: {
+-		command: 'ls',
+-		options: {
+-			stdout: true,
+-			execOptions: {
+-				cwd: 'tasks'
++```js
++grunt.initConfig({
++	shell: {
++		subfolderLs: {
++			command: 'ls',
++			options: {
++				stdout: true,
++				execOptions: {
++					cwd: 'tasks'
++				}
+@@ -124 +153 @@ shell: {
+-}
++});
+@@ -132,8 +161,10 @@ Run multiple commands by placing them in an array which is joined using `&&` or
+-```javascript
+-shell: {
+-	multiple: {
+-		command: [
+-			'mkdir test',
+-			'cd test',
+-			'ls'
+-		].join('&&')
++```js
++grunt.initConfig({
++	shell: {
++		multiple: {
++			command: [
++				'mkdir test',
++				'cd test',
++				'ls'
++			].join('&&')
++		}
+@@ -141 +172 @@ shell: {
+-}
++});
+diff --git a/readme.md b/readme.md
+index e620356..a56462a 100644
+--- a/readme.md
++++ b/readme.md
+@@ -46 +46 @@ shell: {
+-The `command` property supports templates :
++The `command` property supports templates:
+@@ -56,0 +57,12 @@ shell: {
++You can also supply a function that returns the command:
++
++```javascript
++shell: {
++	makeDir: {
++		command: function () {
++			return 'echo hello';
++		}
++	}
++}
++```
++
+@@ -139 +151 @@ shell: {
+-Type: `String`
++Type: `String|Function`
+@@ -141 +153 @@ Type: `String`
+-The command you want to run. Supports templates.
++The command you want to run or a function which returns it. Supports underscore templates.
+diff --git a/readme.md b/readme.md
+index 8cd0d46..e620356 100644
+--- a/readme.md
++++ b/readme.md
+@@ -15 +15 @@ If you haven't used [grunt][] before, be sure to check out the [Getting Started]
+-npm install grunt-shell --save-dev
++npm install --save-dev grunt-shell
+@@ -118 +118 @@ shell: {
+-Run multiple commands by placing them in an array which is joined using `&&` or `;`.
++Run multiple commands by placing them in an array which is joined using `&&` or `;`. `&&` means run this only if the previous command succeded. You can also use `&` to have the commands run concurrently (by executing all commands except the last one in a subshell).
+@@ -207,5 +206,0 @@ Grunt currently doesn't have a way to test tasks directly. You can test this tas
+-## Contribute
+-
+-In lieu of a formal styleguide, take care to maintain the existing coding style.
+-
+-
+diff --git a/readme.md b/readme.md
+index b6ae944..8cd0d46 100644
+--- a/readme.md
++++ b/readme.md
+@@ -58 +57,0 @@ shell: {
+-
+@@ -96,0 +96 @@ shell: {
++
+@@ -115,0 +116,17 @@ shell: {
++#### Multiple commands
++
++Run multiple commands by placing them in an array which is joined using `&&` or `;`.
++
++```javascript
++shell: {
++	multiple: {
++		command: [
++			'mkdir test',
++			'cd test',
++			'ls'
++		].join('&&')
++	}
++}
++```
++
++
+@@ -197,2 +214 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
+-MIT License
+-(c) [Sindre Sorhus](http://sindresorhus.com)
++MIT License • © [Sindre Sorhus](http://sindresorhus.com)
+diff --git a/readme.md b/readme.md
+index baca80a..b6ae944 100644
+--- a/readme.md
++++ b/readme.md
+@@ -81,0 +82 @@ function log(err, stdout, stderr, cb) {
++	cb();
+diff --git a/readme.md b/readme.md
+index ea26a47..baca80a 100644
+--- a/readme.md
++++ b/readme.md
+@@ -17,0 +18,6 @@ npm install grunt-shell --save-dev
++Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
++
++```js
++grunt.loadNpmTasks('grunt-shell');
++```
++
+diff --git a/readme.md b/readme.md
+index fb6c8a6..ea26a47 100644
+--- a/readme.md
++++ b/readme.md
+@@ -173 +173 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-## Upgrade from 0.1.3 to 0.2.0
++## Upgrade from 0.1.4 to 0.2.0
+diff --git a/readme.md b/readme.md
+index 0ccbeb2..fb6c8a6 100644
+--- a/readme.md
++++ b/readme.md
+@@ -3 +3 @@
+-[Grunt][grunt] task to run shell commands.
++*Requires grunt 0.4. Use version 0.1.4 for grunt 0.3 compatibility*
+@@ -5 +5 @@
+-E.g. compile Compass (`compass compile`) or get the current git branch (`git branch`).
++[Grunt][grunt] task to run shell commands.
+@@ -6,0 +7 @@ E.g. compile Compass (`compass compile`) or get the current git branch (`git bra
++A good way to interact with other CLI tools. E.g. compiling Compass `compass compile` or get the current git branch `git branch`.
+@@ -8 +8,0 @@ E.g. compile Compass (`compass compile`) or get the current git branch (`git bra
+-## Getting started
+@@ -10 +10 @@ E.g. compile Compass (`compass compile`) or get the current git branch (`git bra
+-Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-shell`
++## Getting Started
+@@ -12 +12 @@ Install this grunt plugin next to your project's [grunt.js gruntfile][getting_st
+-Then add this line to your project's `grunt.js` gruntfile:
++If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide, as it explains how to create a [gruntfile][Getting Started] as well as install and use grunt plugins. Once you're familiar with that process, install this plugin with this command:
+@@ -14,2 +14,2 @@ Then add this line to your project's `grunt.js` gruntfile:
+-```javascript
+-grunt.loadNpmTasks('grunt-shell');
++```shell
++npm install grunt-shell --save-dev
+@@ -17,0 +18,3 @@ grunt.loadNpmTasks('grunt-shell');
++[grunt]: http://gruntjs.com
++[Getting Started]: https://github.com/gruntjs/grunt/wiki/Getting-started
++
+@@ -24,2 +26,0 @@ grunt.loadNpmTasks('grunt-shell');
+-This grunt task is a [multi task](https://github.com/cowboy/grunt/blob/master/docs/types_of_tasks.md#multi-tasks-%E2%9A%91), which means you can specify multiple subtasks and grunt will iterate over them. The `dist` below is a subtask, you could e.g. create a `dev` subtask to handle stuff while developing. You can also add a special subtask named `_options` that can contain options for all your subtasks.
+-
+@@ -33 +34 @@ shell: {
+-	make_directory: {
++	makeDir: {
+@@ -39 +40 @@ shell: {
+-Command expand templates :
++The `command` property supports templates :
+@@ -42 +43 @@ Command expand templates :
+-test_dir: 'test',
++testDir: 'test',
+@@ -44,2 +45,2 @@ shell: {
+-	make_directory: {
+-		command: 'mkdir <% test_dir %>'
++	makeDir: {
++		command: 'mkdir <%= testDir %>'
+@@ -52 +53 @@ shell: {
+-#### Run command and display output
++#### Run command and display the output
+@@ -54 +55 @@ shell: {
+-Output a directory listing to your Terminal.
++Output a directory listing in your Terminal.
+@@ -58 +59 @@ shell: {
+-	directory_listing: {
++	dirListing: {
+@@ -60 +61,3 @@ shell: {
+-		stdout: true
++		options: {
++			stdout: true
++		}
+@@ -66 +69 @@ shell: {
+-#### Run command and handle output
++#### Custom callback
+@@ -68 +71 @@ shell: {
+-Do whatever you want with the stdout.
++Do whatever you want with the output.
+@@ -71,2 +74,2 @@ Do whatever you want with the stdout.
+-function log() {
+-	console.log( this );
++function log(err, stdout, stderr, cb) {
++	console.log(stdout);
+@@ -78 +81 @@ shell: {
+-	directory_listing: {
++	dirListing: {
+@@ -80 +83,3 @@ shell: {
+-		stdout: log
++		options: {
++			callback: log
++		}
+@@ -87 +92 @@ shell: {
+-Run a command in another directory. In this example we run it in a subfolder using the `cwd` option.
++Run a command in another directory. In this example we run it in a subfolder using the `cwd` (current working directory) option.
+@@ -91 +96 @@ shell: {
+-	subfolder_ls: {
++	subfolderLs: {
+@@ -93,3 +98,5 @@ shell: {
+-		stdout: true,
+-		execOptions: {
+-			cwd: './tasks'
++		options: {
++			stdout: true,
++			execOptions: {
++				cwd: 'tasks'
++			}
+@@ -102,36 +109 @@ shell: {
+-#### Custom callback
+-
+-Define custom callback method to handle everything yourself. Check out [shell.js](https://github.com/sindresorhus/grunt-shell/blob/master/tasks/shell.js) to see how it's handled by default.
+-
+-```javascript
+-function customHandler() {
+-	console.log( this, this.data.stdout );
+-}
+-
+-...
+-
+-shell: {
+-	ls: {
+-		command: 'ls',
+-		callback: customHandler
+-	}
+-}
+-```
+-
+-
+-#### Multiple subtasks
+-
+-This task is a [multi task](https://github.com/cowboy/grunt/blob/master/docs/types_of_tasks.md#multi-tasks-%E2%9A%91), which means you can specify multiple subtasks and grunt will iterate over them.
+-
+-```javascript
+-shell: {
+-	directory_listing: {
+-		command: 'ls',
+-		stdout: true
+-	},
+-	compile_coffescript: {
+-		command: 'coffee main.coffee',
+-		failOnError: true
+-	}
+-}
+-```
++### Config
+@@ -139 +110,0 @@ shell: {
+-#### Global options
+@@ -141 +112 @@ shell: {
+-You can define global options in a subtask called `_options`. Your subtasks will then inherit those options with the ability to override them.
++#### command
+@@ -142,0 +114,2 @@ You can define global options in a subtask called `_options`. Your subtasks will
++**Required**  
++Type: `String`
+@@ -144,15 +117 @@ You can define global options in a subtask called `_options`. Your subtasks will
+-```javascript
+-shell: {
+-	directory_listing: {
+-		command: 'ls',
+-		stdout: true
+-	},
+-	create_folder: {
+-		command: 'mkdir test',
+-		failOnError: false
+-	},
+-	_options: {
+-		failOnError: true
+-	}
+-}
+-```
++The command you want to run. Supports templates.
+@@ -164,8 +122,0 @@ shell: {
+-#### command
+-
+-**Required**  
+-Accepts: String
+-
+-Your command is my wish.
+-
+-
+@@ -175 +126 @@ Default: `false`
+-Accepts: Boolean / Function
++Type: `Boolean`
+@@ -177 +128 @@ Accepts: Boolean / Function
+-Show stdout in the Terminal. You can supply a function to handle the output.
++Show stdout in the Terminal.
+@@ -183 +134 @@ Default: `false`
+-Accepts: Boolean / Function
++Type: `Boolean`
+@@ -185 +136 @@ Accepts: Boolean / Function
+-Show stderr in the Terminal. You can supply a function to handle the output.
++Show stderr in the Terminal.
+@@ -191 +142,6 @@ Default: `false`
+-Accepts: Boolean
++Type: `Boolean`
++
++Fail task if it encounters an error. Does not apply if you specify a `callback`.
++
++
++#### callback(err, stdout, stderr, cb)
+@@ -193 +149,6 @@ Accepts: Boolean
+-Fail task if it encounters an error.
++Default: `function () {}`  
++Type: `Function`
++
++Lets you override the default callback with your own.
++
++**Make sure to call the `cb` method when you're done.**
+@@ -212,4 +173 @@ Specify some options to be passed to the [.exec()](http://nodejs.org/api/child_p
+-#### callback
+-
+-Default: `undefined`  
+-Accepts: Function
++## Upgrade from 0.1.3 to 0.2.0
+@@ -217 +175 @@ Accepts: Function
+-Lets you override the default callback with your own. Everything you need is available on `this`.
++Because of the transition to grunt 0.4 there are some changes. To conform to new grunt standards, all options are now to be specified in an `options` object. I also took the opportunity to improve the task. The `stdout` and `stderr` options now only supports a boolean. If you want to do something with the result use the `callback` option. The `callback` option also changed.
+@@ -234,4 +191,0 @@ MIT License
+-
+-
+-[grunt]: https://github.com/cowboy/grunt
+-[getting_started]: https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
+\ No newline at end of file
+diff --git a/readme.md b/readme.md
+index ca9ba46..0ccbeb2 100644
+--- a/readme.md
++++ b/readme.md
+@@ -38,0 +39,12 @@ shell: {
++Command expand templates :
++
++```javascript
++test_dir: 'test',
++shell: {
++	make_directory: {
++		command: 'mkdir <% test_dir %>'
++	}
++}
++```
++
++

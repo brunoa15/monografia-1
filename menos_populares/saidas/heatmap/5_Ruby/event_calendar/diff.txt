@@ -1,0 +1,388 @@
+diff --git a/README.rdoc b/README.rdoc
+index 06baa46..7247fa3 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -45 +45,2 @@ To generate the necessary static files AND the example below:
+-  --use-jquery: Generate jquery javascript
++  --use-jquery: Generate jQuery javascript
++  --use-mootools: Generate MooTools javascript
+@@ -52 +52,0 @@ You can change the default event model name (Event) and controller/view name (Ca
+-
+@@ -162,0 +163 @@ Notice you can pass in a block to the calendar method. In this example I'm passi
++If you are using the MooTools javascript, a Tip will be created with the content of the link's title attribute for displaying additional information.
+@@ -257,0 +259,4 @@ You can override any of these by passing your options to the calendar method. In
++===ORM Support
++
++Mongoid is supported out of the box with no additional lines of code in the model. Use the has_event_calendar method as you do with ActiveRecord.
++
+diff --git a/README.rdoc b/README.rdoc
+index ce78483..06baa46 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -182,0 +183 @@ The default options for the calendar are:
++    :show_header => true,
+diff --git a/README.rdoc b/README.rdoc
+index 7aebdac..ce78483 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -103 +103,3 @@ An event can also have a *color* field (any string which is a valid CSS color) w
+-
++  
++Rails 2:
++  
+@@ -104,0 +107,4 @@ An event can also have a *color* field (any string which is a valid CSS color) w
++  
++Rails 3:
++  
++  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+@@ -143 +149 @@ Some helper methods are created, but you could put this in the view. The key is
+-        :previous_month_text => "<< " + month_link(@shown_month.last_month),
++        :previous_month_text => "<< " + month_link(@shown_month.prev_month),
+diff --git a/README.rdoc b/README.rdoc
+index f84dd4b..7aebdac 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -23,0 +24,10 @@ To generate the necessary static files AND the example below:
++As a gem:
++
++  gem install event-calendar
++  
++Add this to your Gemfile:
++  
++  gem 'event-calendar', :require => 'event_calendar'
++  
++Or as a plugin:
++
+diff --git a/README.rdoc b/README.rdoc
+index 5be289f..f84dd4b 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -12 +12,3 @@ To customize the look, modify the included stylesheet and/or change the default
+-==Install Rails 2
++==Install
++
++=== Rails 2
+@@ -20,13 +22 @@ To generate the necessary static files AND the example below:
+-Options:
+-
+-* --static-only: Only generate the stylesheet and javascript
+-* --use-jquery: Generate jquery javascript
+-* --use-all-day: Include an 'all_day' field on events, and display appropriately
+-
+-You can change the default event model name (Event) and view name (Calendar) by passing in two name arguments:
+-
+-  script/generate event_calendar EventModel ViewName
+-  
+-You can also pass in custom column names for the start and end fields.
+-
+-==Install Rails 3 beta 4
++=== Rails 3
+@@ -40 +30 @@ To generate the necessary static files AND the example below:
+-Options:
++=== Generator Options
+@@ -42 +32,9 @@ Options:
+-  rails generate event_calendar --help
++  script/generate event_calendar --help
++
++  --static-only: Only generate the stylesheet and javascript
++  --use-jquery: Generate jquery javascript
++  --use-all-day: Include an 'all_day' field on events, and display appropriately
++
++You can change the default event model name (Event) and controller/view name (Calendar) by passing in two name arguments:
++
++  script/generate event_calendar EventModel ControllerName
+@@ -76,15 +74,5 @@ generator.
+-At minimum we need to have start_at and end_at fields. Altnernatively,
+-you can configure the columns to be used by passing options to
+-has_event_calendar.
+-
+-If the '--use-all-day' option is passed to the generator, it will also
+-add a boolean all_day field. Set :start_at to be any time on the day
+-of the event and set :all_day to true. When :start_at and :end_at are
+-written to the database they are changed to 00:00:00 and 23:59:59
+-respectively.
+-
+-An event can also have a *color* field (any string which is a valid
+-CSS color) which determines the color of the event.  Or simply
+-override the default virtual attribute on the model. For example, if
+-events are associated to a calendar model, then the events can get
+-their color from the calendar.
++At minimum we need to have start_at and end_at fields. Altnernatively, you can configure the columns to be used by passing options to has_event_calendar.
++
++If the '--use-all-day' option is passed to the generator, it will also add a boolean all_day field. Set :start_at to be any time on the day of the event and set :all_day to true.
++
++An event can also have a *color* field (any string which is a valid CSS color) which determines the color of the event.  Or simply override the default virtual attribute on the model. For example, if events are associated to a calendar model, then the events can get their color from the calendar.
+@@ -106 +94 @@ their color from the calendar.
+-  map.calendar "/calendar/:year/:month", :controller => "calendar", :action => "index", :year => Time.now.year, :month => Time.now.month
++  map.calendar '/calendar/:year/:month', :controller => 'calendar', :action => 'index', :requirements => {:year => /\d{4}/, :month => /\d{1,2}/}, :year => nil, :month => nil
+@@ -113,2 +101,2 @@ their color from the calendar.
+-      @month = params[:month].to_i
+-      @year = params[:year].to_i
++      @month = (params[:month] || Time.zone.now.month).to_i
++      @year = (params[:year] || Time.zone.now.year).to_i
+@@ -164,0 +153,2 @@ Then in calendar view, simply:
++  
++In Rails 3, use raw(event_calendar)
+diff --git a/README.rdoc b/README.rdoc
+index 3d51c59..5be289f 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -12 +12 @@ To customize the look, modify the included stylesheet and/or change the default
+-==Install
++==Install Rails 2
+@@ -31,0 +32,12 @@ You can also pass in custom column names for the start and end fields.
++==Install Rails 3 beta 4
++
++  rails plugin install git://github.com/elevation/event_calendar.git
++
++To generate the necessary static files AND the example below:
++
++  rails generate event_calendar
++
++Options:
++
++  rails generate event_calendar --help
++
+@@ -42 +54,3 @@ Make sure to include the stylesheet and javascript in your layout/view.
+-Unless the --static-only option is given, the following will be generated. Names will differ if name arguments were passed to the generator.
++Unless the --static-only option is given, the following will be
++generated. Names will differ if name arguments were passed to the
++generator.
+@@ -62,6 +76,15 @@ Unless the --static-only option is given, the following will be generated. Names
+-At minimum we need to have start_at and end_at fields. Altnernatively, you can configure the columns to be used by passing options to has_event_calendar.
+-
+-If the '--use-all-day' option is passed to the generator, it will also add a boolean all_day field.
+-
+-An event can also have a *color* field (hex value stored as a string) which determines the color of the event.
+-Or simply override the default virtual attribute on the model. For example, if events are associated to a calendar model, then the events can get their color from the calendar.
++At minimum we need to have start_at and end_at fields. Altnernatively,
++you can configure the columns to be used by passing options to
++has_event_calendar.
++
++If the '--use-all-day' option is passed to the generator, it will also
++add a boolean all_day field. Set :start_at to be any time on the day
++of the event and set :all_day to true. When :start_at and :end_at are
++written to the database they are changed to 00:00:00 and 23:59:59
++respectively.
++
++An event can also have a *color* field (any string which is a valid
++CSS color) which determines the color of the event.  Or simply
++override the default virtual attribute on the model. For example, if
++events are associated to a calendar model, then the events can get
++their color from the calendar.
+diff --git a/README.rdoc b/README.rdoc
+index deb6500..3d51c59 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -30,7 +30 @@ You can change the default event model name (Event) and view name (Calendar) by
+-You can change the start_at and end_at columns for you existing event model by supplying the following parameters:
+-
+-====app/models/event.rb
+-  
+-  class Event < ActiveRecord::Base
+-    has_event_calendar :start_at_field  => 'custom_start_at', :end_at_field => 'custom_end_at'
+-  end
++You can also pass in custom column names for the start and end fields.
+@@ -68 +62 @@ Unless the --static-only option is given, the following will be generated. Names
+-At minimum we need to have start_at and end_at fields.
++At minimum we need to have start_at and end_at fields. Altnernatively, you can configure the columns to be used by passing options to has_event_calendar.
+@@ -78,0 +73,6 @@ Or simply override the default virtual attribute on the model. For example, if e
++
++    # To specify the columns to use call it like this:
++    # 
++    # has_event_calendar :start_at_field  => 'custom_start_at', :end_at_field => 'custom_end_at'
++    # 
++
+@@ -95,0 +96,6 @@ Or simply override the default virtual attribute on the model. For example, if e
++  
++      # To restrict what events are included in the result you can pass additional find options like this:
++      #
++      # @event_strips = Event.event_strips_for_month(@shown_month, :include => :some_relation, :conditions => 'some_relations.some_column = true')
++      #
++
+diff --git a/README.rdoc b/README.rdoc
+index 93b0dc4..deb6500 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -29,0 +30,8 @@ You can change the default event model name (Event) and view name (Calendar) by
++You can change the start_at and end_at columns for you existing event model by supplying the following parameters:
++
++====app/models/event.rb
++  
++  class Event < ActiveRecord::Base
++    has_event_calendar :start_at_field  => 'custom_start_at', :end_at_field => 'custom_end_at'
++  end
++
+diff --git a/README.rdoc b/README.rdoc
+index f2dffd5..93b0dc4 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -98 +98 @@ Some helper methods are created, but you could put this in the view. The key is
+-      link_to(month_date.strftime("%B"), {:month => month_date.month, :year => month_date.year})
++      link_to(I18n.localize(month_date, :format => "%B"), {:month => month_date.month, :year => month_date.year})
+@@ -107 +107 @@ Some helper methods are created, but you could put this in the view. The key is
+-        :month_name_text => @shown_month.strftime("%B %Y"),
++        :month_name_text => I18n.localize(@shown_month, :format => "%B %Y"),
+@@ -137 +137 @@ The default options for the calendar are:
+-    :abbrev => (0..2),
++    :abbrev => true,
+@@ -212,0 +213,20 @@ You can override any of these by passing your options to the calendar method. In
++
++==il8n
++
++To localize month and day names, add the following to your localization file(s) in config/locales:
++
++  date -> formats, day_names, abbr_day_names, month_names, abbr_month_names
++  
++For example, in es.yml:
++
++  es:
++    date:
++      formats:
++        default: "%e/%m/%Y"
++
++      day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
++      abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
++
++      # Don't forget the nil at the beginning; there's no such thing as a 0th month
++      month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
++      abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+diff --git a/README.rdoc b/README.rdoc
+index 7000c5e..f2dffd5 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -23,0 +24 @@ Options:
++* --use-all-day: Include an 'all_day' field on events, and display appropriately
+@@ -60,0 +62,2 @@ At minimum we need to have start_at and end_at fields.
++If the '--use-all-day' option is passed to the generator, it will also add a boolean all_day field.
++
+@@ -111 +114,2 @@ Some helper methods are created, but you could put this in the view. The key is
+-      calendar event_calendar_options do |event|
++      calendar event_calendar_options do |args|
++        event = args[:event]
+@@ -150,0 +155 @@ The default options for the calendar are:
++    :use_all_day => false,
+@@ -165 +170,15 @@ You can override any of these by passing your options to the calendar method. In
+-* *use_javascript*: If you set it to false, cleaner HTML will be output, without inline Javascript, but events spanning multiple days will not be displayed correctly. This option should therefore only be used if your calendar uses only single-day events.
++* *use_all_day*: If set to true, will check for an 'all_day' boolean field when displaying an event. If it is an all day event, or the event is multiple days, then it will display as usual. Otherwise it will display without a background color bar.
++
++  Helper/View:
++    :use_all_day => true
++  
++  If using this option, you probably want to also show times for non-all-day events:
++    calendar event_calendar_options do |args|
++      event, day = args[:event], args[:day]
++      html = %(<a href="/events/#{event.id}" title="#{h(event.name)}">)
++      html << display_event_time(event, day)
++      html << %(#{h(event.name)}</a>)
++      html
++    end
++
++* *use_javascript*: If set to false, it won't add custom HTML data attributes that are needed for javascript highlighting. (Note, custom attributes will be valid in HTML 5.) The actual javascript is unobtrusive and found in the event_calendar.js file.
+diff --git a/README.rdoc b/README.rdoc
+index b04b7fa..7000c5e 100644
+--- a/README.rdoc
++++ b/README.rdoc
+@@ -4 +3,0 @@ Easily show multiple, overlapping events across calendar days and rows.
+-See http://dev.elevationblog.com/2009/7/23/event-calendar-rails-plugin for a screenshot.
+@@ -6 +5 @@ See http://dev.elevationblog.com/2009/7/23/event-calendar-rails-plugin for a scr
+-Based off of James Urquhart's http://www.cuppadev.co.uk/webdev/making-a-real-calendar-in-rails/ which in turn is based on Geoffrey Grosenbach's CalendarHelper.
++See http://dev.elevationblog.com/2009/7/23/event-calendar-rails-plugin for a screenshot.
+@@ -9,0 +9,2 @@ After install, the "calendar" method will be available within your views.
++To customize the look, modify the included stylesheet and/or change the default options.
++
+@@ -21 +22 @@ Options:
+-* --static-only: Only generate the stylesheet, javascript, and sample bg grid images
++* --static-only: Only generate the stylesheet and javascript
+@@ -37,3 +37,0 @@ Make sure to include the stylesheet and javascript in your layout/view.
+-  public/images/event_calendar
+-  public/images/event_calendar/85_bg.gif
+-  public/images/event_calendar/120_bg.gif
+@@ -114 +112 @@ Some helper methods are created, but you could put this in the view. The key is
+-        "<a href='/events/#{event.id}' title=\"#{h(event.name)}\"><div>#{h(event.name)}</div></a>"
++        %(<a href="/events/#{event.id}" title="#{h(event.name)}">#{h(event.name)}</a>)
+@@ -135,5 +132,0 @@ The default options for the calendar are:
+-    :table_class => 'calendar',
+-    :month_name_class => 'monthName',
+-    :other_month_class => 'otherMonth',
+-    :day_name_class => 'dayName',
+-    :day_class => 'day',
+@@ -142 +134,0 @@ The default options for the calendar are:
+-    :accessible => false,
+@@ -147 +138,0 @@ The default options for the calendar are:
+-    :start => nil,
+@@ -149 +140,7 @@ The default options for the calendar are:
+-    :event_width => 85,
++    
++    # it would be nice to have these in the CSS file
++    # but they are needed to perform height calculations
++    :width => nil,
++    :height => 500, 
++    :day_names_height => 18,
++    :day_nums_height => 18,
+@@ -151,2 +148,3 @@ The default options for the calendar are:
+-    :min_height => 70,
+-    :event_margin => 2,
++    :event_margin => 1,
++    :event_padding_top => 1,
++    
+@@ -157 +155,19 @@ The default options for the calendar are:
+-You can override any of these by passing your options to the calendar method. In the above eample, update the event_calendar_options helper method.
++You can override any of these by passing your options to the calendar method. In the above example, update the event_calendar_options helper method.
++
++====Details
++
++* See the notes in the plugin's calendar_helper.rb for more info.
++
++* *width*: Optional, if none is given it will stretch to the containing element.
++
++* *height*: Defaults to 500px. This is the approx minimum total height of the calendar. It could be greater if a calendar row(s) need to stretch to fit additional events.
++
++* *use_javascript*: If you set it to false, cleaner HTML will be output, without inline Javascript, but events spanning multiple days will not be displayed correctly. This option should therefore only be used if your calendar uses only single-day events.
++
++* *link_to_day_action*: Will make the calendar's day numbers links to the given Rails action. Note, you'll probably want a corresponding route, controller action, and view to go with this action. Example:
++  
++  Helper/View calendar option:
++    :link_to_day_action => "day"
++  
++  Route (the controller is the same as your other calendar route):
++    map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
+@@ -160 +176 @@ You can override any of these by passing your options to the calendar method. In
+-==NOTES
++==Notes
+@@ -178,17 +193,0 @@ You can override any of these by passing your options to the calendar method. In
+-
+-====Options
+-
+-* *event_width*: You will need to change the .calendar background-image in the CSS file. There are two images included:
+-  * 85px
+-  * 120px
+-
+-* *use_javascript*: If you set it to false, cleaner HTML will be output, without inline Javascript, but events spanning multiple days will not be displayed correctly. This option should therefore only be used if your calendar uses only single-day events.
+-
+-
+-* *link_to_day_action*: Will make the calendar's day numbers links to the given Rails action. Note, you'll probably want a corresponding route, controller action, and view to go with this action. Example:
+-  
+-  Helper/View calendar option:
+-    :link_to_day_action => "day"
+-  
+-  Route (the controller is the same as your other calendar route):
+-    map.calendar_day "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
+@@ -196,0 +196 @@ You can override any of these by passing your options to the calendar method. In
++==Contributors
+@@ -198,4 +198,3 @@ You can override any of these by passing your options to the calendar method. In
+-==TODO
+-
+-Add tests!
+-
++* Jeff Schuil
++* See commit history for list of additional contributors.
++* Thanks to those who have added features, fixed bugs, and/or reported issues.
+@@ -203 +202 @@ Add tests!
+-==Contributors
++== History
+@@ -205 +204,3 @@ Add tests!
+-Jeff Schuil
++* Though EventCalendar has diverged greatly, it was...
++* Originally based off of James Urquhart's http://www.cuppadev.co.uk/webdev/making-a-real-calendar-in-rails/
++* This in turn started as Geoffrey Grosenbach's CalendarHelper.

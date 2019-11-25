@@ -1,0 +1,83 @@
+diff --git a/README.md b/README.md
+index fede806..ae3cd31 100644
+--- a/README.md
++++ b/README.md
+@@ -40,0 +41,2 @@ $ heroku config:set COINBASE_API_KEY=your_api_key
++$ heroku config:set ORGANIZATION_NAME=your_organization_name
++$ heroku config:set DONATION_URL=your_donation_url
+diff --git a/README.md b/README.md
+index 30330fd..fede806 100644
+--- a/README.md
++++ b/README.md
+@@ -56 +56 @@ Current BitHub Payment For Commit:
+-![Current Price](https://bithub.herokuapp.com/v1/status/payment/commit)
++[![Current Price](https://bithub.herokuapp.com/v1/status/payment/commit)](https://whispersystems.org/blog/bithub/)
+diff --git a/README.md b/README.md
+index e831dc6..30330fd 100644
+--- a/README.md
++++ b/README.md
+@@ -38 +38,2 @@ $ heroku config:set GITHUB_TOKEN=your_bithub_authtoken
+-$ heroku config:set GITHUB_REPOSITORIES="[\"https://github.com/youraccount/yourrepo\", \"https://github.com/youraccount/yourotherrepo\"]"
++$ heroku config:set GITHUB_WEBHOOK_PASSWORD=your_webhook_password
++$ heroku config:set GITHUB_REPOSITORIES="[{\"url\" : \"https://github.com/youraccount/yourrepo\"}, {\"url\" : \"https://github.com/youraccount/yourotherrepo\"}]"
+diff --git a/README.md b/README.md
+index 003fe0c..e831dc6 100644
+--- a/README.md
++++ b/README.md
+@@ -13 +13 @@ Opting Out
+-If you'd like to opt out of receiving a payment, simply include the string "FREEBIE" somewhere in your commit message, and you will not recieve BTC for that commit.
++If you'd like to opt out of receiving a payment, simply include the string "FREEBIE" somewhere in your commit message, and you will not receive BTC for that commit.
+diff --git a/README.md b/README.md
+index 30b2680..003fe0c 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,2 @@ BitHub is a service that will automatically pay a percentage of Bitcoin funds fo
++More information can be found in our [announcement blog post](https://whispersystems.org/blog/bithub).
++
+diff --git a/README.md b/README.md
+index 613f9b6..30b2680 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11 @@ Opting Out
+-If your conscience is troubled at recieving payment for changing a few lines of documentation, simply add "FREEBIE" to your commit message, and you will not recieve BTC for that commit.
++If you'd like to opt out of receiving a payment, simply include the string "FREEBIE" somewhere in your commit message, and you will not recieve BTC for that commit.
+diff --git a/README.md b/README.md
+index 94f6295..613f9b6 100644
+--- a/README.md
++++ b/README.md
+@@ -7,0 +8,6 @@ BitHub is a service that will automatically pay a percentage of Bitcoin funds fo
++Opting Out
++----------
++
++If your conscience is troubled at recieving payment for changing a few lines of documentation, simply add "FREEBIE" to your commit message, and you will not recieve BTC for that commit.
++
++
+diff --git a/README.md b/README.md
+index 7e4d532..94f6295 100644
+--- a/README.md
++++ b/README.md
+@@ -26,8 +26,9 @@ Deploying To Heroku
+-1. `$ heroku create your_app_name`
+-1. `$ heroku config:set GITHUB_USER=your_bithub_username`
+-1. `$ heroku config:set GITHUB_TOKEN=your_bithub_authtoken`
+-1. `$ heroku config:set GITHUB_REPOSITORIES="[\"https://github.com/youraccount/yourrepo\", \"https://github.com/youraccount/yourotherrepo\"]"`
+-1. `$ heroku config:set COINBASE_API_KEY=your_api_key`
+-1. `$ git remote add your_heroku_remote`
+-1. `$ git push heroku master`
+-
++```
++$ heroku create your_app_name
++$ heroku config:set GITHUB_USER=your_bithub_username
++$ heroku config:set GITHUB_TOKEN=your_bithub_authtoken
++$ heroku config:set GITHUB_REPOSITORIES="[\"https://github.com/youraccount/yourrepo\", \"https://github.com/youraccount/yourotherrepo\"]"
++$ heroku config:set COINBASE_API_KEY=your_api_key
++$ git remote add your_heroku_remote
++$ git push heroku master
++```
+diff --git a/README.md b/README.md
+index c938c79..7e4d532 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4,2 @@ BitHub
++[![Build Status](https://travis-ci.org/WhisperSystems/BitHub.png?branch=master)](https://travis-ci.org/WhisperSystems/BitHub)
++

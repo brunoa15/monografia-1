@@ -1,0 +1,936 @@
+diff --git a/README.md b/README.md
+index af1bc28..a54b3d5 100644
+--- a/README.md
++++ b/README.md
+@@ -311 +311 @@ for highly customised markup.
+-* ``choices`` - A list of options, used for multiple choice fields
++* ``choices`` - A list of options, used for multiple choice fields (see the field.choices section below)
+@@ -318,0 +319,35 @@ for highly customised markup.
++#### field.choices
++
++The choices property is used for radio, checkbox, and select fields. Two
++formats are supported and in case of select fields the format can be nested once to support option groups.
++
++The first format is based on objects and is easy to write. Object keys are treated as values and object values are treated as labels. If the value is another object and nesting is supported by the widget the key will be used as label and the value as nested list.
++
++The second format is array-based and therefore ordered (object keys are unordered by definition). The array should contain arrays with two values the first being the value and the second being the label. If the label is an array and nesting is supported by the widget the value will be used as label and the label as nested list.
++
++Both formats are demonstrated below:
++
++```
++// objects
++{
++    'val-1': 'text-1',
++    'val-2': 'text-2',
++    'text-3': {
++        'nested-val-1': 'nested-text-1',
++        'nested-val-2': 'nested-text-2',
++        'nested-val-3': 'nested-text-3'
++    }
++}
++
++// arrays
++[
++    ['val-1', 'text-1'],
++    ['val-2', 'text-2'],
++    ['text-3', [
++        ['nested-val-1', 'nested-text-1'],
++        ['nested-val-2', 'nested-text-2'],
++        ['nested-val-3', 'nested-text-3'],
++    ]]
++]
++```
++
+diff --git a/README.md b/README.md
+index 38631b3..af1bc28 100644
+--- a/README.md
++++ b/README.md
+@@ -313,0 +314 @@ for highly customised markup.
++* ``labelAfterField`` - if true, the label text will be displayed after the field, rather than before
+diff --git a/README.md b/README.md
+index 20b9ffc..38631b3 100644
+--- a/README.md
++++ b/README.md
+@@ -407 +407 @@ containing a HTML representation of the field.
+-[npm-version-svg]: http://vb.teelaun.ch/caolan/forms.svg
++[npm-version-svg]: http://versionbadg.es/caolan/forms.svg
+diff --git a/README.md b/README.md
+index 8b6af80..20b9ffc 100644
+--- a/README.md
++++ b/README.md
+@@ -121,0 +122,2 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
++var widgets = require('forms').widgets;
++
+@@ -160 +162 @@ And while rendering it:
+-form.toHTML(bootstrapField);
++reg_form.toHTML(bootstrapField);
+diff --git a/README.md b/README.md
+index 0dee008..8b6af80 100644
+--- a/README.md
++++ b/README.md
+@@ -141,2 +141,4 @@ var bootstrapField = function (name, object) {
+-    object.widget.classes = object.widget.classes || [];
+-    object.widget.classes.push('form-control');
++    if (!Array.isArray(object.widget.classes)) { object.widget.classes = []; }
++    if (object.widget.classes.indexOf('form-control') === -1) {
++        object.widget.classes.push('form-control');
++    }
+diff --git a/README.md b/README.md
+index 76384bd..0dee008 100644
+--- a/README.md
++++ b/README.md
+@@ -145 +145,5 @@ var bootstrapField = function (name, object) {
+-    var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
++    var error = object.error ? '<div class="alert alert-error help-block">' + object.error + '</div>' : '';
++
++    var validationclass = object.value && !object.error ? 'has-success' : '';
++    validationclass = object.error ? 'has-error' : validationclass;
++
+@@ -147 +151 @@ var bootstrapField = function (name, object) {
+-    return '<div class="form-group">' + label + widget + error + '</div>';
++    return '<div class="form-group ' + validationclass + '">' + label + widget + error + '</div>';
+diff --git a/README.md b/README.md
+index de9440f..76384bd 100644
+--- a/README.md
++++ b/README.md
+@@ -9 +9 @@
+-[![npm badge][7]][npm-url]
++[![npm badge][npm-badge-png]][npm-url]
+diff --git a/README.md b/README.md
+index e35e422..de9440f 100644
+--- a/README.md
++++ b/README.md
+@@ -397 +397 @@ containing a HTML representation of the field.
+-[7]: https://nodei.co/npm/forms.png?downloads=true&stars=true
++[npm-badge-png]: https://nodei.co/npm/forms.png?downloads=true&stars=true
+diff --git a/README.md b/README.md
+index c569a1a..e35e422 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Forms <sup>[![Version Badge][9]][npm-url]</sup>
++# Forms <sup>[![Version Badge][npm-version-svg]][npm-url]</sup>
+@@ -399 +399 @@ containing a HTML representation of the field.
+-[9]: http://vb.teelaun.ch/caolan/forms.svg
++[npm-version-svg]: http://vb.teelaun.ch/caolan/forms.svg
+diff --git a/README.md b/README.md
+index 5792814..c569a1a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-# Forms <sup>[![Version Badge][9]][8]</sup>
++# Forms <sup>[![Version Badge][9]][npm-url]</sup>
+@@ -9 +9 @@
+-[![npm badge][7]][8]
++[![npm badge][7]][npm-url]
+@@ -398 +398 @@ containing a HTML representation of the field.
+-[8]: https://npmjs.org/package/forms
++[npm-url]: https://npmjs.org/package/forms
+diff --git a/README.md b/README.md
+index 42e72d0..5792814 100644
+--- a/README.md
++++ b/README.md
+@@ -4,2 +4,2 @@
+-[![dependency status][3]][4]
+-[![dev dependency status][5]][6]
++[![dependency status][deps-svg]][deps-url]
++[![dev dependency status][dev-deps-svg]][dev-deps-url]
+@@ -393,4 +393,4 @@ containing a HTML representation of the field.
+-[3]: https://david-dm.org/caolan/forms.svg
+-[4]: https://david-dm.org/caolan/forms
+-[5]: https://david-dm.org/caolan/forms/dev-status.svg
+-[6]: https://david-dm.org/caolan/forms#info=devDependencies
++[deps-svg]: https://david-dm.org/caolan/forms.svg
++[deps-url]: https://david-dm.org/caolan/forms
++[dev-deps-svg]: https://david-dm.org/caolan/forms/dev-status.svg
++[dev-deps-url]: https://david-dm.org/caolan/forms#info=devDependencies
+diff --git a/README.md b/README.md
+index f9f6daf..42e72d0 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status][1]][2]
++[![Build Status][travis-svg]][travis-url]
+@@ -391,2 +391,2 @@ containing a HTML representation of the field.
+-[1]: https://travis-ci.org/caolan/forms.svg
+-[2]: https://travis-ci.org/caolan/forms
++[travis-svg]: https://travis-ci.org/caolan/forms.svg
++[travis-url]: https://travis-ci.org/caolan/forms
+diff --git a/README.md b/README.md
+index b12eb91..f9f6daf 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,5 @@
+-[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6]
++[![Build Status][1]][2]
++[![dependency status][3]][4]
++[![dev dependency status][5]][6]
++[![License][license-image]][license-url]
++[![Downloads][downloads-image]][downloads-url]
+@@ -395,0 +400,4 @@ containing a HTML representation of the field.
++[license-image]: http://img.shields.io/npm/l/forms.svg
++[license-url]: LICENSE
++[downloads-image]: http://img.shields.io/npm/dm/forms.svg
++[downloads-url]: http://npm-stat.com/charts.html?package=forms
+diff --git a/README.md b/README.md
+index d5383cd..b12eb91 100644
+--- a/README.md
++++ b/README.md
+@@ -387 +387 @@ containing a HTML representation of the field.
+-[1]: https://travis-ci.org/caolan/forms.png
++[1]: https://travis-ci.org/caolan/forms.svg
+@@ -389 +389 @@ containing a HTML representation of the field.
+-[3]: https://david-dm.org/caolan/forms.png
++[3]: https://david-dm.org/caolan/forms.svg
+@@ -391 +391 @@ containing a HTML representation of the field.
+-[5]: https://david-dm.org/caolan/forms/dev-status.png
++[5]: https://david-dm.org/caolan/forms/dev-status.svg
+diff --git a/README.md b/README.md
+index 8714ffe..d5383cd 100644
+--- a/README.md
++++ b/README.md
+@@ -301 +301,2 @@ for highly customised markup.
+-* ``errorAfterField`` - if true, the error message will be displayed after the field, rather than before.
++* ``hideError`` - if true, errors won't be rendered automatically
++* ``errorAfterField`` - if true, the error message will be displayed after the field, rather than before
+diff --git a/README.md b/README.md
+index 4645135..8714ffe 100644
+--- a/README.md
++++ b/README.md
+@@ -42,3 +42,3 @@ Creating an example registration form:
+-var forms = require('forms'),
+-    fields = forms.fields,
+-    validators = forms.validators;
++var forms = require('forms');
++var fields = forms.fields;
++var validators = forms.validators;
+@@ -91 +90,0 @@ function myView(req, res) {
+-
+@@ -105 +103,0 @@ function myView(req, res) {
+-
+@@ -113 +111 @@ An example server using the form above can be run by doing:
+-    $ node example/simple.js
++$ node example/simple.js
+@@ -122,6 +120,6 @@ var my_form = forms.create({
+-    required: true,
+-    widget: widgets.text({ classes: ['input-with-feedback'] }),
+-    errorAfterField: true,
+-    cssClasses: {
+-        label: ['control-label col col-lg-3']
+-    }
++        required: true,
++        widget: widgets.text({ classes: ['input-with-feedback'] }),
++        errorAfterField: true,
++        cssClasses: {
++            label: ['control-label col col-lg-3']
++        }
+@@ -129 +126,0 @@ var my_form = forms.create({
+-
+@@ -140,2 +137,2 @@ var bootstrapField = function (name, object) {
+-  object.widget.classes = object.widget.classes || [];
+-  object.widget.classes.push('form-control');
++    object.widget.classes = object.widget.classes || [];
++    object.widget.classes.push('form-control');
+@@ -143,4 +140,4 @@ var bootstrapField = function (name, object) {
+-  var label = object.labelHTML(name);
+-  var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
+-  var widget = object.widget.toHTML(name, object);
+-  return '<div class="form-group">' + label + widget + error + '</div>';
++    var label = object.labelHTML(name);
++    var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
++    var widget = object.widget.toHTML(name, object);
++    return '<div class="form-group">' + label + widget + error + '</div>';
+@@ -226,0 +224 @@ you will not need to use directly.
++
+diff --git a/README.md b/README.md
+index b563542..4645135 100644
+--- a/README.md
++++ b/README.md
+@@ -11 +11,3 @@ This module is an attempt to provide the same sort of helpers for node.js.
+-    npm install forms
++```shell
++$ npm install forms
++```
+@@ -33 +35 @@ bug reports, or advice. Especially on the following key areas:
+-* …and 27 more
++* …and [many more](https://github.com/caolan/forms/graphs/contributors)
+@@ -39,13 +41,15 @@ Creating an example registration form:
+-    var forms = require('forms'),
+-        fields = forms.fields,
+-        validators = forms.validators;
+-
+-    var reg_form = forms.create({
+-        username: fields.string({ required: true }),
+-        password: fields.password({ required: validators.required('You definitely want a password') }),
+-        confirm:  fields.password({
+-            required: validators.required('don\'t you know your own password?'),
+-            validators: [validators.matchField('password')]
+-        }),
+-        email: fields.email()
+-    });
++```javascript
++var forms = require('forms'),
++    fields = forms.fields,
++    validators = forms.validators;
++
++var reg_form = forms.create({
++    username: fields.string({ required: true }),
++    password: fields.password({ required: validators.required('You definitely want a password') }),
++    confirm:  fields.password({
++        required: validators.required('don\'t you know your own password?'),
++        validators: [validators.matchField('password')]
++    }),
++    email: fields.email()
++});
++```
+@@ -55 +59,3 @@ Rendering a HTML representation of the form:
+-    reg_form.toHTML();
++```javascript
++reg_form.toHTML();
++```
+@@ -59,16 +65,18 @@ Would produce:
+-    <div class="field required">
+-        <label for="id_username">Username</label>
+-        <input type="text" name="username" id="id_username" value="test" />
+-    </div>
+-    <div class="field required">
+-        <label for="id_password">Password</label>
+-        <input type="password" name="password" id="id_password" value="test" />
+-    </div>
+-    <div class="field required">
+-        <label for="id_confirm">Confirm</label>
+-        <input type="password" name="confirm" id="id_confirm" value="test" />
+-    </div>
+-    <div class="field">
+-        <label for="id_email">Email</label>
+-        <input type="text" name="email" id="id_email" />
+-    </div>
++```html
++<div class="field required">
++    <label for="id_username">Username</label>
++    <input type="text" name="username" id="id_username" value="test" />
++</div>
++<div class="field required">
++    <label for="id_password">Password</label>
++    <input type="password" name="password" id="id_password" value="test" />
++</div>
++<div class="field required">
++    <label for="id_confirm">Confirm</label>
++    <input type="password" name="confirm" id="id_confirm" value="test" />
++</div>
++<div class="field">
++    <label for="id_email">Email</label>
++    <input type="text" name="email" id="id_email" />
++</div>
++```
+@@ -81,15 +89,16 @@ Handling a request:
+-    function myView(req, res) {
+-
+-        reg_form.handle(req, {
+-            success: function (form) {
+-                // there is a request and the form is valid
+-                // form.data contains the submitted data
+-            },
+-            error: function (form) {
+-                // the data in the request didn't validate,
+-                // calling form.toHTML() again will render the error messages
+-            },
+-            empty: function (form) {
+-                // there was no form data in the request
+-            }
+-        });
++```javascript
++function myView(req, res) {
++
++    reg_form.handle(req, {
++        success: function (form) {
++            // there is a request and the form is valid
++            // form.data contains the submitted data
++        },
++        error: function (form) {
++            // the data in the request didn't validate,
++            // calling form.toHTML() again will render the error messages
++        },
++        empty: function (form) {
++            // there was no form data in the request
++        }
++    });
+@@ -97 +106,2 @@ Handling a request:
+-    }
++}
++```
+@@ -102 +112,3 @@ An example server using the form above can be run by doing:
+-    node example/simple.js
++```shell
++    $ node example/simple.js
++```
+@@ -107,29 +119,30 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-    var my_form = forms.create({
+-            title: fields.string({
+-            required: true,
+-            widget: widgets.text({ classes: ['input-with-feedback'] }),
+-            errorAfterField: true,
+-            cssClasses: {
+-                label: ['control-label col col-lg-3']
+-            }
+-        }),
+-
+-        description: fields.string({
+-            errorAfterField: true,
+-            widget: widgets.text({ classes: ['input-with-feedback'] }),
+-            cssClasses: {
+-                label: ['control-label col col-lg-3']
+-            }
+-        })
+-    });
+-
+-    var bootstrapField = function (name, object) {
+-
+-        object.widget.classes = object.widget.classes || [];
+-        object.widget.classes.push('form-control');
+-
+-        var label = object.labelHTML(name);
+-        var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
+-        var widget = object.widget.toHTML(name, object);
+-        return '<div class="form-group">' + label + widget + error + '</div>';
+-    };
++```javascript
++var my_form = forms.create({
++    title: fields.string({
++    required: true,
++    widget: widgets.text({ classes: ['input-with-feedback'] }),
++    errorAfterField: true,
++    cssClasses: {
++        label: ['control-label col col-lg-3']
++    }
++    }),
++
++    description: fields.string({
++        errorAfterField: true,
++        widget: widgets.text({ classes: ['input-with-feedback'] }),
++        cssClasses: {
++            label: ['control-label col col-lg-3']
++        }
++    })
++});
++
++var bootstrapField = function (name, object) {
++  object.widget.classes = object.widget.classes || [];
++  object.widget.classes.push('form-control');
++
++  var label = object.labelHTML(name);
++  var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
++  var widget = object.widget.toHTML(name, object);
++  return '<div class="form-group">' + label + widget + error + '</div>';
++};
++```
+@@ -139 +152,3 @@ And while rendering it:
+-    form.toHTML(bootstrapField);
++```javascript
++form.toHTML(bootstrapField);
++```
+@@ -215,0 +231 @@ form object.
++
+@@ -216,0 +233 @@ Forms can be created with an optional "options" object as well.
++
+@@ -217,0 +235 @@ Forms can be created with an optional "options" object as well.
++
+@@ -219,2 +237,2 @@ Forms can be created with an optional "options" object as well.
+- * If `false`, the first validation error will halt form validation.
+- * If `true`, all fields will be validated.
++  * If `false`, the first validation error will halt form validation.
++  * If `true`, all fields will be validated.
+@@ -227 +245 @@ Forms can be created with an optional "options" object as well.
+-* fields - Object literal containing the field objects passed to the create
++* ``fields`` - Object literal containing the field objects passed to the create
+@@ -230,0 +249 @@ Forms can be created with an optional "options" object as well.
++
+@@ -233,0 +253 @@ Inspects a request or object literal and binds any data to the correct fields.
++
+@@ -236,0 +257 @@ Binds data to correct fields, returning a new bound form object.
++
+@@ -249,2 +270,2 @@ Contains the same methods as the unbound form, plus:
+-* data - Object containing all the parsed data keyed by field name
+-* fields - Object literal containing the field objects passed to the create
++* ``data`` - Object containing all the parsed data keyed by field name
++* ``fields`` - Object literal containing the field objects passed to the create
+@@ -253,0 +275 @@ Contains the same methods as the unbound form, plus:
++
+@@ -257,0 +280 @@ object to the callback.
++
+@@ -261,0 +285 @@ returns true.
++
+@@ -272,11 +296,10 @@ for highly customised markup.
+-* label - Optional label text which overrides the default
+-* required - Boolean describing whether the field is mandatory
+-* validators - An array of functions which validate the field data
+-* widget - A widget object to use when rendering the field
+-* id - An optional id to override the default
+-* choices - A list of options, used for multiple choice fields
+-* cssClasses - A list of CSS classes for label and field wrapper
+-* hideError - if true, errors won't be rendered automatically
+-* errorAfterField - if true, the error message will be displayed after the field, rather than before
+-* fieldsetClasses - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset
+-* legendClasses - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset's legend
++* ``label`` - Optional label text which overrides the default
++* ``required`` - Boolean describing whether the field is mandatory
++* ``validators`` - An array of functions which validate the field data
++* ``widget`` - A widget object to use when rendering the field
++* ``id`` - An optional id to override the default
++* ``choices`` - A list of options, used for multiple choice fields
++* ``cssClasses`` - A list of CSS classes for label and field wrapper
++* ``errorAfterField`` - if true, the error message will be displayed after the field, rather than before.
++* ``fieldsetClasses`` - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset
++* ``legendClasses`` - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset's legend
+@@ -327,3 +350,3 @@ _same as field object, but with a few extensions_
+-* value - The raw value from the request data
+-* data - The request data coerced to the correct format for this field
+-* error - An error message if the field fails validation
++* ``value`` - The raw value from the request data
++* ``data`` - The request data coerced to the correct format for this field
++* ``error`` - An error message if the field fails validation
+@@ -342,3 +365,3 @@ fails, the resulting message is stored in the field's error attribute.
+-* classes - Custom classes to add to the rendered widget
+-* labelClasses - Custom classes to add to the choices label when applicable (multipleRadio and multipleCheckbox)
+-* type - A string representing the widget type, e.g. 'text' or 'checkbox'
++* ``classes`` - Custom classes to add to the rendered widget
++* ``labelClasses`` - Custom classes to add to the choices label when applicable (multipleRadio and multipleCheckbox)
++* ``type`` - A string representing the widget type, e.g. 'text' or 'checkbox'
+diff --git a/README.md b/README.md
+index 51251ca..b563542 100644
+--- a/README.md
++++ b/README.md
+@@ -279 +279,2 @@ for highly customised markup.
+-* errorAfterField - if true, the error message will be displayed after the field, rather than before.
++* hideError - if true, errors won't be rendered automatically
++* errorAfterField - if true, the error message will be displayed after the field, rather than before
+diff --git a/README.md b/README.md
+index 56078c3..51251ca 100644
+--- a/README.md
++++ b/README.md
+@@ -29,0 +30 @@ bug reports, or advice. Especially on the following key areas:
++* [ivanquirino](https://github.com/ivanquirino)
+@@ -32 +33 @@ bug reports, or advice. Especially on the following key areas:
+-* [luddep](http://github.com/luddep)
++* …and 27 more
+diff --git a/README.md b/README.md
+index 19739a5..56078c3 100644
+--- a/README.md
++++ b/README.md
+@@ -130 +130 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-        var label = '<label for="id_' + name + '">' + object.labelHTML(name) + '</label>';
++        var label = object.labelHTML(name);
+diff --git a/README.md b/README.md
+index f5e3e16..19739a5 100644
+--- a/README.md
++++ b/README.md
+@@ -126 +126 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-        
++
+@@ -129,2 +129,2 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-    
+-        var label = '<label for="id_'+name+'">'+object.labelHTML(name)+'</label>';
++
++        var label = '<label for="id_' + name + '">' + object.labelHTML(name) + '</label>';
+@@ -133 +133 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-        return '<div class="form-group">' + label + widget + error +'</div>';
++        return '<div class="form-group">' + label + widget + error + '</div>';
+@@ -135 +135 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-    
++
+@@ -138 +138 @@ And while rendering it:
+-    form.toHTML(function (name, object) { return bootstrap_field(name, object); });
++    form.toHTML(bootstrapField);
+diff --git a/README.md b/README.md
+index 2c6f8c2..f5e3e16 100644
+--- a/README.md
++++ b/README.md
+@@ -125,7 +125,11 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-    var bootstrap_field = function (name, object) {
+-        var label = object.labelHTML(name);
+-        var error = object.error ? '<p class="form-error-tooltip">' + object.error + '</p>' : '';
+-        var widget = '<div class="controls col col-lg-9">' + object.widget.toHTML(name, object) + error + '</div>';
+-        return '<div class="field row control-group ' + (error !== '' ? 'has-error' : '')  + '">' + label + widget + '</div>';
+-    }
+-
++    var bootstrapField = function (name, object) {
++        
++        object.widget.classes = object.widget.classes || [];
++        object.widget.classes.push('form-control');
++    
++        var label = '<label for="id_'+name+'">'+object.labelHTML(name)+'</label>';
++        var error = object.error ? '<div class="alert alert-error">' + object.error + '</div>' : '';
++        var widget = object.widget.toHTML(name, object);
++        return '<div class="form-group">' + label + widget + error +'</div>';
++    };
++    
+diff --git a/README.md b/README.md
+index dd692bd..2c6f8c2 100644
+--- a/README.md
++++ b/README.md
+@@ -43,2 +43,2 @@ Creating an example registration form:
+-        username: fields.string({required: true}),
+-        password: fields.password({required: true}),
++        username: fields.string({ required: true }),
++        password: fields.password({ required: validators.required('You definitely want a password') }),
+@@ -46 +46 @@ Creating an example registration form:
+-            required: true,
++            required: validators.required('don\'t you know your own password?'),
+diff --git a/README.md b/README.md
+index 6d0eb60..dd692bd 100644
+--- a/README.md
++++ b/README.md
+@@ -275 +275,2 @@ for highly customised markup.
+-* fieldsetClasses - for multipleRadio and multipleCheckbox widgets, set classes for the fieldset sub-wrapper
++* fieldsetClasses - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset
++* legendClasses - for widgets with a fieldset (multipleRadio and multipleCheckbox), set classes for the fieldset's legend
+@@ -336 +337 @@ fails, the resulting message is stored in the field's error attribute.
+-* labelClasses - Custom classes to add to the choices label on multipleRadio and multipleCheckbox widgets
++* labelClasses - Custom classes to add to the choices label when applicable (multipleRadio and multipleCheckbox)
+diff --git a/README.md b/README.md
+index 2be937a..6d0eb60 100644
+--- a/README.md
++++ b/README.md
+@@ -275 +275 @@ for highly customised markup.
+-* fieldsetClasses - for multipleRadio and multipleCheckbox widgets, set classes for the fieldset wrapper
++* fieldsetClasses - for multipleRadio and multipleCheckbox widgets, set classes for the fieldset sub-wrapper
+diff --git a/README.md b/README.md
+index 069d64f..2be937a 100644
+--- a/README.md
++++ b/README.md
+@@ -336 +336 @@ fails, the resulting message is stored in the field's error attribute.
+-* choicesClasses - Custom classes to add to the choices label on multipleRadio and multipleCheckbox widgets
++* labelClasses - Custom classes to add to the choices label on multipleRadio and multipleCheckbox widgets
+diff --git a/README.md b/README.md
+index 8ff9366..069d64f 100644
+--- a/README.md
++++ b/README.md
+@@ -209,0 +210,7 @@ form object.
++#### forms.create(fields, options)
++Forms can be created with an optional "options" object as well.
++#### Supported options:
++* `validatePastFirstError`: `true`, otherwise assumes `false`
++ * If `false`, the first validation error will halt form validation.
++ * If `true`, all fields will be validated.
++
+diff --git a/README.md b/README.md
+index 288e76c..8ff9366 100644
+--- a/README.md
++++ b/README.md
+@@ -210,7 +209,0 @@ form object.
+-#### forms.create(fields, options)
+-Forms can be created with an optional "options" object as well.
+-#### Supported options:
+-* `validatePastFirstError`: `true`, otherwise assumes `false`
+- * If `false`, the first validation error will halt form validation.
+- * If `true`, all fields will be validated.
+-
+@@ -274,0 +268 @@ for highly customised markup.
++* fieldsetClasses - for multipleRadio and multipleCheckbox widgets, set classes for the fieldset wrapper
+@@ -334,0 +329 @@ fails, the resulting message is stored in the field's error attribute.
++* choicesClasses - Custom classes to add to the choices label on multipleRadio and multipleCheckbox widgets
+diff --git a/README.md b/README.md
+index ac74147..288e76c 100644
+--- a/README.md
++++ b/README.md
+@@ -209,0 +210,7 @@ form object.
++#### forms.create(fields, options)
++Forms can be created with an optional "options" object as well.
++#### Supported options:
++* `validatePastFirstError`: `true`, otherwise assumes `false`
++ * If `false`, the first validation error will halt form validation.
++ * If `true`, all fields will be validated.
++
+diff --git a/README.md b/README.md
+index 929ca7a..ac74147 100644
+--- a/README.md
++++ b/README.md
+@@ -191 +191 @@ components following the same API.
+-* int
++* integer
+diff --git a/README.md b/README.md
+index 9bea88a..929ca7a 100644
+--- a/README.md
++++ b/README.md
+@@ -189,0 +190,2 @@ components following the same API.
++* digits
++* int
+diff --git a/README.md b/README.md
+index e6b87c9..9bea88a 100644
+--- a/README.md
++++ b/README.md
+@@ -174,0 +175 @@ components following the same API.
++* matchValue
+diff --git a/README.md b/README.md
+index bbccdad..e6b87c9 100644
+--- a/README.md
++++ b/README.md
+@@ -157,0 +158 @@ components following the same API.
++* number
+diff --git a/README.md b/README.md
+index b22527c..bbccdad 100644
+--- a/README.md
++++ b/README.md
+@@ -186,0 +187 @@ components following the same API.
++* alphanumeric
+diff --git a/README.md b/README.md
+index 0f60733..b22527c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +0,0 @@
+-[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6]
+-
+@@ -4,0 +3,2 @@
++[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6]
++
+diff --git a/README.md b/README.md
+index 1d51e69..0f60733 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3,3 @@
+-# Forms
++# Forms <sup>[![Version Badge][9]][8]</sup>
++
++[![npm badge][7]][8]
+@@ -347,0 +350,3 @@ containing a HTML representation of the field.
++[7]: https://nodei.co/npm/forms.png?downloads=true&stars=true
++[8]: https://npmjs.org/package/forms
++[9]: http://vb.teelaun.ch/caolan/forms.svg
+diff --git a/README.md b/README.md
+index d94ebef..1d51e69 100644
+--- a/README.md
++++ b/README.md
+@@ -171,0 +172 @@ components following the same API.
++* required
+diff --git a/README.md b/README.md
+index 6dd10f0..d94ebef 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-[![Build Status][1]][2] [![dependency status][3]][4]
++[![Build Status][1]][2] [![dependency status][3]][4] [![dev dependency status][5]][6]
+@@ -344,0 +345,2 @@ containing a HTML representation of the field.
++[5]: https://david-dm.org/caolan/forms/dev-status.png
++[6]: https://david-dm.org/caolan/forms#info=devDependencies
+diff --git a/README.md b/README.md
+index 661a208..6dd10f0 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1,2 @@
++[![Build Status][1]][2] [![dependency status][3]][4]
++
+@@ -338,0 +341,5 @@ containing a HTML representation of the field.
++[1]: https://travis-ci.org/caolan/forms.png
++[2]: https://travis-ci.org/caolan/forms
++[3]: https://david-dm.org/caolan/forms.png
++[4]: https://david-dm.org/caolan/forms
++
+diff --git a/README.md b/README.md
+index 3eed30a..661a208 100644
+--- a/README.md
++++ b/README.md
+@@ -169,0 +170 @@ components following the same API.
++* requiresFieldIfEmpty
+diff --git a/README.md b/README.md
+index 305f651..3eed30a 100644
+--- a/README.md
++++ b/README.md
+@@ -145,0 +146 @@ components following the same API.
++* tel
+@@ -155,0 +157 @@ components following the same API.
++* tel
+diff --git a/README.md b/README.md
+index bfd7276..305f651 100644
+--- a/README.md
++++ b/README.md
+@@ -151,0 +152 @@ components following the same API.
++* email
+diff --git a/README.md b/README.md
+index 90509eb..bfd7276 100644
+--- a/README.md
++++ b/README.md
+@@ -103,5 +103,6 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-        title: fields.string({required: true
+-            , widget: widgets.text({classes: ['input-with-feedback']})
+-            , errorAfterField: true
+-            , cssClasses: {
+-                label: ['control-label col col-lg-3'],
++            title: fields.string({
++            required: true,
++            widget: widgets.text({ classes: ['input-with-feedback'] }),
++            errorAfterField: true,
++            cssClasses: {
++                label: ['control-label col col-lg-3']
+@@ -111,4 +112,5 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-        description: fields.string({errorAfterField: true
+-            , widget: widgets.text({classes: ['input-with-feedback']})
+-            , cssClasses: {
+-                label: ['control-label col col-lg-3'],
++        description: fields.string({
++            errorAfterField: true,
++            widget: widgets.text({ classes: ['input-with-feedback'] }),
++            cssClasses: {
++                label: ['control-label col col-lg-3']
+@@ -119 +121 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
+-    var bootstrap_field = function(name, object) {
++    var bootstrap_field = function (name, object) {
+@@ -128 +130 @@ And while rendering it:
+-    form.toHTML(function(name, object){return bootstrap_field(name, object);})
++    form.toHTML(function (name, object) { return bootstrap_field(name, object); });
+diff --git a/README.md b/README.md
+index c6cb89a..90509eb 100644
+--- a/README.md
++++ b/README.md
+@@ -100,0 +101 @@ For integrating with Twitter bootstrap 3 (horizontal form), this is what you nee
++
+@@ -125,0 +127 @@ And while rendering it:
++
+diff --git a/README.md b/README.md
+index 1a386c7..c6cb89a 100644
+--- a/README.md
++++ b/README.md
+@@ -98,0 +99,29 @@ An example server using the form above can be run by doing:
++### Bootstrap compatible output
++For integrating with Twitter bootstrap 3 (horizontal form), this is what you need to do:
++    var my_form = forms.create({
++        title: fields.string({required: true
++            , widget: widgets.text({classes: ['input-with-feedback']})
++            , errorAfterField: true
++            , cssClasses: {
++                label: ['control-label col col-lg-3'],
++            }
++        }),
++
++        description: fields.string({errorAfterField: true
++            , widget: widgets.text({classes: ['input-with-feedback']})
++            , cssClasses: {
++                label: ['control-label col col-lg-3'],
++            }
++        })
++    });
++
++    var bootstrap_field = function(name, object) {
++        var label = object.labelHTML(name);
++        var error = object.error ? '<p class="form-error-tooltip">' + object.error + '</p>' : '';
++        var widget = '<div class="controls col col-lg-9">' + object.widget.toHTML(name, object) + error + '</div>';
++        return '<div class="field row control-group ' + (error !== '' ? 'has-error' : '')  + '">' + label + widget + '</div>';
++    }
++
++And while rendering it:
++    form.toHTML(function(name, object){return bootstrap_field(name, object);})
++
+diff --git a/README.md b/README.md
+index 148e59f..1a386c7 100644
+--- a/README.md
++++ b/README.md
+@@ -113,0 +114 @@ components following the same API.
++* date
+@@ -120,0 +122 @@ components following the same API.
++* date
+@@ -141,0 +144 @@ components following the same API.
++* date
+diff --git a/README.md b/README.md
+index eefac78..148e59f 100644
+--- a/README.md
++++ b/README.md
+@@ -216,0 +217 @@ for highly customised markup.
++* errorAfterField - if true, the error message will be displayed after the field, rather than before.
+diff --git a/README.md b/README.md
+index 97b7825..eefac78 100644
+--- a/README.md
++++ b/README.md
+@@ -296,0 +297 @@ containing a HTML representation of the field.
++
+diff --git a/README.md b/README.md
+index 73fb7ad..97b7825 100644
+--- a/README.md
++++ b/README.md
+@@ -126,0 +127 @@ components following the same API.
++* label
+diff --git a/README.md b/README.md
+index c51b33d..73fb7ad 100644
+--- a/README.md
++++ b/README.md
+@@ -23 +23 @@ bug reports, or advice. Especially on the following key areas:
+-### Contributors
++### [Contributors](https://github.com/caolan/forms/contributors)
+@@ -25,2 +24,0 @@ bug reports, or advice. Especially on the following key areas:
+-* [luddep](http://github.com/luddep)
+-* [jedp](https://github.com/jedp)
+@@ -28 +26,3 @@ bug reports, or advice. Especially on the following key areas:
+-
++* [richardngn](https://github.com/richardngn)
++* [caulagi](https://github.com/caulagi)
++* [luddep](http://github.com/luddep)
+diff --git a/README.md b/README.md
+index f4c5b91..c51b33d 100644
+--- a/README.md
++++ b/README.md
+@@ -214,0 +215 @@ for highly customised markup.
++* cssClasses - A list of CSS classes for label and field wrapper
+diff --git a/README.md b/README.md
+index f00b9b5..f4c5b91 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ components following the same API.
++* color
+@@ -133,3 +134,3 @@ components following the same API.
+-* minLength
+-* maxLength
+-* rangeLength
++* minlength
++* maxlength
++* rangelength
+@@ -136,0 +138 @@ components following the same API.
++* color
+diff --git a/README.md b/README.md
+index fcf9be9..f00b9b5 100644
+--- a/README.md
++++ b/README.md
+@@ -76 +76 @@ Handling a request:
+-    function myView(req, res){
++    function myView(req, res) {
+@@ -79 +79 @@ Handling a request:
+-            success: function(form){
++            success: function (form) {
+@@ -83 +83 @@ Handling a request:
+-            error: function(form){
++            error: function (form) {
+@@ -87 +87 @@ Handling a request:
+-            empty: function(form){
++            empty: function (form) {
+diff --git a/README.md b/README.md
+index 37fb153..fcf9be9 100644
+--- a/README.md
++++ b/README.md
+@@ -12 +12 @@ This code is still in its infancy, and I'd really appreciate any contributions,
+-bug reports or advice. Especially on the following key areas:
++bug reports, or advice. Especially on the following key areas:
+diff --git a/README.md b/README.md
+index a90a534..37fb153 100644
+--- a/README.md
++++ b/README.md
+@@ -26,0 +27 @@ bug reports or advice. Especially on the following key areas:
++* [ljharb](https://github.com/ljharb)
+diff --git a/README.md b/README.md
+index 6002078..a90a534 100644
+--- a/README.md
++++ b/README.md
+@@ -25,0 +26 @@ bug reports or advice. Especially on the following key areas:
++* [jedp](https://github.com/jedp)
+diff --git a/README.md b/README.md
+index d7cf897..6002078 100644
+--- a/README.md
++++ b/README.md
+@@ -22,0 +23,4 @@ bug reports or advice. Especially on the following key areas:
++### Contributors
++
++* [luddep](http://github.com/luddep)
++
+diff --git a/README.md b/README.md
+index a990ac6..d7cf897 100644
+--- a/README.md
++++ b/README.md
+@@ -6,0 +7,2 @@ This module is an attempt to provide the same sort of helpers for node.js.
++    npm install forms
++

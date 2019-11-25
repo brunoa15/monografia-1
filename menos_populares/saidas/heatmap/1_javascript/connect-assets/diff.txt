@@ -1,0 +1,2520 @@
+diff --git a/README.md b/README.md
+index 7f7cf87..d3c8c96 100644
+--- a/README.md
++++ b/README.md
+@@ -3,0 +4 @@
++![Node version](https://img.shields.io/node/v/connect-assets.png)
+diff --git a/README.md b/README.md
+index a368117..7f7cf87 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/js-kyle/connect-assets.png)](https://travis-ci.org/js-kyle/connect-assets)
+diff --git a/README.md b/README.md
+index 7c51649..a368117 100644
+--- a/README.md
++++ b/README.md
+@@ -183 +183 @@ app.use(require("connect-assets")(options, function (instance) {
+-## Serving Assets from a CDN
++## CLI
+@@ -186 +185,0 @@ connect-assets includes a command-line utility, `connect-assets`, which can be u
+-
+@@ -191,5 +189,0 @@ Usage: connect-assets [-h] [-v] [-gz] [-ap] [-i [DIRECTORY [DIRECTORY ...]]]
+-Precompiles assets supplied into their production-ready form, ready for
+-upload to a CDN or static file server. The generated manifest.json is all
+-that is required on your application server if connect-assets is properly
+-configured.
+-
+@@ -225,0 +220,49 @@ Optional arguments:
++### CLI examples
++**Basic use case:**
++Compile contents of public/javascripts folder, saving to a the cdn directory.
++`connect-assets -i public/javascripts -o cdnassets`
++
++**Advanced use case (nested directories):**
++When compiling files which use Sprockets style concatenation e.g. `//= require dependency`, the path to the dependency must also be passed using the `--include` flag.
++Consider this project structure:
++```
++Simple App
++│   README.md
++│   app.js
++└─── public
++│   │   robots.txt
++│   └─── javascripts
++│       │   bundle.js
++│       │   sw.js
++|       |   client.js
++│       └───  app
++|               └───  users
++│                   |  users.controller.js
++│                   |  users.routes.js
++└─── test
++    │   users.spec.js
++```
++Contents of bundle.js:
++```
++//= require users/users.controller.js
++//= require users/users.routes.js
++```
++In the above scenario `connect-assets -i public/javascripts -o cdnassets` will fail to compile `bundle.js` as connect-assets will fail to find the file on the provided path.
++To remove errors, ensure that the paths (the same paths as what are defined in your connect-assets options).
++For example, `connect-assets -i public/javascripts -i public/javascripts/app -o cdnassets` will successfully pre-compile `bundle.js`.
++    
++## Serving Assets from a CDN
++
++The CLI utility precompiles assets supplied into their production-ready form, ready for
++upload to a CDN or static file server. The generated `manifest.json` is all
++that is required on your application server if connect-assets is properly
++configured. Once assets have been precompiled and uploaded to CDN (perhaps as part of your build process), you can pass the Mincer environment your manifest file like so:
++
++```
++const assetManifest = require('./manifest.json');
++
++app.use(require("connect-assets")(options, function (instance) {
++  instance.manifest = assetManifest;
++}));
++```
++Your CDN url will also need to be passed to the `servePath` option of connect-assets.
+diff --git a/README.md b/README.md
+index 687967d..7c51649 100644
+--- a/README.md
++++ b/README.md
+@@ -221 +221,4 @@ Optional arguments:
+-                        Embed source map url into compiled files
++                        Embed source map url into compiled files.
++  -nsmp, --noSourceMapProtection
++                        Do not add XSSI protection header to source map files.
++                        https://github.com/adunkman/connect-assets/issues/345#issuecomment-235246691
+diff --git a/README.md b/README.md
+index ea29b7c..687967d 100644
+--- a/README.md
++++ b/README.md
+@@ -110 +110 @@ You can then use the `assetPath` helper in your Jade like so:
+-img(src="#{assetPath('image-name.png')}") 
++img(src="#{assetPath('image-name.png')}")
+@@ -204,2 +204,2 @@ Optional arguments:
+-                        Adds the file (or pattern) to a list of files to 
+-                        compile. Defaults to all files with extensions. Only 
++                        Adds the file (or pattern) to a list of files to
++                        compile. Defaults to all files with extensions. Only
+@@ -219,0 +220,2 @@ Optional arguments:
++  -emc, --embedMappingComments
++                        Embed source map url into compiled files
+diff --git a/README.md b/README.md
+index d87cfce..ea29b7c 100644
+--- a/README.md
++++ b/README.md
+@@ -218,0 +219 @@ Optional arguments:
++  -sm, --sourceMaps     Enables source map generation for all files.
+diff --git a/README.md b/README.md
+index 1585efb..d87cfce 100644
+--- a/README.md
++++ b/README.md
+@@ -204,2 +204,3 @@ Optional arguments:
+-                        Adds the file (or pattern) to a list of files to
+-                        compile. Defaults to all files.
++                        Adds the file (or pattern) to a list of files to 
++                        compile. Defaults to all files with extensions. Only 
++                        include the left most extension (ex. main.css).
+diff --git a/README.md b/README.md
+index b7b4a73..1585efb 100644
+--- a/README.md
++++ b/README.md
+@@ -51 +51 @@ Finally, create an `assets` directory in your project and throw all assets compi
+-connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides five global functions named `js`, `jsInline`, `css`, `cssInline` and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -78,0 +79,14 @@ Results in:
++The inline variants `jsInline` and `cssInline` write the contents straight into the tags, instead of linking. For example,
++
++```
++!= cssInline("normalize")
++!= jsInline("jquery")
++```
++
++(where `!=` is Jade's syntax for running JS and displaying its output) results in the markup
++
++```html
++<style>[contents]</style>
++<script>[contents]</script>
++```
++
+diff --git a/README.md b/README.md
+index fbdf066..b7b4a73 100644
+--- a/README.md
++++ b/README.md
+@@ -148 +148 @@ build         | dev: false; prod: true          | Should assets be saved to disk
+-buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++buildDir      | "builtAssets"                   | The directory to save (and load) compiled assets to/from.
+@@ -149,0 +150 @@ compile       | true                            | Should assets be compiled if t
++bundle        | dev: false; prod: true          | Should assets be bundled into a single tag (when possible)?
+diff --git a/README.md b/README.md
+index f84c487..fbdf066 100644
+--- a/README.md
++++ b/README.md
+@@ -58 +58 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-(where `!= is Jade's syntax for running JS and displaying its output) results in the markup
++(where `!=` is Jade's syntax for running JS and displaying its output) results in the markup
+@@ -123 +123 @@ When you do so, and point the `js` function at that file, two things can happen:
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++2. If you passed the `build: true` option to connect-assets (enabled by default when `NODE_ENV=production`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+diff --git a/README.md b/README.md
+index c878d35..f84c487 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails asset pipeline.
+diff --git a/README.md b/README.md
+index e789202..c878d35 100644
+--- a/README.md
++++ b/README.md
+@@ -78,0 +79,25 @@ Results in:
++You can also reference image paths via the `assetPath` helper. First, you must specify the
++path to your images via the `paths` option e.g:
++```javascript
++...
++
++var assets = require('connect-assets');
++
++app.use(assets({
++  paths: [
++    'assets/css',
++    'assets/js',
++    'assets/img'
++  ]
++}));
++```
++You can then use the `assetPath` helper in your Jade like so:
++```
++img(src="#{assetPath('image-name.png')}") 
++```
++
++Would result in:
++```html
++<img src="/assets/img/image-name-[hash].png">
++```
++
+diff --git a/README.md b/README.md
+index 0c46035..e789202 100644
+--- a/README.md
++++ b/README.md
+@@ -101,0 +102,8 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
++You can also indicate dependencies in your `.css` files using the Sprockets-style syntax.
++
++```css
++/*= require reset.css */
++
++body { margin: 0; }
++```
++
+diff --git a/README.md b/README.md
+index 917e14b..0c46035 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
++sourceMaps    | dev: true; prod: false          | Should source maps be served?
+@@ -123 +124 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
+-This package depends on [mincer](https://github.com/nodeca/mincer), which quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
++This package depends on [mincer](https://github.com/nodeca/mincer), which is quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
+diff --git a/README.md b/README.md
+index 3dc12ca..917e14b 100644
+--- a/README.md
++++ b/README.md
+@@ -102,8 +101,0 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
+-You can also indicate dependencies in your `.css` files using the Sprockets-style syntax.
+-
+-```css
+-/*= require reset.css */
+-
+-body { margin: 0; }
+-```
+-
+@@ -147 +139 @@ connect-assets includes a command-line utility, `connect-assets`, which can be u
+-Usage: connect-assets [-h] [-v] [-gz] [-i [DIRECTORY [DIRECTORY ...]]]
++Usage: connect-assets [-h] [-v] [-gz] [-ap] [-i [DIRECTORY [DIRECTORY ...]]]
+@@ -175,0 +168 @@ Optional arguments:
++  -ap, --autoprefixer   Enables autoprefixer during compilation.
+diff --git a/README.md b/README.md
+index 1e4b883..3dc12ca 100644
+--- a/README.md
++++ b/README.md
+@@ -101,0 +102,8 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
++You can also indicate dependencies in your `.css` files using the Sprockets-style syntax.
++
++```css
++/*= require reset.css */
++
++body { margin: 0; }
++```
++
+@@ -120 +127,0 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
+-sourceMaps    | dev: true; prod: false          | Should source maps be served?
+@@ -124 +131 @@ sourceMaps    | dev: true; prod: false          | Should source maps be served?
+-This package depends on [mincer](https://github.com/nodeca/mincer), which is quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
++This package depends on [mincer](https://github.com/nodeca/mincer), which quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
+diff --git a/README.md b/README.md
+index 0848d80..1e4b883 100644
+--- a/README.md
++++ b/README.md
+@@ -120 +120 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
+-sourceMaps    | false                           | Should source maps be served?
++sourceMaps    | dev: true; prod: false          | Should source maps be served?
+@@ -124 +124 @@ sourceMaps    | false                           | Should source maps be served?
+-This package depends on [mincer](https://github.com/nodeca/mincer), which quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
++This package depends on [mincer](https://github.com/nodeca/mincer), which is quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
+diff --git a/README.md b/README.md
+index 5ccb50d..0848d80 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
++sourceMaps    | false                           | Should source maps be served?
+diff --git a/README.md b/README.md
+index ad7492f..5ccb50d 100644
+--- a/README.md
++++ b/README.md
+@@ -16,2 +16 @@ connect-assets can:
+-6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
+-7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
++6. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
+@@ -20,2 +19,2 @@ connect-assets can:
+-8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
+-9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
++9. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
++10. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -38 +36,0 @@ npm install node-sass
+-npm install haml-coffee
+diff --git a/README.md b/README.md
+index 5822179..ad7492f 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +108 @@ See [Mincer](https://github.com/nodeca/mincer) for more information.
+-If you like, you can pass any of these options to the first parameter of the function returned by `require('connect-assets')`:
++If you like, you can pass any of these options to the first parameter of the function returned by `require("connect-assets")`:
+@@ -122 +121,0 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
+-precompileCallback | null                            | A function to call when the assets haven't started compiling/serving yet. See descriptions below.
+@@ -124 +123 @@ precompileCallback | null                            | A function to call when t
+-## Configuring Mincer
++## Custom Configuration of Mincer
+@@ -126 +125 @@ precompileCallback | null                            | A function to call when t
+-[Mincer](https://github.com/nodeca/mincer) is quite configurable by design. However, as [the asset compilation is forced on server boot](https://github.com/adunkman/connect-assets/issues/264#issue-39673594), all configurations made to the Mincer environment should be specified during initialization.
++This package depends on [mincer](https://github.com/nodeca/mincer), which quite configurable by design. Many options from mincer are not exposed through connect-assets in the name of simplicity.
+@@ -128 +127 @@ precompileCallback | null                            | A function to call when t
+-You may use either:
++As asset compliation happens immediately after connect-assets is initialized, any changes that affect the way mincer compiles assets should be made during initialization. A custom initialization function can be passed to connect-assets as a second argument to the function returned by `require("connect-assets")`:
+@@ -131,5 +130,3 @@ You may use either:
+-app.use(require("connect-assets")({
+-  compile: true
+-}, function (assets) {
+-  // Configuration to mincer environment can be placed here
+-  assets.environment.registerHelper(/* ... */);
++app.use(require("connect-assets")(options, function (instance) {
++  // Custom configuration of the mincer environment can be placed here
++  instance.environment.registerHelper(/* ... */);
+@@ -139,14 +135,0 @@ app.use(require("connect-assets")({
+-Or:
+-
+-```javascript
+-app.use(require("connect-assets")({
+-  compile: true,
+-  precompileCallback: function (assets) {
+-    // Configuration to mincer environment can be placed here
+-    assets.environment.registerHelper(/* ... */);
+-  }
+-}));
+-```
+-
+-Be noted that `precompileCallback` is called only if compilation is required, i.e. `compile` is `true`.
+-
+diff --git a/README.md b/README.md
+index 5e03888..5822179 100644
+--- a/README.md
++++ b/README.md
+@@ -108 +108 @@ See [Mincer](https://github.com/nodeca/mincer) for more information.
+-If you like, you can pass any of these options to the function returned by `require('connect-assets')`:
++If you like, you can pass any of these options to the first parameter of the function returned by `require('connect-assets')`:
+@@ -121,0 +122,30 @@ fingerprinting| dev: false; prod: true          | Should fingerprints be appende
++precompileCallback | null                            | A function to call when the assets haven't started compiling/serving yet. See descriptions below.
++
++## Configuring Mincer
++
++[Mincer](https://github.com/nodeca/mincer) is quite configurable by design. However, as [the asset compilation is forced on server boot](https://github.com/adunkman/connect-assets/issues/264#issue-39673594), all configurations made to the Mincer environment should be specified during initialization.
++
++You may use either:
++
++```javascript
++app.use(require("connect-assets")({
++  compile: true
++}, function (assets) {
++  // Configuration to mincer environment can be placed here
++  assets.environment.registerHelper(/* ... */);
++}));
++```
++
++Or:
++
++```javascript
++app.use(require("connect-assets")({
++  compile: true,
++  precompileCallback: function (assets) {
++    // Configuration to mincer environment can be placed here
++    assets.environment.registerHelper(/* ... */);
++  }
++}));
++```
++
++Be noted that `precompileCallback` is called only if compilation is required, i.e. `compile` is `true`.
+diff --git a/README.md b/README.md
+index 1937f98..5e03888 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ gzip          | false                           | Should assets have gzipped cop
+-fingerprints  | dev: false; prod: true          | Should assets be suffixed by a fingerprints : index.js is served as index-3789dsf88fd.js
++fingerprinting| dev: false; prod: true          | Should fingerprints be appended to asset filenames?
+diff --git a/README.md b/README.md
+index af680ab..1937f98 100644
+--- a/README.md
++++ b/README.md
+@@ -120,0 +121 @@ gzip          | false                           | Should assets have gzipped cop
++fingerprints  | dev: false; prod: true          | Should assets be suffixed by a fingerprints : index.js is served as index-3789dsf88fd.js
+diff --git a/README.md b/README.md
+index 3135a2d..af680ab 100644
+--- a/README.md
++++ b/README.md
+@@ -119 +119 @@ compile       | true                            | Should assets be compiled if t
+-compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csswring`.
+@@ -121 +120,0 @@ gzip          | false                           | Should assets have gzipped cop
+-fingerprints  | dev: false; prod: true          | Should assets be suffixed by a fingerprints : index.js is served as index-3789dsf88fd.js
+diff --git a/README.md b/README.md
+index 4ddc7e6..3135a2d 100644
+--- a/README.md
++++ b/README.md
+@@ -108,43 +108,14 @@ See [Mincer](https://github.com/nodeca/mincer) for more information.
+-If you like, you can pass any of these options as the first parameter to the function returned by `require('connect-assets')`:
+-
+-Option             | Default Value                   | Description
+--------------------|---------------------------------|-------------------------------
+-paths              | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
+-helperContext      | global                          | The object that helper functions (css, js, assetPath) will be attached to.
+-servePath          | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
+-precompile         | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
+-build              | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
+-buildDir           | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
+-compile            | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
+-compress           | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
+-gzip               | false                           | Should assets have gzipped copies in `buildDir`?
+-precompileCallback | null                            | A function to call when the assets haven't started compiling/serving yet. See descriptions below.
+-
+-## Configuring Mincer
+-
+-[Mincer](https://github.com/nodeca/mincer) is quite configurable by design. However, as [the asset compilation is forced on server boot](https://github.com/adunkman/connect-assets/issues/264#issue-39673594), all configurations made to the Mincer environment should be specified during initialization.
+-
+-You may use either:
+-
+-```javascript
+-app.use(require("connect-assets")({
+-  compile: true
+-}, function (assets) {
+-  // Configuration to mincer environment can be placed here
+-  assets.environment.registerHelper(/* ... */);
+-}));
+-```
+-
+-Or:
+-
+-```javascript
+-app.use(require("connect-assets")({
+-  compile: true,
+-  precompileCallback: function (assets) {
+-    // Configuration to mincer environment can be placed here
+-    assets.environment.registerHelper(/* ... */);
+-  }
+-}));
+-```
+-
+-Be noted that `precompileCallback` is called only if compilation is required, i.e. `compile` is `true`.
++If you like, you can pass any of these options to the function returned by `require('connect-assets')`:
++
++Option        | Default Value                   | Description
++--------------|---------------------------------|-------------------------------
++paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
++helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
++servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
++precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
++build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
++buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
++compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++gzip          | false                           | Should assets have gzipped copies in `buildDir`?
++fingerprints  | dev: false; prod: true          | Should assets be suffixed by a fingerprints : index.js is served as index-3789dsf88fd.js
+diff --git a/README.md b/README.md
+index 77fa25f..4ddc7e6 100644
+--- a/README.md
++++ b/README.md
+@@ -108,13 +108,43 @@ See [Mincer](https://github.com/nodeca/mincer) for more information.
+-If you like, you can pass any of these options to the function returned by `require('connect-assets')`:
+-
+-Option        | Default Value                   | Description
+---------------|---------------------------------|-------------------------------
+-paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
+-helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
+-servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
+-precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
+-build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
+-buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
+-compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
+-compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
+-gzip          | false                           | Should assets have gzipped copies in `buildDir`?
++If you like, you can pass any of these options as the first parameter to the function returned by `require('connect-assets')`:
++
++Option             | Default Value                   | Description
++-------------------|---------------------------------|-------------------------------
++paths              | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
++helperContext      | global                          | The object that helper functions (css, js, assetPath) will be attached to.
++servePath          | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
++precompile         | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
++build              | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
++buildDir           | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++compile            | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
++compress           | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++gzip               | false                           | Should assets have gzipped copies in `buildDir`?
++precompileCallback | null                            | A function to call when the assets haven't started compiling/serving yet. See descriptions below.
++
++## Configuring Mincer
++
++[Mincer](https://github.com/nodeca/mincer) is quite configurable by design. However, as [the asset compilation is forced on server boot](https://github.com/adunkman/connect-assets/issues/264#issue-39673594), all configurations made to the Mincer environment should be specified during initialization.
++
++You may use either:
++
++```javascript
++app.use(require("connect-assets")({
++  compile: true
++}, function (assets) {
++  // Configuration to mincer environment can be placed here
++  assets.environment.registerHelper(/* ... */);
++}));
++```
++
++Or:
++
++```javascript
++app.use(require("connect-assets")({
++  compile: true,
++  precompileCallback: function (assets) {
++    // Configuration to mincer environment can be placed here
++    assets.environment.registerHelper(/* ... */);
++  }
++}));
++```
++
++Be noted that `precompileCallback` is called only if compilation is required, i.e. `compile` is `true`.
+diff --git a/README.md b/README.md
+index d3714bc..77fa25f 100644
+--- a/README.md
++++ b/README.md
+@@ -152 +152 @@ Optional arguments:
+-                        remotely on a CDN, supply a URL
++                        remotely on a CDN, supply a URL.
+diff --git a/README.md b/README.md
+index 44de831..d3714bc 100644
+--- a/README.md
++++ b/README.md
+@@ -147,0 +148,5 @@ Optional arguments:
++  -s PATH, --servePath PATH
++                        The virtual path in which assets will be served
++                        over HTTP. If hosting assets locally, supply a
++                        local path (say, "assets"). If hosting assets
++                        remotely on a CDN, supply a URL
+diff --git a/README.md b/README.md
+index 02d4efc..44de831 100644
+--- a/README.md
++++ b/README.md
+@@ -119,0 +120 @@ compress      | dev: false; prod: true          | Should assets be minified? If
++gzip          | false                           | Should assets have gzipped copies in `buildDir`?
+@@ -126 +127 @@ connect-assets includes a command-line utility, `connect-assets`, which can be u
+-Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++Usage: connect-assets [-h] [-v] [-gz] [-i [DIRECTORY [DIRECTORY ...]]]
+@@ -146,0 +148,3 @@ Optional arguments:
++  -gz, --gzip
++                        Enables gzip file generation, which is disabled by
++                        default.
+diff --git a/README.md b/README.md
+index 13785c8..02d4efc 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7,21 +7 @@ Transparent file compilation and dependency management for Node's [connect](http
+-## The state of the package
+-
+-As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
+-- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
+-- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
+-
+-## Plans for version 3.0
+-
+-* Rewrite in JS
+-* Cleaner code
+-    * Shorter files
+-    * Better defined responsibilities
+-* No singleton
+-* Replace connect-file-cache
+-* Look for replacment for Snockets
+-* Remove dependence on underscore
+-* Remove dependence on mime
+-* Write tests in mocha
+-* Remove Cakefile
+-
+-## What?
++## What can it do?
+@@ -31,9 +11,11 @@ connect-assets can:
+-1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
+-1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
+-    -  [nib](https://github.com/visionmedia/nib)
+-    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
+-1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
+-    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
+-1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
+-1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
++1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++2. Concatenate `.js.coffee` and `.js` together.
++3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
++4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
++5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
++6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
++7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
++7. Serve `.jst.ejs` as compiled JavaScript functions.
++8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
++8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
++9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -41 +23 @@ connect-assets can:
+-## How?
++## How do I use it?
+@@ -45 +27,3 @@ First, install it in your project's directory:
+-    npm install connect-assets
++```shell
++npm install connect-assets
++```
+@@ -49,5 +33,9 @@ Also install any specific compilers you'll need, e.g.:
+-    npm install coffee-script
+-    npm install stylus
+-    npm install nib
+-    npm install bootstrap-stylus
+-    npm install less
++```shell
++npm install coffee-script
++npm install stylus
++npm install less
++npm install node-sass
++npm install haml-coffee
++npm install jade
++npm install ejs
++```
+@@ -57 +45,3 @@ Then add this line to your app's configuration:
+-    app.use require('connect-assets')()
++```javascript
++app.use(require("connect-assets")());
++```
+@@ -59 +49 @@ Then add this line to your app's configuration:
+-Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
++Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
+@@ -63 +53 @@ Finally, create an `assets` directory in your project and throw all your `.coffe
+-connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -65,2 +55,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    != css('normalize')
+-    != js('jquery')
++```
++!= css("normalize")
++!= js("jquery")
++```
+@@ -70,2 +62,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    <link rel="stylesheet" href="/css/normalize.css" />
+-    <script src="/js/jquery.js"></script>
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" />
++<script src="/js/jquery-[hash].js"></script>
++```
+@@ -73 +67 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-For your purposes you can pass additional attributes to helpers `js` and `css`.
++You can pass a Hash of special attributes to helper method `css` or `js`:
+@@ -75 +69,4 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-    != css('normalize', { media: 'print', 'data-confirm': 'Are you sure to do this?', 'data-delete': true })
++```
++!= css("normalize", { 'data-turbolinks-track': true } })
++!= js("jquery", { async: true })
++```
+@@ -77,3 +74 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-Result:
+-    
+-    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
++Results in:
+@@ -80,0 +76,4 @@ Result:
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" data-turbolinks-track />
++<script src="/js/jquery-[hash].js" async></script>
++```
+@@ -84 +83 @@ Result:
+-You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
++You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
+@@ -86 +85 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-    #= require dependency
++In CoffeeScript:
+@@ -88 +87,3 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
++```coffeescript
++#= require dependency
++```
+@@ -90,2 +91,5 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++In JavaScript:
++
++```javascript
++//= require dependency
++```
+@@ -93 +97 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-If you want to bring in a whole folder of scripts, use
++When you do so, and point the `js` function at that file, two things can happen:
+@@ -95 +99,2 @@ If you want to bring in a whole folder of scripts, use
+-    #= require_tree dir
++1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
++2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+@@ -97 +102 @@ If you want to bring in a whole folder of scripts, use
+-See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
++If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
+@@ -99 +104 @@ See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+-**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
++See [Mincer](https://github.com/nodeca/mincer) for more information.
+@@ -105,50 +110,38 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `src` (defaults to `'assets'`): The directory assets will be read from
+-* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
+-* `servePath` (defaults to ""): Paths in generated tags will be prefixed by `servePath`.  Useful when working with reverse proxies.
+-* ... see the source (`src/assets.coffee`) for more.
+-
+-### Using `helperContext` 
+-
+-You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
+-
+-    css.root = '/stylesheets'
+-    js.root  = '/javascripts'
+-
+-To override these roots, start a path with `'/'`. So, for instance,
+-
+-    css('style.css')
+-
+-generates
+-
+-    <link rel='stylesheet' href='/css/style.css'>
+-
+-while
+-
+-    css('/style.css')
+-
+-gives you
+-
+-    <link rel='stylesheet' href='/style.css'>
+-    
+-### Using `servePath`
+-    
+-In addition to setting the "root path" where assets can be found by the server, you can also "mount" your assets behind a base location path by setting `servePath`, so that path references are generated correctly for tags.  This is especially useful when working with reverse proxies, where the server may be receiving external requests for assets at a different path, e.g.
+-
+-    require('connect-assets')(
+-      servePath: '/foo'
+-    )
+-   
+-then,
+-
+-    css('/style.css')
+-   
+-gives you
+-
+-    <link rel='stylesheet' href='/foo/css/style.css'>
+-
+-While the server will still expect that external requests for `'/foo/css/style.css'` will be rewritten for `'/css/style.css'`  This only applies to absolute paths.
+-
+-## Generated documentation 
+-
+-There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++Option        | Default Value                   | Description
++--------------|---------------------------------|-------------------------------
++paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
++helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
++servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
++precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
++build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
++buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
++compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++
++## Serving Assets from a CDN
++
++connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
++
++```
++Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
++
++Precompiles assets supplied into their production-ready form, ready for
++upload to a CDN or static file server. The generated manifest.json is all
++that is required on your application server if connect-assets is properly
++configured.
++
++Optional arguments:
++  -h, --help            Show this help message and exit.
++  -v, --version         Show program's version number and exit.
++  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
++                        Adds the directory to a list of directories that
++                        assets will be read from, in order of preference.
++                        Defaults to 'assets/js' and 'assets/css'.
++  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
++                        Adds the file (or pattern) to a list of files to
++                        compile. Defaults to all files.
++  -o DIRECTORY, --output DIRECTORY
++                        Specifies the output directory to write compiled
++                        assets to. Defaults to 'builtAssets'.
++```
+@@ -158 +151 @@ There is generated documentation (created with [docco](http://jashkenas.github.c
+-Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
++Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
+@@ -160 +153 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
++Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+diff --git a/README.md b/README.md
+index 0173538..13785c8 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7 +7,21 @@ Transparent file compilation and dependency management for Node’s [connect](ht
+-## What can it do?
++## The state of the package
++
++As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
++- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
++- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
++
++## Plans for version 3.0
++
++* Rewrite in JS
++* Cleaner code
++    * Shorter files
++    * Better defined responsibilities
++* No singleton
++* Replace connect-file-cache
++* Look for replacment for Snockets
++* Remove dependence on underscore
++* Remove dependence on mime
++* Write tests in mocha
++* Remove Cakefile
++
++## What?
+@@ -11,10 +31,9 @@ connect-assets can:
+-1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-2. Concatenate `.js.coffee` and `.js` together.
+-3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
+-4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
+-5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
+-6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
+-7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
+-8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
+-8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
+-9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
++1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
++1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
++    -  [nib](https://github.com/visionmedia/nib)
++    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
++1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
++    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
++1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
++1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
+@@ -22 +41 @@ connect-assets can:
+-## How do I use it?
++## How?
+@@ -26,3 +45 @@ First, install it in your project's directory:
+-```shell
+-npm install connect-assets
+-```
++    npm install connect-assets
+@@ -32,13 +49,5 @@ Also install any specific compilers you'll need, e.g.:
+-```shell
+-npm install coffee-script
+-npm install stylus
+-npm install less
+-npm install node-sass
+-npm install haml-coffee
+-npm install jade
+-npm install ejs
+-
+-// For minification in production:
+-npm install csso
+-npm install uglify-js
+-```
++    npm install coffee-script
++    npm install stylus
++    npm install nib
++    npm install bootstrap-stylus
++    npm install less
+@@ -48,3 +57 @@ Then add this line to your app's configuration:
+-```javascript
+-app.use(require("connect-assets")());
+-```
++    app.use require('connect-assets')()
+@@ -52 +59 @@ app.use(require("connect-assets")());
+-Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
++Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
+@@ -56 +63 @@ Finally, create an `assets` directory in your project and throw all assets compi
+-connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -58,4 +65,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```
+-!= css("normalize")
+-!= js("jquery")
+-```
++    != css('normalize')
++    != js('jquery')
+@@ -65,6 +70,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```html
+-<link rel="stylesheet" href="/css/normalize-[hash].css" />
+-<script src="/js/jquery-[hash].js"></script>
+-```
+-
+-You can pass a Hash of special attributes to helper method `css` or `js`.
++    <link rel="stylesheet" href="/css/normalize.css" />
++    <script src="/js/jquery.js"></script>
+@@ -71,0 +73 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
++For your purposes you can pass additional attributes to helpers `js` and `css`.
+@@ -73,4 +75 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
+-```
+-!= css("normalize", { 'data-turbolinks-track': true } })
+-!= js("jquery", { async: true })
+-```
++    != css('normalize', { media: 'print', 'data-confirm': 'Are you sure to do this?', 'data-delete': true })
+@@ -78 +77,3 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
+-the result will:
++Result:
++    
++    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
+@@ -80,4 +80,0 @@ the result will:
+-```html
+-<link rel="stylesheet" href="/css/normalize-[hash].css" "data-turbolinks-track" />
+-<script src="/js/jquery-[hash].js" async></script>
+-```
+@@ -87,3 +84 @@ the result will:
+-You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
+-
+-In CoffeeScript:
++You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
+@@ -91,3 +86 @@ In CoffeeScript:
+-```coffeescript
+-#= require dependency
+-```
++    #= require dependency
+@@ -95 +88 @@ In CoffeeScript:
+-In JavaScript:
++(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
+@@ -97,3 +90,2 @@ In JavaScript:
+-```javascript
+-//= require dependency
+-```
++1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
++2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+@@ -101 +93 @@ In JavaScript:
+-When you do so, and point the `js` function at that file, two things can happen:
++If you want to bring in a whole folder of scripts, use
+@@ -103,2 +95 @@ When you do so, and point the `js` function at that file, two things can happen:
+-1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++    #= require_tree dir
+@@ -106 +97 @@ When you do so, and point the `js` function at that file, two things can happen:
+-If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
++See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+@@ -108 +99 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
+-See [Mincer](https://github.com/nodeca/mincer) for more information.
++**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
+@@ -114,38 +105,50 @@ If you like, you can pass any of these options to the function returned by `requ
+-Option        | Default Value                   | Description
+---------------|---------------------------------|-------------------------------
+-paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
+-helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
+-servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
+-precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
+-build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
+-buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
+-compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
+-compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
+-
+-## Serving Assets from a CDN
+-
+-connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
+-
+-```
+-Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
+-                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
+-
+-Precompiles assets supplied into their production-ready form, ready for
+-upload to a CDN or static file server. The generated manifest.json is all
+-that is required on your application server if connect-assets is properly
+-configured.
+-
+-Optional arguments:
+-  -h, --help            Show this help message and exit.
+-  -v, --version         Show program's version number and exit.
+-  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
+-                        Adds the directory to a list of directories that
+-                        assets will be read from, in order of preference.
+-                        Defaults to 'assets/js' and 'assets/css'.
+-  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
+-                        Adds the file (or pattern) to a list of files to
+-                        compile. Defaults to all files.
+-  -o DIRECTORY, --output DIRECTORY
+-                        Specifies the output directory to write compiled
+-                        assets to. Defaults to 'builtAssets'.
+-```
++* `src` (defaults to `'assets'`): The directory assets will be read from
++* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
++* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
++* `servePath` (defaults to ""): Paths in generated tags will be prefixed by `servePath`.  Useful when working with reverse proxies.
++* ... see the source (`src/assets.coffee`) for more.
++
++### Using `helperContext` 
++
++You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
++
++    css.root = '/stylesheets'
++    js.root  = '/javascripts'
++
++To override these roots, start a path with `'/'`. So, for instance,
++
++    css('style.css')
++
++generates
++
++    <link rel='stylesheet' href='/css/style.css'>
++
++while
++
++    css('/style.css')
++
++gives you
++
++    <link rel='stylesheet' href='/style.css'>
++    
++### Using `servePath`
++    
++In addition to setting the "root path" where assets can be found by the server, you can also "mount" your assets behind a base location path by setting `servePath`, so that path references are generated correctly for tags.  This is especially useful when working with reverse proxies, where the server may be receiving external requests for assets at a different path, e.g.
++
++    require('connect-assets')(
++      servePath: '/foo'
++    )
++   
++then,
++
++    css('/style.css')
++   
++gives you
++
++    <link rel='stylesheet' href='/foo/css/style.css'>
++
++While the server will still expect that external requests for `'/foo/css/style.css'` will be rewritten for `'/css/style.css'`  This only applies to absolute paths.
++
++## Generated documentation 
++
++There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
+@@ -155 +158 @@ Optional arguments:
+-Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
++Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
+@@ -157 +160 @@ Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephe
+-Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
++Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+diff --git a/README.md b/README.md
+index 82c4b2f..0173538 100644
+--- a/README.md
++++ b/README.md
+@@ -39,0 +40,4 @@ npm install ejs
++
++// For minification in production:
++npm install csso
++npm install uglify-js
+@@ -110,20 +114,10 @@ If you like, you can pass any of these options to the function returned by `requ
+-```text
+-|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+-| Option        | Default Value                   |
+-|---------------|---------------------------------|
+-| paths         | [ "assets/js", "assets/css" ]   |
+-| helperContext | global                          |
+-| servePath     | "assets"                        |
+-| precompile    | []                              |
+-| build         | dev: false; prod: true          |
+-| buildDir      | dev: false; prod: "builtAssets" |
+-| compile       | true                            |
+-|_______________|_________________________________|
+-```
+-* **paths** — The directories that assets will be read from, in order of preference.
+-* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
+-* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
+-* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
+-* **build** — Should assets be saved to disk (true), or just served from memory (false)?
+-* **buildDir** — The directory to save (and load) compiled assets to/from.
+-* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
++Option        | Default Value                   | Description
++--------------|---------------------------------|-------------------------------
++paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
++helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
++servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
++precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
++build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
++buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
++compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
+diff --git a/README.md b/README.md
+index 5a749e4..82c4b2f 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7,21 +7 @@ Transparent file compilation and dependency management for Node's [connect](http
+-## The state of the package
+-
+-As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
+-- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
+-- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
+-
+-## Plans for version 3.0
+-
+-* Rewrite in JS
+-* Cleaner code
+-    * Shorter files
+-    * Better defined responsibilities
+-* No singleton
+-* Replace connect-file-cache
+-* Look for replacment for Snockets
+-* Remove dependence on underscore
+-* Remove dependence on mime
+-* Write tests in mocha
+-* Remove Cakefile
+-
+-## What?
++## What can it do?
+@@ -31,9 +11,10 @@ connect-assets can:
+-1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
+-1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
+-    -  [nib](https://github.com/visionmedia/nib)
+-    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
+-1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
+-    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
+-1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
+-1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
++1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++2. Concatenate `.js.coffee` and `.js` together.
++3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
++4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
++5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
++6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
++7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
++8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
++8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
++9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -41 +22 @@ connect-assets can:
+-## How?
++## How do I use it?
+@@ -45 +26,3 @@ First, install it in your project's directory:
+-    npm install connect-assets
++```shell
++npm install connect-assets
++```
+@@ -49,5 +32,9 @@ Also install any specific compilers you'll need, e.g.:
+-    npm install coffee-script
+-    npm install stylus
+-    npm install nib
+-    npm install bootstrap-stylus
+-    npm install less
++```shell
++npm install coffee-script
++npm install stylus
++npm install less
++npm install node-sass
++npm install haml-coffee
++npm install jade
++npm install ejs
++```
+@@ -57 +44,3 @@ Then add this line to your app's configuration:
+-    app.use require('connect-assets')()
++```javascript
++app.use(require("connect-assets")());
++```
+@@ -59 +48 @@ Then add this line to your app's configuration:
+-Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
++Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
+@@ -63 +52 @@ Finally, create an `assets` directory in your project and throw all your `.coffe
+-connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -65,2 +54,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    != css('normalize')
+-    != js('jquery')
++```
++!= css("normalize")
++!= js("jquery")
++```
+@@ -70,2 +61,6 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    <link rel="stylesheet" href="/css/normalize.css" />
+-    <script src="/js/jquery.js"></script>
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" />
++<script src="/js/jquery-[hash].js"></script>
++```
++
++You can pass a Hash of special attributes to helper method `css` or `js`.
+@@ -73 +67,0 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-For your purposes you can pass additional attributes to helpers `js` and `css`.
+@@ -75 +69,4 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-    != css('normalize', { media: 'print', 'data-confirm': 'Are you sure to do this?', 'data-delete': true })
++```
++!= css("normalize", { 'data-turbolinks-track': true } })
++!= js("jquery", { async: true })
++```
+@@ -77,3 +74 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-Result:
+-    
+-    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
++the result will:
+@@ -80,0 +76,4 @@ Result:
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" "data-turbolinks-track" />
++<script src="/js/jquery-[hash].js" async></script>
++```
+@@ -84 +83 @@ Result:
+-You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
++You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
+@@ -86 +85 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-    #= require dependency
++In CoffeeScript:
+@@ -88 +87,3 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
++```coffeescript
++#= require dependency
++```
+@@ -90,2 +91,5 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++In JavaScript:
++
++```javascript
++//= require dependency
++```
+@@ -93 +97 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-If you want to bring in a whole folder of scripts, use
++When you do so, and point the `js` function at that file, two things can happen:
+@@ -95 +99,2 @@ If you want to bring in a whole folder of scripts, use
+-    #= require_tree dir
++1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
++2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+@@ -97 +102 @@ If you want to bring in a whole folder of scripts, use
+-See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
++If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
+@@ -99 +104 @@ See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+-**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
++See [Mincer](https://github.com/nodeca/mincer) for more information.
+@@ -105,29 +110,48 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `src` (defaults to `'assets'`): The directory assets will be read from
+-* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
+-* ... see the source (`src/assets.coffee`) for more.
+-
+-You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
+-
+-    css.root = '/stylesheets'
+-    js.root  = '/javascripts'
+-
+-To override these roots, start a path with `'/'`. So, for instance,
+-
+-    css('style.css')
+-
+-generates
+-
+-    <link rel='stylesheet' href='/css/style.css'>
+-
+-while
+-
+-    css('/style.css')
+-
+-gives you
+-
+-    <link rel='stylesheet' href='/style.css'>
+-
+-## Generated documentation 
+-
+-There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++```text
++|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
++| Option        | Default Value                   |
++|---------------|---------------------------------|
++| paths         | [ "assets/js", "assets/css" ]   |
++| helperContext | global                          |
++| servePath     | "assets"                        |
++| precompile    | []                              |
++| build         | dev: false; prod: true          |
++| buildDir      | dev: false; prod: "builtAssets" |
++| compile       | true                            |
++|_______________|_________________________________|
++```
++* **paths** — The directories that assets will be read from, in order of preference.
++* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
++* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
++* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
++* **build** — Should assets be saved to disk (true), or just served from memory (false)?
++* **buildDir** — The directory to save (and load) compiled assets to/from.
++* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
++
++## Serving Assets from a CDN
++
++connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
++
++```
++Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
++
++Precompiles assets supplied into their production-ready form, ready for
++upload to a CDN or static file server. The generated manifest.json is all
++that is required on your application server if connect-assets is properly
++configured.
++
++Optional arguments:
++  -h, --help            Show this help message and exit.
++  -v, --version         Show program's version number and exit.
++  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
++                        Adds the directory to a list of directories that
++                        assets will be read from, in order of preference.
++                        Defaults to 'assets/js' and 'assets/css'.
++  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
++                        Adds the file (or pattern) to a list of files to
++                        compile. Defaults to all files.
++  -o DIRECTORY, --output DIRECTORY
++                        Specifies the output directory to write compiled
++                        assets to. Defaults to 'builtAssets'.
++```
+@@ -137 +161 @@ There is generated documentation (created with [docco](http://jashkenas.github.c
+-Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
++Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
+@@ -139 +163 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
++Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+diff --git a/README.md b/README.md
+index d378b8f..5a749e4 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7 +7,21 @@ Transparent file compilation and dependency management for Node’s [connect](ht
+-## What can it do?
++## The state of the package
++
++As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
++- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
++- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
++
++## Plans for version 3.0
++
++* Rewrite in JS
++* Cleaner code
++    * Shorter files
++    * Better defined responsibilities
++* No singleton
++* Replace connect-file-cache
++* Look for replacment for Snockets
++* Remove dependence on underscore
++* Remove dependence on mime
++* Write tests in mocha
++* Remove Cakefile
++
++## What?
+@@ -11,10 +31,9 @@ connect-assets can:
+-1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-2. Concatenate `.js.coffee` and `.js` together.
+-3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
+-4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
+-5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
+-6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
+-7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
+-8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
+-8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
+-9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
++1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
++1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
++    -  [nib](https://github.com/visionmedia/nib)
++    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
++1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
++    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
++1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
++1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
+@@ -22 +41 @@ connect-assets can:
+-## How do I use it?
++## How?
+@@ -26,3 +45 @@ First, install it in your project's directory:
+-```shell
+-npm install connect-assets
+-```
++    npm install connect-assets
+@@ -32,9 +49,5 @@ Also install any specific compilers you'll need, e.g.:
+-```shell
+-npm install coffee-script
+-npm install stylus
+-npm install less
+-npm install node-sass
+-npm install haml-coffee
+-npm install jade
+-npm install ejs
+-```
++    npm install coffee-script
++    npm install stylus
++    npm install nib
++    npm install bootstrap-stylus
++    npm install less
+@@ -44,3 +57 @@ Then add this line to your app's configuration:
+-```javascript
+-app.use(require("connect-assets")());
+-```
++    app.use require('connect-assets')()
+@@ -48 +59 @@ app.use(require("connect-assets")());
+-Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
++Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
+@@ -52 +63 @@ Finally, create an `assets` directory in your project and throw all assets compi
+-connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -54,4 +65,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```
+-!= css("normalize")
+-!= js("jquery")
+-```
++    != css('normalize')
++    != js('jquery')
+@@ -61,6 +70,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```html
+-<link rel="stylesheet" href="/css/normalize-[hash].css" />
+-<script src="/js/jquery-[hash].js"></script>
+-```
+-
+-You can pass a Hash of special attributes to helper method `css` or `js`.
++    <link rel="stylesheet" href="/css/normalize.css" />
++    <script src="/js/jquery.js"></script>
+@@ -67,0 +73 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
++For your purposes you can pass additional attributes to helpers `js` and `css`.
+@@ -69,4 +75 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
+-```
+-!= css("normalize", { data: { 'turbolinks-track': true } })
+-!= js("jquery", { async: true })
+-```
++    != css('normalize', { media: 'print', 'data-confirm': 'Are you sure to do this?', 'data-delete': true })
+@@ -74 +77,3 @@ You can pass a Hash of special attributes to helper method `css` or `js`.
+-the result will:
++Result:
++    
++    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
+@@ -76,4 +80,0 @@ the result will:
+-```html
+-<link rel="stylesheet" href="/css/normalize-[hash].css" "data-turbolinks-track" />
+-<script src="/js/jquery-[hash].js" async></script>
+-```
+@@ -83 +84 @@ the result will:
+-You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
++You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
+@@ -85 +86 @@ You can indicate dependencies in your `.js.coffee` and `.js` files using the Spr
+-In CoffeeScript:
++    #= require dependency
+@@ -87,3 +88 @@ In CoffeeScript:
+-```coffeescript
+-#= require dependency
+-```
++(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
+@@ -91,5 +90,2 @@ In CoffeeScript:
+-In JavaScript:
+-
+-```javascript
+-//= require dependency
+-```
++1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
++2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+@@ -97 +93 @@ In JavaScript:
+-When you do so, and point the `js` function at that file, two things can happen:
++If you want to bring in a whole folder of scripts, use
+@@ -99,2 +95 @@ When you do so, and point the `js` function at that file, two things can happen:
+-1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++    #= require_tree dir
+@@ -102 +97 @@ When you do so, and point the `js` function at that file, two things can happen:
+-If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
++See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+@@ -104 +99 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
+-See [Mincer](https://github.com/nodeca/mincer) for more information.
++**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
+@@ -110,48 +105,29 @@ If you like, you can pass any of these options to the function returned by `requ
+-```text
+-|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+-| Option        | Default Value                   |
+-|---------------|---------------------------------|
+-| paths         | [ "assets/js", "assets/css" ]   |
+-| helperContext | global                          |
+-| servePath     | "assets"                        |
+-| precompile    | []                              |
+-| build         | dev: false; prod: true          |
+-| buildDir      | dev: false; prod: "builtAssets" |
+-| compile       | true                            |
+-|_______________|_________________________________|
+-```
+-* **paths** — The directories that assets will be read from, in order of preference.
+-* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
+-* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
+-* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
+-* **build** — Should assets be saved to disk (true), or just served from memory (false)?
+-* **buildDir** — The directory to save (and load) compiled assets to/from.
+-* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
+-
+-## Serving Assets from a CDN
+-
+-connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
+-
+-```
+-Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
+-                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
+-
+-Precompiles assets supplied into their production-ready form, ready for
+-upload to a CDN or static file server. The generated manifest.json is all
+-that is required on your application server if connect-assets is properly
+-configured.
+-
+-Optional arguments:
+-  -h, --help            Show this help message and exit.
+-  -v, --version         Show program's version number and exit.
+-  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
+-                        Adds the directory to a list of directories that
+-                        assets will be read from, in order of preference.
+-                        Defaults to 'assets/js' and 'assets/css'.
+-  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
+-                        Adds the file (or pattern) to a list of files to
+-                        compile. Defaults to all files.
+-  -o DIRECTORY, --output DIRECTORY
+-                        Specifies the output directory to write compiled
+-                        assets to. Defaults to 'builtAssets'.
+-```
++* `src` (defaults to `'assets'`): The directory assets will be read from
++* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
++* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
++* ... see the source (`src/assets.coffee`) for more.
++
++You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
++
++    css.root = '/stylesheets'
++    js.root  = '/javascripts'
++
++To override these roots, start a path with `'/'`. So, for instance,
++
++    css('style.css')
++
++generates
++
++    <link rel='stylesheet' href='/css/style.css'>
++
++while
++
++    css('/style.css')
++
++gives you
++
++    <link rel='stylesheet' href='/style.css'>
++
++## Generated documentation 
++
++There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
+@@ -161 +137 @@ Optional arguments:
+-Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
++Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
+@@ -163 +139 @@ Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephe
+-Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
++Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index e6bcc6d..d378b8f 100644
+--- a/README.md
++++ b/README.md
+@@ -40,4 +39,0 @@ npm install ejs
+-
+-// For minification in production:
+-npm install csso
+-npm install uglify-js
+@@ -69,0 +66,15 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
++You can pass a Hash of special attributes to helper method `css` or `js`.
++
++
++```
++!= css("normalize", { data: { 'turbolinks-track': true } })
++!= js("jquery", { async: true })
++```
++
++the result will:
++
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" "data-turbolinks-track" />
++<script src="/js/jquery-[hash].js" async></script>
++```
++
+@@ -99,10 +110,20 @@ If you like, you can pass any of these options to the function returned by `requ
+-Option        | Default Value                   | Description
+---------------|---------------------------------|-------------------------------
+-paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
+-helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
+-servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
+-precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
+-build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
+-buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
+-compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
+-compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++```text
++|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
++| Option        | Default Value                   |
++|---------------|---------------------------------|
++| paths         | [ "assets/js", "assets/css" ]   |
++| helperContext | global                          |
++| servePath     | "assets"                        |
++| precompile    | []                              |
++| build         | dev: false; prod: true          |
++| buildDir      | dev: false; prod: "builtAssets" |
++| compile       | true                            |
++|_______________|_________________________________|
++```
++* **paths** — The directories that assets will be read from, in order of preference.
++* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
++* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
++* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
++* **build** — Should assets be saved to disk (true), or just served from memory (false)?
++* **buildDir** — The directory to save (and load) compiled assets to/from.
++* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
+diff --git a/README.md b/README.md
+index 112dd13..e6bcc6d 100644
+--- a/README.md
++++ b/README.md
+@@ -99,19 +99,10 @@ If you like, you can pass any of these options to the function returned by `requ
+-Option        | Default Value
+---------------|---------------------------------
+-paths         | [ "assets/js", "assets/css" ]
+-helperContext | global
+-servePath     | "assets"
+-precompile    | []
+-build         | dev: false; prod: true
+-buildDir      | dev: false; prod: "builtAssets"
+-compile       | true
+-compress      | dev: false; prod: true
+-
+-* **paths** — The directories that assets will be read from, in order of preference.
+-* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
+-* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
+-* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
+-* **build** — Should assets be saved to disk (true), or just served from memory (false)?
+-* **buildDir** — The directory to save (and load) compiled assets to/from.
+-* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
+-* **compress** - Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++Option        | Default Value                   | Description
++--------------|---------------------------------|-------------------------------
++paths         | ["assets/js", "assets/css"]     | The directories that assets will be read from, in order of preference.
++helperContext | global                          | The object that helper functions (css, js, assetPath) will be attached to.
++servePath     | "assets"                        | The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.example.com/assets".
++precompile    | ["\*.\*"]                       | An array of assets to precompile while the server is initializing. Patterns should match the filename only, not including the directory.
++build         | dev: false; prod: true          | Should assets be saved to disk (true), or just served from memory (false)?
++buildDir      | dev: false; prod: "builtAssets" | The directory to save (and load) compiled assets to/from.
++compile       | true                            | Should assets be compiled if they don’t already exist in the `buildDir`?
++compress      | dev: false; prod: true          | Should assets be minified? If enabled, requires `uglify-js` and `csso`.
+diff --git a/README.md b/README.md
+index 3bc1f3b..112dd13 100644
+--- a/README.md
++++ b/README.md
+@@ -99,14 +99,11 @@ If you like, you can pass any of these options to the function returned by `requ
+-```text
+-|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+-| Option        | Default Value                   |
+-|---------------|---------------------------------|
+-| paths         | [ "assets/js", "assets/css" ]   |
+-| helperContext | global                          |
+-| servePath     | "assets"                        |
+-| precompile    | []                              |
+-| build         | dev: false; prod: true          |
+-| buildDir      | dev: false; prod: "builtAssets" |
+-| compile       | true                            |
+-| compress      | dev: false; prod: true          |
+-|_______________|_________________________________|
+-```
++Option        | Default Value
++--------------|---------------------------------
++paths         | [ "assets/js", "assets/css" ]
++helperContext | global
++servePath     | "assets"
++precompile    | []
++build         | dev: false; prod: true
++buildDir      | dev: false; prod: "builtAssets"
++compile       | true
++compress      | dev: false; prod: true
++
+diff --git a/README.md b/README.md
+index 4c3cc0a..3bc1f3b 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7,21 +7 @@ Transparent file compilation and dependency management for Node's [connect](http
+-## The state of the package
+-
+-As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
+-- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
+-- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
+-
+-## Plans for version 3.0
+-
+-* Rewrite in JS
+-* Cleaner code
+-    * Shorter files
+-    * Better defined responsibilities
+-* No singleton
+-* Replace connect-file-cache
+-* Look for replacment for Snockets
+-* Remove dependence on underscore
+-* Remove dependence on mime
+-* Write tests in mocha
+-* Remove Cakefile
+-
+-## What?
++## What can it do?
+@@ -31,9 +11,10 @@ connect-assets can:
+-1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
+-1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
+-    -  [nib](https://github.com/visionmedia/nib)
+-    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
+-1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
+-    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
+-1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
+-1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
++1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++2. Concatenate `.js.coffee` and `.js` together.
++3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
++4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
++5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
++6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
++7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
++8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
++8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
++9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -41 +22 @@ connect-assets can:
+-## How?
++## How do I use it?
+@@ -45 +26,3 @@ First, install it in your project's directory:
+-    npm install connect-assets
++```shell
++npm install connect-assets
++```
+@@ -49,5 +32,13 @@ Also install any specific compilers you'll need, e.g.:
+-    npm install coffee-script
+-    npm install stylus
+-    npm install nib
+-    npm install bootstrap-stylus
+-    npm install less
++```shell
++npm install coffee-script
++npm install stylus
++npm install less
++npm install node-sass
++npm install haml-coffee
++npm install jade
++npm install ejs
++
++// For minification in production:
++npm install csso
++npm install uglify-js
++```
+@@ -57 +48,3 @@ Then add this line to your app's configuration:
+-    app.use require('connect-assets')()
++```javascript
++app.use(require("connect-assets")());
++```
+@@ -59 +52 @@ Then add this line to your app's configuration:
+-Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
++Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
+@@ -63 +56 @@ Finally, create an `assets` directory in your project and throw all your `.coffe
+-connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -65,2 +58,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    != css('normalize')
+-    != js('jquery')
++```
++!= css("normalize")
++!= js("jquery")
++```
+@@ -70,4 +65,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    <link rel="stylesheet" href="/css/normalize.css" />
+-    <script src="/js/jquery.js"></script>
+-
+-For your purposes you can pass additional attributes to helpers `js` and `css`.
++```html
++<link rel="stylesheet" href="/css/normalize-[hash].css" />
++<script src="/js/jquery-[hash].js"></script>
++```
+@@ -75 +70 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-    != css('normalize', { media: 'print', data: { confirm: 'Are you sure to do this?', delete: function(){return true} } })
++### Sprockets-style concatenation
+@@ -77,3 +72 @@ For your purposes you can pass additional attributes to helpers `js` and `css`.
+-Result:
+-    
+-    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
++You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
+@@ -80,0 +74 @@ Result:
++In CoffeeScript:
+@@ -82 +76,3 @@ Result:
+-### Sprockets-style concatenation
++```coffeescript
++#= require dependency
++```
+@@ -84 +80 @@ Result:
+-You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
++In JavaScript:
+@@ -86 +82,3 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-    #= require dependency
++```javascript
++//= require dependency
++```
+@@ -88 +86 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
++When you do so, and point the `js` function at that file, two things can happen:
+@@ -91,3 +89 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+-
+-If you want to bring in a whole folder of scripts, use
++2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
+@@ -95 +91 @@ If you want to bring in a whole folder of scripts, use
+-    #= require_tree dir
++If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
+@@ -97,3 +93 @@ If you want to bring in a whole folder of scripts, use
+-See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+-
+-**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
++See [Mincer](https://github.com/nodeca/mincer) for more information.
+@@ -105,29 +99,50 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `src` (defaults to `'assets'`): The directory assets will be read from
+-* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
+-* ... see the source (`src/assets.coffee`) for more.
+-
+-You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
+-
+-    css.root = '/stylesheets'
+-    js.root  = '/javascripts'
+-
+-To override these roots, start a path with `'/'`. So, for instance,
+-
+-    css('style.css')
+-
+-generates
+-
+-    <link rel='stylesheet' href='/css/style.css'>
+-
+-while
+-
+-    css('/style.css')
+-
+-gives you
+-
+-    <link rel='stylesheet' href='/style.css'>
+-
+-## Generated documentation 
+-
+-There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++```text
++|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
++| Option        | Default Value                   |
++|---------------|---------------------------------|
++| paths         | [ "assets/js", "assets/css" ]   |
++| helperContext | global                          |
++| servePath     | "assets"                        |
++| precompile    | []                              |
++| build         | dev: false; prod: true          |
++| buildDir      | dev: false; prod: "builtAssets" |
++| compile       | true                            |
++| compress      | dev: false; prod: true          |
++|_______________|_________________________________|
++```
++* **paths** — The directories that assets will be read from, in order of preference.
++* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
++* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
++* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
++* **build** — Should assets be saved to disk (true), or just served from memory (false)?
++* **buildDir** — The directory to save (and load) compiled assets to/from.
++* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
++* **compress** - Should assets be minified? If enabled, requires `uglify-js` and `csso`.
++
++## Serving Assets from a CDN
++
++connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
++
++```
++Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
++
++Precompiles assets supplied into their production-ready form, ready for
++upload to a CDN or static file server. The generated manifest.json is all
++that is required on your application server if connect-assets is properly
++configured.
++
++Optional arguments:
++  -h, --help            Show this help message and exit.
++  -v, --version         Show program's version number and exit.
++  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
++                        Adds the directory to a list of directories that
++                        assets will be read from, in order of preference.
++                        Defaults to 'assets/js' and 'assets/css'.
++  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
++                        Adds the file (or pattern) to a list of files to
++                        compile. Defaults to all files.
++  -o DIRECTORY, --output DIRECTORY
++                        Specifies the output directory to write compiled
++                        assets to. Defaults to 'builtAssets'.
++```
+@@ -137 +152 @@ There is generated documentation (created with [docco](http://jashkenas.github.c
+-Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
++Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
+@@ -139 +154 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
++Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+diff --git a/README.md b/README.md
+index 9a054f1..4c3cc0a 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -7 +7,21 @@ Transparent file compilation and dependency management for Node’s [connect](ht
+-## What can it do?
++## The state of the package
++
++As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
++- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
++- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
++
++## Plans for version 3.0
++
++* Rewrite in JS
++* Cleaner code
++    * Shorter files
++    * Better defined responsibilities
++* No singleton
++* Replace connect-file-cache
++* Look for replacment for Snockets
++* Remove dependence on underscore
++* Remove dependence on mime
++* Write tests in mocha
++* Remove Cakefile
++
++## What?
+@@ -11,10 +31,9 @@ connect-assets can:
+-1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-2. Concatenate `.js.coffee` and `.js` together.
+-3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
+-4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
+-5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
+-6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
+-7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
+-8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
+-8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
+-9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
++1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
++1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
++    -  [nib](https://github.com/visionmedia/nib)
++    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
++1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
++    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
++1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
++1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
+@@ -22 +41 @@ connect-assets can:
+-## How do I use it?
++## How?
+@@ -26,3 +45 @@ First, install it in your project's directory:
+-```shell
+-npm install connect-assets
+-```
++    npm install connect-assets
+@@ -32,9 +49,5 @@ Also install any specific compilers you'll need, e.g.:
+-```shell
+-npm install coffee-script
+-npm install stylus
+-npm install less
+-npm install node-sass
+-npm install haml-coffee
+-npm install jade
+-npm install ejs
+-```
++    npm install coffee-script
++    npm install stylus
++    npm install nib
++    npm install bootstrap-stylus
++    npm install less
+@@ -44,3 +57 @@ Then add this line to your app's configuration:
+-```javascript
+-app.use(require("connect-assets")());
+-```
++    app.use require('connect-assets')()
+@@ -48 +59 @@ app.use(require("connect-assets")());
+-Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
++Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
+@@ -52 +63 @@ Finally, create an `assets` directory in your project and throw all assets compi
+-connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -54,4 +65,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```
+-!= css("normalize")
+-!= js("jquery")
+-```
++    != css('normalize')
++    != js('jquery')
+@@ -61,4 +70,2 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-```html
+-<link rel="stylesheet" href="/css/normalize-[hash].css" />
+-<script src="/js/jquery-[hash].js"></script>
+-```
++    <link rel="stylesheet" href="/css/normalize.css" />
++    <script src="/js/jquery.js"></script>
+@@ -66 +73 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-### Sprockets-style concatenation
++For your purposes you can pass additional attributes to helpers `js` and `css`.
+@@ -68 +75 @@ connect-assets provides three global functions named `js`, `css`, and `assetPath
+-You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
++    != css('normalize', { media: 'print', data: { confirm: 'Are you sure to do this?', delete: function(){return true} } })
+@@ -70 +77,3 @@ You can indicate dependencies in your `.js.coffee` and `.js` files using the Spr
+-In CoffeeScript:
++Result:
++    
++    <link rel="stylesheet" href="/css/normalize.css" media="print" data-confirm="Are you sure to do this?" data-delete />
+@@ -72,3 +80,0 @@ In CoffeeScript:
+-```coffeescript
+-#= require dependency
+-```
+@@ -76 +82 @@ In CoffeeScript:
+-In JavaScript:
++### Sprockets-style concatenation
+@@ -78,3 +84 @@ In JavaScript:
+-```javascript
+-//= require dependency
+-```
++You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
+@@ -82 +86,3 @@ In JavaScript:
+-When you do so, and point the `js` function at that file, two things can happen:
++    #= require dependency
++
++(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
+@@ -85 +91,5 @@ When you do so, and point the `js` function at that file, two things can happen:
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++
++If you want to bring in a whole folder of scripts, use
++
++    #= require_tree dir
+@@ -87 +97 @@ When you do so, and point the `js` function at that file, two things can happen:
+-If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
++See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+@@ -89 +99 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
+-See [Mincer](https://github.com/nodeca/mincer) for more information.
++**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
+@@ -95,48 +105,29 @@ If you like, you can pass any of these options to the function returned by `requ
+-```text
+-|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
+-| Option        | Default Value                   |
+-|---------------|---------------------------------|
+-| paths         | [ "assets/js", "assets/css" ]   |
+-| helperContext | global                          |
+-| servePath     | "assets"                        |
+-| precompile    | []                              |
+-| build         | dev: false; prod: true          |
+-| buildDir      | dev: false; prod: "builtAssets" |
+-| compile       | true                            |
+-|_______________|_________________________________|
+-```
+-* **paths** — The directories that assets will be read from, in order of preference.
+-* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
+-* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
+-* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
+-* **build** — Should assets be saved to disk (true), or just served from memory (false)?
+-* **buildDir** — The directory to save (and load) compiled assets to/from.
+-* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
+-
+-## Serving Assets from a CDN
+-
+-connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
+-
+-```
+-Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
+-                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
+-
+-Precompiles assets supplied into their production-ready form, ready for
+-upload to a CDN or static file server. The generated manifest.json is all
+-that is required on your application server if connect-assets is properly
+-configured.
+-
+-Optional arguments:
+-  -h, --help            Show this help message and exit.
+-  -v, --version         Show program's version number and exit.
+-  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
+-                        Adds the directory to a list of directories that
+-                        assets will be read from, in order of preference.
+-                        Defaults to 'assets/js' and 'assets/css'.
+-  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
+-                        Adds the file (or pattern) to a list of files to
+-                        compile. Defaults to all files.
+-  -o DIRECTORY, --output DIRECTORY
+-                        Specifies the output directory to write compiled
+-                        assets to. Defaults to 'builtAssets'.
+-```
++* `src` (defaults to `'assets'`): The directory assets will be read from
++* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
++* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
++* ... see the source (`src/assets.coffee`) for more.
++
++You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
++
++    css.root = '/stylesheets'
++    js.root  = '/javascripts'
++
++To override these roots, start a path with `'/'`. So, for instance,
++
++    css('style.css')
++
++generates
++
++    <link rel='stylesheet' href='/css/style.css'>
++
++while
++
++    css('/style.css')
++
++gives you
++
++    <link rel='stylesheet' href='/style.css'>
++
++## Generated documentation 
++
++There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
+@@ -146 +137 @@ Optional arguments:
+-Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
++Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
+@@ -148 +139 @@ Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephe
+-Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
++Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 22ecb3a..9a054f1 100644
+--- a/README.md
++++ b/README.md
+@@ -121 +121 @@ connect-assets includes a command-line utility, `connect-assets`, which can be u
+-usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++Usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
+@@ -138,2 +138 @@ Optional arguments:
+-                        compile. Specify the option multiple times for
+-                        multiple files (or patterns). Defaults to all files.
++                        compile. Defaults to all files.
+diff --git a/README.md b/README.md
+index a6791c0..22ecb3a 100644
+--- a/README.md
++++ b/README.md
+@@ -115,0 +116,29 @@ If you like, you can pass any of these options to the function returned by `requ
++## Serving Assets from a CDN
++
++connect-assets includes a command-line utility, `connect-assets`, which can be used to precompile assets on your filesystem (which you can then upload to your CDN of choice). From your application directory, you can execute it with `./node_modules/.bin/connect-assets [options]`.
++
++```
++usage: connect-assets [-h] [-v] [-i [DIRECTORY [DIRECTORY ...]]]
++                      [-c [FILE [FILE ...]]] [-o DIRECTORY]
++
++Precompiles assets supplied into their production-ready form, ready for
++upload to a CDN or static file server. The generated manifest.json is all
++that is required on your application server if connect-assets is properly
++configured.
++
++Optional arguments:
++  -h, --help            Show this help message and exit.
++  -v, --version         Show program's version number and exit.
++  -i [DIRECTORY [DIRECTORY ...]], --include [DIRECTORY [DIRECTORY ...]]
++                        Adds the directory to a list of directories that
++                        assets will be read from, in order of preference.
++                        Defaults to 'assets/js' and 'assets/css'.
++  -c [FILE [FILE ...]], --compile [FILE [FILE ...]]
++                        Adds the file (or pattern) to a list of files to
++                        compile. Specify the option multiple times for
++                        multiple files (or patterns). Defaults to all files.
++  -o DIRECTORY, --output DIRECTORY
++                        Specifies the output directory to write compiled
++                        assets to. Defaults to 'builtAssets'.
++```
++
+diff --git a/README.md b/README.md
+index 05beb06..a6791c0 100644
+--- a/README.md
++++ b/README.md
+@@ -5 +5 @@
+-Transparent file compilation and dependency management for Node's [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
++Transparent file compilation and dependency management for Node’s [connect](https://github.com/senchalabs/connect) framework in the spirit of the Rails 3.1 asset pipeline.
+@@ -11,6 +11,10 @@ connect-assets can:
+-1. Serve `.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
+-2. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
+-3. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
+-4. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css`
+-5. Serve files with a cache-control token and use a far-future expires header for maximum efficiency
+-6. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
++1. Serve `.js.coffee` ([CoffeeScript](http://coffeescript.org)) files as compiled `.js`
++2. Concatenate `.js.coffee` and `.js` together.
++3. Serve `.css.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
++4. Serve `.css.less` ([Less](http://lesscss.org/)) as compiled `.css`
++5. Serve `.css.sass` or `.css.scss` ([SASS](http://sass-lang.com)) as compiled `.css`
++6. Serve `.jst.hamlc` ([Haml-Coffee templates](https://github.com/netzpirat/haml-coffee)) as compiled JavaScript functions.
++7. Serve `.jst.jade` ([Jade templates](https://github.com/visionmedia/jade)) as compiled JavaScript functions (be sure to include the Jade runtime — see below).
++8. Preprocess `style.css.ejs` and `script.js.ejs` with [EJS](http://embeddedjs.com/) — just append `.ejs` to any file.
++8. Serve files with a cache-control token and use a far-future expires header for maximum efficiency.
++9. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -31,0 +36,4 @@ npm install less
++npm install node-sass
++npm install haml-coffee
++npm install jade
++npm install ejs
+@@ -40 +48 @@ app.use(require("connect-assets")());
+-Finally, create an `assets` directory in your project and throw all your `.coffee` and `.js` files in /assets/js and `.styl`, `.less`, and `.css` files in /assets/css.
++Finally, create an `assets` directory in your project and throw all assets compiled into JavaScript into `/assets/js` and all assets compiled into CSS into `/assets/css`.
+@@ -44 +52 @@ Finally, create an `assets` directory in your project and throw all your `.coffe
+-connect-assets provides two global functions named `js` and `css`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets, taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides three global functions named `js`, `css`, and `assetPath`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets (or, the path to the asset), taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -54,2 +62,2 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-<link rel="stylesheet" href="/css/normalize.css?v=[some number]" />
+-<script src="/js/jquery.js?v=[some number]"></script>
++<link rel="stylesheet" href="/css/normalize-[hash].css" />
++<script src="/js/jquery-[hash].js"></script>
+@@ -60 +68 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-You can indicate dependencies in your `.coffee` and `.js` files using the Sprockets-style syntax.
++You can indicate dependencies in your `.js.coffee` and `.js` files using the Sprockets-style syntax.
+@@ -81,3 +89 @@ If you want to bring in a whole folder of scripts, use `//= require_tree dir` in
+-See [Snockets](http://github.com/TrevorBurnham/snockets) for more information.
+-
+-**Note:** CSS concatenation is not supported by connect-assets directly, because Stylus and Less already do a fine job of this. Stylus and Less are basically supersets of CSS, so just rename your `.css` files to `.styl` or `.less` and learn about the @import ([Stylus](http://learnboost.github.com/stylus/docs/import.html), [Less](http://lesscss.org/#-importing)) syntax.
++See [Mincer](https://github.com/nodeca/mincer) for more information.
+@@ -89,25 +95,12 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `env` (defaults to `process.env.NODE_ENV`): Sets a number of defaults, see below.
+-* `src` (defaults to `'assets'`): The directory assets will be read from.
+-* `tagWriter` (defaults to `'xHtml5Writer'`): The writer to use when creating `<link>` and `<script>` tags. See [lib/tagWriters](https://github.com/adunkman/connect-assets/tree/v3/lib/tagWriters) for available options, or pass in an object implementing `.cssTag(path)` and `.jsTag(path, options)` functions.
+-* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to. It's considered good practice to pass in an object here instead of using the default.
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory when `saveToDisk` is `true`.
+-* `detectChanges` (defaults to `false` when `env == 'production'`, otherwise `true`): watches the `src` directory for changes and recompiles the built assets.
+-* `saveToDisk` (defaults to `true` when `env == 'production'`, otherwise `false`): Saves the compiled assets to disk in the `buildDir` when `true`.
+-* `assetFolders` (defaults to `{ css: 'css', js: 'js' }`): The asset-type-specific folders within the `src` directory. If you do not wish to separate your assets into `css` and `js` folders, set both properties to blank.
+-
+-To override these roots, start a path with `'/'`. So, for instance,
+-
+-```
+-css('style.css')
+-```
+-
+-generates
+-
+-```html
+-<link rel="stylesheet" href="/css/style.css" />
+-```
+-
+-while
+-
+-```
+-css('/style.css')
++```text
++|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|
++| Option        | Default Value                   |
++|---------------|---------------------------------|
++| paths         | [ "assets/js", "assets/css" ]   |
++| helperContext | global                          |
++| servePath     | "assets"                        |
++| precompile    | []                              |
++| build         | dev: false; prod: true          |
++| buildDir      | dev: false; prod: "builtAssets" |
++| compile       | true                            |
++|_______________|_________________________________|
+@@ -115,10 +108,7 @@ css('/style.css')
+-
+-gives you
+-
+-```html
+-<link rel="stylesheet" href="/style.css" />
+-```
+-
+-## Generated documentation 
+-
+-There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++* **paths** — The directories that assets will be read from, in order of preference.
++* **helperContext** — The object that helper functions (css, js, assetPath) will be attached to.
++* **servePath** — The virtual path in which assets will be served over HTTP. If hosting assets locally, supply a local path (say, "assets"). If hosting assets remotely on a CDN, supply a URL: "http://myassets.cdn.com/assets".
++* **precompile** — An array of assets to precompile while the server is initializing. An empty array is treated as "all assets".
++* **build** — Should assets be saved to disk (true), or just served from memory (false)?
++* **buildDir** — The directory to save (and load) compiled assets to/from.
++* **compile** — Should assets be compiled if they don’t already exist in the `buildDir`?
+@@ -128 +118 @@ There is generated documentation (created with [docco](http://jashkenas.github.c
+-Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/compiler.js) and [static](https://github.com/senchalabs/connect/blob/1.6.4/lib/middleware/static.js) middlewares, and of course sstephenson's [Sprockets](https://github.com/sstephenson/sprockets).
++Follows in the footsteps of sstephenson's [Sprockets](https://github.com/sstephenson/sprockets), through the [Mincer](https://github.com/nodeca/mincer) project.
+diff --git a/README.md b/README.md
+index a4621e5..05beb06 100644
+--- a/README.md
++++ b/README.md
+@@ -121,0 +122,4 @@ gives you
++## Generated documentation 
++
++There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++
+@@ -126 +130 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
++Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+diff --git a/README.md b/README.md
+index 084e59b..a4621e5 100644
+--- a/README.md
++++ b/README.md
+@@ -3 +3 @@
+-[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=v3)](https://travis-ci.org/adunkman/connect-assets)
+@@ -7,21 +7 @@ Transparent file compilation and dependency management for Node's [connect](http
+-## The state of the package
+-
+-As of February 21, 2013, @adunkman became the maintainer of this package. The game plan is as follows:
+-- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
+-- Begin a version 3.x (v3 branch) that introduces stronger tests and code structure to make contributing easier to manage, reducing dependencies as possible.
+-
+-## Plans for version 3.0
+-
+-* Rewrite in JS
+-* Cleaner code
+-    * Shorter files
+-    * Better defined responsibilities
+-* No singleton
+-* Replace connect-file-cache
+-* Look for replacment for Snockets
+-* Remove dependence on underscore
+-* Remove dependence on mime
+-* Write tests in mocha
+-* Remove Cakefile
+-
+-## What?
++## What can it do?
+@@ -32,8 +12,5 @@ connect-assets can:
+-1. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
+-1. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css` with
+-    -  [nib](https://github.com/visionmedia/nib)
+-    -  [Twitter Bootstrap](https://github.com/shomeya/bootstrap-stylus)
+-1. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css` with
+-    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
+-1. Serve files with an MD5 hash suffix and use a far-future expires header for maximum efficiency
+-1. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk—except when you want them (e.g. for deployment to a CDN).
++2. Concatenate `.coffee` and `.js` together using [Snockets](https://github.com/TrevorBurnham/snockets)
++3. Serve `.styl` ([Stylus](http://learnboost.github.com/stylus/)) as compiled `.css`
++4. Serve `.less` ([Less](http://lesscss.org/)) as compiled `.css`
++5. Serve files with a cache-control token and use a far-future expires header for maximum efficiency
++6. Avoid redundant git diffs by storing compiled `.js` and `.css` files in memory rather than writing them to the disk when in development.
+@@ -41 +18 @@ connect-assets can:
+-## How?
++## How do I use it?
+@@ -45 +22,3 @@ First, install it in your project's directory:
+-    npm install connect-assets
++```shell
++npm install connect-assets
++```
+@@ -49,5 +28,5 @@ Also install any specific compilers you'll need, e.g.:
+-    npm install coffee-script
+-    npm install stylus
+-    npm install nib
+-    npm install bootstrap-stylus
+-    npm install less
++```shell
++npm install coffee-script
++npm install stylus
++npm install less
++```
+@@ -57 +36,3 @@ Then add this line to your app's configuration:
+-    app.use require('connect-assets')()
++```javascript
++app.use(require("connect-assets")());
++```
+@@ -59 +40 @@ Then add this line to your app's configuration:
+-Finally, create an `assets` directory in your project and throw all your `.coffee` files in /assets/js and `.styl`, `.less` files in /assets/css.
++Finally, create an `assets` directory in your project and throw all your `.coffee` and `.js` files in /assets/js and `.styl`, `.less`, and `.css` files in /assets/css.
+@@ -63 +44 @@ Finally, create an `assets` directory in your project and throw all your `.coffe
+-connect-assets provides two global functions named `js` and `css`. Use them in your views. They tell connect-assets to do any necessary compilation, then return the markup you need. For instance, in a [Jade template](http://jade-lang.com/), the code
++connect-assets provides two global functions named `js` and `css`. Use them in your views. They return the HTML markup needed to include the most recent version of your assets, taking advantage of caching when available. For instance, in a [Jade template](http://jade-lang.com/), the code
+@@ -65,2 +46,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    != css('normalize')
+-    != js('jquery')
++```
++!= css("normalize")
++!= js("jquery")
++```
+@@ -70,2 +53,4 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-    <link rel="stylesheet" href="/css/normalize.css" />
+-    <script src="/js/jquery.js"></script>
++```html
++<link rel="stylesheet" href="/css/normalize.css?v=[some number]" />
++<script src="/js/jquery.js?v=[some number]"></script>
++```
+@@ -75 +60 @@ connect-assets provides two global functions named `js` and `css`. Use them in y
+-You can indicate dependencies in your CoffeeScript files using the Sprockets-style syntax
++You can indicate dependencies in your `.coffee` and `.js` files using the Sprockets-style syntax.
+@@ -77 +62 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-    #= require dependency
++In CoffeeScript:
+@@ -79 +64,3 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-(or `//= require dependency` in JavaScript). When you do so, and point the `js` function at that file, two things can happen:
++```coffeescript
++#= require dependency
++```
+@@ -81,2 +68,5 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
+-2. If you passed the `build: true` option to connect-assets (enabled by default when `process.env.NODE_ENV == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++In JavaScript:
++
++```javascript
++//= require dependency
++```
+@@ -84 +74 @@ You can indicate dependencies in your CoffeeScript files using the Sprockets-sty
+-If you want to bring in a whole folder of scripts, use
++When you do so, and point the `js` function at that file, two things can happen:
+@@ -86 +76,4 @@ If you want to bring in a whole folder of scripts, use
+-    #= require_tree dir
++1. By default, you'll get multiple `<script>` tags out, in an order that gives you all of your dependencies.
++2. If you passed the `build: true` option to connect-assets (enabled by default when `env == 'production'`), you'll just get a single tag, wich will point to a JavaScript file that encompasses the target's entire dependency graph—compiled, concatenated, and minified (with [UglifyJS](https://github.com/mishoo/UglifyJS)).
++
++If you want to bring in a whole folder of scripts, use `//= require_tree dir` instead of `//= require file`.
+@@ -96,9 +89,8 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `src` (defaults to `'assets'`): The directory assets will be read from
+-* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
+-* ... see the source (`src/assets.coffee`) for more.
+-
+-You can also set the "root path" on the `css` and `js` helper functions (by default, `/css` and `/js`), e.g.
+-
+-    css.root = '/stylesheets'
+-    js.root  = '/javascripts'
++* `env` (defaults to `process.env.NODE_ENV`): Sets a number of defaults, see below.
++* `src` (defaults to `'assets'`): The directory assets will be read from.
++* `tagWriter` (defaults to `'xHtml5Writer'`): The writer to use when creating `<link>` and `<script>` tags. See [lib/tagWriters](https://github.com/adunkman/connect-assets/tree/v3/lib/tagWriters) for available options, or pass in an object implementing `.cssTag(path)` and `.jsTag(path, options)` functions.
++* `helperContext` (defaults to `global`): The object the `css` and `js` helper functions will attach to. It's considered good practice to pass in an object here instead of using the default.
++* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory when `saveToDisk` is `true`.
++* `detectChanges` (defaults to `false` when `env == 'production'`, otherwise `true`): watches the `src` directory for changes and recompiles the built assets.
++* `saveToDisk` (defaults to `true` when `env == 'production'`, otherwise `false`): Saves the compiled assets to disk in the `buildDir` when `true`.
++* `assetFolders` (defaults to `{ css: 'css', js: 'js' }`): The asset-type-specific folders within the `src` directory. If you do not wish to separate your assets into `css` and `js` folders, set both properties to blank.
+@@ -108 +100,3 @@ To override these roots, start a path with `'/'`. So, for instance,
+-    css('style.css')
++```
++css('style.css')
++```
+@@ -112 +106,3 @@ generates
+-    <link rel='stylesheet' href='/css/style.css'>
++```html
++<link rel="stylesheet" href="/css/style.css" />
++```
+@@ -116 +112,3 @@ while
+-    css('/style.css')
++```
++css('/style.css')
++```
+@@ -120,5 +118,3 @@ gives you
+-    <link rel='stylesheet' href='/style.css'>
+-
+-## Generated documentation 
+-
+-There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++```html
++<link rel="stylesheet" href="/style.css" />
++```
+@@ -130 +126 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
++Take a look at the [contributors](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index ae0ccb8..084e59b 100644
+--- a/README.md
++++ b/README.md
+@@ -121,0 +122,4 @@ gives you
++## Generated documentation 
++
++There is generated documentation (created with [docco](http://jashkenas.github.com/docco/)) available [here](http://adunkman.github.com/connect-assets/).
++
+diff --git a/README.md b/README.md
+index e5c0677..ae0ccb8 100644
+--- a/README.md
++++ b/README.md
+@@ -2,0 +3,2 @@
++[![Build Status](https://travis-ci.org/adunkman/connect-assets.png?branch=master)](https://travis-ci.org/adunkman/connect-assets)
++
+@@ -8 +10 @@ As of February 21, 2013, @adunkman became the maintainer of this package. The ga
+-- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues. 
++- Address critical issues with version 2.x (master branch) to take care of the open pull requests/issues.
+@@ -32 +34 @@ connect-assets can:
+-    -  [nib](https://github.com/visionmedia/nib) 
++    -  [nib](https://github.com/visionmedia/nib)
+@@ -35 +37 @@ connect-assets can:
+-    - [Twitter Bootstrap](https://github.com/twitter/bootstrap) 
++    - [Twitter Bootstrap](https://github.com/twitter/bootstrap)
+@@ -96 +98 @@ If you like, you can pass any of these options to the function returned by `requ
+-* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable 
++* `buildDir` (defaults to `builtAssets`): Writes built asset files to disk using this directory in `production` environment, set to `false` to disable
+diff --git a/README.md b/README.md
+index c2b557b..e5c0677 100644
+--- a/README.md
++++ b/README.md
+@@ -124,11 +124 @@ Borrows heavily from Connect's [compiler](https://github.com/senchalabs/connect/
+-Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+-
+-## License
+-
+-©2011 Trevor Burnham and available under the [MIT license](http://www.opensource.org/licenses/mit-license.php):
+-
+-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+-
+-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-
+-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++Look at these [awesome people](https://github.com/adunkman/connect-assets/contributors) who make this project possible.
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index 4148e4b..c2b557b 100644
+--- a/README.md
++++ b/README.md
+@@ -15,2 +15,2 @@ As of February 21, 2013, @adunkman became the maintainer of this package. The ga
+-** Shorter files
+-** Better defined responsibilities
++    * Shorter files
++    * Better defined responsibilities
